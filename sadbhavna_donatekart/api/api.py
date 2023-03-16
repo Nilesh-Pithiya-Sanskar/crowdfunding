@@ -24,6 +24,7 @@ class SignupDisabledError(frappe.PermissionError):
     ...
 
 
+
 @frappe.whitelist(allow_guest=True)
 def get_recent_donation(name):
     return frappe.db.get_list("Donation", filters={"campaign": name}, fields=["name", "donor_name", "amount", "creation", "anonymous", "donor_image"])

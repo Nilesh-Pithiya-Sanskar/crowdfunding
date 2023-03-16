@@ -799,17 +799,18 @@ export default {
     }
   },
   resources: {
-    // get_data(){
-    //   return{
-    //     method: '/api/method/sadbhavna_donatekart.api.api.get_campaign_details',
-    //     onSuccess(){
-    //       console.log("Success")
-    //     },
-    //     onError(){
-    //       console.log("Error")
-    //     }
-    //   }
-    // }
+    get_campaigns(){
+      return{
+        method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
+        onSuccess:(res) => {
+          console.log("Success", res)
+          this.campaigns = res
+        },
+        onError(){
+          console.log("Error")
+        }
+      }
+    }
   },
   methods: {
     toggleTabs: function (tabNumber) {
@@ -819,19 +820,37 @@ export default {
       this.openTabTestimonials = tabNumber
     },
     get_campaigns(category) {
-      let url = ''
-      if (category == null) {
-        url = '/api/resource/Donation Campaign?filters={"published": 1}&fields=["name", "campain_image", "campaign_title", "is_featured","donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"]'
-      }
-      else {
-        url = `/api/resource/Donation%20Campaign?filters=[["Donation Campaign","campaign_category","=","${category}"],["Donation Campaign","published","=",1]]&fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"]`
-      }
-      axios.get(url).then((response) => {
-        // console.log("campaign", response)
-        this.campaigns = response.data['data']
-      }).catch(function (error) {
-        console.log(error);
+      this.$resources.get_campaigns.submit({
+        category: category
       })
+
+      // ****************************
+      // let url = ''
+      // if (category == null) {
+      //   url = '/api/resource/Donation Campaign?filters={"published": 1}&fields=["name", "campain_image", "campaign_title", "is_featured","donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"]'
+      // }
+      // else {
+      //   url = `/api/resource/Donation%20Campaign?filters=[["Donation Campaign","campaign_category","=","${category}"],["Donation Campaign","published","=",1]]&fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"]`
+      // }
+      // axios.get(url).then((response) => {
+      //   // console.log("campaign", response)
+      //   this.campaigns = response.data['data']
+      // }).catch(function (error) {
+      //   console.log(error);
+      // })
+      // ***************************
+      // fetch(url, {
+      //           method: 'GET',
+      //       })
+      //       .then(response => {
+      //           response.json().then(res => {
+      //           this.campaigns = res.data['data']
+      //           });
+      //       })
+      //       .catch(err => {
+      //           console.error(err);
+      //       });
+      // *****************************
     },
     reserve() {
       this.loading = true

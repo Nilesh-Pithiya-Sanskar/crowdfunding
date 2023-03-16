@@ -283,9 +283,9 @@
                                   Date
                                 </th>
                                 <!-- <th scope="col"
-                                                                class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                                Mode of Payment
-                                                            </th> -->
+                                      class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                      Mode of Payment
+                                  </th> -->
                                 <th
                                   scope="col"
                                   class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
@@ -440,11 +440,18 @@
                                 >
                                   {{ campaign.end_date }}
                                 </td>
-                                <td
+                                <!-- <td
                                   class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap"
                                 >
                                   {{ campaign.status }}
+                                </td> -->
+
+                                <td
+                                  :class="['text-sm font-bold px-6 py-4 whitespace-nowrap', (campaign.status === 'Live' ? 'text-green-500' : ''), (campaign.status === 'Pending' ? 'text-blue-500' : ''), (campaign.status === 'Rejected' ? 'text-red-500' : ''), (campaign.status === 'Closed' ? 'text-orange-500' : '')]"
+                                >
+                                  {{ campaign.status }}
                                 </td>
+                               
                               </tr>
                             </tbody>
                           </table>
@@ -749,7 +756,6 @@
                                                             <td
                                                                 class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap">
                                                                 {{ campaign.status }}</td>
-
                                                         </tr>
                                                     </tbody>
                                                 </table>

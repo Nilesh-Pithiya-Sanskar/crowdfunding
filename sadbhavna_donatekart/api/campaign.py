@@ -6,6 +6,13 @@ def get_campaign_detail(name):
     return frappe.db.get_value("Donation Campaign", filters={"name": name}, fieldname=["*"], as_dict=True)
     # return frappe.db.get_all("Donation Campaign", )
 
+@frappe.whitelist(allow_guest=True)
+def get_campaigns(category = ''):
+    if category != '':
+        return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'campaign_category': f'{category}'}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"])
+    else:
+        return frappe.db.get_list("Donation Campaign", filters={'published': 1}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"])
+
 
 # @frappe.whitelist(allow_guest=True)
 # def get_campaign_detail(name):
