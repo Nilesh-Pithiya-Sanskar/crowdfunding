@@ -235,6 +235,7 @@ def verify_otp(number, otp):
 
 @frappe.whitelist(allow_guest=True)
 def create_payment_link(amount, name, email):
+    amount = str(amount)
     amount1 = amount + '00'
     from sadbhavna_donatekart import razorpay
     client = razorpay.Client(auth=("rzp_test_Adc0DsR6E8VV3t", "qxawCeu9WJSdW4XjEK8vqzWO"))
