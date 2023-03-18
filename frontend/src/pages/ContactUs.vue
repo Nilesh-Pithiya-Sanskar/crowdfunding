@@ -51,7 +51,7 @@
                         <div class="grid grid-cols-2">
                             <div class="form-group pr-3 mb-6">
                                 <label class="block text-gray-700 text-sm mb-2" for="username">
-                                    First name
+                                    First name <span class="text-red-600">*</span>
                                 </label>
                                 <input v-model="first_name" type="text" required
                                     class="form-control block hover:border-[#40b751] w-full px-3  py-1.5  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition  ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
@@ -68,7 +68,7 @@
                         </div>
                         <div class="form-group mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Email
+                                Email <span class="text-red-600">*</span>
                             </label>
                             <input v-model="email_id" type="email" required
                                 class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
@@ -77,7 +77,7 @@
 
                         <div class="form-group mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Subject
+                                Subject <span class="text-red-600">*</span>
                             </label>
                             <input v-model="subject" type="text" required
                                 class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
@@ -94,7 +94,7 @@
 
                         <button type="submit"
                             class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                                                                                                                                                            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                                                                                                                                                                                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
                             @click="contact_us()">submit
                         </button>
                     </form>

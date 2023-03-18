@@ -30,11 +30,13 @@
                         <!-- <div class="bg-green-500 text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md" style="width: 40%"> 40%</div> -->
                         <div class="bg-[#40b751] text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
                             :style="{ width: campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount + '%' }">
-                            {{ campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount }}%</div>
+                            {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
+                            }}%
+                        </div>
                     </div>
                     <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] justify-between font-bold">
-                        <p>Raised: {{ campaign_detail.data.raised_amount }}</p>
-                        <p>Goal: {{ campaign_detail.data.donation_amount }}</p>
+                        <p>Raised: {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
+                        <p>Goal: {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
                     </div>
                     <!-- <pre> -->
                     <!-- <code> -->
