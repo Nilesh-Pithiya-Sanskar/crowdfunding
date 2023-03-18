@@ -128,7 +128,7 @@ export default {
 
             console.log("asdfads", userData)
 
-            let url = `http://sadbhavnadonatekart.com:8080/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
+            let url = `https://crowdfunding.frappe.cloud/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
             fetch(url, {
                 method: 'GET'
             })
@@ -138,7 +138,7 @@ export default {
                         console.log("asdf", res)
                         let token = res.message
                         // this.$router.push('/home')
-                        window.location = 'http://sadbhavnadonatekart.com:8080/sadbhavna'
+                        window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
                         // https://crowdfunding.frappe.cloud/
                     });
                 })
