@@ -50,9 +50,9 @@ app.use(FrappeUI, {
 
 
 // app.use(GAuth, gauthOption)
-
 app.use(vue3GoogleLogin, {
-  clientId: '615226899593-b4jpeolmo526beqkiqvo1bf7ob06rhpb.apps.googleusercontent.com'
+  // clientId: '615226899593-b4jpeolmo526beqkiqvo1bf7ob06rhpb.apps.googleusercontent.com'
+  clientId: '1066491682846-6vikj94cs1bo0jg431chodcuj72d533p.apps.googleusercontent.com'
 })
 
 // app.use(BootstrapVue)

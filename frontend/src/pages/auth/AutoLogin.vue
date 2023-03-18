@@ -35,16 +35,20 @@
                         <div class="mb-4">
                            <button class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login with Facebook</button>
                         </div>
-                        <div class="mb-4">
-                           <button class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login with Google</button>
-                        </div>
+                        <GoogleLogin :callback="login_with_google" class="w-full">
+                            <div class="mb-4">
+                                <button
+                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
+                                    with Google</button>
+                            </div>
+                        </GoogleLogin>
                         <div class="mb-4">
                            <div class="flex mb-10 justify-between">
                               <span class="text-gray-600">Forget password? <a class="text-[#40b751]" href="/login.html">Click here</a></span><a class="text-[#40b751]" href="registration.html">Register</a>
                            </div>
                         </div>
                         <div class="mb-4">
-                           <span class="block text-gray-600 text-center text-base  mb-2"><a class="text-[#40b751]" href="registration.html">Login </a> &nbsp;via ID Password</span>
+                           <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]" href="registration.html">Login </a> &nbsp;via ID Password</span>
                         </div>
                     </div>
                 </div>
@@ -134,7 +138,8 @@ export default {
                         console.log("asdf", res)
                         let token = res.message
                         // this.$router.push('/home')
-                        window.location = 'http://sadbhavnadonatekart.com:8080/home'
+                        window.location = 'http://sadbhavnadonatekart.com:8080/sadbhavna'
+                        // https://crowdfunding.frappe.cloud/
                     });
                 })
                 .catch(function (error) {
