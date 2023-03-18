@@ -42,7 +42,7 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
     # doc.insert(ignore_permissions=True)
 
     user = frappe.get_doc({"doctype": "User", "email": f"{email}", "first_name": f"{first_name}",
-                          "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}"})
+                          "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}", "role_profile_name": "Donor"})
     user.insert(ignore_permissions=True)
     frappe.db.commit()
     donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name} {last_name}",
@@ -72,7 +72,7 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     donor = frappe.db.get_value(
         "Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
     donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}",
-                              "date": today(), "amount": amount, "donation_item": item, "payment_id": payment_id, "anonymous": anonymous})
+                              "date": today(), "amount": amount, "donation_item": item, "payment_id": payment_id, "anonymous": anonymous, "paid": 1})
     donation.insert(ignore_permissions=True)
     frappe.db.commit()
 
@@ -179,6 +179,7 @@ def login_via_token(login_token: str):
 @frappe.whitelist(allow_guest=True)
 def login_with_whatsapp(phone):
     # if whatsapp integration
+    print("\n\n phone", phone, "\n\n")
     otp = generateOTP(4)
     # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
     doc = frappe.get_doc({"doctype": "Whatsapp OTP",
@@ -188,6 +189,7 @@ def login_with_whatsapp(phone):
 
     message = send_whatsapp_otp(phone)
     result = {"message": message, "number": phone}
+    # return result
     return message, phone
 
 
