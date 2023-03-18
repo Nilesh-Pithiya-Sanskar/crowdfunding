@@ -1,120 +1,123 @@
 <template>
-   <Navbar />
+    <Navbar />
     <div class="container mx-auto">
-   <div  v-if="openTab == 1"
-          class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[650px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-          style="
-            background-image: url('../../src/assets/Inter/img/bg-tree.png');
-          ">
+        <div v-if="openTab == 1"
+            class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[650px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            style="
+                background-image: url('../../src/assets/Inter/img/bg-tree.png');
+              ">
         </div>
-        <div  v-if="openTab == 2"
-          class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[300px] sm:h-0 md:h-0 lg:h-0 xl:h-[643px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-          style="
-            background-image: url('../../src/assets/Inter/img/bg-tree.png');
-          ">
+        <div v-if="openTab == 2"
+            class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[300px] sm:h-0 md:h-0 lg:h-0 xl:h-[643px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            style="
+                background-image: url('../../src/assets/Inter/img/bg-tree.png');
+              ">
         </div>
-    <div class="container mx-auto h-full">
-        
-        <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
-            <div class="container mx-auto py-0">
-                <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
-                    <div class="text-[24px] md:text-[30px] lg:text-[36px] py-8 px-10 text-gray-600 font-[200px] text-center">Donation Campaign request
-                    </div>
-                    <div class="relative z-0">
-                        <div class=" sm:p-10 ">
-                            <ul class="flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
-                                <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                                    <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
-                                        v-on:click="toggleTabs(1)"
-                                        v-bind:class="{'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1}">
-                                        NGO
-                                    </a>
-                                </li>
-                                <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                                    <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
-                                        v-on:click="toggleTabs(2)"
-                                        v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 2, 'text-white bg-[#40b751]': openTab === 2 }">
-                                        Individual Group
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="px-4 py-2 flex-auto">
-                                <div class="tab-content tab-space">
-                                    <div class="py-4 px-8">
-                                        <div class="mb-4">
-                                            <label class="block text-gray-600 text-base  mb-2" for="email">Full
-                                                Name</label>
-                                            <input
-                                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                v-model="full_name" type="text" required>
-                                        </div>
-                                        <div v-if="openTab == 1"
-                                            class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div class="container mx-auto h-full">
+
+            <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
+                <div class="container mx-auto py-0">
+                    <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
+                        <div
+                            class="text-[24px] md:text-[30px] lg:text-[36px] py-8 px-10 text-gray-600 font-[200px] text-center">
+                            Donation Campaign Request
+                        </div>
+                        <div class="relative z-0">
+                            <div class=" sm:p-10 ">
+                                <ul class="flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
+                                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                        <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                                            v-on:click="toggleTabs(1)"
+                                            v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1 }">
+                                            NGO
+                                        </a>
+                                    </li>
+                                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                        <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                                            v-on:click="toggleTabs(2)"
+                                            v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 2, 'text-white bg-[#40b751]': openTab === 2 }">
+                                            Individual Group
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="px-4 py-2 flex-auto">
+                                    <div class="tab-content tab-space">
+                                        <div class="py-4 px-8">
                                             <div class="mb-4">
-                                                <label class="block text-gray-600 text-base  mb-2">Organisation
+                                                <label class="block text-gray-600 text-base  mb-2" for="email">Full
                                                     Name</label>
                                                 <input
-                                                    class="appearance-none border-gray-300 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
-                                                    type="text" v-model="organisation_name" required>
+                                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                    v-model="full_name" type="text" required>
                                             </div>
-                                            <div class="mb-4">
-                                                <label class="block text-gray-600 text-base  mb-2">Organisation
-                                                    Website</label>
-                                                <input
-                                                    class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    type="text" v-model="organisation_website" required>
+                                            <div v-if="openTab == 1"
+                                                class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                                                <div class="mb-4">
+                                                    <label class="block text-gray-600 text-base  mb-2">Organisation
+                                                        Name</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
+                                                        type="text" v-model="organisation_name" required>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="block text-gray-600 text-base  mb-2">Organisation
+                                                        Website</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" v-model="organisation_website" required>
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Phone</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" v-model="phone" required>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Email</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="email" v-model="email" required>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Social Media
+                                                        Page</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" v-model="social_media_page" required>
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Campaign
+                                                        Story</label>
+                                                    <textarea id="comment" rows="4" v-model="campaign_story"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                        required></textarea>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Beneficiary
+                                                        Group</label>
+                                                    <textarea id="comment" rows="4" v-model="beneficiary_group"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                        required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="mb-6">
+                                                <button
+                                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751]  text-lg uppercase rounded"
+                                                    @click="request_campaign()">Submit</button>
                                             </div>
                                         </div>
-                                        <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-                                            <div class="mb-6">
-                                                <label class="block text-gray-600 text-base  mb-2">Phone</label>
-                                                <input
-                                                    class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    type="text" v-model="phone" required>
-                                            </div>
-                                            <div class="mb-6">
-                                                <label class="block text-gray-600 text-base  mb-2">Email</label>
-                                                <input
-                                                    class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    type="email" v-model="email" required>
-                                            </div>
-                                            <div class="mb-6">
-                                                <label class="block text-gray-600 text-base  mb-2">Social Media
-                                                    Page</label>
-                                                <input
-                                                    class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    type="text" v-model="social_media_page" required>
-                                            </div>
-                                        </div>
-                                       <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-                                            <div class="mb-6">
-                                                <label class="block text-gray-600 text-base  mb-2">Campaign
-                                                    Story</label>
-                                                <textarea id="comment" rows="4" v-model="campaign_story"
-                                                    class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
-                                                    required></textarea>
-                                            </div>
-                                            <div class="mb-6">
-                                                <label class="block text-gray-600 text-base  mb-2">Beneficiary
-                                                    Group</label>
-                                                <textarea id="comment" rows="4" v-model="beneficiary_group"
-                                                    class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
-                                                    required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="mb-6">
-                                            <button
-                                                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751]  text-lg uppercase rounded" @click="request_campaign()">Submit</button>
-                                       </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 
@@ -128,9 +131,9 @@ import Footer from "../components/Footer.vue";
 export default {
     name: "Donation Campaign Request",
     components: {
-    Navbar,
-    Footer
-  },
+        Navbar,
+        Footer
+    },
     data() {
         return {
             openTab: 1,
@@ -152,19 +155,19 @@ export default {
                 onSuccess: (res) => {
                     // this.recent_donation = res
                     this.$toast({
-							title: "Success",
-                            text: "Your Request is successfully sent to sadbhavna donatekart",
-							customIcon: "check",
-						})
+                        title: "Success",
+                        text: "Your Request is successfully sent to sadbhavna donatekart",
+                        customIcon: "check",
+                    })
                 },
                 onError: (error) => {
                     console.log(error)
                     this.$toast({
-							title: "Error",
-                            text: error,
-							customIcon: "circle-fail",
-							appearance: "denger",
-						})
+                        title: "Error",
+                        text: error,
+                        customIcon: "circle-fail",
+                        appearance: "denger",
+                    })
                 }
             }
         }
