@@ -82,8 +82,9 @@
                                             {{ products.about }}
                                         </p>
                                         <p class="text-gray-500 font-bold pb-2">
-                                            ₹ {{ products.price }}
+                                            ₹ {{ numberWithCommas(products.price) }}
                                         </p>
+                                        <!-- {{ numberWithCommas(1000000) }} -->
                                         <!-- ₹ {{ "{:,.2f}".format(products.price) }}/- -->
                                     </div>
                                 </div>
@@ -230,7 +231,7 @@
 
                     <div v-if="total_price != 0" class="text-center font-bold text-lg mt-5">
                         <div class="text-gray-600">Total Donation</div>
-                        <div class="text-[#40b751]">₹ {{ total_price }}</div>
+                        <div class="text-[#40b751]">₹ {{ numberWithCommas(total_price) }}</div>
                         <div>
                             <button
                                 class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
@@ -394,7 +395,7 @@
                                                     </div>
 
                                                     <div class="grid justify-end">
-                                                        <p class="">₹ {{ donation.amount }}</p>
+                                                        <p class="">₹ {{ numberWithCommas(donation.amount) }}</p>
                                                     </div>
 
                                                 </div>
@@ -562,6 +563,7 @@
 import { useRoute } from 'vue-router';
 import { inject } from 'vue';
 import { Avatar } from 'frappe-ui'
+
 import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
@@ -593,6 +595,7 @@ export default {
             a: 70,
             qty: 0,
             date: '',
+            price: '',
             item_cart: [],
             total_price: 0,
             anonymous: false
@@ -654,6 +657,9 @@ export default {
 
     },
     methods: {
+        numberWithCommas(x) {
+            return x.toLocaleString();
+        },
         formatDate(dateString) {
             const date = new Date(dateString);
             // Then specify how you want your dates to be formatted

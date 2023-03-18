@@ -21,7 +21,7 @@
           </div>
         <!-- <div class="md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
           <img src="../../src/assets/Inter/img/map2.png" class="h-48 md:h-80 lg:h-full w-48 md:w-80 lg:w-full" />
-                                                                          </div> -->
+                                                                                            </div> -->
           <div class="md:pl-32 lg:pl-0 pl-0 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
             <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
           </div>
@@ -233,7 +233,9 @@
                     data.donation_amount }}%</div>
               </div>
               <div class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-sm font-bold">
-                <span>Raised: {{ data.raised_amount }}</span><span>Goal: {{ data.donation_amount }}</span>
+                <span>Raised: {{ numberWithCommas(data.raised_amount) }}</span><span>Goal: {{
+                  numberWithCommas(data.donation_amount)
+                }}</span>
               </div>
               </p>
             </div>
@@ -821,6 +823,9 @@ export default {
     }
   },
   methods: {
+    numberWithCommas(x) {
+      return x.toLocaleString();
+    },
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber
     },
