@@ -32,7 +32,7 @@
                   100% of your money will fund for people in need and also make a real difference to people's lives.
                 </div>
 
-                <router-link to="/home" class="text-green-500">Explore More Campaign</router-link>
+                <router-link to="/sadbhavna" class="text-green-500">Explore More Campaign</router-link>
                 
               </div>
               
@@ -62,6 +62,7 @@ export default{
     mounted(){
         const name = useRoute();
         this.total_donation = name.params.donation
+        console.log("route", name)
     }
 }
 

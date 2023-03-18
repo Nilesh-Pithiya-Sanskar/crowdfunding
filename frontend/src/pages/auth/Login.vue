@@ -33,7 +33,8 @@
                   Sign In
                 </button>
               </div>
-              <router-link to="/sadbhavna/registration" class="text-green-500">Register</router-link>
+              <router-link to="/sadbhavna/registration" class="text-green-500">Register</router-link><br>
+              <router-link to="auto-login" class="text-green-500">Other Login Method</router-link>
             </form>
           </div>
         </div>

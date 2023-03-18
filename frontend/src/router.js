@@ -47,7 +47,7 @@ const routes = [
     component: () => import('@/pages/DonationCampaignRequest.vue')
   },
   {
-    path: '/sadbhavna/donation-success-page/:donation',
+    path: '/sadbhavna/donation-success-page/:donation/:name/:email/:item:/campaign',
     name: 'Donation Success Page',
     component: () => import('@/components/DonationSuccessPage.vue')
   },

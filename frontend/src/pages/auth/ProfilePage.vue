@@ -872,6 +872,8 @@ export default {
             text: 'Your Profile is successfully updated.',
             customIcon: 'check',
           })
+          this.$router.go(-1)
+
         },
         onError: (error) => {
           console.log('error', error)

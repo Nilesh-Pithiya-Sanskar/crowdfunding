@@ -42,7 +42,7 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
     # doc.insert(ignore_permissions=True)
 
     user = frappe.get_doc({"doctype": "User", "email": f"{email}", "first_name": f"{first_name}",
-                          "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}"})
+                          "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}", "role_profile_name": "Donor"})
     user.insert(ignore_permissions=True)
     frappe.db.commit()
     donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name} {last_name}",
@@ -72,7 +72,7 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     donor = frappe.db.get_value(
         "Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
     donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}",
-                              "date": today(), "amount": amount, "donation_item": item, "payment_id": payment_id, "anonymous": anonymous})
+                              "date": today(), "amount": amount, "donation_item": item, "payment_id": payment_id, "anonymous": anonymous, "paid": 1})
     donation.insert(ignore_permissions=True)
     frappe.db.commit()
 
@@ -179,6 +179,7 @@ def login_via_token(login_token: str):
 @frappe.whitelist(allow_guest=True)
 def login_with_whatsapp(phone):
     # if whatsapp integration
+    print("\n\n phone", phone, "\n\n")
     otp = generateOTP(4)
     # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
     doc = frappe.get_doc({"doctype": "Whatsapp OTP",
@@ -188,6 +189,7 @@ def login_with_whatsapp(phone):
 
     message = send_whatsapp_otp(phone)
     result = {"message": message, "number": phone}
+    # return result
     return message, phone
 
 
@@ -228,3 +230,46 @@ def verify_otp(number, otp):
     else:
         # OTP not match write your logic here
         return f'Your OTP is not match with your number: {number}'
+
+
+
+@frappe.whitelist(allow_guest=True)
+def create_payment_link(amount, name, email):
+    amount1 = amount + '00'
+    from sadbhavna_donatekart import razorpay
+    client = razorpay.Client(auth=("rzp_test_Adc0DsR6E8VV3t", "qxawCeu9WJSdW4XjEK8vqzWO"))
+    return client.payment_link.create({
+    "amount": int(amount1),
+    "currency": "INR",
+    "description": "Donation",
+    "customer": {
+        "name": name,
+        "email": email,
+    },
+    "notify": {
+        "sms": True,
+        "email": True
+    },
+    "reminder_enable": True,
+    # "notes": {
+    #     "policy_name": "Jeevan Bima"
+    # },
+    # "callback_url": f"http://crowdfunding.com:8001/api/method/sadbhavna_donatekart.api.api.verify_signature?amount={amount}",
+    "callback_url": f"https://crowdfunding.frappe.cloud/sadbhavna?amount={amount}",
+    "callback_method": "get"
+    })
+
+@frappe.whitelist(allow_guest=True)
+def verify_signature(amount, razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature):
+    from sadbhavna_donatekart import razorpay
+    client = razorpay.Client(auth=("rzp_test_Adc0DsR6E8VV3t", "qxawCeu9WJSdW4XjEK8vqzWO"))
+    response = client.utility.verify_payment_link_signature({
+    'payment_link_id': razorpay_payment_link_id,
+    'payment_link_reference_id': razorpay_payment_link_reference_id,
+    'payment_link_status': razorpay_payment_link_status,
+    'razorpay_payment_id': razorpay_payment_id,
+    'razorpay_signature': razorpay_signature
+    })
+    return response, amount
+    redirect_url = f"http://crowdfunding.com:8001/sadbhavna/donation-success-page/{amount}"
+    return response, redirect_url

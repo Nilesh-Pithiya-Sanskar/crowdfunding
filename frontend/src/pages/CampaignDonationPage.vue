@@ -560,8 +560,37 @@ import Footer from "../components/Footer.vue";
 import { createConditionalExpression } from '@vue/compiler-core';
 // import DonationDetail from "../components/DonationDetail.vue";
 // import DonationDetailRightside from "../components/DonationDetailRightSide.vue";
+
+
+// import Razorpay from 'razorpay';
+// const rzp = new Razorpay({
+//     key_id: 'rzp_test_Adc0DsR6E8VV3t',
+//     key_secret: 'qxawCeu9WJSdW4XjEK8vqzWO'
+// });
+
 export default {
     name: "CampaignDonation",
+    // metaInfo: {
+    //   script: [
+    //     { src: 'https://checkout.razorpay.com/v1/checkout.js', async: true, defer: true }
+    //   ],
+    // },
+    // head: {
+    //   script: [
+    //     { type: 'text/javascript', src: 'https://checkout.razorpay.com/v1/checkout.js', async: true, body: true}, // Insert in body
+    //     // with shorthand
+    //     { t: 'application/ld+json', i: '{ "@context": "http://schema.org" }' },
+    //     // ...
+    //   ],
+    // },
+//     mounted() {
+//     const recaptchaScript = document.createElement("script");
+//     recaptchaScript.setAttribute(
+//       "src",
+//       "https://checkout.razorpay.com/v1/checkout.js"
+//     );
+//     document.head.appendChild(recaptchaScript);
+//   },
     components: {
         // DonationDetail,
         // DonationDetailRightside
@@ -641,6 +670,18 @@ export default {
                     })
                 }
             }
+        },
+        get_payment_link(){
+            return{
+                method: "sadbhavna_donatekart.api.api.create_payment_link",
+                onSuccess: (res) =>{
+                    console.log("payment_link", res.short_url)
+                    window.location.href = res.short_url
+                },
+                onError: (error) =>{
+                    console.log("error", error)
+                }
+            }
         }
 
     },
@@ -674,38 +715,62 @@ export default {
             })
 
         },
-        donate(total_price, anonymous) {
-            if (!this.user.isLoggedIn()) {
-                console.log("if not logged in")
-                this.$router.push(`/sadbhavna/login`)
-                // return
-            }
-            else {
-                // call razor pay api
-                let status = "captured"
-                if (status == "captured") {
-                    let payment_id = "pay_L0nSsccovt6zyp"
+        // donate(total_price, anonymous) {
+        //     if (!this.user.isLoggedIn()) {
+        //         console.log("if not logged in")
+        //         this.$router.push(`/sadbhavna/login`)
+        //         // return
+        //     }
+        //     else {
+        //         console.log("total price", total_price)
+        //         console.log("anonymous", anonymous)
+        //         // call razor pay api
+        
+        //         // rzp.open(options)
 
-                    const cookie = Object.fromEntries(
-                        document.cookie
-                            .split("; ")
-                            .map((part) => part.split("="))
-                            .map((d) => [d[0], decodeURIComponent(d[1])])
-                    )
-                    this.$resources.set_details_in_doctype_after_donation.submit({
-                        user_id: cookie.user_id,
-                        campaign: this.campaign,
-                        item: this.item_cart,
-                        amount: this.total_price,
-                        payment_id: payment_id,
-                        anonymous: this.anonymous == true ? 1 : 0
-                    })
-                    // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
-                }
-                else {
-                    alert("Payment Not Done")
-                }
-            }
+
+        //         // ************************main code************************
+
+
+        //             const cookie = Object.fromEntries(
+        //                 document.cookie
+        //                     .split("; ")
+        //                     .map((part) => part.split("="))
+        //                     .map((d) => [d[0], decodeURIComponent(d[1])])
+        //             )
+        //             this.$resources.set_details_in_doctype_after_donation.submit({
+        //                 user_id: cookie.user_id,
+        //                 campaign: this.campaign,
+        //                 item: this.item_cart,
+        //                 amount: this.total_price,
+        //                 payment_id: payment_id,
+        //                 anonymous: this.anonymous == true ? 1 : 0
+        //             })
+        //             // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
+        //     }
+        // },
+
+        donate(total_price, anonymous) {
+            const cookie = Object.fromEntries(
+                document.cookie
+                    .split("; ")
+                    .map((part) => part.split("="))
+                    .map((d) => [d[0], decodeURIComponent(d[1])])
+            )
+            // console.log("cookies", cookie)
+            this.$resources.get_payment_link.submit({
+                name: cookie.full_name,
+                email: cookie.user_id,
+                amount: total_price,
+            })
+            this.$resources.set_details_in_doctype_after_donation.submit({
+                user_id: cookie.user_id,
+                campaign: this.campaign,
+                item: this.item_cart,
+                amount: this.total_price,
+                payment_id: payment_id,
+                anonymous: this.anonymous == true ? 1 : 0
+            })
         },
 
         // donate(total_price){

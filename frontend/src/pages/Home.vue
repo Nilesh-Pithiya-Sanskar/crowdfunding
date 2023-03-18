@@ -2,7 +2,7 @@
 <template>
   <!-- Header-->
 
-  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('../../src/assets/Inter/img/Frame1.jpg')">
+  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('../assets/Inter/img/Frame1.jpg')">
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">
@@ -772,6 +772,8 @@ import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import { inject, provide, ref } from "vue"
+import { useRoute } from 'vue-router'
+
 
 export default {
   name: 'Home',
@@ -784,8 +786,18 @@ export default {
   },
   setup() {
     const user = inject("user")
+    // console.log("param id", this.$route.params.razorpay_payment_id)
     return {
       user
+    }
+  },
+  mounted(){
+    const route = useRoute()    
+    if(route.query.razorpay_payment_id){
+      this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
+    }
+    else{
+      console.log("not found")
     }
   },
   data() {
@@ -803,11 +815,28 @@ export default {
       return{
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
         onSuccess:(res) => {
-          console.log("Success", res)
+          // console.log("Success", res)
           this.campaigns = res
         },
         onError(){
           console.log("Error")
+        }
+      }
+    },
+    verify_signature(){
+      return{
+        method: "sadbhavna_donatekart.api.api.verify_signature",
+        onSuccess:(res)=>{
+          console.log("res", res)
+          if(res[0]){
+            // this.$router.push(`/sadbhavna/donation-success-page/${res[1]}`)
+          }
+          else{
+            console.log("payment not done")
+          }
+        },
+        onError:(error)=>{
+          console.log("error", error)
         }
       }
     }
@@ -818,6 +847,16 @@ export default {
     },
     toggleTabsTestimonials: function (tabNumber) {
       this.openTabTestimonials = tabNumber
+    },
+    verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount){
+      this.$resources.verify_signature.submit({
+        razorpay_payment_id: razorpay_payment_id,
+        razorpay_payment_link_id: razorpay_payment_link_id,
+        razorpay_payment_link_reference_id: razorpay_payment_link_reference_id,
+        razorpay_payment_link_status: razorpay_payment_link_status,
+        razorpay_signature: razorpay_signature,
+        amount: amount
+      })
     },
     get_campaigns(category) {
       this.$resources.get_campaigns.submit({

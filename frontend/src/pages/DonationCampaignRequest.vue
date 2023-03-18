@@ -156,6 +156,7 @@ export default {
                             text: "Your Request is successfully sent to sadbhavna donatekart",
 							customIcon: "check",
 						})
+                    this.$router.go();
                 },
                 onError: (error) => {
                     console.log(error)

@@ -61,9 +61,9 @@ export default {
                 method: 'sadbhavna_donatekart.api.api.verify_otp',
                 onSuccess: (res) => {
                     console.log("verified", res)
-                    this.$router.push('/home')
+                    this.$router.push('/sadbhavna')
                 },
-                onerror: (error) => {
+                onError: (error) => {
                     console.log("error", error)
                 }
             }
