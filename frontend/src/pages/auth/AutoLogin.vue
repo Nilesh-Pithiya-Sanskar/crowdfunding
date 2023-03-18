@@ -4,8 +4,7 @@
   <div class="container mx-auto mb-[150px]">
 <div
           class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[498px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-          style="
-            background-image: url('../../src/assets/Inter/img/bg-tree.png');
+          style="background-image: url('../../src/assets/Inter/img/bg-tree.png');
           ">
         </div>
  <div class="container mx-auto h-full">
@@ -17,12 +16,12 @@
                     <div class="relative py-4 z-0 px-8">
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2" for="email">Enter WhatsApp Number</label>
-                            <input class="appearance-none hover:border-[#40b751] border-gray-600 rounded w-full py-2 px-3 text-grey-darker" v-model="email"
+                            <input class="appearance-none hover:border-[#40b751] border-gray-600 rounded w-full py-2 px-3 text-grey-darker" v-model="phone"
                                 type="number" >
-                            <span class="text-sm text-gray-400"> An OTP will be sent to this whats app number</span>
+                            <span class="text-sm text-gray-400"> An OTP will be sent to {{ phone }} whatsapp number</span>
                         </div>
                         <div class="mb-4">
-                            <button class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" >Login with Whatsapp</button>
+                            <button class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" @click="login_with_whatsapp()">Login with Whatsapp</button>
                         </div>
                         <div class="mb-4">
                             <div class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5"><p class="text-center mx-4 mb-0">Or</p></div>
@@ -36,16 +35,20 @@
                         <div class="mb-4">
                            <button class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login with Facebook</button>
                         </div>
-                        <div class="mb-4">
-                           <button class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login with Google</button>
-                        </div>
+                        <GoogleLogin :callback="login_with_google" class="w-full">
+                            <div class="mb-4">
+                                <button
+                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
+                                    with Google</button>
+                            </div>
+                        </GoogleLogin>
                         <div class="mb-4">
                            <div class="flex mb-10 justify-between">
                               <span class="text-gray-600">Forget password? <a class="text-[#40b751]" href="/login.html">Click here</a></span><a class="text-[#40b751]" href="registration.html">Register</a>
                            </div>
                         </div>
                         <div class="mb-4">
-                           <span class="block text-gray-600 text-center text-base  mb-2"><a class="text-[#40b751]" href="registration.html">Login </a> &nbsp;via ID Password</span>
+                           <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]" href="registration.html">Login </a> &nbsp;via ID Password</span>
                         </div>
                     </div>
                 </div>
@@ -79,10 +82,11 @@ export default {
     components: { Navbar, Footer },
     data() {
         return {
+            phone: '',
             // github,
             // google,
             // password: "",
-            // email: "",
+            email: "",
             // isLogin: false,
         };
     },
@@ -124,7 +128,7 @@ export default {
 
             console.log("asdfads", userData)
 
-            let url = `http://sadbhavnadonatekart.com:8080/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
+            let url = `https://crowdfunding.frappe.cloud/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
             fetch(url, {
                 method: 'GET'
             })
@@ -134,7 +138,8 @@ export default {
                         console.log("asdf", res)
                         let token = res.message
                         // this.$router.push('/home')
-                        window.location = 'http://sadbhavnadonatekart.com:8080/home'
+                        window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
+                        // https://crowdfunding.frappe.cloud/
                     });
                 })
                 .catch(function (error) {

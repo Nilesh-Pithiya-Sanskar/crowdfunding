@@ -230,3 +230,47 @@ def verify_otp(number, otp):
     else:
         # OTP not match write your logic here
         return f'Your OTP is not match with your number: {number}'
+
+
+
+@frappe.whitelist(allow_guest=True)
+def create_payment_link(amount, name, email):
+    amount = str(amount)
+    amount1 = amount + '00'
+    from sadbhavna_donatekart import razorpay
+    client = razorpay.Client(auth=("rzp_test_Adc0DsR6E8VV3t", "qxawCeu9WJSdW4XjEK8vqzWO"))
+    return client.payment_link.create({
+    "amount": int(amount1),
+    "currency": "INR",
+    "description": "Donation",
+    "customer": {
+        "name": name,
+        "email": email,
+    },
+    "notify": {
+        "sms": True,
+        "email": True
+    },
+    "reminder_enable": True,
+    # "notes": {
+    #     "policy_name": "Jeevan Bima"
+    # },
+    # "callback_url": f"http://crowdfunding.com:8001/api/method/sadbhavna_donatekart.api.api.verify_signature?amount={amount}",
+    "callback_url": f"https://crowdfunding.frappe.cloud/sadbhavna?amount={amount}",
+    "callback_method": "get"
+    })
+
+@frappe.whitelist(allow_guest=True)
+def verify_signature(amount, razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature):
+    from sadbhavna_donatekart import razorpay
+    client = razorpay.Client(auth=("rzp_test_Adc0DsR6E8VV3t", "qxawCeu9WJSdW4XjEK8vqzWO"))
+    response = client.utility.verify_payment_link_signature({
+    'payment_link_id': razorpay_payment_link_id,
+    'payment_link_reference_id': razorpay_payment_link_reference_id,
+    'payment_link_status': razorpay_payment_link_status,
+    'razorpay_payment_id': razorpay_payment_id,
+    'razorpay_signature': razorpay_signature
+    })
+    return response, amount
+    redirect_url = f"http://crowdfunding.com:8001/sadbhavna/donation-success-page/{amount}"
+    return response, redirect_url

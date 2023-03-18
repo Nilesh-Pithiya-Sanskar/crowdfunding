@@ -177,11 +177,12 @@ export default {
                 method: 'sadbhavna_donatekart.api.campaign.request_campaign',
                 onSuccess: (res) => {
                     // this.recent_donation = res
-                    this.$toast({
-                        title: "Success",
-                        text: "Your Request is successfully sent to sadbhavna donatekart",
-                        customIcon: "check",
-                    })
+                    
+							title: "Success",
+                            text: "Your Request is successfully sent to sadbhavna donatekart",
+							customIcon: "check",
+						})
+                    this.$router.go();
                 },
                 onError: (error) => {
                     console.log(error)
