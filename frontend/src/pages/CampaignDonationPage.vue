@@ -30,11 +30,13 @@
                         <!-- <div class="bg-green-500 text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md" style="width: 40%"> 40%</div> -->
                         <div class="bg-[#40b751] text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
                             :style="{ width: campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount + '%' }">
-                            {{ campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount }}%</div>
+                            {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
+                            }}%
+                        </div>
                     </div>
                     <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] justify-between font-bold">
-                        <p>Raised: {{ campaign_detail.data.raised_amount }}</p>
-                        <p>Goal: {{ campaign_detail.data.donation_amount }}</p>
+                        <p>Raised: {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
+                        <p>Goal: {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
                     </div>
                     <!-- <pre> -->
                     <!-- <code> -->
@@ -52,8 +54,8 @@
                     <div class="pb-8" v-for="products in campaign_detail.data.add_campaign_items">
                         <!-- {{ products }} -->
 
-                        <div class="block shadow-lg bg-white pl-5">
-                            <div class="flex flex-wrap items-center pt-10">
+                        <div class=" bg-white pl-5" style="box-shadow:0 0 10px 10px #f8f8f8;">
+                            <div class="flex items-center pt-10">
 
                                 <div class="">
 
@@ -82,8 +84,10 @@
                                             {{ products.about }}
                                         </p>
                                         <p class="text-gray-500 font-bold pb-2">
-                                            ₹ {{ products.price }}
+                                            ₹ {{ numberWithCommas(products.price) }}
                                         </p>
+                                        <!-- {{ numberWithCommas(1000000) }} -->
+                                        <!-- ₹ {{ "{:,.2f}".format(products.price) }}/- -->
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +233,7 @@
 
                     <div v-if="total_price != 0" class="text-center font-bold text-lg mt-5">
                         <div class="text-gray-600">Total Donation</div>
-                        <div class="text-[#40b751]">₹ {{ total_price }}</div>
+                        <div class="text-[#40b751]">₹ {{ numberWithCommas(total_price) }}</div>
                         <div>
                             <button
                                 class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
@@ -332,18 +336,18 @@
                     <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Donors</div>
 
 
-                    <div class="flex flex-wrap">
+                    <div class="flex flex-wrap" style="box-shadow:0 0 6px 6px #f8f8f8;">
                         <div class="w-full">
                             <ul class="flex mb-0 list-none flex-wrap flex-row">
                                 <li class="-mb-px flex-auto text-center">
-                                    <a class=" border border-solid text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
+                                    <a class=" text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
                                         v-on:click="toggleTabs(1)"
                                         v-bind:class="{ 'bg-gray-200': openTab !== 1, 'text-gray-500': openTab === 1 }">
                                         <i class="fas fa-space-shuttle text-base mr-1"></i> Recent
                                     </a>
                                 </li>
                                 <li class="-mb-px  flex-auto text-center">
-                                    <a class="border border-solid text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
+                                    <a class=" text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
                                         v-on:click="toggleTabs(2)"
                                         v-bind:class="{ 'bg-gray-200': openTab !== 2, 'text-gray-500': openTab === 2 }">
                                         <i class="fas fa-cog text-base mr-1"></i> most generous
@@ -351,7 +355,7 @@
                                 </li>
                             </ul>
 
-                            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                            <div class="relative flex flex-col min-w-0 break-words bg-white w-full rounded">
                                 <div class="px-4 py-5 flex-auto">
                                     <div class="tab-content tab-space overflow-y-auto h-60">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
@@ -359,7 +363,7 @@
                                             <!-- {{ recent_donation }} -->
                                             <div class="pb-6" v-for="donation in recent_donation">
 
-                                                <div class="grid grid-cols-[200px_minmax(70px,_1fr)_100px]">
+                                                <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
 
                                                     <div>
                                                         <div class="float-left pr-4">
@@ -381,12 +385,19 @@
                                                                     donation.donor_name }}</p>
                                                             <p v-else class="text-gray-900 leading-none text-lg font-bold">
                                                                 Anonymous</p>
-                                                            <p class="text-gray-600 text-sm">{{ donation.creation }}</p>
+                                                            <!-- <p class="text-gray-600 text-sm">
+                                                                {{
+                                                                    frappe.utils.get_datetime(donation.date).strftime('%d-%m-%Y')
+                                                                }}</p> -->
+                                                            <p class="text-gray-600 text-sm">{{ formatDate(donation.date) }}
+                                                            </p>
+                                                            <!-- {{ formatDate('2021-09-01T00:00:00-0400') }} -->
+                                                            <!-- {{ frappe.utils.get_datetime(employee_doc.date_of_joining).strftime(' %d-%m-%Y') }} -->
                                                         </div>
                                                     </div>
 
                                                     <div class="grid justify-end">
-                                                        <p class="">₹ {{ donation.amount }}</p>
+                                                        <p class="">₹ {{ numberWithCommas(donation.amount) }}</p>
                                                     </div>
 
                                                 </div>
@@ -554,6 +565,7 @@
 import { useRoute } from 'vue-router';
 import { inject } from 'vue';
 import { Avatar } from 'frappe-ui'
+
 import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
@@ -613,6 +625,8 @@ export default {
             tab2: 'this is tab two content',
             a: 70,
             qty: 0,
+            date: '',
+            price: '',
             item_cart: [],
             total_price: 0,
             anonymous: false
@@ -686,6 +700,14 @@ export default {
 
     },
     methods: {
+        numberWithCommas(x) {
+            return x.toLocaleString();
+        },
+        formatDate(dateString) {
+            const date = new Date(dateString);
+            // Then specify how you want your dates to be formatted
+            return new Intl.DateTimeFormat('default', { dateStyle: 'long' }).format(date);
+        },
         toggleTabs: function (tabNumber) {
             this.openTab = tabNumber
         },

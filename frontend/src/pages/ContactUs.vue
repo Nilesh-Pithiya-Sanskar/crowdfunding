@@ -51,136 +51,52 @@
                         <div class="grid grid-cols-2">
                             <div class="form-group pr-3 mb-6">
                                 <label class="block text-gray-700 text-sm mb-2" for="username">
-                                    First name
+                                    First name <span class="text-red-600">*</span>
                                 </label>
-                                <input v-model="first_name" type="text" class="form-control block
-                                  hover:border-[#40b751]
-                                  w-full
-                                  px-3
-                                  py-1.5
-                                  text-base
-                                  font-normal
-                                  text-gray-700
-                                  bg-white bg-clip-padding
-                                  border border-solid border-gray-300
-                                  rounded
-                                  transition
-                                  ease-in-out
-                                  m-0
-                                  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
-                                    id="exampleInput7">
-
+                                <input v-model="first_name" type="text" required
+                                    class="form-control block hover:border-[#40b751] w-full px-3  py-1.5  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition  ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
                             </div>
-
-
-
 
                             <div class="form-group pl-4 mb-6">
                                 <label class="block text-gray-700 text-sm mb-2" for="username">
                                     Last name
                                 </label>
-                                <input v-model="last_name" type="text" class="form-control block
-                                  hover:border-[#40b751]
-                                  w-full
-                                  px-3
-                                  py-1.5
-                                  text-base
-                                  font-normal
-                                  text-gray-700
-                                  bg-white bg-clip-padding
-                                  border border-solid border-gray-300
-                                  rounded
-                                  transition
-                                  ease-in-out
-                                  m-0
-                                  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
-                                    id="exampleInput7">
+                                <input v-model="last_name" type="text" required
+                                    class="form-control block hover:border-[#40b751] w-full  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition ease-in-out m-0  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
 
                             </div>
                         </div>
                         <div class="form-group mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Email
+                                Email <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="email" type="email" class="form-control block
-                                  hover:border-[#40b751]
-                                  w-full
-                                  px-3
-                                  py-1.5
-                                  text-base
-                                  font-normal
-                                  text-gray-700
-                                  bg-white bg-clip-padding
-                                  border border-solid border-gray-300
-                                  rounded
-                                  transition
-                                  ease-in-out
-                                  m-0
-                                  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
-                                id="exampleInput7">
+                            <input v-model="email_id" type="email" required
+                                class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
+                            <p class="text-red-600">{{ emailErrorMessage }}</p>
                         </div>
+
                         <div class="form-group mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Subject
+                                Subject <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="subject" type="text" class="form-control block
-                                  hover:border-[#40b751]
-                                  w-full
-                                  px-3
-                                  py-1.5
-                                  text-base
-                                  font-normal
-                                  text-gray-700
-                                  bg-white bg-clip-padding
-                                  border border-solid border-gray-300
-                                  rounded
-                                  transition
-                                  ease-in-out
-                                  m-0
-                                  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
-                                id="exampleInput8">
+                            <input v-model="subject" type="text" required
+                                class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
                         </div>
+
                         <div class="form-group mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="username">
                                 Message
                             </label>
-                            <textarea v-model="message" class="
-                                  hover:border-[#40b751]
-                                  form-control
-                                  block
-                                  w-full
-                                  px-3
-                                  py-5
-                                  text-base
-                                  font-normal
-                                  text-gray-700
-                                  bg-white bg-clip-padding
-                                  border border-solid border-gray-300
-                                  rounded
-                                  transition
-                                  ease-in-out
-                                  m-0
-                                  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
-                                " id="exampleFormControlTextarea13" rows="3"></textarea>
+                            <textarea v-model="message" required
+                                class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                rows="3"></textarea>
                         </div>
 
-                        <button type="submit" class="
-
-                                px-6
-                                py-2.5
-                                bg-[#40b751]
-                                text-white
-                                text-xs
-                                leading-tight
-                                uppercase
-                                rounded
-                                shadow-md
-                                hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-                                active:bg-blue-800 active:shadow-lg
-                                transition
-                                duration-150
-                                ease-in-out">Send Message</button>
+                        <button type="submit"
+                            class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
+                                                                                                                                                                                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                            @click="contact_us()">submit
+                        </button>
                     </form>
                 </div>
 
@@ -227,7 +143,65 @@ import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 
 export default {
-    name: "Login",
+    name: "Contact Us",
     components: { Navbar, Footer },
+    data() {
+        return {
+            first_name: '',
+            last_name: '',
+            email_id: '',
+            subject: '',
+            message: '',
+        }
+    },
+    watch: {
+        email_id(value) {
+            this.email_id = value;
+            this.validateEmail(value);
+        }
+    },
+    resources: {
+        contact_us() {
+            return {
+                method: 'sadbhavna_donatekart.api.contactus.contact_us',
+                onSuccess: (res) => {
+                    this.$toast({
+                        title: "Success",
+                        text: "Your message is successfully sent to sadbhavna donatekart",
+                        customIcon: "check",
+                    })
+
+                },
+                onError: (error) => {
+                    console.log(error)
+                    this.$toast({
+                        title: "Error",
+                        text: error,
+                        customIcon: "circle-fail",
+                        appearance: "denger",
+                    })
+                }
+            }
+        }
+    },
+    methods: {
+
+        validateEmail(email_id) {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_id)) {
+                this.emailErrorMessage = ''
+            } else {
+                this.emailErrorMessage = 'Invalid email!'
+            }
+        },
+        contact_us() {
+            this.$resources.contact_us.submit({
+                first_name: this.first_name,
+                last_name: this.last_name,
+                email_id: this.email_id,
+                subject: this.subject,
+                message: this.message,
+            })
+        }
+    },
 }
 </script>

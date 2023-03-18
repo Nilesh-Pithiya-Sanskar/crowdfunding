@@ -2,23 +2,29 @@
 <template>
   <!-- Header-->
 
-  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('../assets/Inter/img/Frame1.jpg')">
-    <Navbar />
-    <div class="container mx-auto h-full">
-      <div class="grid lg:grid-cols-2 pb-10 m-10">
+  <!-- <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('../../src/assets/Inter/img/Frame1.jpg')"> -->
+  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('../../src/assets/Inter/img/Frame1.jpg')">
+    <div class="">
+      <Navbar />
+      <div class="container mx-auto h-full">
+        <div class="grid lg:grid-cols-2 pb-10 m-10">
 
-        <div class="lg:pt-52 sm:pt-4 pr-0 lg:pr-10 tracking-wide">
-          <p style="text-shadow:3px 6px 6px #c9c9c9;"
-            class="text-[#40b751] font-sans text-center lg:text-left font-semibold leading-none text-[28px] md:text-[32px] lg:text-[43px] [text-shadow:3px 6px 6px #c9c9c9]">
-            Donate with
-            <span class="text-gray-700">100% Transparency</span>
-            on
-            <span class="text-gray-700">most trusted</span>
-            crowd funding platform of India.
-          </p>
-        </div>
-        <div class="md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
+          <div class="lg:pt-52 sm:pt-4 pr-0 lg:pr-10 tracking-wide">
+            <p style="text-shadow:3px 6px 6px #c9c9c9;"
+              class="text-[#40b751] font-sans text-center lg:text-left font-semibold leading-none text-[28px] md:text-[32px] lg:text-[43px] [text-shadow:3px 6px 6px #c9c9c9]">
+              Donate with
+              <span class="text-gray-700">100% Transparency</span>
+              on
+              <span class="text-gray-700">most trusted</span>
+              crowd funding platform of India.
+            </p>
+          </div>
+        <!-- <div class="md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
           <img src="../../src/assets/Inter/img/map2.png" class="h-48 md:h-80 lg:h-full w-48 md:w-80 lg:w-full" />
+                                                                                            </div> -->
+          <div class="md:pl-32 lg:pl-0 pl-0 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
+            <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
+          </div>
         </div>
       </div>
     </div>
@@ -26,26 +32,27 @@
 
   <!----------------------------------------->
 
-  
+
   <div class="container mx-auto h-full sm:p-4 lg:p-16 -mt-16 lg:-mt-36 pl-4 lg:pl-0 pr-4 lg:pr-0">
-      <div class="bg-white rounded-xl shadow-lg">
-      <div v-for="data in campaigns" >
-        <div  v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
+    <div class="bg-white rounded-xl shadow-lg">
+      <div v-for="data in campaigns">
+        <div v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           <div class="md:col-span-2 lg:col-span-1">
-               <img class="pl-3 pt-3 pb-1 md:h-80 lg:h-56 sm:w-full md:w-96 lg:w-96" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
+            <img class="pl-3 pt-3 pb-1 md:h-80 lg:h-56 sm:w-full md:w-96 lg:w-96" :src="data.campain_image" alt="Mountain"
+              @click="donate(data.name)">
           </div>
           <div class="md:col-span-2 lg:col-span-3 pr-0 lg:pr-16">
             <button
               class="bg-[#364958] text-base rounded-lg pl-4 pr-4 pt-2 pb-2 text-white mb-2 md:mt-3">Featured</button>
             <h5 class="text-[#364958] text-2xl font-medium mb-2">{{ data.campaign_title }}</h5>
             <p class="text-[#364958]">
-            {{ data.short_description }}
+              {{ data.short_description }}
             </p>
-              <button class="text-[#40b751] pt-3 font-bold" type="button" @click="donate(data.name)" >Donate Now</button>
+            <button class="text-[#40b751] pt-3 font-bold" type="button" @click="donate(data.name)">Donate Now</button>
           </div>
         </div>
-        </div>
-        </div>
+      </div>
+    </div>
 
     <!-- Categories -->
 
@@ -214,7 +221,8 @@
           <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
             <img class="w-full h-40 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
             <div class="pt-9 pr-9 pd-7 pl-9 ">
-              <div class="font-medium text-[#40b751] text-xl mb-2 truncate">Help us to Send Food{{ data.short_description
+              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines ">Help us to Send Food{{
+                data.short_description
               }}</div>
               <p class="text-gray-700 text-base truncate">
                 By: {{ data.ngo }}
@@ -225,7 +233,9 @@
                     data.donation_amount).toFixed(2) }}%</div>
               </div>
               <div class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-sm font-bold">
-                <span>Raised: {{ data.raised_amount }}</span><span>Goal: {{ data.donation_amount }}</span>
+                <span>Raised: {{ numberWithCommas(data.raised_amount) }}</span><span>Goal: {{
+                  numberWithCommas(data.donation_amount)
+                }}</span>
               </div>
               </p>
             </div>
@@ -811,14 +821,14 @@ export default {
     }
   },
   resources: {
-    get_campaigns(){
-      return{
+    get_campaigns() {
+      return {
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
         onSuccess:(res) => {
           // console.log("Success", res)
           this.campaigns = res
         },
-        onError(){
+        onError() {
           console.log("Error")
         }
       }
@@ -842,6 +852,9 @@ export default {
     }
   },
   methods: {
+    numberWithCommas(x) {
+      return x.toLocaleString();
+    },
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber
     },
