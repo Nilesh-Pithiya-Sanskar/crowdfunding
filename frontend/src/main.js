@@ -30,7 +30,8 @@ import vue3GoogleLogin from 'vue3-google-login';
 // import Razorpay from "razorpay"
 
 const gauthOption = {
-    clientId: '615226899593-b4jpeolmo526beqkiqvo1bf7ob06rhpb.apps.googleusercontent.com',
+    // clientId: '615226899593-b4jpeolmo526beqkiqvo1bf7ob06rhpb.apps.googleusercontent.com',
+    clientId: '1066491682846-6vikj94cs1bo0jg431chodcuj72d533p.apps.googleusercontent.com',
     scope: 'email',
     prompt: 'consent',
   }
