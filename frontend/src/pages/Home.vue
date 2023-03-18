@@ -221,8 +221,8 @@
               <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
                 <div v-if="data.raised_amount"
                   class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                  :style="{ width: data.raised_amount * 100 / data.donation_amount + '%' }"> {{ data.raised_amount * 100 /
-                    data.donation_amount }}%</div>
+                  :style="{ width: data.raised_amount * 100 / data.donation_amount + '%' }"> {{ (data.raised_amount * 100 /
+                    data.donation_amount).toFixed(2) }}%</div>
               </div>
               <div class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-sm font-bold">
                 <span>Raised: {{ data.raised_amount }}</span><span>Goal: {{ data.donation_amount }}</span>
