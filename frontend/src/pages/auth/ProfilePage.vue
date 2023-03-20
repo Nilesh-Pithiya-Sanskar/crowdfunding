@@ -4,78 +4,48 @@
       <Navbar />
       <div class="pb-4 bg-blueGray-200">
         <div class="container mx-auto px-4 pt-96">
-          <div
-            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
-          >
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
             <div class="px-6">
               <div class="flex flex-wrap justify-center">
-                <div
-                  class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center"
-                >
+                <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                   <div v-if="user_data.data.user_image" class="relative">
-                    <img
-                      :src="user_data.data.user_image"
-                      class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px"
-                    />
+                    <img :src="user_data.data.user_image"
+                      class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
                     <!-- <Avatar :imageURL="http://sadbhavnadonatekart.com:8080/files/students.svguser_data.user_image" label="Felix" size="lg" /> -->
                   </div>
                   <div v-else class="relative">
                     <div
-                      class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
-                    ></div>
+                      class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px">
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
-                  v-for="roles in user_data.data.roles"
-                >
-                  <div
-                    class="py-6 px-3 mt-32 sm:mt-0"
-                    v-if="roles.role == 'Donor'"
-                  >
+                <div class="lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center" v-for="roles in user_data.data.roles">
+                  <div class="py-6 px-3 mt-32 sm:mt-0" v-if="roles.role == 'Donor'">
                     <!-- <router-link to="/home"
                                         class="bg-green-500  uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded  sm:mr-2 mb-1 ease-linear transition-all duration-150"
                                         type="button">
                                         Donate More
                                     </router-link> -->
-                    <button
-                      v-if="!edit_profile"
-                      @click="edit()"
+                    <button v-if="!edit_profile" @click="edit()"
                       class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded lg:ml-0 md:ml-0 sm:ml-32 ease-linear transition-all duration-150"
-                      type="button"
-                    >
+                      type="button">
                       Edit Profile
                     </button>
                   </div>
                 </div>
-                <div
-                  v-if="user_data"
-                  v-for="roles in user_data.data.roles"
-                  class="w-full lg:w-4/12 px-4 lg:order-1"
-                >
-                  <div
-                    v-if="roles.role == 'Donor'"
-                    class="flex justify-center py-4 lg:pt-4 pt-8"
-                  >
+                <div v-if="user_data" v-for="roles in user_data.data.roles" class="w-full lg:w-4/12 px-4 lg:order-1">
+                  <div v-if="roles.role == 'Donor'" class="flex justify-center py-4 lg:pt-4 pt-8">
                     <div class="mr-4 p-3 text-center">
-                      <span
-                        class="text-xl font-bold block uppercase tracking-wide text-green-500"
-                      >
+                      <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ donor_count_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500"
-                        >Total Donation Campaign</span
-                      >
+                      <span class="text-sm text-blueGray-500">Total Donation Campaign</span>
                     </div>
                     <div class="mr-4 p-3 text-center">
-                      <span
-                        class="text-xl font-bold block uppercase tracking-wide text-green-500"
-                      >
+                      <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ donor_total_donation_amount }}
                       </span>
-                      <span class="text-sm text-blueGray-500"
-                        >Total Donate Amount</span
-                      >
+                      <span class="text-sm text-blueGray-500">Total Donate Amount</span>
                     </div>
                     <!-- <div class="lg:mr-4 p-3 text-center">
                                         <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
@@ -84,44 +54,29 @@
                                         <span class="text-sm text-blueGray-400">Comments</span>
                                     </div> -->
                   </div>
-                  <div
-                    v-else-if="roles.role == 'Ngo'"
-                    class="flex justify-center py-4 lg:pt-4 pt-8"
-                  >
+                  <div v-else-if="roles.role == 'Ngo'" class="flex justify-center py-4 lg:pt-4 pt-8">
                     <div class="mr-4 p-3 text-center">
-                      <span
-                        class="text-xl font-bold block uppercase tracking-wide text-green-500"
-                      >
+                      <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ campaign_report.total_live_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500"
-                        >Total Live Campaign</span
-                      >
+                      <span class="text-sm text-blueGray-500">Total Live Campaign</span>
                     </div>
                     <div class="mr-4 p-3 text-center">
-                      <span
-                        class="text-xl font-bold block uppercase tracking-wide text-blue-500"
-                      >
+                      <span class="text-xl font-bold block uppercase tracking-wide text-blue-500">
                         {{ campaign_report.total_pending_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500"
-                        >Total Pending Campaign</span
-                      >
+                      <span class="text-sm text-blueGray-500">Total Pending Campaign</span>
                     </div>
                     <div class="lg:mr-4 p-3 text-center">
-                      <span
-                        class="text-xl font-bold block uppercase tracking-wide text-red-500"
-                      >
+                      <span class="text-xl font-bold block uppercase tracking-wide text-red-500">
                         {{ campaign_report.total_rejected_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500"
-                        >Total Rejected Campaign</span
-                      >
+                      <span class="text-sm text-blueGray-500">Total Rejected Campaign</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="mt-12">
+              <div class="mt-32">
                 <div class="container mx-auto h-full">
                   <div class="w-full bg-grey-lightest">
                     <div class="container mx-auto py-0">
@@ -131,14 +86,10 @@
                         <form>
                           <div class="">
                             <div v-if="!edit_profile" class="text-center">
-                              <h3
-                                class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700"
-                              >
+                              <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
                                 {{ user_data.data.full_name }}
                               </h3>
-                              <div
-                                class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
-                              >
+                              <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                                 <div>{{ user_data.data.email }}</div>
                                 <div>{{ user_data.data.phone }}</div>
                               </div>
@@ -146,35 +97,18 @@
                             <div v-else class="text-center">
                               <!-- <div class="flex mb-4"> -->
                               <div
-                                class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center mb-4"
-                              >
+                                class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center mb-4">
                                 <div>
-                                  <label
-                                    class="block text-grey-darker text-sm font-bold mb-2"
-                                    for="first_name"
-                                    >First Name</label
-                                  >
-                                  <input
-                                    class="appearance-none form-control block border rounded w-full text-grey-darker"
-                                    v-model="first_name"
-                                    placeholder="Your first name"
-                                    type="text"
-                                    required
-                                  />
+                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">First
+                                    Name</label>
+                                  <input class="appearance-none form-control block border rounded w-full text-grey-darker"
+                                    v-model="first_name" placeholder="Your first name" type="text" required />
                                 </div>
                                 <div>
-                                  <label
-                                    class="block text-grey-darker text-sm font-bold mb-2"
-                                    for="last_name"
-                                    >Last Name</label
-                                  >
-                                  <input
-                                    class="appearance-none border form-control block rounded w-full text-grey-darker"
-                                    v-model="last_name"
-                                    type="text"
-                                    placeholder="Your last name"
-                                    required
-                                  />
+                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">Last
+                                    Name</label>
+                                  <input class="appearance-none border form-control block rounded w-full text-grey-darker"
+                                    v-model="last_name" type="text" placeholder="Your last name" required />
                                 </div>
                               </div>
                               <!-- </div> -->
@@ -188,32 +122,21 @@
                                                             required>
                                                     </div> -->
                               <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
-                                <label
-                                  class="block text-grey-darker text-sm font-bold mb-2"
-                                  for="number"
-                                  >Phone Number</label
-                                >
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">Phone
+                                  Number <span class="text-red-600">*</span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
-                                  v-model="phone"
-                                  type="number"
-                                  placeholder="Your phone number"
-                                  required
-                                />
+                                  v-model="phone" type="number" placeholder="Your phone number" required />
                               </div>
                               <!-- <div></div> -->
-                              <button
-                                @click="save()"
+                              <button @click="save()"
                                 class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded mr-2 mb-4 ease-linear transition-all duration-150"
-                                type="button"
-                              >
+                                type="button">
                                 Save
                               </button>
-                              <button
-                                @click="cancel()"
+                              <button @click="cancel()"
                                 class="bg-gray-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded mr-2 mb-4 ease-linear transition-all duration-150"
-                                type="button"
-                              >
+                                type="button">
                                 cancel
                               </button>
                               <!-- <div class="mb-4">
@@ -251,10 +174,7 @@
                             </div> -->
               <div v-if="user_data" v-for="roles in user_data.data.roles">
                 <div v-if="roles.role == 'Donor'">
-                  <div
-                    v-if="donation_details.data != ''"
-                    class="text-center pt-4 text-2xl text-gray-600"
-                  >
+                  <div v-if="donation_details.data != ''" class="text-center pt-4 text-2xl text-gray-600">
                     Your Donations
                   </div>
                   <div v-if="donation_details.data != ''" class="flex flex-col">
@@ -264,65 +184,43 @@
                           <table class="min-w-full">
                             <thead class="bg-white border-b">
                               <tr>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Campaign Name
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Amount
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Date
                                 </th>
                                 <!-- <th scope="col"
                                       class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                       Mode of Payment
                                   </th> -->
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Download 80G Certificate
                                 </th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr
-                                v-for="donation in donation_details.data"
-                                class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
-                              >
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                              <tr v-for="donation in donation_details.data"
+                                class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ donation.name }}
                                 </td>
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ donation.amount }}
                                 </td>
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ donation.date }}
                                 </td>
                                 <!-- <td
                                                                 class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                 {{ donation.mode_of_payment }}</td> -->
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap cursor-pointer"
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap cursor-pointer"
                                   @click="
                                     download_80g(donation.name, donation.date)
-                                  "
-                                >
+                                  ">
                                   Download
                                 </td>
                               </tr>
@@ -336,22 +234,15 @@
                     <div class="text-center font-bold text-gray-500">
                       Donate Item to see Donations and Download Certificate
                     </div>
-                    <div
-                      class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold"
-                    >
-                      <router-link to="/home"
-                        >Click Here To Explore Campaign</router-link
-                      >
+                    <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
+                      <router-link to="/home">Click Here To Explore Campaign</router-link>
                     </div>
                   </div>
                 </div>
                 <!-- if user role is ngo -->
                 <div v-else-if="roles.role == 'Ngo'">
                   <!-- {{ campaign_details }} -->
-                  <div
-                    v-if="campaign_details.data != ''"
-                    class="text-center text-2xl text-gray-600"
-                  >
+                  <div v-if="campaign_details.data != ''" class="text-center text-2xl text-gray-600">
                     Your Campaign
                   </div>
                   <div v-if="campaign_details.data != ''" class="flex flex-col">
@@ -361,83 +252,48 @@
                           <table class="min-w-full">
                             <thead class="bg-white border-b">
                               <tr>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Campaign Name
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Campaign Category
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Requested Amount
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Raised Amount
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Start Date
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   End Date
                                 </th>
-                                <th
-                                  scope="col"
-                                  class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                >
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                   Status
                                 </th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr
-                                v-for="campaign in campaign_details"
-                                class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
-                              >
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                              <tr v-for="campaign in campaign_details"
+                                class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ campaign.campaign_title }}
                                 </td>
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ campaign.campaign_category }}
                                 </td>
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ campaign.donation_amount }}
                                 </td>
-                                <td
-                                  class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap"
-                                >
+                                <td class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap">
                                   {{ campaign.raised_amount }}
                                 </td>
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ campaign.start_date }}
                                 </td>
-                                <td
-                                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                                >
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   {{ campaign.end_date }}
                                 </td>
                                 <!-- <td
@@ -447,21 +303,16 @@
                                 </td> -->
 
                                 <td
-                                  :class="['text-sm font-bold px-6 py-4 whitespace-nowrap', (campaign.status === 'Live' ? 'text-green-500' : ''), (campaign.status === 'Pending' ? 'text-blue-500' : ''), (campaign.status === 'Rejected' ? 'text-red-500' : ''), (campaign.status === 'Closed' ? 'text-orange-500' : '')]"
-                                >
+                                  :class="['text-sm font-bold px-6 py-4 whitespace-nowrap', (campaign.status === 'Live' ? 'text-green-500' : ''), (campaign.status === 'Pending' ? 'text-blue-500' : ''), (campaign.status === 'Rejected' ? 'text-red-500' : ''), (campaign.status === 'Closed' ? 'text-orange-500' : '')]">
                                   {{ campaign.status }}
                                 </td>
-                               
+
                               </tr>
                             </tbody>
                           </table>
                         </div>
-                        <div
-                          class="text-center text-sm leading-normal m-4 text-blue-400 font-bold"
-                        >
-                          <router-link to="/sadbhavna/request-campaign"
-                            >Request New Campaign</router-link
-                          >
+                        <div class="text-center text-sm leading-normal m-4 text-blue-400 font-bold">
+                          <router-link to="/sadbhavna/request-campaign">Request New Campaign</router-link>
                         </div>
                       </div>
                     </div>
@@ -470,12 +321,8 @@
                     <div class="text-center font-bold text-gray-500">
                       You don't have any campaign live yet.
                     </div>
-                    <div
-                      class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold"
-                    >
-                      <router-link to="/sadbhavna/request-campaign"
-                        >Click Here To Request A New Campaign</router-link
-                      >
+                    <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
+                      <router-link to="/sadbhavna/request-campaign">Click Here To Request A New Campaign</router-link>
                     </div>
                   </div>
                 </div>
