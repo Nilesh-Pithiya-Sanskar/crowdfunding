@@ -4,8 +4,10 @@
       <nav class="px-6 md:px-6 lg:px-6 sm:py-2 md:py-8 lg:py-8 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
-            <img src="../../src/assets/Inter/img/logo.png"
-              class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 mr-32 w-28 lg:w-48 h-16 lg:h-44 ml-0 lg:ml-6" />
+            <a href="/sadbhavna">
+              <img src="../../src/assets/Inter/img/logo.png"
+                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 mr-32 w-40 lg:w-48 h-16 lg:h-44 ml-0 lg:ml-6" />
+            </a>
           </div>
           <!-- Mobile menu button -->
           <div @click="showMenu = !showMenu" class="flex md:hidden">
@@ -28,7 +30,8 @@
             <a href="#" class="font-bold text-white hover:text-black">About</a>
           </li>
           <li>
-            <router-link to="/sadbhavna/request-campaign" class="font-bold text-white hover:text-black">Request a Campaign</router-link>
+            <router-link to="/sadbhavna/request-campaign" class="font-bold text-white hover:text-black">Request a
+              Campaign</router-link>
           </li>
           <li>
             <router-link to="/sadbhavna/contact-us" class="font-bold text-white hover:text-black">Contact</router-link>
