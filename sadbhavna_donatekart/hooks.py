@@ -142,7 +142,7 @@ app_license = "MIT"
 override_whitelisted_methods = {
 	# "frappe.desk.doctype.event.event.get_events": "sadbhavna_donatekart.event.get_events"
     # "frappe.integrations.oauth2_logins.login_via_google": "sadbhavna_donatekart.api.api.login_via_google",
-    "frappe.www.login.login_via_google": "sadbhavna_donatekart.api.api.login_via_google",
+    # "frappe.www.login.login_via_google": "sadbhavna_donatekart.api.api.login_via_google",
 }
 #
 # each overriding function accepts a `data` argument;

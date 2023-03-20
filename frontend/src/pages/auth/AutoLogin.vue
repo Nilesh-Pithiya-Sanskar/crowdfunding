@@ -35,13 +35,18 @@
                         <div class="mb-4">
                            <button class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login with Facebook</button>
                         </div>
-                        <GoogleLogin :callback="login_with_google" class="w-full">
+                        <!-- <GoogleLogin :callback="login_with_google" class="w-full">
                             <div class="mb-4">
                                 <button
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
                                     with Google</button>
                             </div>
-                        </GoogleLogin>
+                        </GoogleLogin> -->
+                        <div class="mb-4">                               
+                            <GoogleLogin :callback="login_with_google">
+                            </GoogleLogin>
+                        </div>
+
                         <div class="mb-4">
                            <div class="flex mb-10 justify-between">
                               <span class="text-gray-600">Forget password? <a class="text-[#40b751]" href="/login.html">Click here</a></span><a class="text-[#40b751]" href="registration.html">Register</a>
@@ -57,7 +62,7 @@
     </div>
     </div>
 
-
+    <!-- <GoogleLogin :callback="login_with_google" class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" prompt auto-login/> -->
 <!--<button @click="login_with_google">Login With Google</button>
 {{ isLogin }}-->
 
