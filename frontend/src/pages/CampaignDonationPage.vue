@@ -221,9 +221,6 @@
                                 </div>
                             </div>
                                  -->
-
-
-
                         <!-- ******************************************** -->
                     </div>
 
@@ -536,7 +533,6 @@
                                                 </span>
                                             </details>
                                         </div>
-
                                     </div>
                                 </div>
                             </section>
@@ -570,27 +566,6 @@ import { createConditionalExpression } from '@vue/compiler-core';
 
 export default {
     name: "CampaignDonation",
-    // metaInfo: {
-    //   script: [
-    //     { src: 'https://checkout.razorpay.com/v1/checkout.js', async: true, defer: true }
-    //   ],
-    // },
-    // head: {
-    //   script: [
-    //     { type: 'text/javascript', src: 'https://checkout.razorpay.com/v1/checkout.js', async: true, body: true}, // Insert in body
-    //     // with shorthand
-    //     { t: 'application/ld+json', i: '{ "@context": "http://schema.org" }' },
-    //     // ...
-    //   ],
-    // },
-//     mounted() {
-//     const recaptchaScript = document.createElement("script");
-//     recaptchaScript.setAttribute(
-//       "src",
-//       "https://checkout.razorpay.com/v1/checkout.js"
-//     );
-//     document.head.appendChild(recaptchaScript);
-//   },
     components: {
         // DonationDetail,
         // DonationDetailRightside
@@ -671,18 +646,18 @@ export default {
                 }
             }
         },
-        get_payment_link(){
-            return{
-                method: "sadbhavna_donatekart.api.api.create_payment_link",
-                onSuccess: (res) =>{
-                    console.log("payment_link", res.short_url)
-                    window.location.href = res.short_url
-                },
-                onError: (error) =>{
-                    console.log("error", error)
-                }
-            }
-        }
+        // get_payment_link(){
+        //     return{
+        //         method: "sadbhavna_donatekart.api.api.create_payment_link",
+        //         onSuccess: (res) =>{
+        //             console.log("payment_link", res.short_url)
+        //             window.location.href = res.short_url
+        //         },
+        //         onError: (error) =>{
+        //             console.log("error", error)
+        //         }
+        //     }
+        // }
 
     },
     methods: {
@@ -713,65 +688,120 @@ export default {
             this.$resources.get_recent_donation.submit({
                 name: name
             })
-
         },
-        // donate(total_price, anonymous) {
-        //     if (!this.user.isLoggedIn()) {
-        //         console.log("if not logged in")
-        //         this.$router.push(`/sadbhavna/login`)
-        //         // return
-        //     }
-        //     else {
-        //         console.log("total price", total_price)
-        //         console.log("anonymous", anonymous)
-        //         // call razor pay api
-        
-        //         // rzp.open(options)
-
-
-        //         // ************************main code************************
-
-
-        //             const cookie = Object.fromEntries(
-        //                 document.cookie
-        //                     .split("; ")
-        //                     .map((part) => part.split("="))
-        //                     .map((d) => [d[0], decodeURIComponent(d[1])])
-        //             )
-        //             this.$resources.set_details_in_doctype_after_donation.submit({
-        //                 user_id: cookie.user_id,
-        //                 campaign: this.campaign,
-        //                 item: this.item_cart,
-        //                 amount: this.total_price,
-        //                 payment_id: payment_id,
-        //                 anonymous: this.anonymous == true ? 1 : 0
-        //             })
-        //             // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
-        //     }
-        // },
-
         donate(total_price, anonymous) {
-            const cookie = Object.fromEntries(
-                document.cookie
-                    .split("; ")
-                    .map((part) => part.split("="))
-                    .map((d) => [d[0], decodeURIComponent(d[1])])
-            )
-            // console.log("cookies", cookie)
-            this.$resources.get_payment_link.submit({
-                name: cookie.full_name,
-                email: cookie.user_id,
-                amount: total_price,
-            })
-            this.$resources.set_details_in_doctype_after_donation.submit({
-                user_id: cookie.user_id,
-                campaign: this.campaign,
-                item: this.item_cart,
-                amount: this.total_price,
-                payment_id: payment_id,
-                anonymous: this.anonymous == true ? 1 : 0
-            })
+            if (!this.user.isLoggedIn()) {
+                console.log("if not logged in")
+                this.$router.push(`/sadbhavna/login`)
+                // return
+            }
+            else {
+                // call razor pay api
+                // rzp.open(options)
+                const cookie = Object.fromEntries(
+                    document.cookie
+                        .split("; ")
+                        .map((part) => part.split("="))
+                        .map((d) => [d[0], decodeURIComponent(d[1])])
+                )
+                var options = {
+                    "key": "rzp_test_Adc0DsR6E8VV3t", // Enter the Key ID generated from the Dashboard
+                    "amount": total_price * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "currency": "INR",
+                    "name": "Crowdfunding",
+                    "description": "Test Transaction",
+                    // "image": "",
+                    // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    handler: (response) => {
+                    console.log("response", response)
+                    this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
+
+                    // this.verifySignature(response);
+                    },
+                    // "handler": function (response){
+                       
+                    // },
+                    "prefill": {
+                        "name": `${cookie.full_name}`,
+                        "email": `${cookie.user_id}`,
+                    },
+                    "notes": {
+                        "address": "Razorpay Corporate Office"
+                    },
+                    "theme": {
+                        "color": "#40b751"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.on('payment.failed', function (response){
+                        alert(response.error.code);
+                        alert(response.error.description);
+                        alert(response.error.source);
+                        alert(response.error.step);
+                        alert(response.error.reason);
+                        alert(response.error.metadata.order_id);
+                        alert(response.error.metadata.payment_id);
+                });
+                rzp1.open();
+
+
+                // ************************main code************************
+                
+                
+                // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
+            }
         },
+
+        // async donate(total_price, anonymous) {
+        //   var options = {
+        //     key: 'rzp_test_Adc0DsR6E8VV3t',
+        //     amount: 3000,
+        //     currency: 'INR',
+        //     description: 'Payment description',
+        //     prefill: {
+        //       name: 'adsf',
+        //       email: 'asdf@gmail.com',
+        //       contact: '9865658956',
+        //     },
+        //     theme: {
+        //       color: '#000000', // Set your website theme color
+        //     },
+        //     handler: (response) => {
+        //       console.log("response", response)
+        //       // this.verifySignature(response);
+        //     },
+        //   };
+
+        //   var rzp = new Razorpay(options);
+        //   rzp.open();
+        // })
+        // .catch((err) => {
+        //   console.error(err);
+        // });
+
+
+
+            // const cookie = Object.fromEntries(
+            //     document.cookie
+            //         .split("; ")
+            //         .map((part) => part.split("="))
+            //         .map((d) => [d[0], decodeURIComponent(d[1])])
+            // )
+            // // console.log("cookies", cookie)
+            // this.$resources.get_payment_link.submit({
+            //     name: cookie.full_name,
+            //     email: cookie.user_id,
+            //     amount: total_price,
+            // })
+            // this.$resources.set_details_in_doctype_after_donation.submit({
+            //     user_id: cookie.user_id,
+            //     campaign: this.campaign,
+            //     item: this.item_cart,
+            //     amount: this.total_price,
+            //     payment_id: payment_id,
+            //     anonymous: this.anonymous == true ? 1 : 0
+            // })
+        // },
 
         // donate(total_price){
         //     //call razor pay api
@@ -790,7 +820,7 @@ export default {
 
         // }
 
-        set_details_in_doctype_after_donation(name, price) {
+        set_details_in_doctype_after_donation(total_price, anonymous, payment_id) {
             const cookie = Object.fromEntries(
                 document.cookie
                     .split("; ")
@@ -801,9 +831,21 @@ export default {
                 user_id: cookie.user_id,
                 campaign: this.campaign,
                 item: this.item_cart,
-                amount: this.total_price
+                amount: total_price,
+                payment_id: payment_id,
+                anonymous: anonymous == true ? 1 : 0
             })
+            // this.$resources.set_details_in_doctype_after_donation.submit({
+            //     user_id: cookie.user_id,
+            //     campaign: this.campaign,
+            //     item: this.item_cart,
+            //     amount: this.total_price,
+            //     payment_id: response.razorpay_payment_id,
+            //     anonymous: this.anonymous == true ? 1 : 0
+            // })
         },
+
+
         increment(item, rate, qty) {
             this.qty += 1
             let qty1 = 0

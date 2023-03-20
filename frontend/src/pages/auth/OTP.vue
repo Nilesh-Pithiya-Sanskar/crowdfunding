@@ -20,7 +20,7 @@
                             <button
                                 class="appearance-none border-gray-600 rounded w-auto text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 px-7 py-2 tracking-wide border border-green-500 hover:border-green-500 text-xs uppercase rounded"
                                 @click="verify_otp()"
-                                >Varify
+                                >Verify
                                 OTP</button>
                         </div>
                     </div>

@@ -791,15 +791,15 @@ export default {
       user
     }
   },
-  mounted(){
-    const route = useRoute()    
-    if(route.query.razorpay_payment_id){
-      this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
-    }
-    else{
-      console.log("not found")
-    }
-  },
+  // mounted(){
+  //   const route = useRoute()    
+  //   if(route.query.razorpay_payment_id){
+  //     this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
+  //   }
+  //   else{
+  //     console.log("not found")
+  //   }
+  // },
   data() {
     return {
       campaigns: [],
@@ -823,23 +823,23 @@ export default {
         }
       }
     },
-    verify_signature(){
-      return{
-        method: "sadbhavna_donatekart.api.api.verify_signature",
-        onSuccess:(res)=>{
-          console.log("res", res)
-          if(res[0]){
-            // this.$router.push(`/sadbhavna/donation-success-page/${res[1]}`)
-          }
-          else{
-            console.log("payment not done")
-          }
-        },
-        onError:(error)=>{
-          console.log("error", error)
-        }
-      }
-    }
+    // verify_signature(){
+    //   return{
+    //     method: "sadbhavna_donatekart.api.api.verify_signature",
+    //     onSuccess:(res)=>{
+    //       console.log("res", res)
+    //       if(res[0]){
+    //         // this.$router.push(`/sadbhavna/donation-success-page/${res[1]}`)
+    //       }
+    //       else{
+    //         console.log("payment not done")
+    //       }
+    //     },
+    //     onError:(error)=>{
+    //       console.log("error", error)
+    //     }
+    //   }
+    // }
   },
   methods: {
     toggleTabs: function (tabNumber) {
@@ -848,16 +848,16 @@ export default {
     toggleTabsTestimonials: function (tabNumber) {
       this.openTabTestimonials = tabNumber
     },
-    verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount){
-      this.$resources.verify_signature.submit({
-        razorpay_payment_id: razorpay_payment_id,
-        razorpay_payment_link_id: razorpay_payment_link_id,
-        razorpay_payment_link_reference_id: razorpay_payment_link_reference_id,
-        razorpay_payment_link_status: razorpay_payment_link_status,
-        razorpay_signature: razorpay_signature,
-        amount: amount
-      })
-    },
+    // verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount){
+    //   this.$resources.verify_signature.submit({
+    //     razorpay_payment_id: razorpay_payment_id,
+    //     razorpay_payment_link_id: razorpay_payment_link_id,
+    //     razorpay_payment_link_reference_id: razorpay_payment_link_reference_id,
+    //     razorpay_payment_link_status: razorpay_payment_link_status,
+    //     razorpay_signature: razorpay_signature,
+    //     amount: amount
+    //   })
+    // },
     get_campaigns(category) {
       this.$resources.get_campaigns.submit({
         category: category
@@ -895,9 +895,9 @@ export default {
       this.loading = true
       setTimeout(() => (this.loading = false), 2000)
     },
-    viewmore(name) {
-      this.$router.push(`/sadbhavna/campaign-donation/${name}`)
-    },
+    // viewmore(name) {
+    //   this.$router.push(`/sadbhavna/campaign-donation/${name}`)
+    // },
     donate(name) {
       // this.$router.push(`/sadbhavna/donate/${name}`)
       this.$router.push(`/sadbhavna/campaign-donation/${name}`)
