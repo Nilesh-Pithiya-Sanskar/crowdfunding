@@ -3,7 +3,7 @@
 
     <div class="container mx-auto mb-[150px]">
         <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[498px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style="background-image: url('../../src/assets/Inter/img/bg-tree.png');
+            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
                   ">
         </div>
         <div class="container mx-auto h-full">

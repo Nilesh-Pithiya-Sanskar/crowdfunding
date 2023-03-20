@@ -88,10 +88,10 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     else:
         frappe.db.set_value("Donation Campaign", campaign,
                             "raised_amount", total)
+    return amount
+
 
 # login with google
-
-
 @frappe.whitelist(allow_guest=True)
 def login_with_google(email, last_name='', first_name='', image_url=''):
     user_exists = frappe.db.get_value("User", filters={'email': email})

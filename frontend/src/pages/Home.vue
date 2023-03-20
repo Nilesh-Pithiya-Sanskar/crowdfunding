@@ -2,7 +2,7 @@
 <template>
   <!-- Header-->
 
-  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('../assets/Inter/img/Frame1.jpg')">
+  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">

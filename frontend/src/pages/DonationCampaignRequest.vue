@@ -4,13 +4,13 @@
         <div v-if="openTab == 1"
             class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[650px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
-                        background-image: url('../../src/assets/Inter/img/bg-tree.png');
+                        background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
                       ">
         </div>
         <div v-if="openTab == 2"
             class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[300px] sm:h-0 md:h-0 lg:h-0 xl:h-[643px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
-                        background-image: url('../../src/assets/Inter/img/bg-tree.png');
+                        background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
                       ">
         </div>
         <div class="container mx-auto h-full">

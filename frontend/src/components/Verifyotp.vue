@@ -5,7 +5,7 @@
     <div
           class="absolute bg-no-repeat z-1 sm:h-0 md:h-0 lg:h-0 xl:h-96 sm:w-0 md:w-0 lg:w-0 xl:w-80 sm:top-60 md:top-96 lg:top-80 xl:top-[350px] sm:right-0 md:right-5 lg:right-32 bg-no-repeat opacity-40 bg-white bg-cover"
           style="
-            background-image: url('../../src/assets/Inter/img/bg-tree.png');
+            background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
           ">
         </div>
 

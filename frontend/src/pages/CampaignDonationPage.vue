@@ -1,6 +1,6 @@
 <template>
     <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
-        style="background-image: url('../../src/assets/Inter/img/explore-campaign.jpg')">
+        style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
             <p class="text-[30px] md:text-[30px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-medium text-[#364958] leading-none"
@@ -617,11 +617,18 @@ export default {
         set_details_in_doctype_after_donation() {
             return {
                 method: "sadbhavna_donatekart.api.api.set_details_in_doctype_after_donation",
-                onSuccess: (res) => {
-                    this.$router.push(`/sadbhavna/donation-success-page/${this.total_price}`)
+                onSuccess: (d_amount) => {
                     this.item_cart = []
                     this.total_price = 0
                     this.qty = 0
+                //    console.log("res", res)
+                    this.$toast({
+                        title: "Success",
+                        text: `Your donation of ${d_amount} is successfull, check profile for more details`,
+                        customIcon: "check",
+                    })
+
+                    // this.$router.push(`/sadbhavna/donation-success-page/${this.total_price}`)
                     // alert("your donation is successfull")
                 },
                 onError: (error) => {
@@ -742,7 +749,7 @@ export default {
                     "currency": "INR",
                     "name": "Crowdfunding",
                     "description": "Test Transaction",
-                    // "image": "",
+                    "image": "https://crowdfunding.frappe.cloud/assets/sadbhavna_donatekart/frontend/assets/logo.2bd6bc2a.png",
                     // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     handler: (response) => {
                     console.log("response", response)

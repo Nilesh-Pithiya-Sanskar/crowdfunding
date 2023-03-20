@@ -21,7 +21,7 @@
                 </div>
                 <div class="lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center" v-for="roles in user_data.data.roles">
                   <div class="py-6 px-3 mt-32 sm:mt-0" v-if="roles.role == 'Donor'">
-                    <!-- <router-link to="/home"
+                    <!-- <router-link to="/sadbhavna"
                                         class="bg-green-500  uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded  sm:mr-2 mb-1 ease-linear transition-all duration-150"
                                         type="button">
                                         Donate More
@@ -235,7 +235,7 @@
                       Donate Item to see Donations and Download Certificate
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/home">Click Here To Explore Campaign</router-link>
+                      <router-link to="/sadbhavna">Click Here To Explore Campaign</router-link>
                     </div>
                   </div>
                 </div>
@@ -533,7 +533,7 @@
                                     <div class="text-center font-bold text-gray-500"> Donate Item to see Donations and
                                         Download Certificate </div>
                                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                                        <router-link to="/home">Click Here To Explore Campaign</router-link>
+                                        <router-link to="/sadbhavna">Click Here To Explore Campaign</router-link>
                                     </div>
                                 </div>
                             </div>
