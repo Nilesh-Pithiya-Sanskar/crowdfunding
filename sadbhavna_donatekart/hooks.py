@@ -9,7 +9,7 @@ app_license = "MIT"
 
 # Includes in <head>
 # ------------------
-fixtures = ["Custom Field"]
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/sadbhavna_donatekart/css/sadbhavna_donatekart.css"
 # app_include_js = "/assets/sadbhavna_donatekart/js/sadbhavna_donatekart.js"
