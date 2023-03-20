@@ -11,7 +11,7 @@
             <form>
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                  Email
+                  Email <span class="text-red-600">*</span>
                 </label>
                 <input v-model="email" type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -20,7 +20,7 @@
 
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                  Password
+                  Password <span class="text-red-600">*</span>
                 </label>
                 <input v-model="password" type="password"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -118,7 +118,7 @@
 
 
 
-<Footer />
+  <Footer />
 </template>
 
 <script>
@@ -152,11 +152,11 @@ export default {
         },
         onError: (error) => {
           this.$toast({
-							title: "Error",
-              text: "User Name or Password Incorrect",
-							customIcon: "circle-fail",
-							appearance: "denger",
-						})
+            title: "Error",
+            text: "User Name or Password Incorrect",
+            customIcon: "circle-fail",
+            appearance: "denger",
+          })
           this.email = "";
           this.password = "";
         },
@@ -172,11 +172,11 @@ export default {
         onError: (error) => {
           console.log("error", error)
           this.$toast({
-							title: "Error",
-              text: 'Something want Wrong!',
-							customIcon: "circle-fail",
-							appearance: "denger",
-						})
+            title: "Error",
+            text: 'Something want Wrong!',
+            customIcon: "circle-fail",
+            appearance: "denger",
+          })
         }
       }
     },

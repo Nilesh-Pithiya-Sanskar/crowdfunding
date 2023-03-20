@@ -39,18 +39,18 @@
           <li>
             <span class="group relative inline-block">
               <a href="#" class="font-bold text-white hover:text-black">Blog</a>
-              <ul class="absolute hidden pt-1  group-hover:block">
-                <li class=""><a class="whitespace-pre block bg-white py-2 px-4" href="#">Blog</a></li>
-                <li class=""><a class="whitespace-pre block bg-white py-2 px-4" href="#">Single - Blog</a></li>
+              <ul class="absolute hidden pt-4 group-hover:block">
+                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/sadbhavna/blog">Blog</a></li>
+                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>
               </ul>
             </span>
           </li>
           <li>
             <span class="group lg:inline-block">
               <a href="#" class="font-bold text-white hover:text-black">Page</a>
-              <ul class="absolute hidden group-hover:block">
-                <li class=""><a class="whitespace-pre block bg-white py-2 px-4" href="#">Elements</a></li>
-                <li class=""><a class="whitespace-pre block bg-white py-2 px-4" href="#">Cause</a></li>
+              <ul class="absolute hidden pt-4 group-hover:block">
+                <li class=""><a class="whitespace-pre block bg-white py-2 px-10" href="#">Elements</a></li>
+                <li class=""><a class="whitespace-pre block bg-white py-2 px-10" href="#">Cause</a></li>
               </ul>
             </span>
           </li>

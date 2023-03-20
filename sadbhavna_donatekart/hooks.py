@@ -10,6 +10,7 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 
+fixtures = ["Custom DocPerm", "Custom Field"]
 # include js, css files in header of desk.html
 # app_include_css = "/assets/sadbhavna_donatekart/css/sadbhavna_donatekart.css"
 # app_include_js = "/assets/sadbhavna_donatekart/js/sadbhavna_donatekart.js"
@@ -142,7 +143,7 @@ app_license = "MIT"
 override_whitelisted_methods = {
 	# "frappe.desk.doctype.event.event.get_events": "sadbhavna_donatekart.event.get_events"
     # "frappe.integrations.oauth2_logins.login_via_google": "sadbhavna_donatekart.api.api.login_via_google",
-    "frappe.www.login.login_via_google": "sadbhavna_donatekart.api.api.login_via_google",
+    # "frappe.www.login.login_via_google": "sadbhavna_donatekart.api.api.login_via_google",
 }
 #
 # each overriding function accepts a `data` argument;
