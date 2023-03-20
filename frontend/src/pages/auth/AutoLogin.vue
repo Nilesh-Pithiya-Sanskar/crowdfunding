@@ -4,7 +4,7 @@
     <div class="container mx-auto mb-[150px]">
         <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[498px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="background-image: url('../../src/assets/Inter/img/bg-tree.png');
-              ">
+                  ">
         </div>
         <div class="container mx-auto h-full">
             <div class="w-full pt-0 md:pt-5 lg:pt-12">
@@ -49,13 +49,18 @@
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
                                     with Facebook</button>
                             </div>
-                            <GoogleLogin :callback="login_with_google" class="w-full">
-                                <div class="mb-4">
-                                    <button
-                                        class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
-                                        with Google</button>
-                                </div>
-                            </GoogleLogin>
+                            <!-- <GoogleLogin :callback="login_with_google" class="w-full">
+                            <div class="mb-4">
+                                <button
+                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
+                                    with Google</button>
+                            </div>
+                        </GoogleLogin> -->
+                            <div class="mb-4">
+                                <GoogleLogin :callback="login_with_google">
+                                </GoogleLogin>
+                            </div>
+
                             <div class="mb-4">
                                 <div class="flex mb-10 justify-between">
                                     <span class="text-gray-600">Forget password? <a class="text-[#40b751]"
@@ -74,7 +79,7 @@
         </div>
     </div>
 
-
+    <!-- <GoogleLogin :callback="login_with_google" class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" prompt auto-login/> -->
     <!--<button @click="login_with_google">Login With Google</button>
 {{ isLogin }}-->
 
@@ -110,7 +115,7 @@ export default {
     resources: {
         // login_with_google() {
         //     return {
-        //         method: 'frappe.www.login.login_via_token',
+        //         method: 'frappe.https://www.login.login_via_token',
         //         onSuccess: () => {
         //             console.log("okey")
         //         },
