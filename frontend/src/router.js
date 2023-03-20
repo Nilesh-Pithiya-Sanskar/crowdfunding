@@ -1,7 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHistory
+} from 'vue-router'
 
-const routes = [
-  {
+const routes = [{
     path: '/sadbhavna',
     name: 'Home',
     component: () => import('@/pages/Home.vue'),
@@ -25,6 +27,15 @@ const routes = [
     path: '/sadbhavna/donate/:name&:price',
     name: 'Donate',
     component: () => import('@/pages/Donate.vue')
+  },
+  {
+    path: '/sadbhavna/blog',
+    name: 'Blog',
+    component: () => import('@/pages/Blog.vue')
+  }, {
+    path: '/sadbhavna/blog-post/:name',
+    name: 'BlogPost',
+    component: () => import('@/pages/auth/BlogPost.vue')
   },
   {
     path: '/sadbhavna/registration',
