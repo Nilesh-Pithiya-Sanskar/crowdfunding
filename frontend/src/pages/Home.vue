@@ -26,26 +26,27 @@
 
   <!----------------------------------------->
 
-  
+
   <div class="container mx-auto h-full sm:p-4 lg:p-16 -mt-16 lg:-mt-36 pl-4 lg:pl-0 pr-4 lg:pr-0">
-      <div class="bg-white rounded-xl shadow-lg">
-      <div v-for="data in campaigns" >
-        <div  v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
+    <div class="bg-white rounded-xl product-shodow">
+      <div v-for="data in campaigns">
+        <div v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           <div class="md:col-span-2 lg:col-span-1">
-               <img class="pl-3 pt-3 pb-1 md:h-80 lg:h-56 sm:w-full md:w-96 lg:w-96" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
+            <img class="pl-3 pt-3 pb-1 md:h-80 lg:h-56 sm:w-full md:w-96 lg:w-96" :src="data.campain_image" alt="Mountain"
+              @click="donate(data.name)">
           </div>
           <div class="md:col-span-2 lg:col-span-3 pr-0 lg:pr-16">
             <button
               class="bg-[#364958] text-base rounded-lg pl-4 pr-4 pt-2 pb-2 text-white mb-2 md:mt-3">Featured</button>
             <h5 class="text-[#364958] text-2xl font-medium mb-2">{{ data.campaign_title }}</h5>
             <p class="text-[#364958]">
-            {{ data.short_description }}
+              {{ data.short_description }}
             </p>
-              <button class="text-[#40b751] pt-3 font-bold" type="button" @click="donate(data.name)" >Donate Now</button>
+            <button class="text-[#40b751] pt-3 font-bold" type="button" @click="donate(data.name)">Donate Now</button>
           </div>
         </div>
-        </div>
-        </div>
+      </div>
+    </div>
 
     <!-- Categories -->
 
@@ -214,18 +215,21 @@
           <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
             <img class="w-full h-40 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
             <div class="pt-9 pr-9 pd-7 pl-9 ">
-              <div class="font-medium text-[#40b751] text-xl mb-2 truncate">Help us to Send Food{{ data.short_description
+              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">Help us to Send Food{{
+                data.short_description
               }}</div>
               <p class="text-gray-700 text-base truncate">
                 By: {{ data.ngo }}
               <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
                 <div v-if="data.raised_amount"
                   class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                  :style="{ width: data.raised_amount * 100 / data.donation_amount + '%' }"> {{ (data.raised_amount * 100 /
+                  :style="{ width: data.raised_amount * 100 / data.donation_amount + '%' }"> {{ (data.raised_amount * 100
+                    /
                     data.donation_amount).toFixed(2) }}%</div>
               </div>
               <div class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-sm font-bold">
-                <span>Raised: {{ data.raised_amount }}</span><span>Goal: {{ data.donation_amount }}</span>
+                <span>Raised: {{ numberWithCommas(data.raised_amount) }}</span><span>Goal: {{
+                  numberWithCommas(data.donation_amount) }}</span>
               </div>
               </p>
             </div>
@@ -791,12 +795,12 @@ export default {
       user
     }
   },
-  mounted(){
-    const route = useRoute()    
-    if(route.query.razorpay_payment_id){
+  mounted() {
+    const route = useRoute()
+    if (route.query.razorpay_payment_id) {
       this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
     }
-    else{
+    else {
       console.log("not found")
     }
   },
@@ -811,44 +815,47 @@ export default {
     }
   },
   resources: {
-    get_campaigns(){
-      return{
+    get_campaigns() {
+      return {
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
-        onSuccess:(res) => {
+        onSuccess: (res) => {
           // console.log("Success", res)
           this.campaigns = res
         },
-        onError(){
+        onError() {
           console.log("Error")
         }
       }
     },
-    verify_signature(){
-      return{
+    verify_signature() {
+      return {
         method: "sadbhavna_donatekart.api.api.verify_signature",
-        onSuccess:(res)=>{
+        onSuccess: (res) => {
           console.log("res", res)
-          if(res[0]){
+          if (res[0]) {
             // this.$router.push(`/sadbhavna/donation-success-page/${res[1]}`)
           }
-          else{
+          else {
             console.log("payment not done")
           }
         },
-        onError:(error)=>{
+        onError: (error) => {
           console.log("error", error)
         }
       }
     }
   },
   methods: {
+    numberWithCommas(x) {
+      return x.toLocaleString();
+    },
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber
     },
     toggleTabsTestimonials: function (tabNumber) {
       this.openTabTestimonials = tabNumber
     },
-    verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount){
+    verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount) {
       this.$resources.verify_signature.submit({
         razorpay_payment_id: razorpay_payment_id,
         razorpay_payment_link_id: razorpay_payment_link_id,
