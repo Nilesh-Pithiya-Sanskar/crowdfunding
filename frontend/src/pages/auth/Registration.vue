@@ -3,8 +3,8 @@
     <div class="container mx-auto h-full pb-[48px]">
         <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
-                background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-              ">
+                                                 background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
+                                              ">
         </div>
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
             <div class="container mx-auto py-0">
@@ -20,6 +20,7 @@
                                 <input
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                     v-model="first_name" type="text" required>
+                                <p class="text-red-600">{{ firstNameError }}</p>
                             </div>
                             <div class="w-1/2 ml-1">
                                 <label class="block text-gray-600 text-base  mb-2">Last
@@ -35,6 +36,7 @@
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                 v-model="email" type="email" required>
+                            <p class="text-red-600">{{ emailError }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Password <span
@@ -42,6 +44,7 @@
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                 v-model="password" type="password" required>
+                            <p class="text-red-600">{{ passwordError }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Confirm
@@ -49,6 +52,7 @@
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                 v-model="conform_password" type="password" required>
+                            <p class="text-red-600">{{ confirmPasswordError }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Phone
@@ -56,6 +60,7 @@
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                 v-model="phone_number" type="number" required>
+                            <p class="text-red-600">{{ phoneNumberError }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Pan
@@ -96,12 +101,18 @@ export default {
     data() {
         return {
             first_name: '',
+            firstNameError: '',
             last_name: '',
             email: '',
+            emailError: '',
             password: '',
+            passwordError: '',
             conform_password: '',
+            confirmPasswordError: '',
             phone_number: '',
-            pan_number: ''
+            phoneNumberError: '',
+            pan_number: '',
+            // error: '',
         }
     },
     resources: {
@@ -130,27 +141,62 @@ export default {
     },
     methods: {
         register() {
-            if (this.password == this.conform_password) {
-                this.$resources.register.submit({
-                    first_name: this.first_name,
-                    last_name: this.last_name,
-                    email: this.email,
-                    password: this.password,
-                    phone_number: this.phone_number,
-                    pan_number: this.pan_number
-                })
+            if (this.first_name == '') {
+                this.firstNameError = 'Invalid first name!'
             }
-            else {
-                // alert("Your password is not match")
-                this.$toast({
-                    title: "Error",
-                    text: "Your password is not match",
-                    customIcon: "circle-fail",
-                    appearance: "denger",
-                })
-                this.password = ''
-                this.conform_password = ''
+
+            if (this.email == '') {
+                this.emailError = 'Invalid email!'
             }
+
+            // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            //     this.emailError = ''
+            // } else {
+            //     this.emailError = 'Invalid email!'
+            // }
+
+            if (this.phone_number == '') {
+                this.phoneNumberError = 'Invalid password!'
+            }
+
+            if (this.password == '') {
+                this.passwordError = 'Invalid password!'
+            }
+
+            if (this.conform_password == '') {
+                this.confirmPasswordError = 'Invalid confirm password!'
+            }
+
+            this.$resources.register.submit({
+                first_name: this.first_name,
+                last_name: this.last_name,
+                email: this.email,
+                password: this.password,
+                phone_number: this.phone_number,
+                pan_number: this.pan_number
+            })
+
+            // if (this.password == this.conform_password) {
+            //     this.$resources.register.submit({
+            //         first_name: this.first_name,
+            //         last_name: this.last_name,
+            //         email: this.email,
+            //         password: this.password,
+            //         phone_number: this.phone_number,
+            //         pan_number: this.pan_number
+            //     })
+            // }
+            // else {
+            //     // alert("Your password is not match")
+            //     this.$toast({
+            //         title: "Error",
+            //         text: "Your password is not match",
+            //         customIcon: "circle-fail",
+            //         appearance: "denger",
+            //     })
+            //     this.password = ''
+            //     this.conform_password = ''
+            // }
         }
     }
 }
