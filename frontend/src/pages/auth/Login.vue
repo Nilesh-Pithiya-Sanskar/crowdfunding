@@ -198,9 +198,18 @@ export default {
   },
   methods: {
     login(email) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-        this.error = ''
-      } else {
+      // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      //   this.error = ''
+      // } else {
+      //   this.error = 'Email or Password incorrect!'
+      // }
+
+
+      if (this.email == '') {
+        this.error = 'Email or Password incorrect!'
+      }
+
+      if (this.password == '') {
         this.error = 'Email or Password incorrect!'
       }
 
