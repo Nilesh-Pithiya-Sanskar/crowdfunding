@@ -678,7 +678,8 @@ export default {
         onSuccess: (res) => {
           console.log('okey', res)
           let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
-          window.location = url
+          // window.location = url
+          window.open(url, "_blank");
         },
         onError: (error) => {
           console.log('somthing want wrong!', error)

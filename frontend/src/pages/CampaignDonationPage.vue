@@ -530,6 +530,38 @@
             </section>
         </div>
     </div>
+    <Dialog
+    :options="{
+      title: 'Donation Completed',
+      message: `Your donation of ${donated_amount} is successfully completed.`,
+      icon: {
+        name: 'smile',
+        appearance: 'success',
+      },
+      appearance: 'info',
+      size: 'lg',
+      actions: [
+        {
+          label: 'Get 80G Certificate',
+          appearance: 'success',
+          handler: ({ close }) => {
+            this.download_80g(donation_name)
+            close() // closes dialog
+          },
+        },
+        {
+          label: 'View Profile',
+          appearance: 'success',
+          handler: ({ close }) => {
+            this.view_profile()
+            close() // closes dialog
+          },
+        },
+        { label: 'Cancel' },
+      ],
+    }"
+    v-model="showDialog"
+  />
     <Footer />
 </template>
 
@@ -541,6 +573,7 @@ import { Avatar } from 'frappe-ui'
 import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
+import { Dialog } from 'frappe-ui'
 import { createConditionalExpression } from '@vue/compiler-core';
 // import DonationDetail from "../components/DonationDetail.vue";
 // import DonationDetailRightside from "../components/DonationDetailRightSide.vue";
@@ -559,12 +592,20 @@ export default {
         // DonationDetailRightside
         Navbar,
         Footer,
-        Avatar
+        Avatar,
+        Dialog
     },
     setup() {
         const user = inject("user")
+        const cookie = Object.fromEntries(
+                document.cookie
+                    .split("; ")
+                    .map((part) => part.split("="))
+                    .map((d) => [d[0], decodeURIComponent(d[1])])
+            )
         return {
-            user
+            user,
+            cookie
         }
     },
     data() {
@@ -579,7 +620,10 @@ export default {
             date: '',
             item_cart: [],
             total_price: 0,
-            anonymous: false
+            anonymous: false,
+            showDialog: false,
+            donated_amount: '',
+            donation_name: ''
         }
     },
     mounted() {
@@ -601,7 +645,22 @@ export default {
         //             console.log(error)
         //         }
         //     }
-        // }
+        // },
+
+        download_80g(){
+            return{
+                method: 'sadbhavna_donatekart.api.donor.download_80g',
+                onSuccess: (res) => {
+                // console.log('okey', res)
+                let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
+                // window.location = url
+                window.open(url, "_blank");
+                },
+                onError: (error) => {
+                console.log('somthing want wrong!', error)
+                },
+            }
+        },
 
         get_recent_donation() {
             return {
@@ -617,7 +676,7 @@ export default {
         set_details_in_doctype_after_donation() {
             return {
                 method: "sadbhavna_donatekart.api.api.set_details_in_doctype_after_donation",
-                onSuccess: (d_amount) => {
+                onSuccess: (res) => {
                     this.item_cart = []
                     this.total_price = 0
                     this.qty = 0
@@ -628,7 +687,11 @@ export default {
                     //     customIcon: "check",
                     // })
 
-                    this.$router.push(`/sadbhavna/donation-success-page/${this.d_amount}`)
+                    this.donated_amount = res[0]
+                    this.donation_name = res[1]
+                    this.showDialog = true
+
+                    // this.$router.push(`/sadbhavna/donation-success-page/${d_amount}`)
                     // alert("your donation is successfull")
                 },
                 onError: (error) => {
@@ -642,18 +705,6 @@ export default {
                 }
             }
         },
-        // get_payment_link(){
-        //     return{
-        //         method: "sadbhavna_donatekart.api.api.create_payment_link",
-        //         onSuccess: (res) =>{
-        //             console.log("payment_link", res.short_url)
-        //             window.location.href = res.short_url
-        //         },
-        //         onError: (error) =>{
-        //             console.log("error", error)
-        //         }
-        //     }
-        // }
 
     },
     methods: {
@@ -693,56 +744,14 @@ export default {
                 name: name
             })
         },
-        // donate(total_price, anonymous) {
-        //     if (!this.user.isLoggedIn()) {
-        //         console.log("if not logged in")
-        //         this.$router.push(`/sadbhavna/login`)
-        //         // return
-        //     }
-        //     else {
-        //         console.log("total price", total_price)
-        //         console.log("anonymous", anonymous)
-        //         // call razor pay api
-
-        //         // rzp.open(options)
-
-
-        //         // ************************main code************************
-
-
-        //             const cookie = Object.fromEntries(
-        //                 document.cookie
-        //                     .split("; ")
-        //                     .map((part) => part.split("="))
-        //                     .map((d) => [d[0], decodeURIComponent(d[1])])
-        //             )
-        //             this.$resources.set_details_in_doctype_after_donation.submit({
-        //                 user_id: cookie.user_id,
-        //                 campaign: this.campaign,
-        //                 item: this.item_cart,
-        //                 amount: this.total_price,
-        //                 payment_id: payment_id,
-        //                 anonymous: this.anonymous == true ? 1 : 0
-        //             })
-        //             // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
-        //     }
-        // },
-
         donate(total_price, anonymous) {
             if (!this.user.isLoggedIn()) {
-                console.log("if not logged in")
-                this.$router.push(`/sadbhavna/login`)
+                this.$router.push(`/sadbhavna/auto-login`)
                 // return
             }
             else {
                 // call razor pay api
                 // rzp.open(options)
-                const cookie = Object.fromEntries(
-                    document.cookie
-                        .split("; ")
-                        .map((part) => part.split("="))
-                        .map((d) => [d[0], decodeURIComponent(d[1])])
-                )
                 var options = {
                     "key": "rzp_test_Adc0DsR6E8VV3t", // Enter the Key ID generated from the Dashboard
                     "amount": total_price * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -752,7 +761,6 @@ export default {
                     "image": "https://crowdfunding.frappe.cloud/assets/sadbhavna_donatekart/frontend/assets/logo.2bd6bc2a.png",
                     // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     handler: (response) => {
-                    console.log("response", response)
                     this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
 
                     // this.verifySignature(response);
@@ -761,8 +769,8 @@ export default {
                        
                     // },
                     "prefill": {
-                        "name": `${cookie.full_name}`,
-                        "email": `${cookie.user_id}`,
+                        "name": `${this.cookie.full_name}`,
+                        "email": `${this.cookie.user_id}`,
                     },
                     "notes": {
                         "address": "Razorpay Corporate Office"
@@ -790,84 +798,9 @@ export default {
                 // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
             }
         },
-
-        // async donate(total_price, anonymous) {
-        //   var options = {
-        //     key: 'rzp_test_Adc0DsR6E8VV3t',
-        //     amount: 3000,
-        //     currency: 'INR',
-        //     description: 'Payment description',
-        //     prefill: {
-        //       name: 'adsf',
-        //       email: 'asdf@gmail.com',
-        //       contact: '9865658956',
-        //     },
-        //     theme: {
-        //       color: '#000000', // Set your website theme color
-        //     },
-        //     handler: (response) => {
-        //       console.log("response", response)
-        //       // this.verifySignature(response);
-        //     },
-        //   };
-
-        //   var rzp = new Razorpay(options);
-        //   rzp.open();
-        // })
-        // .catch((err) => {
-        //   console.error(err);
-        // });
-
-
-
-            // const cookie = Object.fromEntries(
-            //     document.cookie
-            //         .split("; ")
-            //         .map((part) => part.split("="))
-            //         .map((d) => [d[0], decodeURIComponent(d[1])])
-            // )
-            // // console.log("cookies", cookie)
-            // this.$resources.get_payment_link.submit({
-            //     name: cookie.full_name,
-            //     email: cookie.user_id,
-            //     amount: total_price,
-            // })
-            // this.$resources.set_details_in_doctype_after_donation.submit({
-            //     user_id: cookie.user_id,
-            //     campaign: this.campaign,
-            //     item: this.item_cart,
-            //     amount: this.total_price,
-            //     payment_id: payment_id,
-            //     anonymous: this.anonymous == true ? 1 : 0
-            // })
-        // },
-
-        // donate(total_price){
-        //     //call razor pay api
-        //     // onSuccess
-
-        // },
-
-        // get_campaign_donation_detail(name){
-        //     // axios.get('/api/resource/Donation Campaign/GIVE-TH-16-01-2023-0001').then((response) => {
-        //     //     console.log(response.data)
-        //     // })
-
-        //     this.$resources.get_campaign_donation_detail.submit({
-        // 		name: name
-        // 	})
-
-        // }
-
         set_details_in_doctype_after_donation(total_price, anonymous, payment_id) {
-            const cookie = Object.fromEntries(
-                document.cookie
-                    .split("; ")
-                    .map((part) => part.split("="))
-                    .map((d) => [d[0], decodeURIComponent(d[1])])
-            )
             this.$resources.set_details_in_doctype_after_donation.submit({
-                user_id: cookie.user_id,
+                user_id: this.cookie.user_id,
                 campaign: this.campaign,
                 item: this.item_cart,
                 amount: total_price,
@@ -884,6 +817,15 @@ export default {
             // })
         },
 
+        download_80g(donation_name){
+            this.$resources.download_80g.submit({
+                donor: this.cookie.user_id,
+                donation: donation_name,
+            })
+        },
+        view_profile(){
+            this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
+        },
 
         increment(item, rate, qty) {
             this.qty += 1

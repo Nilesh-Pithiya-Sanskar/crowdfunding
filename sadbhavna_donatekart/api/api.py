@@ -88,7 +88,11 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     else:
         frappe.db.set_value("Donation Campaign", campaign,
                             "raised_amount", total)
-    return amount
+    # donation = frappe.db.get_value("Donation", filters={'donor': user_id, 'campaign': campaign, 'donation_item': item, "payment_id": payment_id, 'date': today()}, fieldname=['name'])
+    # print("\n\n donation", donation, "\n\n")
+    donation = frappe.get_last_doc('Donation', filters={"payment_id": payment_id})
+
+    return amount, donation.name
 
 
 # login with google
@@ -212,8 +216,9 @@ def send_whatsapp_otp(phone):
 @frappe.whitelist(allow_guest=True)
 def verify_otp(number, otp):
     data = frappe.db.get_value("Whatsapp OTP", filters={
-                               "number": number, "otp": otp, "status": "Sent"})
+                               "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
     if data:
+        frappe.db.set_value("Whatsapp OTP", data, {"status": "Verified"})
         user = frappe.db.get_value(
             "User", filters={"phone": number}, fieldname=['name'])
         if user:
