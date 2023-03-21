@@ -42,9 +42,21 @@ fixtures = ["Custom DocPerm", "Custom Field"]
 # home_page = "login"
 
 # website user home page (by Role)
+
 # role_home_page = {
-#	"Role": "home_page"
+# 	"Role": "home_page"
 # }
+
+website_route_rules = [
+	# Desk
+	{"from_route": "/sadbhavna/<path:app_path>", "to_route": "sadbhavna"},
+	# Customer Portal
+	# {"from_route": "/support/<path:app_path>", "to_route": "frappedesk"},
+]
+
+website_redirects = [
+  {"source": "/", "target": "/sadbhavna"},
+]
 
 # Generators
 # ----------

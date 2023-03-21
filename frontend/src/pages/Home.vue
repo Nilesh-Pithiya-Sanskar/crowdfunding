@@ -209,9 +209,9 @@
     </div>
 
     <!--Cards-->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
       <div v-for="data in campaigns">
-        <div class="pb-5 md:pb-10 lg:pb-10 pt-5 md:pt-4 lg:pt-10 grid ">
+        <div class="pt-5 md:pt-4 lg:pt-10 grid ">
           <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
             <img class="w-full h-52 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
             <div class="pt-9 pr-9 pd-7 pl-9 ">

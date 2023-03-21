@@ -63,14 +63,16 @@
 
                             <div class="mb-4">
                                 <div class="flex mb-10 justify-between">
-                                    <span class="text-gray-600">Forget password? <a class="text-[#40b751]"
-                                            href="/login.html">Click here</a></span><a class="text-[#40b751]"
-                                        href="registration.html">Register</a>
+                                    <span class="text-gray-600">Forget password? 
+                                        <a class="text-[#40b751]" href="/sadbhavna/login">Click here</a>
+                                    </span>
+                                    <a class="text-[#40b751]"
+                                        href="/sadbhavna/registration">Register</a>
                                 </div>
                             </div>
                             <div class="mb-4">
                                 <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                        href="registration.html">Login </a> &nbsp;via ID Password</span>
+                                        href="/sadbhavna/login">Login </a> &nbsp;via ID Password</span>
                             </div>
                         </div>
                     </div>
@@ -141,14 +143,14 @@ export default {
     },
     methods: {
         login_with_google: (response) => {
-            console.log("data", response)
+            // console.log("data", response)
             let userData = decodeCredential(response.credential)
             let email = userData.email
             let first_name = userData.family_name
             let last_name = userData.given_name
             let image_url = userData.picture
 
-            console.log("asdfads", userData)
+            // console.log("asdfads", userData)
 
             let url = `https://crowdfunding.frappe.cloud/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
             fetch(url, {
@@ -156,8 +158,8 @@ export default {
             })
                 .then(response => {
                     response.json().then(res => {
-                        console.log("asdf", res.message)
-                        console.log("asdf", res)
+                        // console.log("asdf", res.message)
+                        // console.log("asdf", res)
                         let token = res.message
                         // this.$router.push('/home')
                         window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'

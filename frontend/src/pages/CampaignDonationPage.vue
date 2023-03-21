@@ -622,13 +622,13 @@ export default {
                     this.total_price = 0
                     this.qty = 0
                 //    console.log("res", res)
-                    this.$toast({
-                        title: "Success",
-                        text: `Your donation of ${d_amount} is successfull, check profile for more details`,
-                        customIcon: "check",
-                    })
+                    // this.$toast({
+                    //     title: "Success",
+                    //     text: `Your donation of ${d_amount} is successfull, check profile for more details`,
+                    //     customIcon: "check",
+                    // })
 
-                    // this.$router.push(`/sadbhavna/donation-success-page/${this.total_price}`)
+                    this.$router.push(`/sadbhavna/donation-success-page/${this.d_amount}`)
                     // alert("your donation is successfull")
                 },
                 onError: (error) => {

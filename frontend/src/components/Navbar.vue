@@ -61,7 +61,7 @@
           <li>
             <button v-if="this.user.isLoggedIn()" @click="logout()"
               class="bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">Logout</button>
-            <button v-else @click="this.$router.push(`/sadbhavna/login`)"
+            <button v-else @click="this.$router.push(`/sadbhavna/auto-login`)"
               class="bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">Login</button>
           </li>
         </ul>

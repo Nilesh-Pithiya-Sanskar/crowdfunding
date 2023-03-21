@@ -26,7 +26,7 @@
                                 type="number" >
                         </div>
                         <div class="mb-4">
-                           <button class="cursor-pointer appearance-none border-gray-600 rounded w-auto text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] px-7 py-3 tracking-wide border border-[#40b751] hover:border-[#40b751] text-xs uppercase rounded">Varify OTP</button>
+                           <button class="cursor-pointer appearance-none border-gray-600 rounded w-auto text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] px-7 py-3 tracking-wide border border-[#40b751] hover:border-[#40b751] text-xs uppercase rounded">Verify OTP</button>
                         </div>
                        </div>
                    </div>

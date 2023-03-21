@@ -4,7 +4,7 @@
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-12 bg-grey-lightest">
             <div class="container mx-auto py-0">
                 <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-                    <div class="py-8 px-10 text-gray-600 text-black text-center text-4xl">Varify your contact detail
+                    <div class="py-8 px-10 text-gray-600 text-black text-center text-4xl">Verify your contact detail
                     </div>
                     <div class="py-4 px-8">
                         <div class="mb-7">
