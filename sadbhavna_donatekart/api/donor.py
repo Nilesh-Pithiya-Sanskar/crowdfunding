@@ -1,11 +1,14 @@
 import frappe
+from frappe.utils import today
 
 # @frappe.whitelist(allow_guest=True)
 # def get_recent_donation(name):
 #     return frappe.db.get_value("Donation", filters={"campaign": name, "anonymous": 0})
 
 @frappe.whitelist(allow_guest=True)
-def download_80g(donor, donation, date):
+def download_80g(donor, donation, date=''):
+    if date == '':
+        date = today()
     donor = frappe.db.get_value("Donor", filters={"email": donor}, fieldname=["name"])
     data = frappe.db.get_value("Tax Exemption 80G Certificate", filters={"donor": donor, "date": date, "donation": donation}, fieldname=['name'])
     if data:
