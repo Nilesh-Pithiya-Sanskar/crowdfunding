@@ -49,8 +49,6 @@
     </div>
 
     <!-- Categories -->
-
-
     <div class="text-center mt-10">
       <h2 class="text-3xl font-bold text-[#40b751] mb-2">Categories</h2>
       <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
@@ -209,13 +207,13 @@
     </div>
 
     <!--Cards-->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
       <div v-for="data in campaigns">
-        <div class="pt-5 md:pt-4 lg:pt-10 grid ">
-          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[396px] lg:max-w-sm rounded overflow-hidden shadow-lg">
             <img class="w-full h-52 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
-            <div class="pt-9 pr-9 pd-7 pl-9 ">
-              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ data.campaign_title }}</div>
+            <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
+              <div class="font-medium text-[#40b751] text-xl mb-2 truncate">{{ data.campaign_title }}</div>
               <p class="text-gray-700 text-base truncate">
                 By: {{ data.ngo }}
               <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
