@@ -48,13 +48,13 @@
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
                                     with Facebook</button>
                             </div>
-                            <GoogleLogin :callback="login_with_google" class="w-full">
+                            <!-- <GoogleLogin :callback="login_with_google" class="w-full">
                             <div class="mb-4">
                                 <button
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
                                     with Google</button>
                             </div>
-                        </GoogleLogin>
+                        </GoogleLogin> -->
                             <div class="mb-4">
                                 <GoogleLogin :callback="login_with_google">
                                 </GoogleLogin>
@@ -83,6 +83,14 @@
     <!--<button @click="login_with_google">Login With Google</button>
 {{ isLogin }}-->
 
+<!-- <div>-----------------------------------</div> -->
+    <facebook-login class="button"
+      appId="326022817735322"
+      @login="onLogin"
+      @logout="onLogout"
+      @sdk-loaded="sdkLoaded">
+    </facebook-login>
+<!-- <div>-----------------------------------</div> -->
     <Footer />
 </template>
   
@@ -95,10 +103,11 @@ import Navbar from "../../components/Navbar.vue";
 import Footer from "../../components/Footer.vue";
 // import { ValidationProvider } from 'vee-validate';
 
+import facebookLogin from 'facebook-login-vuejs';
 
 export default {
     name: "Auto Login",
-    components: { Navbar, Footer },
+    components: { Navbar, Footer, facebookLogin },
 
     data() {
         return {
@@ -108,6 +117,13 @@ export default {
             // password: "",
             email: "",
             // isLogin: false,
+
+            // idImage, loginImage, mailImage, faceImage,
+            isConnected: false,
+            name: '',
+            email: '',
+            personalID: '',
+            FB: undefined
         };
     },
     resources: {
@@ -138,6 +154,30 @@ export default {
         }
     },
     methods: {
+
+        getUserData() {
+      this.FB.api('/me', 'GET', { fields: 'id,name,email' },
+        userInformation => {
+          console.warn("data api",userInformation)
+          this.personalID = userInformation.id;
+          this.email = userInformation.email;
+          this.name = userInformation.name;
+        }
+      )
+    },
+    sdkLoaded(payload) {
+      this.isConnected = payload.isConnected
+      this.FB = payload.FB
+      if (this.isConnected) this.getUserData()
+    },
+    onLogin() {
+      this.isConnected = true
+      this.getUserData()
+    },
+    onLogout() {
+      this.isConnected = false;
+    },
+        
         login_with_google: (response) => {
             // console.log("data", response)
             let userData = decodeCredential(response.credential)
