@@ -1,9 +1,13 @@
 
 <template>
   <!-- Header-->
+  
+
 
   <div class="bg-no-repeat  bg-cover bg-center "
     style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
+
+
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">
@@ -29,7 +33,7 @@
 
 
   <div class="container mx-auto h-full sm:p-4 lg:p-16 -mt-16 lg:-mt-36 pl-4 lg:pl-0 pr-4 lg:pr-0">
-    <div class="bg-white rounded-xl product-shodow">
+    <!-- <div class="bg-white rounded-xl product-shodow">
       <div v-for="data in campaigns">
         <div v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           <div class="md:col-span-2 lg:col-span-1">
@@ -47,11 +51,13 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <div class="bg-white rounded-xl shadow-lg">
+        <Sliders :featured_campaigns="featured_campaigns" :interval="3000"/>
     </div>
 
     <!-- Categories -->
-
-
     <div class="text-center mt-10">
       <h2 class="text-3xl font-bold text-[#40b751] mb-2">Categories</h2>
       <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
@@ -210,13 +216,13 @@
     </div>
 
     <!--Cards-->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
       <div v-for="data in campaigns">
-        <div class="pt-5 md:pt-4 lg:pt-10 grid ">
-          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[396px] lg:max-w-sm rounded overflow-hidden shadow-lg">
             <img class="w-full h-52 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
-            <div class="pt-9 pr-9 pd-7 pl-9 ">
-              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ data.campaign_title }}</div>
+            <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
+              <div class="font-medium text-[#40b751] text-xl mb-2 truncate">{{ data.campaign_title }}</div>
               <p class="text-gray-700 text-base truncate">
                 By: {{ data.ngo }}
               <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
@@ -248,415 +254,7 @@
 
   <!--Testimonials-->
 
-  <div class="bg-[#ebf8ec]">
-    <div class="container mx-auto h-full">
-      <div class="text-center mt-10">
-        <h2 class="text-3xl pt-20 font-black text-[#40b751] mb-2">Testimonials</h2>
-        <p class="text-[#364958] text-[15px] font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
-          voluptate!</p>
-      </div>
-
-      <div class="flex border-b-2 ml-4 mr-8 border-b-solid border-gray-200 flex-wrap justify-center mt-5">
-        <div class="">
-          <ul class="flex mb-0 list-none flex-wrap pt-3 flex-row">
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[30px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
-                v-on:click="toggleTabsTestimonials(1)"
-                v-bind:class="{ 'bg-white': openTabTestimonials !== 1, 'bg-[#40b751] text-white': openTabTestimonials === 1 }">
-                <i class="fas fa-space-shuttle text-base mr-1"></i> Celebrities
-              </a>
-            </li>
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[40px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
-                v-on:click="toggleTabsTestimonials(2)"
-                v-bind:class="{ 'bg-white': openTabTestimonials !== 2, 'bg-[#40b751] text-white': openTabTestimonials === 2 }">
-                <i class="fas fa-cog text-base mr-1"></i> Donors
-              </a>
-            </li>
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
-                v-on:click="toggleTabsTestimonials(3)"
-                v-bind:class="{ 'bg-white': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
-                <i class="fas fa-cog text-base mr-1"></i> NGOs
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="flex flex-col min-w-0 break-words w-full">
-        <div class=" px-4 py-5 flex-auto">
-          <div class="tab-content tab-space">
-            <div v-bind:class="{ 'hidden': openTabTestimonials !== 1, 'block': openTabTestimonials === 1 }">
-              <p>
-              <div class="grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll  overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 1
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 1
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 1
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </p>
-            </div>
-            <div v-bind:class="{ 'hidden': openTabTestimonials !== 2, 'block': openTabTestimonials === 2 }">
-              <p>
-
-
-              <div class="grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 2
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                        also the leap into electronic typesetting, remaining essentially unchanged.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 2
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                        also the leap into electronic typesetting, remaining essentially unchanged.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 2
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                        also the leap into electronic typesetting, remaining essentially unchanged.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </p>
-            </div>
-
-            <div v-bind:class="{ 'hidden': openTabTestimonials !== 3, 'block': openTabTestimonials === 3 }">
-              <p>
-
-
-              <div class="grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 3
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                        also the leap into electronic typesetting, remaining essentially unchanged.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 3
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                        also the leap into electronic typesetting, remaining essentially unchanged.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
-                    <div class="flex flex-wrap justify-center">
-                      <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                        <div class="absolute">
-                          <img alt="..." src="../../src/assets/Inter/img/person_1.jpg"
-                            class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                        <div class="py-8 px-3 mt-0 md:mt-0 lg:mt-32 sm:mt-0">
-
-                        </div>
-                      </div>
-                      <div class="w-full lg:w-4/12 px-4 lg:order-1">
-
-                      </div>
-                    </div>
-                    <div class="text-left mt-0 pb-0">
-                      <h3 class="text-[20px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
-                        Name Tab 3
-                      </h3>
-                      <div
-                        class="text-[12px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
-                        <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                        Designation
-                      </div>
-                      <div class="text-[14px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                        also the leap into electronic typesetting, remaining essentially unchanged.
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Testimonials/>
 
   <!--Featured In-->
 
@@ -767,7 +365,6 @@
       </div>
     </div>
   </div>
-
   <Footer />
 </template>
 
@@ -775,7 +372,9 @@
 import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
-import { inject, provide, ref } from "vue"
+import { inject, provide, ref } from "vue";
+import Sliders from "../components/Sliders.vue";
+import Testimonials from "../components/Testimonials.vue";
 import { useRoute } from 'vue-router'
 
 
@@ -783,10 +382,13 @@ export default {
   name: 'Home',
   created() {
     this.get_campaigns()
+    this.get_featured_campaigns()
   },
   components: {
     Navbar,
-    Footer
+    Footer,
+    Sliders,
+    Testimonials,
   },
   setup() {
     const user = inject("user")
@@ -812,6 +414,7 @@ export default {
       selection: 1,
       openTab: 1,
       openTabTestimonials: 1,
+      featured_campaigns: []
 
     }
   },
@@ -828,6 +431,18 @@ export default {
         }
       }
     },
+    get_featured_campaigns(){
+      return{
+        method: '/api/method/sadbhavna_donatekart.api.campaign.get_featured_campaigns',
+        onSuccess: (res) => {
+          // console.log("Success", res)
+          this.featured_campaigns = res
+        },
+        onError() {
+          console.log("Error")
+        }
+      }
+    }
     // verify_signature(){
     //   return{
     //     method: "sadbhavna_donatekart.api.api.verify_signature",
@@ -854,9 +469,9 @@ export default {
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber
     },
-    toggleTabsTestimonials: function (tabNumber) {
-      this.openTabTestimonials = tabNumber
-    },
+    // toggleTabsTestimonials: function (tabNumber) {
+    //   this.openTabTestimonials = tabNumber
+    // },
     // verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount){
     //   this.$resources.verify_signature.submit({
     //     razorpay_payment_id: razorpay_payment_id,
@@ -900,6 +515,10 @@ export default {
       //           console.error(err);
       //       });
       // *****************************
+    },
+    get_featured_campaigns(){
+      this.$resources.get_featured_campaigns.submit({
+      })
     },
     reserve() {
       this.loading = true

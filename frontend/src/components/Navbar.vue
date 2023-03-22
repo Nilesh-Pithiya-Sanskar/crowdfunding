@@ -115,17 +115,42 @@ export default {
       showDialog: false
     }
   },
+  resources:{
+    logout(){
+      return{
+        method: 'logout',
+        onSuccess: (res) => {
+          this.$toast({
+            title: "Success",
+            text: "You successfully logout",
+            customIcon: "check",
+          })
+        // this.$router.push("/sadbhavna")
+        this.$router.go();
+        },
+        onError() {
+          console.log("Error")
+          this.$toast({
+            title: "Error",
+            text: 'Somthing want wrong during Logout!',
+            customIcon: "circle-fail",
+            appearance: "denger",
+        })
+        }
+      }
+    }
+  },
   methods: {
     show_logout_dialog(){
       this.showDialog = true
     },
     logout() {
-      console.log("click logout")
-      axios.get('/api/method/logout').then((res) => {
-        this.$router.push("/sadbhavna")
-      }).catch(function (error) {
-        console.log("not okey")
-      })
+      // axios.get('/api/method/logout').then((res) => {
+      //   this.$router.push("/sadbhavna")
+      // }).catch(function (error) {
+      //   console.log("not okey")
+      // })
+      this.$resources.logout.submit()
     },
 
     profile() {
