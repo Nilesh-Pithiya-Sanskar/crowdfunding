@@ -4,7 +4,7 @@
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-12 bg-grey-lightest">
             <div class="container mx-auto py-0">
                 <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-                    <div class="py-8 px-10 text-gray-600 text-black text-center text-4xl">Varify your contact detail
+                    <div class="py-8 px-10 text-gray-600 text-black text-center text-4xl">Verify your contact detail
                     </div>
                     <div class="py-4 px-8">
                         <div class="mb-7">
@@ -20,7 +20,7 @@
                             <button
                                 class="appearance-none border-gray-600 rounded w-auto text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 px-7 py-2 tracking-wide border border-green-500 hover:border-green-500 text-xs uppercase rounded"
                                 @click="verify_otp()"
-                                >Varify
+                                >Verify
                                 OTP</button>
                         </div>
                     </div>

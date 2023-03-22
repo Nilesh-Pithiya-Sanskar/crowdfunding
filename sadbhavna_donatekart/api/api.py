@@ -88,17 +88,21 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     else:
         frappe.db.set_value("Donation Campaign", campaign,
                             "raised_amount", total)
+    # donation = frappe.db.get_value("Donation", filters={'donor': user_id, 'campaign': campaign, 'donation_item': item, "payment_id": payment_id, 'date': today()}, fieldname=['name'])
+    # print("\n\n donation", donation, "\n\n")
+    donation = frappe.get_last_doc('Donation', filters={"payment_id": payment_id})
+
+    return amount, donation.name
+
 
 # login with google
-
-
 @frappe.whitelist(allow_guest=True)
 def login_with_google(email, last_name='', first_name='', image_url=''):
     user_exists = frappe.db.get_value("User", filters={'email': email})
 
     if not user_exists:
         user = frappe.get_doc({"doctype": "User", "email": email, "last_name": last_name,
-                              "first_name": first_name, "user_image": image_url, "new_password": frappe.generate_hash()})
+                              "first_name": first_name, "user_image": image_url, "new_password": frappe.generate_hash(), "role_profile_name": "Donor"})
         user.insert(ignore_permissions=True)
         frappe.db.commit()
         donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name} {last_name}",
@@ -143,7 +147,7 @@ def login_user(user):
     frappe.cache().set_value(
         f"login_token:{login_token}", frappe.local.session.sid, expires_in_sec=120
     )
-    print("\n\n login token", login_token, "\n\n")
+    # print("\n\n login token", login_token, "\n\n")
     # return login_token
     return login_via_token(login_token)
 
@@ -179,7 +183,6 @@ def login_via_token(login_token: str):
 @frappe.whitelist(allow_guest=True)
 def login_with_whatsapp(phone):
     # if whatsapp integration
-    print("\n\n phone", phone, "\n\n")
     otp = generateOTP(4)
     # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
     doc = frappe.get_doc({"doctype": "Whatsapp OTP",
@@ -202,37 +205,43 @@ def generateOTP(digit):
 
     return OTP
 
-
 def send_whatsapp_otp(phone):
+
+    # add code here for send whatsapp message if sucess return message and mobile
+
     return f'OTP sent to your whatsapp number: {phone}'
 
 
-# verify OTP
+# verify OTP and login
 @frappe.whitelist(allow_guest=True)
 def verify_otp(number, otp):
     data = frappe.db.get_value("Whatsapp OTP", filters={
-                               "number": number, "otp": otp, "status": "Sent"})
+                               "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
     if data:
-        # OTP match write your logic here
+        frappe.db.set_value("Whatsapp OTP", data, {"status": "Verified"})
         user = frappe.db.get_value(
             "User", filters={"phone": number}, fieldname=['name'])
         if user:
             login_user(user)
         else:
-            user = frappe.get_doc({"doctype": "User", "email": email, "first_name": first_name})
+            email = str(number) + '@gmail.com'
+            first_name = number
+            user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor"})
             user.insert(ignore_permissions=True)
             frappe.db.commit()
-            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name}",
-                                    "donor_type": "Defult"})
+            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name}", "donor_type": "Defult", "mobile": number})
             donor.insert(ignore_permissions=True)
             frappe.db.commit()
-
+            user = frappe.db.get_value(
+            "User", filters={"phone": number}, fieldname=['name'])
+            if user:
+                login_user(user)
     else:
         # OTP not match write your logic here
         return f'Your OTP is not match with your number: {number}'
 
 
-
+#create razorpay payment link 
 @frappe.whitelist(allow_guest=True)
 def create_payment_link(amount, name, email):
     amount = str(amount)
@@ -260,6 +269,7 @@ def create_payment_link(amount, name, email):
     "callback_method": "get"
     })
 
+# verify_signature after payment done
 @frappe.whitelist(allow_guest=True)
 def verify_signature(amount, razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature):
     from sadbhavna_donatekart import razorpay

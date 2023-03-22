@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-full h-[30rem] md:h-[32rem] lg:h-[36rem] bg-center bg-right bg-transparent bg-cover"
-    style="background-image: url('../../src/assets/Inter/img/faq-bnr.jpg')"
+    style="background-image: url('https://crowdfunding.frappe.cloud/files/faq-bnr.jpg')"
   >
     <Navbar />
     <div class="static">

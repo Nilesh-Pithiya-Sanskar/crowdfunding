@@ -192,8 +192,7 @@
     </div>
     <div class="text-center px-4 pb-8 pt-12 border-t border-white border-opacity-10 border-neutral-100">
       <span class="text-sm  font-normal mb-4 mt-0font-semiboldtext-whitetext-gray-500 dark:text-gray-400">Copyright
-        &copy; 2023 All rights reserved | This template is made with ❤️ by
-        <a class="font-bold" href="https://colorlib.com" target="_blank">Colorlib </a>
+        &copy; 2023 All rights reserved
       </span>
 
     </div>

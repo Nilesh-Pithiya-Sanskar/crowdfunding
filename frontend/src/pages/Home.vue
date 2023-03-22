@@ -2,7 +2,7 @@
 <template>
   <!-- Header-->
 
-  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('../assets/Inter/img/Frame1.jpg')">
+  <div class="bg-no-repeat  bg-cover bg-center " style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">
@@ -209,9 +209,9 @@
     </div>
 
     <!--Cards-->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
       <div v-for="data in campaigns">
-        <div class="pb-5 md:pb-10 lg:pb-10 pt-5 md:pt-4 lg:pt-10 grid ">
+        <div class="pt-5 md:pt-4 lg:pt-10 grid ">
           <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
             <img class="w-full h-52 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
             <div class="pt-9 pr-9 pd-7 pl-9 ">
@@ -794,15 +794,16 @@ export default {
       user
     }
   },
-  mounted() {
-    const route = useRoute()
-    if (route.query.razorpay_payment_id) {
-      this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
-    }
-    else {
-      console.log("not found")
-    }
-  },
+  // mounted(){
+  //   const route = useRoute()    
+  //   if(route.query.razorpay_payment_id){
+  //     this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
+  //   }
+  //   else{
+  //     console.log("not found")
+  //   }
+  // },
+
   data() {
     return {
       campaigns: [],
@@ -826,23 +827,24 @@ export default {
         }
       }
     },
-    verify_signature() {
-      return {
-        method: "sadbhavna_donatekart.api.api.verify_signature",
-        onSuccess: (res) => {
-          console.log("res", res)
-          if (res[0]) {
-            // this.$router.push(`/sadbhavna/donation-success-page/${res[1]}`)
-          }
-          else {
-            console.log("payment not done")
-          }
-        },
-        onError: (error) => {
-          console.log("error", error)
-        }
-      }
-    }
+    // verify_signature(){
+    //   return{
+    //     method: "sadbhavna_donatekart.api.api.verify_signature",
+    //     onSuccess:(res)=>{
+    //       console.log("res", res)
+    //       if(res[0]){
+    //         // this.$router.push(`/sadbhavna/donation-success-page/${res[1]}`)
+    //       }
+    //       else{
+    //         console.log("payment not done")
+    //       }
+    //     },
+    //     onError:(error)=>{
+    //       console.log("error", error)
+    //     }
+    //   }
+    // }
+
   },
   methods: {
     numberWithCommas(x) {
@@ -854,16 +856,17 @@ export default {
     toggleTabsTestimonials: function (tabNumber) {
       this.openTabTestimonials = tabNumber
     },
-    verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount) {
-      this.$resources.verify_signature.submit({
-        razorpay_payment_id: razorpay_payment_id,
-        razorpay_payment_link_id: razorpay_payment_link_id,
-        razorpay_payment_link_reference_id: razorpay_payment_link_reference_id,
-        razorpay_payment_link_status: razorpay_payment_link_status,
-        razorpay_signature: razorpay_signature,
-        amount: amount
-      })
-    },
+    // verify_signature(razorpay_payment_id, razorpay_payment_link_id, razorpay_payment_link_reference_id, razorpay_payment_link_status, razorpay_signature, amount){
+    //   this.$resources.verify_signature.submit({
+    //     razorpay_payment_id: razorpay_payment_id,
+    //     razorpay_payment_link_id: razorpay_payment_link_id,
+    //     razorpay_payment_link_reference_id: razorpay_payment_link_reference_id,
+    //     razorpay_payment_link_status: razorpay_payment_link_status,
+    //     razorpay_signature: razorpay_signature,
+    //     amount: amount
+    //   })
+    // },
+
     get_campaigns(category) {
       this.$resources.get_campaigns.submit({
         category: category
@@ -901,9 +904,9 @@ export default {
       this.loading = true
       setTimeout(() => (this.loading = false), 2000)
     },
-    viewmore(name) {
-      this.$router.push(`/sadbhavna/campaign-donation/${name}`)
-    },
+    // viewmore(name) {
+    //   this.$router.push(`/sadbhavna/campaign-donation/${name}`)
+    // },
     donate(name) {
       // this.$router.push(`/sadbhavna/donate/${name}`)
       this.$router.push(`/sadbhavna/campaign-donation/${name}`)

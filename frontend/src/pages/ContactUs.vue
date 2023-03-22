@@ -47,56 +47,59 @@
             <div class="flex flex-wrap">
 
                 <div class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
-                    <form @submit.prevent="submitForm">
-                        <div class="grid grid-cols-2">
-                            <div class="form-group pr-3 mb-6">
-                                <label class="block text-gray-700 text-sm mb-2" for="username">
-                                    First name <span class="text-red-600">*</span>
-                                </label>
-                                <input v-model="first_name" type="text"
-                                    class="form-control block hover:border-[#40b751] w-full px-3  py-1.5  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition  ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-                            </div>
 
-                            <div class="form-group pl-4 mb-6">
-                                <label class="block text-gray-700 text-sm mb-2" for="username">
-                                    Last name
-                                </label>
-                                <input v-model="last_name" type="text"
-                                    class="form-control block hover:border-[#40b751] w-full  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition ease-in-out m-0  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-
-                            </div>
-                        </div>
-                        <div class="form-group mb-6">
+                    <div class="grid grid-cols-2">
+                        <div class="form-group pr-3 mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Email <span class="text-red-600">*</span>
+                                First name <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="form.email_id" type="email"
-                                class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-                            <span v-if="errors.email_id">{{ errors.email_id }}</span>
+                            <input v-model="first_name" type="text"
+                                class="form-control block hover:border-[#40b751] w-full px-3  py-1.5  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition  ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
+                            <p class="text-red-600">{{ firstNameError }}</p>
                         </div>
 
-                        <div class="form-group mb-6">
+                        <div class="form-group pl-4 mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Subject <span class="text-red-600">*</span>
+                                Last name
                             </label>
-                            <input v-model="subject" type="text"
-                                class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-                        </div>
+                            <input v-model="last_name" type="text"
+                                class="form-control block hover:border-[#40b751] w-full  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition ease-in-out m-0  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
 
-                        <div class="form-group mb-6">
-                            <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Message
-                            </label>
-                            <textarea v-model="message"
-                                class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
-                                rows="3"></textarea>
                         </div>
+                    </div>
+                    <div class="form-group mb-6">
+                        <label class="block text-gray-700 text-sm mb-2" for="username">
+                            Email <span class="text-red-600">*</span>
+                        </label>
+                        <input v-model="email_id" type="email"
+                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <!-- <span v-if="msg.email_id" className="text-danger mrgnbtn">{{ msg.email_id }}</span> -->
+                        <p class="text-red-600">{{ emailError }}</p>
+                    </div>
 
-                        <button type="submit"
-                            class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                                                                                                                                                                                                                            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
-                            @click="contact_us()">submit
-                        </button>
+                    <div class="form-group mb-6">
+                        <label class="block text-gray-700 text-sm mb-2" for="username">
+                            Subject <span class="text-red-600">*</span>
+                        </label>
+                        <input v-model="subject" type="text"
+                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <p class="text-red-600">{{ subjectError }}</p>
+                    </div>
+
+                    <div class="form-group mb-6">
+                        <label class="block text-gray-700 text-sm mb-2" for="username">
+                            Message
+                        </label>
+                        <textarea v-model="message"
+                            class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                            rows="3"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
+                                                                                                                                                                                                                                                                                        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                        @click="contact_us()">submit
+                    </button>
                     </form>
                 </div>
 
@@ -148,72 +151,120 @@ export default {
     data() {
         return {
             first_name: '',
+            firstNameError: '',
             last_name: '',
             email_id: '',
+            emailError: '',
             subject: '',
+            subjectError: '',
             message: '',
-            form: {
-
-                email_id: '',
-
-            },
-            errors: {},
+            // errorMessage: '',
+            // error: '',
         }
     },
-    watch: {
-        // email_id(value) {
-        //     this.email_id = value;
-        //     this.validateEmail(value);
-        // }
-    },
+    // watch: {
+    //     email_id(value) {
+    //         this.email_id = value;
+    //         this.validateEmail(value);
+    //     }
+    // },
     resources: {
         contact_us() {
             return {
                 method: 'sadbhavna_donatekart.api.contactus.contact_us',
                 onSuccess: (res) => {
-                    this.$toast({
-                        title: "Success",
-                        text: "Your message is successfully sent to sadbhavna donatekart",
-                        customIcon: "check",
-                    })
-
+                    // this.recent_donation = res
+                    if (confirm("Your message is successfully sent to sadbhavna donatekart") == true) {
+                        this.$router.push(`/sadbhavna/contact-us`)
+                    } else {
+                        this.$router.go(-1)
+                    }
                 },
                 onError: (error) => {
-                    console.log(error)
                     this.$toast({
                         title: "Error",
                         text: error,
                         customIcon: "circle-fail",
                         appearance: "denger",
                     })
+                    console.log(error)
                 }
+                // onSuccess: (res) => {
+                //     this.$toast({
+                //         title: "Success",
+                //         text: "Your message is successfully sent to sadbhavna donatekart",
+                //         customIcon: "check",
+                //     })
+
+                // },
+                // onError: (error) => {
+                //     console.log(error)
+                //     this.$toast({
+                //         title: "Error",
+                //         text: error,
+                //         customIcon: "circle-fail",
+                //         appearance: "denger",
+                //     })
+                // }
             }
         }
     },
     methods: {
-
+        // onSubmit(event) {
+        //     event.preventDefault()
+        //     console.log(event)
+        // },
         // validateEmail(email_id) {
         //     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_id)) {
-        //         this.emailErrorMessage = ''
+        //         this.errorMessage = ''
         //     } else {
-        //         this.emailErrorMessage = 'Invalid email!'
+        //         this.errorMessage = 'Invalid Email'
         //     }
         // },
-        submitForm() {
-            this.errors = {};
+        contact_us(email_id, first_name) {
+            // if (this.first_name == '') {
+            //     this.firstNameError = 'Invalid first name!'
+            // }
+            // if (this.email_id == '' || this.email_id == '') {
+            //     this.emailError = 'Invalid email!'
+            // }
+            // if (this.subject == '') {
+            //     this.subjectError = 'Invalid subject!'
+            // }
+            // else {
+            //     alert("Message sent successfully")
+            // }
+            // /^[A-Za-z]+$/
 
-            if (!this.form.email_id) {
-                this.errors.email_id = 'Email is required.';
+
+
+            // if (!/^[a-zA-Z]*$/.test(first_name)) {
+            //     this.firstNameError = ''
+            // } else {
+            //     this.firstNameError = 'Invalid first name!'
+            // }
+
+
+            if (this.first_name == '') {
+                this.firstNameError = 'Invalid first name!'
+            }
+            if (this.email_id == '') {
+                this.emailError = 'Invalid email!'
             }
 
-            if (Object.keys(this.errors).length > 0) {
-                return;
+            // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_id)) {
+            //     this.emailError = ''
+            // } else {
+            //     this.emailError = 'Invalid email!'
+            // }
+
+            if (this.subject == '') {
+                this.subjectError = 'Invalid subject!'
             }
 
-        },
 
-        contact_us() {
-            this.submitForm()
+
+            // this.submitForm()
             this.$resources.contact_us.submit({
                 first_name: this.first_name,
                 last_name: this.last_name,
@@ -221,6 +272,7 @@ export default {
                 subject: this.subject,
                 message: this.message,
             })
+
         }
     },
 }

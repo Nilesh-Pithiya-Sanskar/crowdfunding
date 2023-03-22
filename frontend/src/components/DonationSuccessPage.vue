@@ -33,9 +33,7 @@
                 </div>
 
                 <router-link to="/sadbhavna" class="text-green-500">Explore More Campaign</router-link>
-                
               </div>
-              
             </div>
           </div>
         </div>

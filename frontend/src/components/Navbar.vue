@@ -59,34 +59,66 @@
             profile
           </li>
           <li>
-            <button v-if="this.user.isLoggedIn()" @click="logout()"
+            <button v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
               class="bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">Logout</button>
-            <button v-else @click="this.$router.push(`/sadbhavna/login`)"
+            <button v-else @click="this.$router.push(`/sadbhavna/auto-login`)"
               class="bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">Login</button>
           </li>
         </ul>
       </nav>
+  <Dialog
+    :options="{
+      title: 'Logout',
+      message: 'Are you sure want to logout?',
+      // icon: {
+      //   name: 'alert-triangle',
+      //   appearance: 'warning',
+      // },
+      size: 'sm',
+      actions: [
+        {
+          label: 'Confirm',
+          appearance: 'success',
+          handler: ({ close }) => {
+            this.logout()
+            close() // closes dialog
+          },
+        },
+        { label: 'Cancel' },
+      ],
+    }"
+    v-model="showDialog"
+  />
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import { inject } from "vue";
+import { inject, ref } from "vue";
+import { Dialog } from 'frappe-ui'
+
 export default {
   name: "Navbar",
   setup() {
     const user = inject("user")
     return {
-      user
+      user,
     }
+  },
+  components:{
+    Dialog
   },
   data() {
     return {
-      showMenu: false
+      showMenu: false,
+      showDialog: false
     }
   },
   methods: {
+    show_logout_dialog(){
+      this.showDialog = true
+    },
     logout() {
       console.log("click logout")
       axios.get('/api/method/logout').then((res) => {

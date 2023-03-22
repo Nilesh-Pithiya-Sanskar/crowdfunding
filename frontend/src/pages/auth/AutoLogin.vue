@@ -3,7 +3,7 @@
 
     <div class="container mx-auto mb-[150px]">
         <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[498px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style="background-image: url('../../src/assets/Inter/img/bg-tree.png');
+            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
                   ">
         </div>
         <div class="container mx-auto h-full">
@@ -20,8 +20,7 @@
                                 <input
                                     class="appearance-none hover:border-[#40b751] border-gray-600 rounded w-full py-2 px-3 text-grey-darker"
                                     v-model="phone" type="number">
-                                <span class="text-sm text-gray-400"> An OTP will be sent to {{ phone }} whatsapp
-                                    number</span>
+                                <span class="text-sm text-gray-400"> An OTP will be sent to {{ phone }} whatsapp number</span>
                             </div>
                             <div class="mb-4">
                                 <button
@@ -49,13 +48,13 @@
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
                                     with Facebook</button>
                             </div>
-                            <!-- <GoogleLogin :callback="login_with_google" class="w-full">
+                            <GoogleLogin :callback="login_with_google" class="w-full">
                             <div class="mb-4">
                                 <button
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
                                     with Google</button>
                             </div>
-                        </GoogleLogin> -->
+                        </GoogleLogin>
                             <div class="mb-4">
                                 <GoogleLogin :callback="login_with_google">
                                 </GoogleLogin>
@@ -63,14 +62,16 @@
 
                             <div class="mb-4">
                                 <div class="flex mb-10 justify-between">
-                                    <span class="text-gray-600">Forget password? <a class="text-[#40b751]"
-                                            href="/login.html">Click here</a></span><a class="text-[#40b751]"
-                                        href="registration.html">Register</a>
+                                    <span class="text-gray-600">Forget password? 
+                                        <a class="text-[#40b751]" href="/sadbhavna/login">Click here</a>
+                                    </span>
+                                    <a class="text-[#40b751]"
+                                        href="/sadbhavna/registration">Register</a>
                                 </div>
                             </div>
                             <div class="mb-4">
                                 <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                        href="registration.html">Login </a> &nbsp;via ID Password</span>
+                                        href="/sadbhavna/login">Login </a> &nbsp;via ID Password</span>
                             </div>
                         </div>
                     </div>
@@ -78,13 +79,9 @@
             </div>
         </div>
     </div>
-
     <!-- <GoogleLogin :callback="login_with_google" class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" prompt auto-login/> -->
     <!--<button @click="login_with_google">Login With Google</button>
 {{ isLogin }}-->
-
-
-
 
     <Footer />
 </template>
@@ -102,6 +99,7 @@ import Footer from "../../components/Footer.vue";
 export default {
     name: "Auto Login",
     components: { Navbar, Footer },
+
     data() {
         return {
             phone: '',
@@ -141,14 +139,14 @@ export default {
     },
     methods: {
         login_with_google: (response) => {
-            console.log("data", response)
+            // console.log("data", response)
             let userData = decodeCredential(response.credential)
             let email = userData.email
             let first_name = userData.family_name
             let last_name = userData.given_name
             let image_url = userData.picture
 
-            console.log("asdfads", userData)
+            // console.log("asdfads", userData)
 
             let url = `https://crowdfunding.frappe.cloud/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
             fetch(url, {
@@ -156,8 +154,8 @@ export default {
             })
                 .then(response => {
                     response.json().then(res => {
-                        console.log("asdf", res.message)
-                        console.log("asdf", res)
+                        // console.log("asdf", res.message)
+                        // console.log("asdf", res)
                         let token = res.message
                         // this.$router.push('/home')
                         window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
