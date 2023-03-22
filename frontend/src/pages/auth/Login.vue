@@ -28,7 +28,7 @@
                   placeholder="Password" required />
 
               </div>
-              <p class="text-red-600">{{ error }}</p>
+              <p class="text-red-600">{{ errorMsg }}</p>
               <div class="text-center mt-6">
                 <button style="background-color: #40b751;"
                   class="cursor-pointer border-[#40b751] hover:border-[#40b751] bg-[#40b751] hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
@@ -141,7 +141,8 @@ export default {
       // github,
       // google,
       password: "",
-      error: '',
+      error: false,
+      errorMsg: '',
       email: "",
       isLogin: false
     };
@@ -197,17 +198,59 @@ export default {
     // }
   },
   methods: {
-    login(email) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-        this.error = ''
-      } else {
-        this.error = 'Email or Password incorrect!'
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    validPassword: function (password) {
+      var re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+      return re.test(password);
+    },
+    login() {
+      // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      //   this.error = ''
+      // } else {
+      //   this.error = 'Email or Password incorrect!'
+      // }
+
+
+      // if (this.email == '') {
+      //   this.error = 'Email or Password incorrect!'
+      // }
+
+      // if (this.password == '') {
+      //   this.error = 'Email or Password incorrect!'
+      // }
+
+      // if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      //   this.errorMsg = 'Email or Password incorrect!'
+      //   this.error = true
+      //   console.log('email')
+      // }
+
+
+
+
+      if (this.email == '' || !this.validEmail(this.email)) {
+        // this.email_id == this.error
+        this.errorMsg = 'Email or Password incorrect!'
+        this.error = true
+        console.log('email')
+      }
+      else if (this.password == '' || !this.validPassword(this.password)) {
+        // this.email_id == this.error
+        this.errorMsg = 'Email or Password incorrect!'
+        this.error = true
+        console.log('password')
+      }
+      else {
+        this.error == false
+        this.$resources.login.submit({
+          usr: this.email,
+          pwd: this.password,
+        });
       }
 
-      this.$resources.login.submit({
-        usr: this.email,
-        pwd: this.password,
-      });
       // axios.get('/api/method/login', {
       //   params: {
       //     usr: this.email,
