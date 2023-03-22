@@ -14,6 +14,10 @@ def get_campaigns(category = ''):
         return frappe.db.get_list("Donation Campaign", filters={'published': 1}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"])
 
 
+@frappe.whitelist(allow_guest=True)
+def get_featured_campaigns():
+    return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'is_featured': 1}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"])
+
 # @frappe.whitelist(allow_guest=True)
 # def get_campaign_detail(name):
 #     doc = frappe.get_doc("Donation Campaign", name)

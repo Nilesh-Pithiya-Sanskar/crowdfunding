@@ -1,4 +1,6 @@
 <template>
+<!-- <DonationCheckout/> -->
+
     <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
@@ -232,7 +234,6 @@
                     <p class="text-gray-600">Donate via</p>
 
                     <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
-
                         <div>
                             <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
                                 <div class="grid justify-center">
@@ -576,7 +577,7 @@ import Footer from "../components/Footer.vue";
 import { Dialog } from 'frappe-ui'
 import { createConditionalExpression } from '@vue/compiler-core';
 // import DonationDetail from "../components/DonationDetail.vue";
-// import DonationDetailRightside from "../components/DonationDetailRightSide.vue";
+// import DonationCheckout from "../components/DonationCheckout.vue";
 
 
 // import Razorpay from 'razorpay';
@@ -593,7 +594,8 @@ export default {
         Navbar,
         Footer,
         Avatar,
-        Dialog
+        Dialog,
+        // DonationCheckout,
     },
     setup() {
         const user = inject("user")
