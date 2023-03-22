@@ -28,7 +28,7 @@
 
 
   <div class="container mx-auto h-full sm:p-4 lg:p-16 -mt-16 lg:-mt-36 pl-4 lg:pl-0 pr-4 lg:pr-0">
-    <div class="bg-white rounded-xl product-shodow">
+    <!-- <div class="bg-white rounded-xl product-shodow">
       <div v-for="data in campaigns">
         <div v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           <div class="md:col-span-2 lg:col-span-1">
@@ -46,6 +46,10 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <div class="bg-white rounded-xl shadow-lg">
+        <Sliders :featured_campaigns="featured_campaigns" :interval="3000"/>
     </div>
 
     <!-- Categories -->
@@ -775,6 +779,7 @@ import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import { inject, provide, ref } from "vue"
+import Sliders from "../components/Sliders.vue";
 import { useRoute } from 'vue-router'
 
 
@@ -782,10 +787,12 @@ export default {
   name: 'Home',
   created() {
     this.get_campaigns()
+    this.get_featured_campaigns()
   },
   components: {
     Navbar,
-    Footer
+    Footer,
+    Sliders,
   },
   setup() {
     const user = inject("user")
@@ -811,6 +818,7 @@ export default {
       selection: 1,
       openTab: 1,
       openTabTestimonials: 1,
+      featured_campaigns: []
 
     }
   },
@@ -827,6 +835,18 @@ export default {
         }
       }
     },
+    get_featured_campaigns(){
+      return{
+        method: '/api/method/sadbhavna_donatekart.api.campaign.get_featured_campaigns',
+        onSuccess: (res) => {
+          // console.log("Success", res)
+          this.featured_campaigns = res
+        },
+        onError() {
+          console.log("Error")
+        }
+      }
+    }
     // verify_signature(){
     //   return{
     //     method: "sadbhavna_donatekart.api.api.verify_signature",
@@ -899,6 +919,10 @@ export default {
       //           console.error(err);
       //       });
       // *****************************
+    },
+    get_featured_campaigns(){
+      this.$resources.get_featured_campaigns.submit({
+      })
     },
     reserve() {
       this.loading = true
