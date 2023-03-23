@@ -15,11 +15,11 @@
    
   
   export default {
-    name: "app",
+    name: "facebook",
     components: { facebookLogin},
     data(){
       return{
-        idImage, loginImage, mailImage, faceImage,
+        // idImage, loginImage, mailImage, faceImage,
         isConnected: false,
         name: '',
         email: '',
