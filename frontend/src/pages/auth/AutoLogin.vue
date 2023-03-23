@@ -3,8 +3,7 @@
 
     <div class="container mx-auto mb-[150px]">
         <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[498px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-                  ">
+            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');">
         </div>
         <div class="container mx-auto h-full">
             <div class="w-full pt-0 md:pt-5 lg:pt-12">
@@ -79,17 +78,37 @@
             </div>
         </div>
     </div>
+
+    <div class="fb-login-button" data-size="medium" data-button-type="login_with_facebook" data-autologout-link="false" data-use-continue-as="true" @click="loginWithFacebook"></div>
+
+
+
     <!-- <GoogleLogin :callback="login_with_google" class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" prompt auto-login/> -->
     <!--<button @click="login_with_google">Login With Google</button>
 {{ isLogin }}-->
-
+<!-- <facebook-login
+    appId="1616534218770661"
+    @loggedIn="handleLogin"
+    @loginFailed="handleLoginFailed"
+>
+</facebook-login> -->
 <!-- <div>-----------------------------------</div> -->
-    <facebook-login class="button"
-      appId="326022817735322"
-      @login="onLogin"
+    <!-- <facebook-login class="button"
+      appId="1616534218770661"
+      @login="getUserData"
       @logout="onLogout"
-      @sdk-loaded="sdkLoaded">
-    </facebook-login>
+      @get-initial-status="getUserData">
+    </facebook-login> -->
+
+<!-- <button :on-click="onLogin()"></button> -->
+
+    <!-- <facebook-login class="button"
+      appId="1616534218770661"
+      @login="getUserData"
+      @logout="onLogout"
+      @get-initial-status="getUserData">
+    </facebook-login> -->
+    
 <!-- <div>-----------------------------------</div> -->
     <Footer />
 </template>
@@ -97,17 +116,16 @@
 <script>
 // import github from "@/assets/Inter/img/github.svg";
 // import google from "@/assets/Inter/img/google.svg";
-import { decodeCredential } from 'vue3-google-login'
-
+import { decodeCredential } from 'vue3-google-login';
 import Navbar from "../../components/Navbar.vue";
 import Footer from "../../components/Footer.vue";
-// import { ValidationProvider } from 'vee-validate';
 
 import facebookLogin from 'facebook-login-vuejs';
 
+
 export default {
     name: "Auto Login",
-    components: { Navbar, Footer, facebookLogin },
+    components: { Navbar, Footer, facebookLogin},
 
     data() {
         return {
@@ -119,12 +137,15 @@ export default {
             // isLogin: false,
 
             // idImage, loginImage, mailImage, faceImage,
-            isConnected: false,
-            name: '',
-            email: '',
-            personalID: '',
-            FB: undefined
         };
+    },
+    mounted(){
+        FB.init({
+            appId            : '1616534218770661',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v16.0'
+        })
     },
     resources: {
         // login_with_google() {
@@ -155,6 +176,28 @@ export default {
     },
     methods: {
 
+        loginwithFacebook(){
+            FB.login(response => {
+                if(response.authResponse){
+                    FB.api('/me', {fields: 'name, email'}, response => {
+                        console.log("response", response)
+                    })
+                }
+                else{
+                    console.log("cancelled")
+                }
+            }, {scope: 'public_profile, email'});
+        },
+
+
+        // handleLogin(response) {
+        //     console.log("User Successfully Logged In" , response)
+        // },
+        // handleLoginFailed() {
+        //     console.log("User Cancelled or Abort the Login")
+        // },
+
+
         getUserData() {
       this.FB.api('/me', 'GET', { fields: 'id,name,email' },
         userInformation => {
@@ -177,6 +220,8 @@ export default {
     onLogout() {
       this.isConnected = false;
     },
+
+
         
         login_with_google: (response) => {
             // console.log("data", response)
