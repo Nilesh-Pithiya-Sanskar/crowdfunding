@@ -8,5 +8,8 @@
 		"postinstall": "cd frontend && yarn install",
 		"dev": "cd frontend && yarn dev",
 		"build": "cd frontend && yarn build"
+	},
+	"dependencies": {
+		"facebook-login-vuejs": "^2.1.3"
 	}
 }

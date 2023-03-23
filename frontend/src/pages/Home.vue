@@ -49,7 +49,7 @@
       </div>
     </div> -->
 
-    <div class="bg-white rounded-xl shadow-lg">
+    <div class="bg-white rounded-xl drop-shadow-xl">
         <Sliders :featured_campaigns="featured_campaigns" :interval="3000"/>
     </div>
 
@@ -214,12 +214,11 @@
     </div>
 
     <!--Cards-->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
-      <div v-for="data in campaigns">
-        <div class="pt-5 md:pt-4 lg:pt-10 grid ">
-          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
+   <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+        <div v-for="data in campaigns" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
             <img class="w-full h-52 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
-            <div class="pt-9 pr-9 pd-7 pl-9 ">
+            <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
               <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ data.campaign_title }}</div>
               <p class="text-gray-700 text-base truncate">
                 By: {{ data.ngo }}
@@ -245,10 +244,8 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
-
 
   <!--Testimonials-->
 

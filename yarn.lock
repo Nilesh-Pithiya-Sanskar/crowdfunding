@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+facebook-login-vuejs@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.npmjs.org/facebook-login-vuejs/-/facebook-login-vuejs-2.1.3.tgz"
+  integrity sha512-b9XtqCw9QJWpyQgvH1qWvsH4OjZAcIMxcAjdjZzpjiaKgImvfhzfnaiJQare9oYpFrnaS3UiODZA1GbWaUolvQ==
