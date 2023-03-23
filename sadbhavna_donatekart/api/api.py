@@ -40,7 +40,7 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
     # doc.new_password = password,
     # doc.phone = phone_number
     # doc.insert(ignore_permissions=True)
-
+ 
     user = frappe.get_doc({"doctype": "User", "email": f"{email}", "first_name": f"{first_name}",
                           "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}", "role_profile_name": "Donor"})
     user.insert(ignore_permissions=True)

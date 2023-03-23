@@ -3,7 +3,11 @@
   <!-- Header-->
   
 
-  <div class="bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
+
+  <div class="bg-no-repeat  bg-cover bg-center "
+    style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
+
+
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">
@@ -18,8 +22,8 @@
             crowd funding platform of India.
           </p>
         </div>
-        <div class="md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
-          <img src="../../src/assets/Inter/img/map2.png" class="h-48 md:h-80 lg:h-full w-48 md:w-80 lg:w-full" />
+        <div class="md:pl-32 lg:pl-0 pl-0 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
+          <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
         </div>
       </div>
     </div>
@@ -54,8 +58,6 @@
     </div>
 
     <!-- Categories -->
-
-
     <div class="text-center mt-10">
       <h2 class="text-3xl font-bold text-[#40b751] mb-2">Categories</h2>
       <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>

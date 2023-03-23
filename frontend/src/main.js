@@ -1,11 +1,21 @@
-import { createApp } from 'vue'
-import { FrappeUI, Button } from 'frappe-ui'
+import {
+  createApp
+} from 'vue'
+import {
+  FrappeUI,
+  Button
+} from 'frappe-ui'
 import router from './router'
 import App from './App.vue'
 import './index.css'
-import { createToast, clearToasts } from "@/utils/toasts"
+import {
+  createToast,
+  clearToasts
+} from "@/utils/toasts"
 import axios from 'axios';
-import { socketio_port } from "../../../../sites/common_site_config.json"
+import {
+  socketio_port
+} from "../../../../sites/common_site_config.json"
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@/assets/Inter/styles/tailwind.css"
 
@@ -35,18 +45,18 @@ import vue3GoogleLogin from 'vue3-google-login';
 //     scope: 'email',
 //     prompt: 'consent',
 //   }
-  // app.use(GoogleSignInPlugin, {
-  //   clientId: '615226899593-b4jpeolmo526beqkiqvo1bf7ob06rhpb.apps.googleusercontent.com',
-  // });
+// app.use(GoogleSignInPlugin, {
+//   clientId: '615226899593-b4jpeolmo526beqkiqvo1bf7ob06rhpb.apps.googleusercontent.com',
+// });
 
 
 let app = createApp(App)
 app.use(router)
 app.use(FrappeUI)
 app.use(FrappeUI, {
-	socketio: {
-		port: socketio_port,
-	},
+  socketio: {
+    port: socketio_port,
+  },
 })
 
 
@@ -63,4 +73,3 @@ app.component('Button', Button)
 app.config.globalProperties.$toast = createToast
 app.config.globalProperties.$clearToasts = clearToasts
 app.mount('#app')
-
