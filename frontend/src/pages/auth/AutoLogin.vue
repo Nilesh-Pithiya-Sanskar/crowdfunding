@@ -86,28 +86,28 @@
     <!-- <GoogleLogin :callback="login_with_google" class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" prompt auto-login/> -->
     <!--<button @click="login_with_google">Login With Google</button>
 {{ isLogin }}-->
-<!-- <facebook-login
+<facebook-login
     appId="1616534218770661"
     @loggedIn="handleLogin"
     @loginFailed="handleLoginFailed"
 >
-</facebook-login> -->
+</facebook-login>
 <!-- <div>-----------------------------------</div> -->
-    <!-- <facebook-login class="button"
+    <facebook-login class="button"
       appId="1616534218770661"
       @login="getUserData"
       @logout="onLogout"
       @get-initial-status="getUserData">
-    </facebook-login> -->
+    </facebook-login>
 
 <!-- <button :on-click="onLogin()"></button> -->
 
-    <!-- <facebook-login class="button"
+    <facebook-login class="button"
       appId="1616534218770661"
       @login="getUserData"
       @logout="onLogout"
       @get-initial-status="getUserData">
-    </facebook-login> -->
+    </facebook-login>
     
 <!-- <div>-----------------------------------</div> -->
     <Footer />
@@ -119,9 +119,6 @@
 import { decodeCredential } from 'vue3-google-login';
 import Navbar from "../../components/Navbar.vue";
 import Footer from "../../components/Footer.vue";
-
-import facebookLogin from 'facebook-login-vuejs';
-
 
 export default {
     name: "Auto Login",
@@ -174,55 +171,7 @@ export default {
             }
         }
     },
-    methods: {
-
-        loginwithFacebook(){
-            FB.login(response => {
-                if(response.authResponse){
-                    FB.api('/me', {fields: 'name, email'}, response => {
-                        console.log("response", response)
-                    })
-                }
-                else{
-                    console.log("cancelled")
-                }
-            }, {scope: 'public_profile, email'});
-        },
-
-
-        // handleLogin(response) {
-        //     console.log("User Successfully Logged In" , response)
-        // },
-        // handleLoginFailed() {
-        //     console.log("User Cancelled or Abort the Login")
-        // },
-
-
-        getUserData() {
-      this.FB.api('/me', 'GET', { fields: 'id,name,email' },
-        userInformation => {
-          console.warn("data api",userInformation)
-          this.personalID = userInformation.id;
-          this.email = userInformation.email;
-          this.name = userInformation.name;
-        }
-      )
-    },
-    sdkLoaded(payload) {
-      this.isConnected = payload.isConnected
-      this.FB = payload.FB
-      if (this.isConnected) this.getUserData()
-    },
-    onLogin() {
-      this.isConnected = true
-      this.getUserData()
-    },
-    onLogout() {
-      this.isConnected = false;
-    },
-
-
-        
+    methods: {       
         login_with_google: (response) => {
             // console.log("data", response)
             let userData = decodeCredential(response.credential)
@@ -255,7 +204,60 @@ export default {
             this.$resources.login_with_whatsapp.submit({
                 phone: this.phone
             })
-        }
+        },
+
+// **************************************
+
+
+
+loginwithFacebook(){
+            FB.login(response => {
+                if(response.authResponse){
+                    FB.api('/me', {fields: 'name, email'}, response => {
+                        console.log("response", response)
+                    })
+                }
+                else{
+                    console.log("cancelled")
+                }
+            }, {scope: 'public_profile, email'});
+        },
+
+
+        // handleLogin(response) {
+        //     console.log("User Successfully Logged In" , response)
+        // },
+        // handleLoginFailed() {
+        //     console.log("User Cancelled or Abort the Login")
+        // },
+
+
+    getUserData() {
+    this.FB.api('/me', 'GET', { fields: 'id,name,email' },
+    userInformation => {
+        console.warn("data api",userInformation)
+        this.personalID = userInformation.id;
+        this.email = userInformation.email;
+        this.name = userInformation.name;
+    }
+    )
+    },
+    sdkLoaded(payload) {
+      this.isConnected = payload.isConnected
+      this.FB = payload.FB
+      if (this.isConnected) this.getUserData()
+    },
+    onLogin() {
+      this.isConnected = true
+      this.getUserData()
+    },
+    onLogout() {
+      this.isConnected = false;
+    },
+
+
+
+// **************************************
     }
 };
 </script>

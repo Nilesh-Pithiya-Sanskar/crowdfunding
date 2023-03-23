@@ -32,7 +32,8 @@ const routes = [{
     path: '/sadbhavna/blog',
     name: 'Blog',
     component: () => import('@/pages/Blog.vue')
-  }, {
+  },
+  {
     path: '/sadbhavna/blog-post/:name',
     name: 'BlogPost',
     component: () => import('@/pages/auth/BlogPost.vue')
@@ -76,7 +77,12 @@ const routes = [{
     path: '/sadbhavna/otp/:message&:number',
     name: 'OTP',
     component: () => import('@/pages/auth/OTP.vue')
-  }
+  },
+  {
+    path: '/sadbhavna/facebook',
+    name: 'facebook',
+    component: () => import('@/pages/facebook.vue')
+  },
 ]
 
 let router = createRouter({
