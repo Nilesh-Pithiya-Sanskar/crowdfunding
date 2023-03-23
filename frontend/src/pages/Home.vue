@@ -3,7 +3,7 @@
   <!-- Header-->
   
 
-  <div class="bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
+  <div class="bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">
@@ -213,40 +213,51 @@
       </div>
     </div>
 
+
     <!--Cards-->
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
-      <div v-for="data in campaigns">
-        <div class="pt-5 md:pt-4 lg:pt-10 grid ">
-          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full h-52 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
-            <div class="pt-9 pr-9 pd-7 pl-9 ">
-              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ data.campaign_title }}</div>
-              <p class="text-gray-700 text-base truncate">
-                By: {{ data.ngo }}
-              <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
-                <div v-if="data.raised_amount"
-                  class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                  :style="{ width: data.raised_amount * 100 / data.donation_amount + '%' }"> {{ (data.raised_amount * 100
-                    /
-                    data.donation_amount).toFixed(2) }}%</div>
+      <div v-for="index in campaignToShow">
+        <div v-if="index < campaigns.length">
+          <div class="pt-5 md:pt-4 lg:pt-10 grid ">
+            <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full h-52 cursor-pointer" :src="campaigns[index].campain_image" alt="Mountain" @click="donate(campaigns[index].name)">
+              <div class="pt-9 pr-9 pd-7 pl-9 ">
+                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index].campaign_title }}</div>
+                <p class="text-gray-700 text-base truncate">
+                  By: {{ campaigns[index].ngo }}
+                <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
+                  <div v-if="campaigns[index].raised_amount"
+                    class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                    :style="{ width: campaigns[index].raised_amount * 100 / campaigns[index].donation_amount + '%' }"> {{ (campaigns[index].raised_amount * 100
+                      /
+                      campaigns[index].donation_amount).toFixed(2) }}%</div>
+                </div>
+                <div
+                  class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
+                  <span>Raised: {{ numberWithCommas(campaigns[index].raised_amount) }}</span><span>Goal: {{
+                    numberWithCommas(campaigns[index].donation_amount) }}</span>
+                </div>
+                </p>
               </div>
-              <div
-                class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
-                <span>Raised: {{ numberWithCommas(data.raised_amount) }}</span><span>Goal: {{
-                  numberWithCommas(data.donation_amount) }}</span>
+              <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
+                <button class="text-[#40b751] text-base">Share</button>
+                <button
+                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button" @click="donate(campaigns[index].name)"> donate now </button>
               </div>
-              </p>
-            </div>
-            <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
-              <button class="text-[#40b751] text-base">Share</button>
-              <button
-                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                type="button" @click="donate(data.name)"> donate now </button>
             </div>
           </div>
         </div>
       </div>
+      <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow">
+      <button
+        class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button" @click="campaignToShow += 6">Show More</button>
     </div>
+    </div>
+
+    
+
   </div>
 
 
@@ -408,12 +419,13 @@ export default {
   data() {
     return {
       campaigns: [],
+      campaignToShow: 6,
+      totalCampaign: 0,
       loading: false,
       selection: 1,
       openTab: 1,
       openTabTestimonials: 1,
       featured_campaigns: []
-
     }
   },
   resources: {
@@ -423,9 +435,10 @@ export default {
         onSuccess: (res) => {
           // console.log("Success", res)
           this.campaigns = res
+          this.totalCampaign = this.campaigns.length
         },
-        onError() {
-          console.log("Error")
+        onError: (error) => {
+          console.log("Error", error)
         }
       }
     },

@@ -7,7 +7,7 @@
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
             <p class="text-[30px] md:text-[30px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-medium text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
-                Join hands with <span class="text-[#40b751]">Sadbhana Campaigns</span> to help needy.</p>
+                Join hands with <span class="text-[#40b751]"> Sadbhana Campaigns </span> to help needy.</p>
         </div>
     </div>
     <div class="container mx-auto mt-20">

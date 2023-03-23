@@ -48,22 +48,60 @@ appId="1616534218770661"
   @click="loginWithFacebook"
 ></div> -->
 
-<div>
-    <fb:login-button 
-      scope="public_profile,email"
-      size="large"
-      :onlogin="checkLoginState()">
-    </fb:login-button>
+    <div>
+        <fb:login-button 
+        scope="public_profile,email"
+        size="large"
+        :onlogin="checkLoginState()">
+        </fb:login-button>
+    </div>
+
+    <div class="container vue">
+  <div v-for="index in commentsToShow"> 
+    <div v-if="index < reviews.length">
+    <div>{{reviews[index].name}} says:</div>
+    <i><div>{{reviews[index].description}}</div></i>
+    <hr />
   </div>
+</div>
+  <div v-if="commentsToShow < reviews.length || reviews.length > commentsToShow">
+    <button @click="commentsToShow += 5">show more reviews</button>
+  </div>
+</div>
 
-
-  </template>
-
-
+</template>
   <script> 
  
   export default {
     name: "facebook",
+    data() {
+    return {
+      reviews: [
+      	{name: 'Derek', description: 'Some comment'}, 
+        {name: 'Joe', description: 'Some comment'},
+        {name: 'Mike', description: 'Some comment'}, 
+        {name: 'Ron', description: 'Some comment'},
+        {name: 'Dii', description: 'Some comment'}, 
+        {name: 'Lonnie', description: 'Some comment'},
+        {name: 'Paul', description: 'Some comment'}, 
+        {name: 'Mike', description: 'Some comment'},
+        {name: 'Jody', description: 'Some comment'}, 
+        {name: 'Ryn', description: 'Some comment'},
+        {name: 'Jord', description: 'Some comment'}, 
+        {name: 'Milly', description: 'Some comment'},
+        {name: 'Judy', description: 'Some comment'}, 
+        {name: 'Vanilly', description: 'Some comment'},
+        {name: 'Nolan', description: 'Some comment'}, 
+        {name: 'Pino', description: 'Some comment'},
+        {name: 'Ryne', description: 'Some comment'}, 
+        {name: 'Scott', description: 'Some comment'},
+        {name: 'Son', description: 'Some comment'}, 
+        {name: 'Bann', description: 'Some comment'},
+        ],
+      commentsToShow: 5,
+      totalComments: 0
+    };
+  },
     mounted() {
         FB.init({
             appId: '1616534218770661',
@@ -71,6 +109,8 @@ appId="1616534218770661"
             xfbml: true,
             version: 'v13.0'
         });
+        this.totalComments = this.reviews.length
+  	    console.log(this.reviews.length)
     },
     methods: { 
         loginWithFacebook() {
@@ -135,10 +175,7 @@ appId="1616534218770661"
     }
 },
 }
-
-
-
-  </script>
+</script>
   
   <style>
   #app {
