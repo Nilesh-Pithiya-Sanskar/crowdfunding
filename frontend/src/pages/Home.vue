@@ -2,8 +2,9 @@
 <template>
   <!-- Header-->
   
+  <div class="bg-no-repeat  bg-cover bg-center "
+    style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
 
-  <div class="bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">
@@ -18,8 +19,8 @@
             crowd funding platform of India.
           </p>
         </div>
-        <div class="md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
-          <img src="../../src/assets/Inter/img/map2.png" class="h-48 md:h-80 lg:h-full w-48 md:w-80 lg:w-full" />
+        <div class="md:pl-32 lg:pl-0 pl-0 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
+          <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
         </div>
       </div>
     </div>
@@ -54,8 +55,6 @@
     </div>
 
     <!-- Categories -->
-
-
     <div class="text-center mt-10">
       <h2 class="text-3xl font-bold text-[#40b751] mb-2">Categories</h2>
       <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
@@ -215,27 +214,19 @@
 
     <!--Cards-->
    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
-      <div v-for="index in campaignToShow">
-        <div v-if="index < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
-            <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
-              <img class="w-full h-52 cursor-pointer" :src="campaigns[index].campain_image" alt="Mountain" @click="donate(campaigns[index].name)">
-              <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
-                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index].campaign_title }}</div>
-                <p class="text-gray-700 text-base truncate">
-                  By: {{ campaigns[index].ngo }}
-                <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
-                  <div v-if="campaigns[index].raised_amount"
-                    class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                    :style="{ width: campaigns[index].raised_amount * 100 / campaigns[index].donation_amount + '%' }"> {{ (campaigns[index].raised_amount * 100
-                      /
-                      campaigns[index].donation_amount).toFixed(2) }}%</div>
-                </div>
-                <div
-                  class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
-                  <span>Raised: {{ numberWithCommas(campaigns[index].raised_amount) }}</span><span>Goal: {{
-                    numberWithCommas(campaigns[index].donation_amount) }}</span>
-                </div>
-                </p>
+        <div v-for="data in campaigns" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+            <img class="w-full h-52 cursor-pointer" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
+            <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
+              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ data.campaign_title }}</div>
+              <p class="text-gray-700 text-base truncate">
+                By: {{ data.ngo }}
+              <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
+                <div v-if="data.raised_amount"
+                  class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                  :style="{ width: data.raised_amount * 100 / data.donation_amount + '%' }"> {{ (data.raised_amount * 100
+                    /
+                    data.donation_amount).toFixed(2) }}%</div>
               </div>
               <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
                 <button class="text-[#40b751] text-base">Share</button>
@@ -256,7 +247,6 @@
 
 
   </div>
-
 
   <!--Testimonials-->
 

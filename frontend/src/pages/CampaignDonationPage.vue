@@ -5,7 +5,7 @@
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
-            <p class="text-[30px] md:text-[30px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-medium text-[#364958] leading-none"
+            <p class="text-[30px] md:text-[36px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-[700] text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
                 Join hands with <span class="text-[#40b751]"> Sadbhana Campaigns </span> to help needy.</p>
         </div>
@@ -13,13 +13,13 @@
     <div class="container mx-auto mt-[40px] md:mt-[40px] lg:mt-[80px]">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
-            <h2 style="font-size: 2rem;  font-weight: 700;"
-                class="mb-4 tracking-wider leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{
+            <h2 style="font-size: 2rem; font-weight: 700;"
+                class="mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{
                     campaign_detail.data.campaign_title }}</h2>
             <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
                 campaign_detail.data.short_description }}</p>
-            <div class="mb-[50px]">
-               <span class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">Tax
+           <div class="mb-[50px]">
+                 <span class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">Tax
                     Benefit</span>
                 <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]"> Assured</span>
                 <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">Old Ages</span>
@@ -49,14 +49,14 @@
 
 
                 </div>
-                <div class="mt-[16px] md:mt-[0px] lg:mt-[0px] w-full lg:w-4/12 pl-0 md:pl-0 lg:pl-4">
+                <div class="mt-5 w-full lg:w-4/12 ">
                     <!-- <DonationDetailRightside /> -->
-                   <h3 style="font-size: 1.75rem; font-weight: 700;" class="text-[#364958]">Product</h3>
+                    <h3 style="font-size: 1.75rem; font-weight: 700;" class="text-[#364958]">Product</h3>
                     <div class="pb-8" v-for="products in campaign_detail.data.add_campaign_items">
                         <!-- {{ products }} -->
 
                         <div class="block product-shodow bg-white pl-5">
-                            <div class="flex  items-center pt-10">
+                            <div class="flex  items-center pt-10">cccccccc
 
                                 <div class="lg:flex lg:w-3/12 xl:w-3/12">
                                     <img :src="products.image" :alt="products.display_as_name"
@@ -228,9 +228,7 @@
                         </div>
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                     </div>
-
-
-                    <h3 style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other Donation</h3>
+                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other Donation</div>
                     <p class="text-gray-600">Donate via</p>
 
                     <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
@@ -312,9 +310,7 @@
                         </div>
 
                     </div>
-
-
-                    <h3 style="font-size: 1.75rem; font-weight: 700;" class="mt-3 text-[#364958]">Donors</h3>
+                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Donors</div>
 
 
                     <div class="flex flex-wrap shadow">
@@ -445,7 +441,7 @@
                                 <div class="px-5 py-10">
                                     <div class="mb-8">
                                         <p
-                                            class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold text-center title-font mb-4 ">
+                                            class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-black text-center title-font mb-4 ">
                                             FAQ
                                         </p>
                                         <p class="text-base text-center leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">

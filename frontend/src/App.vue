@@ -7,10 +7,12 @@
     <Toasts />
   </div>
 </template>
+
 <script>
 import { provide, ref } from 'vue'
 import { call } from 'frappe-ui'
 import { Toasts } from '@/utils/toasts'
+import { ValidationProvider } from 'vee-validate';
 
 // import VueCardStack from "vue-card-stack";
 
@@ -18,6 +20,7 @@ export default {
   name: 'App',
   components: {
     Toasts,
+    ValidationProvider
   },
   setup() {
     const user = ref({})
