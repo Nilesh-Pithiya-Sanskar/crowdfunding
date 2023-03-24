@@ -2,11 +2,8 @@
 <template>
   <!-- Header-->
   
-
-
   <div class="bg-no-repeat  bg-cover bg-center "
     style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg')">
-
 
     <Navbar />
     <div class="container mx-auto h-full">
@@ -231,22 +228,24 @@
                     /
                     data.donation_amount).toFixed(2) }}%</div>
               </div>
-              <div
-                class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
-                <span>Raised: {{ numberWithCommas(data.raised_amount) }}</span><span>Goal: {{
-                  numberWithCommas(data.donation_amount) }}</span>
+              <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
+                <button class="text-[#40b751] text-base">Share</button>
+                <button
+                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button" @click="donate(campaigns[index].name)"> donate now </button>
               </div>
-              </p>
-            </div>
-            <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
-              <button class="text-[#40b751] text-base">Share</button>
-              <button
-                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                type="button" @click="donate(data.name)"> donate now </button>
             </div>
           </div>
         </div>
     </div>
+      <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
+      <button
+        class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button" @click="campaignToShow += 6">Show More</button>
+    </div>
+
+
+
   </div>
 
   <!--Testimonials-->
@@ -310,7 +309,7 @@
 
   <!--Awards-->
 
-  <div class="bg-[#f5f3ff]">
+ <div class="bg-[#f5f3ff]">
     <div class="container mx-auto h-full">
 
       <div class="text-center mt-10">
@@ -319,7 +318,7 @@
       <div class="pb-16">
         <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-2 justify-items-center text-center">
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 " src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 " src="../../src/assets/Inter/img/nationalbusinessawards.jpeg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">National Business Excellence And</p>
               <p class="text-[#364958] font-medium text-[20px]"> Achievers Award</p>
@@ -328,7 +327,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennai - logo.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Top Ten Startups In Hyderabad</p>
               <p class="text-[#364958] font-medium pt-2">2020</p>
@@ -336,7 +335,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/socialenterprice award.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Social Enterprise Challenge Award</p>
               <p class="text-[#364958] font-medium pt-2">2018</p>
@@ -344,7 +343,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/NASSCOM.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">NASSCOM Social Innovation Award</p>
               <p class="text-[#364958] font-medium pt-2">2018</p>
@@ -352,7 +351,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/indianextress.png">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Indian Express 40 Under 40</p>
               <p class="text-[#364958] font-medium pt-2">2021</p>
@@ -377,10 +376,10 @@ import { useRoute } from 'vue-router'
 
 export default {
   name: 'Home',
-  created() {
-    this.get_campaigns()
-    this.get_featured_campaigns()
-  },
+  // created() {
+  //   this.get_campaigns()
+  //   this.get_featured_campaigns()
+  // },
   components: {
     Navbar,
     Footer,
@@ -390,29 +389,33 @@ export default {
   setup() {
     const user = inject("user")
     // console.log("param id", this.$route.params.razorpay_payment_id)
+
     return {
       user
     }
   },
-  // mounted(){
-  //   const route = useRoute()    
-  //   if(route.query.razorpay_payment_id){
-  //     this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
-  //   }
-  //   else{
-  //     console.log("not found")
-  //   }
-  // },
+  mounted(){
+    this.get_campaigns()
+    this.get_featured_campaigns()
+    // const route = useRoute()
+    // if(route.query.razorpay_payment_id){
+    //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
+    // }
+    // else{
+    //   console.log("not found")
+    // }
+  },
 
   data() {
     return {
       campaigns: [],
+      campaignToShow: 6,
+      totalCampaign: 0,
       loading: false,
       selection: 1,
       openTab: 1,
       openTabTestimonials: 1,
       featured_campaigns: []
-
     }
   },
   resources: {
@@ -420,11 +423,12 @@ export default {
       return {
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
         onSuccess: (res) => {
-          // console.log("Success", res)
+          console.log("get_campaign_success", res)
           this.campaigns = res
+          this.totalCampaign = this.campaigns.length
         },
-        onError() {
-          console.log("Error")
+        onError: (error) => {
+          console.log("Error", error)
         }
       }
     },
@@ -432,7 +436,7 @@ export default {
       return{
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_featured_campaigns',
         onSuccess: (res) => {
-          // console.log("Success", res)
+          console.log("get_featured_success", res)
           this.featured_campaigns = res
         },
         onError() {
@@ -538,7 +542,7 @@ export default {
   // 		return
   // 	}
   //   // else{
-  //   //   this.$router.push(`/sadbhavna/login`) 
+  //   //   this.$router.push(`/sadbhavna/login`)
   //   // }
   // 	if (!this.user.has_desk_access) {
   // 		this.$router.push({ path: "/home" })

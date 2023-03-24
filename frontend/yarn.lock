@@ -2224,6 +2224,11 @@ vue-echarts@^6.3.1:
     resize-detector "^0.3.0"
     vue-demi "^0.13.2"
 
+vue-facebook-login-component@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/vue-facebook-login-component/-/vue-facebook-login-component-4.0.2.tgz#0049e14be20549de25e4592cc8acaa700d867a65"
+  integrity sha512-VjFtropjHoEj+p2/bbM2NXTNWqMFU4uk/HUoOeoTiyg7Is9YvOGmjtFZEvfXWmnoSC3WFrtOL4xOb4/x5+0LpQ==
+
 vue-functional-data-merge@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/vue-functional-data-merge/-/vue-functional-data-merge-3.1.0.tgz"

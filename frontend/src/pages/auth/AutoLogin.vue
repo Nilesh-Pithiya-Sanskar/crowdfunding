@@ -43,9 +43,18 @@
                                     with Email</button>
                             </div>
                             <div class="mb-4">
+                                <!-- <fb:login-button 
+                                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                scope="public_profile,email"
+                                size="large"
+                                :onlogin="checkLoginState()">
+                                </fb:login-button> -->
                                 <button
-                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
-                                    with Facebook</button>
+                                    class="fb-login-button appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    data-button-type=""
+                                    data-use-continue-as=""
+                                    @click="checkLoginState()">
+                                    Login with Facebook</button>
                             </div>
                             <!-- <GoogleLogin :callback="login_with_google" class="w-full">
                             <div class="mb-4">
@@ -54,10 +63,35 @@
                                     with Google</button>
                             </div>
                         </GoogleLogin> -->
+
+                        <div class="grid grid-cols-2 gap-2">
                             <div class="mb-4">
                                 <GoogleLogin :callback="login_with_google">
                                 </GoogleLogin>
                             </div>
+                    
+                            <!-- <div class="mb-4">
+                                <fb:login-button 
+                                scope="public_profile,email"
+                                size="large"
+                                :onlogin="checkLoginState()">
+                                </fb:login-button>
+                            </div> -->
+                            <!-- <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="true"></div> -->
+
+                        </div>
+                            <!-- <div class="mb-4">
+                                <GoogleLogin :callback="login_with_google">
+                                </GoogleLogin>
+                            </div>
+                            <div class="mb-4">
+                                <fb:login-button 
+                                scope="public_profile,email"
+                                size="large"
+                                :onlogin="checkLoginState()">
+                                </fb:login-button>
+                            </div> -->
+
 
                             <div class="mb-4">
                                 <div class="flex mb-10 justify-between">
@@ -78,38 +112,6 @@
             </div>
         </div>
     </div>
-
-    <div class="fb-login-button" data-size="medium" data-button-type="login_with_facebook" data-autologout-link="false" data-use-continue-as="true" @click="loginWithFacebook"></div>
-
-
-
-    <!-- <GoogleLogin :callback="login_with_google" class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded" prompt auto-login/> -->
-    <!--<button @click="login_with_google">Login With Google</button>
-{{ isLogin }}-->
-<!-- <facebook-login
-    appId="1616534218770661"
-    @loggedIn="handleLogin"
-    @loginFailed="handleLoginFailed"
->
-</facebook-login> -->
-<!-- <div>-----------------------------------</div> -->
-    <!-- <facebook-login class="button"
-      appId="1616534218770661"
-      @login="getUserData"
-      @logout="onLogout"
-      @get-initial-status="getUserData">
-    </facebook-login> -->
-
-<!-- <button :on-click="onLogin()"></button> -->
-
-    <!-- <facebook-login class="button"
-      appId="1616534218770661"
-      @login="getUserData"
-      @logout="onLogout"
-      @get-initial-status="getUserData">
-    </facebook-login> -->
-    
-<!-- <div>-----------------------------------</div> -->
     <Footer />
 </template>
   
@@ -120,12 +122,9 @@ import { decodeCredential } from 'vue3-google-login';
 import Navbar from "../../components/Navbar.vue";
 import Footer from "../../components/Footer.vue";
 
-import facebookLogin from 'facebook-login-vuejs';
-
-
 export default {
     name: "Auto Login",
-    components: { Navbar, Footer, facebookLogin},
+    components: { Navbar, Footer},
 
     data() {
         return {
@@ -135,30 +134,19 @@ export default {
             // password: "",
             email: "",
             // isLogin: false,
-
-            // idImage, loginImage, mailImage, faceImage,
         };
     },
-    mounted(){
+    mounted() {
+        // 203313835661247
+        // 1616534218770661
         FB.init({
-            appId            : '1616534218770661',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v16.0'
-        })
+            appId: '1616534218770661',
+            cookie: true,
+            xfbml: true,
+            version: 'v13.0'
+        });
     },
     resources: {
-        // login_with_google() {
-        //     return {
-        //         method: 'frappe.https://www.login.login_via_token',
-        //         onSuccess: () => {
-        //             console.log("okey")
-        //         },
-        //         onError: (error) => {
-        //             console.log("error", error)
-        //         }
-        //     }
-        // },
         login_with_whatsapp() {
             return {
                 method: 'sadbhavna_donatekart.api.api.login_with_whatsapp',
@@ -174,55 +162,7 @@ export default {
             }
         }
     },
-    methods: {
-
-        loginwithFacebook(){
-            FB.login(response => {
-                if(response.authResponse){
-                    FB.api('/me', {fields: 'name, email'}, response => {
-                        console.log("response", response)
-                    })
-                }
-                else{
-                    console.log("cancelled")
-                }
-            }, {scope: 'public_profile, email'});
-        },
-
-
-        // handleLogin(response) {
-        //     console.log("User Successfully Logged In" , response)
-        // },
-        // handleLoginFailed() {
-        //     console.log("User Cancelled or Abort the Login")
-        // },
-
-
-        getUserData() {
-      this.FB.api('/me', 'GET', { fields: 'id,name,email' },
-        userInformation => {
-          console.warn("data api",userInformation)
-          this.personalID = userInformation.id;
-          this.email = userInformation.email;
-          this.name = userInformation.name;
-        }
-      )
-    },
-    sdkLoaded(payload) {
-      this.isConnected = payload.isConnected
-      this.FB = payload.FB
-      if (this.isConnected) this.getUserData()
-    },
-    onLogin() {
-      this.isConnected = true
-      this.getUserData()
-    },
-    onLogout() {
-      this.isConnected = false;
-    },
-
-
-        
+    methods: {       
         login_with_google: (response) => {
             // console.log("data", response)
             let userData = decodeCredential(response.credential)
@@ -255,6 +195,19 @@ export default {
             this.$resources.login_with_whatsapp.submit({
                 phone: this.phone
             })
+        },
+        checkLoginState() {
+            FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                // User is logged in with Facebook, so you can retrieve user information here
+                FB.api('/me', function(userInfo) {
+                console.log('UserInfo:', userInfo);
+                });
+            } else {
+                // User is not logged in with Facebook, or user did not grant permission to your app
+                console.log('User is not logged in with Facebook');
+            }
+            });
         }
     }
 };

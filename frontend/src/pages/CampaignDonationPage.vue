@@ -7,10 +7,10 @@
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
             <p class="text-[30px] md:text-[36px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-[700] text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
-                Join hands with <span class="text-[#40b751]">Sadbhana Campaigns</span> to help needy.</p>
+                Join hands with <span class="text-[#40b751]"> Sadbhana Campaigns </span> to help needy.</p>
         </div>
     </div>
-    <div class="container mx-auto mt-20">
+    <div class="container mx-auto mt-[40px] md:mt-[40px] lg:mt-[80px]">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
             <h2 style="font-size: 2rem; font-weight: 700;"
@@ -228,8 +228,6 @@
                         </div>
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                     </div>
-
-
                     <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other Donation</div>
                     <p class="text-gray-600">Donate via</p>
 
@@ -312,8 +310,6 @@
                         </div>
 
                     </div>
-
-
                     <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Donors</div>
 
 

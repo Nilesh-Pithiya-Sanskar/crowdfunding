@@ -18,15 +18,15 @@
             <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
                 <div class="container mx-auto py-0">
                     <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
-                        <div
-                            class="text-[24px] md:text-[30px] lg:text-[36px] py-8 px-10 text-gray-600 font-[200px] text-center">
-                            Donation Campaign request
+                         <div
+                            class="text-[24px] md:text-[30px] lg:text-[36px] py-8 px-10 text-[#40b751] font-bold text-center">
+                            Donation Campaign Request
                         </div>
                         <div class="relative z-0">
                             <div class=" sm:p-10 ">
-                                <ul class="flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
-                                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                                        <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
+                                   <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                        <a class="mb-3 md:mb-0 lg:mb-0 cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block "
                                             v-on:click="toggleTabs(1)"
                                             v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1 }">
                                             NGO
