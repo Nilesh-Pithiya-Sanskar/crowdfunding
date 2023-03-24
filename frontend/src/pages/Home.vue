@@ -217,25 +217,25 @@
     <!--Cards-->
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
       <div v-for="index in campaignToShow">
-        <div v-if="index < campaigns.length">
+        <div v-if="index - 1 < campaigns.length">
           <div class="pt-5 md:pt-4 lg:pt-10 grid ">
             <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
-              <img class="w-full h-52 cursor-pointer" :src="campaigns[index].campain_image" alt="Mountain" @click="donate(campaigns[index].name)">
+              <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain" @click="donate(campaigns[index - 1].name)">
               <div class="pt-9 pr-9 pd-7 pl-9 ">
-                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index].campaign_title }}</div>
+                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index - 1].campaign_title }}</div>
                 <p class="text-gray-700 text-base truncate">
-                  By: {{ campaigns[index].ngo }}
+                  By: {{ campaigns[index - 1].ngo }}
                 <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
-                  <div v-if="campaigns[index].raised_amount"
+                  <div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                    :style="{ width: campaigns[index].raised_amount * 100 / campaigns[index].donation_amount + '%' }"> {{ (campaigns[index].raised_amount * 100
+                    :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }"> {{ (campaigns[index - 1].raised_amount * 100
                       /
-                      campaigns[index].donation_amount).toFixed(2) }}%</div>
+                      campaigns[index - 1].donation_amount).toFixed(2) }}%</div>
                 </div>
                 <div
                   class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
-                  <span>Raised: {{ numberWithCommas(campaigns[index].raised_amount) }}</span><span>Goal: {{
-                    numberWithCommas(campaigns[index].donation_amount) }}</span>
+                  <span>Raised: {{ numberWithCommas(campaigns[index - 1].raised_amount) }}</span><span>Goal: {{
+                    numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
                 </div>
                 </p>
               </div>
@@ -389,10 +389,10 @@ import { useRoute } from 'vue-router'
 
 export default {
   name: 'Home',
-  created() {
-    this.get_campaigns()
-    this.get_featured_campaigns()
-  },
+  // created() {
+  //   this.get_campaigns()
+  //   this.get_featured_campaigns()
+  // },
   components: {
     Navbar,
     Footer,
@@ -402,19 +402,22 @@ export default {
   setup() {
     const user = inject("user")
     // console.log("param id", this.$route.params.razorpay_payment_id)
+    
     return {
       user
     }
   },
-  // mounted(){
-  //   const route = useRoute()    
-  //   if(route.query.razorpay_payment_id){
-  //     this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
-  //   }
-  //   else{
-  //     console.log("not found")
-  //   }
-  // },
+  mounted(){
+    this.get_campaigns()
+    this.get_featured_campaigns()
+    // const route = useRoute()    
+    // if(route.query.razorpay_payment_id){
+    //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
+    // }
+    // else{
+    //   console.log("not found")
+    // }
+  },
 
   data() {
     return {
@@ -433,7 +436,7 @@ export default {
       return {
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
         onSuccess: (res) => {
-          // console.log("Success", res)
+          console.log("get_campaign_success", res)
           this.campaigns = res
           this.totalCampaign = this.campaigns.length
         },
@@ -446,7 +449,7 @@ export default {
       return{
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_featured_campaigns',
         onSuccess: (res) => {
-          // console.log("Success", res)
+          console.log("get_featured_success", res)
           this.featured_campaigns = res
         },
         onError() {
