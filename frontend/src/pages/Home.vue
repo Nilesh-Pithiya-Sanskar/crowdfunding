@@ -256,7 +256,7 @@
     </div>
     </div>
 
-    
+
 
   </div>
 
@@ -402,7 +402,7 @@ export default {
   setup() {
     const user = inject("user")
     // console.log("param id", this.$route.params.razorpay_payment_id)
-    
+
     return {
       user
     }
@@ -410,7 +410,7 @@ export default {
   mounted(){
     this.get_campaigns()
     this.get_featured_campaigns()
-    // const route = useRoute()    
+    // const route = useRoute()
     // if(route.query.razorpay_payment_id){
     //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
     // }
@@ -555,7 +555,7 @@ export default {
   // 		return
   // 	}
   //   // else{
-  //   //   this.$router.push(`/sadbhavna/login`) 
+  //   //   this.$router.push(`/sadbhavna/login`)
   //   // }
   // 	if (!this.user.has_desk_access) {
   // 		this.$router.push({ path: "/home" })
