@@ -10,19 +10,19 @@
                 Join hands with <span class="text-[#40b751]"> Sadbhana Campaigns </span> to help needy.</p>
         </div>
     </div>
-    <div class="container mx-auto mt-20">
+    <div class="container mx-auto mt-[40px] md:mt-[40px] lg:mt-[80px]">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
-            <h2 style="font-size: 2rem;"
-                class="mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] font-medium capitalize">{{
+            <h2 style="font-size: 2rem;  font-weight: 700;"
+                class="mb-4 tracking-wider leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{
                     campaign_detail.data.campaign_title }}</h2>
             <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
                 campaign_detail.data.short_description }}</p>
             <div class="mb-[50px]">
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[20px] rounded-[10px]">Tax
+               <span class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">Tax
                     Benefit</span>
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[20px] rounded-[10px]"> Assured</span>
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[20px] rounded-[10px]">Old Ages</span>
+                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]"> Assured</span>
+                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">Old Ages</span>
             </div>
             <div class="flex flex-wrap mt-6 mb-5">
                 <div class="w-full lg:w-8/12 pr-4">
@@ -49,9 +49,9 @@
 
 
                 </div>
-                <div class="w-full lg:w-4/12 pl-4">
+                <div class="mt-[16px] md:mt-[0px] lg:mt-[0px] w-full lg:w-4/12 pl-0 md:pl-0 lg:pl-4">
                     <!-- <DonationDetailRightside /> -->
-                    <div style="font-size: 2rem;" class="text-gray-600">Product</div>
+                   <h3 style="font-size: 1.75rem; font-weight: 700;" class="text-[#364958]">Product</h3>
                     <div class="pb-8" v-for="products in campaign_detail.data.add_campaign_items">
                         <!-- {{ products }} -->
 
@@ -230,7 +230,7 @@
                     </div>
 
 
-                    <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other Donation</h3>
                     <p class="text-gray-600">Donate via</p>
 
                     <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
@@ -314,7 +314,7 @@
                     </div>
 
 
-                    <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Donors</div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700;" class="mt-3 text-[#364958]">Donors</h3>
 
 
                     <div class="flex flex-wrap shadow">

@@ -49,7 +49,7 @@
       </div>
     </div> -->
 
-    <div class="bg-white rounded-xl shadow-lg">
+    <div class="bg-white rounded-xl drop-shadow-xl">
         <Sliders :featured_campaigns="featured_campaigns" :interval="3000"/>
     </div>
 
@@ -213,47 +213,44 @@
       </div>
     </div>
 
-
     <!--Cards-->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-">
+   <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
       <div v-for="index in campaignToShow">
-        <div v-if="index - 1 < campaigns.length">
-          <div class="pt-5 md:pt-4 lg:pt-10 grid ">
-            <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
-              <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain" @click="donate(campaigns[index - 1].name)">
-              <div class="pt-9 pr-9 pd-7 pl-9 ">
-                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index - 1].campaign_title }}</div>
+        <div v-if="index < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+            <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+              <img class="w-full h-52 cursor-pointer" :src="campaigns[index].campain_image" alt="Mountain" @click="donate(campaigns[index].name)">
+              <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
+                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index].campaign_title }}</div>
                 <p class="text-gray-700 text-base truncate">
-                  By: {{ campaigns[index - 1].ngo }}
+                  By: {{ campaigns[index].ngo }}
                 <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
-                  <div v-if="campaigns[index - 1].raised_amount"
+                  <div v-if="campaigns[index].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                    :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }"> {{ (campaigns[index - 1].raised_amount * 100
+                    :style="{ width: campaigns[index].raised_amount * 100 / campaigns[index].donation_amount + '%' }"> {{ (campaigns[index].raised_amount * 100
                       /
-                      campaigns[index - 1].donation_amount).toFixed(2) }}%</div>
+                      campaigns[index].donation_amount).toFixed(2) }}%</div>
                 </div>
                 <div
                   class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
-                  <span>Raised: {{ numberWithCommas(campaigns[index - 1].raised_amount) }}</span><span>Goal: {{
-                    numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+                  <span>Raised: {{ numberWithCommas(campaigns[index].raised_amount) }}</span><span>Goal: {{
+                    numberWithCommas(campaigns[index].donation_amount) }}</span>
                 </div>
                 </p>
               </div>
               <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
                 <button class="text-[#40b751] text-base">Share</button>
                 <button
-                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button" @click="donate(campaigns[index].name)"> donate now </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow">
-      <button
-        class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button" @click="campaignToShow += 6">Show More</button>
     </div>
+      <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
+      <button
+        class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button" @click="campaignToShow += 6">Show More</button>
     </div>
 
 
@@ -322,7 +319,7 @@
 
   <!--Awards-->
 
-  <div class="bg-[#f5f3ff]">
+ <div class="bg-[#f5f3ff]">
     <div class="container mx-auto h-full">
 
       <div class="text-center mt-10">
@@ -331,7 +328,7 @@
       <div class="pb-16">
         <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-2 justify-items-center text-center">
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 " src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 " src="../../src/assets/Inter/img/nationalbusinessawards.jpeg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">National Business Excellence And</p>
               <p class="text-[#364958] font-medium text-[20px]"> Achievers Award</p>
@@ -340,7 +337,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennai - logo.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Top Ten Startups In Hyderabad</p>
               <p class="text-[#364958] font-medium pt-2">2020</p>
@@ -348,7 +345,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/socialenterprice award.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Social Enterprise Challenge Award</p>
               <p class="text-[#364958] font-medium pt-2">2018</p>
@@ -356,7 +353,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/NASSCOM.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">NASSCOM Social Innovation Award</p>
               <p class="text-[#364958] font-medium pt-2">2018</p>
@@ -364,7 +361,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/images.png">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/indianextress.png">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Indian Express 40 Under 40</p>
               <p class="text-[#364958] font-medium pt-2">2021</p>

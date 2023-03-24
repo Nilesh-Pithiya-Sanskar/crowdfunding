@@ -37,3 +37,7 @@ div {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.card-shodow {
+  box-shadow: 0 0 12px 12px #f8f8f8;
+}

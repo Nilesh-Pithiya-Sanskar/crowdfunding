@@ -29,7 +29,7 @@
 
                 </div> -->
                 <div v-if="blog_detail">
-                    <p style="font-size: 3rem;" class="text-black font-bold pt-8 pl-8">{{
+                    <p style="font-size: 3rem;" class="text-[#40b751] font-bold pt-8 pl-8">{{
                         blog_detail.data.title }}
                     </p>
                     <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 ">
