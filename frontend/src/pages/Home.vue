@@ -2,9 +2,7 @@
 <template>
   <!-- Header-->
 
-  <div class="bg-no-repeat  bg-cover bg-center "
-    style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
-
+  <div class="bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
     <Navbar />
     <div class="container mx-auto h-full">
       <div class="grid lg:grid-cols-2 pb-10 m-10">
@@ -19,7 +17,7 @@
             crowd funding platform of India.
           </p>
         </div>
-        <div class="md:pl-32 lg:pl-0 pl-0 lg:pt-0 pt-8 pb-4 lg:pb-16 grid justify-items-center">
+        <div class="md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-[20px] md:pb-[40px] lg:pb-14 grid justify-items-center">
           <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
         </div>
       </div>
@@ -29,8 +27,8 @@
   <!----------------------------------------->
 
 
-  <div class="container mx-auto h-full sm:p-4 lg:p-16 -mt-16 lg:-mt-36 pl-4 lg:pl-0 pr-4 lg:pr-0">
-  <!-- <div class="bg-white rounded-xl product-shodow">
+   <div class="container mx-auto h-full sm:p-4 lg:p-16 -mt-[80px] md:-mt-[88px] lg:-mt-[144px] pl-4 lg:pl-0 pr-4 lg:pr-0">
+    <!-- <div class="bg-white rounded-xl product-shodow">
       <div v-for="data in campaigns">
         <div v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           <div class="md:col-span-2 lg:col-span-1">
@@ -48,10 +46,10 @@
           </div>
         </div>
       </div>
-              </div> -->
+    </div> -->
 
     <div class="bg-white rounded-xl drop-shadow-xl">
-      <Sliders :featured_campaigns="featured_campaigns" :interval="3000" />
+        <Sliders :featured_campaigns="featured_campaigns" :interval="3000"/>
     </div>
 
     <!-- Categories -->
