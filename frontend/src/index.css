@@ -40,3 +40,16 @@ div {
 .card-shodow {
   box-shadow: 0 0 12px 12px #f8f8f8;
 }
+
+.fontcolor{
+color: #364958;
+}
+
+.fontfamily{
+font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.fontcard{
+font-family: "Open Sans", sans-serif;
+}
+
