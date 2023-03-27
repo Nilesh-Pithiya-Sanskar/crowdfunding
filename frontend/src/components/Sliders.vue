@@ -8,9 +8,9 @@
 
       <div class="slides" :style="{ transform: `translateX(-${currentSlide * slideWidth}px)` }">
         <div v-for="(data,index) in featured_campaigns"  :key="index" class="slide" >
-          <div class="grid  p-[30px] sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <div class="grid  p-[10px] md:p-[20px] lg:p-[30px] sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
             <div class="md:col-span-2 lg:col-span-1">
-                 <img class="pl-3 pt-3 md:h-80 lg:h-56 h-80 sm:w-full md:w-96 lg:w-96" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
+                 <img class="pl-3 pt-3 pb-1 h-60 md:h-80 lg:h-56 w-full" :src="data.campain_image" alt="Mountain" @click="donate(data.name)">
             </div>
             <div class="md:col-span-2 lg:col-span-3 pr-0 lg:pr-16">
               <button
