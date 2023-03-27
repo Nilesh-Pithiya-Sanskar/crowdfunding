@@ -115,6 +115,9 @@ export default {
       showDialog: false
     }
   },
+  mounted(){
+  console.log("navbar load")
+ },
   resources:{
     logout(){
       return{
