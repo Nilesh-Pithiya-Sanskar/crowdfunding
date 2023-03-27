@@ -93,6 +93,11 @@ const routes = [{
     name: 'Privacy Policy',
     component: () => import('@/pages/PrivacyPolicy1.vue')
   },
+  {
+    path: '/sadbhavna/terms-of-service',
+    name: 'Terms Of Service',
+    component: () => import('@/pages/TermsOfService.vue')
+  },
 ]
 
 let router = createRouter({
