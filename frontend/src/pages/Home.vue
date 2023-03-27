@@ -337,7 +337,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennai - logo.jpg">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennailogo.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Top Ten Startups In Hyderabad</p>
               <p class="text-[#364958] font-medium pt-2">2020</p>
@@ -345,7 +345,7 @@
           </div>
 
           <div>
-            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/socialenterprice award.jpg">
+            <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/socialenterpriceaward.jpg">
             <div>
               <p class="text-[#364958] font-medium text-[20px]">Social Enterprise Challenge Award</p>
               <p class="text-[#364958] font-medium pt-2">2018</p>
