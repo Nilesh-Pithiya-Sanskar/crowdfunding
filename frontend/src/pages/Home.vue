@@ -243,7 +243,7 @@
                 <button class="text-[#40b751] text-base">Share</button>
                 <button
                   class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                  type="button" @click="donate(campaigns[index].name)"> donate now </button>
+                  type="button" @click="donate(campaigns[index - 1].name)"> donate now </button>
               </div>
             </div>
           </div>

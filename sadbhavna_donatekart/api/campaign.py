@@ -9,10 +9,9 @@ def get_campaign_detail(name):
 @frappe.whitelist(allow_guest=True)
 def get_campaigns(category = ''):
     if category != '':
-        return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'campaign_category': f'{category}'}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"])
+        return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'campaign_category': f'{category}'}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"], order_by='start_date desc')
     else:
-        return frappe.db.get_list("Donation Campaign", filters={'published': 1}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"])
-
+        return frappe.db.get_list("Donation Campaign", filters={'published': 1}, fields=["name", "campain_image", "is_featured", "campaign_title", "donation_amount", "raised_amount", "start_date", "end_date", "short_description", "ngo", "campaign_category"], order_by='start_date desc')
 
 @frappe.whitelist(allow_guest=True)
 def get_featured_campaigns():

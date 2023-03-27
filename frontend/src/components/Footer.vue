@@ -200,6 +200,14 @@
   </div>
 </template>
 
+<script>
+export default{
+  mounted(){
+  // console.log("footer load")
+ },
+}
+</script>
+
 
 
 <!-- 

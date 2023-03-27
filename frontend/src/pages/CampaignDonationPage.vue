@@ -1,16 +1,16 @@
 <template>
 <!-- <DonationCheckout/> -->
-
-    <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
-        style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
-        <Navbar />
+    <Navbar />
+    <!-- <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
+        style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg');">
+    
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
             <p class="text-[30px] md:text-[30px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-medium text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
                 Join hands with <span class="text-[#40b751]"> Sadbhana Campaigns </span> to help needy.</p>
         </div>
-    </div>
-    <div class="container mx-auto mt-20">
+    </div> -->
+    <div class="container mx-auto mt-10">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
             <h2 style="font-size: 2rem;"
@@ -25,9 +25,13 @@
                 <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[20px] rounded-[10px]">Old Ages</span>
             </div>
             <div class="flex flex-wrap mt-6 mb-5">
+                <img class="object-fill w-full mb-4" :src="campaign_detail.data.campain_image">
                 <div class="w-full lg:w-8/12 pr-4">
-                    <!-- <DonationDetail /> -->
-                    <img class="object-fill w-full mb-4" :src="campaign_detail.data.campain_image">
+                    <!-- <DonationDetail /> -->      
+                    <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] justify-between font-bold">
+                        <p>Raised: {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
+                        <p>Goal: {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
+                    </div>              
                     <div class="w-full h-[16px] bg-gray-200 rounded-md dark:bg-gray-700">
                         <!-- <div class="bg-green-500 text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md" style="width: 40%"> 40%</div> -->
                         <div class="bg-[#40b751] text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
@@ -35,15 +39,143 @@
                             {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
                             }}%</div>
                     </div>
-                    <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] justify-between font-bold">
-                        <p>Raised: {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
-                        <p>Goal: {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
-                    </div>
+                    <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] font-bold">
+                        <p class="lg:w-3/12"> {{ numberWithCommas(total_donors) }} Donors</p>
+                        <p class="lg:w-3/12"> {{ campaign_days}} Days Left</p>
+                        
+                            <div class="flex lg:w-6/12 justify-between">
+                                <p></p>
+                                <p>facebook</p>
+                                <p>twitter</p>
+                                <p>whatsapp</p>
+                                <p>link</p>
+                                <!-- <p class="lg:w-3/12">facebook</p>
+                                <p class="lg:w-3/12">whatsapp</p>
+                                <p class="lg:w-3/12">link</p> -->
+
+                                <!-- <a href="#" class="text-gray-400 text-white">
+                                <img class="w-4 h-4" src="../../src/assets/Inter/img/facebook.svg" />
+                                <span class="sr-only">Facebook page</span>
+                                </a>
+                                <a href="#" class="text-gray-400 text-white">
+                                <img class="w-4 h-4" src="../../src/assets/Inter/img/twitter.svg" />
+                                <span class="sr-only">Twitter page</span>
+                                </a>
+                                <a href="#" class="text-gray-400 text-white">
+                                <img class="w-4 h-4 " src="../../src/assets/Inter/img/insta.svg" />
+                                <span class="sr-only">Instagram page</span>
+                                </a>
+                                <a href="#" class="text-gray-400 text-white">
+                                <img class="w-4 h-4" src="../../src/assets/Inter/img/linkedin.svg" />
+                                <span class="sr-only">Linkedin account</span>
+                                </a> -->
+                            </div>
+                        
+
+
+                    </div> 
                     <!-- <pre> -->
                     <!-- <code> -->
-                    <p style="line-height:1.7;" class="text-[#364958]">
+                    <!-- <p style="line-height:1.7;" class="text-[#364958] mb-5">
                         {{ campaign_detail.data.about_campaign }}
-                    </p>
+                    </p> -->
+
+
+                    <!-- <div style="font-size: 2rem;" class="text-gray-600">Product</div> -->
+                    <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-3 mt-6">
+                        <div class="pb-4" v-for="products in campaign_detail.data.add_campaign_items">
+                            <!-- {{ products }} -->
+                            <div class="block product-shodow bg-white pl-5">
+                                <div class="flex items-center pt-4">
+                                    <div class="lg:flex lg:w-4/12 xl:w-4/12">
+                                        <img :src="products.image" :alt="products.display_as_name"
+                                            class="w-32 h-32" />
+                                    </div>
+
+                                    <div class="lg:w-8/12 xl:w-8/12">
+                                        <div class="px-6 md:px-6 lg:px-6">
+                                            <h4 class="text-xl font-medium text-[#40b751]">{{ products.display_as_name }}</h4>
+                                            <p class="text-gray-500 mb-2">
+                                                {{ products.about }}
+                                            </p>
+                                            <p class="text-gray-500 font-bold pb-2">
+                                                ₹ {{ numberWithCommas(products.price) }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
+                                <!-- <div v-for="item in item_cart" v-if="item_cart != ''"> -->
+                                    <!-- {{ products.item }} - {{ item.item }} -->
+                                    <div class="flex justify-between pb-2">
+                                        <div class="flex justify-between w-24 text-xl h-9">
+                                            <Button class="bg-gray-300"
+                                                @click="decrement(products.item, products.price, qty)">-</Button>
+
+                                            <div v-for="item in item_cart">
+                                                <div class="bg-[#40b751] pt-1 pb-1 pl-3 pr-3 rounded-lg justify-center pb-5"
+                                                    v-if="products.item == item.item && item.qty != 0"> {{ item.qty }}
+                                                </div>
+                                            </div>
+                                            <Button class="bg-gray-300"
+                                                @click="increment(products.item, products.price, qty)">+</Button>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <!-- <div class="flex justify-between pb-2">
+                                        <div class="flex justify-between w-24 text-xl h-9">
+                                            <div>
+                                                <Button class="bg-gray-300"
+                                                @click="increment(products.item, products.price, qty)">Add1</Button>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!-- <div class="flex justify-between pb-2" v-else>
+                                        <div class="flex justify-between w-24 text-xl h-9">
+                                            <div>
+                                                <Button class="bg-gray-300"
+                                                @click="increment(products.item, products.price, qty)">Add2</Button>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                <!-- </div> -->
+                                <!-- <div class="flex justify-between pb-2" v-else>
+                                    <div class="flex justify-between w-24 text-xl h-9">
+                                        <div>
+                                            <Button class="bg-gray-300"
+                                            @click="increment(products.item, products.price, qty)">Add3</Button>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-for="index in descToShow">
+                        <div v-if="index - 1 < campaign_detail.data.description.length">
+                            <img class="object-fill w-full" :src="campaign_detail.data.description[index - 1].image">
+                            <p style="line-height:1.7;" class="text-[#364958] mb-5">{{ campaign_detail.data.description[index - 1].image_description }}</p>
+                        </div>
+                    </div>
+                    <div class="text-center" v-if="descToShow < campaign_detail.data.description.length || campaign_detail.data.description.length > descToShow">
+                    <button
+                        class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button" @click="descToShow += 1">View More</button>
+                    </div>
+                    <div class="text-center" v-else>
+                        <button
+                        class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button" @click="descToShow = 1" v-if="descToShow > 0">View Less</button>
+                    </div>
+                    
+
+                    
+                    <!-- <div v-for="desc in campaign_detail.data.description">
+                        <img class="object-fill w-full" :src="desc.image">
+                        <p style="line-height:1.7;" class="text-[#364958] mb-5">{{ desc.image_description }}</p>
+                    </div> -->
+                   
                     <!-- </code> -->
                     <!-- </pre> -->
 
@@ -51,48 +183,7 @@
                 </div>
                 <div class="w-full lg:w-4/12 pl-4">
                     <!-- <DonationDetailRightside /> -->
-                    <div style="font-size: 2rem;" class="text-gray-600">Product</div>
-                    <div class="pb-8" v-for="products in campaign_detail.data.add_campaign_items">
-                        <!-- {{ products }} -->
-
-                        <div class="block product-shodow bg-white pl-5">
-                            <div class="flex  items-center pt-10">
-
-                                <div class="lg:flex lg:w-3/12 xl:w-3/12">
-                                    <img :src="products.image" :alt="products.display_as_name"
-                                        class="rounded-full w-20 h-20" />
-                                </div>
-
-
-                                <div class="lg:w-9/12 xl:w-9/12">
-                                    <div class="px-6 md:px-6 lg:px-6">
-                                        <h4 class="text-xl font-medium text-[#40b751]">{{ products.display_as_name }}</h4>
-                                        <p class="text-gray-500 mb-2">
-                                            {{ products.about }}
-                                        </p>
-                                        <p class="text-gray-500 font-bold pb-2">
-                                            ₹ {{ numberWithCommas(products.price) }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
-                            <div class="flex justify-between pb-2">
-
-                                <div class="flex justify-between w-24 text-xl h-9">
-                                    <Button class="bg-gray-300"
-                                        @click="decrement(products.item, products.price, qty)">-</Button>
-
-                                    <div v-for="item in item_cart">
-                                        <div class="bg-[#40b751] pt-1 pb-1 pl-3 pr-3 rounded-lg justify-center pb-5"
-                                            v-if="products.item == item.item && item.qty != 0"> {{ item.qty }}
-                                        </div>
-                                    </div>
-                                    <Button class="bg-gray-300"
-                                        @click="increment(products.item, products.price, qty)">+</Button>
-                                </div>
-                            </div>
-                        </div>
+                    
 
 
                         <!-- <div class="block shadow-lg bg-white pl-5">
@@ -211,9 +302,9 @@
                             </div>
                                  -->
                         <!-- ******************************************** -->
-                    </div>
-
-                    <div v-if="total_price != 0" class="text-center font-bold text-lg mt-5">
+                    <!-- </div> -->
+                <div class="sticky top-0">
+                    <!-- <div v-if="total_price != 0" class="text-center font-bold text-lg mt-5">
                         <div class="text-gray-600">Total Donation</div>
                         <div class="text-[#40b751]">₹ {{ numberWithCommas(total_price) }}</div>
                         <div>
@@ -227,11 +318,80 @@
                             <label for="checkbox" class="text-sm pl-2">Make my donation anonymous</label>
                         </div>
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
-                    </div>
+                    </div> -->
+
+                        <div class="overflow-hidden">
+                          <table class="" v-if="item_cart != ''">
+                            <thead class="bg-white border-b">
+                              <tr>
+                                <th scope="col" class="text-sm font-bold text-gray-900 py-4 text-left">
+                                  Item Name
+                                </th>
+                                <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
+                                  Rate
+                                </th>
+                                <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
+                                  Qty
+                                </th>
+                                <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
+                                  Amount
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr v-for="item in item_cart"
+                                class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                <td class="text-sm text-gray-900 font-light py-4 whitespace-nowrap">
+                                  {{ item.item }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                  {{ item.rate }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                  {{ item.qty }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+                                  {{ item.amount }}
+                                </td>
+                              </tr>
+                              <!-- <tr>
+                                <td class="text-sm font-bold">Total</td>
+                              </tr> -->
+
+                            </tbody>
+                        </table>
+
+                        <div v-else class="text-center mt-5">                            
+                            <button
+                            class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
+                            type="button" @click="donate(total_price, anonymous)"> donate now
+                            </button>                           
+                        </div>
+
+                        <div v-if="total_price != 0" class="text-center font-bold text-lg mt-5">
+                            <div class="text-gray-600">Total Donation</div>
+                            <div class="text-[#40b751]">₹ {{ numberWithCommas(total_price) }}</div>
+                            <div>
+                                <button
+                                    class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
+                                    type="button" @click="donate(total_price, anonymous)"> donate now
+                                </button>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="anonymous" v-model="anonymous">
+                                <label for="checkbox" class="text-sm pl-2">Make my donation anonymous</label>
+                            </div>
+                                <!-- <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"> -->
+                        </div>
+                        </div>
+
+                
+
+            
 
 
-                    <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div>
-                    <p class="text-gray-600">Donate via</p>
+                    <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
+                    <p class="text-gray-600 mt-4">Donate via</p>
 
                     <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
                         <div>
@@ -312,9 +472,109 @@
                         </div>
 
                     </div>
+                </div>
 
 
-                    <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Donors</div>
+                    
+                </div>
+            </div>
+
+
+
+            <section class="bg-white dark:bg-gray-900 flex">
+                <div class="lg:w-8/12">
+                    <div class="bg-white dark:bg-gray-900">
+                        <div>
+                            <div class="text-gray-700">
+                                <div class="px-5 py-10">
+                                    <div class="mb-8">
+                                        <p
+                                            class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold text-center title-font mb-4 ">
+                                            FAQ
+                                        </p>
+                                        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
+                                        <div class="w-full py-2">
+                                            <details class="mb-4">
+                                                <summary
+                                                    class="font-medium cursor-pointer border-2 border-b-1 border-solid border-b-gray-300 text-xl text-[#40b751] list-none bg-gray-100 rounded py-3 px-4">
+                                                    What is Donatekart ?</summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="border-2 font-normal border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] ">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3
+                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                                        truck quinoa nesciunt laborum
+                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                        squid
+                                                        single-origin coffee nulla
+                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                                                        labore wes anderson cred nesciunt
+                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                                        occaecat craft beer
+                                                        farm-to-table.
+                                                    </p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-4">
+                                                <summary
+                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
+                                                    How to claim Tax-Exemption for my contributions on Donatekart?</summary>
+
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3
+                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                                        truck quinoa nesciunt laborum
+                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                        squid
+                                                        single-origin coffee nulla
+                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                                                        labore wes anderson cred nesciunt
+                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                                        occaecat craft beer
+                                                        farm-to-table, raw denim aesthetic synth nesciunt you probably
+                                                        haven't
+                                                        heard of them accusamus labore
+                                                        sustainable VHS.</p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-4">
+                                                <summary
+                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
+                                                    How to Donate ?</summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3
+                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                                        truck quinoa nesciunt laborum
+                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                        squid
+                                                        single-origin coffee nulla
+                                                        assumenda shoreditch et.</p>
+                                                </span>
+                                            </details>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-4/12">
+                    <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Donors ({{ total_donors }})</div>
 
 
                     <div class="flex flex-wrap shadow">
@@ -340,7 +600,6 @@
                                 <div class="px-4 py-5 flex-auto">
                                     <div class="tab-content tab-space overflow-y-auto h-60">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-
                                             <!-- {{ recent_donation }} -->
                                             <div class="pb-6" v-for="donation in recent_donation">
 
@@ -433,102 +692,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-
-            <section class="bg-white dark:bg-gray-900">
-                <div>
-                    <section class="bg-white dark:bg-gray-900">
-                        <div>
-                            <section class="text-gray-700">
-                                <div class="px-5 py-10">
-                                    <div class="mb-8">
-                                        <p
-                                            class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold text-center title-font mb-4 ">
-                                            FAQ
-                                        </p>
-                                        <p class="text-base text-center leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
-                                        <div class="w-full py-2">
-                                            <details class="mb-4">
-                                                <summary
-                                                    class="font-medium cursor-pointer border-2 border-b-1 border-solid border-b-gray-300 text-xl text-[#40b751] list-none bg-gray-100 rounded py-3 px-4">
-                                                    What is Donatekart ?</summary>
-
-                                                <span>
-                                                    <p style="line-height:1.7;"
-                                                        class="border-2 font-normal border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] ">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                        terry richardson ad squid. 3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                        truck quinoa nesciunt laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                                        squid
-                                                        single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                                                        labore wes anderson cred nesciunt
-                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                                        occaecat craft beer
-                                                        farm-to-table.
-                                                    </p>
-                                                </span>
-                                            </details>
-                                            <details class="mb-4">
-                                                <summary
-                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
-                                                    How to claim Tax-Exemption for my contributions on Donatekart?</summary>
-
-
-                                                <span>
-                                                    <p style="line-height:1.7;"
-                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                        terry richardson ad squid. 3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                        truck quinoa nesciunt laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                                        squid
-                                                        single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                                                        labore wes anderson cred nesciunt
-                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                                        occaecat craft beer
-                                                        farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                                        haven't
-                                                        heard of them accusamus labore
-                                                        sustainable VHS.</p>
-                                                </span>
-                                            </details>
-                                            <details class="mb-4">
-                                                <summary
-                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
-                                                    How to Donate ?</summary>
-
-                                                <span>
-                                                    <p style="line-height:1.7;"
-                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                        terry richardson ad squid. 3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                        truck quinoa nesciunt laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                                        squid
-                                                        single-origin coffee nulla
-                                                        assumenda shoreditch et.</p>
-                                                </span>
-                                            </details>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                    </section>
-                </div>
             </section>
+
+
         </div>
     </div>
     <Dialog
@@ -563,7 +731,7 @@
     }"
     v-model="showDialog"
   />
-    <Footer />
+        <Footer />    
 </template>
 
 <script>
@@ -601,9 +769,9 @@ export default {
         const user = inject("user")
         const cookie = Object.fromEntries(
                 document.cookie
-                    .split("; ")
-                    .map((part) => part.split("="))
-                    .map((d) => [d[0], decodeURIComponent(d[1])])
+                .split("; ")
+                .map((part) => part.split("="))
+                .map((d) => [d[0], decodeURIComponent(d[1])])
             )
         return {
             user,
@@ -625,14 +793,25 @@ export default {
             anonymous: false,
             showDialog: false,
             donated_amount: '',
-            donation_name: ''
+            donation_name: '',
+            loaded: false,
+            total_donors: '',
+            campaign_days: 0,
+            campaign_end_date: '',
+            campaign_start_date: '',
+            descToShow: 1,
+            total_desc: 0
         }
     },
-    mounted() {
+    created(){
         const name = useRoute();
         this.campaign = name.params.name
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
+    },
+    mounted() {
+        // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
+        // this.campaign_days = Math.ceil(timeDiff / (1000 * 3600 * 24));
     },
     resources: {
         // get_campaign_donation_detail(){
@@ -669,6 +848,7 @@ export default {
                 method: "sadbhavna_donatekart.api.api.get_recent_donation",
                 onSuccess: (res) => {
                     this.recent_donation = res
+                    this.total_donors = res.length
                 },
                 onError: (error) => {
                     console.log(error)
@@ -688,7 +868,6 @@ export default {
                     //     text: `Your donation of ${d_amount} is successfull, check profile for more details`,
                     //     customIcon: "check",
                     // })
-
                     this.donated_amount = res[0]
                     this.donation_name = res[1]
                     this.showDialog = true
@@ -729,6 +908,11 @@ export default {
                 .then(response => {
                     response.json().then(res => {
                         this.campaign_detail = res
+                        this.total_desc = res.data.description.length
+                        this.campaign_start_date = new Date(res.data.start_date)
+                        this.campaign_end_date = new Date(res.data.end_date)
+                        // console.log("asdf", res.data.start_date)
+
                     });
                 })
                 .catch(err => {
