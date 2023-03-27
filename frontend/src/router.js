@@ -38,6 +38,11 @@ const routes = [{
     name: 'BlogPost',
     component: () => import('@/pages/auth/BlogPost.vue')
   },
+  // {
+  //   path: '/sadbhavna/test',
+  //   name: 'Test',
+  //   component: () => import('@/pages/auth/Test.vue')
+  // },
   {
     path: '/sadbhavna/registration',
     name: 'Registration',

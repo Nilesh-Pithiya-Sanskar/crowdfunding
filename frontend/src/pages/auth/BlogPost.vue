@@ -17,7 +17,7 @@
                 <!-- <div v-if="blog_detail">
 
                     <div class=" pt-16 pl-32 md:pl-32 sm:pl-8  pr-32 pb-32">
-                        <p style="font-size: 3rem;" class="text-black font-bold pb-4 grid justify-items-left">{{
+                        <p style="font-size: 2rem;" class="text-black font-bold pb-4 grid justify-items-left">{{
                             blog_detail.data.title }}
                         </p>
                         <img class="object-fill w-full pb-10" :src="blog_detail.data.meta_image">
@@ -29,7 +29,7 @@
 
                 </div> -->
                 <div v-if="blog_detail">
-                    <p style="font-size: 3rem;" class="text-black font-bold pt-8 pl-8">{{
+                    <p style="font-size: 3rem;" class="text-[#40b751] font-bold pt-8 pl-8">{{
                         blog_detail.data.title }}
                     </p>
                     <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 ">

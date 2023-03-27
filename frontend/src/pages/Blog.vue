@@ -1,21 +1,21 @@
 <template>
+ <div class=" bg-gray-100">
     <Navbar />
     <br><br>
 
-    <div class="container mx-auto h-full">
+     <div class="container bg-white mx-auto px-5 pb-5 mt-10 mb-10">
 
         <!-- BLOG -->
 
         <div>
-            <h1 style="font-size: 3rem" class="text-center">Blog</h1>
+            <h1 class="text-center pt-10 text-4xl font-bold text-[#40b751] mb-2">Blog</h1>
         </div>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-10 px-8">
-            <div v-for="data in blogs">
-                <div class="pb-5 md:pb-10 lg:pb-10 pt-5 md:pt-4 lg:pt-10 grid ">
-                    <div
-                        class="max-w-[580px] md:max-w-[350px] lg:max-w-[350px] lg:max-w-sm rounded overflow-hidden shadow-lg">
-                        <img class="w-full h-40 cursor-pointer" :src="data.meta_image" alt="">
-                        <div class="pt-9 pr-9 pd-7 pl-9 ">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+            <div v-for="data in blogs" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+                      <div
+                        class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden shadow-lg">
+                        <img class="w-full h-52 cursor-pointer" :src="data.meta_image" alt="">
+                        <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
                             <div class="font-medium text-[#40b751] text-xl mb-2 truncate">{{ data.title }}
                             </div>
 
@@ -42,11 +42,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
-
-    </div>
+</div>
     <Footer />
+    </div>
 </template>
 
 
