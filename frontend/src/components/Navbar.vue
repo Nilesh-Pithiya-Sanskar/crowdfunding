@@ -1,8 +1,8 @@
 <template>
   <div class="pt-2 pl-2 md:pl-4 lg:pl-24 pr-2 md:pr-4 lg:pr-24">
     <div class="rounded-xl bg-[#40b751]">
-      <nav class="px-6 md:px-6 lg:px-6 sm:py-2 md:py-8 lg:py-8 mx-auto md:flex md:justify-between md:items-center">
-        <div class="flex  justify-between">
+      <nav class="px-[5px] md:px-[5px] lg:px-[20px] py-[5px] md:py-[5px] lg:py-[25px] lg:flex lg:justify-between lg:items-center">
+        <div class="flex justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
               <img src="../../src/assets/Inter/img/logo.png"
@@ -10,7 +10,7 @@
             </a>
           </div>
           <!-- Mobile menu button -->
-          <div @click="showMenu = !showMenu" class="flex md:hidden">
+          <div @click="showMenu = !showMenu" class="pr-[20px] md:pr-[20px] lg:pr-[5px] flex lg:hidden">
             <button type="button" class="text-white hover:text-white focus:outline-none focus:text-white">
               <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
                 <path fill-rule="evenodd"
@@ -22,7 +22,7 @@
         </div>
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <ul :class="showMenu ? 'flex' : 'hidden'"
-          class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-4 lg:space-x-6 md:mt-0">
+          class="fontfamily text-[15px] p-[15px] md:p-[15px] lg:p-[15px] flex-col sm:mt-8 md:mt-2 lg:mt-0 space-y-4 lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6 lg:mt-0">
           <li>
             <router-link to="/sadbhavna" class="font-bold text-white hover:text-black">Home</router-link>
           </li>
