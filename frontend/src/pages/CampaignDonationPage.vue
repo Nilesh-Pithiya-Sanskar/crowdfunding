@@ -1,5 +1,5 @@
 <template>
-<!-- <DonationCheckout/> -->
+    <!-- <DonationCheckout/> -->
 
     <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
@@ -18,11 +18,16 @@
                     campaign_detail.data.campaign_title }}</h2>
             <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
                 campaign_detail.data.short_description }}</p>
-           <div class="mb-[50px]">
-                 <span class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">Tax
+            <div class="mb-[50px]">
+                <span
+                    class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">Tax
                     Benefit</span>
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]"> Assured</span>
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">Old Ages</span>
+                <span
+                    class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">
+                    Assured</span>
+                <span
+                    class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">Old
+                    Ages</span>
             </div>
             <div class="flex flex-wrap mt-6 mb-5">
                 <div class="w-full lg:w-8/12 pr-4">
@@ -56,7 +61,7 @@
                         <!-- {{ products }} -->
 
                         <div class="block product-shodow bg-white pl-5">
-                            <div class="flex  items-center pt-10">cccccccc
+                            <div class="flex  items-center pt-10">
 
                                 <div class="lg:flex lg:w-3/12 xl:w-3/12">
                                     <img :src="products.image" :alt="products.display_as_name"
@@ -228,7 +233,8 @@
                         </div>
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                     </div>
-                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other Donation</div>
+                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other
+                        Donation</div>
                     <p class="text-gray-600">Donate via</p>
 
                     <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
@@ -310,7 +316,8 @@
                         </div>
 
                     </div>
-                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Donors</div>
+                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Donors
+                    </div>
 
 
                     <div class="flex flex-wrap shadow">
@@ -527,38 +534,35 @@
             </section>
         </div>
     </div>
-    <Dialog
-    :options="{
-      title: 'Donation Completed',
-      message: `Your donation of ${donated_amount} is successfully completed.`,
-      icon: {
-        name: 'smile',
-        appearance: 'success',
-      },
-      appearance: 'info',
-      size: 'lg',
-      actions: [
-        {
-          label: 'Get 80G Certificate',
-          appearance: 'success',
-          handler: ({ close }) => {
-            this.download_80g(donation_name)
-            close() // closes dialog
-          },
+    <Dialog :options="{
+        title: 'Donation Completed',
+        message: `Your donation of ${donated_amount} is successfully completed.`,
+        icon: {
+            name: 'smile',
+            appearance: 'success',
         },
-        {
-          label: 'View Profile',
-          appearance: 'success',
-          handler: ({ close }) => {
-            this.view_profile()
-            close() // closes dialog
-          },
-        },
-        { label: 'Cancel' },
-      ],
-    }"
-    v-model="showDialog"
-  />
+        appearance: 'info',
+        size: 'lg',
+        actions: [
+            {
+                label: 'Get 80G Certificate',
+                appearance: 'success',
+                handler: ({ close }) => {
+                    this.download_80g(donation_name)
+                    close() // closes dialog
+                },
+            },
+            {
+                label: 'View Profile',
+                appearance: 'success',
+                handler: ({ close }) => {
+                    this.view_profile()
+                    close() // closes dialog
+                },
+            },
+            { label: 'Cancel' },
+        ],
+    }" v-model="showDialog" />
     <Footer />
 </template>
 
@@ -596,11 +600,11 @@ export default {
     setup() {
         const user = inject("user")
         const cookie = Object.fromEntries(
-                document.cookie
-                    .split("; ")
-                    .map((part) => part.split("="))
-                    .map((d) => [d[0], decodeURIComponent(d[1])])
-            )
+            document.cookie
+                .split("; ")
+                .map((part) => part.split("="))
+                .map((d) => [d[0], decodeURIComponent(d[1])])
+        )
         return {
             user,
             cookie
@@ -645,17 +649,17 @@ export default {
         //     }
         // },
 
-        download_80g(){
-            return{
+        download_80g() {
+            return {
                 method: 'sadbhavna_donatekart.api.donor.download_80g',
                 onSuccess: (res) => {
-                // console.log('okey', res)
-                let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
-                // window.location = url
-                window.open(url, "_blank");
+                    // console.log('okey', res)
+                    let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
+                    // window.location = url
+                    window.open(url, "_blank");
                 },
                 onError: (error) => {
-                console.log('somthing want wrong!', error)
+                    console.log('somthing want wrong!', error)
                 },
             }
         },
@@ -678,7 +682,7 @@ export default {
                     this.item_cart = []
                     this.total_price = 0
                     this.qty = 0
-                //    console.log("res", res)
+                    //    console.log("res", res)
                     // this.$toast({
                     //     title: "Success",
                     //     text: `Your donation of ${d_amount} is successfull, check profile for more details`,
@@ -759,12 +763,12 @@ export default {
                     "image": "https://crowdfunding.frappe.cloud/assets/sadbhavna_donatekart/frontend/assets/logo.2bd6bc2a.png",
                     // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     handler: (response) => {
-                    this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
+                        this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
 
-                    // this.verifySignature(response);
+                        // this.verifySignature(response);
                     },
                     // "handler": function (response){
-                       
+
                     // },
                     "prefill": {
                         "name": `${this.cookie.full_name}`,
@@ -778,21 +782,21 @@ export default {
                     }
                 };
                 var rzp1 = new Razorpay(options);
-                rzp1.on('payment.failed', function (response){
-                        alert(response.error.code);
-                        alert(response.error.description);
-                        alert(response.error.source);
-                        alert(response.error.step);
-                        alert(response.error.reason);
-                        alert(response.error.metadata.order_id);
-                        alert(response.error.metadata.payment_id);
+                rzp1.on('payment.failed', function (response) {
+                    alert(response.error.code);
+                    alert(response.error.description);
+                    alert(response.error.source);
+                    alert(response.error.step);
+                    alert(response.error.reason);
+                    alert(response.error.metadata.order_id);
+                    alert(response.error.metadata.payment_id);
                 });
                 rzp1.open();
 
 
                 // ************************main code************************
-                
-                
+
+
                 // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
             }
         },
@@ -815,13 +819,13 @@ export default {
             // })
         },
 
-        download_80g(donation_name){
+        download_80g(donation_name) {
             this.$resources.download_80g.submit({
                 donor: this.cookie.user_id,
                 donation: donation_name,
             })
         },
-        view_profile(){
+        view_profile() {
             this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
         },
 
