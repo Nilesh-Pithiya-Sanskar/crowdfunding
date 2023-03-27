@@ -83,6 +83,11 @@ const routes = [{
     name: 'facebook',
     component: () => import('@/pages/facebook.vue')
   },
+  {
+    path: '/sadbhavna/privacy-policy',
+    name: 'Privacy Policy',
+    component: () => import('@/pages/PrivacyPolicy1.vue')
+  },
 ]
 
 let router = createRouter({
