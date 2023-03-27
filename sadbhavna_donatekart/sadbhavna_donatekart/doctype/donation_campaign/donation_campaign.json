@@ -28,6 +28,7 @@
   "section_break_16",
   "short_description",
   "about_campaign",
+  "description",
   "campaign_request",
   "ngo",
   "naming_series",
@@ -171,13 +172,19 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "Published"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Table",
+   "label": "Description",
+   "options": "Donation Campaign Description"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-02-08 19:48:27.308413",
+ "modified": "2023-03-24 13:04:17.591401",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",
