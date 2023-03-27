@@ -38,14 +38,14 @@
           </li>
           <li>
             <span class="group relative inline-block">
-              <a href="#" class="font-bold text-white hover:text-black">Blog</a>
-              <ul class="absolute hidden pt-4 group-hover:block">
+              <a href="/sadbhavna/blog" class="font-bold text-white hover:text-black">Blog</a>
+              <!--<ul class="absolute hidden pt-4 group-hover:block">
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/sadbhavna/blog">Blog</a></li>
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>
-              </ul>
+              </ul>-->
             </span>
           </li>
-          <li>
+          <!--<li>
             <span class="group lg:inline-block">
               <a href="#" class="font-bold text-white hover:text-black">Page</a>
               <ul class="absolute hidden pt-4 group-hover:block">
@@ -53,7 +53,7 @@
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-10" href="#">Cause</a></li>
               </ul>
             </span>
-          </li>
+          </li>-->
           <li v-if="this.user.isLoggedIn()" @click="profile()"
             class="font-bold text-white hover:text-black cursor-pointer">
             profile

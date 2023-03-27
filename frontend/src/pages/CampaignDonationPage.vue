@@ -1,28 +1,46 @@
 <template>
+<<<<<<< HEAD
 <!-- <DonationCheckout/> -->
     <Navbar />
     <!-- <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg');">
     
+=======
+    <!-- <DonationCheckout/> -->
+
+    <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
+        style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
+        <Navbar />
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
-            <p class="text-[30px] md:text-[30px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-medium text-[#364958] leading-none"
+            <p class="text-[30px] md:text-[36px] lg:text-[48px] sm:pr-10 md:pr-20 lg:pr-12 xl:pr-16  mb-32 text-center md:text-center md:text-base lg:text-left pt-20 font-[700] text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
                 Join hands with <span class="text-[#40b751]"> Sadbhana Campaigns </span> to help needy.</p>
         </div>
+<<<<<<< HEAD
     </div> -->
     <div class="container mx-auto mt-10">
+=======
+    </div>
+    <div class="container mx-auto mt-[40px] md:mt-[40px] lg:mt-[80px]">
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
-            <h2 style="font-size: 2rem;"
-                class="mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] font-medium capitalize">{{
+            <h2 style="font-size: 2rem; font-weight: 700;"
+                class="mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{
                     campaign_detail.data.campaign_title }}</h2>
             <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
                 campaign_detail.data.short_description }}</p>
             <div class="mb-[50px]">
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[20px] rounded-[10px]">Tax
+                <span
+                    class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">Tax
                     Benefit</span>
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[20px] rounded-[10px]"> Assured</span>
-                <span class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[20px] rounded-[10px]">Old Ages</span>
+                <span
+                    class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">
+                    Assured</span>
+                <span
+                    class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">Old
+                    Ages</span>
             </div>
             <div class="flex flex-wrap mt-6 mb-5">
                 <img class="object-fill w-full mb-4" :src="campaign_detail.data.campain_image">
@@ -181,9 +199,54 @@
 
 
                 </div>
-                <div class="w-full lg:w-4/12 pl-4">
+                <div class="mt-5 w-full lg:w-4/12 ">
                     <!-- <DonationDetailRightside /> -->
+<<<<<<< HEAD
                     
+=======
+                    <h3 style="font-size: 1.75rem; font-weight: 700;" class="text-[#364958]">Product</h3>
+                    <div class="pb-8" v-for="products in campaign_detail.data.add_campaign_items">
+                        <!-- {{ products }} -->
+
+                        <div class="block product-shodow bg-white pl-5">
+                            <div class="flex  items-center pt-10">
+
+                                <div class="lg:flex lg:w-3/12 xl:w-3/12">
+                                    <img :src="products.image" :alt="products.display_as_name"
+                                        class="rounded-full w-20 h-20" />
+                                </div>
+
+
+                                <div class="lg:w-9/12 xl:w-9/12">
+                                    <div class="px-6 md:px-6 lg:px-6">
+                                        <h4 class="text-xl font-medium text-[#40b751]">{{ products.display_as_name }}</h4>
+                                        <p class="text-gray-500 mb-2">
+                                            {{ products.about }}
+                                        </p>
+                                        <p class="text-gray-500 font-bold pb-2">
+                                            ₹ {{ numberWithCommas(products.price) }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
+                            <div class="flex justify-between pb-2">
+
+                                <div class="flex justify-between w-24 text-xl h-9">
+                                    <Button class="bg-gray-300"
+                                        @click="decrement(products.item, products.price, qty)">-</Button>
+
+                                    <div v-for="item in item_cart">
+                                        <div class="bg-[#40b751] pt-1 pb-1 pl-3 pr-3 rounded-lg justify-center pb-5"
+                                            v-if="products.item == item.item && item.qty != 0"> {{ item.qty }}
+                                        </div>
+                                    </div>
+                                    <Button class="bg-gray-300"
+                                        @click="increment(products.item, products.price, qty)">+</Button>
+                                </div>
+                            </div>
+                        </div>
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
 
 
                         <!-- <div class="block shadow-lg bg-white pl-5">
@@ -318,6 +381,7 @@
                             <label for="checkbox" class="text-sm pl-2">Make my donation anonymous</label>
                         </div>
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+<<<<<<< HEAD
                     </div> -->
 
                         <div class="overflow-hidden">
@@ -392,6 +456,12 @@
 
                     <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
                     <p class="text-gray-600 mt-4">Donate via</p>
+=======
+                    </div>
+                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other
+                        Donation</div>
+                    <p class="text-gray-600">Donate via</p>
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
 
                     <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
                         <div>
@@ -472,6 +542,7 @@
                         </div>
 
                     </div>
+<<<<<<< HEAD
                 </div>
 
 
@@ -575,6 +646,10 @@
 
                 <div class="lg:w-4/12">
                     <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Donors ({{ total_donors }})</div>
+=======
+                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Donors
+                    </div>
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
 
 
                     <div class="flex flex-wrap shadow">
@@ -694,30 +769,114 @@
                 </div>
 
 
+<<<<<<< HEAD
+=======
+
+            <section class="bg-white dark:bg-gray-900">
+                <div>
+                    <section class="bg-white dark:bg-gray-900">
+                        <div>
+                            <section class="text-gray-700">
+                                <div class="px-5 py-10">
+                                    <div class="mb-8">
+                                        <p
+                                            class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-black text-center title-font mb-4 ">
+                                            FAQ
+                                        </p>
+                                        <p class="text-base text-center leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
+                                        <div class="w-full py-2">
+                                            <details class="mb-4">
+                                                <summary
+                                                    class="font-medium cursor-pointer border-2 border-b-1 border-solid border-b-gray-300 text-xl text-[#40b751] list-none bg-gray-100 rounded py-3 px-4">
+                                                    What is Donatekart ?</summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="border-2 font-normal border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] ">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3
+                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                                        truck quinoa nesciunt laborum
+                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                        squid
+                                                        single-origin coffee nulla
+                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                                                        labore wes anderson cred nesciunt
+                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                                        occaecat craft beer
+                                                        farm-to-table.
+                                                    </p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-4">
+                                                <summary
+                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
+                                                    How to claim Tax-Exemption for my contributions on Donatekart?</summary>
+
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3
+                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                                        truck quinoa nesciunt laborum
+                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                        squid
+                                                        single-origin coffee nulla
+                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
+                                                        labore wes anderson cred nesciunt
+                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                                        occaecat craft beer
+                                                        farm-to-table, raw denim aesthetic synth nesciunt you probably
+                                                        haven't
+                                                        heard of them accusamus labore
+                                                        sustainable VHS.</p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-4">
+                                                <summary
+                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
+                                                    How to Donate ?</summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                        terry richardson ad squid. 3
+                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                                        truck quinoa nesciunt laborum
+                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
+                                                        squid
+                                                        single-origin coffee nulla
+                                                        assumenda shoreditch et.</p>
+                                                </span>
+                                            </details>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
             </section>
 
 
         </div>
     </div>
-    <Dialog
-    :options="{
-      title: 'Donation Completed',
-      message: `Your donation of ${donated_amount} is successfully completed.`,
-      icon: {
-        name: 'smile',
-        appearance: 'success',
-      },
-      appearance: 'info',
-      size: 'lg',
-      actions: [
-        {
-          label: 'Get 80G Certificate',
-          appearance: 'success',
-          handler: ({ close }) => {
-            this.download_80g(donation_name)
-            close() // closes dialog
-          },
+    <Dialog :options="{
+        title: 'Donation Completed',
+        message: `Your donation of ${donated_amount} is successfully completed.`,
+        icon: {
+            name: 'smile',
+            appearance: 'success',
         },
+<<<<<<< HEAD
         {
           label: 'View Profile',
           appearance: 'success',
@@ -732,6 +891,31 @@
     v-model="showDialog"
   />
         <Footer />    
+=======
+        appearance: 'info',
+        size: 'lg',
+        actions: [
+            {
+                label: 'Get 80G Certificate',
+                appearance: 'success',
+                handler: ({ close }) => {
+                    this.download_80g(donation_name)
+                    close() // closes dialog
+                },
+            },
+            {
+                label: 'View Profile',
+                appearance: 'success',
+                handler: ({ close }) => {
+                    this.view_profile()
+                    close() // closes dialog
+                },
+            },
+            { label: 'Cancel' },
+        ],
+    }" v-model="showDialog" />
+    <Footer />
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
 </template>
 
 <script>
@@ -768,11 +952,19 @@ export default {
     setup() {
         const user = inject("user")
         const cookie = Object.fromEntries(
+<<<<<<< HEAD
                 document.cookie
                 .split("; ")
                 .map((part) => part.split("="))
                 .map((d) => [d[0], decodeURIComponent(d[1])])
             )
+=======
+            document.cookie
+                .split("; ")
+                .map((part) => part.split("="))
+                .map((d) => [d[0], decodeURIComponent(d[1])])
+        )
+>>>>>>> e890210901042e405a88be2e07d323a5338de084
         return {
             user,
             cookie
@@ -828,17 +1020,17 @@ export default {
         //     }
         // },
 
-        download_80g(){
-            return{
+        download_80g() {
+            return {
                 method: 'sadbhavna_donatekart.api.donor.download_80g',
                 onSuccess: (res) => {
-                // console.log('okey', res)
-                let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
-                // window.location = url
-                window.open(url, "_blank");
+                    // console.log('okey', res)
+                    let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
+                    // window.location = url
+                    window.open(url, "_blank");
                 },
                 onError: (error) => {
-                console.log('somthing want wrong!', error)
+                    console.log('somthing want wrong!', error)
                 },
             }
         },
@@ -862,7 +1054,7 @@ export default {
                     this.item_cart = []
                     this.total_price = 0
                     this.qty = 0
-                //    console.log("res", res)
+                    //    console.log("res", res)
                     // this.$toast({
                     //     title: "Success",
                     //     text: `Your donation of ${d_amount} is successfull, check profile for more details`,
@@ -947,12 +1139,12 @@ export default {
                     "image": "https://crowdfunding.frappe.cloud/assets/sadbhavna_donatekart/frontend/assets/logo.2bd6bc2a.png",
                     // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     handler: (response) => {
-                    this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
+                        this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
 
-                    // this.verifySignature(response);
+                        // this.verifySignature(response);
                     },
                     // "handler": function (response){
-                       
+
                     // },
                     "prefill": {
                         "name": `${this.cookie.full_name}`,
@@ -966,21 +1158,21 @@ export default {
                     }
                 };
                 var rzp1 = new Razorpay(options);
-                rzp1.on('payment.failed', function (response){
-                        alert(response.error.code);
-                        alert(response.error.description);
-                        alert(response.error.source);
-                        alert(response.error.step);
-                        alert(response.error.reason);
-                        alert(response.error.metadata.order_id);
-                        alert(response.error.metadata.payment_id);
+                rzp1.on('payment.failed', function (response) {
+                    alert(response.error.code);
+                    alert(response.error.description);
+                    alert(response.error.source);
+                    alert(response.error.step);
+                    alert(response.error.reason);
+                    alert(response.error.metadata.order_id);
+                    alert(response.error.metadata.payment_id);
                 });
                 rzp1.open();
 
 
                 // ************************main code************************
-                
-                
+
+
                 // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
             }
         },
@@ -1003,13 +1195,13 @@ export default {
             // })
         },
 
-        download_80g(donation_name){
+        download_80g(donation_name) {
             this.$resources.download_80g.submit({
                 donor: this.cookie.user_id,
                 donation: donation_name,
             })
         },
-        view_profile(){
+        view_profile() {
             this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
         },
 
