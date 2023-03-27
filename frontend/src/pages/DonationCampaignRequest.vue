@@ -4,28 +4,29 @@
         <div v-if="openTab == 1"
             class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[650px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
-                                                                                                                                                                                            background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-                                                                                                                                                                                          ">
+                                                                                                                                                                                                        background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
+                                                                                                                                                                                                      ">
         </div>
         <div v-if="openTab == 2"
             class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[300px] sm:h-0 md:h-0 lg:h-0 xl:h-[643px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
-                                                                                                                                                                                            background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-                                                                                                                                                                                          ">
+                                                                                                                                                                                                        background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
+                                                                                                                                                                                                      ">
         </div>
         <div class="container mx-auto h-full">
 
             <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
                 <div class="container mx-auto py-0">
                     <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
-                         <div
+                        <div
                             class="text-[24px] md:text-[30px] lg:text-[36px] py-8 px-10 text-[#40b751] font-bold text-center">
                             Donation Campaign Request
                         </div>
                         <div class="relative z-0">
                             <div class=" sm:p-10 ">
-                                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
-                                   <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                <ul
+                                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
+                                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                         <a class="mb-3 md:mb-0 lg:mb-0 cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block "
                                             v-on:click="toggleTabs(1)"
                                             v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1 }">
@@ -228,7 +229,17 @@ export default {
             if (this.openTab == 1) {
                 this.campaign_type = 'NGO'
                 {
-                    if (this.full_name == '') {
+                    if (!this.full_name && !this.organisation_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
+                        this.fullNameError = 'Enter valid fullname!'
+                        this.organizationNameError = 'Enter valid organization name!'
+                        this.phoneError = 'Enter valid phone number!'
+                        this.emailError = 'Enter valid email!'
+                        this.campaignStoryError = 'Enter campaign story!'
+                        this.beneficiaryGroupError = 'Enter beneficiary group!'
+                        this.error == true
+                        // return true;
+                    }
+                    else if (this.full_name == '') {
                         // this.first_name == this.error
                         this.fullNameError = 'Enter valid fullname!'
                         this.error = true
@@ -325,33 +336,42 @@ export default {
             else {
                 this.campaign_type = 'Indivisual/Group'
                 {
-                    if (this.full_name == '' || !this.validName(this.full_name)) {
+                    if (!this.full_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
+                        this.fullNameError = 'Enter valid fullname!'
+                        this.phoneError = 'Enter valid phone number!'
+                        this.emailError = 'Enter valid email!'
+                        this.campaignStoryError = 'Enter campaign story!'
+                        this.beneficiaryGroupError = 'Enter beneficiary group!'
+                        this.error == true
+                        // return true;
+                    }
+                    else if (this.full_name == '') {
                         // this.first_name == this.error
-                        this.fullNameError = 'invalid'
+                        this.fullNameError = 'Enter valid fullname!'
                         this.error = true
                         console.log('full name')
                     }
                     else if (this.phone == '' || !this.validPhone(this.phone_number)) {
                         // this.first_name == this.error
-                        this.phoneError = 'invalid'
+                        this.phoneError = 'Enter valid phone number!'
                         this.error = true
                         console.log('phone')
                     }
                     else if (this.email == '' || !this.validEmail(this.email)) {
                         // this.first_name == this.error
-                        this.emailError = 'invalid'
+                        this.emailError = 'Enter valid email!'
                         this.error = true
                         console.log('email')
                     }
                     else if (this.campaign_story == '') {
                         // this.first_name == this.error
-                        this.campaignStoryError = 'invalid'
+                        this.campaignStoryError = 'Enter campaign story!'
                         this.error = true
                         console.log('campaign_story')
                     }
                     else if (this.beneficiary_group == '') {
                         // this.first_name == this.error
-                        this.beneficiaryGroupError = 'invalid'
+                        this.beneficiaryGroupError = 'Enter beneficiary group!'
                         this.error = true
                         console.log('beneficiary_group')
                     }

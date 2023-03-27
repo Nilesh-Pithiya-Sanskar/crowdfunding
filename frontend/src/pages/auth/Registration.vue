@@ -3,8 +3,8 @@
     <div class="container mx-auto h-full pb-[48px]">
         <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
-                                                                                                                                                                                                                                                                                                                                                                                                                         background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-                                                                                                                                                                                                                                                                                                                                                                                                                      ">
+                                                                                                                                                                                                                                                                                                                                                                                                                                 background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
+                                                                                                                                                                                                                                                                                                                                                                                                                              ">
         </div>
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
             <div class="container mx-auto py-0">
@@ -166,7 +166,17 @@ export default {
             return re.test(pan_number)
         },
         register() {
-            if (this.first_name == '' || !this.validName(this.first_name)) {
+            if (!this.first_name && !this.email && !this.password && !this.conform_password && !this.phone_number && !this.pan_number) {
+                this.firstNameError = 'Enter valid firstname!'
+                this.emailError = 'Enter valid email!'
+                this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character!'
+                this.confirmPasswordError = 'Your password is not match!'
+                this.phoneNumberError = 'Enter valid phone number!'
+                this.panError = 'Enter valid PAN number'
+                this.error == true
+                // return true;
+            }
+            else if (this.first_name == '' || !this.validName(this.first_name)) {
                 // this.first_name == this.error
                 this.firstNameError = 'Enter valid firstname!'
                 this.error = true
