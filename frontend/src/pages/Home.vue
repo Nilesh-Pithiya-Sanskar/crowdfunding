@@ -17,7 +17,7 @@
             crowd funding platform of India.
           </p>
         </div>
-        <div class="md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-[20px] md:pb-[40px] lg:pb-14 grid justify-items-center">
+        <div class="pl-0 md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-[20px] md:pb-[40px] lg:pb-14 grid justify-items-center">
           <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
         </div>
       </div>
@@ -251,49 +251,43 @@
     <!--Cards-->
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
       <div v-for="index in campaignToShow">
-        <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
-          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
-            <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
-              @click="donate(campaigns[index - 1].name)">
-            <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
-              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index - 1].campaign_title
-              }}
-              </div>
-              <p class="text-gray-700 text-base truncate">
-                By: {{ campaigns[index - 1].ngo }}
-              <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
-                <div v-if="campaigns[index - 1].raised_amount"
-                  class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                  :style="{
-                    width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%'
-                  }">
-                  {{ (campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount).toFixed(2) }}%
+        <div v-if="index < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+            <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+              <img class="w-full h-52 cursor-pointer" :src="campaigns[index].campain_image" alt="Mountain" @click="donate(campaigns[index].name)">
+              <div class="pt-[30px] pr-[30px] pb-[34px] pl-[30px]">
+                <div class="fontfamily font-[600] text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">{{ campaigns[index].campaign_title }}</div>
+                <p class="text-gray-700 text-[18px] md:text-[16px] lg:text-[16px]  truncate">
+                  By: {{ campaigns[index].ngo }}
+                <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
+                  <div v-if="campaigns[index].raised_amount"
+                    class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                    :style="{ width: campaigns[index].raised_amount * 100 / campaigns[index].donation_amount + '%' }"> {{ (campaigns[index].raised_amount * 100
+                      /
+                      campaigns[index].donation_amount).toFixed(2) }}%</div>
                 </div>
+                <div
+                  class="fontcard flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] ">
+                   <span class="font-[600] text-[#222222]">Raised: ₹{{ numberWithCommas(campaigns[index].raised_amount) }}</span><span class="font-[600] text-[#222222]">Goal: ₹{{
+                    numberWithCommas(campaigns[index].donation_amount) }}</span>
+                </div>
+                </p>
               </div>
-              <div
-                class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
-                <span>Raised: {{ numberWithCommas(campaigns[index - 1].raised_amount) }}</span><span>Goal: {{
-                  numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+              <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
+                <button class="text-[#40b751] text-base">Share</button>
+                <button
+                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button" @click="donate(campaigns[index].name)"> donate now </button>
               </div>
-              </p>
-            </div>
-            <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
-              <button class="text-[#40b751] text-base">Share</button>
-              <button
-                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                type="button" @click="donate(campaigns[index - 1].name)"> donate now </button>
             </div>
           </div>
         </div>
-      </div>
     </div>
-    <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
+      <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
       <button
         class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
         type="button" @click="campaignToShow += 6">Show More</button>
     </div>
   </div>
-
 
   <!--Testimonials-->
 
