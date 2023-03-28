@@ -10,10 +10,6 @@
 		"build": "cd frontend && yarn build"
 	},
 	"dependencies": {
-		"tailwind-scrollbar-hide": "^1.1.7",
 		"vee-validate": "^3.4.15"
-	},
-	"devDependencies": {
-		"tailwind-scrollbar": "^3.0.0"
 	}
 }

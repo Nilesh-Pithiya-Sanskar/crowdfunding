@@ -104,9 +104,7 @@
         <div class="sm:col-span-2 md:col-span-2 lg:col-auto">
           <h2 class="font-medium md:font-semibold lg:font-normal text-white mb-6 text-[20px] md:text-2xl lg:text-xl mb-4">
             About</h2>
-          <p class="fontfamily text-whitetext-gray-500 -pr-[200px] dark:text-gray-400">Lorem ipsum dolor
-            sit amet,
-            consectetur
+          <p class="text-whitetext-gray-500 -pr-[200px] dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur
             adipisicing elit. Modi cumque tenetur inventore veniam, hic vel
             ipsa necessitatibus ducimus architecto fugiat!</p>
           <div class="my-5 pr-4">
