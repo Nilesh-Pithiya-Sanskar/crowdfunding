@@ -100,8 +100,9 @@
                                     </div>
                                 </div>
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
-                                    <div class="flex justify-between pb-2" v-if="item_b.includes(products.item)">
-                                        <div class="flex justify-between w-24 text-xl h-9">
+                                <div class="flex justify-end">
+                                    <div class="flex pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9 mr-6">
                                             <Button class="bg-gray-300"
                                                 @click="decrement(products.item, products.price, qty=1)">-</Button>
 
@@ -115,14 +116,15 @@
                                         </div>
                                     </div>                    
 
-                                    <div class="flex justify-between pb-2" v-else>
-                                        <div class="flex justify-between w-24 text-xl h-9">
+                                    <div class="pb-2" v-else>
+                                        <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
                                             <div>
-                                                <Button class="bg-gray-300"
-                                                @click="increment(products.item, products.price, qty=1)">Add</Button>
+                                                <button class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-2 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
+                                                @click="increment(products.item, products.price, qty=1)">Add</button>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -148,9 +150,9 @@
                     </div>
                 </div>
 
-                <div class=" w-full lg:w-4/12 ">
+                <div class=" w-full lg:w-4/12">
                     <div class="sticky top-0">
-                        <div class="overflow-hidden ">
+                        <div class="overflow-hidden hidden lg:block">
                             <table class="text-[#364958]" v-if="item_cart != ''">
                                 <thead class="bg-white border-b">
                                     <tr>
@@ -165,7 +167,7 @@
                                         </th>
                                         <th scope="col" class="font-bold px-6 py-4 text-left">
                                             Amount
-                                        </th>
+                                        </th>   
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -186,8 +188,8 @@
                                     </tr>                                    
                                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                         <td class="text-gray-900 font-bold py-4 whitespace-nowrap">Total</td>
-                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap"></td>
-                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">₹ {{ numberWithCommas(total_price) }}</td>
+                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">{{ i_qty }}</td>
+                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">₹ {{ numberWithCommas(total_price) }}</td>
                                     </tr>
 
                                 </tbody>
@@ -219,11 +221,6 @@
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                             </div> -->
                         </div>
-
-
-
-
-
 
                         <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
                         <p class="text-gray-600 mt-4">Donate via</p>
@@ -312,7 +309,7 @@
             </div>
 
             <section class="bg-white dark:bg-gray-900 flex flex-wrap">
-                <div class="lg:w-8/12 md:w-8/12 sm:w-12/12">
+                <div class="lg:w-8/12 md:w-6/12 sm:w-12/12">
                     <div class="bg-white dark:bg-gray-900">
                         <div>
                             <div class="text-gray-700">
@@ -429,7 +426,7 @@
                     </div>
                 </div>
 
-                <div class="lg:w-4/12 md:w-4/12 sm:w-12/12">
+                <div class="lg:w-4/12 md:w-6/12 sm:w-6/12">
                     <div style="font-size: 2rem;" class="mt-8 font-medium text-gray-800">Donors ({{ total_donors }})</div>
                     <div class="flex flex-wrap shadow">
                         <div class="w-full">
@@ -490,10 +487,39 @@
                                             </div>
                                         </div>
                                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
-                                            <p>
-                                                
-                                                {{ item_cart }}
-                                            </p>
+                                            <div class="pb-6" v-for="m_donation in most_generous">
+                                                <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
+
+                                                    <div>
+                                                        <div class="float-left pr-4">
+
+                                                            <div v-if="m_donation.anonymous != 1">
+                                                                <Avatar :imageURL="m_donation.donor_image"
+                                                                    :label="m_donation.donor_name" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                            <div v-else>
+                                                                <Avatar imageURL="" label="Anonymous" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div>
+                                                            <p v-if="m_donation.anonymous != 1"
+                                                                class=" text-gray-900 leading-none text-lg font-bold">{{
+                                                                    m_donation.donor_name }}</p>
+                                                            <p v-else class="text-gray-900 leading-none text-lg font-bold">
+                                                                Anonymous</p>
+                                                            <p class="text-gray-600 text-sm">{{ formatDate(m_donation.date) }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="grid justify-end">
+                                                        <p class="">₹ {{ numberWithCommas(m_donation.amount) }}</p>
+                                                    </div>
+                                                </div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -502,9 +528,34 @@
                     </div>
                 </div>
             </section>
+        </div>
+    
+        <div class="md:block sm:block lg:hidden rounded-2xl w-full h-16 bg-white border-t-4 border-green-500
+            fixed left-0 bottom-0
+            flex justify-center items-center
+            text-white text-2xl " v-if="total_price != 0">
+        <!-- <div class="">asdfasdfasd</div> -->
+        <div class="flex justify-between text-center font-bold text-lg mt-5">
+            <div class="flex">
+                <div class="text-[#40b751] ml-5">{{ i_qty }} Item(s) |</div>
+                <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
+            </div>
+            <!-- <div>
+                <input type="checkbox" id="anonymous" v-model="anonymous">
+                <label for="checkbox" class="text-sm text-green-500 pl-2">Make my donation anonymous</label>
+            </div> -->
+            <div>
+                <button
+                    class="mb-5 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                    type="button" @click="donate(total_price, anonymous)"> donate now
+                </button>
+            </div>
+            
+        </div> 
 
         </div>
     </div>
+    
     <Dialog :options="{
         title: 'Donation Completed',
         message: `Your donation of ${donated_amount} is successfully completed.`,
@@ -534,6 +585,15 @@
             { label: 'Cancel' },
         ],
     }" v-model="showDialog" />
+    <!-- <div>item_cart{{ item_cart }}</div><br> -->
+    <!-- {{ a }} -->
+
+    <!-- <input type="text" v-model="name"/>
+    <button @click="get_cookies(name)">get</button><br>
+    <button @click="delete_cookies('item')">del</button><br>
+    <button @click="set_cookies()">set</button><br> -->
+    <!-- {{ item_cart }} -->
+
     <Footer />
 </template>
 
@@ -547,6 +607,7 @@ import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import { Dialog } from 'frappe-ui'
 import { createConditionalExpression } from '@vue/compiler-core';
+import { computeStyles } from '@popperjs/core';
 // import DonationDetail from "../components/DonationDetail.vue";
 // import DonationCheckout from "../components/DonationCheckout.vue";
 
@@ -567,7 +628,7 @@ export default {
         Avatar,
         Dialog,
         // DonationCheckout,
-    },
+    },    
     setup() {
         const user = inject("user")
         const cookie = Object.fromEntries(
@@ -586,13 +647,20 @@ export default {
             campaign_detail: '',
             openTab: 1,
             recent_donation: '',
+            most_generous: '',
             campaign: '',
             tab2: 'this is tab two content',
             a: 70,
-            qty: 0,
             date: '',
+
+            i_qty: 0,
             item_cart: [],
             total_price: 0,
+            item_b: [],
+
+            name: '',
+            b: '',
+
             anonymous: false,
             showDialog: false,
             donated_amount: '',
@@ -604,7 +672,7 @@ export default {
             campaign_start_date: '',
             descToShow: 1,
             total_desc: 0,
-            item_b: []
+
         }
     },
     created() {
@@ -612,11 +680,38 @@ export default {
         this.campaign = name.params.name
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
+        this.get_generous_donation(name.params.name)
+        
+        var item_cart = this.get_cookies('item')
+        var i_qty = this.get_cookies('i_qty')
+        var total_price = this.get_cookies('total_price')
+        var item_b = this.get_cookies('item_b')
+        if(item_cart != null){
+            this.item_cart = item_cart
+        }
+        if(i_qty != null){
+            this.i_qty = i_qty
+        }
+        if(total_price != null){
+            this.total_price = total_price
+        }
+        if(item_b != null){
+            this.item_b = item_b
+        }
+        // console.log("a", a)
     },
     mounted() {
-        // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
+
+        // var a = this.get_cookies('item')
+        // console.log("a", a)
+                // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
         // this.campaign_days = Math.ceil(timeDiff / (1000 * 3600 * 24));
     },
+    // computed: {
+    //     most_generous() {
+    //     return this.most_generous.sort((a, b) => b.amount - a.amount);
+    //     }
+    // },
     resources: {
         // get_campaign_donation_detail(){
         //     return{
@@ -659,6 +754,17 @@ export default {
                 }
             }
         },
+        get_generous_donation() {
+            return {
+                method: "sadbhavna_donatekart.api.api.get_generous_donation",
+                onSuccess: (res) => {
+                    this.most_generous = res
+                },
+                onError: (error) => {
+                    console.log(error)
+                }
+            }
+        },
         set_details_in_doctype_after_donation() {
             return {
                 method: "sadbhavna_donatekart.api.api.set_details_in_doctype_after_donation",
@@ -693,6 +799,19 @@ export default {
 
     },
     methods: {
+        delete_cookies(name){
+            this.$cookies.remove(name, `/sadbhavna/campaign-donation/${this.campaign}`);
+        },
+        get_cookies(name){
+            console.log("asdfasdf",this.$cookies.get(name))
+            return this.$cookies.get(name)
+        },
+        set_cookies(name, value){
+            // VueCookies.set('myCookie', '123', '1d', '/THE-ELE-16-01-2023-0001')
+            // console.log("campaign", this.campaign)
+            this.$cookies.set(name, value,"1d", `/sadbhavna/campaign-donation/${this.campaign}`);
+        },
+
         formatDate(dateString) {
             const date = new Date(dateString);
             // Then specify how you want your dates to be formatted
@@ -713,10 +832,12 @@ export default {
                     response.json().then(res => {
                         this.campaign_detail = res
                         this.total_desc = res.data.description.length
-                        this.campaign_start_date = new Date(res.data.start_date)
+                        // this.campaign_start_date = new Date(res.data.start_date)
+                        var today = new Date()
                         this.campaign_end_date = new Date(res.data.end_date)
-                        // console.log("asdf", res.data.start_date)
-
+                        const timeDiff = this.campaign_end_date.getTime() - today.getTime();
+                        const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                        this.campaign_days = daysDiff;                        
                     });
                 })
                 .catch(err => {
@@ -731,6 +852,11 @@ export default {
             //   console.log(error);
             // })
             this.$resources.get_recent_donation.submit({
+                name: name
+            })
+        },
+        get_generous_donation(name) {
+            this.$resources.get_generous_donation.submit({
                 name: name
             })
         },
@@ -819,7 +945,10 @@ export default {
 
         increment(item, rate, qty = 1) {
             if(qty){
-                this.item_b.push(item)
+                this.i_qty += 1
+                if(!this.item_b.includes(item)){
+                    this.item_b.push(item)
+                }
                 let qty1 = 0
                 this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
@@ -842,18 +971,26 @@ export default {
                     this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
                     // this.get_total_price()
                     this.total_price += rate
-                    this.qty += 1
+                    this.set_cookies("item", this.item_cart)
+                    this.set_cookies("item_b", this.item_b)
+                    this.set_cookies("i_qty", this.i_qty)
+                    this.set_cookies("total_price", this.total_price)
                     qty1 = 0
                 }
                 else {
                     this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
                     this.total_price += rate
+                    this.set_cookies("item", this.item_cart)
+                    this.set_cookies("item_b", this.item_b)
+                    this.set_cookies("i_qty", this.i_qty)
+                    this.set_cookies("total_price", this.total_price)
                     qty1 = 0
                 }
             }
         },
 
         decrement(item, rate) {
+            this.i_qty -= 1
             let qty1 = 0
             this.item_cart.filter(function (elm) {
                 if (elm.item == item) {
@@ -876,7 +1013,7 @@ export default {
                 this.item_cart.splice(i, 1)
                 this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
                 this.total_price -= rate
-                this.qty -= 1
+
                 if(qty1 == 1){
                     var check = this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
@@ -886,6 +1023,8 @@ export default {
                     if (check.length > 0) {
                         let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
                         this.item_cart.splice(i, 1)
+                        let a = this.item_b.indexOf(item);
+                        this.item_b.splice(a, 1)
                     }
                 }
             }
@@ -893,14 +1032,7 @@ export default {
             //     this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
             //     this.total_price -= rate
             // }
-        
-            
-        }
-
-
-
-
-
+        },
 
     }
 }
