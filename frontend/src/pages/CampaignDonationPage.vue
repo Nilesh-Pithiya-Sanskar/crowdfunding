@@ -101,6 +101,7 @@
                                 </div>
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <div class="flex justify-between pb-2" v-if="item_b.includes(products.item)">
                                         <div class="flex justify-between w-24 text-xl h-9">
 =======
@@ -108,6 +109,15 @@
                                     <div class="flex pb-2" v-if="item_b.includes(products.item)">
                                         <div class="flex justify-between w-24 text-xl h-9 mr-6">
 >>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                                <div class="flex justify-end">
+                                    <div class="flex pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9 mr-6">
+=======
+                                    <div class="flex justify-between pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9">
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                                             <Button class="bg-gray-300"
                                                 @click="decrement(products.item, products.price, qty=1)">-</Button>
 
@@ -122,6 +132,7 @@
                                     </div>                    
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <div class="flex justify-between pb-2" v-else>
                                         <div class="flex justify-between w-24 text-xl h-9">
                                             <div>
@@ -131,6 +142,8 @@
                                         </div>
                                     </div>
 =======
+=======
+>>>>>>> 3a2c622 (fix:validation error)
                                     <div class="pb-2" v-else>
                                         <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
                                             <div>
@@ -140,7 +153,20 @@
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
 >>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+=======
+                                    <div class="flex justify-between pb-2" v-else>
+                                        <div class="flex justify-between w-24 text-xl h-9">
+                                            <div>
+                                                <Button class="bg-gray-300"
+                                                @click="increment(products.item, products.price, qty=1)">Add</Button>
+                                            </div>
+                                        </div>
+                                    </div>
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                             </div>
                         </div>
                     </div>
@@ -167,6 +193,7 @@
                 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div class=" w-full lg:w-4/12 ">
                     <div class="sticky top-0">
                         <div class="overflow-hidden ">
@@ -175,6 +202,16 @@
                     <div class="sticky top-0">
                         <div class="overflow-hidden hidden lg:block">
 >>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                <div class=" w-full lg:w-4/12">
+                    <div class="sticky top-0">
+                        <div class="overflow-hidden hidden lg:block">
+=======
+                <div class=" w-full lg:w-4/12 ">
+                    <div class="sticky top-0">
+                        <div class="overflow-hidden ">
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                             <table class="text-[#364958]" v-if="item_cart != ''">
                                 <thead class="bg-white border-b">
                                     <tr>
@@ -523,7 +560,10 @@
             </section>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3a2c622 (fix:validation error)
         </div>
     
     
@@ -551,7 +591,12 @@
             
         </div> 
 
+<<<<<<< HEAD
 >>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+=======
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
         </div>
     </div>
     
@@ -870,12 +915,21 @@ export default {
         increment(item, rate, qty = 1) {
             if(qty){
 <<<<<<< HEAD
+<<<<<<< HEAD
                 this.item_b.push(item)
 =======
                 if(!this.item_b.includes(item)){
                     this.item_b.push(item)
                 }
 >>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                if(!this.item_b.includes(item)){
+                    this.item_b.push(item)
+                }
+=======
+                this.item_b.push(item)
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                 let qty1 = 0
                 this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
@@ -934,9 +988,15 @@ export default {
                 this.total_price -= rate
                 this.qty -= 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+
+=======
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                 if(qty1 == 1){
                     var check = this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
@@ -947,10 +1007,17 @@ export default {
                         let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
                         this.item_cart.splice(i, 1)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                         let a = this.item_b.indexOf(item);
                         this.item_b.splice(a, 1)
 >>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                        let a = this.item_b.indexOf(item);
+                        this.item_b.splice(a, 1)
+=======
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                     }
                 }
             }

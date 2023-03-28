@@ -46,7 +46,7 @@
           </div>
         </div>
       </div>
-                                                                                </div> -->
+                                                                      </div> -->
 
 
       <div class="bg-white rounded-xl drop-shadow-xl">
@@ -64,7 +64,7 @@
           <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-hidden ">
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
               <div
-                class="font-bold px-6 md:px-10 lg:px-10 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751]  transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold px-6 md:px-10 lg:px-10 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751]  transition ease-in-out delay-150hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 1 }">
 
@@ -76,11 +76,10 @@
                   <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid.png" />
                   <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">All</p>
                 </div>
+
+
               </div>
             </li>
-          <!-- <svg class="stroke-2 ...">
-              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-                </svg> -->
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
               <div
                 class="font-bold px-4 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2  cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
@@ -192,7 +191,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Religiouse Campaign')">
               <div
-                class="font-bold px-2 md:px-5 lg:px-5 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold px-2 md:px-5 lg:px-5 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
                 v-on:click="toggleTabs(7)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 7 }">
 
@@ -216,7 +215,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Disability Campaign')">
               <div
-                class="font-bold px-2 md:px-6 lg:px-6 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold px-2 md:px-6 lg:px-6 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
                 v-on:click="toggleTabs(8)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 8, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 8 }">
 
@@ -241,7 +240,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Elder Campaign')">
               <div
-                class="font-bold px-4 md:px-9 lg:px-9 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold px-4 md:px-9 lg:px-9 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
                 v-on:click="toggleTabs(9)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 9 }">
 
