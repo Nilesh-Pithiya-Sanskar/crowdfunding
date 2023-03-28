@@ -109,7 +109,7 @@
 
                     <button type="submit"
                         class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
                         @click="contact_us()">submit
                     </button>
 
@@ -334,7 +334,7 @@ export default {
                 // return true;
             }
 
-            else if (this.first_name == '' || !this.validName(this.first_name)) {
+            else if (this.first_name == '') {
                 // this.first_name == this.error
                 this.firstNameError = 'Enter valid firstname!'
                 this.error = true
