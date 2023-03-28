@@ -167,7 +167,7 @@
                                         </th>
                                         <th scope="col" class="font-bold px-6 py-4 text-left">
                                             Amount
-                                        </th>
+                                        </th>   
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -585,6 +585,15 @@
             { label: 'Cancel' },
         ],
     }" v-model="showDialog" />
+    <!-- <div>item_cart{{ item_cart }}</div><br> -->
+    <!-- {{ a }} -->
+
+    <!-- <input type="text" v-model="name"/>
+    <button @click="get_cookies(name)">get</button><br>
+    <button @click="delete_cookies('item')">del</button><br>
+    <button @click="set_cookies()">set</button><br> -->
+    <!-- {{ item_cart }} -->
+
     <Footer />
 </template>
 
@@ -598,6 +607,7 @@ import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import { Dialog } from 'frappe-ui'
 import { createConditionalExpression } from '@vue/compiler-core';
+import { computeStyles } from '@popperjs/core';
 // import DonationDetail from "../components/DonationDetail.vue";
 // import DonationCheckout from "../components/DonationCheckout.vue";
 
@@ -641,10 +651,16 @@ export default {
             campaign: '',
             tab2: 'this is tab two content',
             a: 70,
-            i_qty: 0,
             date: '',
+
+            i_qty: 0,
             item_cart: [],
             total_price: 0,
+            item_b: [],
+
+            name: '',
+            b: '',
+
             anonymous: false,
             showDialog: false,
             donated_amount: '',
@@ -656,7 +672,6 @@ export default {
             campaign_start_date: '',
             descToShow: 1,
             total_desc: 0,
-            item_b: [],
 
         }
     },
@@ -666,8 +681,29 @@ export default {
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
         this.get_generous_donation(name.params.name)
+        
+        var item_cart = this.get_cookies('item')
+        var i_qty = this.get_cookies('i_qty')
+        var total_price = this.get_cookies('total_price')
+        var item_b = this.get_cookies('item_b')
+        if(item_cart != null){
+            this.item_cart = item_cart
+        }
+        if(i_qty != null){
+            this.i_qty = i_qty
+        }
+        if(total_price != null){
+            this.total_price = total_price
+        }
+        if(item_b != null){
+            this.item_b = item_b
+        }
+        // console.log("a", a)
     },
     mounted() {
+
+        // var a = this.get_cookies('item')
+        // console.log("a", a)
                 // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
         // this.campaign_days = Math.ceil(timeDiff / (1000 * 3600 * 24));
     },
@@ -763,6 +799,19 @@ export default {
 
     },
     methods: {
+        delete_cookies(name){
+            this.$cookies.remove(name, `/sadbhavna/campaign-donation/${this.campaign}`);
+        },
+        get_cookies(name){
+            console.log("asdfasdf",this.$cookies.get(name))
+            return this.$cookies.get(name)
+        },
+        set_cookies(name, value){
+            // VueCookies.set('myCookie', '123', '1d', '/THE-ELE-16-01-2023-0001')
+            // console.log("campaign", this.campaign)
+            this.$cookies.set(name, value,"1d", `/sadbhavna/campaign-donation/${this.campaign}`);
+        },
+
         formatDate(dateString) {
             const date = new Date(dateString);
             // Then specify how you want your dates to be formatted
@@ -922,11 +971,19 @@ export default {
                     this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
                     // this.get_total_price()
                     this.total_price += rate
+                    this.set_cookies("item", this.item_cart)
+                    this.set_cookies("item_b", this.item_b)
+                    this.set_cookies("i_qty", this.i_qty)
+                    this.set_cookies("total_price", this.total_price)
                     qty1 = 0
                 }
                 else {
                     this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
                     this.total_price += rate
+                    this.set_cookies("item", this.item_cart)
+                    this.set_cookies("item_b", this.item_b)
+                    this.set_cookies("i_qty", this.i_qty)
+                    this.set_cookies("total_price", this.total_price)
                     qty1 = 0
                 }
             }
@@ -975,14 +1032,7 @@ export default {
             //     this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
             //     this.total_price -= rate
             // }
-        
-            
         },
-
-
-
-
-
 
     }
 }
