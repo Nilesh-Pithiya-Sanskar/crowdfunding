@@ -19,7 +19,7 @@
               <p class="mb-[16px] leading-7">
               {{ data.short_description }}
               </p>
-                <button class="text-[#40b751] pt-3 font-bold" type="button" @click="donate(data.name)" >Donate Now</button>
+                <button class="text-[#40b751] font-bold" type="button" @click="donate(data.name)" >Donate Now</button>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
       },
       interval: {
         type: Number,
-        default: 3000
+        default: 4000
       }
     },
     setup(props) {

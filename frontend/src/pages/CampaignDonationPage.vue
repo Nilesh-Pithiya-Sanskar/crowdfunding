@@ -115,7 +115,6 @@
                                                 @click="increment(products.item, products.price, qty=1)">+</Button>
                                         </div>
                                     </div>                    
-
                                     <div class="pb-2" v-else>
                                         <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
                                             <div>
@@ -528,6 +527,7 @@
                     </div>
                 </div>
             </section>
+
         </div>
     
         <div class="md:block sm:block lg:hidden rounded-2xl w-full h-16 bg-white border-t-4 border-green-500
@@ -657,7 +657,6 @@ export default {
             descToShow: 1,
             total_desc: 0,
             item_b: [],
-
         }
     },
     created() {
@@ -975,15 +974,7 @@ export default {
             //     this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
             //     this.total_price -= rate
             // }
-        
-            
         },
-
-
-
-
-
-
     }
 }
 </script>
