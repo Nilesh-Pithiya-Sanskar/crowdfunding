@@ -163,13 +163,10 @@
                                     </div>
                                 </div>
 
-                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
-                                <div class="flex justify-between">
-                                    
-                                    <div v-if="item_cart != ''">
-                                        <div v-for="item in item_cart" class="flex justify-between w-24 text-xl h-10">
-
-                                            <div v-if="products.item == item.item">
+                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
+                                <div class="flex justify-end">
+                                    <div class="flex pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9 mr-6">
                                             <Button class="bg-gray-300"
                                                 @click="decrement(products.item, products.price, item.qty)">
                                                 -
@@ -191,22 +188,12 @@
                                                 +
                                             </Button>
                                         </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div v-else>
-                                        <div class="flex justify-between w-24 text-xl h-10">
-
-                                            <Button class="bg-gray-300"
-                                                @click="decrement(products.item, products.price, qty)">
-                                                -
-                                            </Button>
-
+                                    </div>                    
+                                    <div class="pb-2" v-else>
+                                        <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
                                             <div>
-                                                <div class="bg-green-500 p-3 rounded-lg justify-center pb-5">
-                                                    0
-                                                </div>
+                                                <button class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-2 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
+                                                @click="increment(products.item, products.price, qty=1)">Add</button>
                                             </div>
 
                                             <Button class="bg-gray-300"
@@ -217,9 +204,7 @@
                                         </div>
                                         
                                     </div>
-
                                 </div>
-
                             </div>
                                  -->
                         <!-- ******************************************** -->
@@ -241,9 +226,60 @@
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                     </div>
 
-                    <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other
-                        Donation</div>
-                    <p class="text-gray-600">Donate via</p>
+                <div class=" w-full lg:w-4/12">
+                    <div class="sticky top-0">
+                        <div class="overflow-hidden hidden lg:block">
+                            <table class="text-[#364958]" v-if="item_cart != ''">
+                                <thead class="bg-white border-b">
+                                    <tr>
+                                        <th scope="col" class="font-bold py-4 text-left">
+                                            Item Name
+                                        </th>
+                                        <!-- <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
+                                            Rate
+                                        </th> -->
+                                        <th scope="col" class="font-bold px-6 py-4 text-left">
+                                            Qty
+                                        </th>
+                                        <th scope="col" class="font-bold px-6 py-4 text-left">
+                                            Amount
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in item_cart"
+                                        class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                        <td class="text-sm text-gray-900 py-4 whitespace-nowrap">
+                                            {{ item.item }}
+                                        </td>
+                                        <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            {{ item.rate }}
+                                        </td> -->
+                                        <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
+                                            {{ item.qty }}
+                                        </td>
+                                        <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
+                                            {{ item.amount }}
+                                        </td>
+                                    </tr>                                    
+                                    <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">Total</td>
+                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">{{ i_qty }}</td>
+                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">₹ {{ numberWithCommas(total_price) }}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="text-center mt-5">
+                                <button
+                                    class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
+                                    type="button" @click="donate(total_price, anonymous)"> donate now
+                                </button>
+                                <div v-if="item_cart != ''">
+                                    <input type="checkbox" id="anonymous" v-model="anonymous">
+                                    <label for="checkbox" class="text-sm pl-2">Make my donation anonymous</label>
+                                </div>
+                            </div>
 
                     <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
                         <div>
@@ -254,23 +290,12 @@
                                 <div class="text-center pt-2">
                                     <p class="text-xs text-[#364958]">Phone Pay</p>
                                 </div>
-
-                            </div>
+                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                            </div> -->
                         </div>
 
-
-                        <div>
-                            <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
-                                <div class="grid justify-center">
-                                    <img src="../../src/assets/Inter/img/gpay.png" class="w-12 h-12">
-
-                                </div>
-                                <div class="text-center pt-2">
-                                    <p class="text-xs text-[#364958]">Google Pay</p>
-                                </div>
-
-                            </div>
-                        </div>
+                        <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
+                        <p class="text-gray-600 mt-4">Donate via</p>
 
                         <div>
                             <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
@@ -450,14 +475,9 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-            <section class="bg-white dark:bg-gray-900">
-                <div>
-                    <section class="bg-white dark:bg-gray-900">
-
+            <section class="bg-white dark:bg-gray-900 flex flex-wrap">
+                <div class="lg:w-8/12 md:w-6/12 sm:w-12/12">
+                    <div class="bg-white dark:bg-gray-900">
                         <div>
                             <section class="text-gray-700">
                                 <div class="px-5 py-10">
@@ -544,13 +564,129 @@
                                 </div>
                             </section>
                         </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-4/12 md:w-6/12 sm:w-6/12">
+                    <div style="font-size: 2rem;" class="mt-8 font-medium text-gray-800">Donors ({{ total_donors }})</div>
+                    <div class="flex flex-wrap shadow">
+                        <div class="w-full">
+                            <ul class="flex mb-0 list-none flex-wrap flex-row">
+                                <li class="-mb-px flex-auto text-center">
+                                    <a class="text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
+                                        v-on:click="toggleTabs(1)"
+                                        v-bind:class="{ 'bg-gray-200': openTab !== 1, 'text-gray-500': openTab === 1 }">
+                                        <i class="fas fa-space-shuttle text-base mr-1"></i> Recent
+                                    </a>
+                                </li>
+                                <li class="-mb-px  flex-auto text-center">
+                                    <a class=" text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
+                                        v-on:click="toggleTabs(2)"
+                                        v-bind:class="{ 'bg-gray-200': openTab !== 2, 'text-gray-500': openTab === 2 }">
+                                        <i class="fas fa-cog text-base mr-1"></i> most generous
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="relative flex flex-col min-w-0 break-words bg-white w-full  shadow-lg rounded">
+                                <div class="px-4 py-5 flex-auto">
+                                    <div class="tab-content tab-space overflow-y-auto h-72">
+                                        <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
+                                            <div class="pb-6" v-for="donation in recent_donation">
+
+                                                <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
+
+                                                    <div>
+                                                        <div class="float-left pr-4">
+                                            
+                                                            <div v-if="donation.anonymous != 1">
+                                                                <Avatar :imageURL="donation.donor_image"
+                                                                    :label="donation.donor_name" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                            <div v-else>
+                                                                <Avatar imageURL="" label="Anonymous" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                        </div>
 
                     </section>
+                                                    <div class="grid justify-end">
+                                                        <p class="">₹ {{ numberWithCommas(donation.amount) }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
+                                            <div class="pb-6" v-for="m_donation in most_generous">
+                                                <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
 
+                                                    <div>
+                                                        <div class="float-left pr-4">
+
+                                                            <div v-if="m_donation.anonymous != 1">
+                                                                <Avatar :imageURL="m_donation.donor_image"
+                                                                    :label="m_donation.donor_name" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                            <div v-else>
+                                                                <Avatar imageURL="" label="Anonymous" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div>
+                                                            <p v-if="m_donation.anonymous != 1"
+                                                                class=" text-gray-900 leading-none text-lg font-bold">{{
+                                                                    m_donation.donor_name }}</p>
+                                                            <p v-else class="text-gray-900 leading-none text-lg font-bold">
+                                                                Anonymous</p>
+                                                            <p class="text-gray-600 text-sm">{{ formatDate(m_donation.date) }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="grid justify-end">
+                                                        <p class="">₹ {{ numberWithCommas(m_donation.amount) }}</p>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
+    
+        <div class="md:block sm:block lg:hidden rounded-2xl w-full h-16 bg-white border-t-4 border-green-500
+            fixed left-0 bottom-0
+            flex justify-center items-center
+            text-white text-2xl " v-if="total_price != 0">
+        <!-- <div class="">asdfasdfasd</div> -->
+        <div class="flex justify-between text-center font-bold text-lg mt-5">
+            <div class="flex">
+                <div class="text-[#40b751] ml-5">{{ i_qty }} Item(s) |</div>
+                <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
+            </div>
+            <!-- <div>
+                <input type="checkbox" id="anonymous" v-model="anonymous">
+                <label for="checkbox" class="text-sm text-green-500 pl-2">Make my donation anonymous</label>
+            </div> -->
+            <div>
+                <button
+                    class="mb-5 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                    type="button" @click="donate(total_price, anonymous)"> donate now
+                </button>
+            </div>
+            
+        </div> 
+
+        </div>
     </div>
+    
     <Dialog :options="{
         title: 'Donation Completed',
         message: `Your donation of ${donated_amount} is successfully completed.`,
@@ -613,7 +749,7 @@ export default {
         Avatar,
         Dialog,
         // DonationCheckout,
-    },
+    },    
     setup() {
         const user = inject("user")
         const cookie = Object.fromEntries(
@@ -632,19 +768,26 @@ export default {
             campaign_detail: '',
             openTab: 1,
             recent_donation: '',
+            most_generous: '',
             campaign: '',
             tab2: 'this is tab two content',
             a: 70,
-            qty: 0,
+            i_qty: 0,
             date: '',
             item_cart: [],
             total_price: 0,
             anonymous: false,
             showDialog: false,
             donated_amount: '',
-
-            donation_name: ''
-
+            donation_name: '',
+            loaded: false,
+            total_donors: '',
+            campaign_days: 0,
+            campaign_end_date: '',
+            campaign_start_date: '',
+            descToShow: 1,
+            total_desc: 0,
+            item_b: [],
         }
     },
     mounted() {
@@ -652,7 +795,19 @@ export default {
         this.campaign = name.params.name
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
+        this.get_generous_donation(name.params.name)
     },
+
+    mounted() {
+                // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
+        // this.campaign_days = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    },
+    // computed: {
+    //     most_generous() {
+    //     return this.most_generous.sort((a, b) => b.amount - a.amount);
+    //     }
+    // },
+
     resources: {
         // get_campaign_donation_detail(){
         //     return{
@@ -688,6 +843,17 @@ export default {
                 method: "sadbhavna_donatekart.api.api.get_recent_donation",
                 onSuccess: (res) => {
                     this.recent_donation = res
+                },
+                onError: (error) => {
+                    console.log(error)
+                }
+            }
+        },
+        get_generous_donation() {
+            return {
+                method: "sadbhavna_donatekart.api.api.get_generous_donation",
+                onSuccess: (res) => {
+                    this.most_generous = res
                 },
                 onError: (error) => {
                     console.log(error)
@@ -748,6 +914,13 @@ export default {
                 .then(response => {
                     response.json().then(res => {
                         this.campaign_detail = res
+                        this.total_desc = res.data.description.length
+                        // this.campaign_start_date = new Date(res.data.start_date)
+                        var today = new Date()
+                        this.campaign_end_date = new Date(res.data.end_date)
+                        const timeDiff = this.campaign_end_date.getTime() - today.getTime();
+                        const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                        this.campaign_days = daysDiff;                        
                     });
                 })
                 .catch(err => {
@@ -762,6 +935,11 @@ export default {
             //   console.log(error);
             // })
             this.$resources.get_recent_donation.submit({
+                name: name
+            })
+        },
+        get_generous_donation(name) {
+            this.$resources.get_generous_donation.submit({
                 name: name
             })
         },
@@ -848,44 +1026,12 @@ export default {
             this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
         },
 
-        increment(item, rate, qty) {
-            this.qty += 1
-            let qty1 = 0
-            this.item_cart.filter(function (elm) {
-                if (elm.item == item) {
-                    qty1 = elm.qty
+        increment(item, rate, qty = 1) {
+            if(qty){
+                this.i_qty += 1
+                if(!this.item_b.includes(item)){
+                    this.item_b.push(item)
                 }
-                else {
-                    qty1 = 0
-
-                }
-            });
-            let amount = rate * (qty1 + 1)
-
-            var check = this.item_cart.filter(function (elm) {
-                if (elm.item == item) {
-                    return elm;
-                }
-            });
-
-            if (check.length > 0) {
-                let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
-                this.item_cart.splice(i, 1)
-                this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
-                // this.get_total_price()
-                this.total_price += rate
-                qty1 = 0
-            }
-            else {
-                this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
-                this.total_price += rate
-                qty1 = 0
-            }
-        },
-        decrement(item, rate, qty) {
-            if (qty != 0) {
-                this.qty -= 1
-
                 let qty1 = 0
                 this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
@@ -906,25 +1052,63 @@ export default {
                 if (check.length > 0) {
                     let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
                     this.item_cart.splice(i, 1)
-                    this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
-                    this.total_price -= rate
+
+                    this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
+                    // this.get_total_price()
+                    this.total_price += rate
+                    qty1 = 0
                 }
                 else {
                     this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
                     this.total_price -= rate
                 }
             }
-            if (qty == 1) {
-                var check = this.item_cart.filter(function (elm) {
+        },
+
+        decrement(item, rate) {
+            this.i_qty -= 1
+            let qty1 = 0
+            this.item_cart.filter(function (elm) {
+                if (elm.item == item) {
+                    qty1 = elm.qty
+                }
+                // else {
+                //     qty1 = 0
+                // }
+            });
+            let amount = rate * (qty1 - 1)
+
+            var check = this.item_cart.filter(function (elm) {
+                if (elm.item == item) {
+                    return elm;
+                }
+            });
+
+            if (check.length > 0) {
+                let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
+                this.item_cart.splice(i, 1)
+                this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
+                this.total_price -= rate
+
+                if(qty1 == 1){
+                    var check = this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
                         return elm;
                     }
                 });
-                if (check.length > 0) {
-                    let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
-                    this.item_cart.splice(i, 1)
+
+                    if (check.length > 0) {
+                        let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
+                        this.item_cart.splice(i, 1)
+                        let a = this.item_b.indexOf(item);
+                        this.item_b.splice(a, 1)
+                    }
                 }
             }
+            // else {
+            //     this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
+            //     this.total_price -= rate
+            // }
         },
     }
 }
