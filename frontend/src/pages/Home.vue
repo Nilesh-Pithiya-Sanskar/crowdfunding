@@ -24,7 +24,7 @@
     </div>
   </div>
 
-   <div class="container mx-auto h-full p-4 lg:p-6 -mt-[80px] md:-mt-[88px] lg:-mt-[144px] pl-4 lg:pl-0 pr-4 lg:pr-0">
+   <div class="container mx-auto h-full p-4 lg:p-6 -mt-[90px] md:-mt-[88px] lg:-mt-[95px] pl-4 lg:pl-0 pr-4 lg:pr-0">
     <!-- <div class="bg-white rounded-xl product-shodow">
 
       <div v-for="data in campaigns">

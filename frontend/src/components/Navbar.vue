@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-2 pl-2 md:pl-4 lg:pl-24 pr-2 md:pr-4 lg:pr-24">
+  <div class="pt-2 pl-[15px] md:pl-[60px] lg:pl-24 pr-[15px] md:pr-[60px] lg:pr-24">
     <div class="rounded-xl bg-[#40b751]">
       <nav class="px-[5px] md:px-[5px] lg:px-[20px] py-[5px] md:py-[5px] lg:py-[25px] lg:flex lg:justify-between lg:items-center">
         <div class="flex justify-between">
