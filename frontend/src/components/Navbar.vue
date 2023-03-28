@@ -1,7 +1,8 @@
 <template>
   <div class="pt-2 pl-2 md:pl-4 lg:pl-24 pr-2 md:pr-4 lg:pr-24">
     <div class="rounded-xl bg-[#40b751]">
-      <nav class="px-[5px] md:px-[5px] lg:px-[20px] py-[5px] md:py-[5px] lg:py-[25px] lg:flex lg:justify-between lg:items-center">
+      <nav
+        class="px-[5px] md:px-[5px] lg:px-[20px] py-[5px] md:py-[5px] lg:py-[25px] lg:flex lg:justify-between lg:items-center">
         <div class="flex justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
@@ -66,29 +67,26 @@
           </li>
         </ul>
       </nav>
-  <Dialog
-    :options="{
-      title: 'Logout',
-      message: 'Are you sure want to logout?',
-      // icon: {
-      //   name: 'alert-triangle',
-      //   appearance: 'warning',
-      // },
-      size: 'sm',
-      actions: [
-        {
-          label: 'Confirm',
-          appearance: 'success',
-          handler: ({ close }) => {
-            this.logout()
-            close() // closes dialog
+      <Dialog :options="{
+        title: 'Logout',
+        message: 'Are you sure want to logout?',
+        // icon: {
+        //   name: 'alert-triangle',
+        //   appearance: 'warning',
+        // },
+        size: 'sm',
+        actions: [
+          {
+            label: 'Confirm',
+            appearance: 'success',
+            handler: ({ close }) => {
+              this.logout()
+              close() // closes dialog
+            },
           },
-        },
-        { label: 'Cancel' },
-      ],
-    }"
-    v-model="showDialog"
-  />
+          { label: 'Cancel' },
+        ],
+      }" v-model="showDialog" />
     </div>
   </div>
 </template>
@@ -106,7 +104,7 @@ export default {
       user,
     }
   },
-  components:{
+  components: {
     Dialog
   },
   data() {
@@ -115,12 +113,12 @@ export default {
       showDialog: false
     }
   },
-  mounted(){
-  console.log("navbar load")
- },
-  resources:{
-    logout(){
-      return{
+  mounted() {
+    console.log("navbar load")
+  },
+  resources: {
+    logout() {
+      return {
         method: 'logout',
         onSuccess: (res) => {
           this.$toast({
@@ -128,8 +126,8 @@ export default {
             text: "You successfully logout",
             customIcon: "check",
           })
-        // this.$router.push("/sadbhavna")
-        this.$router.go();
+          // this.$router.push("/sadbhavna")
+          this.$router.go();
         },
         onError() {
           console.log("Error")
@@ -138,13 +136,13 @@ export default {
             text: 'Somthing want wrong during Logout!',
             customIcon: "circle-fail",
             appearance: "denger",
-        })
+          })
         }
       }
     }
   },
   methods: {
-    show_logout_dialog(){
+    show_logout_dialog() {
       this.showDialog = true
     },
     logout() {

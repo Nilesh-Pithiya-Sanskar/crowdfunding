@@ -33,7 +33,7 @@
 
       <!-- Categories -->
       <div class="text-center mt-10">
-        <h2 class="text-3xl font-bold text-[#40b751] mb-2">Categories</h2>
+        <h2 class="font-black text-3xl text-[#40b751] mb-2">Categories</h2>
         <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
       </div>
       <div class="flex mt-3 border-b sm:mr-4 lg:mr-12 ">
@@ -275,12 +275,13 @@
               <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
                 @click="donate(campaigns[index - 1].name)">
               <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
-                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index -
+                <div class="font-bold text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index -
                   1].campaign_title
                 }}
                 </div>
                 <p class="text-gray-700 text-base truncate">
                   By: {{ campaigns[index - 1].ngo }}
+                </p>
                 <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
                   <div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
@@ -291,11 +292,12 @@
                   </div>
                 </div>
                 <div
-                  class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
-                  <span>Raised: {{ numberWithCommas(campaigns[index - 1].raised_amount) }}</span><span>Goal: {{
-                    numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+                  class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] text-black font-extrabold">
+                  <span>Raised: {{ numberWithCommas(campaigns[index - 1].raised_amount)
+                  }}</span><span>Goal: {{
+  numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
                 </div>
-                </p>
+
               </div>
               <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
                 <button class="text-[#40b751] text-base">Share</button>
@@ -323,7 +325,7 @@
 
     <div class="container mx-auto h-full">
       <div class="text-center mt-10">
-        <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-bold text-[#40b751] mb-[20px]">Featured in</h2>
+        <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">Featured in</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 ">
@@ -380,7 +382,7 @@
       <div class="container mx-auto h-full">
 
         <div class="text-center mt-10">
-          <h2 class="text-3xl font-bold text-[#40b751] pt-12">Awards</h2>
+          <h2 class="text-3xl font-black text-[#40b751] pt-12">Awards</h2>
         </div>
         <div class="pb-16">
           <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-2 justify-items-center text-center">
@@ -388,17 +390,18 @@
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 "
                 src="../../src/assets/Inter/img/nationalbusinessawards.jpeg">
               <div class="">
-                <p class="text-[#364958] font-black text-[20px] leading-6">National Business Excellence And</p>
-                <p class="text-[#364958] font-black text-[20px] leading-6"> Achievers Award</p>
-                <p class="text-[#364958] font-black pt-2">2021</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">National Business Excellence And
+                </p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6"> Achievers Award</p>
+                <p class="text-[#364958] font-bold pt-2">2021</p>
               </div>
             </div>
 
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennailogo.jpg">
               <div class="">
-                <p class="text-[#364958] font-black text-[20px] leading-6">Top Ten Startups In Hyderabad</p>
-                <p class="text-[#364958] font-black pt-2">2020</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">Top Ten Startups In Hyderabad</p>
+                <p class="text-[#364958] font-bold pt-2">2020</p>
               </div>
             </div>
 
@@ -406,25 +409,25 @@
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96"
                 src="../../src/assets/Inter/img/socialenterpriceaward.jpg">
               <div class="">
-                <p class="text-[#364958] font-black text-[20px] leading-6">Social Enterprise Challenge Award</p>
-                <p class="text-[#364958] font-black pt-2">2018</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">Social Enterprise Challenge Award</p>
+                <p class="text-[#364958] font-bold pt-2">2018</p>
               </div>
             </div>
 
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/NASSCOM.jpg">
               <div class="">
-                <p class="text-[#364958] font-black text-[20px] leading-6">NASSCOM Social Innovation Award</p>
-                <p class="text-[#364958] font-black pt-2">2018</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">NASSCOM Social Innovation Award</p>
+                <p class="text-[#364958] font-bold pt-2">2018</p>
               </div>
             </div>
 
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/indianextress.png">
               <div class="">
-                <p class="text-[#364958] font-black text-[20px] leading-6">Indian Express 40</p>
-                <p class="text-[#364958] font-black text-[20px] leading-6">nder 40</p>
-                <p class="text-[#364958] font-black pt-2">2021</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">Indian Express 40</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">nder 40</p>
+                <p class="text-[#364958] font-bold pt-2">2021</p>
               </div>
             </div>
           </div>

@@ -9,6 +9,11 @@ p {
   font-family: 'Mulish', sans-serif;
 }
 
+/* h2 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+} */
+
 div {
   font-family: 'Mulish', sans-serif;
 }
@@ -52,4 +57,9 @@ div {
 
 .fontcard {
   font-family: "Open Sans", sans-serif;
+}
+
+.font {
+  font-weight: bolder;
+
 }
