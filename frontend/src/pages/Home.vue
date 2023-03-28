@@ -1,6 +1,7 @@
 
 <template>
   <!-- Header-->
+
 <section class=" z-1 bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
     <Navbar />
     <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[110px] md:pb-[110px] lg:pb-[128px] container mx-auto h-full">
@@ -22,10 +23,11 @@
       </div>
     </div>
   </section>
-
    <div class="container mx-auto h-full p-4 lg:p-6 -mt-[90px] md:-mt-[88px] lg:-mt-[95px] pl-4 lg:pl-0 pr-4 lg:pr-0">
     <!-- <div class="bg-white rounded-xl product-shodow">
 
+  <div class="container mx-auto h-full sm:-mt-16 md:-mt-16 lg:-mt-36 -mb-20 md:-mb-0 lg:-mb-0 pl-4 lg:pl-0 pr-4 lg:pr-0">
+  <!-- <div class="bg-white rounded-xl product-shodow">
       <div v-for="data in campaigns">
         <div v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
           <div class="md:col-span-2 lg:col-span-1">
@@ -46,7 +48,7 @@
     </div> -->
 <div class="container mx-auto h-full">
     <div class="bg-white rounded-xl drop-shadow-xl">
-        <Sliders :featured_campaigns="featured_campaigns" :interval="3000"/>
+      <Sliders :featured_campaigns="featured_campaigns" :interval="3000" />
     </div>
 
     <!-- Categories -->
