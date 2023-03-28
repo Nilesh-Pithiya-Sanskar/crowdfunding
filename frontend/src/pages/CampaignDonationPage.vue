@@ -188,8 +188,8 @@
                                     </tr>                                    
                                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                         <td class="text-gray-900 font-bold py-4 whitespace-nowrap">Total</td>
-                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap"></td>
-                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">₹ {{ numberWithCommas(total_price) }}</td>
+                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">{{ i_qty }}</td>
+                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">₹ {{ numberWithCommas(total_price) }}</td>
                                     </tr>
 
                                 </tbody>
@@ -487,10 +487,39 @@
                                             </div>
                                         </div>
                                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
-                                            <p>
-                                                
-                                                {{ item_cart }}
-                                            </p>
+                                            <div class="pb-6" v-for="m_donation in most_generous">
+                                                <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
+
+                                                    <div>
+                                                        <div class="float-left pr-4">
+
+                                                            <div v-if="m_donation.anonymous != 1">
+                                                                <Avatar :imageURL="m_donation.donor_image"
+                                                                    :label="m_donation.donor_name" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                            <div v-else>
+                                                                <Avatar imageURL="" label="Anonymous" size="lg"
+                                                                    class="w-12 h-12 rounded-full" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div>
+                                                            <p v-if="m_donation.anonymous != 1"
+                                                                class=" text-gray-900 leading-none text-lg font-bold">{{
+                                                                    m_donation.donor_name }}</p>
+                                                            <p v-else class="text-gray-900 leading-none text-lg font-bold">
+                                                                Anonymous</p>
+                                                            <p class="text-gray-600 text-sm">{{ formatDate(m_donation.date) }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="grid justify-end">
+                                                        <p class="">₹ {{ numberWithCommas(m_donation.amount) }}</p>
+                                                    </div>
+                                                </div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -499,10 +528,7 @@
                     </div>
                 </div>
             </section>
-
         </div>
-    
-    
     
         <div class="md:block sm:block lg:hidden rounded-2xl w-full h-16 bg-white border-t-4 border-green-500
             fixed left-0 bottom-0
@@ -511,13 +537,13 @@
         <!-- <div class="">asdfasdfasd</div> -->
         <div class="flex justify-between text-center font-bold text-lg mt-5">
             <div class="flex">
-                <!-- <div class="text-[#40b751] ml-5">Qty {{ qty }} /</div> -->
+                <div class="text-[#40b751] ml-5">{{ i_qty }} Item(s) |</div>
                 <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
             </div>
-            <div>
+            <!-- <div>
                 <input type="checkbox" id="anonymous" v-model="anonymous">
                 <label for="checkbox" class="text-sm text-green-500 pl-2">Make my donation anonymous</label>
-            </div>
+            </div> -->
             <div>
                 <button
                     class="mb-5 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
@@ -611,10 +637,11 @@ export default {
             campaign_detail: '',
             openTab: 1,
             recent_donation: '',
+            most_generous: '',
             campaign: '',
             tab2: 'this is tab two content',
             a: 70,
-            qty: 0,
+            i_qty: 0,
             date: '',
             item_cart: [],
             total_price: 0,
@@ -629,7 +656,8 @@ export default {
             campaign_start_date: '',
             descToShow: 1,
             total_desc: 0,
-            item_b: []
+            item_b: [],
+
         }
     },
     created() {
@@ -637,11 +665,17 @@ export default {
         this.campaign = name.params.name
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
+        this.get_generous_donation(name.params.name)
     },
     mounted() {
-        // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
+                // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
         // this.campaign_days = Math.ceil(timeDiff / (1000 * 3600 * 24));
     },
+    // computed: {
+    //     most_generous() {
+    //     return this.most_generous.sort((a, b) => b.amount - a.amount);
+    //     }
+    // },
     resources: {
         // get_campaign_donation_detail(){
         //     return{
@@ -678,6 +712,17 @@ export default {
                 onSuccess: (res) => {
                     this.recent_donation = res
                     this.total_donors = res.length
+                },
+                onError: (error) => {
+                    console.log(error)
+                }
+            }
+        },
+        get_generous_donation() {
+            return {
+                method: "sadbhavna_donatekart.api.api.get_generous_donation",
+                onSuccess: (res) => {
+                    this.most_generous = res
                 },
                 onError: (error) => {
                     console.log(error)
@@ -738,10 +783,12 @@ export default {
                     response.json().then(res => {
                         this.campaign_detail = res
                         this.total_desc = res.data.description.length
-                        this.campaign_start_date = new Date(res.data.start_date)
+                        // this.campaign_start_date = new Date(res.data.start_date)
+                        var today = new Date()
                         this.campaign_end_date = new Date(res.data.end_date)
-                        // console.log("asdf", res.data.start_date)
-
+                        const timeDiff = this.campaign_end_date.getTime() - today.getTime();
+                        const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                        this.campaign_days = daysDiff;                        
                     });
                 })
                 .catch(err => {
@@ -756,6 +803,11 @@ export default {
             //   console.log(error);
             // })
             this.$resources.get_recent_donation.submit({
+                name: name
+            })
+        },
+        get_generous_donation(name) {
+            this.$resources.get_generous_donation.submit({
                 name: name
             })
         },
@@ -844,6 +896,7 @@ export default {
 
         increment(item, rate, qty = 1) {
             if(qty){
+                this.i_qty += 1
                 if(!this.item_b.includes(item)){
                     this.item_b.push(item)
                 }
@@ -869,7 +922,6 @@ export default {
                     this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
                     // this.get_total_price()
                     this.total_price += rate
-                    this.qty += 1
                     qty1 = 0
                 }
                 else {
@@ -881,6 +933,7 @@ export default {
         },
 
         decrement(item, rate) {
+            this.i_qty -= 1
             let qty1 = 0
             this.item_cart.filter(function (elm) {
                 if (elm.item == item) {
@@ -903,7 +956,6 @@ export default {
                 this.item_cart.splice(i, 1)
                 this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
                 this.total_price -= rate
-                this.qty -= 1
 
                 if(qty1 == 1){
                     var check = this.item_cart.filter(function (elm) {
@@ -925,7 +977,7 @@ export default {
             // }
         
             
-        }
+        },
 
 
 
