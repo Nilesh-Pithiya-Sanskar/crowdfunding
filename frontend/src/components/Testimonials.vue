@@ -1,9 +1,9 @@
 <template>
   <div class="bg-[#ebf8ec]">
     <div class="container mx-auto h-full">
-      <div class="text-center mt-10 md:mt-10 lg:mt-10 ">
-        <h2 class="text-3xl pt-16 font-black text-[#40b751] mb-2">Testimonials</h2>
-        <p class="text-[#364958] text-[15px] font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
+      <div class="fontfamily text-center mt-10 md:mt-10 lg:mt-10 ">
+        <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-16 font-bold text-[#40b751] mb-2">Testimonials</h2>
+        <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
           voluptate!</p>
       </div>
 

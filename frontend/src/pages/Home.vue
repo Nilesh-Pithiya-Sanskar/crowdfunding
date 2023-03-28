@@ -24,7 +24,7 @@
     </div>
   </div>
 
-   <div class="container mx-auto h-full sm:p-4 lg:p-16 -mt-[80px] md:-mt-[88px] lg:-mt-[144px] pl-4 lg:pl-0 pr-4 lg:pr-0">
+   <div class="container mx-auto h-full p-4 lg:p-6 -mt-[80px] md:-mt-[88px] lg:-mt-[144px] pl-4 lg:pl-0 pr-4 lg:pr-0">
     <!-- <div class="bg-white rounded-xl product-shodow">
 
       <div v-for="data in campaigns">
@@ -284,7 +284,7 @@
     </div>
       <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
       <button
-        class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+        class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
         type="button" @click="campaignToShow += 6">Show More</button>
     </div>
   </div>
