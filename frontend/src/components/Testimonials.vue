@@ -11,21 +11,21 @@
         <div class="">
           <ul class="flex mb-0 list-none flex-wrap pt-3 flex-row">
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[30px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
+              <a class="text-[16px] transition ease-in-out delay-150 hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[30px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(1)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 1, 'bg-[#40b751] text-white': openTabTestimonials === 1 }">
                 <i class="fas fa-space-shuttle text-base mr-1"></i> Celebrities
               </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[40px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
+              <a class="text-[16px] transition ease-in-out delay-150 hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[40px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(2)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 2, 'bg-[#40b751] text-white': openTabTestimonials === 2 }">
                 <i class="fas fa-cog text-base mr-1"></i> Donors
               </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
+              <a class="text-[16px] transition ease-in-out delay-150 hover:border hover-border-100 font-xtralight px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(3)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
                 <i class="fas fa-cog text-base mr-1"></i> NGOs
@@ -38,8 +38,6 @@
         <div class=" px-4 py-5 flex-auto">
           <div class="tab-content tab-space">
             <div v-bind:class="{ 'hidden': openTabTestimonials !== 1, 'block': openTabTestimonials === 1 }">
-              <p>
-
               <div class="grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
                 <div class="mb-24 flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
@@ -152,7 +150,7 @@
                   </div>
                 </div>
               </div>
-              </p>
+
             </div>
             <div v-bind:class="{ 'hidden': openTabTestimonials !== 2, 'block': openTabTestimonials === 2 }">
               <p>

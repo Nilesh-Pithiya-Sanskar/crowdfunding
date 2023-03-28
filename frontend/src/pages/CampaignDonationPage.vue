@@ -100,8 +100,14 @@
                                     </div>
                                 </div>
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
+<<<<<<< HEAD
                                     <div class="flex justify-between pb-2" v-if="item_b.includes(products.item)">
                                         <div class="flex justify-between w-24 text-xl h-9">
+=======
+                                <div class="flex justify-end">
+                                    <div class="flex pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9 mr-6">
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
                                             <Button class="bg-gray-300"
                                                 @click="decrement(products.item, products.price, qty=1)">-</Button>
 
@@ -115,6 +121,7 @@
                                         </div>
                                     </div>                    
 
+<<<<<<< HEAD
                                     <div class="flex justify-between pb-2" v-else>
                                         <div class="flex justify-between w-24 text-xl h-9">
                                             <div>
@@ -123,6 +130,17 @@
                                             </div>
                                         </div>
                                     </div>
+=======
+                                    <div class="pb-2" v-else>
+                                        <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
+                                            <div>
+                                                <button class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-2 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
+                                                @click="increment(products.item, products.price, qty=1)">Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
                             </div>
                         </div>
                     </div>
@@ -148,9 +166,15 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class=" w-full lg:w-4/12 ">
                     <div class="sticky top-0">
                         <div class="overflow-hidden ">
+=======
+                <div class=" w-full lg:w-4/12">
+                    <div class="sticky top-0">
+                        <div class="overflow-hidden hidden lg:block">
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
                             <table class="text-[#364958]" v-if="item_cart != ''">
                                 <thead class="bg-white border-b">
                                     <tr>
@@ -219,11 +243,6 @@
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                             </div> -->
                         </div>
-
-
-
-
-
 
                         <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
                         <p class="text-gray-600 mt-4">Donate via</p>
@@ -312,7 +331,7 @@
             </div>
 
             <section class="bg-white dark:bg-gray-900 flex flex-wrap">
-                <div class="lg:w-8/12 md:w-8/12 sm:w-12/12">
+                <div class="lg:w-8/12 md:w-6/12 sm:w-12/12">
                     <div class="bg-white dark:bg-gray-900">
                         <div>
                             <div class="text-gray-700">
@@ -429,7 +448,7 @@
                     </div>
                 </div>
 
-                <div class="lg:w-4/12 md:w-4/12 sm:w-12/12">
+                <div class="lg:w-4/12 md:w-6/12 sm:w-6/12">
                     <div style="font-size: 2rem;" class="mt-8 font-medium text-gray-800">Donors ({{ total_donors }})</div>
                     <div class="flex flex-wrap shadow">
                         <div class="w-full">
@@ -503,8 +522,39 @@
                 </div>
             </section>
 
+<<<<<<< HEAD
+=======
+        </div>
+    
+    
+    
+        <div class="md:block sm:block lg:hidden rounded-2xl w-full h-16 bg-white border-t-4 border-green-500
+            fixed left-0 bottom-0
+            flex justify-center items-center
+            text-white text-2xl " v-if="total_price != 0">
+        <!-- <div class="">asdfasdfasd</div> -->
+        <div class="flex justify-between text-center font-bold text-lg mt-5">
+            <div class="flex">
+                <!-- <div class="text-[#40b751] ml-5">Qty {{ qty }} /</div> -->
+                <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
+            </div>
+            <div>
+                <input type="checkbox" id="anonymous" v-model="anonymous">
+                <label for="checkbox" class="text-sm text-green-500 pl-2">Make my donation anonymous</label>
+            </div>
+            <div>
+                <button
+                    class="mb-5 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                    type="button" @click="donate(total_price, anonymous)"> donate now
+                </button>
+            </div>
+            
+        </div> 
+
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
         </div>
     </div>
+    
     <Dialog :options="{
         title: 'Donation Completed',
         message: `Your donation of ${donated_amount} is successfully completed.`,
@@ -567,7 +617,7 @@ export default {
         Avatar,
         Dialog,
         // DonationCheckout,
-    },
+    },    
     setup() {
         const user = inject("user")
         const cookie = Object.fromEntries(
@@ -819,7 +869,13 @@ export default {
 
         increment(item, rate, qty = 1) {
             if(qty){
+<<<<<<< HEAD
                 this.item_b.push(item)
+=======
+                if(!this.item_b.includes(item)){
+                    this.item_b.push(item)
+                }
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
                 let qty1 = 0
                 this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
@@ -877,6 +933,10 @@ export default {
                 this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
                 this.total_price -= rate
                 this.qty -= 1
+<<<<<<< HEAD
+=======
+
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
                 if(qty1 == 1){
                     var check = this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
@@ -886,6 +946,11 @@ export default {
                     if (check.length > 0) {
                         let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
                         this.item_cart.splice(i, 1)
+<<<<<<< HEAD
+=======
+                        let a = this.item_b.indexOf(item);
+                        this.item_b.splice(a, 1)
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
                     }
                 }
             }
