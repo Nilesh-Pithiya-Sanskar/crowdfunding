@@ -231,13 +231,13 @@ export default {
 
 
 
-      if (this.email == '' || !this.validEmail(this.email)) {
+      if (this.email == '') {
         // this.email_id == this.error
         this.errorMsg = 'Email or Password incorrect!'
         this.error = true
         console.log('email')
       }
-      else if (this.password == '' || !this.validPassword(this.password)) {
+      else if (this.password == '') {
         // this.email_id == this.error
         this.errorMsg = 'Email or Password incorrect!'
         this.error = true

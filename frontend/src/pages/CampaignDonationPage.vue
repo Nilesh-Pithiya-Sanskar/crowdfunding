@@ -5,7 +5,7 @@
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
             <h2 style="font-size: 2rem; font-weight: 700;"
-                class="mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{
+                class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{
                     campaign_detail.data.campaign_title }}</h2>
             <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
                 campaign_detail.data.short_description }}</p>
@@ -100,33 +100,73 @@
                                     </div>
                                 </div>
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 mr-4">
-                                <!-- <div v-for="item in item_cart"> -->
-                                    <div class="flex justify-between pb-2">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                    <div class="flex justify-between pb-2" v-if="item_b.includes(products.item)">
                                         <div class="flex justify-between w-24 text-xl h-9">
+=======
+                                <div class="flex justify-end">
+                                    <div class="flex pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9 mr-6">
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                                <div class="flex justify-end">
+                                    <div class="flex pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9 mr-6">
+=======
+                                    <div class="flex justify-between pb-2" v-if="item_b.includes(products.item)">
+                                        <div class="flex justify-between w-24 text-xl h-9">
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                                             <Button class="bg-gray-300"
-                                                @click="decrement(products.item, products.price, qty)">-</Button>
+                                                @click="decrement(products.item, products.price, qty=1)">-</Button>
 
                                             <div v-for="item in item_cart">
                                                 <div class="bg-[#40b751] pt-1 pb-1 pl-3 pr-3 rounded-lg justify-center pb-5"
-                                                    v-if="products.item == item.item && item.qty != 0"> {{ item.qty }}
+                                                    v-if="products.item == item.item"> {{ item.qty }}
                                                 </div>
                                             </div>
                                             <Button class="bg-gray-300"
-                                                @click="increment(products.item, products.price, qty)">+</Button>
+                                                @click="increment(products.item, products.price, qty=1)">+</Button>
                                         </div>
-                                        
-                                    </div>
+                                    </div>                    
 
-                                    <!-- <div class="flex justify-between pb-2">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                    <div class="flex justify-between pb-2" v-else>
                                         <div class="flex justify-between w-24 text-xl h-9">
                                             <div>
                                                 <Button class="bg-gray-300"
-                                                @click="increment(products.item, products.price, qty)">Add</Button>
+                                                @click="increment(products.item, products.price, qty=1)">Add</Button>
                                             </div>
                                         </div>
-                                    </div> -->
-                                <!-- </div> -->
-
+                                    </div>
+=======
+=======
+>>>>>>> 3a2c622 (fix:validation error)
+                                    <div class="pb-2" v-else>
+                                        <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
+                                            <div>
+                                                <button class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-2 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
+                                                @click="increment(products.item, products.price, qty=1)">Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<<<<<<< HEAD
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+=======
+                                    <div class="flex justify-between pb-2" v-else>
+                                        <div class="flex justify-between w-24 text-xl h-9">
+                                            <div>
+                                                <Button class="bg-gray-300"
+                                                @click="increment(products.item, products.price, qty=1)">Add</Button>
+                                            </div>
+                                        </div>
+                                    </div>
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                             </div>
                         </div>
                     </div>
@@ -148,26 +188,43 @@
                     <div class="text-center" v-else>
                         <button
                             class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                            type="button" @click="descToShow = 1" v-if="descToShow > 0">View Less</button>
+                            type="button" @click="descToShow = 1" v-if="total_desc > 0">View Less</button>
                     </div>
                 </div>
 
-                <div class="mt-5 w-full lg:w-4/12 ">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <div class=" w-full lg:w-4/12 ">
                     <div class="sticky top-0">
-                        <div class="overflow-hidden">
-                            <table class="" v-if="item_cart != ''">
+                        <div class="overflow-hidden ">
+=======
+                <div class=" w-full lg:w-4/12">
+                    <div class="sticky top-0">
+                        <div class="overflow-hidden hidden lg:block">
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                <div class=" w-full lg:w-4/12">
+                    <div class="sticky top-0">
+                        <div class="overflow-hidden hidden lg:block">
+=======
+                <div class=" w-full lg:w-4/12 ">
+                    <div class="sticky top-0">
+                        <div class="overflow-hidden ">
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
+                            <table class="text-[#364958]" v-if="item_cart != ''">
                                 <thead class="bg-white border-b">
                                     <tr>
-                                        <th scope="col" class="text-sm font-bold text-gray-900 py-4 text-left">
+                                        <th scope="col" class="font-bold py-4 text-left">
                                             Item Name
                                         </th>
-                                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
+                                        <!-- <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
                                             Rate
-                                        </th>
-                                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
+                                        </th> -->
+                                        <th scope="col" class="font-bold px-6 py-4 text-left">
                                             Qty
                                         </th>
-                                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
+                                        <th scope="col" class="font-bold px-6 py-4 text-left">
                                             Amount
                                         </th>
                                     </tr>
@@ -175,34 +232,39 @@
                                 <tbody>
                                     <tr v-for="item in item_cart"
                                         class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                        <td class="text-sm text-gray-900 font-light py-4 whitespace-nowrap">
+                                        <td class="text-sm text-gray-900 py-4 whitespace-nowrap">
                                             {{ item.item }}
                                         </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             {{ item.rate }}
-                                        </td>
-                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        </td> -->
+                                        <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
                                             {{ item.qty }}
                                         </td>
-                                        <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+                                        <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
                                             {{ item.amount }}
                                         </td>
+                                    </tr>                                    
+                                    <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">Total</td>
+                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap"></td>
+                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">₹ {{ numberWithCommas(total_price) }}</td>
                                     </tr>
-                                    <!-- <tr>
-                                <td class="text-sm font-bold">Total</td>
-                              </tr> -->
 
                                 </tbody>
                             </table>
-
-                            <div v-else class="text-center mt-5">
+                            <div class="text-center mt-5">
                                 <button
                                     class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
                                     type="button" @click="donate(total_price, anonymous)"> donate now
                                 </button>
+                                <div v-if="item_cart != ''">
+                                    <input type="checkbox" id="anonymous" v-model="anonymous">
+                                    <label for="checkbox" class="text-sm pl-2">Make my donation anonymous</label>
+                                </div>
                             </div>
 
-                            <div v-if="total_price != 0" class="text-center font-bold text-lg mt-5">
+                            <!-- <div v-if="total_price != 0" class="text-center font-bold text-lg mt-5">
                                 <div class="text-gray-600">Total Donation</div>
                                 <div class="text-[#40b751]">₹ {{ numberWithCommas(total_price) }}</div>
                                 <div>
@@ -215,14 +277,9 @@
                                     <input type="checkbox" id="anonymous" v-model="anonymous">
                                     <label for="checkbox" class="text-sm pl-2">Make my donation anonymous</label>
                                 </div>
-                                <!-- <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"> -->
-                            </div>
+                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                            </div> -->
                         </div>
-
-
-
-
-
 
                         <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
                         <p class="text-gray-600 mt-4">Donate via</p>
@@ -311,7 +368,7 @@
             </div>
 
             <section class="bg-white dark:bg-gray-900 flex flex-wrap">
-                <div class="lg:w-8/12 md:w-8/12 sm:w-12/12">
+                <div class="lg:w-8/12 md:w-6/12 sm:w-12/12">
                     <div class="bg-white dark:bg-gray-900">
                         <div>
                             <div class="text-gray-700">
@@ -428,7 +485,7 @@
                     </div>
                 </div>
 
-                <div class="lg:w-4/12 md:w-4/12 sm:w-12/12">
+                <div class="lg:w-4/12 md:w-6/12 sm:w-6/12">
                     <div style="font-size: 2rem;" class="mt-8 font-medium text-gray-800">Donors ({{ total_donors }})</div>
                     <div class="flex flex-wrap shadow">
                         <div class="w-full">
@@ -453,14 +510,13 @@
                                 <div class="px-4 py-5 flex-auto">
                                     <div class="tab-content tab-space overflow-y-auto h-72">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-                                            <!-- {{ recent_donation }} -->
                                             <div class="pb-6" v-for="donation in recent_donation">
 
                                                 <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
 
                                                     <div>
                                                         <div class="float-left pr-4">
-                                                            <!-- <img class="w-12 h-12 rounded-full" :src="donation.donor_image"> -->
+                                            
                                                             <div v-if="donation.anonymous != 1">
                                                                 <Avatar :imageURL="donation.donor_image"
                                                                     :label="donation.donor_name" size="lg"
@@ -491,7 +547,7 @@
                                         </div>
                                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
                                             <p>
-                                                <!-- {{ tab2 }} -->
+                                                
                                                 {{ item_cart }}
                                             </p>
                                         </div>
@@ -502,8 +558,48 @@
                     </div>
                 </div>
             </section>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3a2c622 (fix:validation error)
+        </div>
+    
+    
+    
+        <div class="md:block sm:block lg:hidden rounded-2xl w-full h-16 bg-white border-t-4 border-green-500
+            fixed left-0 bottom-0
+            flex justify-center items-center
+            text-white text-2xl " v-if="total_price != 0">
+        <!-- <div class="">asdfasdfasd</div> -->
+        <div class="flex justify-between text-center font-bold text-lg mt-5">
+            <div class="flex">
+                <!-- <div class="text-[#40b751] ml-5">Qty {{ qty }} /</div> -->
+                <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
+            </div>
+            <div>
+                <input type="checkbox" id="anonymous" v-model="anonymous">
+                <label for="checkbox" class="text-sm text-green-500 pl-2">Make my donation anonymous</label>
+            </div>
+            <div>
+                <button
+                    class="mb-5 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                    type="button" @click="donate(total_price, anonymous)"> donate now
+                </button>
+            </div>
+            
+        </div> 
+
+<<<<<<< HEAD
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+=======
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
         </div>
     </div>
+    
     <Dialog :options="{
         title: 'Donation Completed',
         message: `Your donation of ${donated_amount} is successfully completed.`,
@@ -566,7 +662,7 @@ export default {
         Avatar,
         Dialog,
         // DonationCheckout,
-    },
+    },    
     setup() {
         const user = inject("user")
         const cookie = Object.fromEntries(
@@ -602,7 +698,8 @@ export default {
             campaign_end_date: '',
             campaign_start_date: '',
             descToShow: 1,
-            total_desc: 0
+            total_desc: 0,
+            item_b: []
         }
     },
     created() {
@@ -815,82 +912,128 @@ export default {
             this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
         },
 
-        increment(item, rate, qty) {
-            this.qty += 1
+        increment(item, rate, qty = 1) {
+            if(qty){
+<<<<<<< HEAD
+<<<<<<< HEAD
+                this.item_b.push(item)
+=======
+                if(!this.item_b.includes(item)){
+                    this.item_b.push(item)
+                }
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                if(!this.item_b.includes(item)){
+                    this.item_b.push(item)
+                }
+=======
+                this.item_b.push(item)
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
+                let qty1 = 0
+                this.item_cart.filter(function (elm) {
+                    if (elm.item == item) {
+                        qty1 = elm.qty
+                    }
+                    // else {
+                    //     qty1 = 0
+                    // }
+                });
+                let amount = rate * (qty1 + 1)
+
+                var check = this.item_cart.filter(function (elm) {
+                    if (elm.item == item) {
+                        return elm;
+                    }
+                });
+                if (check.length > 0) {
+                    let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
+                    this.item_cart.splice(i, 1)
+                    this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
+                    // this.get_total_price()
+                    this.total_price += rate
+                    this.qty += 1
+                    qty1 = 0
+                }
+                else {
+                    this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
+                    this.total_price += rate
+                    qty1 = 0
+                }
+            }
+        },
+
+        decrement(item, rate) {
             let qty1 = 0
             this.item_cart.filter(function (elm) {
                 if (elm.item == item) {
                     qty1 = elm.qty
                 }
-                else {
-                    qty1 = 0
-                }
+                // else {
+                //     qty1 = 0
+                // }
             });
-            let amount = rate * (qty1 + 1)
+            let amount = rate * (qty1 - 1)
 
             var check = this.item_cart.filter(function (elm) {
                 if (elm.item == item) {
                     return elm;
                 }
             });
+
             if (check.length > 0) {
                 let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
                 this.item_cart.splice(i, 1)
-                this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
-                // this.get_total_price()
-                this.total_price += rate
-                qty1 = 0
-            }
-            else {
-                this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
-                this.total_price += rate
-                qty1 = 0
-            }
-        },
-        decrement(item, rate, qty) {
-            if (qty != 0) {
+                this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
+                this.total_price -= rate
                 this.qty -= 1
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
-                let qty1 = 0
-                this.item_cart.filter(function (elm) {
-                    if (elm.item == item) {
-                        qty1 = elm.qty
-                    }
-                    else {
-                        qty1 = 0
-                    }
-                });
-                let amount = rate * (qty1 - 1)
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
 
-
-                var check = this.item_cart.filter(function (elm) {
+=======
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
+                if(qty1 == 1){
+                    var check = this.item_cart.filter(function (elm) {
                     if (elm.item == item) {
                         return elm;
                     }
                 });
-                if (check.length > 0) {
-                    let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
-                    this.item_cart.splice(i, 1)
-                    this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
-                    this.total_price -= rate
-                }
-                else {
-                    this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
-                    this.total_price -= rate
-                }
-            }
-            if (qty == 1) {
-                var check = this.item_cart.filter(function (elm) {
-                    if (elm.item == item) {
-                        return elm;
+                    if (check.length > 0) {
+                        let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
+                        this.item_cart.splice(i, 1)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                        let a = this.item_b.indexOf(item);
+                        this.item_b.splice(a, 1)
+>>>>>>> 50e4be6 (add: fixed bottom for donation, fix: decrese item show add button)
+=======
+                        let a = this.item_b.indexOf(item);
+                        this.item_b.splice(a, 1)
+=======
+>>>>>>> aea4daa (fix: item add button and increment button)
+>>>>>>> 3a2c622 (fix:validation error)
                     }
-                });
-                if (check.length > 0) {
-                    let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
-                    this.item_cart.splice(i, 1)
                 }
             }
-        },
+            // else {
+            //     this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
+            //     this.total_price -= rate
+            // }
+        
+            
+        }
+
+
+
+
+
+
     }
 }
 </script>

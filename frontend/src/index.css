@@ -9,6 +9,11 @@ p {
   font-family: 'Mulish', sans-serif;
 }
 
+/* h2 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+} */
+
 div {
   font-family: 'Mulish', sans-serif;
 }
@@ -37,6 +42,24 @@ div {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .card-shodow {
   box-shadow: 0 0 12px 12px #f8f8f8;
+}
+
+.fontcolor {
+  color: #364958;
+}
+
+.fontfamily {
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.fontcard {
+  font-family: "Open Sans", sans-serif;
+}
+
+.font {
+  font-weight: bolder;
+
 }
