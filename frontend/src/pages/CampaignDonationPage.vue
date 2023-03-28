@@ -162,6 +162,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                                 <div class="flex justify-between">
                                     
@@ -177,6 +178,7 @@
 
                                             <div>
                                                 <div class="bg-green-500 p-3 rounded-lg justify-center pb-5"
+
                                                     v-if="products.item == item.item && item.qty != 0"> {{ item.qty }}
                                                 </div>
                                                 <div v-else-if = "products.item == item.item && item.qty == 0" class="bg-green-500 p-3 rounded-lg justify-cebter pb-5">adsf</div>
@@ -184,6 +186,7 @@
 
                                             <div v-if="products.item == item.item && item.qty != 0">
                                             <Button class="bg-gray-300"
+
                                                 @click="increment(products.item, products.price, qty)">
                                                 +
                                             </Button>
@@ -210,9 +213,13 @@
                                                 @click="increment(products.item, products.price, qty)">
                                                 +
                                             </Button>
+
                                         </div>
+                                        
                                     </div>
+
                                 </div>
+
                             </div>
                                  -->
                         <!-- ******************************************** -->
@@ -233,6 +240,7 @@
                         </div>
                         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                     </div>
+
                     <div style="font-size: 1.75rem; font-weight: 700;" class="mt-3 font-semibold text-[#364958]">Other
                         Donation</div>
                     <p class="text-gray-600">Donate via</p>
@@ -246,17 +254,21 @@
                                 <div class="text-center pt-2">
                                     <p class="text-xs text-[#364958]">Phone Pay</p>
                                 </div>
+
                             </div>
                         </div>
+
 
                         <div>
                             <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
                                 <div class="grid justify-center">
                                     <img src="../../src/assets/Inter/img/gpay.png" class="w-12 h-12">
+
                                 </div>
                                 <div class="text-center pt-2">
                                     <p class="text-xs text-[#364958]">Google Pay</p>
                                 </div>
+
                             </div>
                         </div>
 
@@ -264,6 +276,7 @@
                             <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
                                 <div class="grid justify-center">
                                     <img src="../../src/assets/Inter/img/bhim.png" class="w-12 h-12">
+
                                 </div>
                                 <div class="text-center pt-2">
                                     <p class="text-xs text-[#364958]">Bhim UPI</p>
@@ -440,9 +453,11 @@
 
 
 
+
             <section class="bg-white dark:bg-gray-900">
                 <div>
                     <section class="bg-white dark:bg-gray-900">
+
                         <div>
                             <section class="text-gray-700">
                                 <div class="px-5 py-10">
@@ -529,7 +544,9 @@
                                 </div>
                             </section>
                         </div>
+
                     </section>
+
                 </div>
             </section>
         </div>
@@ -625,7 +642,9 @@ export default {
             anonymous: false,
             showDialog: false,
             donated_amount: '',
+
             donation_name: ''
+
         }
     },
     mounted() {
@@ -838,6 +857,7 @@ export default {
                 }
                 else {
                     qty1 = 0
+
                 }
             });
             let amount = rate * (qty1 + 1)
@@ -847,6 +867,7 @@ export default {
                     return elm;
                 }
             });
+
             if (check.length > 0) {
                 let i = this.item_cart.map(item => item.item).indexOf(item) // find index of your object
                 this.item_cart.splice(i, 1)

@@ -143,7 +143,7 @@ export default {
             appId: '1616534218770661',
             cookie: true,
             xfbml: true,
-            version: 'v16.0'
+            version: 'v13.0'
         });
     },
     resources: {
