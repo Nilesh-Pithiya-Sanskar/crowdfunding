@@ -46,11 +46,537 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
                                                                       </div> -->
 
 
       <div class="bg-white rounded-xl drop-shadow-xl">
         <Sliders :featured_campaigns="featured_campaigns" :interval="3000" />
+=======
+<<<<<<< HEAD
+        </div> -->
+=======
+                                                                      </div> -->
+>>>>>>> 0a91103 (added transition on button)
+
+
+    <div class="bg-white rounded-xl drop-shadow-xl">
+      <Sliders :featured_campaigns="featured_campaigns" :interval="3000" />
+    </div>
+
+    <!-- Categories -->
+    <div class="text-center mt-10">
+      <h2 class="text-3xl font-bold text-[#40b751] mb-2">Categories</h2>
+      <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
+    </div>
+
+<<<<<<< HEAD
+    <div class="flex mt-3 border-b sm:mr-4 lg:mr-12 ">
+      <div class="overflow-x-auto">
+        <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-hidden ">
+          <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
+            <div
+              class="font-bold px-6 md:px-10 lg:px-10 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751]  transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(1)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 1 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 1">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid(2).png" />
+                <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">All</p>
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 1">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid.png" />
+                <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">All</p>
+              </div>
+            </div>
+          </li>
+        <!-- <svg class="stroke-2 ...">
+              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                  </svg> -->
+          <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
+            <div
+              class="font-bold px-4 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2  cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(2)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 2, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 2 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 2">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw(1).png" />
+                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Animal
+=======
+      <div class="flex mt-3 border-b sm:mr-4 lg:mr-12 ">
+        <div class="overflow-x-auto">
+          <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-hidden ">
+            <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
+              <div
+                class="font-bold px-6 md:px-10 lg:px-10 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751]  transition ease-in-out delay-150hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(1)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 1 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 1">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid(2).png" />
+                  <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">All</p>
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 1">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid.png" />
+                  <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">All</p>
+                </div>
+
+
+              </div>
+            </li>
+            <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
+              <div
+                class="font-bold px-4 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2  cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(2)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 2, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 2 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 2">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw(1).png" />
+                  <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Animal
+                  </p>
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 2">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw.png" />
+                  <p class="pl-1 md:pl-4 md:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Animal
+                  </p>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Education Campaign')">
+              <div
+                class="font-bold px-2 md:px-6 lg:px-6 py-1 md:py-2 lg:py-2 cursor-pointer  hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(3)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 3, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 3 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 3">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8 "
+                    src="../../src/assets/Inter/img/icon/mortarboard(1).png" />
+                  <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Education
+                  </p>
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 3">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
+                    src="../../src/assets/Inter/img/icon/mortarboard.png" />
+                  <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Education
+                  </p>
+                </div>
+
+
+              </div>
+            </li>
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Children Campaign')">
+              <div
+                class="font-bold px-4 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(4)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 4, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 4 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 4">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
+                    src="../../src/assets/Inter/img/icon/children(1).png" />
+                  <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Children
+                  </p>
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 4">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/children.png" />
+                  <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Children
+                  </p>
+                </div>
+
+
+              </div>
+            </li>
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Medical Campaign')">
+              <div
+                class="font-bold px-2 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(5)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 5, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 5 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 5">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
+                    src="../../src/assets/Inter/img/icon/healthcare(1).png" />
+                  <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Medical
+                  </p>
+
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 5">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/healthcare.png" />
+                  <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Medical
+                  </p>
+
+                </div>
+
+
+              </div>
+            </li>
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Hunger Campaign')">
+              <div
+                class="font-bold px-2 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(6)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 6, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 6 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 6">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
+                    src="../../src/assets/Inter/img/icon/supplies(1).png" />
+                  <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Hunger
+                  </p>
+
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 6">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/supplies.png" />
+                  <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Hunger
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Religiouse Campaign')">
+              <div
+                class="font-bold px-2 md:px-5 lg:px-5 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(7)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 7 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 7">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray(1).png" />
+                  <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                    Religiouse
+                  </p>
+
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 7">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray.png" />
+                  <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                    Religiouse
+                  </p>
+
+                </div>
+
+
+              </div>
+            </li>
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Disability Campaign')">
+              <div
+                class="font-bold px-2 md:px-6 lg:px-6 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(8)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 8, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 8 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 8">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
+                    src="../../src/assets/Inter/img/icon/disability(1).png" />
+                  <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                    Disability
+                  </p>
+
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 8">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/disability.png" />
+                  <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                    Disability
+                  </p>
+
+                </div>
+
+
+              </div>
+            </li>
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Elder Campaign')">
+              <div
+                class="font-bold px-4 md:px-9 lg:px-9 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                v-on:click="toggleTabs(9)"
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 9 }">
+
+                <div class="grid justify-items-center" v-if="openTab !== 9">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man(1).png" />
+                  <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">Elder
+                  </p>
+
+                </div>
+                <div class="grid justify-items-center" v-else="openTab === 9">
+                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man.png" />
+                  <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">Elder
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--Cards-->
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+        <div v-for="index in campaignToShow">
+          <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+            <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+              <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
+                @click="donate(campaigns[index - 1].name)">
+              <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
+                <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index -
+                  1].campaign_title
+                }}
+                </div>
+                <p class="text-gray-700 text-base truncate">
+                  By: {{ campaigns[index - 1].ngo }}
+                <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
+                  <div v-if="campaigns[index - 1].raised_amount"
+                    class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                    :style="{
+                      width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%'
+                    }">
+                    {{ (campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount).toFixed(2) }}%
+                  </div>
+                </div>
+                <div
+                  class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
+                  <span>Raised: {{ numberWithCommas(campaigns[index - 1].raised_amount) }}</span><span>Goal: {{
+                    numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+                </div>
+>>>>>>> 0a91103 (added transition on button)
+                </p>
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 2">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw.png" />
+                <p class="pl-1 md:pl-4 md:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Animal
+                </p>
+              </div>
+
+
+            </div>
+          </li>
+
+          <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Education Campaign')">
+            <div
+              class="font-bold px-2 md:px-6 lg:px-6 py-1 md:py-2 lg:py-2 cursor-pointer  hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(3)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 3, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 3 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 3">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8 "
+                  src="../../src/assets/Inter/img/icon/mortarboard(1).png" />
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Education
+                </p>
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 3">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/mortarboard.png" />
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Education
+                </p>
+              </div>
+
+
+            </div>
+          </li>
+          <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Children Campaign')">
+            <div
+              class="font-bold px-4 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(4)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 4, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 4 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 4">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/children(1).png" />
+                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Children
+                </p>
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 4">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/children.png" />
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Children
+                </p>
+              </div>
+
+
+            </div>
+          </li>
+          <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Medical Campaign')">
+            <div
+              class="font-bold px-2 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(5)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 5, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 5 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 5">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
+                  src="../../src/assets/Inter/img/icon/healthcare(1).png" />
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Medical
+                </p>
+
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 5">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/healthcare.png" />
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Medical
+                </p>
+
+              </div>
+
+
+            </div>
+          </li>
+          <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Hunger Campaign')">
+            <div
+              class="font-bold px-2 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(6)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 6, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 6 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 6">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/supplies(1).png" />
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Hunger
+                </p>
+
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 6">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/supplies.png" />
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Hunger
+                </p>
+
+              </div>
+
+            </div>
+          </li>
+          <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Religiouse Campaign')">
+            <div
+              class="font-bold px-2 md:px-5 lg:px-5 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(7)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 7 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 7">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray(1).png" />
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                  Religiouse
+                </p>
+
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 7">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray.png" />
+                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                  Religiouse
+                </p>
+
+              </div>
+
+
+            </div>
+          </li>
+          <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Disability Campaign')">
+            <div
+              class="font-bold px-2 md:px-6 lg:px-6 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(8)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 8, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 8 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 8">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
+                  src="../../src/assets/Inter/img/icon/disability(1).png" />
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                  Disability
+                </p>
+
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 8">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/disability.png" />
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">
+                  Disability
+                </p>
+
+              </div>
+
+
+            </div>
+          </li>
+          <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Elder Campaign')">
+            <div
+              class="font-bold px-4 md:px-9 lg:px-9 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] transition ease-in-out delay-150 hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+              v-on:click="toggleTabs(9)"
+              v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 9 }">
+
+              <div class="grid justify-items-center" v-if="openTab !== 9">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man(1).png" />
+                <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">Elder
+                </p>
+
+              </div>
+              <div class="grid justify-items-center" v-else="openTab === 9">
+                <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man.png" />
+                <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">Elder
+                </p>
+
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--Cards-->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+      <div v-for="index in campaignToShow">
+        <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+          <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+            <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
+              @click="donate(campaigns[index - 1].name)">
+            <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
+              <div class="font-medium text-[#40b751] text-xl mb-2 truncate-2-lines">{{ campaigns[index -
+                1].campaign_title
+              }}
+              </div>
+              <p class="text-gray-700 text-base truncate">
+                By: {{ campaigns[index - 1].ngo }}
+              <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
+                <div v-if="campaigns[index - 1].raised_amount"
+                  class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                  :style="{
+                    width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%'
+                  }">
+                  {{ (campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount).toFixed(2) }}%
+                </div>
+              </div>
+              <div
+                class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px] font-bold">
+                <span>Raised: {{ numberWithCommas(campaigns[index - 1].raised_amount) }}</span><span>Goal: {{
+                  numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+              </div>
+              </p>
+            </div>
+            <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
+              <button class="text-[#40b751] text-base">Share</button>
+              <button
+                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                type="button" @click="donate(campaigns[index - 1].name)"> donate now </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
+      <button
+        class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button" @click="campaignToShow += 6">Show More</button>
+    </div>
+  </div>
+
+
+  <!--Testimonials-->
+
+  <Testimonials />
+
+  <!--Featured In-->
+
+  <div class="container mx-auto h-full">
+    <div class="text-center mt-10">
+      <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-bold text-[#40b751] mb-[20px]">Featured in</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 ">
+      <div class="flex pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+        <div class="">
+          <img class="h-[46px] md:h-[50px] lg:h-[48px] w-[40px] md:w-[50px] lg:w-[40px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            src="../../src/assets/Inter/img/protection.png" />
+        </div>
+        <div class="lg:w-9/12 xl:w-9/12">
+          <p class="text-[16px] text-[#40b751] font-black">Protection</p>
+          <p class="text-[#aaa]">Lorem ipsum dolor sit.</p>
+        </div>
+>>>>>>> 1625315 (fix:validation error)
       </div>
 
       <!-- Categories -->
