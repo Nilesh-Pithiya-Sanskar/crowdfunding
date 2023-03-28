@@ -25,7 +25,7 @@
               </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
+              <a class="text-[16px] hover:border hover-border-100 font-xtralight mt-2 md:mt-0 lg:mt-0 px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(3)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
                 <i class="fas fa-cog text-base mr-1"></i> NGOs
@@ -386,7 +386,7 @@
 
                 <div class="h-[440px] flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white md:mr-6 lg:mr-6 ">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">

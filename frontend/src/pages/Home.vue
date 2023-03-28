@@ -1,28 +1,27 @@
 
 <template>
   <!-- Header-->
-
-  <div class="bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
+<section class=" z-1 bg-no-repeat  bg-cover bg-center" style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
     <Navbar />
-    <div class="container mx-auto h-full">
-      <div class="grid lg:grid-cols-2 pb-10 m-10">
+    <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[110px] md:pb-[110px] lg:pb-[128px] container mx-auto h-full">
+      <div class="grid lg:grid-cols-2 mt-5 md:mt-10 lg:mt-0">
 
-        <div class="lg:pt-52 sm:pt-4 pr-0 lg:pr-10 tracking-wide">
-          <p style="text-shadow:3px 6px 6px #c9c9c9;"
-            class="text-[#40b751] font-sans text-center lg:text-left font-semibold leading-none text-[28px] md:text-[32px] lg:text-[43px] [text-shadow:3px 6px 6px #c9c9c9]">
+        <div class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
+          <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
+            class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:3px 6px 6px #c9c9c9]">
             Donate with
             <span class="text-gray-700">100% Transparency</span>
             on
             <span class="text-gray-700">most trusted</span>
             crowd funding platform of India.
-          </p>
+          </h1>
         </div>
-        <div class="pl-0 md:pl-32 lg:pl-0 pl-8 lg:pt-0 pt-8 pb-[20px] md:pb-[40px] lg:pb-14 grid justify-items-center">
+        <div class="grid place-items-center  mt-5 md:mt-10 lg:mt-0  mx-4 md:mx-10 lg:mx-0">
           <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
    <div class="container mx-auto h-full p-4 lg:p-6 -mt-[90px] md:-mt-[88px] lg:-mt-[95px] pl-4 lg:pl-0 pr-4 lg:pr-0">
     <!-- <div class="bg-white rounded-xl product-shodow">
@@ -45,8 +44,7 @@
         </div>
       </div>
     </div> -->
-
-
+<div class="container mx-auto h-full">
     <div class="bg-white rounded-xl drop-shadow-xl">
         <Sliders :featured_campaigns="featured_campaigns" :interval="3000"/>
     </div>
@@ -289,6 +287,7 @@
     </div>
   </div>
 
+      </div>
   <!--Testimonials-->
 
   <Testimonials />
@@ -401,7 +400,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
     </div>
   </div>
   <Footer />

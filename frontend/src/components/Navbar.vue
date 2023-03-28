@@ -1,12 +1,14 @@
-<template>
-  <div class="pt-2 pl-[15px] md:pl-[60px] lg:pl-24 pr-[15px] md:pr-[60px] lg:pr-24">
+
+
+  <template>
+  <div class=" pt-2 pl-2 md:pl-4 lg:pl-[46px] xl:pl-24 pr-2 md:pr-4 lg:pr-[46px] xl:pr-24">
     <div class="rounded-xl bg-[#40b751]">
-      <nav class="px-[5px] md:px-[5px] lg:px-[20px] py-[5px] md:py-[5px] lg:py-[25px] lg:flex lg:justify-between lg:items-center">
+      <nav class="px-[5px] md:px-[5px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[5px] lg:py-[20px] lg:flex lg:justify-between lg:items-center">
         <div class="flex justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
               <img src="../../src/assets/Inter/img/logo.png"
-                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 mr-32 w-40 lg:w-48 h-16 lg:h-44 ml-0 lg:ml-6" />
+                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-32 lg:mr-32 w-40 lg:w-48 h-16 lg:h-44 ml-0 lg:ml-6" />
             </a>
           </div>
           <!-- Mobile menu button -->
@@ -177,7 +179,7 @@ export default {
       return
     }
     // else{
-    //   this.$router.push(`/sadbhavna/login`) 
+    //   this.$router.push(`/sadbhavna/login`)
     // }
     // if (!this.user.has_desk_access) {
     // 	this.$router.push({ path: "/home" })
@@ -186,6 +188,3 @@ export default {
   }
 }
 </script>
-
-
-
