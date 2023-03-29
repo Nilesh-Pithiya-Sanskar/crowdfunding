@@ -179,11 +179,19 @@ export default {
             })
                 .then(response => {
                     response.json().then(res => {
+                        var route = this.$cookies.get('route');
+                            if (route != null){
+                                this.$router.go(-1)
+                                // this.$router.push(route)
+                            }
+                            else{
+                                this.$router.push(`/sadbhavna`);
+                            }
                         // console.log("asdf", res.message)
                         // console.log("asdf", res)
-                        let token = res.message
+                        // let token = res.message
                         // this.$router.push('/home')
-                        window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
+                        // window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
                         // https://crowdfunding.frappe.cloud/
                     });
                 })
