@@ -903,7 +903,7 @@ export default {
                     "currency": "INR",
                     "name": "Crowdfunding",
                     "description": "Test Transaction",
-                    "image": "https://crowdfunding.frappe.cloud/assets/sadbhavna_donatekart/frontend/assets/logo.2bd6bc2a.png",
+                    "image": "https://crowdfunding.frappe.cloud/files/favicon.ico",
                     // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     handler: (response) => {
                         this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
