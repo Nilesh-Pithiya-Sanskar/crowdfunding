@@ -16,7 +16,7 @@
                 <input v-model="email" type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Email" required />
-
+                <p class="text-red-600">{{ emailError }}</p>
               </div>
 
               <div class="relative w-full mb-3">
@@ -26,6 +26,7 @@
                 <input v-model="password" type="password"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Password" required />
+                <p class="text-red-600">{{ passwordError }}</p>
 
               </div>
               <p class="text-red-600">{{ errorMsg }}</p>
@@ -142,7 +143,8 @@ export default {
       // google,
       password: "",
       error: false,
-      errorMsg: '',
+      passwordError: '',
+      emailError: '',
       email: "",
       isLogin: false
     };
@@ -155,11 +157,11 @@ export default {
         onSuccess: async () => {
           var route = this.$cookies.get('route');
           console.log("route", route)
-          if (route != null){
+          if (route != null) {
             this.$router.go(-2)
             // this.$router.push(route)
           }
-          else{
+          else {
             this.$router.push(`/sadbhavna`);
           }
         },
@@ -207,6 +209,29 @@ export default {
   },
   methods: {
     login() {
+      if (!this.email && !this.password) {
+        this.error == true
+      }
+      else if (this.email == '') {
+        // this.email_id == this.error
+        this.emailError = 'Please enter email!'
+        this.error = true
+        console.log('email')
+      }
+      else if (this.password == '') {
+        // this.email_id == this.error
+        this.passwordError = 'Please enter password!'
+        this.error = true
+        console.log('password')
+      }
+      else {
+        this.error == false
+        this.$resources.login.submit({
+          usr: this.email,
+          pwd: this.password,
+        });
+      }
+
       // if (this.email == '') {
       //   // this.email_id == this.error
       //   this.errorMsg = 'Please enter email!'
@@ -218,11 +243,11 @@ export default {
       //   this.error = true
       // }
       // else {
-        // this.error == false
-        this.$resources.login.submit({
-          usr: this.email,
-          pwd: this.password,
-        });
+      // this.error == false
+      // this.$resources.login.submit({
+      //   usr: this.email,
+      //   pwd: this.password,
+      // });
       // }
 
       // axios.get('/api/method/login', {
