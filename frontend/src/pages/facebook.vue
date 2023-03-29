@@ -1,5 +1,6 @@
 <template>
     <div>facebook login</div>
+    <div>new dev commit</div>
     <!-- <div id="app">
       <h1>Login with Facebook</h1>
       <facebook-login class="button"
