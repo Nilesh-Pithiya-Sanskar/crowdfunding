@@ -9,16 +9,16 @@
                     campaign_detail.data.campaign_title }}</h2>
             <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
                 campaign_detail.data.short_description }}</p>
-            <div class="mb-[50px]">
+            <div class="mb-[50px] flex flex-wrap">
                 <span
-                    class="bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">Tax
-                    Benefit</span>
+                    class="mb-2 bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">
+                    Tax Benefit</span>
                 <span
-                    class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">
+                    class="mb-2 bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">
                     Assured</span>
                 <span
-                    class="bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">Old
-                    Ages</span>
+                    class="mb-2 bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">
+                    Old Ages</span>
             </div>
             <div class="flex flex-wrap mt-6 mb-5">
                 <img class="object-fill w-full mb-4" :src="campaign_detail.data.campain_image">
@@ -35,20 +35,19 @@
                             {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
                             }}%</div>
                     </div>
-                    <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] font-bold">
-                        <p class="lg:w-3/12"> {{ numberWithCommas(total_donors) }} Donors</p>
-                        <p class="lg:w-3/12"> {{ campaign_days }} Days Left</p>
 
-                        <div class="flex lg:w-6/12 justify-between">
+
+                    <!-- <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex flex-wrap text-[#364958] font-bold">
+                        <div class="lg:w-3/12 md:3/12 sm: 6/12 flex">
+                            <p class="flex mr-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>{{ numberWithCommas(total_donors) }} Donors</p>
+                            <p class="flex"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock mr-2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> {{ campaign_days }} Days Left</p>
+                        </div>
+                        <div class="flex lg:w-6/12 md:6/12 sm:6/12 justify-between">
                             <p></p>
                             <p>facebook</p>
                             <p>twitter</p>
                             <p>whatsapp</p>
-                            <p>link</p>
-                            <!-- <p class="lg:w-3/12">facebook</p>
-                                <p class="lg:w-3/12">whatsapp</p>
-                                <p class="lg:w-3/12">link</p> -->
-
+                            <p>link</p> -->
                             <!-- <a href="#" class="text-gray-400 text-white">
                                 <img class="w-4 h-4" src="../../src/assets/Inter/img/facebook.svg" />
                                 <span class="sr-only">Facebook page</span>
@@ -65,18 +64,36 @@
                                 <img class="w-4 h-4" src="../../src/assets/Inter/img/linkedin.svg" />
                                 <span class="sr-only">Linkedin account</span>
                                 </a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+
+
+                    <div class="flex flex-wrap mt-2 justify-between">
+                        <div class="flex flex-wrap">
+                            <p class="flex mr-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>{{ numberWithCommas(total_donors) }} Donors</p>
+                            <p class="flex"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock mr-2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> {{ campaign_days }} Days Left</p>
+                
+                        </div>
+                        <div class="flex flex-wrap">
+                            <div class="bg-blue-700 rounded-full h-10 w-10 sm:ml-2 pt-2 pb-1 pl-2 pr-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </div> 
+                            <div class="bg-sky-400 rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2 pr-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </div>
+                            <div class="bg-green-500 rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2 pr-1">
+                                <p>wa</p>
+                            </div>
+                            <div class="bg-gray-600 rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2 pr-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                            </div>
                         </div>
                     </div>
-                    <!-- <pre> -->
-                    <!-- <code> -->
-                    <!-- <p style="line-height:1.7;" class="text-[#364958] mb-5">
-                        {{ campaign_detail.data.about_campaign }}
-                    </p> -->
 
 
-                    <!-- <div style="font-size: 2rem;" class="text-gray-600">Product</div> -->
 
 
+        
                     <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-3 mt-6">
                         <div class="pb-4" v-for="products in campaign_detail.data.add_campaign_items">
                             <!-- {{ products }} -->
@@ -546,7 +563,7 @@
             </div> -->
             <div>
                 <button
-                    class="mb-5 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                    class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
                     type="button" @click="donate(total_price, anonymous)"> donate now
                 </button>
             </div>
@@ -582,7 +599,13 @@
                     close() // closes dialog
                 },
             },
-            { label: 'Cancel' },
+            { 
+                label: 'Cancel',
+                handler: ({ close }) => {
+                    this.cancel()
+                    close() // closes dialog
+                },
+            },
         ],
     }" v-model="showDialog" />
     <!-- <div>item_cart{{ item_cart }}</div><br> -->
@@ -591,7 +614,7 @@
     <!-- <input type="text" v-model="name"/>
     <button @click="get_cookies(name)">get</button><br>
     <button @click="delete_cookies('item')">del</button><br>
-    <button @click="set_cookies()">set</button><br> -->
+    <button @click="set_cookies()">set</button><br>  -->
     <!-- {{ item_cart }} -->
 
     <Footer />
@@ -681,7 +704,7 @@ export default {
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
         this.get_generous_donation(name.params.name)
-        
+
         var item_cart = this.get_cookies('item')
         var i_qty = this.get_cookies('i_qty')
         var total_price = this.get_cookies('total_price')
@@ -690,18 +713,19 @@ export default {
             this.item_cart = item_cart
         }
         if(i_qty != null){
-            this.i_qty = i_qty
+            this.i_qty = parseInt(i_qty)
         }
         if(total_price != null){
-            this.total_price = total_price
+            this.total_price = parseInt(total_price)
         }
         if(item_b != null){
             this.item_b = item_b
         }
+
+        
         // console.log("a", a)
     },
     mounted() {
-
         // var a = this.get_cookies('item')
         // console.log("a", a)
                 // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());
@@ -780,6 +804,10 @@ export default {
                     // })
                     this.donated_amount = res[0]
                     this.donation_name = res[1]
+                    this.delete_cookies('item')
+                    this.delete_cookies('item_b')
+                    this.delete_cookies('i_qty')
+                    this.delete_cookies('total_price')
                     this.showDialog = true
 
                     // this.$router.push(`/sadbhavna/donation-success-page/${d_amount}`)
@@ -803,13 +831,13 @@ export default {
             this.$cookies.remove(name, `/sadbhavna/campaign-donation/${this.campaign}`);
         },
         get_cookies(name){
-            console.log("asdfasdf",this.$cookies.get(name))
+            // console.log("cookies", name, this.$cookies.get(name))
             return this.$cookies.get(name)
         },
         set_cookies(name, value){
             // VueCookies.set('myCookie', '123', '1d', '/THE-ELE-16-01-2023-0001')
             // console.log("campaign", this.campaign)
-            this.$cookies.set(name, value,"1d", `/sadbhavna/campaign-donation/${this.campaign}`);
+            this.$cookies.set(name, value,"60 + 30", `/sadbhavna/campaign-donation/${this.campaign}`);
         },
 
         formatDate(dateString) {
@@ -862,6 +890,7 @@ export default {
         },
         donate(total_price, anonymous) {
             if (!this.user.isLoggedIn()) {
+                this.$cookies.set('route', `/sadbhavna/campaign-donation/${this.campaign}`);
                 this.$router.push(`/sadbhavna/auto-login`)
                 // return
             }
@@ -942,12 +971,17 @@ export default {
         view_profile() {
             this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
         },
+        cancel(){
+            this.$router.push('/sadbhavna')
+        },
 
         increment(item, rate, qty = 1) {
             if(qty){
                 this.i_qty += 1
+                this.set_cookies("i_qty", this.i_qty)
                 if(!this.item_b.includes(item)){
                     this.item_b.push(item)
+                    this.set_cookies("item_b", this.item_b)
                 }
                 let qty1 = 0
                 this.item_cart.filter(function (elm) {
@@ -972,8 +1006,7 @@ export default {
                     // this.get_total_price()
                     this.total_price += rate
                     this.set_cookies("item", this.item_cart)
-                    this.set_cookies("item_b", this.item_b)
-                    this.set_cookies("i_qty", this.i_qty)
+                    console.log("in if total_price", this.total_price)
                     this.set_cookies("total_price", this.total_price)
                     qty1 = 0
                 }
@@ -981,8 +1014,7 @@ export default {
                     this.item_cart.push({ item: item, rate: rate, qty: qty1 + 1, amount: amount })
                     this.total_price += rate
                     this.set_cookies("item", this.item_cart)
-                    this.set_cookies("item_b", this.item_b)
-                    this.set_cookies("i_qty", this.i_qty)
+                    console.log("in else total_price", this.total_price)
                     this.set_cookies("total_price", this.total_price)
                     qty1 = 0
                 }
@@ -991,6 +1023,7 @@ export default {
 
         decrement(item, rate) {
             this.i_qty -= 1
+            this.set_cookies("i_qty", this.i_qty)
             let qty1 = 0
             this.item_cart.filter(function (elm) {
                 if (elm.item == item) {
@@ -1013,6 +1046,8 @@ export default {
                 this.item_cart.splice(i, 1)
                 this.item_cart.push({ item: item, rate: rate, qty: qty1 - 1, amount: amount })
                 this.total_price -= rate
+                this.set_cookies("item", this.item_cart)                
+                this.set_cookies("total_price", this.total_price)
 
                 if(qty1 == 1){
                     var check = this.item_cart.filter(function (elm) {
@@ -1025,6 +1060,8 @@ export default {
                         this.item_cart.splice(i, 1)
                         let a = this.item_b.indexOf(item);
                         this.item_b.splice(a, 1)
+                        this.set_cookies("item", this.item_cart)
+                        this.set_cookies("item_b", this.item_b)
                     }
                 }
             }
