@@ -46,12 +46,14 @@ export default {
             message: '',
             number: '',
             otp: '',
+            m_type: ''
         }
     },
     mounted(){
         const name = useRoute();
         this.message = name.params.message
         this.number = name.params.number
+        this.m_type = name.params.m_type
         console.log("message", this.message)
         // this.number = name.params.message.number
     },
@@ -83,7 +85,8 @@ export default {
         verify_otp(){
             this.$resources.verify_otp.submit({
                 number:this.number,
-                otp: this.otp
+                otp: this.otp,
+                m_type: this.m_type
             })
         }
     }

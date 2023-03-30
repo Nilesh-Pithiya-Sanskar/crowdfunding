@@ -15,11 +15,11 @@
                         </div>
                         <div class="relative py-4 z-0 px-8">
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base  mb-2" for="email">Enter WhatsApp Number</label>
+                                <label class="block text-gray-600 text-base  mb-2" for="email">Enter Your Number Number</label>
                                 <input
                                     class="appearance-none hover:border-[#40b751] border-gray-600 rounded w-full py-2 px-3 text-grey-darker"
                                     v-model="phone" type="number">
-                                <span class="text-sm text-gray-400"> An OTP will be sent to {{ phone }} whatsapp number</span>
+                                <span class="text-sm text-gray-400"> An OTP will be sent to {{ phone }}</span>
                             </div>
                             <div class="mb-4">
                                 <button
@@ -34,8 +34,9 @@
                             </div>
                             <div class="mb-4">
                                 <button
-                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
-                                    with SMS</button>
+                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    @click="login_with_sms()">
+                                    Login with SMS</button>
                             </div>
                             <div class="mb-4">
                                 <button
@@ -53,9 +54,13 @@
                                     class="fb-login-button appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     data-button-type=""
                                     data-use-continue-as=""
+                                    data-width="1000"
+                                    data-hight="2000"
                                     @click="checkLoginState()">
-                                    Login with Facebook</button>
+                                    Login with Facebook
+                                </button>
                             </div>
+            
                             <!-- <GoogleLogin :callback="login_with_google" class="w-full">
                             <div class="mb-4">
                                 <button
@@ -154,7 +159,23 @@ export default {
                     console.log("okey", res)
                     let otp_message = res[0]
                     let number = res[1]
-                    this.$router.push(`/sadbhavna/otp/${otp_message}&${number}`);
+                    let m_type = res[2]
+                    this.$router.push(`/sadbhavna/otp/${otp_message}&${number}&${m_type}`);
+                },
+                onError: (error) => {
+                    console.log("error", error)
+                }
+            }
+        },
+        login_with_sms() {
+            return {
+                method: 'sadbhavna_donatekart.api.api.login_with_sms',
+                onSuccess: (res) => {
+                    console.log("okey", res)
+                    let otp_message = res[0]
+                    let number = res[1]
+                    let m_type = res[2]
+                    this.$router.push(`/sadbhavna/otp/${otp_message}&${number}&${m_type}`);
                 },
                 onError: (error) => {
                     console.log("error", error)
@@ -201,6 +222,11 @@ export default {
         },
         login_with_whatsapp() {
             this.$resources.login_with_whatsapp.submit({
+                phone: this.phone
+            })
+        },
+        login_with_sms() {
+            this.$resources.login_with_sms.submit({
                 phone: this.phone
             })
         },

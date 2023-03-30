@@ -11,11 +11,23 @@
                   <div v-if="user_data.data.user_image" class="relative">
                     <img :src="user_data.data.user_image"
                       class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
+                      
+                      <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-16 lg:ml-16">
+                        <FileUploader @success="(file) => upload_image(file.file_url)">
+                          <template
+                            v-slot="{
+                              openFileSelector,
+                            }">
+                              <svg @click="openFileSelector" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                          </template>
+                        </FileUploader>               
+                      </div>
+
                     <!-- <Avatar :imageURL="http://sadbhavnadonatekart.com:8080/files/students.svguser_data.user_image" label="Felix" size="lg" /> -->
                   </div>
                   <div v-else class="relative">
                     <div
-                      class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px">
+                      class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px">
                     </div>
                   </div>
                 </div>
@@ -76,7 +88,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mt-32">
+              <div class="mt-10">
                 <div class="container mx-auto h-full">
                   <div class="w-full bg-grey-lightest">
                     <div class="container mx-auto py-0">
@@ -221,6 +233,7 @@
                                   @click="
                                     download_80g(donation.name, donation.date)
                                   ">
+                                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> --> 
                                   Download
                                 </td>
                               </tr>
@@ -331,6 +344,8 @@
           </div>
         </div>
       </div>
+
+
       <Footer />
     </section>
   </main>
@@ -636,14 +651,14 @@
 import Navbar from '../../components/Navbar.vue'
 import Footer from '../../components/Footer.vue'
 import { ref } from 'vue'
-import { Avatar } from 'frappe-ui'
+import { Avatar, FileUploader } from 'frappe-ui'
 // import { toast } from 'frappe-ui'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 
 export default {
   name: 'Login',
-  components: { Navbar, Footer },
+  components: { Navbar, Footer, FileUploader },
   data() {
     return {
       user_data: '',
@@ -831,6 +846,9 @@ export default {
     cancel() {
       this.edit_profile = false
     },
+    upload_image(){
+      alert('clicked')
+    }
   },
 }
 </script>

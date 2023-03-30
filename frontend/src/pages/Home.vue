@@ -114,10 +114,9 @@
                 <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Education
                 </p>
               </div>
-
-
             </div>
           </li>
+          
           <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Children Campaign')">
             <div
               class="font-bold px-4 md:px-8 lg:px-8 py-1 md:py-2 lg:py-2 cursor-pointer hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"

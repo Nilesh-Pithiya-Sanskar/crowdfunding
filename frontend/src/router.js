@@ -79,7 +79,7 @@ const routes = [{
     component: () => import('@/components/Verifyotp.vue')
   },
   {
-    path: '/sadbhavna/otp/:message&:number',
+    path: '/sadbhavna/otp/:message&:number&:m_type',
     name: 'OTP',
     component: () => import('@/pages/auth/OTP.vue')
   },

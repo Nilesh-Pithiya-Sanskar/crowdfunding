@@ -193,11 +193,51 @@ def login_with_whatsapp(phone):
     doc.insert(ignore_permissions=True)
     frappe.db.commit()
 
-    message = send_whatsapp_otp(phone)
+    message = send_whatsapp_otp(phone, otp)
     result = {"message": message, "number": phone}
     # return result
-    return message, phone
+    return message, phone, 'whatsapp'
 
+
+def send_whatsapp_otp(phone, otp):
+
+    # add code here for send whatsapp message if sucess return message and mobile
+
+    return f'OTP sent to your whatsapp number: {phone}'
+
+
+# login with sms
+@frappe.whitelist(allow_guest=True)
+def login_with_sms(phone):
+    # if whatsapp integration
+    print("\n\n called")
+    otp = generateOTP(4)
+    # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
+    doc = frappe.get_doc({"doctype": "SMS OTP",
+                         "number": f'{phone}', "otp": otp, "status": "Sent"})
+    doc.insert(ignore_permissions=True)
+    frappe.db.commit()
+
+    message = send_sms_otp(phone, otp)
+    result = {"message": message, "number": phone}
+    # return result
+    return message, phone, 'sms'
+
+
+@frappe.whitelist(allow_guest=True)
+def send_sms_otp(number, otp):
+
+    from twilio.rest import Client
+    account_sid = 'ACe488e68cab478d21b913f5d4f96ae1b9'
+    auth_token = '1f41219e0474adccbfd10b90ed1e8258'
+    client = Client(account_sid, auth_token)
+    message = client.messages.create(
+    from_='+15855493649',
+    body= f'{otp} is your one time password (OTP) to login to crowdfunding. Don`t share OTP With anyone. Please enter the OTP to proceed.',
+    to= f'+91{number}'
+    )
+    print("\n\n message.sid", message.sid, "\n\n")
+    return f'OTP sent to your mobile number: {number}'
 
 # generate OTP
 def generateOTP(digit):
@@ -208,40 +248,59 @@ def generateOTP(digit):
 
     return OTP
 
-def send_whatsapp_otp(phone):
-
-    # add code here for send whatsapp message if sucess return message and mobile
-
-    return f'OTP sent to your whatsapp number: {phone}'
-
-
 # verify OTP and login
 @frappe.whitelist(allow_guest=True)
-def verify_otp(number, otp):
-    data = frappe.db.get_value("Whatsapp OTP", filters={
-                               "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
-    if data:
-        frappe.db.set_value("Whatsapp OTP", data, {"status": "Verified"})
-        user = frappe.db.get_value(
-            "User", filters={"phone": number}, fieldname=['name'])
-        if user:
-            login_user(user)
-        else:
-            email = str(number) + '@gmail.com'
-            first_name = number
-            user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor"})
-            user.insert(ignore_permissions=True)
-            frappe.db.commit()
-            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name}", "donor_type": "Defult", "mobile": number})
-            donor.insert(ignore_permissions=True)
-            frappe.db.commit()
+def verify_otp(number, otp, m_type):
+    if m_type == 'whatsapp':
+        data = frappe.db.get_value("Whatsapp OTP", filters={
+                                "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
+        if data:
+            frappe.db.set_value("Whatsapp OTP", data, {"status": "Verified"})
             user = frappe.db.get_value(
-            "User", filters={"phone": number}, fieldname=['name'])
+                "User", filters={"phone": number}, fieldname=['name'])
             if user:
                 login_user(user)
-    else:
-        # OTP not match write your logic here
-        return f'Your OTP is not match with your number: {number}'
+            else:
+                email = str(number) + '@gmail.com'
+                first_name = number
+                user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor"})
+                user.insert(ignore_permissions=True)
+                frappe.db.commit()
+                donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name}", "donor_type": "Defult", "mobile": number})
+                donor.insert(ignore_permissions=True)
+                frappe.db.commit()
+                user = frappe.db.get_value(
+                "User", filters={"phone": number}, fieldname=['name'])
+                if user:
+                    login_user(user)
+        else:
+            # OTP not match write your logic here
+            return f'Your OTP is not match with your number: {number}'
+    elif m_type == 'sms':
+        data = frappe.db.get_value("SMS OTP", filters={
+                                "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
+        if data:
+            frappe.db.set_value("SMS OTP", data, {"status": "Verified"})
+            user = frappe.db.get_value(
+                "User", filters={"phone": number}, fieldname=['name'])
+            if user:
+                login_user(user)
+            else:
+                email = str(number) + '@gmail.com'
+                first_name = number
+                user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor"})
+                user.insert(ignore_permissions=True)
+                frappe.db.commit()
+                donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name}", "donor_type": "Defult", "mobile": number})
+                donor.insert(ignore_permissions=True)
+                frappe.db.commit()
+                user = frappe.db.get_value(
+                "User", filters={"phone": number}, fieldname=['name'])
+                if user:
+                    login_user(user)
+        else:
+            # OTP not match write your logic here
+            return f'Your OTP is not match with your number: {number}'
 
 
 #create razorpay payment link 
@@ -287,3 +346,5 @@ def verify_signature(amount, razorpay_payment_id, razorpay_payment_link_id, razo
     return response, amount
     redirect_url = f"http://crowdfunding.com:8001/sadbhavna/donation-success-page/{amount}"
     return response, redirect_url
+
+
