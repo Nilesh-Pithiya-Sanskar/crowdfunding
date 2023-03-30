@@ -35,7 +35,8 @@
   "campaign_item_tab",
   "add_campaign_items",
   "route",
-  "published"
+  "published",
+  "language"
  ],
  "fields": [
   {
@@ -178,13 +179,19 @@
    "fieldtype": "Table",
    "label": "Description",
    "options": "Donation Campaign Description"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Select",
+   "label": "Language",
+   "options": "Gujarati\nEnglish\nHindi"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-03-24 13:04:17.591401",
+ "modified": "2023-03-30 16:54:13.921400",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

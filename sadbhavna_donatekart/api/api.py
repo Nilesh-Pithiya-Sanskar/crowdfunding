@@ -34,7 +34,6 @@ def get_generous_donation(name):
     return frappe.db.get_list("Donation", filters={"campaign": name}, fields=["name", "donor_name", "amount", "creation", "date", "anonymous", "donor_image"], order_by='amount desc')
     # return frappe.db.sql(f"select donor.image, donor.donor_name, donation.name, donation.amount, donation.creation, donation.anonymous from `tabDonation` as donation inner join `tabDonor` as donor on donation.donor = donor.name where donation.name='{name}'")
 
-
 @frappe.whitelist(allow_guest=True)
 def register(first_name, last_name, email, password, phone_number, pan_number):
     # doc = frappe.new_doc('User')

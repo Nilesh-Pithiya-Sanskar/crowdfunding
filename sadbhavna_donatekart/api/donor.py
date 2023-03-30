@@ -31,7 +31,7 @@ def get_details_of_donor_donations(donor):
         total_donation += i.amount
     return total_campaign, total_donation
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist()
 def update_donor(first_name, last_name, phone, old_email, pan_number):
     donor = frappe.db.get_value("Donor", filters={"email": old_email}, fieldname=["name"])
     user = frappe.db.get_value("User", filters={"email": old_email}, fieldname=["name"])
@@ -43,3 +43,7 @@ def update_donor(first_name, last_name, phone, old_email, pan_number):
     doc.save()
     # frappe.rename_doc('User', old_email, email)     
     
+@frappe.whitelist()
+def set_image(name, user_image):
+    frappe.db.set_value("User", name, {'user_image': user_image})
+

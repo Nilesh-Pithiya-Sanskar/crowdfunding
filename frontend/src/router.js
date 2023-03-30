@@ -98,6 +98,11 @@ const routes = [{
     name: 'Terms Of Service',
     component: () => import('@/pages/TermsOfService.vue')
   },
+  {
+    path: '/sadbhavna/translation',
+    name: 'Translation',
+    component: () => import('@/pages/Translations.vue')
+  },
 ]
 
 let router = createRouter({

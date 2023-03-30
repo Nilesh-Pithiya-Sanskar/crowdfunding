@@ -749,6 +749,29 @@ export default {
         },
       }
     },
+    set_image(){
+      return{
+        method: 'sadbhavna_donatekart.api.donor.set_image',
+        onSuccess: (res) => {
+          this.$toast({
+            title: 'Profile Picture Updated',
+            text: 'Your Profile Picture is successfully updated.',
+            customIcon: 'check',
+          })
+          this.$router.go() 
+        },
+        onError: (error) => {
+          console.log('error', error)
+          this.$toast({
+            title: 'Error',
+            text: error,
+            customIcon: 'circle-fail',
+            appearance: 'denger',
+          })
+        },
+
+      }
+    }
   },
   methods: {
     get_user_detail(name) {
@@ -846,8 +869,13 @@ export default {
     cancel() {
       this.edit_profile = false
     },
-    upload_image(){
-      alert('clicked')
+    upload_image(url){
+      alert('clicked', url)
+      console.log("url", url)
+      this.$resources.set_image.submit({
+        name: this.donor,
+        user_image: url
+      })
     }
   },
 }
