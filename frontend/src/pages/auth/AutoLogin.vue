@@ -10,7 +10,7 @@
                 <div class="container py-0">
                     <div class="w-5/5 md:w-6/6 lg:w-4/6 mx-auto bg-white">
                         <div
-                            class="py-1 md:py-4 lg:py-8 px-4 md:px-6 lg:px-10 text-gray-600 text-gray-600 text-center text-[30px] md:text-[32px] lg:text-[40px]">
+                            class="py-1 md:py-4 lg:py-8 px-4 md:px-6 lg:px-10 font-semibold text-gray-600 text-gray-600 text-center text-[30px] md:text-[32px] lg:text-[40px]">
                             Register & Login
                         </div>
                         <div class="relative py-4 z-0 px-8">
@@ -19,7 +19,9 @@
                                 <input
                                     class="appearance-none hover:border-[#40b751] border-gray-600 rounded w-full py-2 px-3 text-grey-darker"
                                     v-model="phone" type="number">
+
                                 <span class="text-sm text-gray-400"> An OTP will be sent to {{ phone }}</span>
+                           
                             </div>
                             <div class="mb-4">
                                 <button
@@ -58,7 +60,7 @@
                                     data-hight="2000"
                                     @click="checkLoginState()">
                                     Login with Facebook
-                                </button>
+                            </button>
                             </div>
             
                             <!-- <GoogleLogin :callback="login_with_google" class="w-full">
@@ -69,22 +71,22 @@
                             </div>
                         </GoogleLogin> -->
 
-                        <div class="grid grid-cols-2 gap-2">
-                            <div class="mb-4">
-                                <GoogleLogin :callback="login_with_google">
-                                </GoogleLogin>
-                            </div>
-                    
-                            <!-- <div class="mb-4">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="mb-4">
+                                    <GoogleLogin :callback="login_with_google">
+                                    </GoogleLogin>
+                                </div>
+
+                                <!-- <div class="mb-4">
                                 <fb:login-button 
                                 scope="public_profile,email"
                                 size="large"
                                 :onlogin="checkLoginState()">
                                 </fb:login-button>
                             </div> -->
-                            <!-- <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="true"></div> -->
+                                <!-- <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="true"></div> -->
 
-                        </div>
+                            </div>
                             <!-- <div class="mb-4">
                                 <GoogleLogin :callback="login_with_google">
                                 </GoogleLogin>
@@ -100,11 +102,10 @@
 
                             <div class="mb-4">
                                 <div class="flex mb-10 justify-between">
-                                    <span class="text-gray-600">Forget password? 
+                                    <span class="text-gray-600">Forget password?
                                         <a class="text-[#40b751]" href="/sadbhavna/login">Click here</a>
                                     </span>
-                                    <a class="text-[#40b751]"
-                                        href="/sadbhavna/registration">Register</a>
+                                    <a class="text-[#40b751]" href="/sadbhavna/registration">Register</a>
                                 </div>
                             </div>
                             <div class="mb-4">
@@ -129,7 +130,7 @@ import Footer from "../../components/Footer.vue";
 
 export default {
     name: "Auto Login",
-    components: { Navbar, Footer},
+    components: { Navbar, Footer },
 
     data() {
         return {
@@ -183,7 +184,7 @@ export default {
             }
         }
     },
-    methods: {       
+    methods: {
         login_with_google: (response) => {
             // console.log("data", response)
             let userData = decodeCredential(response.credential)
@@ -201,13 +202,13 @@ export default {
                 .then(response => {
                     response.json().then(res => {
                         var route = this.$cookies.get('route');
-                            if (route != null){
-                                this.$router.go(-1)
-                                // this.$router.push(route)
-                            }
-                            else{
-                                this.$router.push(`/sadbhavna`);
-                            }
+                        if (route != null) {
+                            this.$router.go(-1)
+                            // this.$router.push(route)
+                        }
+                        else {
+                            this.$router.push(`/sadbhavna`);
+                        }
                         // console.log("asdf", res.message)
                         // console.log("asdf", res)
                         // let token = res.message
@@ -231,16 +232,16 @@ export default {
             })
         },
         checkLoginState() {
-            FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                // User is logged in with Facebook, so you can retrieve user information here
-                FB.api('/me', function(userInfo) {
-                console.log('UserInfo:', userInfo);
-                });
-            } else {
-                // User is not logged in with Facebook, or user did not grant permission to your app
-                console.log('User is not logged in with Facebook');
-            }
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    // User is logged in with Facebook, so you can retrieve user information here
+                    FB.api('/me', function (userInfo) {
+                        console.log('UserInfo:', userInfo);
+                    });
+                } else {
+                    // User is not logged in with Facebook, or user did not grant permission to your app
+                    console.log('User is not logged in with Facebook');
+                }
             });
         }
     }
