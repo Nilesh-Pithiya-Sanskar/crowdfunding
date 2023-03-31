@@ -127,7 +127,6 @@
   {
    "fieldname": "ngo",
    "fieldtype": "Link",
-   "hidden": 1,
    "in_list_view": 1,
    "label": "NGO",
    "options": "NGO"
@@ -191,7 +190,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-03-30 16:54:13.921400",
+ "modified": "2023-03-31 11:12:12.591352",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

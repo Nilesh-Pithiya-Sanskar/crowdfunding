@@ -228,7 +228,7 @@ def send_sms_otp(number, otp):
 
     from twilio.rest import Client
     account_sid = 'ACe488e68cab478d21b913f5d4f96ae1b9'
-    auth_token = '1f41219e0474adccbfd10b90ed1e8258'
+    auth_token = '487fcf46079bd9e8c6a0d4030f604cc5'
     client = Client(account_sid, auth_token)
     message = client.messages.create(
     from_='+15855493649',

@@ -11,22 +11,29 @@
                     <div class="w-5/5 md:w-6/6 lg:w-4/6 mx-auto bg-white">
                         <div
                             class="py-1 md:py-4 lg:py-8 px-4 md:px-6 lg:px-10 font-semibold text-gray-600 text-gray-600 text-center text-[30px] md:text-[32px] lg:text-[40px]">
-                            Register & Login
+                            Login
                         </div>
                         <div class="relative py-4 z-0 px-8">
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base  mb-2" for="email">Enter Your Number</label>
+                                <label class="block text-gray-600 text-base mb-2" for="phone">Enter Your Number</label>
                                 <input
-                                    class="appearance-none hover:border-[#40b751] border-gray-600 rounded w-full py-2 px-3 text-grey-darker"
+                                    :class="['appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border-2', (error != '' ? 'border-red-600' : 'border-red-600'),]"
                                     v-model="phone" type="number">
-
-                                <span class="text-sm text-gray-400"> An OTP will be sent to {{ phone }}</span>
+                                
+                                <div v-if="error" class="text-red-500">{{ error }}</div>
+                                <span v-if="phone" class="text-sm text-gray-400"> An OTP will be sent to {{ phone }} {{ error = '' }}</span>
                            
                             </div>
-                            <div class="mb-4">
+                            <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
                                 <button
-                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_whatsapp()">Login with Whatsapp</button>
+                            
+                                <button
+                                    class="appearance-none border-gray-600 lg:ml-2 mb-5 md:ml-2 sm:ml-2 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    @click="login_with_sms()">
+                                    Login with SMS</button>
+                            
                             </div>
                             <div class="mb-4">
                                 <div
@@ -34,34 +41,36 @@
                                     <p class="text-center mx-4 mb-0">Or</p>
                                 </div>
                             </div>
-                            <div class="mb-4">
-                                <button
-                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                    @click="login_with_sms()">
-                                    Login with SMS</button>
-                            </div>
-                            <div class="mb-4">
+                            
+                            <!-- <div class="mb-4">
                                 <button
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
                                     with Email</button>
-                            </div>
-                            <div class="mb-4">
+                            </div> -->
+                            <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
                                 <!-- <fb:login-button 
                                 class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                 scope="public_profile,email"
                                 size="large"
                                 :onlogin="checkLoginState()">
                                 </fb:login-button> -->
+
+                                <div class="text-center">
+                                    <GoogleLogin :callback="login_with_google">
+                                    </GoogleLogin>                            
+                                </div>
+
                                 <button
-                                    class="fb-login-button appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    class="fb-login-button"
                                     data-button-type=""
-                                    data-use-continue-as=""
-                                    data-width="1000"
-                                    data-hight="2000"
+                                    data-use-continue-as="true"
+                                    data-width=""
+                                    data-hight=""
                                     @click="checkLoginState()">
                                     Login with Facebook
-                            </button>
-                            </div>
+                                </button>
+                                
+                                
             
                             <!-- <GoogleLogin :callback="login_with_google" class="w-full">
                             <div class="mb-4">
@@ -71,11 +80,7 @@
                             </div>
                         </GoogleLogin> -->
 
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="mb-4">
-                                    <GoogleLogin :callback="login_with_google">
-                                    </GoogleLogin>
-                                </div>
+                            
 
                                 <!-- <div class="mb-4">
                                 <fb:login-button 
@@ -105,7 +110,7 @@
                                     <span class="text-gray-600">Forget password?
                                         <a class="text-[#40b751]" href="/sadbhavna/login">Click here</a>
                                     </span>
-                                    <a class="text-[#40b751]" href="/sadbhavna/registration">Register</a>
+                                    <a class="text-[#40b751] font-bold text-lg" href="/sadbhavna/registration">Register</a>
                                 </div>
                             </div>
                             <div class="mb-4">
@@ -139,6 +144,7 @@ export default {
             // google,
             // password: "",
             email: "",
+            error: "",
             // isLogin: false,
         };
     },
@@ -222,14 +228,31 @@ export default {
                 });
         },
         login_with_whatsapp() {
-            this.$resources.login_with_whatsapp.submit({
-                phone: this.phone
-            })
+            if(this.phone == '')
+            {
+                this.error = 'Please Enter Mobile Number For Login With Whatsapp'
+            }
+            else{
+                this.error = ''
+                this.$resources.login_with_whatsapp.submit({
+                    phone: this.phone
+                })
+            }
         },
         login_with_sms() {
+            var re = /^[6-9][0-9]{9}$/;
+            if(this.phone == '')
+            {
+                this.error = 'Please Enter Mobile Number For Login With SMS'
+            }
+            else if(re.test(this.phone) == false){
+                this.error = 'Please Enter 10 Digit Mobile Number'
+            }   
+            else{
             this.$resources.login_with_sms.submit({
                 phone: this.phone
             })
+        }
         },
         checkLoginState() {
             FB.getLoginStatus(function (response) {
