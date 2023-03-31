@@ -17,11 +17,12 @@
                             <div class="mb-4">
                                 <label class="block text-gray-600 text-base mb-2" for="phone">Enter Your Number</label>
                                 <input
-                                    :class="['appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border-2', (error != '' ? 'border-red-600' : 'border-red-600'),]"
+                                    @keyup="error = ''"
+                                    :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
                                     v-model="phone" type="number">
                                 
                                 <div v-if="error" class="text-red-500">{{ error }}</div>
-                                <span v-if="phone" class="text-sm text-gray-400"> An OTP will be sent to {{ phone }} {{ error = '' }}</span>
+                                <span v-if="phone && !error" class="text-sm text-gray-400"> An OTP will be sent to {{ phone }}</span>
                            
                             </div>
                             <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
@@ -30,7 +31,7 @@
                                     @click="login_with_whatsapp()">Login with Whatsapp</button>
                             
                                 <button
-                                    class="appearance-none border-gray-600 lg:ml-2 mb-5 md:ml-2 sm:ml-2 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    class="appearance-none border-gray-600 lg:ml-2 mb-5 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_sms()">
                                     Login with SMS</button>
                             
@@ -228,10 +229,14 @@ export default {
                 });
         },
         login_with_whatsapp() {
+            var re = /^[6-9][0-9]{9}$/;
             if(this.phone == '')
             {
                 this.error = 'Please Enter Mobile Number For Login With Whatsapp'
             }
+            else if(re.test(this.phone) == false){
+                this.error = 'Please Enter 10 Digit Mobile Number'
+            }   
             else{
                 this.error = ''
                 this.$resources.login_with_whatsapp.submit({
