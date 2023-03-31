@@ -7,6 +7,7 @@
             <option v-for="lang in languages">{{ lang }}</option>
         </select>
     </div>
+    <div>{{ $t('hello') }}</div>
     <!-- <h1>{{ $translate('en.hello') }}</h1>
     <h1>{{ $translate('gu.hello') }}</h1>
     <h1>{{ $translate('hi.hello') }}</h1> -->

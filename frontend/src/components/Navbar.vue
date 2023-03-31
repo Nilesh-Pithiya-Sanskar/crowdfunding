@@ -26,28 +26,37 @@
         <ul :class="showMenu ? 'flex' : 'hidden'"
           class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-4 lg:space-x-6 md:mt-0">
           <li>
-            <router-link to="/sadbhavna" class="transition font-bold text-white hover:text-black">Home</router-link>
+            <router-link to="/sadbhavna" class="transition font-bold text-white hover:text-black">{{ $t('Home') }}</router-link>
           </li>
           <li>
-            <a href="#" class="transition font-bold text-white hover:text-black">About</a>
+            <a href="#" class="transition font-bold text-white hover:text-black">{{ $t('About') }}</a>
           </li>
           <li>
-            <router-link to="/sadbhavna/request-campaign" class="transition font-bold text-white hover:text-black">Request a
-              Campaign</router-link>
+            <router-link to="/sadbhavna/request-campaign" class="transition font-bold text-white hover:text-black">{{ $t('Request a Campaign') }}</router-link>
           </li>
           <li>
-            <router-link to="/sadbhavna/contact-us" class="transition font-bold text-white hover:text-black">Contact</router-link>
+            <router-link to="/sadbhavna/contact-us" class="transition font-bold text-white hover:text-black">{{ $t('Contact') }}</router-link>
           </li>
           <li>
             <span class="group relative inline-block">
-              <a href="/sadbhavna/blog" class="transition font-bold text-white hover:text-black">Blog</a>
+              <a href="/sadbhavna/blog" class="transition font-bold text-white hover:text-black">{{ $t('Blog') }}</a>
               <!--<ul class="absolute hidden pt-4 group-hover:block">
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/sadbhavna/blog">Blog</a></li>
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>
               </ul>-->
             </span>
           </li>
-          <!--<li>
+          <li v-if="this.user.isLoggedIn()" @click="profile()"
+            class="font-bold text-white hover:text-black cursor-pointer">
+            {{ $t('Profile') }}
+          </li>
+          <li>
+            <select class="appearance-none border-0 border-gray-300 mt-2 hover:border-[#40b751] rounded w-24 py-2 px-3 text-grey-darker" v-model="language" @change="handleChange($event)">
+            <!-- <option disabled value="">Please select language</option> -->
+              <option v-for="lang in languages" :value="lang.key" class="bg-green-500">{{ lang.value }}</option>
+            </select>
+          </li>
+          <!--<li>  
             <span class="group lg:inline-block">
               <a href="#" class="font-bold text-white hover:text-black">Page</a>
               <ul class="absolute hidden pt-4 group-hover:block">
@@ -56,22 +65,20 @@
               </ul>
             </span>
           </li>-->
-          <li v-if="this.user.isLoggedIn()" @click="profile()"
-            class="font-bold text-white hover:text-black cursor-pointer">
-            profile
-          </li>
+         
           <li>
             <button v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
-              class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">Logout</button>
+              class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t("Logout") }}</button>
             <button v-else @click="this.$router.push(`/sadbhavna/auto-login`)"
-              class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">Login</button>
+              class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t('Login') }}</button>
           </li>
+
         </ul>
       </nav>
   <Dialog
     :options="{
-      title: 'Logout',
-      message: 'Are you sure want to logout?',
+      title: $t('Logout'),
+      message: $t('Are you sure want to logout?'),
       // icon: {
       //   name: 'alert-triangle',
       //   appearance: 'warning',
@@ -79,14 +86,14 @@
       size: 'sm',
       actions: [
         {
-          label: 'Confirm',
+          label: $t('Confirm'),
           appearance: 'success',
           handler: ({ close }) => {
             this.logout()
             close() // closes dialog
           },
         },
-        { label: 'Cancel' },
+        { label: $t('Cancel') },
       ],
     }"
     v-model="showDialog"
@@ -114,11 +121,32 @@ export default {
   data() {
     return {
       showMenu: false,
-      showDialog: false
+      showDialog: false,
+      language: localStorage.getItem('lang') || window.navigator.language,
+      languages: [{'key': 'en-GB', 'value': 'English'}, {'key': 'gu', 'value':'ગુજરાતી'}, {'key':'hi', 'value':'हिंदी'}],
+      // languages: ['English', 'ગુજરાતી', 'हिंदी']
+      n: window.navigator.language,
+      l: localStorage.getItem('lang')
     }
   },
   mounted(){
-  console.log("navbar load")
+    
+    // l_lang = localStorage.getItem('lang')
+    // if(l_lang){
+    //   this.language = l_lang
+    // } 
+    // else{
+    //   window.navigator.language
+    //   if (n_lang == 'gu'){
+    //     this.language = 'ગુજરાતી'
+    //   }
+    //   else if (n_lang == 'hi'){
+    //     this.language = 'हिंदी'
+    //   }
+    //   else{
+    //     this.language = 'English'
+    //   }
+    // }   
  },
   resources:{
     logout(){
@@ -146,6 +174,11 @@ export default {
     }
   },
   methods: {
+    handleChange(event){
+      localStorage.setItem('lang', event.target.value);
+      window.location.reload();
+      
+    },
     show_logout_dialog(){
       this.showDialog = true
     },

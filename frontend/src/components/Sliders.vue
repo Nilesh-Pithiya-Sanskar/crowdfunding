@@ -15,12 +15,12 @@
           </div>
           <div class="md:col-span-2 lg:col-span-3 pr-0 lg:pr-16">
             <button
-              class="bg-[#364958] text-base rounded-lg pl-4 pr-4 pt-2 pb-2 text-white mb-2 md:mt-3">Featured</button>
+              class="bg-[#364958] text-base rounded-lg pl-4 pr-4 pt-2 pb-2 text-white mb-2 md:mt-3">{{ $t('Featured') }}</button>
             <h5 class="text-[#364958] text-2xl font-bold mb-2">{{ data.campaign_title }}</h5>
             <p class="text-[#364958] mb-[16px] font-normal">
               {{ data.short_description }}
             </p>
-            <button class="text-[#40b751] font-bold" type="button" @click="donate(data.name)">Donate Now</button>
+            <button class="text-[#40b751] font-bold" type="button" @click="donate(data.name)">{{ $t('Donate Now') }}</button>
           </div>
         </div>
       </div>

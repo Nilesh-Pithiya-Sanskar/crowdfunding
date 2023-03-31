@@ -10,11 +10,11 @@
         <div class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
           <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
             class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:3px 6px 6px #c9c9c9]">
-            Donate with
-            <span class="text-gray-700">100% Transparency</span>
-            on
-            <span class="text-gray-700">most trusted</span>
-            crowd funding platform of India.
+            {{ $t('Donate') }} {{ $t('with') }}
+            <span class="text-gray-700">{{ $t('100% Transparency') }}</span>
+            {{$t('on')}}
+            <span class="text-gray-700">{{$t('most trusted')}}</span>
+            {{$t('crowd funding platform of India.')}}
           </h1>
         </div>
         <div class="grid place-items-center  mt-5 md:mt-10 lg:mt-0  mx-4 md:mx-10 lg:mx-0">
@@ -53,7 +53,7 @@
 
     <!-- Categories -->
     <div class="text-center mt-10">
-      <h2 class="text-3xl font-bold text-[#40b751] mb-2">Categories</h2>
+      <h2 class="text-3xl font-bold text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
       <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
     </div>
 
@@ -68,11 +68,11 @@
 
               <div class="grid justify-items-center" v-if="openTab !== 1">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid(2).png" />
-                <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">All</p>
+                <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
               </div>
               <div class="grid justify-items-center" v-else="openTab === 1">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid.png" />
-                <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">All</p>
+                <p class="pl-2 pr-2 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
               </div>
 
 
@@ -86,11 +86,11 @@
 
               <div class="grid justify-items-center" v-if="openTab !== 2">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw(1).png" />
-                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Animal</p>
+                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Animal') }}</p>
               </div>
               <div class="grid justify-items-center" v-else="openTab === 2">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw.png" />
-                <p class="pl-1 md:pl-4 md:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Animal</p>
+                <p class="pl-1 md:pl-4 md:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Animal') }}</p>
               </div>
 
 
@@ -106,12 +106,12 @@
               <div class="grid justify-items-center" v-if="openTab !== 3">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8 "
                   src="../../src/assets/Inter/img/icon/mortarboard(1).png" />
-                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Education
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Education') }}
                 </p>
               </div>
               <div class="grid justify-items-center" v-else="openTab === 3">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/mortarboard.png" />
-                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Education
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Education') }}
                 </p>
               </div>
 
@@ -126,12 +126,12 @@
 
               <div class="grid justify-items-center" v-if="openTab !== 4">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/children(1).png" />
-                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Children
+                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Children') }}
                 </p>
               </div>
               <div class="grid justify-items-center" v-else="openTab === 4">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/children.png" />
-                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Children
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Children') }}
                 </p>
               </div>
 
@@ -147,12 +147,12 @@
               <div class="grid justify-items-center" v-if="openTab !== 5">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
                   src="../../src/assets/Inter/img/icon/healthcare(1).png" />
-                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Medical</p>
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Medical') }}</p>
 
               </div>
               <div class="grid justify-items-center" v-else="openTab === 5">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/healthcare.png" />
-                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Medical</p>
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Medical') }}</p>
 
               </div>
 
@@ -167,12 +167,12 @@
 
               <div class="grid justify-items-center" v-if="openTab !== 6">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/supplies(1).png" />
-                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Hunger</p>
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Hunger') }}</p>
 
               </div>
               <div class="grid justify-items-center" v-else="openTab === 6">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/supplies.png" />
-                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">Hunger</p>
+                <p class="pl-2 md:pl-6 lg:pl-6 pr-2 md:pr-6 lg:pr-6 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Hunger') }}</p>
 
               </div>
 
@@ -186,13 +186,13 @@
 
               <div class="grid justify-items-center" v-if="openTab !== 7">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray(1).png" />
-                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Religiouse
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Religiouse') }}
                 </p>
 
               </div>
               <div class="grid justify-items-center" v-else="openTab === 7">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray.png" />
-                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Religiouse
+                <p class=" pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Religiouse') }}
                 </p>
 
               </div>
@@ -209,13 +209,13 @@
               <div class="grid justify-items-center" v-if="openTab !== 8">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
                   src="../../src/assets/Inter/img/icon/disability(1).png" />
-                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Disability
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Disability') }}
                 </p>
 
               </div>
               <div class="grid justify-items-center" v-else="openTab === 8">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/disability.png" />
-                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">Disability
+                <p class="pl-1 md:pl-4 lg:pl-4 pr-1 md:pr-4 lg:pr-4 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Disability')}}
                 </p>
 
               </div>
@@ -231,13 +231,13 @@
 
               <div class="grid justify-items-center" v-if="openTab !== 9">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man(1).png" />
-                <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">Elder
+                <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Elder') }}
                 </p>
 
               </div>
               <div class="grid justify-items-center" v-else="openTab === 9">
                 <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man.png" />
-                <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">Elder
+                <p class="pl-4 md:pl-10 lg:pl-10 pr-4 md:pr-10 lg:pr-10 text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('Elder') }}
                 </p>
 
               </div>
@@ -273,10 +273,10 @@
                 </p>
               </div>
               <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
-                <button class="text-[#40b751] text-base">Share</button>
+                <button class="text-[#40b751] text-base">{{ $t('Share') }}</button>
                 <button
                   class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                  type="button" @click="donate(campaigns[index - 1].name)"> donate now </button>
+                  type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
               </div>
             </div>
           </div>
@@ -285,7 +285,7 @@
       <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
       <button
         class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button" @click="campaignToShow += 6">Show More</button>
+        type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
     </div>
   </div>
 
@@ -298,7 +298,7 @@
 
   <div class="container mx-auto h-full">
     <div class="text-center mt-10">
-      <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-bold text-[#40b751] mb-[20px]">Featured in</h2>
+      <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-bold text-[#40b751] mb-[20px]">{{ $t('Featured in') }}</h2>
     </div>
 
     <div class="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 ">
@@ -355,7 +355,7 @@
     <div class="container mx-auto h-full">
 
       <div class="text-center mt-10">
-        <h2 class="text-3xl font-bold text-[#40b751] pt-12">Awards</h2>
+        <h2 class="text-3xl font-bold text-[#40b751] pt-12">{{ $t('Awards') }}</h2>
       </div>
       <div class="pb-16">
         <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-2 justify-items-center text-center">

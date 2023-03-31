@@ -2,7 +2,7 @@
   <div class="bg-[#ebf8ec]">
     <div class="container mx-auto h-full">
       <div class=" text-center mt-10 md:mt-10 lg:mt-10 ">
-        <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-16 font-black text-[#40b751] mb-2">Testimonials</h2>
+        <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-16 font-black text-[#40b751] mb-2">{{ $t('Testimonials') }}</h2>
         <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           Amet,
           voluptate!</p>
@@ -15,21 +15,21 @@
               <a class="text-[16px] hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[30px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(1)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 1, 'bg-[#40b751] text-white': openTabTestimonials === 1 }">
-                <i class="fas fa-space-shuttle text-base mr-1"></i> Celebrities
+                <i class="fas fa-space-shuttle text-base mr-1"></i> {{ $t('Celebrities') }}
               </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
               <a class="text-[16px] hover:border hover-border-100 font-xtralight  px-[12px] md:px-[20px] lg:px-[40px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(2)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 2, 'bg-[#40b751] text-white': openTabTestimonials === 2 }">
-                <i class="fas fa-cog text-base mr-1"></i> Donors
+                <i class="fas fa-cog text-base mr-1"></i> {{ $t('Donors') }}
               </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
               <a class="text-[16px] hover:border hover-border-100 font-xtralight mt-2 md:mt-0 lg:mt-0 px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(3)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
-                <i class="fas fa-cog text-base mr-1"></i> NGOs
+                <i class="fas fa-cog text-base mr-1"></i> {{ $t('NGOs') }}
               </a>
             </li>
           </ul>

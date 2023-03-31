@@ -3,7 +3,8 @@ import {
   createWebHistory
 } from 'vue-router'
 
-const routes = [{
+const routes = [
+  {
     path: '/sadbhavna',
     name: 'Home',
     component: () => import('@/pages/Home.vue'),

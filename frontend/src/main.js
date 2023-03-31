@@ -1,30 +1,36 @@
-import {
-  createApp
-} from 'vue'
-import {
-  FrappeUI,
-  Button
-} from 'frappe-ui'
+import { createApp } from 'vue'
+import { FrappeUI, Button } from 'frappe-ui'
 import router from './router'
 import App from './App.vue'
 import VueCookies from 'vue-cookies'
 import './index.css'
-import {
-  createToast,
-  clearToasts
-} from "@/utils/toasts"
+import { createToast, clearToasts } from "@/utils/toasts"
 import axios from 'axios';
-import {
-  socketio_port
-} from "../../../../sites/common_site_config.json"
-// import "@fortawesome/fontawesome-free/css/all.min.css";
+import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 
 // import GAuth from 'vue3-google-oauth2';
 import vue3GoogleLogin from 'vue3-google-login';
 
+import gu from './assets/i18n/gu.json';
+import hi from './assets/i18n/hi.json';
+import en from './assets/i18n/en.json';
+
+import { createI18n } from 'vue-i18n'
+
+const i18n = createI18n({
+  locale: localStorage.getItem('lang') || window.navigator.language,
+    messages:{
+        en: en,
+        gu: gu,
+        hi: hi
+    }
+})
+
+
 
 let app = createApp(App)
+app.use(i18n)
 app.use(router)
 app.use(FrappeUI)
 app.use(VueCookies)

@@ -197,11 +197,25 @@ def login_with_whatsapp(phone):
     # return result
     return message, phone, 'whatsapp'
 
+def whatsapp_keys_details():
+    access_token = frappe.db.get_single_value('WhatsApp Api', 'access_token')
+    api_endpoint = frappe.db.get_single_value('WhatsApp Api', 'api_endpoint')
+    name_type = frappe.db.get_single_value('WhatsApp Api', 'name_type')
+    version = frappe.db.get_single_value('WhatsApp Api', 'version')
+    return access_token, api_endpoint, name_type, version
 
 def send_whatsapp_otp(phone, otp):
-
-    # add code here for send whatsapp message if sucess return message and mobile
-
+  
+    import requests
+    access_token, api_endpoint, name_type, version = whatsapp_keys_details()
+    
+    url = f"{api_endpoint}/{name_type}/{version}/sendSessionMessage/91{phone}?messageText={otp}"
+    headers = {
+        "content-type": "text/json",
+        "Authorization": access_token
+    }
+    response = requests.post(url, headers=headers)
+    print(response.text)
     return f'OTP sent to your whatsapp number: {phone}'
 
 

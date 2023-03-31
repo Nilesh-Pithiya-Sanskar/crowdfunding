@@ -5,7 +5,9 @@
 </style>
 <template>
   <div>
+    <!-- <Navbar /> -->
     <router-view />
+    <!-- <Footer /> -->
     <Toasts />
   </div>
 </template>
@@ -15,6 +17,8 @@ import { provide, ref } from 'vue'
 import { call } from 'frappe-ui'
 import { Toasts } from '@/utils/toasts'
 
+// import Footer from './components/Footer.vue'
+// import Navbar from './components/Navbar.vue'
 
 // import VueCardStack from "vue-card-stack";
 
@@ -22,7 +26,8 @@ export default {
   name: 'App',
   components: {
     Toasts,
-
+    // Footer,
+    // Navbar
   },
   setup() {
     const user = ref({})
