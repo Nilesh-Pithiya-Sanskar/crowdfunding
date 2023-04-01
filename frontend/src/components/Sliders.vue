@@ -8,16 +8,16 @@
 
     <div class="slides" :style="{ transform: `translateX(-${currentSlide * slideWidth}px)` }">
       <div v-for="(data, index) in featured_campaigns" :key="index" class="slide">
-        <div class="grid  p-[30px] sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
+        <div class="grid p-[30px] sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4">
           <div class="md:col-span-2 lg:col-span-1">
-            <img class="pl-3 pt-3 md:h-80 lg:h-56 h-80 sm:w-full md:w-96 lg:w-96" :src="data.campain_image" alt="Mountain"
+            <img class="h-60 md:h-80 lg:h-56 w-full" :src="data.campain_image" alt="Mountain"
               @click="donate(data.name)">
           </div>
-          <div class="md:col-span-2 lg:col-span-3 pr-0 lg:pr-16">
+          <div class="fontfamily fontcolor md:col-span-2 lg:col-span-3">
             <button
               class="bg-[#364958] text-base rounded-lg pl-4 pr-4 pt-2 pb-2 text-white mb-2 md:mt-3">{{ $t('Featured') }}</button>
-            <h5 class="text-[#364958] text-2xl font-bold mb-2">{{ data.campaign_title }}</h5>
-            <p class="text-[#364958] mb-[16px] font-normal">
+            <h3 class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold mb-2">{{ $t(data.campaign_title) }}</h3>
+            <p class="text-[#364958] mb-[16px] leading-7">
               {{ data.short_description }}
             </p>
             <button class="text-[#40b751] font-bold" type="button" @click="donate(data.name)">{{ $t('Donate Now') }}</button>

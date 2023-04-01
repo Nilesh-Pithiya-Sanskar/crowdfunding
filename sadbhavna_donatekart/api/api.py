@@ -361,3 +361,44 @@ def verify_signature(amount, razorpay_payment_id, razorpay_payment_link_id, razo
     return response, redirect_url
 
 
+@frappe.whitelist(allow_guest=True)
+def get(doc, method):
+    import json
+    import os
+
+    # print("\n\n event", doc, "\n\n")
+    # print("\n\n method", method, "\n\n")
+
+    language, source_text, translated_text = frappe.db.get_value("Translation", doc.name, ['language', "source_text", "translated_text"])
+    print("\n\n language", language, "\n\n")
+    print("\n\n source", source_text, "\n\n")
+    print("\n\n trans", translated_text, "\n\n")
+
+    file_path = 'File.json'
+    if language == 'en':
+        file_path = 'en.json'
+    elif language == 'gu':
+        file_path = 'gu.json'
+    elif language == 'hi':
+        file_path = 'hi.json'
+
+    with open(file_path, "r", encoding="utf-8") as files:
+        existing_data = json.load(files)
+        print("\n\n type", type(existing_data))
+        existing_data[source_text] = translated_text
+        print("\n\n dsfadsf", existing_data, "\n\n")
+
+    with open(file_path, "w", encoding="utf-8") as d:
+        data = json.dumps(existing_data)
+        d.write(data)
+        print("\n\n dsfadsfasdfsd", existing_data, "\n\n")
+        
+
+    # with open('File.json', 'r') as file:
+    # # file = open("File.json", "a")
+    #     print("\n\n file", file, "\n\n")
+    #     # print("\n\n f.read", file.read())
+    #     a = file.read()
+    #     existing_data = json.load(a)
+    #     print("\n\n existing data", existing_data, "\n\n")
+    #     existing_data.append(new_data)

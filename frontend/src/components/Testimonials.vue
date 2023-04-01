@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-[#ebf8ec]">
+  <section class="bg-[#ebf8ec]">
     <div class="container mx-auto h-full">
-      <div class=" text-center mt-10 md:mt-10 lg:mt-10 ">
+      <div class="fontfamily text-center mt-10 md:mt-10 lg:mt-10">
         <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-16 font-black text-[#40b751] mb-2">{{ $t('Testimonials') }}</h2>
         <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           Amet,
@@ -26,7 +26,7 @@
               </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] hover:border hover-border-100 font-xtralight mt-2 md:mt-0 lg:mt-0 px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
+              <a class="text-[16px] hover:border hover-border-100 font-xtralight margintop md:mt-0 lg:mt-0 px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
                 v-on:click="toggleTabsTestimonials(3)"
                 v-bind:class="{ 'bg-white': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
                 <i class="fas fa-cog text-base mr-1"></i> {{ $t('NGOs') }}
@@ -36,10 +36,10 @@
         </div>
       </div>
       <div class="flex flex-col min-w-0 break-words w-full">
-        <div class=" flex-auto">
+        <div class="px-4 flex-auto">
           <div class="tab-content tab-space">
             <div v-bind:class="{ 'hidden': openTabTestimonials !== 1, 'block': openTabTestimonials === 1 }">
-
+              <p>
 
               <div class="pb-16 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
                 <div class="mb-24 md:mb-0 lg:mb-0 flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
@@ -65,16 +65,16 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 1
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book.
-                      </p>
+                      </div>
 
                     </div>
                   </div>
@@ -102,16 +102,16 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 1
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book.
-                      </p>
+                      </div>
 
                     </div>
                   </div>
@@ -140,23 +140,24 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 1
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      </p>
+                      </div>
 
                     </div>
                   </div>
                 </div>
               </div>
-
+              </p>
             </div>
-            <div v-bind:class="{ 'hidden': openTabTestimonials !== 2, 'block': openTabTestimonials === 2 }">
 
+            <div v-bind:class="{ 'hidden': openTabTestimonials !== 2, 'block': openTabTestimonials === 2 }">
+              <p>
 
 
               <div class="pb-16 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
@@ -183,12 +184,12 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 2
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book. <a v-show="readMoret21">It has survived not
@@ -198,7 +199,7 @@
                           <span class="text-blue-500 underline" v-if="readMoret21">Read Less</span>
                           <span class="text-blue-500 underline" v-else>Read More</span>
                         </a>
-                      </p>
+                      </div>
 
                     </div>
                   </div>
@@ -226,12 +227,12 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 2
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book. <a v-show="readMoret22">It has survived not
@@ -241,7 +242,7 @@
                           <span class="text-blue-500 underline" v-if="readMoret22">Read Less</span>
                           <span class="text-blue-500 underline" v-else>Read More</span>
                         </a>
-                      </p>
+                      </div>
 
                     </div>
                   </div>
@@ -269,12 +270,12 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 2
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book. <a v-show="readMoret23">It has survived not
@@ -283,17 +284,16 @@
                         <a class="cursor-pointer text-blue" @click="readMoret23 = !readMoret23">
                           <span class="text-blue-500 underline" v-if="readMoret23">Read Less</span>
                           <span class="text-blue-500 underline" v-else>Read More</span></a>
-                      </p>
+                      </div>
 
                     </div>
                   </div>
                 </div>
               </div>
-
+              </p>
             </div>
-
             <div v-bind:class="{ 'hidden': openTabTestimonials !== 3, 'block': openTabTestimonials === 3 }">
-
+              <p>
 
 
               <div class="pb-6 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
@@ -320,12 +320,12 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 3
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book. <a v-show="readMoret31">It has survived not
@@ -335,7 +335,7 @@
                           <span class="text-blue-500 underline" v-if="readMoret31">Read Less</span>
                           <span class="text-blue-500 underline" v-else>Read More</span>
                         </a>
-                      </p>
+                      </div>
 
                     </div>
                   </div>
@@ -364,12 +364,12 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 3
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book. <a v-show="readMoret32">It has survived not
@@ -379,7 +379,7 @@
                           <span class="text-blue-500 underline" v-if="readMoret32">Read Less</span>
                           <span class="text-blue-500 underline" v-else>Read More</span>
                         </a>
-                      </p>
+                      </div>
 
                     </div>
                   </div>
@@ -408,12 +408,12 @@
                       <h3 class="text-[22px] md:text-[22px] lg:text-[24px] leading-normal mb-0 text-gray-600 ">
                         Name Tab 3
                       </h3>
-                      <p
+                      <div
                         class="text-[14px] md:text-[14px] lg:text-[16px] leading- normal mt-0 text-[#364958] text-opacity-60 ">
                         <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                         Designation
-                      </p>
-                      <p class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
+                      </div>
+                      <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                         type and scrambled it to make a type specimen book. <a v-show="readMoret33">It has survived not
@@ -423,18 +423,18 @@
                           <span class="text-blue-500 underline" v-if="readMoret33">Read Less</span>
                           <span class="text-blue-500 underline" v-else>Read More</span>
                         </a>
-                      </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 export default {

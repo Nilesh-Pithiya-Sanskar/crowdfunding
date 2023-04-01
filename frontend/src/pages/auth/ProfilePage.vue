@@ -51,13 +51,13 @@
                       <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ donor_count_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500">Total Donation Campaign</span>
+                      <span class="text-sm text-blueGray-500">{{$t('Total Donation Campaign')}}</span>
                     </div>
                     <div class="mr-4 p-3 text-center">
                       <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ donor_total_donation_amount }}
                       </span>
-                      <span class="text-sm text-blueGray-500">Total Donate Amount</span>
+                      <span class="text-sm text-blueGray-500">{{$t('Total Donate Amount')}}</span>
                     </div>
                     <!-- <div class="lg:mr-4 p-3 text-center">
                                         <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
@@ -71,19 +71,19 @@
                       <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ campaign_report.total_live_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500">Total Live Campaign</span>
+                      <span class="text-sm text-blueGray-500">{{$t('Total Live Campaign')}}</span>
                     </div>
                     <div class="mr-4 p-3 text-center">
                       <span class="text-xl font-bold block uppercase tracking-wide text-blue-500">
                         {{ campaign_report.total_pending_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500">Total Pending Campaign</span>
+                      <span class="text-sm text-blueGray-500">{{$t('Total Pending Campaign')}}</span>
                     </div>
                     <div class="lg:mr-4 p-3 text-center">
                       <span class="text-xl font-bold block uppercase tracking-wide text-red-500">
                         {{ campaign_report.total_rejected_campaign }}
                       </span>
-                      <span class="text-sm text-blueGray-500">Total Rejected Campaign</span>
+                      <span class="text-sm text-blueGray-500">{{$t('Total Rejected Campaign')}}</span>
                     </div>
                   </div>
                 </div>
@@ -134,8 +134,7 @@
                                                             required>
                                                     </div> -->
                               <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
-                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">Phone
-                                  Number <span class="text-red-600">*</span></label>
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">{{$t('Phone Number')}} <span class="text-red-600">*</span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   v-model="phone" type="number" placeholder="Your phone number" required />
@@ -144,12 +143,12 @@
                               <button @click="save()"
                                 class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded mr-2 mb-4 ease-linear transition-all duration-150"
                                 type="button">
-                                Save
+                                {{$t('Save')}}
                               </button>
                               <button @click="cancel()"
                                 class="bg-gray-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded mr-2 mb-4 ease-linear transition-all duration-150"
                                 type="button">
-                                cancel
+                                {{$t('cancel')}}
                               </button>
                               <!-- <div class="mb-4">
                                                         <label class="block text-grey-darker text-sm font-bold mb-2"
@@ -187,7 +186,7 @@
               <div v-if="user_data" v-for="roles in user_data.data.roles">
                 <div v-if="roles.role == 'Donor'">
                   <div v-if="donation_details.data != ''" class="text-center pt-4 text-2xl text-gray-600">
-                    Your Donations
+                    {{$t('Your Donations')}}
                   </div>
                   <div v-if="donation_details.data != ''" class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -197,20 +196,20 @@
                             <thead class="bg-white border-b">
                               <tr>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Campaign Name
+                                  {{$t('Campaign Name')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Amount
+                                  {{$t('Amount')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Date
+                                  {{$t('Date')}}
                                 </th>
                                 <!-- <th scope="col"
                                       class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                       Mode of Payment
                                   </th> -->
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Download 80G Certificate
+                                  {{$t('Download 80G Certificate')}}
                                 </th>
                               </tr>
                             </thead>
@@ -234,7 +233,7 @@
                                     download_80g(donation.name, donation.date)
                                   ">
                                   <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> --> 
-                                  Download
+                                  {{$t('Download')}}
                                 </td>
                               </tr>
                             </tbody>
@@ -248,7 +247,7 @@
                       Donate Item to see Donations and Download Certificate
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/sadbhavna">Click Here To Explore Campaign</router-link>
+                      <router-link to="/sadbhavna">{{$t('Click Here To Explore Campaign')}}</router-link>
                     </div>
                   </div>
                 </div>
@@ -256,7 +255,7 @@
                 <div v-else-if="roles.role == 'Ngo'">
                   <!-- {{ campaign_details }} -->
                   <div v-if="campaign_details.data != ''" class="text-center text-2xl text-gray-600">
-                    Your Campaign
+                    {{$t('Your Campaign')}}
                   </div>
                   <div v-if="campaign_details.data != ''" class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -266,25 +265,25 @@
                             <thead class="bg-white border-b">
                               <tr>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Campaign Name
+                                  {{$t('Campaign Name')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Campaign Category
+                                  {{$t('Campaign Category')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Requested Amount
+                                  {{$t('Requested Amount')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Raised Amount
+                                  {{$t('Raised Amount')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Start Date
+                                  {{$t('Start Date')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  End Date
+                                  {{$t('End Date')}}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Status
+                                  {{$t('Status')}}
                                 </th>
                               </tr>
                             </thead>
@@ -325,17 +324,17 @@
                           </table>
                         </div>
                         <div class="text-center text-sm leading-normal m-4 text-blue-400 font-bold">
-                          <router-link to="/sadbhavna/request-campaign">Request New Campaign</router-link>
+                          <router-link to="/sadbhavna/request-campaign">{{$t('Request New Campaign')}}</router-link>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div v-else>
                     <div class="text-center font-bold text-gray-500">
-                      You don't have any campaign live yet.
+                      {{$t(`You don't have any campaign live yet.`)}}
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/sadbhavna/request-campaign">Click Here To Request A New Campaign</router-link>
+                      <router-link to="/sadbhavna/request-campaign">{{$t('Click Here To Request A New Campaign')}}</router-link>
                     </div>
                   </div>
                 </div>

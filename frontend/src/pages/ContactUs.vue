@@ -55,105 +55,105 @@
                     </ul>
                     </p> -->
 
-                    <div class="grid grid-cols-2">
+                    <div class="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"">
 
 
-                        <div class="form-group pr-3 mb-6">
-                            <label class="block text-gray-700 text-sm mb-2" for="username">
-                                First name <span class="text-red-600">*</span>
-                            </label>
-                            <input v-model="first_name" type="text"
-                                class="form-control block hover:border-[#40b751] w-full px-3  py-1.5  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition  ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-                            <p class="text-red-600">{{ firstNameError }}</p>
-                            <!-- <p>{{ error }}</p> -->
-                        </div>
-
-                        <div class="form-group pl-4 mb-6">
-                            <label class="block text-gray-700 text-sm mb-2" for="username">
-                                Last name
-                            </label>
-                            <input v-model="last_name" type="text"
-                                class="form-control block hover:border-[#40b751] w-full  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded  transition ease-in-out m-0  focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-
-                        </div>
-                    </div>
-                    <div class="form-group mb-6">
-                        <label class="block text-gray-700 text-sm mb-2" for="username">
-                            Email <span class="text-red-600">*</span>
+                                                                <div class=" mr-2 mb-6">
+                        <label class="block text-gray-700 text-sm mb-2" for="">
+                            First name <span class="text-red-600">*</span>
                         </label>
-                        <input v-model="email_id" type="email"
-                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-                        <!-- <span v-if="msg.email_id" className="text-danger mrgnbtn">{{ msg.email_id }}</span> -->
-                        <p class="text-red-600">{{ emailError }}</p>
+                        <input v-model="first_name" type="text" placeholder="Firstname"
+                            class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+                        <p class="text-red-600">{{ firstNameError }}</p>
                         <!-- <p>{{ error }}</p> -->
                     </div>
 
-                    <div class="form-group mb-6">
-                        <label class="block text-gray-700 text-sm mb-2" for="username">
-                            Subject <span class="text-red-600">*</span>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm mb-2" for="">
+                            Last name
                         </label>
-                        <input v-model="subject" type="text"
-                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-                        <p class="text-red-600">{{ subjectError }}</p>
-                        <!-- <p>{{ error }}</p> -->
-                    </div>
+                        <input v-model="last_name" type="text" placeholder="Lastname"
+                            class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
 
-                    <div class="form-group mb-6">
-                        <label class="block text-gray-700 text-sm mb-2" for="username">
-                            Message
-                        </label>
-                        <textarea v-model="message"
-                            class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
-                            rows="3"></textarea>
-                    </div>
-
-                    <button type="submit"
-                        class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
-                        @click="contact_us()">submit
-                    </button>
-
-                </div>
-
-
-
-                <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
-                    <p class="text-base font-bold mb-6">Quick info</p>
-                    <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center ">
-                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
-                        </div>
-                        <p class="text-black-500 mb-2 pt-2 pl-14">Fake street, 3929, London</p>
-                    </div>
-                    <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
-                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/phonecall.png" />
-                        </div>
-                        <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+ 1 291 2909 392</p>
-                        </a>
-                    </div>
-                    <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center  ">
-                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
-                        </div>
-                        <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@mydomain.com</p>
-                        </a>
-                    </div>
-                    <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center  ">
-                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/worldwide.png" />
-                        </div>
-                        <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">https://mywebsite.com</p>
-                        </a>
                     </div>
                 </div>
+                <div class="form-group mb-6">
+                    <label class="block text-gray-700 text-sm mb-2" for="">
+                        Email <span class="text-red-600">*</span>
+                    </label>
+                    <input v-model="email_id" type="email" placeholder="Email"
+                        class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                    <!-- <span v-if="msg.email_id" className="text-danger mrgnbtn">{{ msg.email_id }}</span> -->
+                    <p class="text-red-600">{{ emailError }}</p>
+                    <!-- <p>{{ error }}</p> -->
+                </div>
+
+                <div class="form-group mb-6">
+                    <label class="block text-gray-700 text-sm mb-2" for="">
+                        Subject <span class="text-red-600">*</span>
+                    </label>
+                    <input v-model="subject" type="text" placeholder="Subject"
+                        class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                    <p class="text-red-600">{{ subjectError }}</p>
+                    <!-- <p>{{ error }}</p> -->
+                </div>
+
+                <div class="form-group mb-6">
+                    <label class="block text-gray-700 text-sm mb-2" for="">
+                        Message
+                    </label>
+                    <textarea v-model="message" placeholder="Message"
+                        class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none"
+                        rows="3"></textarea>
+                </div>
+
+                <button type="submit"
+                    class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                    @click="contact_us()">submit
+                </button>
 
             </div>
-        </section>
-        <!-- Section: Design Block -->
+
+
+
+            <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
+                <p class="text-base font-bold mb-6">Quick info</p>
+                <div class="pb-4">
+                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center ">
+                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
+                    </div>
+                    <p class="text-black-500 mb-2 pt-2 pl-14">Fake street, 3929, London</p>
+                </div>
+                <div class="pb-4">
+                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
+                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/phonecall.png" />
+                    </div>
+                    <a href="#">
+                        <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+ 1 291 2909 392</p>
+                    </a>
+                </div>
+                <div class="pb-4">
+                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center  ">
+                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
+                    </div>
+                    <a href="#">
+                        <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@mydomain.com</p>
+                    </a>
+                </div>
+                <div class="pb-4">
+                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center  ">
+                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/worldwide.png" />
+                    </div>
+                    <a href="#">
+                        <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">https://mywebsite.com</p>
+                    </a>
+                </div>
+            </div>
+
+    </div>
+    </section>
+    <!-- Section: Design Block -->
 
     </div>
     <!-- Container for demo purpose -->

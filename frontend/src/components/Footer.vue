@@ -103,7 +103,7 @@
         class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 sm:gap-auto md-gap:4 lg:gap-auto pb-5 md:pb-10 lg:pb-2 px-0 py-0 ">
         <div class="sm:col-span-2 md:col-span-2 lg:col-auto">
           <h2 class="font-bold text-white mb-6 text-xl mb-4">
-            About</h2>
+            {{$t('About')}}</h2>
           <p class="text-whitetext-gray-500 -pr-[200px] dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur
             adipisicing elit. Modi cumque tenetur inventore veniam, hic vel
             ipsa necessitatibus ducimus architecto fugiat!</p>
@@ -130,58 +130,58 @@
         </div>
         <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px] md:pb-10 sm:pb-10 ">
           <h2 class="font-bold text-white mb-6 text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            Quick Links</h2>
+            {{$t('Quick Links')}}</h2>
           <ul class="text-white">
             <li class="sm:mb-2 md:mb-2 lg:mb-4">
-              <a href="#">Symptoms</a>
+              <a href="#">{{$t('Symptoms')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Prevention</a>
+              <a href="#">{{$t('Prevention')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">FAQs</a>
+              <a href="#">{{$t('FAQs')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">About Coronavirus</a>
+              <a href="#">{{$t('About Coronavirus')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Contact Us</a>
+              <a href="#">{{$t('Contact Us')}}</a>
             </li>
           </ul>
         </div>
         <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[50px] sm:pr-28 md:pr-32 lg:pr-0">
           <h2 class="font-bold text-white mb-6 text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            Helpful Link</h2>
+            {{$t('Helpful Link')}}</h2>
           <ul class="text-white">
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Helathcare Professional</a>
+              <a href="#">{{$t('Helathcare Professional')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">LGU Facilities</a>
+              <a href="#">{{$t('LGU Facilities')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Protect Your Family</a>
+              <a href="#">{{$t('Protect Your Family')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-              <a href="#">World Health</a>
+              <a href="#">{{$t('World Health')}}</a>
             </li>
           </ul>
         </div>
         <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px]">
           <h2 class="font-bold text-white mb-6 text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            Resources</h2>
+            {{$t('Resources')}}</h2>
           <ul class="text-white">
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">WHO Website</a>
+              <a href="#">{{$t('WHO Website')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">CDC Website</a>
+              <a href="#">{{$t('CDC Website')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Gov Website</a>
+              <a href="#">{{$t('Gov Website')}}</a>
             </li>
             <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">DOH Website</a>
+              <a href="#">{{$t('DOH Website')}}</a>
             </li>
           </ul>
         </div>

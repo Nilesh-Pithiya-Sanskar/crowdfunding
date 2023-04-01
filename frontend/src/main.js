@@ -12,9 +12,16 @@ import "@/assets/Inter/styles/tailwind.css"
 // import GAuth from 'vue3-google-oauth2';
 import vue3GoogleLogin from 'vue3-google-login';
 
-import gu from './assets/i18n/gu.json';
-import hi from './assets/i18n/hi.json';
-import en from './assets/i18n/en.json';
+// import gu from './assets/i18n/gu.json';
+// import hi from './assets/i18n/hi.json';
+// import en from './assets/i18n/en.json';
+
+import gu from '../../../../sites/gu.json'
+import hi from '../../../../sites/hi.json'
+import en from '../../../../sites/en.json'
+
+// console.log(gu1)
+
 
 import { createI18n } from 'vue-i18n'
 

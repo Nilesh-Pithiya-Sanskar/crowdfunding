@@ -183,14 +183,15 @@
    "fieldname": "language",
    "fieldtype": "Select",
    "label": "Language",
-   "options": "Gujarati\nEnglish\nHindi"
+   "options": "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0\nEnglish\n\u0939\u093f\u0902\u0926\u0940",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-03-31 11:12:12.591352",
+ "modified": "2023-04-01 12:05:05.851964",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

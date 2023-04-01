@@ -1,74 +1,71 @@
 <template>
     <Navbar />
     <div class="container mx-auto h-full pb-[48px]">
-        <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style="
-                                                                                                                                                                                                                                                                                                                                                                                                                                                 background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-                                                                                                                                                                                                                                                                                                                                                                                                                                              ">
-        </div>
+        <!-- <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');">
+        </div> -->
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
             <div class="container mx-auto py-0">
                 <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
                     <h1
                         class="text-[20px] md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-gray-600 text-bold text-center">
-                        Donor Registration
+                        {{ $t('Donor Registration') }}
                     </h1>
                     <div class="relative z-0">
                         <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
-                            <div class="mr-2">
-                                <label class="block text-gray-600 text-base  mb-2">First
-                                    Name <span class="text-red-600">*</span></label>
+                            <div class="mr-2 mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('FirstName') }} <span
+                                        class="text-red-600">*</span></label>
                                 <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                    v-model="first_name" type="text" required>
+                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="first_name" type="text" placeholder="First name" required>
                                 <p class="text-red-600">{{ firstNameError }}</p>
                             </div>
-                            <div>
-                                <label class="block text-gray-600 text-base  mb-2">Last
-                                    Name</label>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">LastName</label>
                                 <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                    v-model="last_name" type="text" required>
+                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="last_name" type="text" placeholder="Last name" required>
                             </div>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Email
                                 Address <span class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                v-model="email" type="email" required>
+                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="email" type="email" placeholder="Address" required>
                             <p class="text-red-600">{{ emailError }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Password <span
                                     class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                v-model="password" type="password" required>
+                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="password" type="password" placeholder="Password" required>
                             <p class="text-red-600">{{ passwordError }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Confirm
                                 Password <span class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                v-model="conform_password" type="password" required>
+                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="conform_password" type="password" placeholder="Confirm password" required>
                             <p class="text-red-600">{{ confirmPasswordError }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">Phone
                                 Number <span class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                v-model="phone_number" type="number" required>
+                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="phone_number" type="number" placeholder="Phone number" required>
                             <p class="text-red-600">{{ phoneNumberError }}</p>
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-600 text-base  mb-2">Pan
+                            <label class="block text-gray-600 text-base  mb-2">PAN
                                 Number <span class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  ho ver:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                v-model="pan_number" type="text" required>
+                                class="appearance-none border-gray-300  ho ver:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="pan_number" type="text" placeholder="PAN number" required>
                             <p class="text-red-600">{{ panError }}</p>
                         </div>
                         <div class="flex items-center justify-between mt-8">
@@ -86,6 +83,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class=" pl-96 ">
+        <div class="absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:h-0 md:h-0 lg:h-0 xl:h-[430px] sm:w-0 md:w-0 lg:w-0 xl:w-96  bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
     </div>
     <Footer />

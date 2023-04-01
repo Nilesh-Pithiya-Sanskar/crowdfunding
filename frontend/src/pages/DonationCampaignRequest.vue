@@ -2,13 +2,13 @@
     <Navbar />
     <div class="container mx-auto">
         <div v-if="openTab == 1"
-            class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[650px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[542px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
                                                                                                                                                                                                         background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
                                                                                                                                                                                                       ">
         </div>
         <div v-if="openTab == 2"
-            class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[300px] sm:h-0 md:h-0 lg:h-0 xl:h-[643px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[300px] sm:h-0 md:h-0 lg:h-0 xl:h-[535px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="
                                                                                                                                                                                                         background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
                                                                                                                                                                                                       ">
@@ -23,7 +23,7 @@
                             Donation Campaign Request
                         </div>
                         <div class="relative z-0">
-                            <div class=" sm:p-10 ">
+                            <div class=" sm:py-2 md:py-4 lg:py-8 ">
                                 <ul
                                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
                                     <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -43,7 +43,7 @@
                                 </ul>
                                 <div class="px-4 py-2 flex-auto">
                                     <div class="tab-content tab-space">
-                                        <div class="py-4 px-8">
+                                        <div v-if="openTab == 1" class="py-4 px-8">
                                             <div class="mb-4">
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">Full
                                                     Name <span class="text-red-600">*</span></label>
@@ -52,7 +52,7 @@
                                                     v-model="full_name" type="text">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
-                                            <div v-if="openTab == 1"
+                                            <div 
                                                 class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                                                 <div class="mb-4">
                                                     <label class="block text-gray-600 text-base  mb-2">Organisation
@@ -114,14 +114,77 @@
                                                     <p class="text-red-600">{{ beneficiaryGroupError }}</p>
                                                 </div>
                                             </div>
-                                            <div class="mb-6">
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
                                                 <button
-                                                    class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751]  text-lg uppercase rounded"
+                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-10 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751]  text-lg uppercase rounded"
                                                     @click="request_campaign()">Submit</button>
+                                                <button
+                                                   class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
+                                                    @click="request_campaign()">Reset Form</button>
+                                            </div>
+                                        </div>
+                                        <div v-if="openTab == 2" class="py-4 px-8">
+                                            <div class="mb-4">
+                                                <label class="block text-gray-600 text-base  mb-2" for="email">Full
+                                                    Name <span class="text-red-600">*</span></label>
+                                                <input
+                                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                    v-model="full_nameindividualgroup" type="text">
+                                                <p class="text-red-600">{{ fullNameErrorindividualgroup }}</p>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Phone <span
+                                                            class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" v-model="phoneindividualgroup">
+                                                    <p class="text-red-600">{{ phoneErrorindividualgroup }}</p>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Email <span
+                                                            class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="email" v-model="emailindividualgroup">
+                                                    <p class="text-red-600">{{ emailErrorindividualgroup }}</p>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Social Media
+                                                        Page</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" v-model="social_media_pageindividualgroup">
+
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Campaign
+                                                        Story <span class="text-red-600">*</span></label>
+                                                    <textarea id="comment" rows="4" v-model="campaign_storyindividualgroup"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"></textarea>
+                                                    <p class="text-red-600">{{ campaignStoryErrorindividualgroup }}</p>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">Beneficiary
+                                                        Group <span class="text-red-600">*</span></label>
+                                                    <textarea id="comment" rows="4" v-model="beneficiary_groupindividualgroup"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"></textarea>
+
+                                                    <p class="text-red-600">{{ beneficiaryGroupErrorindividualgroup }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
+                                                <button
+                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-10 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751]  text-lg uppercase rounded"
+                                                    @click="request_campaign()">Submit</button>
+                                                <button
+                                                   class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
+                                                    @click="request_campaign()">Reset Form</button>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -148,21 +211,32 @@ export default {
         return {
             openTab: 1,
             full_name: '',
+            full_nameindividualgroup: '',
             fullNameError: '',
+            fullNameErrorindividualgroup: '',
             campaign_type: '',
             organisation_name: '',
             organizationNameError: '',
             organisation_website: '',
             email: '',
+            emailindividualgroup: '',
             emailError: '',
+            emailErrorindividualgroup: '',
             phone: '',
+            phoneindividualgroup: '',
             phoneError: '',
+            phoneErrorindividualgroup: '',
             error: false,
             campaign_story: '',
+            campaign_storyindividualgroup: '', 	
             campaignStoryError: '',
+            campaignStoryErrorindividualgroup: '',
             social_media_page: '',
+            social_media_pageindividualgroup: '',
             beneficiary_group: '',
-            beneficiaryGroupError: ''
+            beneficiary_groupindividualgroup: '',
+            beneficiaryGroupError: '',
+            beneficiaryGroupErrorindividualgroup: ''
         }
     },
     // watch: {
@@ -337,11 +411,11 @@ export default {
                 this.campaign_type = 'Indivisual/Group'
                 {
                     if (!this.full_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
-                        this.fullNameError = 'Enter valid fullname!'
-                        this.phoneError = 'Enter valid phone number!'
-                        this.emailError = 'Enter valid email!'
-                        this.campaignStoryError = 'Enter campaign story!'
-                        this.beneficiaryGroupError = 'Enter beneficiary group!'
+                        this.fullNameErrorindividualgroup = 'Please Enter FullName!'
+                        this.phoneErrorindividualgroup = 'Enter valid phone number!'
+                        this.emailErrorindividualgroup = 'Enter valid email!'
+                        this.campaignStoryErrorindividualgroup = 'Enter campaign story!'
+                        this.beneficiaryGroupErrorindividualgroup = 'Enter beneficiary group!'
                         this.error == true
                         // return true;
                     }

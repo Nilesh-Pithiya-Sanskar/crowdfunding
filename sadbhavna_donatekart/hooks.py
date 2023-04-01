@@ -115,13 +115,17 @@ website_redirects = [
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+	"Translation": {
+		"after_insert": "sadbhavna_donatekart.api.api.get",
+        "after_update": "sadbhavna_donatekart.api.api.get"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

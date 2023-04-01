@@ -2,7 +2,7 @@
     <Navbar />
 
     <div class="container mx-auto mb-[150px]">
-        <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[498px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+        <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[330px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');">
         </div>
         <div class="container mx-auto h-full">
@@ -11,30 +11,31 @@
                     <div class="w-5/5 md:w-6/6 lg:w-4/6 mx-auto bg-white">
                         <div
                             class="py-1 md:py-4 lg:py-8 px-4 md:px-6 lg:px-10 font-semibold text-gray-600 text-gray-600 text-center text-[30px] md:text-[32px] lg:text-[40px]">
-                            Login
+                            {{ $t('Login') }}
                         </div>
                         <div class="relative py-4 z-0 px-8">
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base mb-2" for="phone">Enter Your Number</label>
-                                <input
-                                    @keyup="error = ''"
+                                <label class="block text-gray-600 text-base mb-2" for="phone">{{ $t('Enter Your Number')}}</label>
+                                <input @keyup="error = ''"
                                     :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
                                     v-model="phone" type="number">
-                                
+
                                 <div v-if="error" class="text-red-500">{{ error }}</div>
-                                <span v-if="phone && !error" class="text-sm text-gray-400"> An OTP will be sent to {{ phone }}</span>
-                           
+                                <span v-if="phone && !error" class="text-sm text-gray-400"> {{ $t('An OTP will be sent to')
+                                }}
+                                    {{ phone }}</span>
+
                             </div>
                             <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
                                 <button
                                     class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                    @click="login_with_whatsapp()">Login with Whatsapp</button>
-                            
+                                    @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
+
                                 <button
                                     class="appearance-none border-gray-600 lg:ml-2 mb-5 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_sms()">
-                                    Login with SMS</button>
-                            
+                                    {{ $t('Login with SMS') }}</button>
+
                             </div>
                             <div class="mb-4">
                                 <div
@@ -42,7 +43,7 @@
                                     <p class="text-center mx-4 mb-0">Or</p>
                                 </div>
                             </div>
-                            
+
                             <!-- <div class="mb-4">
                                 <button
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
@@ -58,22 +59,17 @@
 
                                 <div class="text-center">
                                     <GoogleLogin :callback="login_with_google">
-                                    </GoogleLogin>                            
+                                    </GoogleLogin>
                                 </div>
 
-                                <button
-                                    class="fb-login-button"
-                                    data-button-type=""
-                                    data-use-continue-as="true"
-                                    data-width=""
-                                    data-hight=""
-                                    @click="checkLoginState()">
+                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
+                                    data-width="" data-hight="" @click="checkLoginState()">
                                     Login with Facebook
                                 </button>
-                                
-                                
-            
-                            <!-- <GoogleLogin :callback="login_with_google" class="w-full">
+
+
+
+                                <!-- <GoogleLogin :callback="login_with_google" class="w-full">
                             <div class="mb-4">
                                 <button
                                     class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded">Login
@@ -81,7 +77,7 @@
                             </div>
                         </GoogleLogin> -->
 
-                            
+
 
                                 <!-- <div class="mb-4">
                                 <fb:login-button 
@@ -108,15 +104,17 @@
 
                             <div class="mb-4">
                                 <div class="flex mb-10 justify-between">
-                                    <span class="text-gray-600">Forget password?
-                                        <a class="text-[#40b751]" href="/sadbhavna/login">Click here</a>
+                                    <span class="text-gray-600">{{ $t('Forget password?') }}
+                                        <a class="text-[#40b751]" href="/sadbhavna/login">{{ $t('Click here') }}</a>
                                     </span>
-                                    <a class="text-[#40b751] font-bold text-lg" href="/sadbhavna/registration">Register</a>
+                                    <a class="text-[#40b751] font-bold text-lg" href="/sadbhavna/registration">{{
+                                        $t('Register') }}</a>
                                 </div>
                             </div>
                             <div class="mb-4">
                                 <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                        href="/sadbhavna/login">Login </a> &nbsp;via ID Password</span>
+                                        href="/sadbhavna/login">{{ $t('Login') }} </a> &nbsp;via ID {{ $t('Password')
+                                        }}</span>
                             </div>
                         </div>
                     </div>
@@ -230,14 +228,13 @@ export default {
         },
         login_with_whatsapp() {
             var re = /^[6-9][0-9]{9}$/;
-            if(this.phone == '')
-            {
+            if (this.phone == '') {
                 this.error = 'Please Enter Mobile Number For Login With Whatsapp'
             }
-            else if(re.test(this.phone) == false){
+            else if (re.test(this.phone) == false) {
                 this.error = 'Please Enter 10 Digit Mobile Number'
-            }   
-            else{
+            }
+            else {
                 this.error = ''
                 this.$resources.login_with_whatsapp.submit({
                     phone: this.phone
@@ -246,18 +243,17 @@ export default {
         },
         login_with_sms() {
             var re = /^[6-9][0-9]{9}$/;
-            if(this.phone == '')
-            {
+            if (this.phone == '') {
                 this.error = 'Please Enter Mobile Number For Login With SMS'
             }
-            else if(re.test(this.phone) == false){
+            else if (re.test(this.phone) == false) {
                 this.error = 'Please Enter 10 Digit Mobile Number'
-            }   
-            else{
-            this.$resources.login_with_sms.submit({
-                phone: this.phone
-            })
-        }
+            }
+            else {
+                this.$resources.login_with_sms.submit({
+                    phone: this.phone
+                })
+            }
         },
         checkLoginState() {
             FB.getLoginStatus(function (response) {

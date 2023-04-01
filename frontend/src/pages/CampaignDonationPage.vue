@@ -5,28 +5,27 @@
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
             <h2 style="font-size: 2rem; font-weight: 700;"
-                class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{
-                    campaign_detail.data.campaign_title }}</h2>
+                class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{$t(campaign_detail.data.campaign_title) }}</h2>
             <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
-                campaign_detail.data.short_description }}</p>
+                $t(campaign_detail.data.short_description) }}</p>
             <div class="mb-[50px] flex flex-wrap">
                 <span
                     class="mb-2 bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">
-                    Tax Benefit</span>
+                    {{$t('Tax Benefit')}}</span>
                 <span
                     class="mb-2 bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px]  rounded-[10px]">
-                    Assured</span>
+                    {{$t('Assured')}}</span>
                 <span
                     class="mb-2 bg-[#40b751] mr-[4px] capitalize text-white py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">
-                    Old Ages</span>
+                    {{$t('Old Ages')}}</span>
             </div>
             <div class="flex flex-wrap mt-6 mb-5">
                 <img class="object-fill lg:h-[35rem] md:h[25] sm:h[25] w-full mb-4" :src="campaign_detail.data.campain_image">
                 <div class="w-full lg:w-8/12 pr-4">
                     <!-- <DonationDetail /> -->
                     <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] justify-between font-bold">
-                        <p>Raised: {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
-                        <p>Goal: {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
+                        <p>{{$t('Raised:')}} {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
+                        <p>{{$t('Goal:')}} {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
                     </div>
                     <div class="w-full h-[16px] bg-gray-200 rounded-md dark:bg-gray-700">
                         <!-- <div class="bg-green-500 text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md" style="width: 40%"> 40%</div> -->
@@ -101,9 +100,9 @@
 
                                     <div class="lg:w-8/12 xl:w-8/12">
                                         <div class="px-6 md:px-6 lg:px-6">
-                                            <h4 class="text-xl font-medium text-[#40b751]">{{ products.display_as_name }}</h4>
-                                            <p class="text-gray-500 mb-2">
-                                                {{ products.about }}
+                                            <h4 class="text-xl font-medium text-[#40b751]">{{ $t(products.display_as_name) }}</h4>
+                                            <p class="text-gray-500 mb-2" v-if="products.about">
+                                                {{ $t(products.about) }}
                                             </p>
                                             <p class="text-gray-500 font-bold pb-2">
                                                 ₹ {{ numberWithCommas(products.price) }}
@@ -146,19 +145,19 @@
                         <div v-if="index - 1 < campaign_detail.data.description.length">
                             <img class="object-fill w-full" :src="campaign_detail.data.description[index - 1].image">
                             <p style="line-height:1.7;" class="text-[#364958] mb-5">{{
-                                campaign_detail.data.description[index - 1].image_description }}</p>
+                                $t(campaign_detail.data.description[index - 1].image_description) }}</p>
                         </div>
                     </div>
                     <div class="text-center"
                         v-if="descToShow < campaign_detail.data.description.length || campaign_detail.data.description.length > descToShow">
                         <button
                             class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                            type="button" @click="descToShow += 1">View More</button>
+                            type="button" @click="descToShow += 1">{{$t('View More')}}</button>
                     </div>
                     <div class="text-center" v-else>
                         <button
                             class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                            type="button" @click="descToShow = 1" v-if="total_desc > 0">View Less</button>
+                            type="button" @click="descToShow = 1" v-if="total_desc > 0">{{$t('View Less')}}</button>
                     </div>
                 </div>
 
@@ -169,16 +168,16 @@
                                 <thead class="bg-white border-b">
                                     <tr>
                                         <th scope="col" class="font-bold py-4 text-left">
-                                            Item Name
+                                            {{$t('Item Name')}}
                                         </th>
                                         <!-- <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
                                             Rate
                                         </th> -->
                                         <th scope="col" class="font-bold px-6 py-4 text-left">
-                                            Qty
+                                            {{$t('Qty')}}
                                         </th>
                                         <th scope="col" class="font-bold px-6 py-4 text-left">
-                                            Amount
+                                            {{$t('Amount')}}
                                         </th>   
                                     </tr>
                                 </thead>
@@ -186,20 +185,20 @@
                                     <tr v-for="item in item_cart"
                                         class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                         <td class="text-sm text-gray-900 py-4 whitespace-nowrap">
-                                            {{ item.item }}
+                                            {{ $t(item.item) }}
                                         </td>
                                         <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             {{ item.rate }}
                                         </td> -->
                                         <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                            {{ item.qty }}
+                                            {{ $t(item.qty) }}
                                         </td>
                                         <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                            {{ item.amount }}
+                                            {{ $t(item.amount) }}
                                         </td>
                                     </tr>                                    
                                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">Total</td>
+                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">{{$t('Total')}}</td>
                                         <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">{{ i_qty }}</td>
                                         <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">₹ {{ numberWithCommas(total_price) }}</td>
                                     </tr>
@@ -213,7 +212,7 @@
                                 </button>
                                 <div v-if="item_cart != ''">
                                     <input type="checkbox" id="anonymous" v-model="anonymous">
-                                    <label for="checkbox" class="text-sm pl-2">Make my donation anonymous</label>
+                                    <label for="checkbox" class="text-sm pl-2">{{$t('Make my donation anonymous')}}</label>
                                 </div>
                                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                             </div>
@@ -236,8 +235,7 @@
                         </div>
 
                         <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
-                        <p class="text-gray-600 mt-4">Donate via</p>
-
+                        <p class="text-gray-600 mt-4">{{$t('Donate via')}}</p>
 
                         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
                             <div>
@@ -246,7 +244,7 @@
                                         <img src="../../src/assets/Inter/img/phonepay.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs text-[#364958]">Phone Pay</p>
+                                        <p class="text-xs text-[#364958]">{{$t('Phone Pay')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +255,7 @@
                                         <img src="../../src/assets/Inter/img/gpay.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs text-[#364958]">Google Pay</p>
+                                        <p class="text-xs text-[#364958]">{{$t('Google Pay')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -268,7 +266,7 @@
                                         <img src="../../src/assets/Inter/img/bhim.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs text-[#364958]">Bhim UPI</p>
+                                        <p class="text-xs text-[#364958]">{{$t('Bhim UPI')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -279,7 +277,7 @@
                                         <img src="../../src/assets/Inter/img/paytm.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs text-[#364958]">Paytm</p>
+                                        <p class="text-xs text-[#364958]">{{$t('Paytm')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +288,7 @@
                                         <img src="../../src/assets/Inter/img/crditcard.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs text-[#364958]">cr/dr card</p>
+                                        <p class="text-xs text-[#364958]">{{$t('cr/dr card')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -301,7 +299,7 @@
                                         <img src="../../src/assets/Inter/img/banktransfer.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs  text-[#364958]">Bank Transfer</p>
+                                        <p class="text-xs  text-[#364958]">{{$t('Bank Transfer')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -312,7 +310,7 @@
                                         <img src="../../src/assets/Inter/img/giftcard.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs text-[#364958]">Gift Card</p>
+                                        <p class="text-xs text-[#364958]">{{$t('Gift Card')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -330,7 +328,7 @@
                                     <div class="mb-8">
                                         <p
                                             class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold text-center title-font mb-4 ">
-                                            FAQ
+                                            {{$t('FAQ')}}
                                         </p>
                                         <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!
@@ -341,7 +339,7 @@
                                             <details class="mb-4">
                                                 <summary
                                                     class="font-medium cursor-pointer border-2 border-b-1 border-solid border-b-gray-300 text-xl text-[#40b751] list-none bg-gray-100 rounded py-3 px-4">
-                                                    What is Donatekart ?</summary>
+                                                    {{$t('What is Donatekart ?')}}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
@@ -364,7 +362,7 @@
                                             <details class="mb-4">
                                                 <summary
                                                     class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
-                                                    How to claim Tax-Exemption for my contributions on Donatekart?</summary>
+                                                    {{$t('How to claim Tax-Exemption for my contributions on Donatekart?')}}</summary>
 
 
                                                 <span>
@@ -390,7 +388,7 @@
                                             <details class="mb-4">
                                                 <summary
                                                     class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
-                                                    How to Donate ?</summary>
+                                                    {{$t('How to Donate ?')}}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
@@ -408,7 +406,7 @@
                                             <details class="mb-4">
                                                 <summary
                                                     class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
-                                                    How to claim Tax-Exemption ?</summary>
+                                                    {{$t('How to claim Tax-Exemption ?')}}</summary>
 
 
                                                 <span>
@@ -448,14 +446,14 @@
                                     <a class="text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
                                         v-on:click="toggleTabs(1)"
                                         v-bind:class="{ 'bg-gray-200': openTab !== 1, 'text-gray-500': openTab === 1 }">
-                                        <i class="fas fa-space-shuttle text-base mr-1"></i> Recent
+                                        <i class="fas fa-space-shuttle text-base mr-1"></i> {{$t('Recent')}}
                                     </a>
                                 </li>
                                 <li class="-mb-px  flex-auto text-center">
                                     <a class=" text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
                                         v-on:click="toggleTabs(2)"
                                         v-bind:class="{ 'bg-gray-200': openTab !== 2, 'text-gray-500': openTab === 2 }">
-                                        <i class="fas fa-cog text-base mr-1"></i> most generous
+                                        <i class="fas fa-cog text-base mr-1"></i> {{$t('most generous')}}
                                     </a>
                                 </li>
                             </ul>
@@ -487,7 +485,7 @@
                                                                 class=" text-gray-900 leading-none text-lg">{{
                                                                     donation.donor_name }}</p>
                                                             <p v-else class="text-gray-900 leading-none text-lg">
-                                                                Anonymous</p>
+                                                                {{$t('Anonymous')}}</p>
                                                             <p class="text-gray-600 text-sm">{{ formatDate(donation.date) }}
                                                             </p>
                                                         </div>
@@ -522,7 +520,7 @@
                                                                 class=" text-gray-900 leading-none text-lg">{{
                                                                     m_donation.donor_name }}</p>
                                                             <p v-else class="text-gray-900 leading-none text-lg">
-                                                                Anonymous</p>
+                                                                {{$t('Anonymous')}}</p>
                                                             <p class="text-gray-600 text-sm">{{ formatDate(m_donation.date) }}
                                                             </p>
                                                         </div>
@@ -550,7 +548,7 @@
         <!-- <div class="">asdfasdfasd</div> -->
         <div class="flex justify-between text-center font-bold text-lg mt-5">
             <div class="flex">
-                <div class="text-[#40b751] ml-5">{{ i_qty }} Item(s) |</div>
+                <div class="text-[#40b751] ml-5">{{ i_qty }} {{$t('Item(s)')}} |</div>
                 <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
             </div>
             <!-- <div>
@@ -560,7 +558,7 @@
             <div>
                 <button
                     class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
-                    type="button" @click="donate(total_price, anonymous)"> {{$('Donate Now')}}
+                    type="button" @click="donate(total_price, anonymous)"> {{$t('Donate Now')}}
                 </button>
             </div>
             
@@ -570,8 +568,8 @@
     </div>
     
     <Dialog :options="{
-        title: 'Donation Completed',
-        message: `Your donation of ${donated_amount} is successfully completed.`,
+        title: $t('Donation Completed'),
+        message: $t(`Your donation of ${donated_amount} is successfully completed.`),
         icon: {
             name: 'smile',
             appearance: 'success',
@@ -580,7 +578,7 @@
         size: 'lg',
         actions: [
             {
-                label: 'Get 80G Certificate',
+                label: $t('Get 80G Certificate'),
                 appearance: 'success',
                 handler: ({ close }) => {
                     this.download_80g(donation_name)
@@ -588,7 +586,7 @@
                 },
             },
             {
-                label: 'View Profile',
+                label: $t('View Profile'),
                 appearance: 'success',
                 handler: ({ close }) => {
                     this.view_profile()
@@ -596,7 +594,7 @@
                 },
             },
             { 
-                label: 'Cancel',
+                label: $t('Cancel'),
                 handler: ({ close }) => {
                     this.cancel()
                     close() // closes dialog
