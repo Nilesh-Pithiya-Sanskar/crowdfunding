@@ -3,15 +3,11 @@
     <div class="container mx-auto">
         <div v-if="openTab == 1"
             class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[542px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style="
-                                                                                                                                                                                                        background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-                                                                                                                                                                                                      ">
+            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');">
         </div>
         <div v-if="openTab == 2"
             class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[300px] sm:h-0 md:h-0 lg:h-0 xl:h-[535px] sm:w-0 md:w-0 lg:w-0 xl:w-96  sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style="
-                                                                                                                                                                                                        background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');
-                                                                                                                                                                                                      ">
+            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');">
         </div>
         <div class="container mx-auto h-full">
 
@@ -20,7 +16,7 @@
                     <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
                         <div
                             class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
-                            Campaign Request
+                            {{$t('Campaign Request')}}
                         </div>
                         <div class="relative z-0">
                             <div class=" sm:py-2 md:py-4 lg:py-8 ">
@@ -30,33 +26,31 @@
                                         <a class="mb-3 md:mb-0 lg:mb-0 cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block "
                                             v-on:click="toggleTabs(1)" @click="resetForm"
                                             v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1 }">
-                                            NGO
+                                            {{$t('NGO')}}
                                         </a>
                                     </li>
                                     <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                         <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
                                             v-on:click="toggleTabs(2)" @click="resetForm"
                                             v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 2, 'text-white bg-[#40b751]': openTab === 2 }">
-                                            Individual Group
+                                            {{$t('Individual Group')}}
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="px-4 py-2 flex-auto">
                                     <div class="tab-content tab-space">
-                                        <div class="py-4 px-8">
+                                        <div v-if="openTab == 1" class="py-4 px-8">
                                             <div class="mb-4">
-                                                <label class="block text-gray-600 text-base  mb-2" for="email">Full
-                                                    Name <span class="text-red-600">*</span></label>
+                                                <label class="block text-gray-600 text-base  mb-2" for="email">{{$t('FullName')}} <span class="text-red-600">*</span></label>
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                     placeholder="Enter Full Name" v-model="full_name" type="text">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
-                                            <div v-if="openTab == 1"
+                                            <div
                                                 class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                                                 <div class="mb-4">
-                                                    <label class="block text-gray-600 text-base  mb-2">Organisation
-                                                        Name <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Organisation Name')}} <span class="text-red-600">*</span></label>
 
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
@@ -64,8 +58,7 @@
                                                     <p class="text-red-600">{{ organizationNameError }}</p>
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label class="block text-gray-600 text-base  mb-2">Organisation
-                                                        Website</label>
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Organisation Website')}}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         type="text" placeholder="Enter Organisation Website" v-model="organisation_website">
@@ -73,7 +66,7 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Phone <span
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Phone Number')}} <span
                                                             class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
@@ -81,7 +74,7 @@
                                                     <p class="text-red-600">{{ phoneError }}</p>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Email <span
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Email')}} <span
                                                             class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
@@ -89,8 +82,7 @@
                                                     <p class="text-red-600">{{ emailError }}</p>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Social Media
-                                                        Page</label>
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Social Media Page')}}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         type="text" placeholder="Enter Social Media Page" v-model="social_media_page">
@@ -99,15 +91,13 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Campaign
-                                                        Story <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Campaign Story')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" v-model="campaign_story"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Campaign Story"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryError }}</p>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Beneficiary
-                                                        Group <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" v-model="beneficiary_group"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Beneficiary Group"></textarea>
 
@@ -117,10 +107,67 @@
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
                                                 <button
                                                    class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
-                                                    @click="request_campaign()">Campaign Request</button>
+                                                    @click="request_campaign()">{{$t('Campaign Request')}}</button>
                                                 <button
                                                    class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
-                                                    @click="resetForm">Reset Form</button>
+                                                    @click="resetForm">{{$t('Reset Form')}}</button>
+                                            </div>
+                                        </div>
+                                        <div v-if="openTab == 2" class="py-4 px-8">
+                                            <div class="mb-4">
+                                                <label class="block text-gray-600 text-base  mb-2" for="email">{{$t('FullName')}} <span class="text-red-600">*</span></label>
+                                                <input
+                                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                    placeholder="Enter Full Name" v-model="full_name" type="text">
+                                                <p class="text-red-600">{{ fullNameError }}</p>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Phone Number')}} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="number" placeholder="Enter Phone Number" v-model="phone">
+                                                    <p class="text-red-600">{{ phoneError }}</p>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Email')}} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="email" placeholder="Enter Email" v-model="email">
+                                                    <p class="text-red-600">{{ emailError }}</p>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Social Media Page')}}</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Social Media Page" v-model="social_media_page">
+
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Campaign Story')}} <span class="text-red-600">*</span></label>
+                                                    <textarea id="comment" rows="4" v-model="campaign_story"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Campaign Story"></textarea>
+                                                    <p class="text-red-600">{{ campaignStoryError }}</p>
+                                                </div>
+                                                <div class="mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">{{$t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
+                                                    <textarea id="comment" rows="4" v-model="beneficiary_group"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Beneficiary Group"></textarea>
+
+                                                    <p class="text-red-600">{{ beneficiaryGroupError }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
+                                                <button
+                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                    @click="request_campaign()">{{$t('Campaign Request')}}</button>
+                                                <button
+                                                   class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
+                                                    @click="resetForm">{{$t('Reset Form')}}</button>
                                             </div>
                                         </div>
                                     </div>

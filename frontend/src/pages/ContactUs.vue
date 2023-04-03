@@ -25,15 +25,15 @@
         <div class="grid justify-items-center">
             <div class="px-4 pb-28 md:pb-32 lg:pb-48 pt-8 md:pt-32 lg:pt-32">
                 <p class="text-[#40b751] tracking-widest text-center uppercase font-bold text-xs">
-                    {{ $t('contact') }}
+                    {{ $t('Contact') }}
                 </p>
                 <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
                     class="text-[#40b751] font-sans text-center font-semibold pb-1 text-[28px] md:text-[32px] lg:text-[43px] [text-shadow:3px 6px 6px #c9c9c9]">
                     {{ $t('Get In Touch') }}
                 </h1>
                 <p class="text-gray-600 text-center leading-7 max-w-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a, nulla incidunt eaque sit
-                    praesentium porro consectetur optio!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a, nulla incidunt eaque
+                    sitpraesentium porro consectetur optio!
                 </p>
             </div>
         </div>
@@ -55,20 +55,22 @@
                     </ul>
                     </p> -->
 
-                    <div class="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+
+
                         <div class=" mr-2 mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="">
-                                {{ $t('First name') }} <span class="text-red-600">*</span>
+                                {{ $t('First Name') }} <span class="text-red-600">*</span>
                             </label>
                             <input v-model="first_name" type="text" placeholder="Firstname" @keyup="firstNameError = ''"
                                 class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
-                            <p class="text-red-600">{{ $t('firstNameError') }}</p>
+                            <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             <!-- <p>{{ error }}</p> -->
                         </div>
 
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="">
-                                {{ $t('Last name') }}
+                                {{ $t('Last Name') }}
                             </label>
                             <input v-model="last_name" type="text" placeholder="Lastname"
                                 class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
@@ -80,9 +82,9 @@
                             {{ $t('Email') }} <span class="text-red-600">*</span>
                         </label>
                         <input v-model="email_id" type="email" placeholder="Email" @keyup="emailError = ''"
-                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
                         <!-- <span v-if="msg.email_id" className="text-danger mrgnbtn">{{ msg.email_id }}</span> -->
-                        <p class="text-red-600">{{ $t('emailError') }}</p>
+                        <p class="text-red-600">{{ $t(emailError) }}</p>
                         <!-- <p>{{ error }}</p> -->
                     </div>
 
@@ -91,8 +93,8 @@
                             {{ $t('Subject') }} <span class="text-red-600">*</span>
                         </label>
                         <input v-model="subject" type="text" placeholder="Subject" @keyup="subjectError = ''"
-                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
-                        <p class="text-red-600">{{ $t('subjectError') }}</p>
+                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <p class="text-red-600">{{ $t(subjectError) }}</p>
                         <!-- <p>{{ error }}</p> -->
                     </div>
 
@@ -107,7 +109,7 @@
 
                     <button type="submit"
                         class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
                         @click="contact_us()">{{ $t('submit') }}
                     </button>
 
@@ -116,12 +118,12 @@
 
 
                 <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
-                    <p class="text-base font-bold mb-6">Quick info</p>
+                    <p class="text-base font-bold mb-6">{{ $t('Quick info') }}</p>
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center ">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
                         </div>
-                        <p class="text-black-500 mb-2 pt-2 pl-14">Fake street, 3929, London</p>
+                        <p class="text-black-500 mb-2 pt-2 pl-14">{{ $t('Fake street, 3929, London') }}</p>
                     </div>
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
@@ -176,7 +178,7 @@ export default {
             subjectError: '',
             message: '',
             // errorMessage: '',
-            error: '',
+            // error: false,
             // errors: false,
         }
     },
@@ -257,49 +259,27 @@ export default {
         // },
         contact_us() {
             var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if (!this.first_name && !this.email_id && !this.subject) {
-                this.firstNameError = 'Enter first name!'
-                this.emailError = 'Enter email!'
-                this.subjectError = 'Enter subject!'
-            }
-            else if (!this.email_id) {
-                this.emailError = 'Enter email!'
-            }
-            else if (re.test(this.email_id) == false) {
-                this.emailError = 'Enter valid email!'
-            }
-            else {
-                this.$resources.contact_us.submit({
-                    first_name: this.first_name,
-                    last_name: this.last_name,
-                    email_id: this.email_id,
-                    subject: this.subject,
-                    message: this.message,
-                })
-            }
 
-
-
-
-            // if (this.first_name && this.email_id && this.subject) {
-            //     this.error == false
-            //     return true;
+            // if (this.first_name == '') {
+            //     this.firstNameError = 'Please enter first name!'
+            //     console.log('firstname')
             // }
-
-            // this.error = [];
-            // if (!this.first_name) {
-            //     this.error.push('First name required.');
-            //     this.error == true
+            // if (this.email_id == '') {
+            //     this.emailError = 'Please enter email!'
+            //     console.log('email')
             // }
-            // if (!this.email_id) {
-            //     this.error.push('Email required.');
-            //     this.error == true
+            // else if (re.test(this.email_id) == false) {
+            //     this.emailError = 'Please enter valid email'
+            //     console.log('valid mail')
             // }
-            // if (!this.subject) {
-            //     this.error.push('Subject required');
-            //     this.error == true
+            // if (this.subject == '') {
+            //     this.subjectError = 'Please enter subject!'
+            //     console.log('subject')
             // }
-            // if (this.error == false) {
+            // else {
+            //     this.firstNameError = ''
+            //     this.emailError = ''
+            //     this.subjectError = ''
             //     this.$resources.contact_us.submit({
             //         first_name: this.first_name,
             //         last_name: this.last_name,
@@ -307,65 +287,54 @@ export default {
             //         subject: this.subject,
             //         message: this.message,
             //     })
+            //     console.log('done')
             // }
 
 
+            if (!this.first_name && !this.email_id && !this.subject) {
+                this.firstNameError = 'Enter first name'
+                this.emailError = 'Enter email'
+                this.subjectError = 'Enter subject'
 
-            // e.preventDefault();
-            // if (this.first_name == '') {
-            //     this.firstNameError = 'Invalid first name!'
-            // }
-            // if (this.email_id == '' || this.email_id == '') {
-            //     this.emailError = 'Invalid email!'
-            // }
-            // if (this.subject == '') {
-            //     this.subjectError = 'Invalid subject!'
-            // }
-            // else {
-            //     alert("Message sent successfully")
-            // }
-            // /^[A-Za-z]+$/
+            }
 
+            else if (!this.email_id) {
+                this.emailError = 'Enter email'
+            }
 
+            else if (re.test(this.email_id) == false) {
 
-            // if (!/^[a-zA-Z]*$/.test(first_name)) {
-            //     this.firstNameError = ''
-            // } else {
-            //     this.firstNameError = 'Invalid first name!'
-            // }
+                this.emailError = 'Enter valid email'
 
-            // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_id)) {
-            //     this.emailError = ''
-            // } else {
-            //     this.emailError = 'Invalid email!'
-            // }
+                console.log('email')
+            }
 
+            else {
 
+                this.$resources.contact_us.submit({
+                    first_name: this.first_name,
+                    last_name: this.last_name,
+                    email_id: this.email_id,
+                    subject: this.subject,
+                    message: this.message,
+                })
+                console.log('done')
 
-            // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_id)) {
-            //     this.emailError = ''
-            // } else {
-            //     this.emailError = 'invalid'
-            //     this.error = true
-            //     console.log('email')
-            // }
-
-            // if (!this.email) {
-            //     this.errors.push('Email required.');
-            // } else if (!this.validEmail(this.email)) {
-            //     this.errors.push('Valid email required.');
-            // }
+            }
 
 
-            // if (!this.first_name && !this.email_id && !this.subject) {
+
+
+            // if (!this.first_name || !this.email_id || !this.subject) {
             //     this.firstNameError = 'Enter valid firstname!'
             //     this.emailError = 'Enter valid email!'
             //     this.subjectError = 'Enter valid subject!'
             //     this.error == true
+            //     console.log('all')
             //     // return true;
             // }
 
-            // else if (this.first_name == '' || !this.validName(this.first_name)) {
+            // else if (this.first_name == '') {
             //     // this.first_name == this.error
             //     this.firstNameError = 'Enter valid firstname!'
             //     this.error = true
@@ -396,6 +365,200 @@ export default {
             //         message: this.message,
             //     })
             //     this.error == false
+            // }
+
+            // if (this.first_name && this.email_id && this.subject) {
+            //     this.error == false
+            //     return true;
+            // }
+
+
+
+
+
+            // this.error = [];
+            // if (!this.first_name) {
+            //     this.error.push('First name required.');
+            //     this.error == true
+            // }
+            // if (!this.email_id) {
+            //     this.error.push('Email required.');
+            //     this.error == true
+            // }
+            // if (!this.subject) {
+            //     this.error.push('Subject required');
+            //     this.error == true
+            // }
+            // if (this.error == false) {
+            //     this.$resources.contact_us.submit({
+            //         first_name: this.first_name,
+            //         last_name: this.last_name,
+            //         email_id: this.email_id,
+            //         subject: this.subject,
+            //         message: this.message,
+            //     })
+            // }
+
+
+
+
+            // e.preventDefault();
+            // if (this.first_name == '') {
+            //     this.firstNameError = 'Invalid first name!'
+            // }
+            // if (this.email_id == '' || this.email_id == '') {
+            //     this.emailError = 'Invalid email!'
+            // }
+            // if (this.subject == '') {
+            //     this.subjectError = 'Invalid subject!'
+            // }
+            // else {
+            //     alert("Message sent successfully")
+            // }
+            // /^[A-Za-z]+$/
+
+
+
+
+
+
+            // if (!/^[a-zA-Z]*$/.test(first_name)) {
+            //     this.firstNameError = ''
+            // } else {
+            //     this.firstNameError = 'Invalid first name!'
+            // }
+
+            // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_id)) {
+            //     this.emailError = ''
+            // } else {
+            //     this.emailError = 'Invalid email!'
+            // }
+
+
+
+            // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_id)) {
+            //     this.emailError = ''
+            // } else {
+            //     this.emailError = 'invalid'
+            //     this.error = true
+            //     console.log('email')
+            // }
+
+            // if (!this.email) {
+            //     this.errors.push('Email required.');
+            // } else if (!this.validEmail(this.email)) {
+            //     this.errors.push('Valid email required.');
+            // }
+            // if (!this.first_name && !this.email_id && !this.subject) {
+            //     this.firstNameError = 'Enter valid firstname!'
+            //     this.emailError = 'Enter valid email!'
+            //     this.subjectError = 'Enter valid subject!'
+            //     this.error == true
+            //     // return true;
+            // }
+
+
+
+            // if (!this.first_name && !this.email_id && !this.subject) {
+            //     this.firstNameError = 'Enter first name!'
+            //     this.emailError = 'Enter valid email!'
+            //     this.subjectError = 'Enter subject!'
+            //     this.error == true
+            //     // return true;
+            // }
+            // else if (this.first_name == '') {
+            //     // this.first_name == this.error
+            //     this.firstNameError = 'Enter first name!'
+            //     this.error = true
+            //     console.log('firstname')
+            // }
+            // else if (this.first_name) {
+            //     // this.first_name == this.error
+            //     this.firstNameError = ''
+            //     this.error = false
+
+            // }
+            // else if (this.email == '' || !this.validEmail(this.email)) {
+            //     // this.first_name == this.error
+            //     this.emailError = 'Enter valid email!'
+            //     this.error = true
+            //     console.log('email')
+            // }
+            // else if (this.email || this.validEmail(this.email)) {
+            //     // this.first_name == this.error
+            //     this.emailError = ''
+            //     this.error = false
+
+            // }
+            // else if (this.subject == '') {
+            //     // this.first_name == this.error
+            //     this.subjectError = 'Enter subject!'
+            //     this.error = true
+            //     console.log('subject')
+            // }
+            // else if (this.subject) {
+            //     // this.first_name == this.error
+            //     this.subjectError = ''
+            //     this.error = false
+
+            // }
+            // else {
+            //     console.log('done')
+            //     this.$resources.contact_us.submit({
+            //         first_name: this.first_name,
+            //         last_name: this.last_name,
+            //         email_id: this.email_id,
+            //         subject: this.subject,
+            //         message: this.message,
+            //     })
+            //     this.error == false
+
+            // }
+            // if (this.first_name == '') {
+            //     // this.first_name == this.error
+            //     this.firstNameError = 'Enter valid firstname!'
+            //     this.error = true
+            //     console.log('firstname')
+            // } else {
+            //     this.firstNameError = ''
+            //     this.error = false
+            // }
+
+            // if (this.email_id == '' || !this.validEmail(this.email_id)) {
+            //     // this.email_id == this.error
+            //     this.emailError = 'Enter valid email!'
+            //     this.error = true
+            //     console.log('email')
+            // } else {
+            //     this.emailError = ''
+            //     this.error = false
+            // }
+
+            // if (this.subject == '') {
+            //     // this.subject == this.error
+            //     this.subjectError = 'Enter valid subject!'
+            //     this.error = true
+            //     console.log('subject')
+            // } else {
+            //     this.subjectError = ''
+            //     this.error = false
+            // }
+            // // else if (this.error == true) {
+            // //     console.log('error')
+            // // }
+            // if (this.error = true) {
+            //     console.log('not done')
+
+            // } else {
+            //     console.log('done')
+            //     this.$resources.contact_us.submit({
+            //         first_name: this.first_name,
+            //         last_name: this.last_name,
+            //         email_id: this.email_id,
+            //         subject: this.subject,
+            //         message: this.message,
+            //     })
+
             // }
 
 

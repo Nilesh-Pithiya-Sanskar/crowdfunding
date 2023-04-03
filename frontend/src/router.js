@@ -3,8 +3,7 @@ import {
   createWebHistory
 } from 'vue-router'
 
-const routes = [
-  {
+const routes = [{
     path: '/sadbhavna',
     name: 'Home',
     component: () => import('@/pages/Home.vue'),
@@ -23,6 +22,11 @@ const routes = [
     path: '/sadbhavna/campaign-donation/:name',
     name: 'CampaignDonation',
     component: () => import('@/pages/CampaignDonationPage.vue')
+  },
+  {
+    path: '/sadbhavna/explore-campaigns',
+    name: 'ExploreCampaigns',
+    component: () => import('@/pages/ExploreCampaigns.vue')
   },
   {
     path: '/sadbhavna/donate/:name&:price',

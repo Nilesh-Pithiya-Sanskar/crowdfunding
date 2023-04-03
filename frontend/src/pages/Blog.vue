@@ -8,7 +8,7 @@
             <!-- BLOG -->
 
             <div>
-                <h1 class="text-center pt-10 text-4xl font-black text-[#40b751] mb-2">Blog</h1>
+                <h1 class="text-center pt-10 text-4xl font-black text-[#40b751] mb-2">{{$t('Blog')}}</h1>
             </div>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
                 <div v-for="data in blogs" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">

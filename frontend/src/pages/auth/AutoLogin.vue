@@ -2,9 +2,9 @@
     <Navbar />
 
     <div class="container mx-auto mb-[150px]">
-        <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[330px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+        <!-- <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-[330px] sm:h-0 md:h-0 lg:h-0 xl:h-[485px] sm:w-0 md:w-0 lg:w-0 xl:w-[600px]  sm:right-0 md:right-2 lg:right-2 xl:right-0 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');">
-        </div>
+        </div> -->
         <div class="container mx-auto h-full">
             <div class="w-full pt-0 md:pt-5 lg:pt-12">
                 <div class="container py-0">
@@ -15,7 +15,9 @@
                         </div>
                         <div class="relative py-4 z-0 px-8">
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base mb-2" for="phone">{{ $t('Enter Your Number')}}</label>
+                                <label class="block text-gray-600 text-base mb-2" for="phone">
+                                    {{ $t('Enter Your Number') }}
+                                </label>
                                 <input @keyup="error = ''"
                                     :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
                                     v-model="phone" type="number">
@@ -101,12 +103,17 @@
                                 </fb:login-button>
                             </div> -->
 
+                            <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
+                                    href="/sadbhavna/login">{{ $t('Login via ID Password') }}</a></span>
 
-                            <div class="mb-4">
-                                <div class="flex mb-10 justify-between">
-                                    <!-- <span class="text-gray-600">{{ $t('Forget password?') }}
+                            <span><a class="block text-[#40b751] text-center font-bold text-lg"
+                                    href="/sadbhavna/registration">{{
+                                        $t('Register') }}</a></span>
+                            <!-- <div class="mb-4">
+                                <div class="flex mb-2 justify-between">
+                                    <span class="text-gray-600">{{ $t('Forget password?') }}
                                         <a class="text-[#40b751]" href="/sadbhavna/login">{{ $t('Click here') }}</a>
-                                    </span> -->
+                                    </span>
                                     <a></a>
                                     <a class="text-[#40b751] font-bold text-lg" href="/sadbhavna/registration">{{
                                         $t('Register') }}</a>
@@ -114,13 +121,17 @@
                             </div>
                             <div class="mb-4">
                                 <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                        href="/sadbhavna/login">{{ $t('Login') }} </a> &nbsp;{{$t('via ID')}} {{ $t('Password')
-                                        }}</span>
-                            </div>
+                                        href="/sadbhavna/login">{{ $t('Login via ID Password')}}</a></span>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class=" pl-96 ">
+        <div class="absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:h-0 md:h-0 lg:h-0 xl:h-[430px] sm:w-0 md:w-0 lg:w-0 xl:w-96  bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
     </div>
     <Footer />

@@ -2,7 +2,7 @@
     <Navbar />
     <div class="container mx-auto h-full pb-[48px]">
         <!-- <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style="background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png');">
+            style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div> -->
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
             <div class="container mx-auto py-0">
@@ -14,73 +14,74 @@
                     <div class="relative z-0">
                         <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
                             <div class="mr-2 mb-4">
-                                <label class="block text-gray-600 text-base  mb-2">{{ $t('FirstName') }} <span
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('First Name') }} <span
                                         class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                     v-model="first_name" @keyup="firstNameError = ''" type="text" placeholder="First name"
                                     required>
-                                <p class="text-red-600">{{ ('firstNameError') }}</p>
+                                <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             </div>
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base  mb-2">LastName</label>
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }}</label>
                                 <input
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                     v-model="last_name" type="text" placeholder="Last name" required>
+                                <p class="text-red-600">{{ $t(lastNameError) }}</p>
                             </div>
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-600 text-base  mb-2">Email
-                                Address <span class="text-red-600">*</span></label>
+                            <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                <span class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                 v-model="email" type="email" @keyup="emailError = ''" placeholder="Address" required>
-                            <p class="text-red-600">{{ emailError }}</p>
+                            <p class="text-red-600">{{ $t(emailError) }}</p>
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-600 text-base  mb-2">Password <span
+                            <label class="block text-gray-600 text-base  mb-2">{{ $t('Password') }} <span
                                     class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                 v-model="password" type="password" @keyup="passwordError = ''" placeholder="Password"
                                 required>
-                            <p class="text-red-600">{{ passwordError }}</p>
+                            <p class="text-red-600">{{ $t(passwordError) }}</p>
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-600 text-base  mb-2">Confirm
-                                Password <span class="text-red-600">*</span></label>
+                            <label class="block text-gray-600 text-base  mb-2">{{ $t('Confirm Password') }} <span
+                                    class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                 v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
                                 placeholder="Confirm password" required>
-                            <p class="text-red-600">{{ confirmPasswordError }}</p>
+                            <p class="text-red-600">{{ $t(confirmPasswordError) }}</p>
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-600 text-base  mb-2">Phone
-                                Number <span class="text-red-600">*</span></label>
+                            <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
+                                    class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="phone_number" type="number" @keyup="phoneNumberError = ''"
-                                placeholder="Phone number" required>
-                            <p class="text-red-600">{{ phoneNumberError }}</p>
+                                v-model="phone_number" type="text" @keyup="phoneNumberError = ''" placeholder="Phone number"
+                                required>
+                            <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-600 text-base  mb-2">PAN
-                                Number <span class="text-red-600">*</span></label>
+                            <label class="block text-gray-600 text-base  mb-2">{{ $t('PAN Number') }} <span
+                                    class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  ho ver:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                 v-model="pan_number" type="text" @keyup="panError = ''" placeholder="PAN number" required>
-                            <p class="text-red-600">{{ panError }}</p>
+                            <p class="text-red-600">{{ $t(panError) }}</p>
                         </div>
                         <div class="flex items-center justify-between mt-8">
                             <button
                                 class="bg-[#40b751] mb-2 uppercase text-[13px] hover:bg-blue-dark text-white py-2 px-8 rounded-lg"
                                 type="submit" @click="register()">
-                                Register
+                                {{ $t('Register') }}
                             </button>
                         </div>
-                        <span class="block text-gray-600 text-base  mb-2"> Already have an account? <router-link
-                                to="/sadbhavna/login" class="text-[#40b751]">Sign In</router-link></span>
+                        <span class="block text-gray-600 text-base  mb-2"> {{ $t('Already have an account?') }} <router-link
+                                to="/sadbhavna/login" class="text-[#40b751]">{{ $t('Sign In') }}</router-link></span>
                         <!-- <a href="/sadbhavna/login">Already have an account? Sign In</a> -->
 
                         <!-- <p class="text-grey text-xs mt-1"></p> -->
@@ -108,6 +109,8 @@ export default {
     },
     data() {
         return {
+            last_name: '',
+            lastNameError: '',
             first_name: '',
             firstNameError: '',
             last_name: '',
@@ -188,40 +191,43 @@ export default {
             //     // return true;
             // }
             if (this.first_name == '') {
-                this.firstNameError = 'Enter first name!'
+                this.firstNameError = 'Enter first name'
+            }
+            if (this.last_name == '') {
+                this.lastNameError = 'Enter last name'
             }
             if (this.email == '') {
-                this.emailError = 'Enter email!'
+                this.emailError = 'Enter email'
             }
             else if (email.test(this.email) == false && this.email) {
-                this.emailError = 'Enter valid email!'
+                this.emailError = 'Enter valid email'
                 console.log('email')
             }
             if (this.password == '') {
-                this.passwordError = 'Enter password!'
+                this.passwordError = 'Enter password'
             }
             else if (this.password && pw.test(this.password) == false) {
-                this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character!'
+                this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
                 console.log('pw')
             }
             if (this.conform_password == '') {
                 this.confirmPasswordError = 'Enter confirm password'
             }
             if (this.conform_password != this.password) {
-                this.confirmPasswordError = 'Your password is not match!'
+                this.confirmPasswordError = 'Your password is not match'
             }
             if (this.phone_number == '') {
-                this.phoneNumberError = 'Enter phone!'
+                this.phoneNumberError = 'Enter phone'
             }
             else if (this.phone_number && phone.test(this.phone_number) == false) {
-                this.phoneNumberError = 'Enter valid phone number!'
+                this.phoneNumberError = 'Enter valid phone number'
                 console.log('phone')
             }
             if (this.pan_number == '') {
-                this.panError = 'Enter PAN number!'
+                this.panError = 'Enter PAN number'
             }
             else if (this.pan_number && pan.test(this.pan_number) == false) {
-                this.panError = 'Enter valid PAN number!'
+                this.panError = 'Enter valid PAN number'
                 console.log('PAN')
             }
             else {
@@ -236,6 +242,8 @@ export default {
                 })
 
             }
+
+            // }
             // if (!this.first_name && !this.email && !this.password && !this.conform_password && !this.phone_number && !this.pan_number) {
             //     this.firstNameError = 'Enter valid firstname!'
             //     this.emailError = 'Enter valid email!'
