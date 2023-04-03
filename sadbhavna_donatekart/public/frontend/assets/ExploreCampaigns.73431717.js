@@ -1,0 +1,1 @@
+import{N as n,F as t}from"./Footer.86e107bc.js";import{_ as s,o as c,c as p,k as o,F as m,r as e}from"./index.4a3c47e4.js";const _={name:"Explore Campaigns",components:{Navbar:n,Footer:t}};function l(f,i,F,d,u,v){const a=e("Navbar"),r=e("Footer");return c(),p(m,null,[o(a),o(r)],64)}var $=s(_,[["render",l]]);export{$ as default};

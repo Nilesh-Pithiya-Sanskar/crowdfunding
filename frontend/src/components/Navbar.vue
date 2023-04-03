@@ -121,10 +121,10 @@ export default {
       showMenu: false,
       showDialog: false,
       language: localStorage.getItem('lang') || window.navigator.language,
-      languages: [{'key': 'en-GB', 'value': 'English'}, {'key': 'gu', 'value':'ગુજરાતી'}, {'key':'hi', 'value':'हिंदी'}],
+      languages: [{'key': 'en-US', 'value': 'English'}, {'key': 'gu', 'value':'ગુજરાતી'}, {'key':'hi', 'value':'हिंदी'}],
       // languages: ['English', 'ગુજરાતી', 'हिंदी']
-      n: window.navigator.language,
-      l: localStorage.getItem('lang')
+      // n: window.navigator.language,
+      // l: localStorage.getItem('lang')
     }
   },
   mounted(){
