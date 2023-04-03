@@ -50,7 +50,7 @@
     <section class="container mx-auto h-full">
       <div class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[60px] pl-4 lg:pl-0 pr-4 lg:pr-0">
         <div class="bg-white rounded-xl drop-shadow-xl">
-          <Sliders :featured_campaigns="featured_campaigns" :interval="3000" />
+          <Sliders :featured_campaigns="featured_campaigns" :interval="3000" :lang="lang" />
         </div>
       </div>
     </section>
@@ -347,7 +347,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{$t('Protection')}}</p>
-            <p class="text-[#aaa]">Lorem ipsum dolor sit.</p>
+            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
           </div>
         </div>
 
@@ -358,7 +358,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{$t('Prevention')}}</p>
-            <p class="text-[#aaa]">Lorem ipsum dolor sit.</p>
+            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
           </div>
         </div>
 
@@ -369,7 +369,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{$t('Treatments')}}</p>
-            <p class="text-[#aaa]">Lorem ipsum dolor sit.</p>
+            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
           </div>
         </div>
 
@@ -380,7 +380,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{$t('Symptoms')}}</p>
-            <p class="text-[#aaa]">Lorem ipsum dolor sit.</p>
+            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
           </div>
         </div>
 
@@ -401,8 +401,8 @@
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 "
                 src="../../src/assets/Inter/img/nationalbusinessawards.jpeg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">National Business Excellence And</p>
-                <p class="text-[#364958] font-bold text-[20px] leading-6"> Achievers Award</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('National Business Excellence And')}}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6"> {{$t('Achievers Award')}}</p>
                 <p class="text-[#364958] font-bold pt-2">2021</p>
               </div>
             </div>
@@ -410,7 +410,7 @@
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennailogo.jpg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">Top Ten Startups In Hyderabad</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('Top Ten Startups In Hyderabad')}}</p>
                 <p class="text-[#364958] font-bold pt-2">2020</p>
               </div>
             </div>
@@ -419,7 +419,7 @@
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96"
                 src="../../src/assets/Inter/img/socialenterpriceaward.jpg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">Social Enterprise Challenge Award</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('Social Enterprise Challenge Award')}}</p>
                 <p class="text-[#364958] font-bold pt-2">2018</p>
               </div>
             </div>
@@ -427,7 +427,7 @@
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/NASSCOM.jpg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">NASSCOM Social Innovation Award</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('NASSCOM Social Innovation Award')}}</p>
                 <p class="text-[#364958] font-bold pt-2">2018</p>
               </div>
             </div>
@@ -435,8 +435,8 @@
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/indianextress.png">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">Indian Express 40</p>
-                <p class="text-[#364958] font-bold text-[20px] leading-6">nder 40</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('Indian Express 40')}}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('under 40')}}</p>
                 <p class="text-[#364958] font-bold pt-2">2021</p>
               </div>
             </div>

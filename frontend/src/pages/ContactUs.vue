@@ -25,11 +25,11 @@
         <div class="grid justify-items-center">
             <div class="px-4 pb-28 md:pb-32 lg:pb-48 pt-8 md:pt-32 lg:pt-32">
                 <p class="text-[#40b751] tracking-widest text-center uppercase font-bold text-xs">
-                    contact
+                    {{ $t('contact') }}
                 </p>
                 <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
                     class="text-[#40b751] font-sans text-center font-semibold pb-1 text-[28px] md:text-[32px] lg:text-[43px] [text-shadow:3px 6px 6px #c9c9c9]">
-                    Get In Touch
+                    {{ $t('Get In Touch') }}
                 </h1>
                 <p class="text-gray-600 text-center leading-7 max-w-lg">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a, nulla incidunt eaque sit
@@ -57,101 +57,101 @@
 
                     <div class="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                         <div class=" mr-2 mb-6">
+                            <label class="block text-gray-700 text-sm mb-2" for="">
+                                {{ $t('First name') }} <span class="text-red-600">*</span>
+                            </label>
+                            <input v-model="first_name" type="text" placeholder="Firstname" @keyup="firstNameError = ''"
+                                class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+                            <p class="text-red-600">{{ $t('firstNameError') }}</p>
+                            <!-- <p>{{ error }}</p> -->
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm mb-2" for="">
+                                {{ $t('Last name') }}
+                            </label>
+                            <input v-model="last_name" type="text" placeholder="Lastname"
+                                class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+
+                        </div>
+                    </div>
+                    <div class="form-group mb-6">
                         <label class="block text-gray-700 text-sm mb-2" for="">
-                            First name <span class="text-red-600">*</span>
+                            {{ $t('Email') }} <span class="text-red-600">*</span>
                         </label>
-                        <input v-model="first_name" type="text" placeholder="Firstname"
-                            class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
-                        <p class="text-red-600">{{ firstNameError }}</p>
+                        <input v-model="email_id" type="email" placeholder="Email" @keyup="emailError = ''"
+                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <!-- <span v-if="msg.email_id" className="text-danger mrgnbtn">{{ msg.email_id }}</span> -->
+                        <p class="text-red-600">{{ $t('emailError') }}</p>
                         <!-- <p>{{ error }}</p> -->
                     </div>
 
-                    <div class="mb-6">
+                    <div class="form-group mb-6">
                         <label class="block text-gray-700 text-sm mb-2" for="">
-                            Last name
+                            {{ $t('Subject') }} <span class="text-red-600">*</span>
                         </label>
-                        <input v-model="last_name" type="text" placeholder="Lastname"
-                            class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+                        <input v-model="subject" type="text" placeholder="Subject" @keyup="subjectError = ''"
+                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <p class="text-red-600">{{ $t(subjectError) }}</p>
+                        <!-- <p>{{ error }}</p> -->
+                    </div>
 
+                    <div class="form-group mb-6">
+                        <label class="block text-gray-700 text-sm mb-2" for="">
+                            {{ $t('Message') }}
+                        </label>
+                        <textarea v-model="message" placeholder="Message"
+                            class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none"
+                            rows="3"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                        @click="contact_us()">{{ $t('submit') }}
+                    </button>
+
+                </div>
+
+
+
+                <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
+                    <p class="text-base font-bold mb-6">Quick info</p>
+                    <div class="pb-4">
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center ">
+                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
+                        </div>
+                        <p class="text-black-500 mb-2 pt-2 pl-14">Fake street, 3929, London</p>
+                    </div>
+                    <div class="pb-4">
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
+                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/phonecall.png" />
+                        </div>
+                        <a href="#">
+                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+ 1 291 2909 392</p>
+                        </a>
+                    </div>
+                    <div class="pb-4">
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center  ">
+                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
+                        </div>
+                        <a href="#">
+                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@mydomain.com</p>
+                        </a>
+                    </div>
+                    <div class="pb-4">
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center  ">
+                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/worldwide.png" />
+                        </div>
+                        <a href="#">
+                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">https://mywebsite.com</p>
+                        </a>
                     </div>
                 </div>
-                <div class="form-group mb-6">
-                    <label class="block text-gray-700 text-sm mb-2" for="">
-                        Email <span class="text-red-600">*</span>
-                    </label>
-                    <input v-model="email_id" type="email" placeholder="Email"
-                        class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
-                    <!-- <span v-if="msg.email_id" className="text-danger mrgnbtn">{{ msg.email_id }}</span> -->
-                    <p class="text-red-600">{{ emailError }}</p>
-                    <!-- <p>{{ error }}</p> -->
-                </div>
-
-                <div class="form-group mb-6">
-                    <label class="block text-gray-700 text-sm mb-2" for="">
-                        Subject <span class="text-red-600">*</span>
-                    </label>
-                    <input v-model="subject" type="text" placeholder="Subject"
-                        class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal  bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
-                    <p class="text-red-600">{{ subjectError }}</p>
-                    <!-- <p>{{ error }}</p> -->
-                </div>
-
-                <div class="form-group mb-6">
-                    <label class="block text-gray-700 text-sm mb-2" for="">
-                        Message
-                    </label>
-                    <textarea v-model="message" placeholder="Message"
-                        class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none"
-                        rows="3"></textarea>
-                </div>
-
-                <button type="submit"
-                    class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
-                    @click="contact_us()">submit
-                </button>
 
             </div>
-
-
-
-            <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
-                <p class="text-base font-bold mb-6">Quick info</p>
-                <div class="pb-4">
-                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center ">
-                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
-                    </div>
-                    <p class="text-black-500 mb-2 pt-2 pl-14">Fake street, 3929, London</p>
-                </div>
-                <div class="pb-4">
-                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
-                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/phonecall.png" />
-                    </div>
-                    <a href="#">
-                        <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+ 1 291 2909 392</p>
-                    </a>
-                </div>
-                <div class="pb-4">
-                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center  ">
-                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
-                    </div>
-                    <a href="#">
-                        <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@mydomain.com</p>
-                    </a>
-                </div>
-                <div class="pb-4">
-                    <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center  ">
-                        <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/worldwide.png" />
-                    </div>
-                    <a href="#">
-                        <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">https://mywebsite.com</p>
-                    </a>
-                </div>
-            </div>
-
-    </div>
-    </section>
-    <!-- Section: Design Block -->
+        </section>
+        <!-- Section: Design Block -->
 
     </div>
     <!-- Container for demo purpose -->
@@ -246,16 +246,41 @@ export default {
 
 
 
-        validEmail: function (email_id) {
-            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(email_id);
-        },
+        // validEmail: function (email_id) {
+        //     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //     return re.test(email_id);
+        // },
 
-        validName: function (first_name) {
-            var re = /^[A-Za-z]+$/;
-            return re.test(first_name)
-        },
+        // validName: function (first_name) {
+        //     var re = /^[A-Za-z]+$/;
+        //     return re.test(first_name)
+        // },
         contact_us() {
+            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!this.first_name && !this.email_id && !this.subject) {
+                this.firstNameError = 'Enter first name!'
+                this.emailError = 'Enter email!'
+                this.subjectError = 'Enter subject!'
+            }
+            else if (!this.email_id) {
+                this.emailError = 'Enter email!'
+            }
+            else if (re.test(this.email_id) == false) {
+                this.emailError = 'Enter valid email!'
+            }
+            else {
+                this.$resources.contact_us.submit({
+                    first_name: this.first_name,
+                    last_name: this.last_name,
+                    email_id: this.email_id,
+                    subject: this.subject,
+                    message: this.message,
+                })
+            }
+
+
+
+
             // if (this.first_name && this.email_id && this.subject) {
             //     this.error == false
             //     return true;
@@ -330,46 +355,48 @@ export default {
             // } else if (!this.validEmail(this.email)) {
             //     this.errors.push('Valid email required.');
             // }
-            if (!this.first_name && !this.email_id && !this.subject) {
-                this.firstNameError = 'Enter valid firstname!'
-                this.emailError = 'Enter valid email!'
-                this.subjectError = 'Enter valid subject!'
-                this.error == true
-                // return true;
-            }
 
-            else if (this.first_name == '' || !this.validName(this.first_name)) {
-                // this.first_name == this.error
-                this.firstNameError = 'Enter valid firstname!'
-                this.error = true
-                console.log('firstname')
-            }
-            else if (this.email_id == '' || !this.validEmail(this.email_id)) {
-                // this.email_id == this.error
-                this.emailError = 'Enter valid email!'
-                this.error = true
-                console.log('email')
-            }
-            else if (this.subject == '') {
-                // this.subject == this.error
-                this.subjectError = 'Enter valid subject!'
-                this.error = true
-                console.log('subject')
-            }
-            // else if (this.error == true) {
-            //     console.log('error')
+
+            // if (!this.first_name && !this.email_id && !this.subject) {
+            //     this.firstNameError = 'Enter valid firstname!'
+            //     this.emailError = 'Enter valid email!'
+            //     this.subjectError = 'Enter valid subject!'
+            //     this.error == true
+            //     // return true;
             // }
-            else {
-                console.log('done')
-                this.$resources.contact_us.submit({
-                    first_name: this.first_name,
-                    last_name: this.last_name,
-                    email_id: this.email_id,
-                    subject: this.subject,
-                    message: this.message,
-                })
-                this.error == false
-            }
+
+            // else if (this.first_name == '' || !this.validName(this.first_name)) {
+            //     // this.first_name == this.error
+            //     this.firstNameError = 'Enter valid firstname!'
+            //     this.error = true
+            //     console.log('firstname')
+            // }
+            // else if (this.email_id == '' || !this.validEmail(this.email_id)) {
+            //     // this.email_id == this.error
+            //     this.emailError = 'Enter valid email!'
+            //     this.error = true
+            //     console.log('email')
+            // }
+            // else if (this.subject == '') {
+            //     // this.subject == this.error
+            //     this.subjectError = 'Enter valid subject!'
+            //     this.error = true
+            //     console.log('subject')
+            // }
+            // // else if (this.error == true) {
+            // //     console.log('error')
+            // // }
+            // else {
+            //     console.log('done')
+            //     this.$resources.contact_us.submit({
+            //         first_name: this.first_name,
+            //         last_name: this.last_name,
+            //         email_id: this.email_id,
+            //         subject: this.subject,
+            //         message: this.message,
+            //     })
+            //     this.error == false
+            // }
 
 
 

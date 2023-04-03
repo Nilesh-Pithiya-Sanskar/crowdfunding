@@ -18,7 +18,8 @@
                                         class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="first_name" type="text" placeholder="First name" required>
+                                    v-model="first_name" @keyup="firstNameError = ''" type="text" placeholder="First name"
+                                    required>
                                 <p class="text-red-600">{{ firstNameError }}</p>
                             </div>
                             <div class="mb-4">
@@ -33,7 +34,7 @@
                                 Address <span class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="email" type="email" placeholder="Address" required>
+                                v-model="email" type="email" @keyup="emailError = ''" placeholder="Address" required>
                             <p class="text-red-600">{{ emailError }}</p>
                         </div>
                         <div class="mb-4">
@@ -41,7 +42,8 @@
                                     class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="password" type="password" placeholder="Password" required>
+                                v-model="password" type="password" @keyup="passwordError = ''" placeholder="Password"
+                                required>
                             <p class="text-red-600">{{ passwordError }}</p>
                         </div>
                         <div class="mb-4">
@@ -49,7 +51,8 @@
                                 Password <span class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="conform_password" type="password" placeholder="Confirm password" required>
+                                v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
+                                placeholder="Confirm password" required>
                             <p class="text-red-600">{{ confirmPasswordError }}</p>
                         </div>
                         <div class="mb-4">
@@ -57,7 +60,8 @@
                                 Number <span class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="phone_number" type="number" placeholder="Phone number" required>
+                                v-model="phone_number" type="number" @keyup="phoneNumberError = ''"
+                                placeholder="Phone number" required>
                             <p class="text-red-600">{{ phoneNumberError }}</p>
                         </div>
                         <div class="mb-4">
@@ -65,7 +69,7 @@
                                 Number <span class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  ho ver:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="pan_number" type="text" placeholder="PAN number" required>
+                                v-model="pan_number" type="text" @keyup="panError = ''" placeholder="PAN number" required>
                             <p class="text-red-600">{{ panError }}</p>
                         </div>
                         <div class="flex items-center justify-between mt-8">
@@ -147,73 +151,78 @@ export default {
     },
     methods: {
 
-        validPassword: function (password) {
-            var re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-            return re.test(password);
-        },
-        validEmail: function (email) {
-            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(email);
-        },
+        // validPassword: function (password) {
+        //     var re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+        //     return re.test(password);
+        // },
+        // validEmail: function (email) {
+        //     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //     return re.test(email);
+        // },
 
-        validPhone: function (phone_number) {
-            var re = /^[6-9][0-9]{9}$/;
-            return re.test(phone_number);
-        },
-        validName: function (first_name) {
-            var re = /^[A-Za-z]+$/;
-            return re.test(first_name)
-        },
-        validPAN: function (pan_number) {
-            var re = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-            return re.test(pan_number)
-        },
+        // validPhone: function (phone_number) {
+        //     var re = /^[6-9][0-9]{9}$/;
+        //     return re.test(phone_number);
+        // },
+        // validName: function (first_name) {
+        //     var re = /^[A-Za-z]+$/;
+        //     return re.test(first_name)
+        // },
+        // validPAN: function (pan_number) {
+        //     var re = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+        //     return re.test(pan_number)
+        // },
         register() {
-            if (!this.first_name && !this.email && !this.password && !this.conform_password && !this.phone_number && !this.pan_number) {
-                this.firstNameError = 'Enter valid firstname!'
-                this.emailError = 'Enter valid email!'
-                this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character!'
-                this.confirmPasswordError = 'Your password is not match!'
-                this.phoneNumberError = 'Enter valid phone number!'
-                this.panError = 'Enter valid PAN number'
-                this.error == true
-                // return true;
+            var pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            var email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var phone = /^[6-9]\d{9}$/;
+            var pan = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+            // if (!this.first_name && !this.email && !this.password && !this.conform_password && !this.phone_number && !this.pan_number) {
+            //     this.firstNameError = 'Enter firstname!'
+            //     this.emailError = 'Enter email!'
+            //     this.passwordError = 'Enter password'
+            //     this.confirmPasswordError = 'Your password is not match!'
+            //     this.phoneNumberError = 'Enter phone!'
+            //     this.panError = 'Enter PAN number'
+            //     // this.error == true
+            //     // return true;
+            // }
+            if (this.first_name == '') {
+                this.firstNameError = 'Enter first name!'
             }
-            else if (this.first_name == '' || !this.validName(this.first_name)) {
-                // this.first_name == this.error
-                this.firstNameError = 'Enter valid firstname!'
-                this.error = true
-                console.log('firstname')
+            if (this.email == '') {
+                this.emailError = 'Enter email!'
             }
-            else if (this.email == '' || !this.validEmail(this.email)) {
-                // this.email_id == this.error
+            else if (email.test(this.email) == false && this.email) {
                 this.emailError = 'Enter valid email!'
-                this.error = true
                 console.log('email')
             }
-            else if (this.password == '' || !this.validPassword(this.password)) {
-                // this.subject == this.error
+            if (this.password == '') {
+                this.passwordError = 'Enter password!'
+            }
+            else if (this.password && pw.test(this.password) == false) {
                 this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character!'
-                this.error = true
-                console.log('password')
+                console.log('pw')
             }
-            else if (this.conform_password == '' || this.conform_password != this.password) {
-                // this.subject == this.error
+            if (this.conform_password == '') {
+                this.confirmPasswordError = 'Enter confirm password'
+            }
+            if (this.conform_password != this.password) {
                 this.confirmPasswordError = 'Your password is not match!'
-                this.error = true
-                console.log('con_pw')
             }
-            else if (this.phone_number == '' || !this.validPhone(this.phone_number)) {
-                // this.subject == this.error
+            if (this.phone_number == '') {
+                this.phoneNumberError = 'Enter phone!'
+            }
+            else if (this.phone_number && phone.test(this.phone_number) == false) {
                 this.phoneNumberError = 'Enter valid phone number!'
-                this.error = true
                 console.log('phone')
             }
-            else if (this.pan_number == '' || !this.validPAN(this.pan_number)) {
-                // this.subject == this.error
-                this.panError = 'Enter valid PAN number'
-                this.error = true
-                console.log('pan')
+            if (this.pan_number == '') {
+                this.panError = 'Enter PAN number!'
+            }
+            else if (this.pan_number && pan.test(this.pan_number) == false) {
+                this.panError = 'Enter valid PAN number!'
+                console.log('PAN')
             }
             else {
                 console.log('done')
@@ -225,10 +234,68 @@ export default {
                     phone_number: this.phone_number,
                     pan_number: this.pan_number
                 })
-                this.error == false
-
 
             }
+            // if (!this.first_name && !this.email && !this.password && !this.conform_password && !this.phone_number && !this.pan_number) {
+            //     this.firstNameError = 'Enter valid firstname!'
+            //     this.emailError = 'Enter valid email!'
+            //     this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character!'
+            //     this.confirmPasswordError = 'Your password is not match!'
+            //     this.phoneNumberError = 'Enter valid phone number!'
+            //     this.panError = 'Enter valid PAN number'
+            //     this.error == true
+            //     // return true;
+            // }
+            // else if (this.first_name == '' || !this.validName(this.first_name)) {
+            //     // this.first_name == this.error
+            //     this.firstNameError = 'Enter valid firstname!'
+            //     this.error = true
+            //     console.log('firstname')
+            // }
+            // else if (this.email == '' || !this.validEmail(this.email)) {
+            //     // this.email_id == this.error
+            //     this.emailError = 'Enter valid email!'
+            //     this.error = true
+            //     console.log('email')
+            // }
+            // else if (this.password == '' || !this.validPassword(this.password)) {
+            //     // this.subject == this.error
+            //     this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character!'
+            //     this.error = true
+            //     console.log('password')
+            // }
+            // else if (this.conform_password == '' || this.conform_password != this.password) {
+            //     // this.subject == this.error
+            //     this.confirmPasswordError = 'Your password is not match!'
+            //     this.error = true
+            //     console.log('con_pw')
+            // }
+            // else if (this.phone_number == '' || !this.validPhone(this.phone_number)) {
+            //     // this.subject == this.error
+            //     this.phoneNumberError = 'Enter valid phone number!'
+            //     this.error = true
+            //     console.log('phone')
+            // }
+            // else if (this.pan_number == '' || !this.validPAN(this.pan_number)) {
+            //     // this.subject == this.error
+            //     this.panError = 'Enter valid PAN number'
+            //     this.error = true
+            //     console.log('pan')
+            // }
+            // else {
+            //     console.log('done')
+            //     this.$resources.register.submit({
+            //         first_name: this.first_name,
+            //         last_name: this.last_name,
+            //         email: this.email,
+            //         password: this.password,
+            //         phone_number: this.phone_number,
+            //         pan_number: this.pan_number
+            //     })
+            //     this.error == false
+
+
+            // }
 
 
             // if (this.first_name == '') {

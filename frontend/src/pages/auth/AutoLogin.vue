@@ -34,7 +34,7 @@
                                 <button
                                     class="appearance-none border-gray-600 lg:ml-2 mb-5 sm:ml-2 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_sms()">
-                                    {{ $t('Login with SMS') }}</button>
+                                    {{ $t('Login With SMS') }}</button>
 
                             </div>
                             <div class="mb-4">
@@ -114,7 +114,7 @@
                             </div>
                             <div class="mb-4">
                                 <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                        href="/sadbhavna/login">{{ $t('Login') }} </a> &nbsp;via ID {{ $t('Password')
+                                        href="/sadbhavna/login">{{ $t('Login') }} </a> &nbsp;{{$t('via ID')}} {{ $t('Password')
                                         }}</span>
                             </div>
                         </div>

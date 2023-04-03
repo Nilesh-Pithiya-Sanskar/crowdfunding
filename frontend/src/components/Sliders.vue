@@ -16,8 +16,16 @@
           <div class="fontfamily fontcolor md:col-span-2 lg:col-span-3">
             <button
               class="bg-[#364958] text-base rounded-lg pl-4 pr-4 pt-2 pb-2 text-white mb-2 md:mt-3">{{ $t('Featured') }}</button>
-            <h3 class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold mb-2">{{ $t(data.campaign_title) }}</h3>
-            <p class="text-[#364958] mb-[16px] leading-7">
+            <h3 v-if="lang == 'gu' && data.campaign_title_gu" class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold mb-2">{{ $t(data.campaign_title_gu) }}</h3>
+            <h3 v-else-if="lang == 'hi' && data.campaign_title_hi" class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold mb-2">{{ $t(data.campaign_title_hi) }}</h3>
+            <h3 v-else class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold mb-2">{{ $t(data.campaign_title) }}</h3>
+            <p v-if="lang == 'gu' && data.short_description_gu" class="text-[#364958] mb-[16px] leading-7">
+              {{ data.short_description_gu }}
+            </p>
+            <p v-else-if="lang == 'hi' && data.short_description_hi" class="text-[#364958] mb-[16px] leading-7">
+              {{ data.short_description_hi }}
+            </p>
+            <p v-else class="text-[#364958] mb-[16px] leading-7">
               {{ data.short_description }}
             </p>
             <button class="text-[#40b751] font-bold" type="button" @click="donate(data.name)">{{ $t('Donate Now') }}</button>
@@ -25,7 +33,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
   
@@ -42,6 +49,10 @@ export default {
     interval: {
       type: Number,
       default: 4000
+    },
+    lang: {
+      type: String,
+      required: true
     }
   },
   setup(props) {

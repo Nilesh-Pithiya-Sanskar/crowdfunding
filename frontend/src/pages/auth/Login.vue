@@ -6,16 +6,16 @@
         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
           <div class="flex-auto px-4 lg:px-10 py-10 pt-5">
             <div class="text-blueGray-400 text-center mb-3 font-bold text-[40px] md:text-[45px] lg:text-[45px]">
-              <small>sign in </small>
+              <small>{{$t('Sign In')}} </small>
             </div>
             <form>
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                  Email <span class="text-red-600">*</span>
+                  {{$t('Email')}} <span class="text-red-600">*</span>
                 </label>
                 <input v-model="email" type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  placeholder="Email" required />
+                  :placeholder="$t('Email')" required />
                 <p class="text-red-600">{{ emailError }}</p>
               </div>
 
@@ -25,7 +25,7 @@
                 </label>
                 <input v-model="password" type="password"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  placeholder="Password" required />
+                  :placeholder="$t('Password')" required />
                 <p class="text-red-600">{{ passwordError }}</p>
 
               </div>
@@ -37,8 +37,10 @@
                   {{$t('Sign In')}}
                 </button>
               </div>
-              <router-link to="/sadbhavna/registration" class="text-green-500">{{$t('Register')}}</router-link><br>
-              <router-link to="auto-login" class="text-green-500">{{$t('Other Login Method')}}</router-link>
+              <div class="grid md:grid-cols-2 sm:grid-cols-2">
+                <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
+                <router-link to="/sadbhavna/registration" class="text-green-500 text-right">{{$t('Register')}}</router-link>
+              </div>
             </form>
           </div>
         </div>

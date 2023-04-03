@@ -28,14 +28,14 @@
                                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
                                     <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                         <a class="mb-3 md:mb-0 lg:mb-0 cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block "
-                                            v-on:click="toggleTabs(1)"
+                                            v-on:click="toggleTabs(1)" @click="resetForm"
                                             v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1 }">
                                             NGO
                                         </a>
                                     </li>
                                     <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                         <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
-                                            v-on:click="toggleTabs(2)"
+                                            v-on:click="toggleTabs(2)" @click="resetForm"
                                             v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 2, 'text-white bg-[#40b751]': openTab === 2 }">
                                             Individual Group
                                         </a>
@@ -43,7 +43,7 @@
                                 </ul>
                                 <div class="px-4 py-2 flex-auto">
                                     <div class="tab-content tab-space">
-                                        <div v-if="openTab == 1" class="py-4 px-8">
+                                        <div class="py-4 px-8">
                                             <div class="mb-4">
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">Full
                                                     Name <span class="text-red-600">*</span></label>
@@ -52,7 +52,7 @@
                                                     placeholder="Enter Full Name" v-model="full_name" type="text">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
-                                            <div 
+                                            <div v-if="openTab == 1"
                                                 class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                                                 <div class="mb-4">
                                                     <label class="block text-gray-600 text-base  mb-2">Organisation
@@ -77,7 +77,7 @@
                                                             class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" placeholder="Enter Phone Number" v-model="phone">
+                                                        type="number" placeholder="Enter Phone Number" v-model="phone">
                                                     <p class="text-red-600">{{ phoneError }}</p>
                                                 </div>
                                                 <div class="mb-6">
@@ -120,68 +120,7 @@
                                                     @click="request_campaign()">Campaign Request</button>
                                                 <button
                                                    class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
-                                                    @click="request_campaign()">Reset Form</button>
-                                            </div>
-                                        </div>
-                                        <div v-if="openTab == 2" class="py-4 px-8">
-                                            <div class="mb-4">
-                                                <label class="block text-gray-600 text-base  mb-2" for="email">Full
-                                                    Name <span class="text-red-600">*</span></label>
-                                                <input
-                                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    v-model="full_nameindividualgroup" placeholder="Enter Full Name" type="text">
-                                                <p class="text-red-600">{{ fullNameErrorindividualgroup }}</p>
-                                            </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-                                                <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Phone <span
-                                                            class="text-red-600">*</span></label>
-                                                    <input
-                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" placeholder="Enter Phone Number" v-model="phoneindividualgroup">
-                                                    <p class="text-red-600">{{ phoneErrorindividualgroup }}</p>
-                                                </div>
-                                                <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Email <span
-                                                            class="text-red-600">*</span></label>
-                                                    <input
-                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="email" placeholder="Enter Email" v-model="emailindividualgroup">
-                                                    <p class="text-red-600">{{ emailErrorindividualgroup }}</p>
-                                                </div>
-                                                <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Social Media
-                                                        Page</label>
-                                                    <input
-                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" placeholder="Enter Social Media Page" v-model="social_media_pageindividualgroup">
-
-                                                </div>
-                                            </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-                                                <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Campaign
-                                                        Story <span class="text-red-600">*</span></label>
-                                                    <textarea id="comment" rows="4" v-model="campaign_storyindividualgroup"
-                                                        class="hover:border-[#40b751] placeholder-gray-400 w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Campaign Story"></textarea>
-                                                    <p class="text-red-600">{{ campaignStoryErrorindividualgroup }}</p>
-                                                </div>
-                                                <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">Beneficiary
-                                                        Group <span class="text-red-600">*</span></label>
-                                                    <textarea id="comment" rows="4" v-model="beneficiary_groupindividualgroup"
-                                                        class="hover:border-[#40b751] placeholder-gray-400 w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Beneficiary Group"></textarea>
-
-                                                    <p class="text-red-600">{{ beneficiaryGroupErrorindividualgroup }}</p>
-                                                </div>
-                                            </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
-                                                <button
-                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
-                                                    @click="request_campaign()">Campaign Request</button>
-                                                <button
-                                                   class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
-                                                    @click="request_campaign()">Reset Form</button>
+                                                    @click="resetForm">Reset Form</button>
                                             </div>
                                         </div>
                                     </div>
@@ -211,32 +150,21 @@ export default {
         return {
             openTab: 1,
             full_name: '',
-            full_nameindividualgroup: '',
             fullNameError: '',
-            fullNameErrorindividualgroup: '',
             campaign_type: '',
             organisation_name: '',
             organizationNameError: '',
             organisation_website: '',
             email: '',
-            emailindividualgroup: '',
             emailError: '',
-            emailErrorindividualgroup: '',
             phone: '',
-            phoneindividualgroup: '',
             phoneError: '',
-            phoneErrorindividualgroup: '',
             error: false,
             campaign_story: '',
-            campaign_storyindividualgroup: '', 	
             campaignStoryError: '',
-            campaignStoryErrorindividualgroup: '',
             social_media_page: '',
-            social_media_pageindividualgroup: '',
             beneficiary_group: '',
-            beneficiary_groupindividualgroup: '',
             beneficiaryGroupError: '',
-            beneficiaryGroupErrorindividualgroup: ''
         }
     },
     // watch: {
@@ -277,6 +205,20 @@ export default {
     },
 
     methods: {
+       resetForm() {
+            // this.detail = '';
+            // this.individualgroup = ''
+            // this.$refs.form.resetFields()
+            // this.$refs.individualgroup.resetFields()
+            this.full_name = "";
+            this.organisation_name = "";
+            this.organisation_website = "";
+            this.phone = "";
+            this.email = "";
+            this.social_media_page = "";
+            this.campaign_story = "";
+            this.beneficiary_group = "";
+        },
         toggleTabs: function (tabNumber) {
             this.openTab = tabNumber
             this.tab = this.tabNumber

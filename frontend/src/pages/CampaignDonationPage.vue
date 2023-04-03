@@ -33,8 +33,8 @@
                 <div class="w-full lg:w-8/12 pr-4">
                     <!-- <DonationDetail /> -->
                     <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] justify-between font-bold">
-                        <p>{{$t('Raised:')}} {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
-                        <p>{{$t('Goal:')}} {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
+                        <p>{{$t('Raised')}}: {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
+                        <p>{{$t('Goal')}}: {{ numberWithCommas(campaign_detail.data.donation_amount) }}</p>
                     </div>
                     <div class="w-full h-[16px] bg-gray-200 rounded-md dark:bg-gray-700">
                         <!-- <div class="bg-green-500 text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md" style="width: 40%"> 40%</div> -->

@@ -6,7 +6,7 @@
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
               <img src="../../src/assets/Inter/img/logo-2.1.png"
-                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-32 lg:mr-32 w-20 lg:w-36 h-20 lg:h-44 ml-0 lg:ml-6" />
+                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-32 lg:mr-32 w-22 lg:w-32 h-24 lg:h-40 ml-0 lg:ml-6" />
             </a>
           </div>
           <!-- Mobile menu button -->
