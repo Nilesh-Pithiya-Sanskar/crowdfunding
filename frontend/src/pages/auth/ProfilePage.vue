@@ -41,7 +41,7 @@
                     <button v-if="!edit_profile" @click="edit()"
                       class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded lg:ml-0 md:ml-0 sm:ml-32 ease-linear transition-all duration-150"
                       type="button">
-                      Edit Profile
+                      {{$t('Edit Profile')}}
                     </button>
                   </div>
                 </div>
@@ -111,14 +111,12 @@
                               <div
                                 class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center mb-4">
                                 <div>
-                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">First
-                                    Name</label>
+                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">{{$t('First Name')}}</label>
                                   <input class="appearance-none form-control block border rounded w-full text-grey-darker"
                                     v-model="first_name" placeholder="Your first name" type="text" required />
                                 </div>
                                 <div>
-                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">Last
-                                    Name</label>
+                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">{{$t('Last Name')}}</label>
                                   <input class="appearance-none border form-control block rounded w-full text-grey-darker"
                                     v-model="last_name" type="text" placeholder="Your last name" required />
                                 </div>
@@ -244,7 +242,7 @@
                   </div>
                   <div v-else>
                     <div class="text-center font-bold text-gray-500">
-                      Donate Item to see Donations and Download Certificate
+                      {{$t('Donate Item to see Donations and Download Certificate')}}
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
                       <router-link to="/sadbhavna">{{$t('Click Here To Explore Campaign')}}</router-link>
@@ -252,7 +250,7 @@
                   </div>
                 </div>
                 <!-- if user role is ngo -->
-                <div v-else-if="roles.role == 'Ngo'">
+                <div v-else-if="roles.role == 'NGO'">
                   <!-- {{ campaign_details }} -->
                   <div v-if="campaign_details.data != ''" class="text-center text-2xl text-gray-600">
                     {{$t('Your Campaign')}}

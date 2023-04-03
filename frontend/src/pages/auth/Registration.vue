@@ -4,7 +4,7 @@
         <!-- <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div> -->
-        <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
+        <div class="w-full sm:pt-0 md:pt-5 lg:pt-6">
             <div class="container mx-auto py-0">
                 <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
                     <h1
@@ -23,10 +23,10 @@
                                 <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             </div>
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }}</label>
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }} <span class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="last_name" type="text" placeholder="Last name" required>
+                                    v-model="last_name" @keyup="firstNameError = ''" type="text" placeholder="Last name" required>
                                 <p class="text-red-600">{{ $t(lastNameError) }}</p>
                             </div>
                         </div>
