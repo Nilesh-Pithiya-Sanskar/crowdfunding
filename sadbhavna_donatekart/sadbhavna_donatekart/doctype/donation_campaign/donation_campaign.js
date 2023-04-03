@@ -11,6 +11,8 @@ frappe.ui.form.on('Donation Campaign', {
 		if(frm.doc.campaign_request){
 			frm.events.show_go_to_ngo_campaign_form(frm,"Donation Campaign Request",frm.doc.campaign_request);
 		}
+		frm.events.show_preview_campaign(frm)
+		frm.events.donate_now(frm)
 	},
 	before_save: function(frm) {
 		is_form_new = frm.doc.name.includes('new')
@@ -32,8 +34,30 @@ frappe.ui.form.on('Donation Campaign', {
 		frm.add_custom_button(__(`${type}`), function() {
 			frappe.set_route("Form",type,name);
 		});
+	},
+	show_preview_campaign: function(frm) {
+		// open NGO page
+		frm.add_custom_button(__(`Preview Campaign`), function() {
+			let html_link = '/'
+			window.open(`/sadbhavna/campaign-donation/${frm.doc.name}`, '_blank');
+		});
+	},
+});
+
+frappe.ui.form.on('Donation Campaign Item', {
+	price:function(frm){
+		donation_amount_calculation()
+	},
+	qty:function(frm){
+		donation_amount_calculation()
 	}
 });
+
+function donation_amount_calculation(){
+	cur_frm.doc.donation_amount = cur_frm.doc.add_campaign_items.reduce((total, item) => 
+										(item.qty||0) * (item.price||0) + total, 0);
+	cur_frm.refresh_field('donation_amount');
+}
 
 
 

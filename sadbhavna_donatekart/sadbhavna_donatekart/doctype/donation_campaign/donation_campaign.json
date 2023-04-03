@@ -11,16 +11,14 @@
  "field_order": [
   "details_tab",
   "campaign_title",
-  "campaign_title_hi",
-  "campaign_title_gu",
-  "column_break_2",
-  "status",
   "section_break_4",
-  "donation_amount",
-  "column_break_6",
-  "raised_amount",
-  "section_break_8",
+  "status",
+  "section_break_0gbxv",
+  "campaign_title_hi",
+  "column_break_7e2rr",
   "start_date",
+  "section_break_4gm4e",
+  "campaign_title_gu",
   "column_break_10",
   "end_date",
   "section_break_12",
@@ -28,6 +26,10 @@
   "column_break_14",
   "campain_image",
   "section_break_16",
+  "published",
+  "column_break_2",
+  "is_featured",
+  "section_break_0tx0a",
   "short_description",
   "short_description_gu",
   "short_description_hi",
@@ -39,16 +41,19 @@
   "ngo",
   "naming_series",
   "campaign_item_tab",
+  "donation_amount",
+  "column_break_6",
+  "raised_amount",
+  "column_break_2wrro",
   "add_campaign_items",
-  "route",
-  "published",
   "language"
  ],
  "fields": [
   {
    "fieldname": "raised_amount",
    "fieldtype": "Currency",
-   "label": "Raised Amount"
+   "label": "Raised Amount",
+   "read_only": 1
   },
   {
    "fieldname": "campaign_request",
@@ -65,7 +70,8 @@
   {
    "fieldname": "donation_amount",
    "fieldtype": "Currency",
-   "label": "Donation Amount"
+   "label": "Donation Amount",
+   "read_only": 1
   },
   {
    "fieldname": "about_campaign",
@@ -100,15 +106,11 @@
   },
   {
    "fieldname": "section_break_4",
-   "fieldtype": "Section Break"
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "column_break_6",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_8",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "column_break_10",
@@ -159,7 +161,8 @@
   {
    "fieldname": "campaign_item_tab",
    "fieldtype": "Tab Break",
-   "label": "Campaign Items"
+   "label": "Campaign Items",
+   "show_dashboard": 1
   },
   {
    "fieldname": "campaign_category",
@@ -167,11 +170,6 @@
    "label": "Campaign category",
    "options": "Donation Campaign Category",
    "reqd": 1
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "Route"
   },
   {
    "default": "0",
@@ -220,13 +218,43 @@
    "fieldname": "about_campaign_hi",
    "fieldtype": "Text",
    "label": "\u0905\u092d\u093f\u092f\u093e\u0928 \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
+  },
+  {
+   "fieldname": "column_break_2wrro",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "label": "Is Featured"
+  },
+  {
+   "fieldname": "section_break_0tx0a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_0gbxv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7e2rr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_4gm4e",
+   "fieldtype": "Section Break"
   }
  ],
- "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
- "links": [],
- "modified": "2023-04-03 11:32:43.365219",
+ "links": [
+  {
+   "link_doctype": "Donation",
+   "link_fieldname": "campaign"
+  }
+ ],
+ "modified": "2023-04-03 15:43:49.168404",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",
