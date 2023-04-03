@@ -131,7 +131,7 @@
                                         <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
                                             <div>
                                                 <button class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-2 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
-                                                @click="increment(products.item, products.price, qty=1)">{{ $t('Add') }}</button>
+                                                @click="increment(products.item, products.price, qty=1)">Add</button>
                                             </div>
                                         </div>
                                     </div>
@@ -191,10 +191,10 @@
                                             {{ item.rate }}
                                         </td> -->
                                         <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                            {{ $t(item.qty) }}
+                                            {{ item.qty }}
                                         </td>
                                         <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                            {{ $t(item.amount) }}
+                                            {{ item.amount }}
                                         </td>
                                     </tr>                                    
                                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">

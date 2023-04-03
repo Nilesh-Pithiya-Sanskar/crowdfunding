@@ -15,7 +15,8 @@
                         </div>
                         <div class="relative py-4 z-0 px-8">
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base mb-2" for="phone">{{ $t('Enter Your Number')}}</label>
+                                <label class="block text-gray-600 text-base mb-2" for="phone">{{ $t('Enter Your
+                                                                    Number')}}</label>
                                 <input @keyup="error = ''"
                                     :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
                                     v-model="phone" type="number">
@@ -32,7 +33,7 @@
                                     @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
 
                                 <button
-                                    class="appearance-none border-gray-600 lg:ml-2 mb-5 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    class="appearance-none border-gray-600 lg:ml-2 mb-5 sm:ml-2 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_sms()">
                                     {{ $t('Login with SMS') }}</button>
 
@@ -104,9 +105,10 @@
 
                             <div class="mb-4">
                                 <div class="flex mb-10 justify-between">
-                                    <span class="text-gray-600">{{ $t('Forget password?') }}
+                                    <!-- <span class="text-gray-600">{{ $t('Forget password?') }}
                                         <a class="text-[#40b751]" href="/sadbhavna/login">{{ $t('Click here') }}</a>
-                                    </span>
+                                    </span> -->
+                                    <a></a>
                                     <a class="text-[#40b751] font-bold text-lg" href="/sadbhavna/registration">{{
                                         $t('Register') }}</a>
                                 </div>
@@ -229,10 +231,10 @@ export default {
         login_with_whatsapp() {
             var re = /^[6-9][0-9]{9}$/;
             if (this.phone == '') {
-                this.error = 'Please Enter Mobile Number For Login With Whatsapp'
+                this.error = 'Please enter mobile number for login with Whatsapp'
             }
             else if (re.test(this.phone) == false) {
-                this.error = 'Please Enter 10 Digit Mobile Number'
+                this.error = 'Please enter 10 digit mobile number'
             }
             else {
                 this.error = ''
@@ -244,10 +246,10 @@ export default {
         login_with_sms() {
             var re = /^[6-9][0-9]{9}$/;
             if (this.phone == '') {
-                this.error = 'Please Enter Mobile Number For Login With SMS'
+                this.error = 'Please enter mobile number for login with SMS'
             }
             else if (re.test(this.phone) == false) {
-                this.error = 'Please Enter 10 Digit Mobile Number'
+                this.error = 'Please enter 10 digit mobile number'
             }
             else {
                 this.$resources.login_with_sms.submit({

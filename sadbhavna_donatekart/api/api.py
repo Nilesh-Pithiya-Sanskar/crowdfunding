@@ -362,12 +362,13 @@ def verify_signature(amount, razorpay_payment_id, razorpay_payment_link_id, razo
 
 
 @frappe.whitelist(allow_guest=True)
-def get(doc, method):
+def set_translation_from_erpnext(doc, method):
+
     import json
     import os
 
-    # print("\n\n event", doc, "\n\n")
-    # print("\n\n method", method, "\n\n")
+    print("\n\n event", doc, "\n\n")
+    print("\n\n method", method, "\n\n")
 
     language, source_text, translated_text = frappe.db.get_value("Translation", doc.name, ['language', "source_text", "translated_text"])
     print("\n\n language", language, "\n\n")
@@ -384,11 +385,14 @@ def get(doc, method):
 
     with open(file_path, "r", encoding="utf-8") as files:
         existing_data = json.load(files)
-        print("\n\n type", type(existing_data))
+        # if existing_data[source_text]:
+        #     if existing_data[source_text] == source_text:
+        #         print("\n\n key alredy exist")
+        # else:
         existing_data[source_text] = translated_text
         print("\n\n dsfadsf", existing_data, "\n\n")
 
-    with open(file_path, "w", encoding="utf-8") as d:
+    with open(file_path, "w") as d:
         data = json.dumps(existing_data)
         d.write(data)
         print("\n\n dsfadsfasdfsd", existing_data, "\n\n")

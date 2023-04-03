@@ -15,12 +15,12 @@
         </div>
         <div class="container mx-auto h-full">
 
-            <div class="w-full sm:pt-0 md:pt-5 lg:pt-12">
+            <div class="w-full pt-[28px]">
                 <div class="container mx-auto py-0">
                     <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
                         <div
-                            class="text-[24px] md:text-[30px] lg:text-[36px] py-8 px-10 text-[#40b751] font-bold text-center">
-                            Donation Campaign Request
+                            class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
+                            Campaign Request
                         </div>
                         <div class="relative z-0">
                             <div class=" sm:py-2 md:py-4 lg:py-8 ">
@@ -48,8 +48,8 @@
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">Full
                                                     Name <span class="text-red-600">*</span></label>
                                                 <input
-                                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    v-model="full_name" type="text">
+                                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                    placeholder="Enter Full Name" v-model="full_name" type="text">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
                                             <div 
@@ -59,16 +59,16 @@
                                                         Name <span class="text-red-600">*</span></label>
 
                                                     <input
-                                                        class="appearance-none border-gray-300 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
-                                                        type="text" v-model="organisation_name">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
+                                                        type="text" placeholder="Enter Organisation Name" v-model="organisation_name">
                                                     <p class="text-red-600">{{ organizationNameError }}</p>
                                                 </div>
                                                 <div class="mb-4">
                                                     <label class="block text-gray-600 text-base  mb-2">Organisation
                                                         Website</label>
                                                     <input
-                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" v-model="organisation_website">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Organisation Website" v-model="organisation_website">
                                                 </div>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
@@ -76,24 +76,24 @@
                                                     <label class="block text-gray-600 text-base  mb-2">Phone <span
                                                             class="text-red-600">*</span></label>
                                                     <input
-                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" v-model="phone">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Phone Number" v-model="phone">
                                                     <p class="text-red-600">{{ phoneError }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">Email <span
                                                             class="text-red-600">*</span></label>
                                                     <input
-                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="email" v-model="email">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="email" placeholder="Enter Email" v-model="email">
                                                     <p class="text-red-600">{{ emailError }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">Social Media
                                                         Page</label>
                                                     <input
-                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" v-model="social_media_page">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Social Media Page" v-model="social_media_page">
 
                                                 </div>
                                             </div>
@@ -102,22 +102,22 @@
                                                     <label class="block text-gray-600 text-base  mb-2">Campaign
                                                         Story <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" v-model="campaign_story"
-                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"></textarea>
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Campaign Story"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryError }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">Beneficiary
                                                         Group <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" v-model="beneficiary_group"
-                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"></textarea>
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Beneficiary Group"></textarea>
 
                                                     <p class="text-red-600">{{ beneficiaryGroupError }}</p>
                                                 </div>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
                                                 <button
-                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-10 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751]  text-lg uppercase rounded"
-                                                    @click="request_campaign()">Submit</button>
+                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                    @click="request_campaign()">Campaign Request</button>
                                                 <button
                                                    class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
                                                     @click="request_campaign()">Reset Form</button>
@@ -128,8 +128,8 @@
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">Full
                                                     Name <span class="text-red-600">*</span></label>
                                                 <input
-                                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    v-model="full_nameindividualgroup" type="text">
+                                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                    v-model="full_nameindividualgroup" placeholder="Enter Full Name" type="text">
                                                 <p class="text-red-600">{{ fullNameErrorindividualgroup }}</p>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
@@ -137,24 +137,24 @@
                                                     <label class="block text-gray-600 text-base  mb-2">Phone <span
                                                             class="text-red-600">*</span></label>
                                                     <input
-                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" v-model="phoneindividualgroup">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Phone Number" v-model="phoneindividualgroup">
                                                     <p class="text-red-600">{{ phoneErrorindividualgroup }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">Email <span
                                                             class="text-red-600">*</span></label>
                                                     <input
-                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="email" v-model="emailindividualgroup">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="email" placeholder="Enter Email" v-model="emailindividualgroup">
                                                     <p class="text-red-600">{{ emailErrorindividualgroup }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">Social Media
                                                         Page</label>
                                                     <input
-                                                        class="appearance-none border-gray-300 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" v-model="social_media_pageindividualgroup">
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Social Media Page" v-model="social_media_pageindividualgroup">
 
                                                 </div>
                                             </div>
@@ -163,22 +163,22 @@
                                                     <label class="block text-gray-600 text-base  mb-2">Campaign
                                                         Story <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" v-model="campaign_storyindividualgroup"
-                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"></textarea>
+                                                        class="hover:border-[#40b751] placeholder-gray-400 w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Campaign Story"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryErrorindividualgroup }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">Beneficiary
                                                         Group <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" v-model="beneficiary_groupindividualgroup"
-                                                        class="hover:border-[#40b751] w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"></textarea>
+                                                        class="hover:border-[#40b751] placeholder-gray-400 w-full py-2 px-3 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Beneficiary Group"></textarea>
 
                                                     <p class="text-red-600">{{ beneficiaryGroupErrorindividualgroup }}</p>
                                                 </div>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
                                                 <button
-                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-10 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751]  text-lg uppercase rounded"
-                                                    @click="request_campaign()">Submit</button>
+                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                    @click="request_campaign()">Campaign Request</button>
                                                 <button
                                                    class="cursor-pointer grid sm:place-content-center md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
                                                     @click="request_campaign()">Reset Form</button>
@@ -304,12 +304,12 @@ export default {
                 this.campaign_type = 'NGO'
                 {
                     if (!this.full_name && !this.organisation_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
-                        this.fullNameError = 'Enter valid fullname!'
-                        this.organizationNameError = 'Enter valid organization name!'
-                        this.phoneError = 'Enter valid phone number!'
-                        this.emailError = 'Enter valid email!'
-                        this.campaignStoryError = 'Enter campaign story!'
-                        this.beneficiaryGroupError = 'Enter beneficiary group!'
+                        this.fullNameError = 'Please enter Fullname!'
+                        this.organizationNameError = 'Please enter organization name!'
+                        this.phoneError = 'Please enter phone number!'
+                        this.emailError = 'Please enter email!'
+                        this.campaignStoryError = 'Please enter campaign story!'
+                        this.beneficiaryGroupError = 'Please enter beneficiary group!'
                         this.error == true
                         // return true;
                     }
@@ -411,11 +411,11 @@ export default {
                 this.campaign_type = 'Indivisual/Group'
                 {
                     if (!this.full_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
-                        this.fullNameErrorindividualgroup = 'Please Enter FullName!'
-                        this.phoneErrorindividualgroup = 'Enter valid phone number!'
-                        this.emailErrorindividualgroup = 'Enter valid email!'
-                        this.campaignStoryErrorindividualgroup = 'Enter campaign story!'
-                        this.beneficiaryGroupErrorindividualgroup = 'Enter beneficiary group!'
+                        this.fullNameErrorindividualgroup = 'Please enter Fullname!'
+                        this.phoneErrorindividualgroup = 'Please enter phone number!'
+                        this.emailErrorindividualgroup = 'Please enter email!'
+                        this.campaignStoryErrorindividualgroup = 'Please enter campaign story!'
+                        this.beneficiaryGroupErrorindividualgroup = 'Please enter beneficiary group!'
                         this.error == true
                         // return true;
                     }

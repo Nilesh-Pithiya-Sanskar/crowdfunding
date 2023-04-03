@@ -122,8 +122,9 @@ doc_events = {
 	# 	"on_trash": "method"
 	# }
 	"Translation": {
-		"after_insert": "sadbhavna_donatekart.api.api.get",
-        "after_update": "sadbhavna_donatekart.api.api.get"
+    	# "after_save": "sadbhavna_donatekart.api.api.set_translation_from_erpnext",
+		"after_insert": "sadbhavna_donatekart.api.api.set_translation_from_erpnext",
+        # "after_update": "sadbhavna_donatekart.api.api.set_translation_from_erpnext"
 	}
 }
 

@@ -58,7 +58,7 @@
     <!-- Categories -->
     <section class="container mx-auto h-full categorycard">
       <div class="text-center mt-10">
-        <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
+        <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>{{ $t('data') }}
         <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
       </div>
 
