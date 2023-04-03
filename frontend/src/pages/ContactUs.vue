@@ -55,10 +55,8 @@
                     </ul>
                     </p> -->
 
-                    <div class="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"">
-
-
-                                                                <div class=" mr-2 mb-6">
+                    <div class="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                        <div class=" mr-2 mb-6">
                         <label class="block text-gray-700 text-sm mb-2" for="">
                             First name <span class="text-red-600">*</span>
                         </label>
