@@ -79,9 +79,20 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     donation.insert(ignore_permissions=True)
     frappe.db.commit()
 
-    # raised_amount = frappe.db.get_value("Donation Campaign", filters={"name": campaign}, fieldname=["raised_amount"], pluck="name")
-    raised_amount, donation_amount = frappe.db.get_value("Donation Campaign", filters={
-                                                         "name": campaign}, fieldname=["raised_amount", "donation_amount"])
+    donation_campaign = frappe.get_doc("Donation Campaign",  campaign)
+    item_dict = {}
+    item_list = []
+    for i in item:
+        item_dict[i['item']]=i
+        item_list.append(i['item'])
+    for d in donation_campaign.add_campaign_items:
+        if d.item in item_list:
+            d.c_qty = int(d.c_qty) if d.c_qty else 0
+            d.c_qty += int(item_dict[d.item]['qty'])
+            frappe.db.set_value("Donation Campaign Item", d.name, "c_qty", d.c_qty)
+
+    raised_amount = donation_campaign.raised_amount
+    donation_amount = donation_campaign.donation_amount
     total = int(amount) + int(raised_amount)
     if total >= int(donation_amount):
         # frappe.db.set_value("Donation Campaign", campaign,
