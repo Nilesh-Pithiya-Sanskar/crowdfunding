@@ -290,9 +290,9 @@ export default {
             return re.test(email);
         },
 
-        validPhone: function (phone_number) {
+        validPhone: function (phone) {
             var re = /^[6-9][0-9]{9}$/;
-            return re.test(phone_number);
+            return re.test(phone);
         },
         validName: function (full_name) {
             var re = /^[a-zA-Z\\s]*$/;
@@ -425,7 +425,7 @@ export default {
                         this.error = true
                         console.log('full name')
                     }
-                    else if (this.phone == '' || !this.validPhone(this.phone_number)) {
+                    else if (this.phone == '' || !this.validPhone(this.phone)) {
                         // this.first_name == this.error
                         this.phoneError = 'Enter valid phone number!'
                         this.error = true

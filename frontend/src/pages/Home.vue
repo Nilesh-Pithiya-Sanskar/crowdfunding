@@ -58,7 +58,7 @@
     <!-- Categories -->
     <section class="container mx-auto h-full categorycard">
       <div class="text-center mt-10">
-        <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>{{ $t('data') }}
+        <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
         <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
       </div>
 
@@ -280,9 +280,16 @@
               <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
                 @click="donate(campaigns[index - 1].name)">
               <div class="pt-[30px] pr-[30px] pl-[30px]">
-                <div
+                <div v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu"
                   class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
-                  {{ $t(campaigns[index - 1].campaign_title) }}</div>
+                  {{ campaigns[index - 1].campaign_title_gu }}</div>
+                <div v-else-if="lang == 'hi' && campaigns[index - 1].campaign_title_hi"
+                class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                {{ campaigns[index - 1].campaign_title_hi }}</div>
+                <div v-else
+                class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                {{ campaigns[index - 1].campaign_title }}</div>
+
                 <p class="text-gray-700 text-[18px] md:text-[16px] lg:text-[16px]  truncate">
                   {{$t('By')}}: {{ $t(campaigns[index - 1].ngo) }}
                 <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
@@ -474,6 +481,7 @@ export default {
   mounted() {
     this.get_campaigns()
     this.get_featured_campaigns()
+    this.lang = localStorage.getItem('lang') || window.navigator.language
     // const route = useRoute()
     // if(route.query.razorpay_payment_id){
     //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
@@ -492,7 +500,8 @@ export default {
       selection: 1,
       openTab: 1,
       openTabTestimonials: 1,
-      featured_campaigns: []
+      featured_campaigns: [],
+      lang : ''
     }
   },
   resources: {

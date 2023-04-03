@@ -4,10 +4,19 @@
     <div class="container mx-auto mt-[40px] md:mt-[40px] lg:mt-[80px]">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
-            <h2 style="font-size: 2rem; font-weight: 700;"
+            <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu" style="font-size: 2rem; font-weight: 700;"
+                class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{$t(campaign_detail.data.campaign_title_gu) }}</h2>
+            <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi" style="font-size: 2rem; font-weight: 700;"
+                class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{$t(campaign_detail.data.campaign_title_hi) }}</h2>
+            <h2 v-else style="font-size: 2rem; font-weight: 700;"
                 class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[#364958] capitalize">{{$t(campaign_detail.data.campaign_title) }}</h2>
-            <p style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
+            <p v-if="lang == 'gu' && campaign_detail.data.short_description_gu" style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
+                $t(campaign_detail.data.short_description_gu) }}</p>
+            <p v-else-if="lang == 'hi' && campaign_detail.data.short_description_hi" style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
+                $t(campaign_detail.data.short_description_hi) }}</p>
+            <p v-else style="line-height:1.7;" class="mb-4 text-base text-[#364958] font-normal">{{
                 $t(campaign_detail.data.short_description) }}</p>
+
             <div class="mb-[50px] flex flex-wrap">
                 <span
                     class="mb-2 bg-[#40b751] mr-[4px] capitalize text-white  py-[7px] px-[18px] md:px-[20px] lg:px-[20px] rounded-[10px]">
@@ -100,8 +109,16 @@
 
                                     <div class="lg:w-8/12 xl:w-8/12">
                                         <div class="px-6 md:px-6 lg:px-6">
-                                            <h4 class="text-xl font-medium text-[#40b751]">{{ $t(products.display_as_name) }}</h4>
-                                            <p class="text-gray-500 mb-2" v-if="products.about">
+                                            <h4 v-if="lang == 'gu' && products.display_as_name_gu" class="text-xl font-medium text-[#40b751]">{{ $t(products.display_as_name_gu) }}</h4>
+                                            <h4 v-else-if="lang == 'hi' && products.display_as_name_hi" class="text-xl font-medium text-[#40b751]">{{ $t(products.display_as_name_hi) }}</h4>
+                                            <h4 v-else class="text-xl font-medium text-[#40b751]">{{ $t(products.display_as_name) }}</h4>
+                                            <p v-if="lang == 'gu' && products.about_gu" class="text-gray-500 mb-2">
+                                                {{ $t(products.about_gu) }}
+                                            </p>
+                                            <p v-else-if="lang == 'hi' && products.about_hi" class="text-gray-500 mb-2">
+                                                {{ $t(products.about_hi) }}
+                                            </p>
+                                            <p v-else class="text-gray-500 mb-2" v-if="products.about">
                                                 {{ $t(products.about) }}
                                             </p>
                                             <p class="text-gray-500 font-bold pb-2">
@@ -131,7 +148,7 @@
                                         <div class="grid justify-items-end w-24 text-xl h-9 mr-4">
                                             <div>
                                                 <button class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-2 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
-                                                @click="increment(products.item, products.price, qty=1)">Add</button>
+                                                @click="increment(products.item, products.price, qty=1)">{{$t('Add')}}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +161,11 @@
                     <div v-for="index in descToShow">
                         <div v-if="index - 1 < campaign_detail.data.description.length">
                             <img class="object-fill w-full" :src="campaign_detail.data.description[index - 1].image">
-                            <p style="line-height:1.7;" class="text-[#364958] mb-5">{{
+                            <p v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_description_gu" style="line-height:1.7;" class="text-[#364958] mb-5">{{
+                                $t(campaign_detail.data.description[index - 1].image_description_gu) }}</p>
+                            <p v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_description_hi" style="line-height:1.7;" class="text-[#364958] mb-5">{{
+                                $t(campaign_detail.data.description[index - 1].image_description_hi) }}</p>
+                            <p v-else style="line-height:1.7;" class="text-[#364958] mb-5">{{
                                 $t(campaign_detail.data.description[index - 1].image_description) }}</p>
                         </div>
                     </div>
@@ -690,6 +711,8 @@ export default {
             descToShow: 1,
             total_desc: 0,
 
+            lang: ''
+
         }
     },
     created() {
@@ -719,6 +742,7 @@ export default {
         // console.log("a", a)
     },
     mounted() {
+        this.lang = localStorage.getItem('lang') || window.navigator.language
         // var a = this.get_cookies('item')
         // console.log("a", a)
                 // const timeDiff = Math.abs(this.campaign_end_date.getTime() - this.campaign_start_date.getTime());

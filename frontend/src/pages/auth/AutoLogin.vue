@@ -15,8 +15,7 @@
                         </div>
                         <div class="relative py-4 z-0 px-8">
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base mb-2" for="phone">{{ $t('Enter Your
-                                                                    Number')}}</label>
+                                <label class="block text-gray-600 text-base mb-2" for="phone">{{ $t('Enter Your Number')}}</label>
                                 <input @keyup="error = ''"
                                     :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
                                     v-model="phone" type="number">
