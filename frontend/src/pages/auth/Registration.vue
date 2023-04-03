@@ -20,7 +20,7 @@
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                     v-model="first_name" @keyup="firstNameError = ''" type="text" placeholder="First name"
                                     required>
-                                <p class="text-red-600">{{ firstNameError }}</p>
+                                <p class="text-red-600">{{ ('firstNameError') }}</p>
                             </div>
                             <div class="mb-4">
                                 <label class="block text-gray-600 text-base  mb-2">LastName</label>
