@@ -62,7 +62,7 @@
         <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
       </div>
 
-      <div class="flex mt-3 border-b sm:mr-4 lg:mr-12 ">
+      <div class="flex mt-3 border-b sm:mr-4 lg:mr-3 ">
         <div class="overflow-x-auto">
           <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-scroll ">
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
@@ -284,14 +284,14 @@
                   class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
                   {{ campaigns[index - 1].campaign_title_gu }}</div>
                 <div v-else-if="lang == 'hi' && campaigns[index - 1].campaign_title_hi"
-                class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
-                {{ campaigns[index - 1].campaign_title_hi }}</div>
+                  class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                  {{ campaigns[index - 1].campaign_title_hi }}</div>
                 <div v-else
-                class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
-                {{ campaigns[index - 1].campaign_title }}</div>
+                  class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                  {{ campaigns[index - 1].campaign_title }}</div>
 
                 <p class="text-gray-700 text-[18px] md:text-[16px] lg:text-[16px]  truncate">
-                  {{$t('By')}}: {{ $t(campaigns[index - 1].ngo) }}
+                  {{ $t('By') }}: {{ $t(campaigns[index - 1].ngo) }}
                 <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
                   <div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
@@ -302,8 +302,9 @@
                 </div>
                 <div
                   class="fontcard flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-[14px] md:text-[12px] lg:text-[14px]">
-                  <span class="font-[600] text-[#222222]">{{$t('Raised')}}: ₹{{ numberWithCommas(campaigns[index - 1].raised_amount)
-                  }}</span><span class="font-[600] text-[#222222]">{{$t('Goal')}}: ₹{{
+                  <span class="font-[600] text-[#222222]">{{ $t('Raised') }}: ₹{{ numberWithCommas(campaigns[index -
+                    1].raised_amount)
+                  }}</span><span class="font-[600] text-[#222222]">{{ $t('Goal') }}: ₹{{
   numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
                 </div>
                 </p>
@@ -346,8 +347,8 @@
               src="../../src/assets/Inter/img/protection.png" />
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
-            <p class="text-[16px] text-[#40b751] font-black">{{$t('Protection')}}</p>
-            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
+            <p class="text-[16px] text-[#40b751] font-black">{{ $t('Protection') }}</p>
+            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
           </div>
         </div>
 
@@ -357,8 +358,8 @@
               src="../../src/assets/Inter/img/mask.png" />
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
-            <p class="text-[16px] text-[#40b751] font-black">{{$t('Prevention')}}</p>
-            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
+            <p class="text-[16px] text-[#40b751] font-black">{{ $t('Prevention') }}</p>
+            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
           </div>
         </div>
 
@@ -368,8 +369,8 @@
               src="../../src/assets/Inter/img/sanitizer.png" />
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
-            <p class="text-[16px] text-[#40b751] font-black">{{$t('Treatments')}}</p>
-            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
+            <p class="text-[16px] text-[#40b751] font-black">{{ $t('Treatments') }}</p>
+            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
           </div>
         </div>
 
@@ -379,8 +380,8 @@
               src="../../src/assets/Inter/img/virus.png" />
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
-            <p class="text-[16px] text-[#40b751] font-black">{{$t('Symptoms')}}</p>
-            <p class="text-[#aaa]">{{$t('Lorem ipsum dolor sit.')}}</p>
+            <p class="text-[16px] text-[#40b751] font-black">{{ $t('Symptoms') }}</p>
+            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
           </div>
         </div>
 
@@ -401,8 +402,8 @@
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 "
                 src="../../src/assets/Inter/img/nationalbusinessawards.jpeg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('National Business Excellence And')}}</p>
-                <p class="text-[#364958] font-bold text-[20px] leading-6"> {{$t('Achievers Award')}}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('National Business Excellence And') }}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6"> {{ $t('Achievers Award') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2021</p>
               </div>
             </div>
@@ -410,7 +411,7 @@
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennailogo.jpg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('Top Ten Startups In Hyderabad')}}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Top Ten Startups In Hyderabad') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2020</p>
               </div>
             </div>
@@ -419,7 +420,8 @@
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96"
                 src="../../src/assets/Inter/img/socialenterpriceaward.jpg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('Social Enterprise Challenge Award')}}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Social Enterprise Challenge Award') }}
+                </p>
                 <p class="text-[#364958] font-bold pt-2">2018</p>
               </div>
             </div>
@@ -427,7 +429,7 @@
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/NASSCOM.jpg">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('NASSCOM Social Innovation Award')}}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('NASSCOM Social Innovation Award') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2018</p>
               </div>
             </div>
@@ -435,8 +437,8 @@
             <div>
               <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/indianextress.png">
               <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('Indian Express 40')}}</p>
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{$t('under 40')}}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Indian Express 40') }}</p>
+                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('under 40') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2021</p>
               </div>
             </div>
@@ -501,7 +503,7 @@ export default {
       openTab: 1,
       openTabTestimonials: 1,
       featured_campaigns: [],
-      lang : ''
+      lang: ''
     }
   },
   resources: {

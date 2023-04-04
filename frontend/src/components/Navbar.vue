@@ -102,6 +102,31 @@
     }"
     v-model="showDialog"
   />
+
+  <Dialog v-model="showLanguageDialog" >        
+        <template #body>
+          <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
+              <h1
+                  class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
+                  {{ $t('Select Your Language') }}
+              </h1>
+              <div class="relative z-0 flex flex-wrap">
+                <button
+                      class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                      type="button" @click="set_language('gu')"> {{$t('ગુજરાતી')}}
+                </button>
+                <button
+                      class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                      type="button" @click="set_language('hi')"> {{$t('हिंदी')}}
+                </button>
+                <button
+                      class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                      type="button" @click="set_language('en-US')"> {{$t('English')}}
+                </button>
+              </div>
+          </div>    
+        </template>
+    </Dialog>
     </div>
   </div>
 </template>
@@ -126,32 +151,40 @@ export default {
     return {
       showMenu: false,
       showDialog: false,
-      language: '',
+      showLanguageDialog: false,
+      language: this.get_language(),
       languages: [{'key': 'en-US', 'value': 'English'}, {'key': 'gu', 'value':'ગુજરાતી'}, {'key':'hi', 'value':'हिंदी'}],
       // languages: ['English', 'ગુજરાતી', 'हिंदी']
       // n: window.navigator.language,
       // l: localStorage.getItem('lang')
     }
   },
-  mounted(){
-    
-    // l_lang = localStorage.getItem('lang')
-    // if(l_lang){
-    //   this.language = l_lang
-    // } 
+
+  created(){
+    console.log("language", this.get_language())
+    if (this.get_language() == null){
+      this.showLanguageDialog = true
+    }
+   
+  },
+
+  mounted() {
+    if (!this.user.isLoggedIn()) {
+      // this.$router.push({
+      // 	name: "DeskLogin",
+      // 	query: { route: this.$route.path },
+      // })
+      return
+    }
     // else{
-    //   window.navigator.language
-    //   if (n_lang == 'gu'){
-    //     this.language = 'ગુજરાતી'
-    //   }
-    //   else if (n_lang == 'hi'){
-    //     this.language = 'हिंदी'
-    //   }
-    //   else{
-    //     this.language = 'English'
-    //   }
-    // }   
- },
+    //   this.$router.push(`/sadbhavna/login`)
+    // }
+    // if (!this.user.has_desk_access) {
+    // 	this.$router.push({ path: "/home" })
+    // 	return
+    // }
+  },
+ 
   resources:{
     logout(){
       return{
@@ -192,7 +225,7 @@ export default {
       window.location.reload();
     },
     get_language(){
-      this.language = this.$cookies.get('lang') || window.navigator.language
+      return this.$cookies.get('lang') || localStorage.getItem('lang')
     },  
     logout() {
       // axios.get('/api/method/logout').then((res) => {
@@ -215,24 +248,6 @@ export default {
 
   },
 
-  mounted() {
-    if (!this.user.isLoggedIn()) {
-      // this.$router.push({
-      // 	name: "DeskLogin",
-      // 	query: { route: this.$route.path },
-      // })
-      return
-    }
-    // else{
-    //   this.$router.push(`/sadbhavna/login`)
-    // }
-    // if (!this.user.has_desk_access) {
-    // 	this.$router.push({ path: "/home" })
-    // 	return
-    // }
-  },
-  created(){
-    this.get_language()
-  }
+
 }
 </script>

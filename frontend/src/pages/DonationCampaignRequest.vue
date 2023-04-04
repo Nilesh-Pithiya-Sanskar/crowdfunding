@@ -13,7 +13,7 @@
                         <div class="relative z-0">
                             <div class=" sm:py-2 md:py-4 lg:py-8 ">
                                 <ul
-                                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-10 mr-11 pb-4 flex-row">
+                                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-8 mr-9 pb-4 flex-row">
                                     <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                         <a class="mb-3 md:mb-0 lg:mb-0 cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block "
                                             v-on:click="toggleTabs(1)" @click="resetFormErrorReset()"

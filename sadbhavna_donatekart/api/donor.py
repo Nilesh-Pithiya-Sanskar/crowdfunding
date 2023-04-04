@@ -54,6 +54,7 @@ def create_donor_from_checkout(f_name, phone_number, email):
     user = frappe.db.get_value("User", email, fieldname=['name'])
     if user:
         login_user(user)
+        return f_name, email
     else:
         user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
         user.insert(ignore_permissions=True)
@@ -64,3 +65,4 @@ def create_donor_from_checkout(f_name, phone_number, email):
         user = frappe.db.get_value("User", email, fieldname=['name'])
         if user:
             login_user(user)
+            return f_name, email

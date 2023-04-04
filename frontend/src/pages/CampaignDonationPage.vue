@@ -231,7 +231,7 @@
                                     class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
                                     type="button" @click="donate(total_price, anonymous)"> {{$t('Donate Now')}}
                                 </button>
-                                <div v-if="item_cart != ''">
+                                <div v-if="item_cart != '' && isLoggedIn == true">
                                     <input type="checkbox" id="anonymous" v-model="anonymous">
                                     <label for="checkbox" class="text-sm pl-2">{{$t('Make my donation anonymous')}}</label>
                                 </div>
@@ -719,7 +719,9 @@ export default {
 
             lang: '',
             showCheckout: false,
-            user: ''
+            user: '',
+            anonymous_c: '',
+            isLoggedIn: false
 
         }
     },
@@ -744,6 +746,10 @@ export default {
         }
         if(item_b != null){
             this.item_b = item_b
+        }
+
+        if(this.user.isLoggedIn()){
+            this.isLoggedIn = true
         }
 
         
@@ -818,9 +824,8 @@ export default {
             return{
                 method: "sadbhavna_donatekart.api.donor.create_donor_from_checkout",
                 onSuccess: (res) => {
-                    console.log("success")
                     this.showCheckout = false
-                   this.donate(this.total_price, this.anonymous)
+                    this.donate_c(this.total_price, this.anonymous_c, res[0], res[1])
                 },
                 onError: (error) => {
                     // alert("Something Want Wrong!", error)
@@ -936,23 +941,8 @@ export default {
                 name: name
             })
         },
-
-        donate_checkout(anonymous, f_name, email,phone_number){
-            console.log("anonymouse", anonymous)
-            console.log("name", f_name)
-            console.log("email", email)
-            console.log("phone number", phone_number)
-            this.anonymous = anonymous
-            this.user = email
-            this.$resources.set_donor_for_donate_checkout.submit({
-                f_name: f_name,
-                email: email,
-                phone_number: phone_number
-            })
-
-        },
-
         donate(total_price, anonymous) {
+            console.log("donate called")
             if (!this.user.isLoggedIn()) {
                 this.$cookies.set('route', `/sadbhavna/campaign-donation/${this.campaign}`);
                 // this.$router.push(`/sadbhavna/donation-checkout`)
@@ -1008,9 +998,63 @@ export default {
                 // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
             }
         },
+        donate_checkout(anonymous, f_name, email,phone_number){
+            localStorage.setItem('anonymous', anonymous)
+            localStorage.setItem('user', email)
+            this.anonymous_c = anonymous
+            this.$resources.set_donor_for_donate_checkout.submit({
+                f_name: f_name,
+                email: email,
+                phone_number: phone_number
+            })
+
+        },
+        donate_c(total_price, anonymous, f_name, email) {
+        
+            // call razor pay api
+            // rzp.open(options)
+            var options = {
+                "key": "rzp_test_Adc0DsR6E8VV3t", // Enter the Key ID generated from the Dashboard
+                "amount": total_price * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": "INR",
+                "name": "Crowdfunding",
+                "description": "Test Transaction",
+                "image": "https://crowdfunding.frappe.cloud/files/favicon.ico",
+                // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                handler: (response) => {
+                    this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
+
+                    // this.verifySignature(response);
+                },
+                // "handler": function (response){
+
+                // },
+                "prefill": {
+                    "name": `${f_name}`,
+                    "email": `${email}`,
+                },
+                "notes": {
+                    "address": "Razorpay Corporate Office"
+                },
+                "theme": {
+                    "color": "#40b751"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.on('payment.failed', function (response) {
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+            });
+            rzp1.open();
+        },
         set_details_in_doctype_after_donation(total_price, anonymous, payment_id) {
             this.$resources.set_details_in_doctype_after_donation.submit({
-                user_id: this.cookie.user_id || this.user,
+                user_id: this.cookie.user_id ? this.cookie.user_id : localStorage.getItem('user'),
                 campaign: this.campaign,
                 item: this.item_cart,
                 amount: total_price,
@@ -1029,7 +1073,7 @@ export default {
 
         download_80g(donation_name) {
             this.$resources.download_80g.submit({
-                donor: this.cookie.user_id,
+                donor: this.cookie.user_id ? this.cookie.user_id : localStorage.getItem('user'),
                 donation: donation_name,
             })
         },
