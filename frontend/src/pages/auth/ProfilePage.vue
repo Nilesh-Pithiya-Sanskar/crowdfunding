@@ -214,19 +214,19 @@
                             <tbody>
                               <tr v-for="donation in donation_details.data"
                                 class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ donation.name }}
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ donation.amount }}
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ donation.date }}
                                 </td>
                                 <!-- <td
                                                                 class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                 {{ donation.mode_of_payment }}</td> -->
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap cursor-pointer"
+                                <td class="text-sm text-gray-900 font-light px-6 py-4  cursor-pointer"
                                   @click="
                                     download_80g(donation.name, donation.date)
                                   ">

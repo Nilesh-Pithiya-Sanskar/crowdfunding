@@ -205,7 +205,7 @@
                                 <tbody>
                                     <tr v-for="item in item_cart"
                                         class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                        <td class="text-sm text-gray-900 py-4 whitespace-nowrap">
+                                        <td class="text-sm text-gray-900 py-4">
                                             {{ $t(item.item) }}
                                         </td>
                                         <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
