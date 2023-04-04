@@ -23,10 +23,12 @@
                                 <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             </div>
                             <div class="mb-4">
-                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }} <span class="text-red-600">*</span></label>
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }} <span
+                                        class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="last_name" @keyup="firstNameError = ''" type="text" placeholder="Last name" required>
+                                    v-model="last_name" @keyup="firstNameError = ''" type="text" placeholder="Last name"
+                                    required>
                                 <p class="text-red-600">{{ $t(lastNameError) }}</p>
                             </div>
                         </div>
@@ -35,7 +37,7 @@
                                 <span class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="email" type="email" @keyup="emailError = ''" placeholder="Address" required>
+                                v-model="email" type="email" @keyup="emailError = ''" placeholder="Email" required>
                             <p class="text-red-600">{{ $t(emailError) }}</p>
                         </div>
                         <div class="mb-4">

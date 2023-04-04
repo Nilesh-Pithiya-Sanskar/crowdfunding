@@ -104,4 +104,10 @@ transition-property: all;
   }
 }
 
+@media (max-width: 768px) and (min-width:0px) {
+  .buttonalign {
+    text-align: center;
+  }
+}
+
 

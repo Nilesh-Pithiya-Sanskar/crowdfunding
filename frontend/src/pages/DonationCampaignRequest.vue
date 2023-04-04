@@ -101,7 +101,7 @@
                                                    class="appearance-none transition hover:text-gray-700 border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
                                                     @click="request_campaign()">{{$t('Campaign Request')}}</button>
                                                 <a
-                                                   class="cursor-pointer transition hover:text-gray-700 grid sm:place-content-center sm:ml-0 md:ml-20 lg:ml-32 md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
+                                                   class="cursor-pointer border-none transition hover:text-gray-700 text-end  buttonalign sm:ml-0 md:ml-20 lg:ml-32  appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
                                                     @click="resetForm">{{$t('Reset Form')}}</a>
                                             </div>
                                         </div>
@@ -158,7 +158,7 @@
                                                    class="appearance-none transition hover:text-gray-700 border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
                                                     @click="request_campaignig()">{{$t('Campaign Request')}}</button>
                                                 <a
-                                                   class="cursor-pointer transition hover:text-gray-700 grid sm:place-content-center sm:ml-0 md:ml-20 lg:ml-32 md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
+                                                   class="cursor-pointer border-none transition hover:text-gray-700 text-end  buttonalign sm:ml-0 md:ml-20 lg:ml-32  appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
                                                     @click="resetFormIg">{{$t('Reset Form')}}</a>
                                             </div>
                                         </div>

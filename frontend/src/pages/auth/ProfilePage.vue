@@ -288,22 +288,22 @@
                             <tbody>
                               <tr v-for="campaign in campaign_details"
                                 class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ campaign.campaign_title }}
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ campaign.campaign_category }}
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ campaign.donation_amount }}
                                 </td>
-                                <td class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-green-500 font-bold px-6 py-4">
                                   {{ campaign.raised_amount }}
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ campaign.start_date }}
                                 </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ campaign.end_date }}
                                 </td>
                                 <!-- <td
@@ -313,7 +313,7 @@
                                 </td> -->
 
                                 <td
-                                  :class="['text-sm font-bold px-6 py-4 whitespace-nowrap', (campaign.status === 'Live' ? 'text-green-500' : ''), (campaign.status === 'Pending' ? 'text-blue-500' : ''), (campaign.status === 'Rejected' ? 'text-red-500' : ''), (campaign.status === 'Closed' ? 'text-orange-500' : '')]">
+                                  :class="['text-sm font-bold px-6 py-4', (campaign.status === 'Live' ? 'text-green-500' : ''), (campaign.status === 'Pending' ? 'text-blue-500' : ''), (campaign.status === 'Rejected' ? 'text-red-500' : ''), (campaign.status === 'Closed' ? 'text-orange-500' : '')]">
                                   {{ campaign.status }}
                                 </td>
 

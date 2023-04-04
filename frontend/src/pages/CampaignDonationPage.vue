@@ -624,8 +624,9 @@
         ],
     }" v-model="showDialog" />
 
-
-
+    
+    <DonationCheckout v-if="this.showCheckout" :i_qty="i_qty" :total_price="total_price" :showCheckout="showCheckout" @donate_checkout="donate_checkout"/>
+    
     
 
     <!-- <div>item_cart{{ item_cart }}</div><br> -->
@@ -652,7 +653,7 @@ import { Dialog } from 'frappe-ui'
 import { createConditionalExpression } from '@vue/compiler-core';
 import { computeStyles } from '@popperjs/core';
 // import DonationDetail from "../components/DonationDetail.vue";
-// import DonationCheckout from "../components/DonationCheckout.vue";
+import DonationCheckout from "../components/DonationCheckout.vue";
 
 
 // import Razorpay from 'razorpay';
@@ -670,7 +671,7 @@ export default {
         Footer,
         Avatar,
         Dialog,
-        // DonationCheckout,
+        DonationCheckout,
     },    
     setup() {
         const user = inject("user")
@@ -716,7 +717,9 @@ export default {
             descToShow: 1,
             total_desc: 0,
 
-            lang: ''
+            lang: '',
+            showCheckout: false,
+            user: ''
 
         }
     },
@@ -808,6 +811,25 @@ export default {
                 },
                 onError: (error) => {
                     console.log(error)
+                }
+            }
+        },
+        set_donor_for_donate_checkout(){
+            return{
+                method: "sadbhavna_donatekart.api.donor.create_donor_from_checkout",
+                onSuccess: (res) => {
+                    console.log("success")
+                    this.showCheckout = false
+                   this.donate(this.total_price, this.anonymous)
+                },
+                onError: (error) => {
+                    // alert("Something Want Wrong!", error)
+                    this.$toast({
+                        title: "Error",
+                        text: error,
+                        customIcon: "circle-fail",
+                        appearance: "denger",
+                    })
                 }
             }
         },
@@ -914,10 +936,27 @@ export default {
                 name: name
             })
         },
+
+        donate_checkout(anonymous, f_name, email,phone_number){
+            console.log("anonymouse", anonymous)
+            console.log("name", f_name)
+            console.log("email", email)
+            console.log("phone number", phone_number)
+            this.anonymous = anonymous
+            this.user = email
+            this.$resources.set_donor_for_donate_checkout.submit({
+                f_name: f_name,
+                email: email,
+                phone_number: phone_number
+            })
+
+        },
+
         donate(total_price, anonymous) {
             if (!this.user.isLoggedIn()) {
                 this.$cookies.set('route', `/sadbhavna/campaign-donation/${this.campaign}`);
-                this.$router.push(`/sadbhavna/donation-checkout`)
+                // this.$router.push(`/sadbhavna/donation-checkout`)
+                this.showCheckout = true
                 // return
             }
             else {
@@ -971,7 +1010,7 @@ export default {
         },
         set_details_in_doctype_after_donation(total_price, anonymous, payment_id) {
             this.$resources.set_details_in_doctype_after_donation.submit({
-                user_id: this.cookie.user_id,
+                user_id: this.cookie.user_id || this.user,
                 campaign: this.campaign,
                 item: this.item_cart,
                 amount: total_price,
