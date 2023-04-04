@@ -567,23 +567,23 @@
             flex justify-center items-center
             text-white text-2xl " v-if="total_price != 0">
         <!-- <div class="">asdfasdfasd</div> -->
-        <div class="flex justify-between text-center font-bold text-lg mt-5">
-            <div class="flex">
-                <div class="text-[#40b751] ml-5">{{ i_qty }} {{$t('Item(s)')}} |</div>
-                <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
-            </div>
-            <!-- <div>
-                <input type="checkbox" id="anonymous" v-model="anonymous">
-                <label for="checkbox" class="text-sm text-green-500 pl-2">Make my donation anonymous</label>
-            </div> -->
-            <div>
-                <button
-                    class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
-                    type="button" @click="donate(total_price, anonymous)"> {{$t('Donate Now')}}
-                </button>
-            </div>
-            
-        </div> 
+            <div class="flex justify-between text-center font-bold text-lg mt-5">
+                <div class="flex">
+                    <div class="text-[#40b751] ml-5">{{ i_qty }} {{$t('Item(s)')}} |</div>
+                    <div class="text-[#40b751] ml-2">₹ {{ numberWithCommas(total_price) }}</div>
+                </div>
+                <!-- <div>
+                    <input type="checkbox" id="anonymous" v-model="anonymous">
+                    <label for="checkbox" class="text-sm text-green-500 pl-2">Make my donation anonymous</label>
+                </div> -->
+                <div>
+                    <button
+                        class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                        type="button" @click="donate(total_price, anonymous)"> {{$t('Donate Now')}}
+                    </button>
+                </div>
+                
+            </div> 
 
         </div>
     </div>
@@ -623,6 +623,11 @@
             },
         ],
     }" v-model="showDialog" />
+
+
+
+    
+
     <!-- <div>item_cart{{ item_cart }}</div><br> -->
     <!-- {{ a }} -->
 
@@ -912,7 +917,7 @@ export default {
         donate(total_price, anonymous) {
             if (!this.user.isLoggedIn()) {
                 this.$cookies.set('route', `/sadbhavna/campaign-donation/${this.campaign}`);
-                this.$router.push(`/sadbhavna/auto-login`)
+                this.$router.push(`/sadbhavna/donation-checkout`)
                 // return
             }
             else {

@@ -108,6 +108,11 @@ const routes = [{
     name: 'Translation',
     component: () => import('@/pages/Translations.vue')
   },
+  {
+    path: '/sadbhavna/donation-checkout',
+    name: 'Donation Checkout',
+    component: () => import('@/components/DonationCheckout.vue')
+  }
 ]
 
 let router = createRouter({

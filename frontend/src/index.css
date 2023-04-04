@@ -73,3 +73,35 @@ transition-property: all;
     padding-right: 16px;
 }
 }
+
+@media (max-width: 1290px) and (min-width:1280px) {
+  .imageresponsive {
+  margin-left: 530px;
+  }
+}
+
+@media (max-width: 1340px) and (min-width:1290px) {
+  .imageresponsive {
+  margin-left: 550px;
+  }
+}
+
+@media (max-width: 1500px) and (min-width:1340px) {
+  .imageresponsive {
+  margin-left: 600px;
+  }
+}
+
+@media (max-width: 1600px) and (min-width:1500px) {
+  .imageresponsive {
+  margin-left: 720px;
+  }
+}
+
+@media (max-width: 1700px) and (min-width:1600px) {
+  .imageresponsive {
+  margin-left: 800px;
+  }
+}
+
+

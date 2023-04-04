@@ -5,9 +5,10 @@
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
-              <img src="../../src/assets/Inter/img/logo-2.1.png"
-                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-32 lg:mr-32 w-22 lg:w-32 h-24 lg:h-40 ml-0 lg:ml-6" />
+              <img src="../../src/assets/Inter/img/logo-1.1.ico"
+                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-2 lg:mr-2 w-18 h-20 ml-0 lg:ml-6" />
             </a>
+            <span class="font-sans text-white font-bold text-3xl md:mr-5">BestDeed</span>
           </div>
           <!-- Mobile menu button -->
           <div @click="showMenu = !showMenu" class="pr-[20px] md:pr-[20px] lg:pr-[5px] flex lg:hidden">
@@ -49,10 +50,15 @@
             {{ $t('Profile') }}
           </li>
           <li>
-            <select class="appearance-none border-0 border-gray-300 mt-2 hover:border-[#40b751] rounded w-24 py-2 px-3 text-grey-darker" v-model="language" @change="handleChange($event)">
-            <!-- <option disabled value="">Please select language</option> -->
+            <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी</button>
+            <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'hi' || language == 'en-US'" @click="set_language('gu')">ગુજરાતી</button>
+            <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'hi'" @click="set_language('en-US')">English</button>
+
+
+            <!-- <select class="appearance-none border-0 border-gray-300 mt-2 hover:border-[#40b751] rounded w-24 py-2 px-3 text-grey-darker" v-model="language" @change="handleChange($event)">
+            <option disabled value="">Please select language</option>
               <option v-for="lang in languages" :value="lang.key" class="bg-green-500">{{ lang.value }}</option>
-            </select>
+            </select> -->
           </li>
           <!--<li>  
             <span class="group lg:inline-block">
@@ -179,6 +185,11 @@ export default {
     },
     show_logout_dialog(){
       this.showDialog = true
+    },
+    set_language(l){
+      this.$cookies.set('lang', l);
+      localStorage.setItem('lang', l);
+      window.location.reload();
     },
     logout() {
       // axios.get('/api/method/logout').then((res) => {
