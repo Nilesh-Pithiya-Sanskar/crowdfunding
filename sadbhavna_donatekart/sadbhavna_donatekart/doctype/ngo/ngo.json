@@ -143,7 +143,7 @@
    "fieldtype": "Data",
    "label": "Organisation Name",
    "mandatory_depends_on": "eval:doc.requester_type=='NGO';",
-   "unique": 1
+   "unique": 0
   },
   {
    "fieldname": "organisation_website",

@@ -126,7 +126,7 @@ export default {
     return {
       showMenu: false,
       showDialog: false,
-      language: localStorage.getItem('lang') || window.navigator.language,
+      language: '',
       languages: [{'key': 'en-US', 'value': 'English'}, {'key': 'gu', 'value':'ગુજરાતી'}, {'key':'hi', 'value':'हिंदी'}],
       // languages: ['English', 'ગુજરાતી', 'हिंदी']
       // n: window.navigator.language,
@@ -191,6 +191,9 @@ export default {
       localStorage.setItem('lang', l);
       window.location.reload();
     },
+    get_language(){
+      this.language = this.$cookies.get('lang') || window.navigator.language
+    },  
     logout() {
       // axios.get('/api/method/logout').then((res) => {
       //   this.$router.push("/sadbhavna")
@@ -227,6 +230,9 @@ export default {
     // 	this.$router.push({ path: "/home" })
     // 	return
     // }
+  },
+  created(){
+    this.get_language()
   }
 }
 </script>

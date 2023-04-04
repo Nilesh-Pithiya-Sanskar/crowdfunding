@@ -36,7 +36,7 @@
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">{{$t('FullName')}} <span class="text-red-600">*</span></label>
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    placeholder="Enter Full Name" v-model="full_name" type="text">
+                                                    placeholder="Enter Full Name" @keyup="fullNameError = ''" v-model="full_name" type="text">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
                                             <div
@@ -46,7 +46,7 @@
 
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
-                                                        type="text" placeholder="Enter Organisation Name" v-model="organisation_name">
+                                                        type="text" @keyup="organizationNameError = ''" placeholder="Enter Organisation Name" v-model="organisation_name">
                                                     <p class="text-red-600">{{ organizationNameError }}</p>
                                                 </div>
                                                 <div class="mb-4">
@@ -62,7 +62,7 @@
                                                             class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="number" placeholder="Enter Phone Number" v-model="phone">
+                                                        type="number"  @keyup="phoneError = ''" placeholder="Enter Phone Number" v-model="phone">
                                                     <p class="text-red-600">{{ phoneError }}</p>
                                                 </div>
                                                 <div class="mb-6">
@@ -70,7 +70,7 @@
                                                             class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="email" placeholder="Enter Email" v-model="email">
+                                                        type="email" @keyup="emailError = ''" placeholder="Enter Email" v-model="email">
                                                     <p class="text-red-600">{{ emailError }}</p>
                                                 </div>
                                                 <div class="mb-6">
@@ -84,13 +84,13 @@
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{$t('Campaign Story')}} <span class="text-red-600">*</span></label>
-                                                    <textarea id="comment" rows="4" v-model="campaign_story"
+                                                    <textarea id="comment" @keyup="campaignStoryError = ''" rows="4" v-model="campaign_story"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Campaign Story"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryError }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{$t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
-                                                    <textarea id="comment" rows="4" v-model="beneficiary_group"
+                                                    <textarea id="comment" rows="4" @keyup="beneficiaryGroupError = ''" v-model="beneficiary_group"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Beneficiary Group"></textarea>
 
                                                     <p class="text-red-600">{{ beneficiaryGroupError }}</p>
@@ -98,11 +98,11 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
                                                 <button
-                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                   class="appearance-none transition hover:text-gray-700 border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
                                                     @click="request_campaign()">{{$t('Campaign Request')}}</button>
-                                                <button
-                                                   class="cursor-pointer grid sm:place-content-center sm:ml-0 md:ml-20 lg:ml-32 md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
-                                                    @click="resetForm">{{$t('Reset Form')}}</button>
+                                                <a
+                                                   class="cursor-pointer transition hover:text-gray-700 grid sm:place-content-center sm:ml-0 md:ml-20 lg:ml-32 md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
+                                                    @click="resetForm">{{$t('Reset Form')}}</a>
                                             </div>
                                         </div>
                                         <div v-if="openTab == 2" class="py-4 px-8">
@@ -110,7 +110,7 @@
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">{{$t('FullName')}} <span class="text-red-600">*</span></label>
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    placeholder="Enter Full Name" v-model="full_nameig" type="text">
+                                                    placeholder="Enter Full Name" @keyup="fullNameErrorig = ''" v-model="full_nameig" type="text">
                                                 <p class="text-red-600">{{ fullNameErrorig }}</p>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
@@ -119,7 +119,7 @@
                                                             class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="number" placeholder="Enter Phone Number" v-model="phoneig">
+                                                        type="number" placeholder="Enter Phone Number" @keyup="phoneErrorig = ''" v-model="phoneig">
                                                     <p class="text-red-600">{{ phoneErrorig }}</p>
                                                 </div>
                                                 <div class="mb-6">
@@ -127,7 +127,7 @@
                                                             class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="email" placeholder="Enter Email" v-model="emailig">
+                                                        type="email"  @keyup="emailErrorig = ''"  placeholder="Enter Email" v-model="emailig">
                                                     <p class="text-red-600">{{ emailErrorig }}</p>
                                                 </div>
                                                 <div class="mb-6">
@@ -141,13 +141,13 @@
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{$t('Campaign Story')}} <span class="text-red-600">*</span></label>
-                                                    <textarea id="comment" rows="4" v-model="campaign_storyig"
+                                                    <textarea id="comment" rows="4" @keyup="campaignStoryErrorig = ''" v-model="campaign_storyig"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Campaign Story"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryErrorig }}</p>
                                                 </div>
                                                 <div class="mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{$t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
-                                                    <textarea id="comment" rows="4" v-model="beneficiary_groupig"
+                                                    <textarea id="comment" rows="4" @keyup="beneficiaryGroupErrorig = ''" v-model="beneficiary_groupig"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600" placeholder="Enter Beneficiary Group"></textarea>
 
                                                     <p class="text-red-600">{{ beneficiaryGroupErrorig }}</p>
@@ -155,11 +155,11 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
                                                 <button
-                                                   class="appearance-none border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                   class="appearance-none transition hover:text-gray-700 border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
                                                     @click="request_campaignig()">{{$t('Campaign Request')}}</button>
-                                                <button
-                                                   class="cursor-pointer grid sm:place-content-center sm:ml-0 md:ml-20 lg:ml-32 md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
-                                                    @click="resetFormIg">{{$t('Reset Form')}}</button>
+                                                <a
+                                                   class="cursor-pointer transition hover:text-gray-700 grid sm:place-content-center sm:ml-0 md:ml-20 lg:ml-32 md:place-content-end lg:place-content-end appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
+                                                    @click="resetFormIg">{{$t('Reset Form')}}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -333,7 +333,17 @@ export default {
                 }
                 if(this.organisation_name == ''){
                     this.organizationNameError = 'Enter organisation name'
-                    console.log('org namem')
+                    console.log('org name')
+                }
+
+                if (this.campaign_story == '') {
+                    this.campaignStoryError = 'Enter campaign story'
+                    console.log('story')
+                }
+
+                if (this.beneficiary_group == '') {
+                    this.beneficiaryGroupError = 'Enter benificiary group name'
+                    console.log('group')
                 }
                 if (this.email == '') {
                     this.emailError = 'Enter email'
@@ -344,22 +354,12 @@ export default {
                     console.log('email')
                 }
                 if (this.phone == '') {
-                    this.phoneError = 'Please enter phone number'
+                    this.phoneError = 'Enter phone number'
                     console.log('phone number')
                 }
                 else if (this.phone && phone.test(this.phone) == false) {
                     this.phoneError = 'Enter valid phone number'
                     console.log('phone')
-                }
-           
-                if (this.campaign_story == '') {
-                    this.campaignStoryError = 'Enter campaign story'
-                    console.log('story')
-                }
-            
-                if (this.beneficiary_group == '') {
-                    this.beneficiaryGroupError = 'Enter benificiary group name'
-                    console.log('group')
                 }
            
                 //     if (!this.full_name && !this.organisation_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
@@ -481,6 +481,15 @@ export default {
                     this.organizationNameErrorig = 'Enter organisation name'
                     console.log('org name')
                 }
+                if (this.campaign_storyig == '') {
+                    this.campaignStoryErrorig = 'Enter campaign story'
+                    console.log('story')
+                }
+
+                if (this.beneficiary_groupig == '') {
+                    this.beneficiaryGroupErrorig = 'Enter benificiary group name'
+                    console.log('group')
+                }
                 if (this.emailig == '') {
                     this.emailErrorig = 'Enter email'
                     console.log('email id')
@@ -496,16 +505,6 @@ export default {
                 else if (this.phoneig && phoneig.test(this.phoneig) == false) {
                     this.phoneErrorig = 'Enter valid phone number'
                     console.log('phone')
-                }
-           
-                if (this.campaign_storyig == '') {
-                    this.campaignStoryErrorig = 'Enter campaign story'
-                    console.log('story')
-                }
-            
-                if (this.beneficiary_groupig == '') {
-                    this.beneficiaryGroupErrorig = 'Enter benificiary group name'
-                    console.log('group')
                 }
            
                 else {
