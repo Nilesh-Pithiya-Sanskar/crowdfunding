@@ -6,9 +6,9 @@
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
               <img src="../../src/assets/Inter/img/logo-1.1.ico"
-                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-2 lg:mr-2 w-18 h-20 ml-0 lg:ml-6" />
+                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
             </a>
-            <span class="font-sans text-white font-bold text-3xl md:mr-5">BestDeed</span>
+            <a href="/sadbhavna"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
           </div>
           <!-- Mobile menu button -->
           <div @click="showMenu = !showMenu" class="pr-[20px] md:pr-[20px] lg:pr-[5px] flex lg:hidden">

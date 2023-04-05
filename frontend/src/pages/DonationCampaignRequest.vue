@@ -172,7 +172,7 @@
         </div>
     </div>
     <div class=" pl-96 ">
-        <div class="imageresponsive absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:h-0 md:h-0 lg:h-0 xl:h-[430px] sm:w-0 md:w-0 lg:w-0 xl:w-96  bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+        <div class="imageresponsive absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:w-0 md:w-0 lg:w-0 xl:w-96  bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
     </div>

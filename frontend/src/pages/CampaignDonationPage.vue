@@ -30,7 +30,7 @@
             </div>
             <div class="flex flex-wrap mt-6 mb-5">
                 <img class="object-fill lg:h-[35rem] md:h[25] sm:h[25] w-full mb-4" :src="campaign_detail.data.campain_image">
-                <div class="w-full lg:w-8/12 pr-4">
+                <div class="w-full lg:w-8/12 pr-0 md:pr-4 lg:pr-4">
                     <!-- <DonationDetail /> -->
                     <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex text-[#364958] justify-between font-bold">
                         <p>{{$t('Raised')}}: {{ numberWithCommas(campaign_detail.data.raised_amount) }}</p>
@@ -182,7 +182,7 @@
                     </div>
                 </div>
 
-                <div class=" w-full lg:w-4/12">
+                <div class=" w-full lg:w-4/12 pr-0 md:pr-4 lg:pr-4">
                     <div class="sticky top-0">
                         <div class="overflow-hidden hidden lg:block">
                             <table class="text-[#364958]" v-if="item_cart != ''">
@@ -226,12 +226,18 @@
 
                                 </tbody>
                             </table>
-                            <div class="text-center mt-5">
+                            <div class="text-center mt-5" v-if="item_cart == ''">
+                                <button
+                                    class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
+                                    type="button" @click="donate_now()"> {{$t('Donate Now')}}
+                                </button>
+                            </div>
+                            <div class="text-center mt-5" v-if="item_cart != ''">
                                 <button
                                     class="rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 mb-5 ease-linear transition-all duration-150"
                                     type="button" @click="donate(total_price, anonymous)"> {{$t('Donate Now')}}
                                 </button>
-                                <div v-if="item_cart != '' && isLoggedIn == true">
+                                <div v-if="isLoggedIn == true">
                                     <input type="checkbox" id="anonymous" v-model="anonymous">
                                     <label for="checkbox" class="text-sm pl-2">{{$t('Make my donation anonymous')}}</label>
                                 </div>
@@ -256,7 +262,7 @@
                         </div>
 
                         <!-- <div style="font-size: 2rem;" class="mt-3 font-medium text-gray-800">Other Donation</div> -->
-                        <p class="text-gray-600 mt-4">{{$t('Donate via')}}</p>
+                        <p class="text-gray-600 font-bold mt-4">{{$t('Donate via')}}</p>
 
                         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 ">
                             <div>
@@ -458,8 +464,8 @@
                     </div>
                 </div>
 
-                <div class="lg:w-4/12 md:w-6/12 sm:w-6/12">
-                    <div style="font-size: 2rem;" class="mt-8 font-medium text-gray-800">{{$t('Donors')}} ({{ total_donors }})</div>
+                <div class="w-full md:w-6/12 lg:w-4/12 mb-10 md:mb-0 lg:mb-0">
+                    <div style="font-size: 2rem;" class="mt-8 mb-3 font-medium text-gray-800">{{$t('Donors')}} ({{ total_donors }})</div>
                     <div class="flex flex-wrap shadow">
                         <div class="w-full">
                             <ul class="flex mb-0 list-none flex-wrap flex-row">
@@ -721,6 +727,7 @@ export default {
             showCheckout: false,
             user: '',
             anonymous_c: '',
+            user_c: '',
             isLoggedIn: false
 
         }
@@ -825,7 +832,7 @@ export default {
                 method: "sadbhavna_donatekart.api.donor.create_donor_from_checkout",
                 onSuccess: (res) => {
                     this.showCheckout = false
-                    this.donate_c(this.total_price, this.anonymous_c, res[0], res[1])
+                    this.donate_c(this.total_price, this.anonymous_c, res[0], res[1], res[2])
                 },
                 onError: (error) => {
                     // alert("Something Want Wrong!", error)
@@ -879,6 +886,20 @@ export default {
         copyURL() {
             const url = window.location.href
             navigator.clipboard.writeText(url)
+            this.$toast({
+                title: "Link copied",
+                text: "Link is copied to your clipboard.",
+                customIcon: "smile",
+                appearance: "denger",
+            }) 
+        },
+        donate_now(){          
+            this.$toast({
+                title: "Add Item",
+                text: "Please Select Item for Donate",
+                customIcon: "smile",
+                appearance: "denger",
+            })               
         },
         delete_cookies(name){
             this.$cookies.remove(name, `/sadbhavna/campaign-donation/${this.campaign}`);
@@ -956,9 +977,9 @@ export default {
                     "key": "rzp_test_Adc0DsR6E8VV3t", // Enter the Key ID generated from the Dashboard
                     "amount": total_price * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                     "currency": "INR",
-                    "name": "Crowdfunding",
+                    "name": "BestDeed",
                     "description": "Test Transaction",
-                    "image": "https://crowdfunding.frappe.cloud/files/favicon.ico",
+                    "image": "https://crowdfunding.frappe.cloud/files/logo-1.1.ico",
                     // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     handler: (response) => {
                         this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
@@ -998,10 +1019,11 @@ export default {
                 // this.$router.push(`/sadbhavna/donate/${name}&${price}`)
             }
         },
-        donate_checkout(anonymous, f_name, email,phone_number){
+        donate_checkout(anonymous, f_name, email, phone_number){
             localStorage.setItem('anonymous', anonymous)
             localStorage.setItem('user', email)
             this.anonymous_c = anonymous
+            this.user_c = email
             this.$resources.set_donor_for_donate_checkout.submit({
                 f_name: f_name,
                 email: email,
@@ -1009,20 +1031,23 @@ export default {
             })
 
         },
-        donate_c(total_price, anonymous, f_name, email) {
-        
+        donate_c(total_price, anonymous, f_name, email, phone) {
+            
+            console.log("phone", phone)
+            console.log("email", email)
+            console.log("f_name", f_name)
             // call razor pay api
             // rzp.open(options)
             var options = {
                 "key": "rzp_test_Adc0DsR6E8VV3t", // Enter the Key ID generated from the Dashboard
                 "amount": total_price * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                 "currency": "INR",
-                "name": "Crowdfunding",
+                "name": "BestDeed",
                 "description": "Test Transaction",
-                "image": "https://crowdfunding.frappe.cloud/files/favicon.ico",
+                "image": "https://crowdfunding.frappe.cloud/files/logo-1.1.ico",
                 // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                 handler: (response) => {
-                    this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
+                    this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id, email)
 
                     // this.verifySignature(response);
                 },
@@ -1032,6 +1057,7 @@ export default {
                 "prefill": {
                     "name": `${f_name}`,
                     "email": `${email}`,
+                    "contact": `${phone}`,
                 },
                 "notes": {
                     "address": "Razorpay Corporate Office"
@@ -1052,11 +1078,11 @@ export default {
             });
             rzp1.open();
         },
-        set_details_in_doctype_after_donation(total_price, anonymous, payment_id) {
+        set_details_in_doctype_after_donation(total_price, anonymous, payment_id, user) {
             this.$resources.set_details_in_doctype_after_donation.submit({
-                user_id: this.cookie.user_id ? this.cookie.user_id : localStorage.getItem('user'),
+                user_id: user != '' ? user : this.cookie.user_id,
                 campaign: this.campaign,
-                item: this.item_cart,
+                item: this.item_cart, 
                 amount: total_price,
                 payment_id: payment_id,
                 anonymous: anonymous == true ? 1 : 0
@@ -1073,12 +1099,17 @@ export default {
 
         download_80g(donation_name) {
             this.$resources.download_80g.submit({
-                donor: this.cookie.user_id ? this.cookie.user_id : localStorage.getItem('user'),
+                donor: this.user_c != '' ? this.user_c : this.cookie.user_id,
                 donation: donation_name,
             })
         },
         view_profile() {
-            this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
+            if(this.user_c != ''){
+                this.$router.push(`/sadbhavna/profile/${this.user_c}`)
+            }
+            else{
+                this.$router.push(`/sadbhavna/profile/${this.cookie.user_id}`)
+            }
         },
         cancel(){
             this.$router.push('/sadbhavna')

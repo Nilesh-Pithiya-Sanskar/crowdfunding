@@ -291,7 +291,7 @@
                   {{ campaigns[index - 1].campaign_title }}</div>
 
                 <p class="text-gray-700 text-[18px] md:text-[16px] lg:text-[16px]  truncate">
-                  {{ $t('By') }}: {{ $t(campaigns[index - 1].ngo) }}
+                  {{ $t('By') }}: {{ campaigns[index - 1].ngo }}
                 <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
                   <div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"

@@ -7,6 +7,8 @@ from frappe.utils import today
 
 @frappe.whitelist(allow_guest=True)
 def download_80g(donor, donation, date=''):
+    print("\n\n donor g", donor)
+    print("donation", donation, "\n\n")
     if date == '':
         date = today()
     donor = frappe.db.get_value("Donor", filters={"email": donor}, fieldname=["name"])
@@ -54,7 +56,7 @@ def create_donor_from_checkout(f_name, phone_number, email):
     user = frappe.db.get_value("User", email, fieldname=['name'])
     if user:
         login_user(user)
-        return f_name, email
+        return f_name, email, phone_number
     else:
         user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
         user.insert(ignore_permissions=True)
@@ -65,4 +67,4 @@ def create_donor_from_checkout(f_name, phone_number, email):
         user = frappe.db.get_value("User", email, fieldname=['name'])
         if user:
             login_user(user)
-            return f_name, email
+            return f_name, email, phone_number
