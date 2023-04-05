@@ -30,9 +30,9 @@
 
                 <div class="grid col-span-2 pl-2 pr-2 pb-2 pt-4 w-full">
                     <div class="border rounded-lg">
-                        <div>
+                        <div class="border-hidden">
                             <div class="relative flex h-12 rounded-lg  bg-white overflow-hidden">
-                                <div class="grid place-items-center h-full text-gray-300 ">
+                                <div class="grid place-items-center h-full  text-gray-300 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-6 w-6" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -40,12 +40,11 @@
                                     </svg>
                                 </div>
 
-                                <input class=" h-full w-full text-md border-none text-gray-700 pr-2" type="text"
+                                <input class=" h-full w-full text-md border-hidden text-gray-700 pr-2" type="text"
                                     v-model="searchQuery" placeholder="Search by Campaign/NGO" />
+
                             </div>
-                            <ul>
-                                <li v-for="item in filteredList" :key="item">{{ item }}</li>
-                            </ul>
+
                         </div>
                     </div>
                 </div>
@@ -96,6 +95,46 @@
 
 
 
+            </div>
+        </div>
+        <!-- <div class="">
+            <div class="border" v-for="item in filteredList" :key="item">
+                <div>
+                    <div class="" @click="donate(item.name)">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 hover:bg-gray-100 h-48">
+                            <div class="p-8 grid justify-items-center">
+                                <img class="w-48 h-32 cursor-pointer" :src="item.campain_image" alt="img">
+                            </div>
+                            <div class="col-span-3 p-8 leading-8">
+                                <p class="font-bold text-zinc-700 tracking-normal text-[22px]">{{
+                                    item.campaign_title }}</p>
+                                <p class="font-normal text-slate-500  italic text-[15px]">{{ item.ngo
+                                }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div v-for="item in filteredList" :key="item" @click="donate(item.name)">
+
+            <div class="grid border p-[30px] sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 hover:bg-gray-100">
+                <div class="md:col-span-2 lg:col-span-1">
+                    <img class="h-32 w-48" :src="item.campain_image" alt="Mountain" @click="donate(item.name)">
+                </div>
+                <div class="fontfamily fontcolor col-span-2">
+
+
+                    <h3 class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold mb-2">{{
+                        $t(item.campaign_title) }}
+                    </h3>
+
+                    <p class="text-[#364958] mb-[16px] leading-7">
+                        {{ $t(item.ngo) }}
+                    </p>
+
+                </div>
             </div>
         </div>
         <!-- <div class="border">
@@ -413,7 +452,10 @@ export default {
             //     "apple", "banana", "orange"
             // ],
             campaigns: [],
-            campaign_title: ["Children", "Animal", "Religious", "Education", "Medical"],
+            campaign_title: '',
+            ngo: '',
+            campain_image: '',
+            // campaign_title: ["Children", "Animal", "Religious", "Education", "Medical"],
             location: null,
             selected: 'newly launched',
             campaignToShow: 6,
@@ -444,7 +486,15 @@ export default {
             //     console.log('none');
             //     return this.campaigns
             // }
-
+            if (!this.searchQuery) {
+                console.log("none");
+                return false;
+            } else {
+                console.log("campaign");
+                return this.campaigns.filter(({ campaign_title, ngo, campain_image }) =>
+                    [campaign_title, ngo, campain_image].some(val => val.toLowerCase().includes(this.searchQuery))
+                );
+            }
 
             // if (!this.searchQuery) {
             //     console.log('campaign');

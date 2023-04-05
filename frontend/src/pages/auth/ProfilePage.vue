@@ -26,8 +26,18 @@
                     <!-- <Avatar :imageURL="http://sadbhavnadonatekart.com:8080/files/students.svguser_data.user_image" label="Felix" size="lg" /> -->
                   </div>
                   <div v-else class="relative">
-                    <div
-                      class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px">
+                    <div>
+                      <img src="https://crowdfunding.frappe.cloud/files/default_profile.jpeg" class="shadow-xl rounded-full h-40 align-middle border-2 border-solid border-gray-300 absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
+                      <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-16 lg:ml-16">
+                        <FileUploader @success="(file) => upload_image(file.file_url)">
+                          <template
+                            v-slot="{
+                              openFileSelector,
+                            }">
+                              <svg @click="openFileSelector" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                          </template>
+                        </FileUploader>               
+                      </div>
                     </div>
                   </div>
                 </div>
