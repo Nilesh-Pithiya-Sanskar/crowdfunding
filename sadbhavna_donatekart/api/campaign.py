@@ -11,9 +11,9 @@ def get_campaigns(category = '', language = ''):
     from frappe.utils import getdate
     today = getdate()
     if category != '':
-        return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'campaign_category': f'{category}', 'end_date': ['>=', today]}, fields=["*"], order_by='start_date desc')
+        return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'status': 'Live', 'campaign_category': f'{category}', 'end_date': ['>=', today]}, fields=["*"], order_by='start_date desc')
     else:
-        return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'end_date': ['>=', today]}, fields=["*"], order_by='start_date desc')
+        return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'status': 'Live', 'end_date': ['>=', today]}, fields=["*"], order_by='start_date desc')
 
     # if language == 'gu':
     #     language = 'ગુજરાતી'
@@ -33,7 +33,7 @@ def get_campaigns(category = '', language = ''):
 
 @frappe.whitelist(allow_guest=True)
 def get_featured_campaigns():
-    return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'is_featured': 1}, fields=["*"])
+    return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'status': 'Live', 'is_featured': 1}, fields=["*"])
 
 # @frappe.whitelist(allow_guest=True)
 # def get_campaign_detail(name):

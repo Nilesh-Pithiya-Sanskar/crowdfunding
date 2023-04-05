@@ -76,7 +76,7 @@ transition-property: all;
 
 @media (max-width: 1500px) and (min-width:1470px) {
   .imageresponsive {
-  margin-left: 710px;
+  margin-left: 720px;
   height: 430px;
   }
 }
@@ -111,7 +111,7 @@ transition-property: all;
 
 @media (max-width: 1590px) and (min-width:1560px) {
   .imageresponsive {
-  margin-left: 760px;
+  margin-left: 770px;
   height: 430px;
   }
 }

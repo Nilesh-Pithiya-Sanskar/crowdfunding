@@ -27,6 +27,7 @@
   "campain_image",
   "section_break_16",
   "published",
+  "is_featured",
   "column_break_2",
   "section_break_0tx0a",
   "short_description",
@@ -44,8 +45,7 @@
   "column_break_6",
   "raised_amount",
   "column_break_2wrro",
-  "add_campaign_items",
-  "language"
+  "add_campaign_items"
  ],
  "fields": [
   {
@@ -64,7 +64,8 @@
   {
    "fieldname": "short_description",
    "fieldtype": "Text",
-   "label": "Short Description"
+   "label": "Short Description",
+   "reqd": 1
   },
   {
    "fieldname": "donation_amount",
@@ -82,22 +83,26 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nLive\nClosed\nRejected"
+   "options": "Pending\nLive\nClosed\nRejected",
+   "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End date"
+   "label": "End date",
+   "reqd": 1
   },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Start date"
+   "label": "Start date",
+   "reqd": 1
   },
   {
    "fieldname": "campaign_title",
    "fieldtype": "Data",
-   "label": "Campaign Title"
+   "label": "Campaign Title",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_2",
@@ -123,7 +128,8 @@
    "fieldname": "campain_image",
    "fieldtype": "Attach Image",
    "label": "Campaign Image",
-   "options": "Image"
+   "options": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "naming_series",
@@ -136,7 +142,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "NGO",
-   "options": "NGO"
+   "options": "NGO",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_14",
@@ -181,12 +188,6 @@
    "fieldtype": "Table",
    "label": "Description",
    "options": "Donation Campaign Description"
-  },
-  {
-   "fieldname": "language",
-   "fieldtype": "Select",
-   "label": "Language",
-   "options": "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0\nEnglish\n\u0939\u093f\u0902\u0926\u0940"
   },
   {
    "fieldname": "campaign_title_gu",
@@ -237,6 +238,12 @@
   {
    "fieldname": "column_break_2wrro",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "label": "Is Featured"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -247,7 +254,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-04 12:41:33.536634",
+ "modified": "2023-04-05 19:01:38.710733",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",
