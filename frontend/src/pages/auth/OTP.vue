@@ -8,13 +8,14 @@
                     </div>
                     <div class="py-4 px-8">
                         <div class="mb-7">
-                            <span class="block text-gray-600 text-base  mb-2" for="email">{{ message }}</span>
+                            <span class="block text-gray-600 text-base  mb-2">{{ message }}</span>
                             <!-- <span class="text-sm text-gray-400"> Whats app Number : {{ message.number }}</span> -->
                         </div>
                         <div class="mb-4">
-                            <label class="block text-gray-600 text-base  mb-2" for="email">{{$t('Enter OTP')}}</label>
-                            <input class="appearance-none border-gray-300 rounded w-full py-2 px-3 text-grey-darker"
-                                v-model="otp" type="number">
+                            <label class="block text-gray-600 text-base mb-2" for="email">{{$t('Enter OTP')}}</label>
+                            <input  @keyup="otp_message = ''" class="appearance-none border-gray-300 rounded w-full py-2 px-3 text-grey-darker"
+                                v-model="otp" type="number">                                
+                            <span class="block text-red-600 text-base mb-2">{{ otp_message }}</span>
                         </div>
                         <div class="mb-4">
                             <button
@@ -27,6 +28,37 @@
             </div>  
         </div>
     </div>
+    <Dialog v-model="showDialog" >        
+        <template #body>
+                    <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
+                        <h1
+                            class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
+                            {{ $t('Reset Password') }}
+                            {{ email }}
+                        </h1>
+                        <div class="relative z-0">
+                            <div class="mb-4">
+                                <input
+                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="password" type="text" @keyup="passwordError = ''" placeholder="Password" required>
+                                <p class="text-red-600">{{ $t(passwordError) }}</p>
+                            </div>    
+                            <div class="mb-4">
+                                <input
+                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="re_password" type="text" @keyup="re_passwordError = ''" placeholder="Re-Password" required>
+                                <p class="text-red-600">{{ $t(re_passwordError) }}</p>
+                            </div>                        
+                            <div class="text-center">
+                                <button
+                                    class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                                    type="button" @click="resetPassword()"> {{ $t('Set Password') }}
+                                </button>
+                            </div>                           
+                        </div>
+                    </div>    
+        </template>
+    </Dialog>
     <Footer />
 </template>
 
@@ -34,18 +66,28 @@
 import Navbar from '../../components/Navbar.vue';
 import Footer from '../../components/Footer.vue';
 import { useRoute } from 'vue-router';
+import { Dialog } from 'frappe-ui';
 export default {
     name: 'OTP',
     components: {
         Navbar,
-        Footer
+        Footer,
+        Dialog
     },
     data(){
         return{
             message: '',
             number: '',
             otp: '',
-            m_type: ''
+            m_type: '',
+            
+            otp_message: '',
+            password: '',
+            re_password: '',
+            passwordError: '',
+            re_passwordError: '',
+            email: '',
+            showDialog: false
         }
     },
     mounted(){
@@ -61,14 +103,24 @@ export default {
             return{
                 method: 'sadbhavna_donatekart.api.api.verify_otp',
                 onSuccess: (res) => {
-                    var route = this.$cookies.get('route');
-                    console.log("route", route)
-                    if (route != null){
-                        this.$router.go(-2)
-                        // this.$router.push(route)
+                    if(res[0]=='failed')
+                    {
+                        this.otp_message = 'OTP is not match'
+                    }
+                    else if(res[0] == 'pass'){
+                        this.email = res[1]
+                        this.showDialog = true
                     }
                     else{
-                        this.$router.push(`/sadbhavna`);
+                        var route = this.$cookies.get('route');
+                        console.log("route", route)
+                        if (route != null){
+                            this.$router.go(-2)
+                            // this.$router.push(route)
+                        }
+                        else{
+                            this.$router.push(`/sadbhavna`);
+                        }
                     }
                     // console.log("verified", res)
                     // this.$router.push('/sadbhavna')
@@ -77,15 +129,38 @@ export default {
                     console.log("error", error)
                 }
             }
+        },
+
+        resetPassword(){
+            return {
+                method: 'sadbhavna_donatekart.api.api.reset_password',
+                onSuccess: (res) => {
+                    console.log("okey")
+                },
+                onError: (error) =>{
+                    console.log("error")
+                }
+            }
         }
     },
 
     methods:{
         verify_otp(){
+            if(this.number == ''){
+                this.otp_message = 'Please enter OTP'
+            }
+            else{
             this.$resources.verify_otp.submit({
                 number:this.number,
                 otp: this.otp,
                 m_type: this.m_type
+            })
+        }
+        },
+        resetPassword(){
+            this.$resources.resetPassword.submit({
+                email: this.email,
+                password: this.password
             })
         }
     }

@@ -1,4 +1,5 @@
 from frappe.auth import LoginManager
+from frappe.auth import CookieManager
 from sadbhavna_donatekart.api.autologin import login_via_oauth2, login_via_oauth2_id_token
 import frappe
 from frappe.utils import today
@@ -153,6 +154,7 @@ def login_with_google(email, last_name='', first_name='', image_url=''):
 
 
 def login_user(user):
+    number = frappe.db.get_value("User", user, ['phone'])
     frappe.local.login_manager.user = user
     frappe.local.login_manager.post_login()
     frappe.db.commit()
@@ -163,7 +165,7 @@ def login_user(user):
     )
     # print("\n\n login token", login_token, "\n\n")
     # return login_token
-    return login_via_token(login_token)
+    return login_via_token(login_token, number)
 
 # @frappe.whitelist(allow_guest=True)
 # def login_user():
@@ -181,7 +183,7 @@ def login_user(user):
 
 
 @frappe.whitelist(allow_guest=True)
-def login_via_token(login_token: str):
+def login_via_token(login_token: str, number):
     sid = frappe.cache().get_value(f"login_token:{login_token}", expires=True)
     if not sid:
         frappe.respond_as_web_page(_("Invalid Request"), _(
@@ -189,7 +191,12 @@ def login_via_token(login_token: str):
         return
 
     frappe.local.form_dict.sid = sid
+    if number:
+        frappe.local.cookie_manager = CookieManager()
+        frappe.local.cookie_manager.set_cookie("number", number)
     frappe.local.login_manager = LoginManager()
+   
+    # frappe.utils.set_cookie("my_cookie_name", '7845795655', expires=None)
     return True
 
 
@@ -216,18 +223,31 @@ def whatsapp_keys_details():
     version = frappe.db.get_single_value('WhatsApp Api', 'version')
     return access_token, api_endpoint, name_type, version
 
-def send_whatsapp_otp(phone, otp):
-  
+def send_whatsapp_otp(phone, otp):  
     import requests
     access_token, api_endpoint, name_type, version = whatsapp_keys_details()
-    
-    url = f"{api_endpoint}/{name_type}/{version}/sendSessionMessage/91{phone}?messageText={otp}"
     headers = {
-        "content-type": "text/json",
+        "Content-Type": "text/json",
         "Authorization": access_token
     }
-    response = requests.post(url, headers=headers)
-    print(response.text)
+    url = f"{api_endpoint}/{name_type}/{version}/sendTemplateMessage?whatsappNumber=91{phone}"
+    payload = {
+        "parameters": [
+            {
+                "name": "otp",
+                "value": otp
+            },
+            {
+                "name": "business_name",
+                "value": "BestDeed"
+            }
+        ],
+
+        "broadcast_name": "otp_msg",
+        "template_name": "otp_msg"
+    }
+    response = requests.post(url, json=payload, headers=headers)
+
     return f'OTP sent to your whatsapp number: {phone}'
 
 
@@ -299,8 +319,10 @@ def verify_otp(number, otp, m_type):
                 if user:
                     login_user(user)
         else:
+            return 'failed', 'a'
             # OTP not match write your logic here
             return f'Your OTP is not match with your number: {number}'
+        
     elif m_type == 'sms':
         data = frappe.db.get_value("SMS OTP", filters={
                                 "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
@@ -324,8 +346,21 @@ def verify_otp(number, otp, m_type):
                 if user:
                     login_user(user)
         else:
+            return 'failed', 'a'
             # OTP not match write your logic here
             return f'Your OTP is not match with your number: {number}'
+        
+    elif m_type == 'email':
+        data = frappe.db.get_value("Email OTP", filters={
+                                "email": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
+        if data:
+            frappe.db.set_value("Email OTP", data, {"status": "Verified"})
+            return 'pass', number
+        else:
+            return 'failed', 'a'
+            return f'Your OTP is not match with your email: {number}'
+    
+    
 
 
 #create razorpay payment link 
@@ -418,3 +453,30 @@ def set_translation_from_erpnext(doc, method):
     #     existing_data = json.load(a)
     #     print("\n\n existing data", existing_data, "\n\n")
     #     existing_data.append(new_data)
+
+@frappe.whitelist(allow_guest=True)
+def forgot_password(email):
+    user = frappe.db.get_value("User", email, 'name')
+    if user:
+        otp = generateOTP(4)
+        # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
+        doc = frappe.get_doc({"doctype": "Email OTP",
+                            "email": f'{email}', "otp": otp, "status": "Sent"})
+        doc.insert(ignore_permissions=True)
+        frappe.db.commit()
+
+        message = send_email_otp(email, otp)
+        result = {"message": message, "number": email}
+        # return result
+        return message, email, 'email'
+    else:
+        return 'user not found with this email'
+
+def send_email_otp(email, otp):
+    frappe.sendmail(sender='sanskartechnolab.test@gmail.com', recipients=email, subject='Forgot Password', message=f"Your otp for reset password in BestDeed is {otp}", now=True)
+    return f'OTP sent to your email address: {email}'
+
+@frappe.whitelist(allow_guest=True)
+def reset_password(email, password):
+    print("\n\n email", password, email, "\n\n")
+    frappe.db.set_value("User", email, "new_password", password)

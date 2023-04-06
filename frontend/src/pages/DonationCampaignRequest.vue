@@ -8,7 +8,7 @@
                     <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
                         <div
                             class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
-                            {{$t('Campaign Request')}}
+                            {{$t('Request a Campaign')}}
                         </div>
                         <div class="relative z-0">
                             <div class=" sm:py-2 md:py-4 lg:py-8 ">
@@ -156,7 +156,7 @@
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
                                                 <button
                                                    class="appearance-none transition hover:text-gray-700 border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
-                                                    @click="request_campaignig()">{{$t('Campaign Request')}}</button>
+                                                    @click="request_campaignig()">{{$t('Request a Campaign')}}</button>
                                                 <a
                                                    class="cursor-pointer border-none transition hover:text-gray-700 text-end  buttonalign sm:ml-0 md:ml-20 lg:ml-32  appearance-non pr-2 text-[#aaa]  py-2 tracking-wide font-bold text-xl rounded"
                                                     @click="resetFormIg">{{$t('Reset Form')}}</a>
@@ -251,8 +251,9 @@ export default {
                     this.$toast({
                         title: "Error",
                         text: error,
-                        customIcon: "circle-fail",
+                        icon: "x-circle",
                         appearance: "denger",
+                        position: "top-center",
                     })
                 }
             }

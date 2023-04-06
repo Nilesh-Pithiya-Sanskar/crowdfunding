@@ -146,8 +146,9 @@ export default {
                     this.$toast({
                         title: "Error",
                         text: error,
-                        customIcon: "circle-fail",
+                        icon: "x-circle",
                         appearance: "denger",
+                        position: "top-center",
                     })
                     console.log(error)
                 }

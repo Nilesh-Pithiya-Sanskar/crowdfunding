@@ -468,9 +468,9 @@
                                             class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold  title-font mb-1 ">
                                             {{ $t('FAQ') }}
                                         </p>
-                                        <p class="text-base leading-relaxed ">
+                                        <!-- <p class="text-base leading-relaxed ">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!
-                                        </p>
+                                        </p> -->
                                     </div>
                                     <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
                                         <div class="w-full py-2">
@@ -760,7 +760,7 @@
     <button @click="delete_cookies('item')">del</button><br>
     <button @click="set_cookies()">set</button><br>  -->
     <!-- {{ item_cart }} -->
-
+{{ cookie }}
     <Footer />
 </template>
 
@@ -955,8 +955,9 @@ export default {
                     this.$toast({
                         title: "Error",
                         text: error,
-                        customIcon: "circle-fail",
+                        icon: "x-circle",
                         appearance: "denger",
+                        position: "top-center",
                     })
                 }
             }
@@ -990,8 +991,9 @@ export default {
                     this.$toast({
                         title: "Error",
                         text: error,
-                        customIcon: "circle-fail",
+                        icon: "x-circle",
                         appearance: "denger",
+                        position: "top-center",
                     })
                 }
             }
@@ -1005,16 +1007,18 @@ export default {
             this.$toast({
                 title: "Link copied",
                 text: "Link is copied to your clipboard.",
-                customIcon: "smile",
+                icon: "smile",
                 appearance: "denger",
+                position: "top-center"
             })
         },
         donate_now() {
             this.$toast({
-                title: "Add Item",
+                title: "Please Add Item",
                 text: "Please Select Item for Donate",
-                customIcon: "smile",
+                icon: "smile",
                 appearance: "denger",
+                position: "top-center"
             })
         },
         delete_cookies(name) {
@@ -1108,6 +1112,7 @@ export default {
                     "prefill": {
                         "name": `${this.cookie.full_name}`,
                         "email": `${this.cookie.user_id}`,
+                        "contact": `${this.cookie.number || 8989898989}`
                     },
                     "notes": {
                         "address": "Razorpay Corporate Office"
@@ -1248,9 +1253,11 @@ export default {
                 if (remining_item == qty1) {
                     this.$toast({
                         title: "Not Allow",
-                        text: "You can`t add this item add other.",
-                        customIcon: "smile",
+                        text: "You can`t add this item, add another item.",
+                        icon: "x-circle",
                         appearance: "denger",
+                        position: "top-center",
+                        iconClasses: 'text-red-500',
                     })
                 }
                 else {

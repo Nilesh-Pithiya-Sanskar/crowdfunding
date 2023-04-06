@@ -39,9 +39,12 @@
               </div>
               <div class="grid md:grid-cols-2 sm:grid-cols-2">
                 <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
-                <router-link to="/sadbhavna/registration" class="text-green-500 text-right">{{$t('Register')}}</router-link>
+                <div @click="forgotPassword()" class="text-green-500 text-right">{{$t('Forgot Password?')}}</div>
               </div>
-            </form>
+              <div class="text-center font-bold">
+                <router-link to="/sadbhavna/registration" class="text-green-500 text-center">{{$t('Register')}}</router-link>
+              </div>
+              </form>
           </div>
         </div>
       </div>
@@ -171,8 +174,9 @@ export default {
           this.$toast({
             title: "Error",
             text: "User Name or Password Incorrect",
-            customIcon: "circle-fail",
+            icon: "x-circle",
             appearance: "denger",
+            position: "top-center",
           })
           this.email = "";
           this.password = "";
@@ -191,12 +195,13 @@ export default {
           this.$toast({
             title: "Error",
             text: 'Something want Wrong!',
-            customIcon: "circle-fail",
+            icon: "x-circle",
             appearance: "denger",
           })
         }
       }
     },
+
     // googleAuthCodeLogin(){
     //   return{
     //     method: '/sadbhavna_donatekart.api.api.login_with_google',
@@ -208,6 +213,29 @@ export default {
     //     }
     //   }
     // }
+
+    forgotPassword(){
+      return{
+        method: 'sadbhavna_donatekart.api.api.forgot_password',
+        onSuccess:(res) => {
+          console.log("susseddd", res)
+          if(res=='user not found with this email')
+          {
+            this.emailError = res
+          }
+          else{
+            let otp_message = res[0]
+            let number = res[1]
+            let m_type = res[2]
+            this.$router.push(`/sadbhavna/otp/${otp_message}&${number}&${m_type}`);
+          }
+        },
+        onError:(error) =>{
+          console.log("error for pass", error)
+        }
+      }
+    }
+
   },
   methods: {
     login() {
@@ -327,6 +355,15 @@ export default {
       //   user_data: response
       // })
     },
+
+    forgotPassword(){
+      var email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+     
+      this.$resources.forgotPassword.submit({
+        email: this.email
+      })
+
+    }
     // login_with_google1(){
 
     // }

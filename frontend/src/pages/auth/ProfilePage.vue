@@ -6,8 +6,134 @@
         <div class="container mx-auto px-4 pt-96">
           <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
             <div class="px-6">
+
+
+
+
+              <div class="grid grid-cols-3">
+                <div></div>
+                <div>
+
+                  <div class="grid justify-items-center profile">
+                    <div v-if="user_data.data.user_image" class="relative">
+                      <img :src="user_data.data.user_image"
+                        class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
+
+                      <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-16 lg:ml-16">
+                        <FileUploader @success="(file) => upload_image(file.file_url)">
+                          <template v-slot="{
+                            openFileSelector,
+                          }">
+                            <svg @click="openFileSelector" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                          </template>
+                        </FileUploader>
+                      </div>
+                    </div>
+                    <div v-else class="relative">
+                      <div>
+                        <img src="https://crowdfunding.frappe.cloud/files/default_profile.jpeg"
+                          class="shadow-xl rounded-full h-40 align-middle border-2 border-solid border-gray-300 absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
+                        <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-16 lg:ml-16">
+                          <FileUploader @success="(file) => upload_image(file.file_url)">
+                            <template v-slot="{
+                              openFileSelector,
+                            }">
+                              <svg @click="openFileSelector" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                              </svg>
+                            </template>
+                          </FileUploader>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div></div>
+              </div>
+
+              <div class="lg:pt-0 md:pt-0 sm:pt-32 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center">
+
+                <div class="sm:mr-0 md:mr-8 lg:mr-32 ">
+                  <div v-if="user_data" v-for="roles in user_data.data.roles" class="">
+
+                    <div v-if="roles.role == 'Donor'" class="flex justify-center py-4 pt-8">
+                      <div class="w-32  text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
+                          {{ donor_count_campaign }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Donation Campaign') }}</span>
+                      </div>
+                      <div class=" w-32 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
+                          {{ donor_total_donation_amount }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Donate Amount') }}</span>
+                      </div>
+                    </div>
+
+
+                    <div v-else-if="roles.role == 'Ngo'" class="flex justify-center py-4  pt-8">
+                      <div class="w-32 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
+                          {{ campaign_report.total_live_campaign }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Live Campaign') }}</span>
+                      </div>
+                      <div class="w-32 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-blue-500">
+                          {{ campaign_report.total_pending_campaign }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Pending Campaign') }}</span>
+                      </div>
+                      <div class="w-32 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-red-500">
+                          {{ campaign_report.total_rejected_campaign }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Rejected Campaign') }}</span>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+                <!-- <div></div> -->
+
+                <div class="grid justify-items-center ">
+
+                  <div class="" v-for="roles in user_data.data.roles">
+                    <div class="mt-4 sm:mt-2 " v-if="roles.role == 'Donor'">
+
+                      <button v-if="!edit_profile" @click="edit()"
+                        class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded ease-linear transition-all duration-150"
+                        type="button">
+                        {{ $t('Edit Profile') }}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+
+
+
+
+
               <div class="flex flex-wrap justify-center">
-                <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+                <!-- <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                   <div v-if="user_data.data.user_image" class="relative">
                     <img :src="user_data.data.user_image"
                       class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
@@ -21,10 +147,10 @@
                               <svg @click="openFileSelector" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                           </template>
                         </FileUploader>               
-                      </div>
+                      </div> -->
 
-                    <!-- <Avatar :imageURL="http://sadbhavnadonatekart.com:8080/files/students.svguser_data.user_image" label="Felix" size="lg" /> -->
-                  </div>
+                <!-- <Avatar :imageURL="http://sadbhavnadonatekart.com:8080/files/students.svguser_data.user_image" label="Felix" size="lg" /> -->
+                <!-- </div>
                   <div v-else class="relative">
                     <div>
                       <img src="https://crowdfunding.frappe.cloud/files/default_profile.jpeg" class="shadow-xl rounded-full h-40 align-middle border-2 border-solid border-gray-300 absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
@@ -40,25 +166,25 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center" v-for="roles in user_data.data.roles">
-                  <div class="py-6 px-3 mt-32 sm:mt-0" v-if="roles.role == 'Donor'">
-                    <!-- <router-link to="/sadbhavna"
+                </div> -->
+                <!-- <div class="lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center" v-for="roles in user_data.data.roles">
+                  <div class="py-6 px-3 mt-32 sm:mt-0" v-if="roles.role == 'Donor'"> -->
+                <!-- <router-link to="/sadbhavna"
                                         class="bg-green-500  uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded  sm:mr-2 mb-1 ease-linear transition-all duration-150"
                                         type="button">
                                         Donate More
                                     </router-link> -->
-                    <button v-if="!edit_profile" @click="edit()"
+                <!-- <button v-if="!edit_profile" @click="edit()"
                       class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded lg:ml-0 md:ml-0 sm:ml-32 ease-linear transition-all duration-150"
                       type="button">
                       {{$t('Edit Profile')}}
                     </button>
                   </div>
-                </div>
+                </div> -->
 
-                <div v-if="user_data" v-for="roles in user_data.data.roles" class="w-full lg:w-4/12 px-4 lg:order-1">
-                  
-                  <div v-if="roles.role == 'Donor'" class="flex justify-center py-4 lg:pt-4 pt-8">
+                <!-- <div v-if="user_data" v-for="roles in user_data.data.roles" class="w-full lg:w-4/12 px-4 lg:order-1"> -->
+
+                <!-- <div v-if="roles.role == 'Donor'" class="flex justify-center py-4 lg:pt-4 pt-8">
                     <div class="mr-4 p-3 text-center">
                       <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ donor_count_campaign }}
@@ -70,17 +196,17 @@
                         {{ donor_total_donation_amount }}
                       </span>
                       <span class="text-sm text-blueGray-500">{{$t('Total Donate Amount')}}</span>
-                    </div>
-                    <!-- <div class="lg:mr-4 p-3 text-center">
+                    </div> -->
+                <!-- <div class="lg:mr-4 p-3 text-center">
                                         <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                                             89
                                         </span>
                                         <span class="text-sm text-blueGray-400">Comments</span>
                                     </div> -->
-                  </div>
+                <!-- </div> -->
 
 
-                  <div v-else-if="roles.role == 'Ngo'" class="flex justify-center py-4 lg:pt-4 pt-8">
+                <!-- <div v-else-if="roles.role == 'Ngo'" class="flex justify-center py-4 lg:pt-4 pt-8">
                     <div class="mr-4 p-3 text-center">
                       <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                         {{ campaign_report.total_live_campaign }}
@@ -99,11 +225,11 @@
                       </span>
                       <span class="text-sm text-blueGray-500">{{$t('Total Rejected Campaign')}}</span>
                     </div>
-                  </div>
+                  </div> -->
 
 
 
-                </div>
+                <!-- </div> -->
               </div>
               <div class="mt-10">
                 <div class="container mx-auto h-full">
@@ -115,7 +241,7 @@
                         <form>
                           <div class="">
                             <div v-if="!edit_profile" class="text-center">
-                              <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
+                              <h3 class="text-3xl font-semibold leading-normal mb-2 text-blueGray-700">
                                 {{ user_data.data.full_name }}
                               </h3>
                               <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
@@ -126,14 +252,16 @@
                             <div v-else class="text-center">
                               <!-- <div class="flex mb-4"> -->
                               <div
-                                class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center mb-4">
+                                class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
                                 <div>
-                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">{{$t('First Name')}}</label>
+                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">
+                                    {{ $t('First Name') }}</label>
                                   <input class="appearance-none form-control block border rounded w-full text-grey-darker"
                                     v-model="first_name" placeholder="Your first name" type="text" required />
                                 </div>
                                 <div>
-                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">{{$t('Last Name')}}</label>
+                                  <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">
+                                    {{ $t('Last Name') }}</label>
                                   <input class="appearance-none border form-control block rounded w-full text-grey-darker"
                                     v-model="last_name" type="text" placeholder="Your last name" required />
                                 </div>
@@ -149,7 +277,8 @@
                                                             required>
                                                     </div> -->
                               <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
-                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">{{$t('Phone Number')}} <span class="text-red-600">*</span></label>
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">
+                                  {{ $t('Phone Number') }} <span class="text-red-600">*</span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   v-model="phone" type="number" placeholder="Your phone number" required />
@@ -158,12 +287,12 @@
                               <button @click="save()"
                                 class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded mr-2 mb-4 ease-linear transition-all duration-150"
                                 type="button">
-                                {{$t('Save')}}
+                                {{ $t('Save') }}
                               </button>
                               <button @click="cancel()"
                                 class="bg-gray-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded mr-2 mb-4 ease-linear transition-all duration-150"
                                 type="button">
-                                {{$t('cancel')}}
+                                {{ $t('cancel') }}
                               </button>
                               <!-- <div class="mb-4">
                                                         <label class="block text-grey-darker text-sm font-bold mb-2"
@@ -201,7 +330,7 @@
               <div v-if="user_data" v-for="roles in user_data.data.roles">
                 <div v-if="roles.role == 'Donor'">
                   <div v-if="donation_details.data != ''" class="text-center pt-4 text-2xl text-gray-600">
-                    {{$t('Your Donations')}}
+                    {{ $t('Your Donations') }}
                   </div>
                   <div v-if="donation_details.data != ''" class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -211,20 +340,20 @@
                             <thead class="bg-white border-b">
                               <tr>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Campaign Name')}}
+                                  {{ $t('Campaign Name') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Amount')}}
+                                  {{ $t('Amount') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Date')}}
+                                  {{ $t('Date') }}
                                 </th>
                                 <!-- <th scope="col"
                                       class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                       Mode of Payment
                                   </th> -->
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Download 80G Certificate')}}
+                                  {{ $t('Download 80G Certificate') }}
                                 </th>
                               </tr>
                             </thead>
@@ -243,12 +372,11 @@
                                 <!-- <td
                                                                 class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                 {{ donation.mode_of_payment }}</td> -->
-                                <td class="text-sm text-gray-900 font-light px-6 py-4  cursor-pointer"
-                                  @click="
-                                    download_80g(donation.name, donation.date)
-                                  ">
-                                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> --> 
-                                  {{$t('Download')}}
+                                <td class="text-sm text-gray-900 font-light px-6 py-4  cursor-pointer" @click="
+                                  download_80g(donation.name, donation.date)
+                                ">
+                                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> -->
+                                  {{ $t('Download') }}
                                 </td>
                               </tr>
                             </tbody>
@@ -259,10 +387,10 @@
                   </div>
                   <div v-else>
                     <div class="text-center font-bold text-gray-500">
-                      {{$t('Donate Item to see Donations and Download Certificate')}}
+                      {{ $t('Donate Item to see Donations and Download Certificate') }}
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/sadbhavna">{{$t('Click Here To Explore Campaign')}}</router-link>
+                      <router-link to="/sadbhavna">{{ $t('Click Here To Explore Campaign') }}</router-link>
                     </div>
                   </div>
                 </div>
@@ -270,7 +398,7 @@
                 <div v-else-if="roles.role == 'Ngo'">
                   <!-- {{ campaign_details }} -->
                   <div v-if="campaign_details.data != ''" class="text-center text-2xl text-gray-600">
-                    {{$t('Your Campaign')}}
+                    {{ $t('Your Campaign') }}
                   </div>
                   <div v-if="campaign_details.data != ''" class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -280,25 +408,25 @@
                             <thead class="bg-white border-b">
                               <tr>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Campaign Name')}}
+                                  {{ $t('Campaign Name') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Campaign Category')}}
+                                  {{ $t('Campaign Category') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Requested Amount')}}
+                                  {{ $t('Requested Amount') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Raised Amount')}}
+                                  {{ $t('Raised Amount') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Start Date')}}
+                                  {{ $t('Start Date') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('End Date')}}
+                                  {{ $t('End Date') }}
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  {{$t('Status')}}
+                                  {{ $t('Status') }}
                                 </th>
                               </tr>
                             </thead>
@@ -339,21 +467,23 @@
                           </table>
                         </div>
                         <div class="text-center text-sm leading-normal m-4 text-blue-400 font-bold">
-                          <router-link to="/sadbhavna/request-campaign">{{$t('Request New Campaign')}}</router-link>
+                          <router-link to="/sadbhavna/request-campaign">{{ $t('Request New Campaign') }}</router-link>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div v-else>
                     <div class="text-center font-bold text-gray-500">
-                      {{$t(`You don't have any campaign live yet.`)}}
+                      {{ $t(`You don't have any campaign live yet.`) }}
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/sadbhavna/request-campaign">{{$t('Click Here To Request A New Campaign')}}</router-link>
+                      <router-link to="/sadbhavna/request-campaign">
+                        {{ $t('Click Here To Request A New Campaign')}}</router-link>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -451,7 +581,8 @@ export default {
           this.$toast({
             title: 'Profile Updated',
             text: 'Your Profile is successfully updated.',
-            customIcon: 'check',
+            icon: 'check',
+            position: "top-center",
           })
           this.$router.go(-1)
 
@@ -461,30 +592,33 @@ export default {
           this.$toast({
             title: 'Error',
             text: error,
-            customIcon: 'circle-fail',
+            icon: 'x-circle',
             appearance: 'denger',
+            position: "top-center",
           })
         },
       }
     },
-    set_image(){
-      return{
+    set_image() {
+      return {
         method: 'sadbhavna_donatekart.api.donor.set_image',
         onSuccess: (res) => {
           this.$toast({
             title: 'Profile Picture Updated',
             text: 'Your Profile Picture is successfully updated.',
-            customIcon: 'check',
+            icon: 'check',
+            position: "top-center",
           })
-          this.$router.go() 
+          this.$router.go()
         },
         onError: (error) => {
           console.log('error', error)
           this.$toast({
             title: 'Error',
             text: error,
-            customIcon: 'circle-fail',
+            icon: 'x-circle',
             appearance: 'denger',
+            position: "top-center",
           })
         },
 
@@ -587,7 +721,7 @@ export default {
     cancel() {
       this.edit_profile = false
     },
-    upload_image(url){
+    upload_image(url) {
       alert('clicked', url)
       console.log("url", url)
       this.$resources.set_image.submit({

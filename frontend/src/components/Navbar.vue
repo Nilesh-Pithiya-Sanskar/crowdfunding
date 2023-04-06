@@ -193,18 +193,20 @@ export default {
           this.$toast({
             title: "Success",
             text: "You successfully logout",
-            customIcon: "check",
+            icon: "check",
+            position: "top-center",
           })
-        // this.$router.push("/sadbhavna")
-        this.$router.go();
+        this.$router.push("/")
+        window.location.reload()
         },
         onError() {
           console.log("Error")
           this.$toast({
             title: "Error",
             text: 'Somthing want wrong during Logout!',
-            customIcon: "circle-fail",
+            icon: "x-circle",
             appearance: "denger",
+            position: "top-center",
         })
         }
       }

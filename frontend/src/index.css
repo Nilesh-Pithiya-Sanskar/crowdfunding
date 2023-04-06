@@ -37,117 +37,126 @@ div {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .card-shodow {
   box-shadow: 0 0 12px 12px #f8f8f8;
 }
 
-.fontcolor{
-color: #364958;
+.fontcolor {
+  color: #364958;
 }
 
-.fontfamily{
-font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.fontfamily {
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.fontcard{
-font-family: "Open Sans", sans-serif;
+.fontcard {
+  font-family: "Open Sans", sans-serif;
 }
 
-.transition{
-transition-duration: 0.5s;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-transition-delay: 200ms;
-transition-property: all;
+.transition {
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 200ms;
+  transition-property: all;
 }
 
 @media (max-width: 320px) and (min-width:248px) {
   .margintop {
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
   }
 }
 
 @media (max-width: 640px) {
-.categorycard
-{
+  .categorycard {
     padding-left: 16px;
     padding-right: 16px;
+  }
 }
+
+
+@media (max-width: 640px) {
+  .profile {
+    height: 70px;
+    /* align-items: center; */
+  }
 }
+
 
 @media (max-width: 1500px) and (min-width:1470px) {
   .imageresponsive {
-  margin-left: 720px;
-  height: 430px;
+    margin-left: 720px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1510px) and (min-width:1500px) {
   .imageresponsive {
-  margin-left: 730px;
-  height: 430px;
+    margin-left: 730px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1530px) and (min-width:1510px) {
   .imageresponsive {
-  margin-left: 740px;
-  height: 430px;
+    margin-left: 740px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1550px) and (min-width:1530px) {
   .imageresponsive {
-  margin-left: 750px;
-  height: 430px;
+    margin-left: 750px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1560px) and (min-width:1550px) {
   .imageresponsive {
-  margin-left: 760px;
-  height: 430px;
+    margin-left: 760px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1590px) and (min-width:1560px) {
   .imageresponsive {
-  margin-left: 770px;
-  height: 430px;
+    margin-left: 770px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1650px) and (min-width:1590px) {
   .imageresponsive {
-  margin-left: 830px;
-  height: 430px;
+    margin-left: 830px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1700px) and (min-width:1650px) {
   .imageresponsive {
-  margin-left: 870px;
-  height: 430px;
+    margin-left: 870px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1750px) and (min-width:1700px) {
   .imageresponsive {
-  margin-left: 900px;
-  height: 430px;
+    margin-left: 900px;
+    height: 430px;
   }
 }
 
 @media (max-width: 1800px) and (min-width:1750px) {
   .imageresponsive {
-  margin-left: 950px;
-  height: 430px;
+    margin-left: 950px;
+    height: 430px;
   }
 }
 
 @media (min-width:1800px) {
   .imageresponsive {
-  margin-left: 1000px;
-  height: 430px;
+    margin-left: 1000px;
+    height: 430px;
   }
 }
 
@@ -156,5 +165,3 @@ transition-property: all;
     text-align: center;
   }
 }
-
-
