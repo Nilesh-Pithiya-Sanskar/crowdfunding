@@ -112,6 +112,11 @@ const routes = [{
     path: '/sadbhavna/donation-checkout',
     name: 'Donation Checkout',
     component: () => import('@/components/DonationCheckout.vue')
+  },
+  {
+    path: '/sadbhavna/reset_password/:key&:email',
+    name: 'Reset Password',
+    component: () => import('@/pages/auth/ResetPassword.vue')
   }
 ]
 

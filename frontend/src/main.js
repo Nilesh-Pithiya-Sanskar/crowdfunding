@@ -34,9 +34,11 @@ const i18n = createI18n({
     }
 })
 
-
+import VueSocialSharing from 'vue-social-sharing'
 
 let app = createApp(App)
+app.use(VueSocialSharing);
+
 app.use(i18n)
 app.use(router)
 app.use(FrappeUI)

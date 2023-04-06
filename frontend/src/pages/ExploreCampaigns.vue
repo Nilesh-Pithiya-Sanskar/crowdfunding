@@ -12,12 +12,6 @@
     </div>
 
 
-
-
-
-
-
-
     <!-- Categories -->
     <section class="container mx-auto h-full categorycard pb-8 ">
         <div class="text-center mt-10">
@@ -124,16 +118,12 @@
                     <img class="h-32 w-48" :src="item.campain_image" alt="Mountain" @click="donate(item.name)">
                 </div>
                 <div class="fontfamily fontcolor col-span-2">
-
-
                     <h3 class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold mb-2">{{
                         $t(item.campaign_title) }}
                     </h3>
-
                     <p class="text-[#364958] mb-[16px] leading-7">
                         {{ $t(item.ngo) }}
                     </p>
-
                 </div>
             </div>
         </div>

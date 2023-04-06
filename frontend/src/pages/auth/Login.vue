@@ -218,16 +218,23 @@ export default {
       return{
         method: 'sadbhavna_donatekart.api.api.forgot_password',
         onSuccess:(res) => {
-          console.log("susseddd", res)
+          // console.log("susseddd", res)
           if(res=='user not found with this email')
           {
             this.emailError = res
           }
           else{
-            let otp_message = res[0]
-            let number = res[1]
-            let m_type = res[2]
-            this.$router.push(`/sadbhavna/otp/${otp_message}&${number}&${m_type}`);
+            // let otp_message = res[0]
+            // let number = res[1]
+            // let m_type = res[2]
+            // this.$router.push(`/sadbhavna/otp/${otp_message}&${number}&${m_type}`);
+            console.log("mail send")
+            this.$toast({
+            title: "Mail Sent",
+            text: 'forgot password mail is sent open link to set password',
+            icon: "right",
+            appearance: "denger",
+          })
           }
         },
         onError:(error) =>{

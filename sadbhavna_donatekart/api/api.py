@@ -458,25 +458,42 @@ def set_translation_from_erpnext(doc, method):
 def forgot_password(email):
     user = frappe.db.get_value("User", email, 'name')
     if user:
-        otp = generateOTP(4)
-        # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
-        doc = frappe.get_doc({"doctype": "Email OTP",
-                            "email": f'{email}', "otp": otp, "status": "Sent"})
-        doc.insert(ignore_permissions=True)
-        frappe.db.commit()
+        from frappe.utils import get_url, random_string, now_datetime
+    
 
-        message = send_email_otp(email, otp)
+        # otp = generateOTP(4)
+        # # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
+        # doc = frappe.get_doc({"doctype": "Email OTP",
+        #                     "email": f'{email}', "otp": otp, "status": "Sent"})
+        # doc.insert(ignore_permissions=True)
+        # frappe.db.commit()
+
+        key = random_string(32)
+        frappe.db.set_value("User", "user", "reset_password_key", key)
+        frappe.db.set_value("User", "user", "last_reset_password_key_generated_on", now_datetime())
+
+        url =f"/sadbhavna/reset_password/key={key}&email={email}"
+        link = get_url(url)
+
+        message = send_reset_password_email(email, link)
         result = {"message": message, "number": email}
         # return result
         return message, email, 'email'
     else:
         return 'user not found with this email'
 
-def send_email_otp(email, otp):
-    frappe.sendmail(sender='sanskartechnolab.test@gmail.com', recipients=email, subject='Forgot Password', message=f"Your otp for reset password in BestDeed is {otp}", now=True)
+def send_reset_password_email(email, link):
+    frappe.sendmail(sender='sanskartechnolab.test@gmail.com', recipients=email, subject='Forgot Password', message=f"Reset your password in BestDeed using this link: {link}", now=True)
     return f'OTP sent to your email address: {email}'
 
 @frappe.whitelist(allow_guest=True)
-def reset_password(email, password):
-    print("\n\n email", password, email, "\n\n")
-    frappe.db.set_value("User", email, "new_password", password)
+def reset_password(email, password, key):
+        pass_key = frappe.db.get_value("User", email, ['reset_password_key'])
+        if pass_key:
+            doc = frappe.get_doc('User', email)
+            doc.new_password = password
+            doc.save(ignore_permissions=True)
+            login_user(email)
+        else:
+            return 'Your key is not valid'
+    # frappe.db.set_value("User", email, "new_password", password)

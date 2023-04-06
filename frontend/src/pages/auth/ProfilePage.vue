@@ -7,9 +7,6 @@
           <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
             <div class="px-6">
 
-
-
-
               <div class="grid grid-cols-3">
                 <div></div>
                 <div>
@@ -60,19 +57,19 @@
                 <div></div>
               </div>
 
-              <div class="lg:pt-0 md:pt-0 sm:pt-32 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center">
+              <div class=" grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 justify-center">
 
-                <div class="sm:mr-0 md:mr-8 lg:mr-32 ">
+                <div class="">
                   <div v-if="user_data" v-for="roles in user_data.data.roles" class="">
 
-                    <div v-if="roles.role == 'Donor'" class="flex justify-center py-4 pt-8">
-                      <div class="w-32  text-center">
+                    <div v-if="roles.role == 'Donor'" class="flex justify-center pt-8">
+                      <div class="w-28  text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                           {{ donor_count_campaign }}
                         </span>
                         <span class="text-sm text-blueGray-500">{{ $t('Total Donation Campaign') }}</span>
                       </div>
-                      <div class=" w-32 text-center">
+                      <div class=" w-28 text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                           {{ donor_total_donation_amount }}
                         </span>
@@ -81,22 +78,68 @@
                     </div>
 
 
-                    <div v-else-if="roles.role == 'Ngo'" class="flex justify-center py-4  pt-8">
-                      <div class="w-32 text-center">
+                    <div v-else-if="roles.role == 'Ngo'" class="">
+                      <!-- <div class="w-28 text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                           {{ campaign_report.total_live_campaign }}
                         </span>
                         <span class="text-sm text-blueGray-500">{{ $t('Total Live Campaign') }}</span>
                       </div>
-                      <div class="w-32 text-center">
+                      <div class="w-28 text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-blue-500">
                           {{ campaign_report.total_pending_campaign }}
                         </span>
                         <span class="text-sm text-blueGray-500">{{ $t('Total Pending Campaign') }}</span>
                       </div>
-                      <div class="w-32 text-center">
+                      <div class="w-28 text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-red-500">
                           {{ campaign_report.total_rejected_campaign }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Rejected Campaign') }}</span>
+                      </div> -->
+                    </div>
+
+                  </div>
+                </div>
+
+                <div></div>
+
+
+                <div>
+                  <div v-if="user_data" v-for="roles in user_data.data.roles" class="">
+
+                    <div v-if="roles.role == 'Donor'" class="flex justify-center pt-8">
+                      <!-- <div class="w-28  text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
+                          {{ donor_count_campaign }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Donation Campaign') }}</span>
+                      </div>
+                      <div class=" w-28 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
+                          {{ donor_total_donation_amount }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Donate Amount') }}</span>
+                      </div> -->
+                    </div>
+
+
+                    <div v-else-if="roles.role == 'Ngo'" class="flex justify-center">
+                      <div class="w-28 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
+                          {{ campaign_report.total_live_campaign || 0 }}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Live Campaign') }}</span>
+                      </div>
+                      <div class="w-28 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-blue-500">
+                          {{ campaign_report.total_pending_campaign || 0}}
+                        </span>
+                        <span class="text-sm text-blueGray-500">{{ $t('Total Pending Campaign') }}</span>
+                      </div>
+                      <div class="w-28 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-red-500">
+                          {{ campaign_report.total_rejected_campaign || 0}}
                         </span>
                         <span class="text-sm text-blueGray-500">{{ $t('Total Rejected Campaign') }}</span>
                       </div>
@@ -107,9 +150,9 @@
                   </div>
                 </div>
 
-                <!-- <div></div> -->
 
-                <div class="grid justify-items-center ">
+
+                <!-- <div class="grid justify-items-center ">
 
                   <div class="" v-for="roles in user_data.data.roles">
                     <div class="mt-4 sm:mt-2 " v-if="roles.role == 'Donor'">
@@ -121,7 +164,7 @@
                       </button>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
 
               </div>
@@ -283,6 +326,22 @@
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   v-model="phone" type="number" placeholder="Your phone number" required />
                               </div>
+
+                              <div  class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">{{$t('Set New Password')}} <span class="text-red-600"></span></label>
+                                <input
+                                  class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
+                                   type="password" v-model="password" @keyup="errorMessagePassword = ''" placeholder="Enter New Password" />
+                                 <p class="text-red-600">{{ $t(errorMessagePassword) }}</p>
+                              </div>
+                              <div v-if="password != ''" class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">{{$t('Confirm Password')}} <span class="text-red-600">*</span></label>
+                                <input
+                                  class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
+                                   type="password" v-model="confirmPassword" @keyup="errorMessageConfirmPassword = ''" placeholder="Enter Again Password" required />
+                                 <p class="text-red-600">{{ $t(errorMessageConfirmPassword) }}</p>
+                              </div>
+
                               <!-- <div></div> -->
                               <button @click="save()"
                                 class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded mr-2 mb-4 ease-linear transition-all duration-150"
@@ -303,6 +362,16 @@
                                                             v-model="pan_number" type="text" placeholder="Your pan number"
                                                             required>
                                                     </div> -->
+                            </div>
+                            <div class="grid justify-items-center " v-for="roles in user_data.data.roles">
+                              <div class="mt-4 sm:mt-2 " v-if="roles.role == 'Donor'">
+
+                                <button v-if="!edit_profile" @click="edit()"
+                                  class="bg-green-500 uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded ease-linear transition-all duration-150"
+                                  type="button">
+                                  {{ $t('Edit Profile') }}
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </form>
@@ -478,7 +547,7 @@
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
                       <router-link to="/sadbhavna/request-campaign">
-                        {{ $t('Click Here To Request A New Campaign')}}</router-link>
+                        {{ $t('Click Here To Request A New Campaign') }}</router-link>
                     </div>
                   </div>
                 </div>
@@ -522,6 +591,10 @@ export default {
       first_name: '',
       last_name: '',
       pan_number: '',
+      password: '',
+      confirmPassword: '',
+      errorMessagePassword: '',
+      errorMessageConfirmPassword: ''
     }
   },
   mounted() {
@@ -708,6 +781,24 @@ export default {
       this.edit_profile = true
     },
     save() {
+
+      var pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (this.password == '') {
+                this.errorMessagePassword = 'Enter password'
+            }
+            else if (pw.test(this.password) == false) {
+                this.errorMessagePassword = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
+                console.log('pw')
+            }
+            if (this.confirmPassword == '') {
+                this.errorMessageConfirmPassword = 'Enter confirm password'
+            }
+            if (this.password !== this.confirmPassword) {
+            this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
+            return true;
+        }
+
+      else {
       this.edit_profile = false
       this.$resources.update_donor.submit({
         first_name: this.first_name,
@@ -717,6 +808,7 @@ export default {
         old_email: this.donor,
         pan_number: this.pan_number,
       })
+    }
     },
     cancel() {
       this.edit_profile = false

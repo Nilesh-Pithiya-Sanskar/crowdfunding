@@ -75,7 +75,7 @@ div {
 }
 
 
-@media (max-width: 640px) {
+@media (max-width: 762px) {
   .profile {
     height: 70px;
     /* align-items: center; */
