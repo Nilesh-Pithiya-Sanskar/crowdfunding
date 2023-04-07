@@ -230,7 +230,7 @@ export default {
         }
     },
     methods: {
-        login_with_google: (response) => {
+        login_with_google(response) {
             // console.log("data", response)
             let userData = decodeCredential(response.credential)
             let email = userData.email
