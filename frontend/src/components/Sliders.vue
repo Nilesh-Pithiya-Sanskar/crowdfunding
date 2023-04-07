@@ -28,7 +28,7 @@
             <p v-else class="text-[#364958] mb-[16px] leading-7">
               {{ data.short_description }}
             </p>
-            <button class="text-[#40b751] font-bold" type="button" @click="donate(data.name)">{{ $t('Donate Now') }}</button>
+            <button class="text-[#40b751] font-bold underline" type="button" @click="donate(data.name)">{{ $t('Donate Now') }}</button>
           </div>
         </div>
       </div>

@@ -97,20 +97,29 @@
 </template> -->
 
 <template>
-  <div class="px-10 md:px-50 lg:px-30 xl:px-0 bg-[#40b751]">
-    <footer class="container w-full pt-10 md:pt-10 lg:pt-20 sm:pb-0  ml-auto mr-auto text-neutral-50">
+<div class="px-2 md:px-50 lg:px-30 xl:px-0 bg-[#40b751]">
+    <footer class="container w-full pt-5 md:pt-5 lg:pt-10 sm:pb-0  ml-auto mr-auto">
+
       <div
         class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 sm:gap-auto md-gap:4 lg:gap-auto pb-5 md:pb-10 lg:pb-2 px-0 py-0 ">
         <div class="sm:col-span-2 md:col-span-2 lg:col-auto">
-          <h2 class="font-bold text-white mb-6 text-xl mb-4">
-            {{$t('About')}}</h2>
-          <p class="text-whitetext-gray-500 -pr-[200px] dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Modi cumque tenetur inventore veniam, hic vel
-            ipsa necessitatibus ducimus architecto fugiat!</p>
+         <!-- <div class="grid grid-cols-2 mb-4">
+          <img src="../../src/assets/Inter/img/logo-1.1.ico"
+                    class="mb-2 lg:mb-0 sm:mt-0 lg:mt-0 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
+                    <span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[28px] -ml-[60px] mt-[8px] md:mr-5">BestDeed</span></div> -->
+                    <div class="flex  justify-between">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/sadbhavna">
+              <img src="../../src/assets/Inter/img/logo-1.1.ico"
+                class="mb-4 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
+            </a>
+            <a href="/sadbhavna"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
+          </div></div>
+          <p class="text-white  lg:-mr-[60px] dark:text-gray-400">We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact. Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.</p>
           <div class="my-5 pr-4">
             <div class="flex  space-x-6 mt-8">
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4" src="../../src/assets/Inter/img/facebook.svg" />
+                <img class="w-4 h-4 " src="../../src/assets/Inter/img/facebook.svg" />
                 <p class="sr-only">Facebook page</p>
               </a>
               <a href="#" class="text-gray-400 text-white">
@@ -128,72 +137,64 @@
             </div>
           </div>
         </div>
-        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px] md:pb-10 sm:pb-10 ">
-          <h2 class="font-bold text-white mb-6 text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            {{$t('Quick Links')}}</h2>
+        <div class="sm:pl-[0px] lg:ml-[72px] md:pl-[0px] lg:pl-[40px] md:pb-10 sm:pb-10 ">
+          <h2 class="font-bold text-white mb-4 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-10 md:pt-5 lg:pt-0">
+            {{$t('Discover')}}</h2>
           <ul class="text-white">
-            <li class="sm:mb-2 md:mb-2 lg:mb-4">
-              <a href="#">{{$t('Symptoms')}}</a>
+            <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <router-link to="/sadbhavna/contact-us">{{$t('Explore Campaigns')}}</router-link>
             </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('Prevention')}}</a>
+            <li class=" hover:underline  hover:font-semibold sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
+              <a href="#">{{$t('Request A Campaign')}}</a>
             </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('FAQs')}}</a>
+            <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <a href="#">{{$t('About Us')}}</a>
             </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('About Coronavirus')}}</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+            <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <router-link to="/sadbhavna/contact-us">{{$t('Contact Us')}}</router-link>
             </li>
           </ul>
         </div>
-        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[50px] sm:pr-28 md:pr-32 lg:pr-0">
-          <h2 class="font-bold text-white mb-6 text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            {{$t('Helpful Link')}}</h2>
+        <div class="-mr-[96px] sm:pl-[0px] md:pl-[0px] lg:pl-[50px] sm:pr-28 md:pr-32 lg:pr-0">
+          <h2 class="font-bold text-white mb-4 md:mb-4 lg:mb-6 text-xl pt-10 md:pt-5 lg:pt-0">
+            {{$t('Learn')}}</h2>
           <ul class="text-white">
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('Helathcare Professional')}}</a>
+            <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <a href="#">{{$t('How it Works')}}</a>
             </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('LGU Facilities')}}</a>
+            <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <a href="#">{{$t('FAQs')}}</a>
             </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('Protect Your Family')}}</a>
+             <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
+              <a href="#">{{$t('Blogs')}}</a>
             </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-              <a href="#">{{$t('World Health')}}</a>
+            <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <a href="#">{{$t('Terms & Conditions')}}</a>
+            </li>
+            <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
+              <a href="#">{{$t('Private Policy')}}</a>
             </li>
           </ul>
         </div>
-        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px]">
-          <h2 class="font-bold text-white mb-6 text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            {{$t('Resources')}}</h2>
-          <ul class="text-white">
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('WHO Website')}}</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('CDC Website')}}</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('Gov Website')}}</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('DOH Website')}}</a>
-            </li>
-          </ul>
+        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px] ">
+          <h2 class="font-bold text-white mb-4 md:mb-4 lg:mb-6 text-xl -ml-[0px] md:-ml-[0px] lg:-ml-[80px] pt-10 md:pt-5 lg:pt-0">
+            {{$t('Contact Us')}}</h2>
+          <div class="text-white lg:-ml-[80px]">
+            <div class="grid grid-cols-2 mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="pt-1 w-5 h-6 " src="../../src/assets/Inter/img/location-pin.png" /></div>
+                    <p class="-ml-[150px] md:-ml-[110px] lg:-ml-[110px]"><span>Head Office, India</span><br>98 new Mylapore<br>Raidurgam Panmaktha, Mumbai, Maharashtra, 400003</p></div>
+            <div class="grid grid-cols-2 mb-2 md:mb-2 lg:mb-4 xl:mb-4 "><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
+                    <p class="cursor-pointer  hover:font-semibold -ml-[150px] md:-ml-[110px] lg:-ml-[110px] hover:underline"><a>+91 9999999999</a></p></div>
+            <div class="grid grid-cols-2 mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
+                    <p class="cursor-pointer  hover:font-semibold -ml-[150px] md:-ml-[110px] lg:-ml-[110px] hover:underline"><a>info@bestdeed.com</a></p></div>
+          </div>
         </div>
-      </div>
-      <div class="text-center px-4 pb-8 pt-12 border-t border-white border-opacity-10 border-neutral-100">
-        <span class="text-sm  font-normal mb-4 mt-0font-semiboldtext-whitetext-gray-500 dark:text-gray-400">Copyright
-          &copy; 2023 All rights reserved
-        </span>
-
       </div>
     </footer>
   </div>
+
+     <section class=" bg-white text-center px-4 pb-4 pt-2 border-t border-white border-opacity-10 border-neutral-100">
+    <span class="text-[#40b751] font-[600] text-[16px] ">2023  | All Rights Reserved</span>
+  </section>
 </template>
 
 

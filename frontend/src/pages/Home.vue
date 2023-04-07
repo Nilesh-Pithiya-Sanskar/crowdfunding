@@ -334,10 +334,10 @@
                 </p>
               </div>
               
-              <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 flex justify-between">
+              <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 flex justify-between">{{ }}
                 <ShareNetwork
                   network="WhatsApp"
-                  :url="url"
+                  :url="url+'/campaign-donation/'+campaigns[index - 1].name"
                   :title="campaigns[index - 1].campaign_title"
                   :description="campaigns[index - 1].short_description"
                   >

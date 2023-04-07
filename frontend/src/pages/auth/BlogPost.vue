@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-100">
+    <div class="bg-white">
         <Navbar />
         <!-- <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
         style="background-image: url('../../src/assets/Inter/img/explore-campaign.jpg') ">
@@ -12,8 +12,21 @@
     </div> -->
         <!-- <p>Blog</p> -->
         <div class="container mx-auto mt-20 pb-24">
-            <div class="bg-white">
+            <div class="">
+                <div v-if="blog_detail">
+                    <h1 class="text-center text-[30px]  pb-4 text-[#40b751] font-black ">
+                        {{ blog_detail.data.title }}
+                    </h1>
+                    <div>
+                        <img class="object-fill w-full pb-10" :src="blog_detail.data.meta_image">
+                    </div>
 
+                    <h4 class="pb-4">{{ blog_detail.data.blog_intro }}</h4>
+                    <p class="pb-4">{{ blog_detail.data.content_md }}</p>
+                    <p class="pb-4">{{ formatDate(blog_detail.data.published_on) }}</p>
+                    <hr>
+                    <p class="pt-4">{{ blog_detail.data.blogger }}</p>
+                </div>
                 <!-- <div v-if="blog_detail">
 
                     <div class=" pt-16 pl-32 md:pl-32 sm:pl-8  pr-32 pb-32">
@@ -28,7 +41,7 @@
                     </div>
 
                 </div> -->
-                <div v-if="blog_detail">
+                <!-- <div v-if="blog_detail">
                     <p style="font-size: 3rem;" class="text-[#40b751] font-bold pt-8 pl-8">{{
                         blog_detail.data.title }}
                     </p>
@@ -44,7 +57,7 @@
                             <p class="text-base grid justify-items-left">{{ blog_detail.data.content_md }}</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -82,27 +95,31 @@ export default {
     mounted() {
         const name = useRoute();
         this.blog = name.params.name
-        document.title = 'Blog' +' '+ name.params.name
         this.get_blog_detail(name.params.name)
-        this.campaign = name.params.name
-        this.get_campaign_donation_detail(name.params.name)
+        // this.campaign = name.params.name
+        // this.get_campaign_donation_detail(name.params.name)
 
     },
     methods: {
-        get_campaign_donation_detail(name) {
-            let url = "/api/resource/Donation Campaign/" + name
-            fetch(url, {
-                method: 'GET',
-            })
-                .then(response => {
-                    response.json().then(res => {
-                        this.campaign_detail = res
-                    });
-                })
-                .catch(err => {
-                    console.error(err);
-                });
+        formatDate(dateString) {
+            const date = new Date(dateString);
+            // Then specify how you want your dates to be formatted
+            return new Intl.DateTimeFormat('default', { dateStyle: 'long' }).format(date);
         },
+        // get_campaign_donation_detail(name) {
+        //     let url = "/api/resource/Donation Campaign/" + name
+        //     fetch(url, {
+        //         method: 'GET',
+        //     })
+        //         .then(response => {
+        //             response.json().then(res => {
+        //                 this.campaign_detail = res
+        //             });
+        //         })
+        //         .catch(err => {
+        //             console.error(err);
+        //         });
+        // },
         get_blog_detail(name) {
             let url = "/api/resource/Blog Post/" + name
             fetch(url, {
