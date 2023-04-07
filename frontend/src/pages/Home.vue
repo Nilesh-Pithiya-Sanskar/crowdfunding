@@ -59,9 +59,11 @@
     <section class="container mx-auto h-full categorycard">
       <div class="text-center mt-10">
         <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
-        <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
+        <!-- <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p> -->
       </div>
-
+      <div class="text-right mr-3 text-green-500 font-bold">
+        <router-link to="/sadbhavna/explore-campaigns">{{ $t('View More') }}</router-link>
+      </div>
       <div class="flex mt-3 border-b sm:mr-4 lg:mr-3 ">
         <div class="overflow-x-auto">
           <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-scroll ">
@@ -310,13 +312,13 @@
                       campaigns[index - 1].donation_amount).toFixed(2) }}%</div>
                 </div>
 
-                <!-- <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
+                <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
                     <p class="flex"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock mr-2">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg> {{ campaign_days }} {{ $t('Days Left') }}
+                        </svg> {{dayCalculate(campaigns[index - 1].end_date)}} {{ $t('Days Left') }}
                     </p>
                     <p class="flex mr-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -325,14 +327,14 @@
                         <circle cx="9" cy="7" r="4"></circle>
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>{{ $t('Donors') }}</p>
+                    </svg>{{getDonor(campaigns[index - 1].name) || 0}} {{ $t('Donors') }}</p>
 
-                </div> -->
+                </div>
                 
                 </p>
               </div>
               
-              <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
+              <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 flex justify-between">
                 <ShareNetwork
                   network="WhatsApp"
                   :url="url"
@@ -545,11 +547,7 @@ export default {
       openTabTestimonials: 1,
       featured_campaigns: [],
       lang: '',
-      url: window.location.href,
-
-      campaign_days: 0,
-      campaign_end_date: '',
-      campaign_start_date: '',
+      url: window.location.href
     }
   },
   resources: {
@@ -560,11 +558,6 @@ export default {
           console.log("get_campaign_success", res)
           this.campaigns = res
           this.totalCampaign = this.campaigns.length
-          var today = new Date()
-            this.campaign_end_date = new Date(res.data.end_date)
-            const timeDiff = this.campaign_end_date.getTime() - today.getTime();
-            const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            this.campaign_days = daysDiff;
         },
         onError: (error) => {
           console.log("Error", error)
@@ -671,7 +664,31 @@ export default {
     donate(name) {
       // this.$router.push(`/sadbhavna/donate/${name}`)
       this.$router.push(`/sadbhavna/campaign-donation/${name}`)
+    },
+
+    dayCalculate(end_date){
+      var today = new Date()
+      var end_date = new Date(end_date)
+      const timeDiff = end_date.getTime() - today.getTime();
+      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      return daysDiff;
+    },
+    getDonor(name){
+      var donor = ''
+      let url = `http://crowdfunding.com:8001/api/method/sadbhavna_donatekart.api.api.get_recent_donation?name=${name}`
+      fetch(url, {
+            method: 'POST'
+        }).then(response => {
+                response.json().then(res => {
+                  donor = res.message.length
+            })
+            console.log("donor res", donor)
+        })
+        console.log("donor", donor)
+        return donor
     }
+
+    
   },
   // mounted(){
   //   if (!this.user.isLoggedIn()) {

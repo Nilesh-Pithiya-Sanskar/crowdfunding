@@ -202,6 +202,31 @@ export default {
                     console.log("error", error)
                 }
             }
+        },
+        login_with_google(){
+            return{
+                method: 'sadbhavna_donatekart.api.api.login_with_google',
+                onSuccess: (res) => {
+                    this.$toast({
+                        title: 'Login Success',
+                        text: 'You are successfully login to our platform',
+                        icon: 'check',
+                        position: "top-center",
+                    })
+                    this.$router.push(`/sadbhavna`);
+
+                    },
+                onError: (error) => {
+                    console.log('error', error)
+                    this.$toast({
+                        title: 'Error',
+                        text: error,
+                        icon: 'x-circle',
+                        appearance: 'denger',
+                        position: "top-center",
+                    })
+                },
+            }
         }
     },
     methods: {
@@ -213,34 +238,41 @@ export default {
             let last_name = userData.given_name
             let image_url = userData.picture
 
+            this.$resources.login_with_google.submit({
+                email: email,
+                first_name: first_name,
+                last_name: last_name,
+                image_url: image_url
+            })
+
             // console.log("asdfads", userData)
 
-            let url = `https://crowdfunding.frappe.cloud/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
-            fetch(url, {
-                method: 'POST'
-            })
-                .then(response => {
-                    response.json().then(res => {
-                        var route = this.$cookies.get('route');
-                        if (route != null) {
-                            this.$router.go(-1)
-                            // this.$router.push(route)
-                        }
-                        else {
-                            this.$router.push(`/sadbhavna`);
-                            this.$router.push(`/sadbhavna`);
-                        }
-                        // console.log("asdf", res.message)
-                        // console.log("asdf", res)
-                        // let token = res.message
-                        // this.$router.push('/home')
-                        // window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
-                        // https://crowdfunding.frappe.cloud/
-                    });
-                })
-                .catch(function (error) {
-                    log('Request failed', error)
-                });
+            // let url = `https://crowdfunding.frappe.cloud/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
+            // fetch(url, {
+            //     method: 'POST'
+            // })
+            //     .then(response => {
+            //         response.json().then(res => {
+            //             var route = this.$cookies.get('route');
+            //             if (route != null) {
+            //                 this.$router.go(-1)
+            //                 // this.$router.push(route)
+            //             }
+            //             else {
+            //                 this.$router.push(`/sadbhavna`);
+            //                 this.$router.push(`/sadbhavna`);
+            //             }
+            //             // console.log("asdf", res.message)
+            //             // console.log("asdf", res)
+            //             // let token = res.message
+            //             // this.$router.push('/home')
+            //             // window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
+            //             // https://crowdfunding.frappe.cloud/
+            //         });
+            //     })
+            //     .catch(function (error) {
+            //         log('Request failed', error)
+            //     });
         },
         login_with_whatsapp() {
             var re = /^[6-9][0-9]{9}$/;
