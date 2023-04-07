@@ -97,8 +97,8 @@
 </template> -->
 
 <template>
-<div class="px-2 md:px-50 lg:px-30 xl:px-0 bg-[#40b751]">
-    <footer class="container w-full pt-5 md:pt-5 lg:pt-10 sm:pb-0  ml-auto mr-auto">
+<div class="px-2 md:px-50 lg:px-30 xl:px-0 bg-[#40b751] ">
+    <footer class="container w-full pt-5 md:pt-5 lg:pt-10 sm:pb-0 py-10 ml-auto mr-auto">
 
       <div
         class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 sm:gap-auto md-gap:4 lg:gap-auto pb-5 md:pb-10 lg:pb-2 px-0 py-0 ">
