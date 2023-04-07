@@ -130,6 +130,9 @@ export default {
 
         }
     },
+    created(){
+        document.title = 'Register'
+    },
     resources: {
         register() {
             return {

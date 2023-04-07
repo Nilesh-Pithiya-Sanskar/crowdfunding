@@ -58,6 +58,7 @@ export default {
     name: "Blog",
     created() {
         this.get_blogs()
+        document.title = 'Blog'
 
     },
     components: {

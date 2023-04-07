@@ -42,11 +42,11 @@
             </div>
         </div>
     </div>
-    <div class=" pl-96 ">
+    <!-- <div class=" pl-96 ">
         <div class="imageresponsive absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:h-0 md:h-0 lg:h-0 xl:h-[430px] sm:w-0 md:w-0 lg:w-0 xl:w-96  bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
-    </div>
+    </div> -->
     <Footer />
 </template>
 <script>
@@ -61,6 +61,7 @@ export default{
     },
     created(){
         const name = useRoute();
+        document.title = 'Reset Password'+' '+ name.params.email
         this.email = name.params.email,
         this.key = name.params.key
     },
@@ -79,21 +80,41 @@ export default{
             return {
                 method: 'sadbhavna_donatekart.api.api.reset_password',
                 onSuccess: (res) => {
-                    console.log("okey")
+                    if(res == 'Your key is not valid'){
+                        conform_passwordError = res
+                    }
+                    else{
+                        this.$router.push('/sadbhavna')
+                    }
                 },
                 onError: (error) =>{
-                    console.log("error")
+                    console.log("error", error)
                 }
             }
         }
     },
     methods:{
         resetPassword(){
-            this.$resources.resetPassword.submit({
-                email: this.email,
-                password: this.password,
-                key: this.key
-            })
+            var pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (this.password == '') {
+                this.passwordError = 'Please enter password'
+            }
+            else if (this.password && pw.test(this.password) == false) {
+                this.passwordError = 'Please enter strong password, minimum eight characters, at least one letter, one number and one special character'
+            }
+            if (this.conform_password == '') {
+                this.confirmPasswordError = 'Please enter confirm password'
+            }
+            else if (this.conform_password != this.password) {
+                this.confirmPasswordError = 'Your password is not match'
+            }
+            else{
+                this.$resources.resetPassword.submit({
+                    email: this.email,
+                    password: this.password,
+                    key: this.key
+                })
+            }
         }
     }
 

@@ -92,6 +92,7 @@ export default {
     },
     mounted(){
         const name = useRoute();
+        document.title = 'OTP'
         this.message = name.params.message
         this.number = name.params.number
         this.m_type = name.params.m_type

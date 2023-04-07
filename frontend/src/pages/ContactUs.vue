@@ -182,6 +182,9 @@ export default {
             // errors: false,
         }
     },
+    created(){
+        document.title = 'Contact Us'
+    },
     // watch: {
     //     email_id(value) {
     //         this.email_id = value;

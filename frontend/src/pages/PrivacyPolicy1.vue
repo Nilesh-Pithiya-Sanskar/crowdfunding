@@ -205,5 +205,8 @@ export default{
     Navbar,
     Footer,
   },
+  created(){
+        document.title = 'Privacy Policy'
+    }
 }
 </script>

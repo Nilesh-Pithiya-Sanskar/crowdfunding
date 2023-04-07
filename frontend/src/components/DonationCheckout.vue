@@ -1,8 +1,6 @@
 <template>
     <Dialog v-model="showDialog" >
-        
         <template #body>
-
                     <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
                         <h1
                             class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">

@@ -483,10 +483,10 @@
                     <div class="bg-white dark:bg-gray-900">
                         <div>
                             <div class="text-gray-700">
-                                <div class="pr-5 py-10">
-                                    <div class="mb-8">
+                                <div class="pr-5 py-4">
+                                    <div class="mb-4">
                                         <p
-                                            class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold  title-font mb-1 ">
+                                            class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold  title-font">
                                             {{ $t('FAQ') }}
                                         </p>
                                         <!-- <p class="text-base leading-relaxed ">
@@ -599,7 +599,7 @@
                 </div>
 
                 <div class="w-full md:w-6/12 lg:w-4/12 mb-10 md:mb-0 lg:mb-0">
-                    <div style="font-size: 2rem;" class="mt-8 mb-3 font-medium text-gray-800">{{ $t('Donors') }} ({{
+                    <div style="font-size: 2rem;" class="mt-6 mb-3 font-medium text-gray-800">{{ $t('Donors') }} ({{
                         total_donors }})</div>
                     <div class="flex flex-wrap shadow">
                         <div class="w-full">
@@ -615,14 +615,14 @@
                                     <a class=" text-sm font-medium  px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
                                         v-on:click="toggleTabs(2)"
                                         v-bind:class="{ 'bg-gray-200': openTab !== 2, 'text-gray-500': openTab === 2 }">
-                                        <i class="fas fa-cog text-base mr-1"></i> {{ $t('most generous') }}
+                                        <i class="fas fa-cog text-base mr-1"></i> {{ $t('Most Generous') }}
                                     </a>
                                 </li>
                             </ul>
 
                             <div class="relative flex flex-col min-w-0 break-words bg-white w-full  shadow-lg rounded">
                                 <div class="px-4 py-5 flex-auto">
-                                    <div class="tab-content tab-space overflow-y-auto h-72">
+                                    <div class="tab-content tab-space overflow-y-auto lg:h-[12rem] md:h-[13rem] sm:h-[17rem]">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
                                             <div class="pb-6" v-for="donation in recent_donation">
 
@@ -768,9 +768,8 @@
     }" v-model="showDialog" />
 
 
-    <DonationCheckout v-if="this.showCheckout" :i_qty="i_qty" :total_price="total_price" :showCheckout="showCheckout"
+    <DonationCheckout v-if="showCheckout == true" :i_qty="i_qty" :total_price="total_price" :showCheckout="showCheckout"
         @donate_checkout="donate_checkout" />
-
 
 
     <!-- <div>item_cart{{ item_cart }}</div><br> -->
@@ -826,7 +825,7 @@ export default {
         )
         return {
             user,
-            cookie
+            cookie,
         }
     },
     data() {
@@ -873,6 +872,7 @@ export default {
     created() {
         const name = useRoute();
         this.campaign = name.params.name
+        document.title = 'campaign details' +' '+ name.params.name
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
         this.get_generous_donation(name.params.name)
@@ -896,8 +896,6 @@ export default {
         if (this.user.isLoggedIn()) {
             this.isLoggedIn = true
         }
-
-
         // console.log("a", a)
     },
     mounted() {
@@ -908,9 +906,9 @@ export default {
         // this.campaign_days = Math.ceil(timeDiff / (1000 * 3600 * 24));
     },
     // computed: {
-    //     most_generous() {
-    //     return this.most_generous.sort((a, b) => b.amount - a.amount);
-    //     }
+    //     // most_generous() {
+    //     // return this.most_generous.sort((a, b) => b.amount - a.amount);
+    //     // }
     // },
     resources: {
         // get_campaign_donation_detail(){
@@ -1107,9 +1105,10 @@ export default {
         donate(total_price, anonymous) {
             console.log("donate called")
             if (!this.user.isLoggedIn()) {
+                console.log("okey")
+                this.showCheckout = true
                 this.$cookies.set('route', `/sadbhavna/campaign-donation/${this.campaign}`);
                 // this.$router.push(`/sadbhavna/donation-checkout`)
-                this.showCheckout = true
                 // return
             }
             else {

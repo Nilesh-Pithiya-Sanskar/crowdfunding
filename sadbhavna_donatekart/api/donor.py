@@ -34,15 +34,23 @@ def get_details_of_donor_donations(donor):
     return total_campaign, total_donation
 
 @frappe.whitelist()
-def update_donor(first_name, last_name, phone, old_email, pan_number):
+def update_donor(first_name, last_name, phone, old_email, pan_number, password):
     donor = frappe.db.get_value("Donor", filters={"email": old_email}, fieldname=["name"])
     user = frappe.db.get_value("User", filters={"email": old_email}, fieldname=["name"])
     frappe.db.set_value("Donor", donor, {"donor_name": f'{first_name} {last_name}', "mobile": f'{phone}', "pan_number": pan_number})
-    doc = frappe.get_doc('User', old_email)
-    doc.first_name = first_name
-    doc.last_name = last_name
-    doc.phone = f'{phone}'
-    doc.save()
+    if password:  
+        doc = frappe.get_doc('User', old_email)
+        doc.first_name = first_name
+        doc.last_name = last_name
+        doc.phone = f'{phone}'
+        doc.new_password = password
+        doc.save()
+    else:
+        doc = frappe.get_doc('User', old_email)
+        doc.first_name = first_name
+        doc.last_name = last_name
+        doc.phone = f'{phone}'
+        doc.save()
     # frappe.rename_doc('User', old_email, email)     
     
 @frappe.whitelist()

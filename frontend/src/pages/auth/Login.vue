@@ -13,7 +13,7 @@
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                   {{$t('Email')}} <span class="text-red-600">*</span>
                 </label>
-                <input v-model="email" type="email"
+                <input v-model="email" @keyup="emailError = ''" type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   :placeholder="$t('Email')" required />
                 <p class="text-red-600">{{ emailError }}</p>
@@ -37,7 +37,7 @@
                   {{$t('Sign In')}}
                 </button>
               </div>
-              <div class="grid md:grid-cols-2 sm:grid-cols-2">
+              <div class="grid md:grid-cols-2 sm:grid-cols-2 cursor-pointer">
                 <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
                 <div @click="forgotPassword()" class="text-green-500 text-right">{{$t('Forgot Password?')}}</div>
               </div>
@@ -154,6 +154,9 @@ export default {
       isLogin: false
     };
   },
+  created(){
+    document.title = 'Login'
+  },
   resources: {
     login() {
       return {
@@ -197,6 +200,7 @@ export default {
             text: 'Something want Wrong!',
             icon: "x-circle",
             appearance: "denger",
+            position: "top-center",
           })
         }
       }
@@ -233,7 +237,8 @@ export default {
             title: "Mail Sent",
             text: 'forgot password mail is sent open link to set password',
             icon: "right",
-            appearance: "denger",
+            position: "top-center",
+            
           })
           }
         },
@@ -365,10 +370,17 @@ export default {
 
     forgotPassword(){
       var email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-     
-      this.$resources.forgotPassword.submit({
-        email: this.email
-      })
+      if(this.email == ''){
+        this.emailError = 'Please enter email'
+      }
+      else if (email.test(this.email) == false && this.email) {
+        this.emailError = 'Please enter valid email'
+      }
+      else{
+          this.$resources.forgotPassword.submit({
+          email: this.email
+        })
+      }
 
     }
     // login_with_google1(){

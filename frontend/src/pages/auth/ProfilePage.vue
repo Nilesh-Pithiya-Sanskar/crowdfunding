@@ -169,12 +169,6 @@
 
               </div>
 
-
-
-
-
-
-
               <div class="flex flex-wrap justify-center">
                 <!-- <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                   <div v-if="user_data.data.user_image" class="relative">
@@ -567,7 +561,7 @@
 <script>
 import Navbar from '../../components/Navbar.vue'
 import Footer from '../../components/Footer.vue'
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 import { Avatar, FileUploader } from 'frappe-ui'
 // import { toast } from 'frappe-ui'
 import { useRoute } from 'vue-router'
@@ -576,6 +570,12 @@ import axios from 'axios'
 export default {
   name: 'Login',
   components: { Navbar, Footer, FileUploader },
+  setup() {
+    const user = inject("user")
+    return {
+      user,
+    }
+  },
   data() {
     return {
       user_data: '',
@@ -597,8 +597,14 @@ export default {
       errorMessageConfirmPassword: ''
     }
   },
+  created(){
+    if(!this.user.isLoggedIn()){
+      this.$router.push('/sadbhavna')
+    }
+  },
   mounted() {
     const name = useRoute()
+    document.title = 'Profile'+' '+ name.params.name
     this.get_user_detail(name.params.name)
     this.get_donation_details(name.params.name)
     this.get_campaign_details(name.params.name)
@@ -783,32 +789,33 @@ export default {
     save() {
 
       var pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-            if (this.password == '') {
-                this.errorMessagePassword = 'Enter password'
-            }
-            else if (pw.test(this.password) == false) {
-                this.errorMessagePassword = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
-                console.log('pw')
-            }
-            if (this.confirmPassword == '') {
-                this.errorMessageConfirmPassword = 'Enter confirm password'
-            }
-            if (this.password !== this.confirmPassword) {
-            this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
-            return true;
+          if (this.password == '') {
+              this.errorMessagePassword = 'Enter password'
+          }
+          else if (pw.test(this.password) == false) {
+              this.errorMessagePassword = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
+              console.log('pw')
+          }
+          if (this.confirmPassword == '') {
+              this.errorMessageConfirmPassword = 'Enter confirm password'
+          }
+          if (this.password !== this.confirmPassword) {
+          this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
+          return true;
         }
 
       else {
-      this.edit_profile = false
-      this.$resources.update_donor.submit({
-        first_name: this.first_name,
-        last_name: this.last_name,
-        // email: this.email,
-        phone: this.phone,
-        old_email: this.donor,
-        pan_number: this.pan_number,
-      })
-    }
+        this.edit_profile = false
+        this.$resources.update_donor.submit({
+          first_name: this.first_name,
+          last_name: this.last_name,
+          // email: this.email,
+          phone: this.phone,
+          old_email: this.donor,
+          password: this.password != '' ? this.password : '',
+          pan_number: this.pan_number,
+        })
+      }
     },
     cancel() {
       this.edit_profile = false

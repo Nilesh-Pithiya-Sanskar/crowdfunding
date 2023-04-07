@@ -159,6 +159,9 @@ export default {
             // isLogin: false,
         };
     },
+    created(){
+        document.title = 'Login'
+    },
     mounted() {
         // 203313835661247
         // 1616534218770661
@@ -214,7 +217,7 @@ export default {
 
             let url = `https://crowdfunding.frappe.cloud/api/method/sadbhavna_donatekart.api.api.login_with_google?email=${email}&first_name=${first_name}&last_name=${last_name}&image_url=${image_url}`
             fetch(url, {
-                method: 'GET'
+                method: 'POST'
             })
                 .then(response => {
                     response.json().then(res => {
@@ -224,6 +227,7 @@ export default {
                             // this.$router.push(route)
                         }
                         else {
+                            this.$router.push(`/sadbhavna`);
                             this.$router.push(`/sadbhavna`);
                         }
                         // console.log("asdf", res.message)

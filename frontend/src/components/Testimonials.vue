@@ -42,9 +42,9 @@
               <p>
 
               <div class="pb-16 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
-                <div class="mb-24 md:mb-0 lg:mb-0 flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
+                <div class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6  overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6  overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -73,15 +73,16 @@
                       <div class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book.
+                        type and scrambled it to make a type specimen book.It has survived not
+                          only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
 
                     </div>
                   </div>
                 </div>
-                <div class="mb-24 md:mb-0 lg:mb-0 flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
+                <div class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -110,16 +111,17 @@
                       <div class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book.
+                        type and scrambled it to make a type specimen book.It has survived not
+                          only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
 
                     </div>
                   </div>
                 </div>
 
-                <div class="mb-24 md:mb-0 lg:mb-0  flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
+                <div class="mb-24 md:mb-0 lg:mb-0  flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-full overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -146,7 +148,8 @@
                         Designation
                       </div>
                       <div class="mb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.It has survived not
+                          only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
 
                     </div>
@@ -161,9 +164,9 @@
 
 
               <div class="pb-16 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
-                <div class="mb-24 md:mb-0 lg:mb-0 flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
+                <div class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6  overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6  overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -192,21 +195,17 @@
                       <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. <a v-show="readMoret21">It has survived not
+                        type and scrambled it to make a type specimen book. It has survived not
                           only five centuries, but
-                          also the leap into electronic typesetting, remaining essentially unchanged.</a>
-                        <a class="cursor-pointer text-blue" @click="readMoret21 = !readMoret21">
-                          <span class="text-blue-500 underline" v-if="readMoret21">Read Less</span>
-                          <span class="text-blue-500 underline" v-else>Read More</span>
-                        </a>
+                          also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
 
                     </div>
                   </div>
                 </div>
-                <div class="mb-24 md:mb-0 lg:mb-0 flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
+                <div class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -235,21 +234,17 @@
                       <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. <a v-show="readMoret22">It has survived not
+                        type and scrambled it to make a type specimen book.It has survived not
                           only five centuries, but
-                          also the leap into electronic typesetting, remaining essentially unchanged.</a>
-                        <a class="cursor-pointer text-blue" @click="readMoret22 = !readMoret22">
-                          <span class="text-blue-500 underline" v-if="readMoret22">Read Less</span>
-                          <span class="text-blue-500 underline" v-else>Read More</span>
-                        </a>
+                          also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
 
                     </div>
                   </div>
                 </div>
 
-                <div class="mb-24 md:mb-0 lg:mb-0 flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div class="px-6 shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                <div class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
+                  <div class="px-6  overflow-scroll overflow-x-hidden  shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -278,14 +273,10 @@
                       <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. <a v-show="readMoret23">It has survived not
+                        type and scrambled it to make a type specimen book.It has survived not
                           only five centuries, but
-                          also the leap into electronic typesetting, remaining essentially unchanged.</a>
-                        <a class="cursor-pointer text-blue" @click="readMoret23 = !readMoret23">
-                          <span class="text-blue-500 underline" v-if="readMoret23">Read Less</span>
-                          <span class="text-blue-500 underline" v-else>Read More</span></a>
+                          also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -299,7 +290,7 @@
               <div class="pb-6 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
                 <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -328,13 +319,8 @@
                       <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. <a v-show="readMoret31">It has survived not
-                          only five centuries, but
-                          also the leap into electronic typesetting, remaining essentially unchanged.</a>
-                        <a class="cursor-pointer text-blue" @click="readMoret31 = !readMoret31">
-                          <span class="text-blue-500 underline" v-if="readMoret31">Read Less</span>
-                          <span class="text-blue-500 underline" v-else>Read More</span>
-                        </a>
+                        type and scrambled it to make a type specimen book.It has survived not
+                          only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
 
                     </div>
@@ -343,7 +329,7 @@
 
                 <div class="h-[440px] flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -372,13 +358,10 @@
                       <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. <a v-show="readMoret32">It has survived not
+                        type and scrambled it to make a type specimen book. It has survived not
                           only five centuries, but
-                          also the leap into electronic typesetting, remaining essentially unchanged.</a>
-                        <a class="cursor-pointer text-blue" @click="readMoret32 = !readMoret32">
-                          <span class="text-blue-500 underline" v-if="readMoret32">Read Less</span>
-                          <span class="text-blue-500 underline" v-else>Read More</span>
-                        </a>
+                          also the leap into electronic typesetting, remaining essentially unchanged.
+    
                       </div>
 
                     </div>
@@ -387,7 +370,7 @@
 
                 <div class="h-[440px] flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-auto overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white md:mr-6 lg:mr-6 ">
+                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white md:mr-6 lg:mr-6 ">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -416,13 +399,9 @@
                       <div class="pb-10 text-[18px] md:text-[18px] lg:text-[18px] leading-8 text-blueGray-600 mt-4 ">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. <a v-show="readMoret33">It has survived not
+                        type and scrambled it to make a type specimen book.It has survived not
                           only five centuries, but
-                          also the leap into electronic typesetting, remaining essentially unchanged.</a>
-                        <a class="cursor-pointer text-blue" @click="readMoret33 = !readMoret33">
-                          <span class="text-blue-500 underline" v-if="readMoret33">Read Less</span>
-                          <span class="text-blue-500 underline" v-else>Read More</span>
-                        </a>
+                          also the leap into electronic typesetting, remaining essentially unchanged.
                       </div>
                     </div>
                   </div>
@@ -442,12 +421,6 @@ export default {
   data() {
     return {
       openTabTestimonials: 1,
-      readMoret21: false,
-      readMoret22: false,
-      readMoret23: false,
-      readMoret31: false,
-      readMoret32: false,
-      readMoret33: false
     }
   },
   methods: {

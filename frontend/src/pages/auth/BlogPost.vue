@@ -82,6 +82,7 @@ export default {
     mounted() {
         const name = useRoute();
         this.blog = name.params.name
+        document.title = 'Blog' +' '+ name.params.name
         this.get_blog_detail(name.params.name)
         this.campaign = name.params.name
         this.get_campaign_donation_detail(name.params.name)

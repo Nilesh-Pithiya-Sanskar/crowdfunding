@@ -61,5 +61,8 @@ export default{
     Navbar,
     Footer,
   },
+  created(){
+    document.title = 'Terms Of Service'
+  }
 }
 </script>

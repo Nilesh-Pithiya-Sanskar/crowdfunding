@@ -46,11 +46,11 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
     # doc.insert(ignore_permissions=True)
  
     user = frappe.get_doc({"doctype": "User", "email": f"{email}", "first_name": f"{first_name}",
-                          "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}", "role_profile_name": "Donor"})
+                        "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}", "role_profile_name": "Donor", "send_welcome_email": 0})
     user.insert(ignore_permissions=True)
     frappe.db.commit()
     donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name} {last_name}",
-                           "mobile": f"{phone_number}", "donor_type": "Defult", "pan_number": f"{pan_number}"})
+                        "mobile": f"{phone_number}", "donor_type": "Defult", "pan_number": f"{pan_number}"})
     donor.insert(ignore_permissions=True)
     frappe.db.commit()
 
@@ -118,7 +118,7 @@ def login_with_google(email, last_name='', first_name='', image_url=''):
 
     if not user_exists:
         user = frappe.get_doc({"doctype": "User", "email": email, "last_name": last_name,
-                              "first_name": first_name, "user_image": image_url, "role_profile_name": "Donor"})
+                              "first_name": first_name, "user_image": image_url, "role_profile_name": "Donor", "send_welcome_email": 0})
         user.insert(ignore_permissions=True)
         frappe.db.commit()
         donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name} {last_name}",
@@ -308,7 +308,7 @@ def verify_otp(number, otp, m_type):
             else:
                 email = str(number) + '@gmail.com'
                 first_name = number
-                user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor"})
+                user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor", "send_welcome_email": 0})
                 user.insert(ignore_permissions=True)
                 frappe.db.commit()
                 donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name}", "donor_type": "Defult", "mobile": number})
@@ -335,7 +335,7 @@ def verify_otp(number, otp, m_type):
             else:
                 email = str(number) + '@gmail.com'
                 first_name = number
-                user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor"})
+                user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": first_name, "phone": number, "role_profile_name": "Donor", "send_welcome_email": 0})
                 user.insert(ignore_permissions=True)
                 frappe.db.commit()
                 donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name}", "donor_type": "Defult", "mobile": number})
@@ -459,8 +459,6 @@ def forgot_password(email):
     user = frappe.db.get_value("User", email, 'name')
     if user:
         from frappe.utils import get_url, random_string, now_datetime
-    
-
         # otp = generateOTP(4)
         # # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
         # doc = frappe.get_doc({"doctype": "Email OTP",
@@ -469,10 +467,10 @@ def forgot_password(email):
         # frappe.db.commit()
 
         key = random_string(32)
-        frappe.db.set_value("User", "user", "reset_password_key", key)
-        frappe.db.set_value("User", "user", "last_reset_password_key_generated_on", now_datetime())
+        frappe.db.set_value("User", user, "reset_password_key", key)
+        frappe.db.set_value("User", user, "last_reset_password_key_generated_on", now_datetime())
 
-        url =f"/sadbhavna/reset_password/key={key}&email={email}"
+        url =f"/sadbhavna/reset_password/{key}&{email}"
         link = get_url(url)
 
         message = send_reset_password_email(email, link)
@@ -488,8 +486,8 @@ def send_reset_password_email(email, link):
 
 @frappe.whitelist(allow_guest=True)
 def reset_password(email, password, key):
-        pass_key = frappe.db.get_value("User", email, ['reset_password_key'])
-        if pass_key:
+        pass_key = frappe.db.get_value("User", {'email': f'{email}'}, ['reset_password_key'])
+        if pass_key and pass_key == key:
             doc = frappe.get_doc('User', email)
             doc.new_password = password
             doc.save(ignore_permissions=True)

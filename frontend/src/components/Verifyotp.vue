@@ -50,6 +50,9 @@ export default {
     components: {
         Navbar,
         Footer
+    },
+    created(){
+        document.title = 'Verify OTP'
     }
 }
 </script>
