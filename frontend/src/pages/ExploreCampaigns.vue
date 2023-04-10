@@ -42,7 +42,8 @@
                                 </div> -->
 
                                 <input class="h-10 w-full text-md border-hidden  text-gray-700 pr-2" type="text"
-                                    v-model="searchQuery" placeholder="Search by Campaign/NGO" />
+                                    @keyup="get_search_campaigns()" v-model="searchQuery"
+                                    placeholder="Search by Campaign/NGO" />
 
                             </div>
 
@@ -183,7 +184,7 @@
 
         <div class="flex border-b sm:mr-4 lg:mr-4 ">
             <div class="overflow-x-auto">
-                <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-scroll ">
+                <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-hidden ">
                     <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
                         <div class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
                             v-on:click="toggleTabs(1)"
@@ -414,7 +415,7 @@
                                 {{ campaigns[index - 1].campaign_title }}</div>
 
                             <p class="text-gray-700 text-[15px] md:text-[15px] lg:text-[15px]  truncate">
-                                {{ $t('By') }}: {{ $t(campaigns[index - 1].ngo) }}
+                                {{ $t('By') }}: {{ campaigns[index - 1].ngo }}
                             </p>
                             <div
                                 class="fontcard flex  justify-between mt-3 mb-0 pb-3 text-[14px] md:text-[12px] lg:text-[14px]">
@@ -467,10 +468,16 @@
         </div>
         <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
             <button
-                class="  mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
         </div>
+        <div v-else class="text-center">
+            <button
+                class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                type="button" @click="get_more_campagins()">{{ $t('Show More') }}</button>
+        </div>
     </section>
+    <!-- {{ campaigns }} -->
     <Footer />
 </template>
 <script>
@@ -483,8 +490,6 @@ export default {
     components: { Navbar, Footer },
     mounted() {
         this.get_campaigns()
-        this.get_featured_campaigns()
-        this.lang = localStorage.getItem('lang') || window.navigator.language
         // const route = useRoute()
         // if(route.query.razorpay_payment_id){
         //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
@@ -498,14 +503,45 @@ export default {
         return {
             searchQuery: '',
             filteredList: [],
-            // list: [
-            //     "apple", "banana", "orange"
-            // ],
-            campaigns: [],
+            campaigns: [{
+                about_campaign: "“I have never had a happy married life. One that parents hope for when they marry off their daughters. My husband was an alcoholic and used to hit me when he came home drunk. It was horrible but I survived because of my sons. I worked hard to put food on the table, and did everything to give them a good education but finally when it was their turn to look after me, they forced me to live on the streets,” - Durga Devi*, an aged widow living in Vrindavan. ",
+                about_campaign_gu: "“મેં ક્યારેય સુખી લગ્ન જીવન નથી કર્યું. એક જેની માતા-પિતા આશા રાખે છે કે જ્યારે તેઓ તેમની દીકરીઓના લગ્ન કરે છે. મારા પતિ દારૂના નશામાં હતા અને જ્યારે તે નશામાં ઘરે આવતો ત્યારે મને મારતો હતો. તે ભયાનક હતું પરંતુ મારા પુત્રોને કારણે હું બચી ગયો. મેં ટેબલ પર ખોરાક મૂકવા માટે સખત મહેનત કરી, અને તેમને સારું શિક્ષણ આપવા માટે બધું જ કર્યું પરંતુ આખરે જ્યારે મારી સંભાળ રાખવાનો તેમનો વારો આવ્યો, ત્યારે તેઓએ મને શેરીઓમાં રહેવા માટે મજબૂર કરી,” - દુર્ગા દેવી*, એક વૃદ્ધ વિધવા રહે છે વૃંદાવનમાં.",
+                about_campaign_hi: "“मेरा वैवाहिक जीवन कभी सुखी नहीं रहा। एक जिसकी उम्मीद माता-पिता तब करते हैं जब वे अपनी बेटियों की शादी करते हैं। मेरे पति शराबी थे और शराब पीकर घर आने पर मुझे मारते थे। यह भयानक था लेकिन मैं अपने बेटों की वजह से बच गई। मैंने मेज पर खाना लगाने के लिए कड़ी मेहनत की, और उन्हें अच्छी शिक्षा देने के लिए सब कुछ किया लेकिन आखिरकार जब मेरी देखभाल करने की उनकी बारी आई, तो उन्होंने मुझे सड़कों पर रहने के लिए मजबूर कर दिया, ”- दुर्गा देवी*, एक वृद्ध विधवा जीवित वृंदावन में।",
+                campaign_category: "Elder Campaign",
+                campaign_request: null,
+                campaign_title: "They’re Looking For Love & Compassion, Donate Blankets This Winter To Help Poor Widows",
+                campaign_title_gu: "તેઓ પ્રેમ અને કરુણાની શોધમાં છે, ગરીબ વિધવાઓને મદદ કરવા માટે આ શિયાળામાં ધાબળાનું દાન કરો",
+                campaign_title_hi: "वे प्यार और करुणा की तलाश में हैं, गरीब विधवाओं की मदद के लिए इस सर्दी में कंबल दान करें",
+                campaign_type: null,
+                campain_image: "/files/Help-with-winter-cloth1089302098.webp",
+                creation: "2023-03-20 00:42:12.481030",
+                docstatus: 0,
+                donation_amount: 6868355,
+                donation_details: null,
+                duedate: null,
+                end_date: "2023-06-30",
+                is_featured: 0,
+                language: null,
+                long_description: null,
+                modified: "2023-04-05 19:57:35.907253",
+                modified_by: "pithiyanilesh87@gmail.com",
+                name: "THEY’RE-20-03-2023-0001",
+                naming_series: null,
+                ngo: "NGO-VRIND-20-03-2023-01",
+                ngo_email: "vrindavanwindows@gmail.com",
+                owner: "janvi@gmail.com",
+                published: 1,
+                raised_amount: 255920,
+                route: "route/they’re-20-03-2023-0001",
+                short_description: "This winter, join hands with Pure Devotion Foundation and distribute blankets to elderly widows in Vrindavan. Your contribution will ensure that these Matajis are kept warm and protected from the chilly winters.",
+                short_description_gu: "આ શિયાળામાં, શુદ્ધ ભક્તિ ફાઉન્ડેશન સાથે હાથ મિલાવો અને વૃંદાવનમાં વૃદ્ધ વિધવાઓને ધાબળાનું વિતરણ કરો. તમારું યોગદાન સુનિશ્ચિત કરશે કે આ માતાજીઓને ગરમ રાખવામાં આવશે અને ઠંડા શિયાળાથી સુરક્ષિત રાખવામાં આવશે.",
+                short_description_hi: "इस सर्दी में प्योर डिवोशन फाउंडेशन के साथ हाथ मिलाकर वृंदावन में बुजुर्ग विधवाओं को कंबल बांटें। आपका योगदान यह सुनिश्चित करेगा कि इन माताजी को गर्म रखा जाए और कड़ाके की ठंड से बचाया जाए।",
+                start_date: "2023-01-24",
+                status: "Live"
+            }],
             campaign_title: '',
             ngo: '',
             campain_image: '',
-            // campaign_title: ["Children", "Animal", "Religious", "Education", "Medical"],
             location: null,
             selected: 'newly launched',
             campaignToShow: 6,
@@ -515,74 +551,82 @@ export default {
             openTab: 1,
             openTabTestimonials: 1,
             featured_campaigns: [],
-            lang: ''
+            lang: '',
+
+            start: 0,
+            page_length: 6
         }
     },
-    computed: {
-        filteredList() {
-            // console.log(this.campaigns)
-            // return this.campaigns.filter((item) =>
-            //     item.toLowerCase().includes(this.searchQuery.toLowerCase())
-            // );
+    // computed: {
+    //     filteredList() {
+    //         // console.log(this.campaigns)
+    //         // return this.campaigns.filter((item) =>
+    //         //     item.toLowerCase().includes(this.searchQuery.toLowerCase())
+    //         // );
 
 
 
-            // if (this.searchQuery) {
-            //     console.log(this.campaigns);
-            //     return this.campaigns.filter((item) =>
-            //         item.toLowerCase().includes(this.searchQuery.toLowerCase())
-            //     );
-            // } else {
-            //     console.log('none');
-            //     return this.campaigns
-            // }
-            if (!this.searchQuery) {
-                console.log("none");
-                return false;
-            } else {
-                console.log("campaign");
-                return this.campaigns.filter(({ campaign_title, ngo, campain_image }) =>
-                    [campaign_title, ngo, campain_image].some(val => val.toLowerCase().includes(this.searchQuery))
-                );
-            }
+    //         // if (this.searchQuery) {
+    //         //     console.log(this.campaigns);
+    //         //     return this.campaigns.filter((item) =>
+    //         //         item.toLowerCase().includes(this.searchQuery.toLowerCase())
+    //         //     );
+    //         // } else {
+    //         //     console.log('none');
+    //         //     return this.campaigns
+    //         // }
+    //         if (!this.searchQuery) {
+    //             console.log("none");
+    //             return false;
+    //         } else {
+    //             console.log("campaign");
+    //             return this.campaigns.filter(({ campaign_title, ngo, campain_image }) =>
+    //                 [campaign_title, ngo, campain_image].some(val => val.toLowerCase().includes(this.searchQuery))
+    //             );
+    //         }
 
-            // if (!this.searchQuery) {
-            //     console.log('campaign');
-            //     return this.campaigns;
-            // } else {
-            //     return this.campaigns.filter((item) =>
-            //         item.toLowerCase().includes(this.searchQuery.toLowerCase())
-            //     );
-            // }
-        },
-    },
+    //         // if (!this.searchQuery) {
+    //         //     console.log('campaign');
+    //         //     return this.campaigns;
+    //         // } else {
+    //         //     return this.campaigns.filter((item) =>
+    //         //         item.toLowerCase().includes(this.searchQuery.toLowerCase())
+    //         //     );
+    //         // }
+    //     },
+    // },
     resources: {
         get_campaigns() {
             return {
                 method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
                 onSuccess: (res) => {
                     console.log("get_campaign_success", res)
+                    console.log("get_campaign_success")
                     this.campaigns = res
+                    // this.campaigns.push(res)
                     this.totalCampaign = this.campaigns.length
+                    // this.start = this.page_length
                 },
                 onError: (error) => {
                     console.log("Error", error)
                 }
             }
         },
-        get_featured_campaigns() {
+        get_search_campaigns() {
             return {
-                method: '/api/method/sadbhavna_donatekart.api.campaign.get_featured_campaigns',
+                method: '/api/method/sadbhavna_donatekart.api.campaign.get_search_campaigns',
                 onSuccess: (res) => {
-                    console.log("get_featured_success", res)
-                    this.featured_campaigns = res
+                    console.log("get_search_campaign_success", res)
+                    this.filteredList = res
+                    // this.campaigns.push(res)
+                    // this.totalCampaign = this.campaigns.length
+                    // this.start = this.page_length
                 },
-                onError() {
-                    console.log("Error")
+                onError: (error) => {
+                    console.log("Error", error)
                 }
             }
-        }
-
+        },
     },
     methods: {
         numberWithCommas(x) {
@@ -591,14 +635,12 @@ export default {
         toggleTabs: function (tabNumber) {
             this.openTab = tabNumber
         },
-        get_campaigns(category) {
+        get_campaigns(category, start) {
             this.$resources.get_campaigns.submit({
                 category: category,
-                language: localStorage.getItem('lang') || window.navigator.language
-            })
-        },
-        get_featured_campaigns() {
-            this.$resources.get_featured_campaigns.submit({
+                language: localStorage.getItem('lang') || window.navigator.language,
+                start: start,
+                page_length: this.page_length
             })
         },
         reserve() {
@@ -611,6 +653,17 @@ export default {
         donate(name) {
             // this.$router.push(`/sadbhavna/donate/${name}`)
             this.$router.push(`/sadbhavna/campaign-donation/${name}`)
+        },
+        get_more_campagins() {
+            // var start = this.start + this.page_length
+            this.page_length += this.page_length
+            this.campaignToShow += 6
+            this.get_campaigns('', 0)
+        },
+        get_search_campaigns() {
+            this.$resources.get_search_campaigns.submit({
+                search: this.searchQuery
+            })
         }
     },
 }

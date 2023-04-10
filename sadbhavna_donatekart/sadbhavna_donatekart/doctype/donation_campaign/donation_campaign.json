@@ -40,6 +40,7 @@
   "campaign_request",
   "ngo",
   "ngo_email",
+  "total_donor",
   "naming_series",
   "campaign_item_tab",
   "donation_amount",
@@ -250,7 +251,13 @@
    "fetch_from": "ngo.email",
    "fieldname": "ngo_email",
    "fieldtype": "Data",
-   "label": "Ngo Email"
+   "label": "Ngo Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "total_donor",
+   "fieldtype": "Data",
+   "label": "Total Donor"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -261,7 +268,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-10 11:46:32.034562",
+ "modified": "2023-04-10 17:16:31.745957",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

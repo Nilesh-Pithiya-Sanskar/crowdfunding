@@ -41,7 +41,7 @@ const routes = [{
   {
     path: '/sadbhavna/blog-post/:name',
     name: 'BlogPost',
-    component: () => import('@/pages/auth/BlogPost.vue')
+    component: () => import('@/pages/BlogPost.vue')
   },
   // {
   //   path: '/sadbhavna/test',

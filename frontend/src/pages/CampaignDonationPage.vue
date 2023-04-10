@@ -255,7 +255,7 @@
                                                 @click="decrement(products.item, products.price, qty = 1)">-</Button>
 
                                             <div v-for="item in item_cart">
-                                                <div class="bg-[#40b751] pt-1 pb-1 pl-3 pr-3 rounded-lg justify-center pb-5"
+                                                <div class="bg-[#40b751] pt-1 pb-1 pl-3 pr-3 rounded-lg justify-center"
                                                     v-if="products.item == item.item"> {{ item.qty }}
                                                 </div>
                                                 <!-- <div v-else>sdf</div> -->
@@ -622,9 +622,9 @@
 
                             <div class="relative flex flex-col min-w-0 break-words bg-white w-full  shadow-lg rounded">
                                 <div class="px-4 py-5 flex-auto">
-                                    <div class="tab-content tab-space overflow-y-auto lg:h-[12rem] md:h-[13rem] sm:h-[17rem]">
+                                    <div class="tab-content tab-space overflow-y-auto lg:h-[12rem] md:h-[13rem] sm:h-[17rem] h-[17rem]">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-                                            <div class="pb-6" v-for="donation in recent_donation">
+                                            <div class="pb-6" v-if="recent_donation != ''" v-for="donation in recent_donation">
 
                                                 <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
 
@@ -658,9 +658,12 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div v-else>
+                                                {{$t('No Recent Donation')}}
+                                            </div>
                                         </div>
                                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
-                                            <div class="pb-6" v-for="m_donation in most_generous">
+                                            <div class="pb-6" v-if="most_generous != ''" v-for="m_donation in most_generous">
                                                 <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
 
                                                     <div>
@@ -693,6 +696,9 @@
                                                         <p class="">₹ {{ numberWithCommas(m_donation.amount) }}</p>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div v-else>
+                                                {{$t('No Recent Donation')}}
                                             </div>
                                         </div>
                                     </div>

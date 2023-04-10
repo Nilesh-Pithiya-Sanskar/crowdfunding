@@ -30,33 +30,33 @@
     </div>
     <Dialog v-model="showDialog" >        
         <template #body>
-                    <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-                        <h1
-                            class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
-                            {{ $t('Reset Password') }}
-                            {{ email }}
-                        </h1>
-                        <div class="relative z-0">
-                            <div class="mb-4">
-                                <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="password" type="text" @keyup="passwordError = ''" placeholder="Password" required>
-                                <p class="text-red-600">{{ $t(passwordError) }}</p>
-                            </div>    
-                            <div class="mb-4">
-                                <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="re_password" type="text" @keyup="re_passwordError = ''" placeholder="Re-Password" required>
-                                <p class="text-red-600">{{ $t(re_passwordError) }}</p>
-                            </div>                        
-                            <div class="text-center">
-                                <button
-                                    class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
-                                    type="button" @click="resetPassword()"> {{ $t('Set Password') }}
-                                </button>
-                            </div>                           
-                        </div>
+            <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
+                <h1
+                    class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
+                    {{ $t('Reset Password') }}
+                    {{ email }}
+                </h1>
+                <div class="relative z-0">
+                    <div class="mb-4">
+                        <input
+                            class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                            v-model="password" type="text" @keyup="passwordError = ''" placeholder="Password" required>
+                        <p class="text-red-600">{{ $t(passwordError) }}</p>
                     </div>    
+                    <div class="mb-4">
+                        <input
+                            class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                            v-model="re_password" type="text" @keyup="re_passwordError = ''" placeholder="Re-Password" required>
+                        <p class="text-red-600">{{ $t(re_passwordError) }}</p>
+                    </div>                        
+                    <div class="text-center">
+                        <button
+                            class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                            type="button" @click="resetPassword()"> {{ $t('Set Password') }}
+                        </button>
+                    </div>                 
+                </div>
+            </div>
         </template>
     </Dialog>
     <Footer />

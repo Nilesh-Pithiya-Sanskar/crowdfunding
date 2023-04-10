@@ -23,7 +23,7 @@
     <div class="bg-[#ebf8ec] bg-auto w-full h-full bg-local bg-center bg-cover">
         <Navbar />
         <div class="grid justify-items-center">
-            <div class="px-4 pb-28 md:pb-32 lg:pb-48 pt-8 md:pt-32 lg:pt-32">
+            <div class="px-4 pb-10 md:pb-18 lg:pb-30 pt-5 md:pt-26 lg:pt-26">
                 <p class="text-[#40b751] tracking-widest text-center uppercase font-bold text-xs">
                     {{ $t('Contact') }}
                 </p>
@@ -33,14 +33,14 @@
                 </h1>
                 <p class="text-gray-600 text-center leading-7 max-w-lg">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a, nulla incidunt eaque
-                    sitpraesentium porro consectetur optio!
+                    sitpraesentium porro consectetur option!
                 </p>
             </div>
         </div>
     </div>
 
     <!-- Container for demo purpose -->
-    <div class="container my-24 px-6 mx-auto">
+    <div class="container my-10 px-6 mx-auto">
 
         <!-- Section: Design Block -->
         <section class="mb-32 text-gray-800">
@@ -56,7 +56,6 @@
                     </p> -->
 
                     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-
 
                         <div class=" mr-2 mb-6">
                             <label class="block text-gray-700 text-sm mb-2" for="">
@@ -74,7 +73,6 @@
                             </label>
                             <input v-model="last_name" type="text" placeholder="Lastname"
                                 class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
-
                         </div>
                     </div>
                     <div class="form-group mb-6">
@@ -108,13 +106,11 @@
                     </div>
 
                     <button type="submit"
-                        class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                        class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
                         @click="contact_us()">{{ $t('submit') }}
                     </button>
 
                 </div>
-
 
 
                 <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">

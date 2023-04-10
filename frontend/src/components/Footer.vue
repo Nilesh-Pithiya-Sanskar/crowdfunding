@@ -97,13 +97,13 @@
 </template> -->
 
 <template>
-<div class="px-2 md:px-50 lg:px-30 xl:px-0 bg-[#40b751] ">
-    <footer class="container w-full pt-5 md:pt-5 lg:pt-10 sm:pb-0 ml-auto mr-auto">
-
+<div class="px-2 md:px-50 lg:px-30 pt-6 pr-4 pl-4 pb-4  xl:px-0 bg-[#40b751] ">
+    <footer class="container  w-full  ml-auto mr-auto">
+       <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
       <div
-        class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 sm:gap-auto md-gap:4 lg:gap-auto pb-5 md:pb-10 lg:pb-2 px-0 py-0 ">
-        <div class="sm:col-span-2 md:col-span-2 lg:col-auto">
-         <!-- <div class="grid grid-cols-2 mb-4">
+        class="grid grid-cols-1 lg:mr-64 sm:gap-auto md-gap:4 lg:gap-auto pb-0 md:pb-10 lg:pb-2 px-0 py-0 ">
+        <div class="sm:col-span-2  md:col-span-2 lg:col-auto">
+         <!-- <div class="flex mb-4">
           <img src="../../src/assets/Inter/img/logo-1.1.ico"
                     class="mb-2 lg:mb-0 sm:mt-0 lg:mt-0 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
                     <span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[28px] -ml-[60px] mt-[8px] md:mr-5">BestDeed</span></div> -->
@@ -111,41 +111,43 @@
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
               <img src="../../src/assets/Inter/img/logo-1.1.ico"
-                class="mb-4 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
+                class="mb-4 sm:mt-2 lg:mt-0 mr-2 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
             </a>
             <a href="/sadbhavna"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
           </div></div>
           <p class="text-white  lg:-mr-[60px] dark:text-gray-400">We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact. Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.</p>
           <div class="my-5 pr-4">
-            <div class="flex  space-x-6 mt-8">
+            <div class="flex space-x-6 mt-6 md:mt-6 lg:mt-8">
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/facebook.svg" />
+                <img class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/facebook.svg" />
                 <p class="sr-only">Facebook page</p>
               </a>
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/twitter.svg" />
+                <img class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/twitter.svg" />
                 <p class="sr-only">Twitter page</p>
               </a>
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/insta.svg" />
+                <img class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/insta.svg" />
                 <p class="sr-only">Instagram page</p>
               </a>
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/linkedin.svg" />
+                <img class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/linkedin.svg" />
                 <p class="sr-only">Linkedin account</p>
               </a>
             </div>
           </div>
         </div>
-        <div class="sm:pl-[0px] lg:ml-[72px] md:pl-[0px] lg:pl-[40px] md:pb-10 sm:pb-10 ">
-          <h2 class="font-bold text-white mb-4 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-10 md:pt-5 lg:pt-0">
+        </div>
+        <div class="grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 lg:-ml-64">
+        <div class="sm:pl-[0px] lg:pt-4 lg:ml-[72px] pl-[0px] md:pl-[0px] lg:pl-[20px] xl:pl-[30px] pb-0 md:pb-0 sm:pb-10 ">
+          <h2 class="font-bold text-white mb-3 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-3 md:pt-5 lg:pt-0">
             {{$t('Discover')}}</h2>
-           <ul class="text-white">
+          <ul class="text-white">
             <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <router-link to="/sadbhavna/explore-campaigns">{{$t('Explore Campaigns')}}</router-link>
             </li>
             <li class=" hover:underline  hover:font-semibold sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
-            <router-link to="/sadbhavna/request-campaign">{{$t('Request A Campaign')}}</router-link>
+              <router-link to="/sadbhavna/request-campaign">{{$t('Request A Campaign')}}</router-link>
             </li>
             <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <a href="#">{{$t('About Us')}}</a>
@@ -155,8 +157,8 @@
             </li>
           </ul>
         </div>
-        <div class="-mr-[96px] sm:pl-[0px] md:pl-[0px] lg:pl-[50px] sm:pr-28 md:pr-32 lg:pr-0">
-          <h2 class="font-bold text-white mb-4 md:mb-4 lg:mb-6 text-xl pt-10 md:pt-5 lg:pt-0">
+        <div class="sm:pl-[0px] lg:pt-4 md:pl-[0px] lg:pl-[40px] ">
+          <h2 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl pt-5 md:pt-5 lg:pt-0">
             {{$t('Learn')}}</h2>
           <ul class="text-white">
             <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
@@ -166,7 +168,7 @@
               <router-link to="/sadbhavna/faq">{{$t('FAQs')}}</router-link>
             </li>
              <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-              <router-link to="/sadbhavna/blog">{{$t('Blogs')}}</router-link>
+             <router-link to="/sadbhavna/blog">{{$t('Blogs')}}</router-link>
             </li>
             <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <a href="#">{{$t('Terms & Conditions')}}</a>
@@ -176,23 +178,24 @@
             </li>
           </ul>
         </div>
-        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px] ">
-          <h2 class="font-bold text-white mb-4 md:mb-4 lg:mb-6 text-xl -ml-[0px] md:-ml-[0px] lg:-ml-[80px] pt-10 md:pt-5 lg:pt-0">
+        <div class="sm:pl-[0px] lg:pt-4 md:pl-[0px] lg:pl-[60px] ">
+          <h2 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl -ml-[0px] md:-ml-[0px] lg:-ml-[80px] pt-5 md:pt-5 lg:pt-0">
             {{$t('Contact Us')}}</h2>
           <div class="text-white lg:-ml-[80px]">
-            <div class="grid grid-cols-2 mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="pt-1 w-5 h-6 " src="../../src/assets/Inter/img/location-pin.png" /></div>
-                    <p class="-ml-[150px] md:-ml-[110px] lg:-ml-[110px]"><span>Head Office, India</span><br>98 new Mylapore<br>Raidurgam Panmaktha, Mumbai, Maharashtra, 400003</p></div>
-            <div class="grid grid-cols-2 mb-2 md:mb-2 lg:mb-4 xl:mb-4 "><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
-                    <p class="cursor-pointer  hover:font-semibold -ml-[150px] md:-ml-[110px] lg:-ml-[110px] hover:underline"><a>+91 9999999999</a></p></div>
-            <div class="grid grid-cols-2 mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
-                    <p class="cursor-pointer  hover:font-semibold -ml-[150px] md:-ml-[110px] lg:-ml-[110px] hover:underline"><a>info@bestdeed.com</a></p></div>
+            <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="pt-1 w-6 md:w-8 lg:w-8 h-6 md:h-5 lg:h-6" src="../../src/assets/Inter/img/location-pin.png" /></div>
+                    <p class="ml-4"><span>Head Office, India</span><br>98 new Mylapore<br>Raidurgam Panmaktha, Mumbai, Maharashtra, 400003</p></div>
+            <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4 "><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
+                    <p class="cursor-pointer ml-4  hover:font-semibold hover:underline"><a>+91 9999999999</a></p></div>
+            <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
+                    <p class="cursor-pointer ml-4  hover:font-semibold  hover:underline"><a>info@bestdeed.com</a></p></div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   </div>
 
-    <section class=" bg-white text-center px-4 pb-4 pt-2 border-t border-white border-opacity-10 border-neutral-100">
+     <section class=" bg-white text-center px-4 pb-4 pt-2 border-t border-white border-opacity-10 border-neutral-100">
     <span class="text-[#40b751] font-[600] text-[16px] ">BestDeed
           &copy; 2023 | All Rights Reserved</span>
   </section>

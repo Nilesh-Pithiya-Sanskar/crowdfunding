@@ -81,6 +81,9 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
                               "date": today(), "amount": amount, "donation_item": item, "payment_id": payment_id, "anonymous": anonymous, "paid": 1})
     donation.insert(ignore_permissions=True)
     frappe.db.commit()
+    
+    donors = frappe.db.sql(f"select count(name) as donors from `tabDonation` where campaign='{campaign}'", as_dict=True)
+    print("\n\n\ndonors", donors)
 
     donation_campaign = frappe.get_doc("Donation Campaign",  campaign)
     item_dict = {}
@@ -99,16 +102,54 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     if total >= int(donation_amount):
         # frappe.db.set_value("Donation Campaign", campaign,
         #                     "raised_amount", total)
-        frappe.db.set_value("Donation Campaign", campaign, {
-                            "raised_amount": total, "published": 0, "status": "Closed"})
+        frappe.db.set_value("Donation Campaign", campaign, {"raised_amount": total, "published": 0, "status": "Closed", "total_donor": donors[0].donors})
     else:
-        frappe.db.set_value("Donation Campaign", campaign,
-                            "raised_amount", total)
+        frappe.db.set_value("Donation Campaign", campaign, {"raised_amount": total, "total_donor": donors[0].donors})
     # donation = frappe.db.get_value("Donation", filters={'donor': user_id, 'campaign': campaign, 'donation_item': item, "payment_id": payment_id, 'date': today()}, fieldname=['name'])
     # print("\n\n donation", donation, "\n\n")
     donation = frappe.get_last_doc('Donation', filters={"payment_id": payment_id})
 
     return amount, donation.name
+
+# @frappe.whitelist(allow_guest=True)
+# def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payment_id, anonymous):
+#     donor = frappe.db.get_value(
+#         "Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
+#     donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}",
+#                               "date": today(), "amount": amount, "donation_item": item, "payment_id": payment_id, "anonymous": anonymous, "paid": 1})
+#     donation.insert(ignore_permissions=True)
+#     frappe.db.commit()
+
+#     donation_campaign = frappe.get_doc("Donation Campaign",  campaign)
+#     item_dict = {}
+#     item_list = []
+#     for i in item:
+#         item_dict[i['item']]=i
+#         item_list.append(i['item'])
+#     raised_amount = 0
+#     for d in donation_campaign.add_campaign_items:
+#         if d.item in item_list:
+#             d.c_qty = int(d.c_qty) if d.c_qty else 0
+#             d.c_qty += int(item_dict[d.item]['qty'])
+#             frappe.db.set_value("Donation Campaign Item", d.name, "c_qty", d.c_qty)
+#         raised_amount += int(d.c_qty) * int(d.price)
+#     # raised_amount = donation_campaign.raised_amount
+#     donation_amount = donation_campaign.donation_amount
+#     # total = int(amount) + int(raised_amount)
+#     if raised_amount >= int(donation_amount):
+#         # frappe.db.set_value("Donation Campaign", campaign,
+#         #                     "raised_amount", total)
+#         frappe.db.set_value("Donation Campaign", campaign, {
+#                             "raised_amount": raised_amount, "published": 0, "status": "Closed"})
+#     else:
+#         frappe.db.set_value("Donation Campaign", campaign,
+#                             "raised_amount", raised_amount)
+#     # donation = frappe.db.get_value("Donation", filters={'donor': user_id, 'campaign': campaign, 'donation_item': item, "payment_id": payment_id, 'date': today()}, fieldname=['name'])
+#     # print("\n\n donation", donation, "\n\n")
+#     donation = frappe.get_last_doc('Donation', filters={"payment_id": payment_id})
+
+#     return amount, donation.name
+
 
 
 # login with google
