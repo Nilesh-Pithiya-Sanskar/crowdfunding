@@ -575,7 +575,19 @@ export default {
           console.log("Error")
         }
       }
-    }
+    },
+    // get_donor(){
+    //   return{
+    //     method: 'sadbhavna_donatekart.api.api.get_recent_donation',
+    //     onSuccess: (res) => {
+    //       console.log("get_donation", res)
+    //       this.featured_campaigns = res
+    //     },
+    //     onError() {
+    //       console.log("Error")
+    //     }
+    //   }
+    // }
     // verify_signature(){
     //   return{
     //     method: "sadbhavna_donatekart.api.api.verify_signature",
@@ -685,7 +697,11 @@ export default {
             console.log("donor res", donor)
         })
         console.log("donor", donor)
-        return donor
+
+      // this.$resources.get_donor.submit({
+      //   name: name
+      // })
+        // return donor
     }
 
     

@@ -98,7 +98,7 @@
 
 <template>
 <div class="px-2 md:px-50 lg:px-30 xl:px-0 bg-[#40b751] ">
-    <footer class="container w-full pt-5 md:pt-5 lg:pt-10 sm:pb-0 py-10 ml-auto mr-auto">
+    <footer class="container w-full pt-5 md:pt-5 lg:pt-10 sm:pb-0 ml-auto mr-auto">
 
       <div
         class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 sm:gap-auto md-gap:4 lg:gap-auto pb-5 md:pb-10 lg:pb-2 px-0 py-0 ">
@@ -119,19 +119,19 @@
           <div class="my-5 pr-4">
             <div class="flex  space-x-6 mt-8">
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4 " src="../../src/assets/Inter/img/facebook.svg" />
+                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/facebook.svg" />
                 <p class="sr-only">Facebook page</p>
               </a>
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4" src="../../src/assets/Inter/img/twitter.svg" />
+                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/twitter.svg" />
                 <p class="sr-only">Twitter page</p>
               </a>
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4 " src="../../src/assets/Inter/img/insta.svg" />
+                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/insta.svg" />
                 <p class="sr-only">Instagram page</p>
               </a>
               <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4" src="../../src/assets/Inter/img/linkedin.svg" />
+                <img class="w-4 h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" src="../../src/assets/Inter/img/linkedin.svg" />
                 <p class="sr-only">Linkedin account</p>
               </a>
             </div>
@@ -140,12 +140,12 @@
         <div class="sm:pl-[0px] lg:ml-[72px] md:pl-[0px] lg:pl-[40px] md:pb-10 sm:pb-10 ">
           <h2 class="font-bold text-white mb-4 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-10 md:pt-5 lg:pt-0">
             {{$t('Discover')}}</h2>
-          <ul class="text-white">
+           <ul class="text-white">
             <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <router-link to="/sadbhavna/contact-us">{{$t('Explore Campaigns')}}</router-link>
+              <router-link to="/sadbhavna/explore-campaigns">{{$t('Explore Campaigns')}}</router-link>
             </li>
             <li class=" hover:underline  hover:font-semibold sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('Request A Campaign')}}</a>
+            <router-link to="/sadbhavna/request-campaign">{{$t('Request A Campaign')}}</router-link>
             </li>
             <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <a href="#">{{$t('About Us')}}</a>
@@ -163,10 +163,10 @@
               <a href="#">{{$t('How it Works')}}</a>
             </li>
             <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">{{$t('FAQs')}}</a>
+              <router-link to="/sadbhavna/faq">{{$t('FAQs')}}</router-link>
             </li>
              <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-              <a href="#">{{$t('Blogs')}}</a>
+              <router-link to="/sadbhavna/blog">{{$t('Blogs')}}</router-link>
             </li>
             <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <a href="#">{{$t('Terms & Conditions')}}</a>
@@ -192,8 +192,9 @@
     </footer>
   </div>
 
-     <section class=" bg-white text-center px-4 pb-4 pt-2 border-t border-white border-opacity-10 border-neutral-100">
-    <span class="text-[#40b751] font-[600] text-[16px] ">2023  | All Rights Reserved</span>
+    <section class=" bg-white text-center px-4 pb-4 pt-2 border-t border-white border-opacity-10 border-neutral-100">
+    <span class="text-[#40b751] font-[600] text-[16px] ">BestDeed
+          &copy; 2023 | All Rights Reserved</span>
   </section>
 </template>
 
