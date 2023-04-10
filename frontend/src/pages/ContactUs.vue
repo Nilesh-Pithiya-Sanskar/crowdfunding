@@ -24,17 +24,17 @@
         <Navbar />
         <div class="grid justify-items-center">
             <div class="px-4 pb-10 md:pb-18 lg:pb-30 pt-5 md:pt-26 lg:pt-26">
-                <p class="text-[#40b751] tracking-widest text-center uppercase font-bold text-xs">
+                <!-- <p class="text-[#40b751] tracking-widest text-center uppercase font-bold text-xs">
                     {{ $t('Contact') }}
-                </p>
+                </p> -->
                 <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
                     class="text-[#40b751] font-sans text-center font-semibold pb-1 text-[28px] md:text-[32px] lg:text-[43px] [text-shadow:3px 6px 6px #c9c9c9]">
                     {{ $t('Get In Touch') }}
                 </h1>
-                <p class="text-gray-600 text-center leading-7 max-w-lg">
+                <!-- <p class="text-gray-600 text-center leading-7 max-w-lg">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a, nulla incidunt eaque
                     sitpraesentium porro consectetur option!
-                </p>
+                </p> -->
             </div>
         </div>
     </div>
@@ -114,31 +114,32 @@
 
 
                 <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
-                    <p class="text-base font-bold mb-6">{{ $t('Quick info') }}</p>
+                    <!-- <p class="text-base font-bold mb-6">{{ $t('Quick info') }}</p> -->
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center ">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
                         </div>
-                        <p class="text-black-500 mb-2 pt-2 pl-14">{{ $t('Fake street, 3929, London') }}</p>
+                        <!-- <p class="text-black-500 mb-2 pt-2 pl-14">{{ $t('Head Office, India') }}</p> -->
+                        <p class="text-green-500 mb-2 pt-2 pl-14"><span>Head Office, India</span><br>98 new Mylapore<br>Raidurgam Panmaktha,<br>Mumbai, Maharashtra, 400003</p>
                     </div>
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/phonecall.png" />
                         </div>
                         <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+ 1 291 2909 392</p>
+                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+91 9999999999</p>
                         </a>
                     </div>
                     <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center  ">
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
                         </div>
                         <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@mydomain.com</p>
+                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@bestdeed.com</p>
                         </a>
                     </div>
                     <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center  ">
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/worldwide.png" />
                         </div>
                         <a href="#">

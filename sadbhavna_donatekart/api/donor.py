@@ -65,18 +65,23 @@ def create_donor_from_checkout(f_name, phone_number, email):
     # user = frappe.db.get_value("User", or_filters=[["email", "=", f"{email}"], ["phone", "=", f"{phone_number}"]])
     # user = frappe.db.sql(f"select name from `tabUser` where email='{email}' or phone={phone_number}")
     # print("\n\n user", user)
-    
+
     if user:
         login_user(user)
         return f_name, email, phone_number
     else:
-        user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
-        user.insert(ignore_permissions=True)
-        frappe.db.commit()
-        donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{f_name}", "donor_type": "Defult", "mobile": phone_number})
-        donor.insert(ignore_permissions=True)
-        frappe.db.commit()
-        user = frappe.db.get_value("User", email, fieldname=['name'])
-        if user:
-            login_user(user)
+        user_no = frappe.db.get_value("User", filters={"phone": phone_number}, fieldname=['name'])
+        if user_no:
+            login_user(user_no)
             return f_name, email, phone_number
+        else:
+            user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
+            user.insert(ignore_permissions=True)
+            frappe.db.commit()
+            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{f_name}", "donor_type": "Defult", "mobile": phone_number})
+            donor.insert(ignore_permissions=True)
+            frappe.db.commit()
+            user = frappe.db.get_value("User", email, fieldname=['name'])
+            if user:
+                login_user(user)
+                return f_name, email, phone_number

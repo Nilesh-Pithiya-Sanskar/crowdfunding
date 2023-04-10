@@ -44,15 +44,23 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
     # doc.new_password = password,
     # doc.phone = phone_number
     # doc.insert(ignore_permissions=True)
- 
-    user = frappe.get_doc({"doctype": "User", "email": f"{email}", "first_name": f"{first_name}",
-                        "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}", "role_profile_name": "Donor", "send_welcome_email": 0})
-    user.insert(ignore_permissions=True)
-    frappe.db.commit()
-    donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name} {last_name}",
-                        "mobile": f"{phone_number}", "donor_type": "Defult", "pan_number": f"{pan_number}"})
-    donor.insert(ignore_permissions=True)
-    frappe.db.commit()
+
+    user = frappe.db.get_value("User", email, fieldname=['name'])
+    if user:
+        return 'This email is already registered'
+    else:
+        user_no = frappe.db.get_value("User", filters={"phone": phone_number}, fieldname=['name'])
+        if user_no:
+            return 'This phone number is already registered'
+        else:
+            user = frappe.get_doc({"doctype": "User", "email": f"{email}", "first_name": f"{first_name}",
+                                "last_name": f"{last_name}", "phone": f"{phone_number}", "new_password": f"{password}", "role_profile_name": "Donor", "send_welcome_email": 0})
+            user.insert(ignore_permissions=True)
+            frappe.db.commit()
+            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{first_name} {last_name}",
+                                "mobile": f"{phone_number}", "donor_type": "Defult", "pan_number": f"{pan_number}"})
+            donor.insert(ignore_permissions=True)
+            frappe.db.commit()
 
 # @frappe.whitelist(allow_guest=True)
 # def set_details_in_doctype_after_donation(user_id, campaign, item, price):

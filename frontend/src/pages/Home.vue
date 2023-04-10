@@ -604,7 +604,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{ $t('Protection') }}</p>
-            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
+            <p class="text-[#aaa]">{{ $t('Protection') }}</p>
           </div>
         </div>
 
@@ -615,7 +615,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{ $t('Prevention') }}</p>
-            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
+            <p class="text-[#aaa]">{{ $t('Prevention') }}</p>
           </div>
         </div>
 
@@ -626,7 +626,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{ $t('Treatments') }}</p>
-            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
+            <p class="text-[#aaa]">{{ $t('Treatments') }}</p>
           </div>
         </div>
 
@@ -637,7 +637,7 @@
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] text-[#40b751] font-black">{{ $t('Symptoms') }}</p>
-            <p class="text-[#aaa]">{{ $t('Lorem ipsum dolor sit.') }}</p>
+            <p class="text-[#aaa]">{{ $t('Symptoms') }}</p>
           </div>
         </div>
 

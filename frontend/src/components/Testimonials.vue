@@ -4,9 +4,9 @@
       <div class="fontfamily text-center mt-10 md:mt-10 lg:mt-10">
         <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-16 font-black text-[#40b751] mb-2">{{ $t('Testimonials')
         }}</h2>
-        <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <!-- <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           Amet,
-          voluptate!</p>
+          voluptate!</p> -->
       </div>
 
       <div class="flex border-b-2 ml-4 mr-8 border-b-solid border-gray-200 flex-wrap justify-center mt-5">
