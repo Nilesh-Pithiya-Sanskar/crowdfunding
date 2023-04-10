@@ -1,4 +1,17 @@
   <template>
+  <section class=" bg-white text-center px-4 pb-0 pt-2 pb-2 border-t border-white border-opacity-10 border-neutral-100">
+       <div class="flex justify-center md:justify-end lg:justify-end">
+            <button class="transition bg-[#40b751] text-white font-medium text-base mt-0 mb-1 md:mb-2 lg:mb-2 mr-2 pt-1 md:pt-1 lg:pt-1 pb-1 md:pb-1 lg:pb-1 pl-2 md:pl-4 lg:pl-4 pr-2 md:pr-4 lg:pr-4 transition duration-300 rounded-lg hover:bg-white hover:text-[#40b751] hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी</button>
+            <button class="transition bg-[#40b751] text-white font-medium text-base mt-0 mb-1 md:mb-2 lg:mb-2 mr-2 pt-1 md:pt-1 lg:pt-1 pb-1 md:pb-1 lg:pb-1 pl-2 md:pl-4 lg:pl-4 pr-2 md:pr-4 lg:pr-4 transition duration-300 rounded-lg hover:bg-white hover:text-[#40b751] hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'hi' || language == 'en-US'" @click="set_language('gu')">ગુજરાતી</button>
+            <button class="transition bg-[#40b751] text-white font-medium text-base mt-0 mb-1 md:mb-2 lg:mb-2 mr-2 pt-1 md:pt-1 lg:pt-1 pb-1 md:pb-1 lg:pb-1 pl-2 md:pl-4 lg:pl-4 pr-2 md:pr-4 lg:pr-4 transition duration-300 rounded-lg hover:bg-white hover:text-[#40b751] hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'hi'" @click="set_language('en-US')">English</button>
+
+           <a v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
+              class=" cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:bg-white hover:text-[#364958]">{{ $t("Logout") }}</a>
+            <a v-else @click="this.$router.push(`/sadbhavna/auto-login`)"
+              class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:bg-white hover:text-[#364958]">{{ $t('Login / Registration') }}</a>
+       </div>
+  </section>
+
   <div class=" pt-2 pl-2 md:pl-4 lg:pl-[46px] xl:pl-24 pr-2 md:pr-4 lg:pr-[46px] xl:pr-24">
     <div class="rounded-xl bg-[#40b751]">
       <nav class="px-[5px] md:px-[5px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[5px] lg:py-[20px] lg:flex lg:justify-between lg:items-center">
@@ -6,7 +19,7 @@
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">
               <img src="../../src/assets/Inter/img/logo-1.1.ico"
-                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 sm:mr-0 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
+                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
             </a>
             <a href="/sadbhavna"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
           </div>
@@ -34,6 +47,9 @@
             <router-link to="/sadbhavna/request-campaign" class="transition font-bold text-white hover:text-black">{{ $t('Request a Campaign') }}</router-link>
           </li>
           <li>
+            <router-link to="/sadbhavna/explore-campaigns" class="transition font-bold text-white hover:text-black">{{ $t('Explore Campaigns') }}</router-link>
+          </li>
+          <li>
             <router-link to="/sadbhavna/contact-us" class="transition font-bold text-white hover:text-black">{{ $t('Contact') }}</router-link>
           </li>
           <li>
@@ -50,9 +66,9 @@
             {{ $t('Profile') }}
           </li>
           <li>
-            <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी</button>
+            <!--<button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी</button>
             <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'hi' || language == 'en-US'" @click="set_language('gu')">ગુજરાતી</button>
-            <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'hi'" @click="set_language('en-US')">English</button>
+            <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'hi'" @click="set_language('en-US')">English</button>-->
 
 
             <!-- <select class="appearance-none border-0 border-gray-300 mt-2 hover:border-[#40b751] rounded w-24 py-2 px-3 text-grey-darker" v-model="language" @change="handleChange($event)">
@@ -70,12 +86,12 @@
             </span>
           </li>-->
          
-          <li>
+         <!-- <li>
             <button v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
               class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t("Logout") }}</button>
             <button v-else @click="this.$router.push(`/sadbhavna/auto-login`)"
               class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t('Login') }}</button>
-          </li>
+          </li>-->
 
         </ul>
       </nav>

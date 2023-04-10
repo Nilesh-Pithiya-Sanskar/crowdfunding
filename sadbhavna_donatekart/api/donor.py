@@ -62,6 +62,10 @@ def set_image(name, user_image):
 def create_donor_from_checkout(f_name, phone_number, email):
     from sadbhavna_donatekart.api.api import login_user
     user = frappe.db.get_value("User", email, fieldname=['name'])
+    # user = frappe.db.get_value("User", or_filters=[["email", "=", f"{email}"], ["phone", "=", f"{phone_number}"]])
+    # user = frappe.db.sql(f"select name from `tabUser` where email='{email}' or phone={phone_number}")
+    # print("\n\n user", user)
+    
     if user:
         login_user(user)
         return f_name, email, phone_number
