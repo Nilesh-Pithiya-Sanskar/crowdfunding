@@ -797,7 +797,7 @@ export default {
     },
     get_campaign_details(name) {
       let url = `/api/resource/NGO?filters={"email": "${name}"}&fields=["name"]`
-      fetch(url, {
+      fetch(url, {  
         method: 'GET',
       })
         .then((response) => {
@@ -834,23 +834,33 @@ export default {
 
       var pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
       var pan = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-      if (this.password == '') {
-        this.errorMessagePassword = 'Enter password'
-      }
-      else if (pw.test(this.password) == false) {
-        this.errorMessagePassword = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
-        console.log('pw')
-      }
-      if (this.confirmPassword == '') {
-        this.errorMessageConfirmPassword = 'Enter confirm password'
-      }
-      if (this.password !== this.confirmPassword) {
-        this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
-        return true;
-      }
+      if (this.password != '') {
+        if (pw.test(this.password) == false) {
+          this.errorMessagePassword = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
+        }
+        if (this.confirmPassword == '') {
+          this.errorMessageConfirmPassword = 'Enter confirm password'
+        }
+        if (this.password !== this.confirmPassword) {
+          this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
+          return true;
+        }
+      }      
       if (this.pan_number != '') {
         if (this.pan_number && pan.test(this.pan_number) == false) {
           this.errorPancard = 'Enter valid PAN number'
+        }
+          else{
+          this.edit_profile = false
+          this.$resources.update_donor.submit({
+            first_name: this.first_name,
+            last_name: this.last_name,
+            // email: this.email,
+            phone: this.phone,
+            old_email: this.donor,
+            password: this.password != '' ? this.password : '',
+            pan_number: this.pan_number,
+          })
         }
       }
       else {

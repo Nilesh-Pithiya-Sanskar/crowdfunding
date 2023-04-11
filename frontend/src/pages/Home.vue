@@ -532,22 +532,21 @@
                 </div>
 
                 <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
-                  <p class="flex"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-clock mr-2">
+                      class="feather w-[18px] md:w-[18px] lg:w-[24px] h-[18px] md:h-[20px] lg:h-[24px] feather-clock mr-1 md:mr-1 lg:mr-2">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Days Left') }}
                   </p>
-                  <p class="flex mr-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-users mr-2">
+                      class="feather w-[18px] md:w-[18px] lg:w-[24px] h-[18px] md:h-[20px] lg:h-[24px] feather-users mr-1 md:mr-1 lg:mr-2">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                       <circle cx="9" cy="7" r="4"></circle>
                       <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                       <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
-
                 </div>
 
                 </p>
@@ -556,7 +555,7 @@
               <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 flex justify-between">{{ }}
                 <ShareNetwork network="WhatsApp" :url="url + '/campaign-donation/' + campaigns[index - 1].name"
                   :title="campaigns[index - 1].campaign_title" :description="campaigns[index - 1].short_description">
-                  <button
+                  <!-- <button
                     class="flex rounded-lg hover:bg-white text-green-500 border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-white uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"> {{ $t('Share') }} <svg class="ml-2" fill="#40b751" height="17" width="17" version="1.1"
                       id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -568,8 +567,8 @@
                           d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
                       </g>
                     </svg>
-                  </button>
-                  <!-- <button
+                  </button> -->
+                  <button
                   class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17" version="1.1"
                       id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -580,7 +579,7 @@
                         <path id="XMLID_470_"
                           d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
                       </g>
-                    </svg> </button> -->
+                    </svg> </button>
 
                 </ShareNetwork>
                 <button
