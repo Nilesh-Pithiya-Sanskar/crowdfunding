@@ -839,8 +839,8 @@ export default {
     }
   },
   mounted() {
-    document.title = 'asdfasdf'
-    document.description = 'asdfasdf adsf'
+    // document.title = 'asdfasdf'
+    // document.description = 'asdfasdf adsf'
     this.get_campaigns()
     this.get_featured_campaigns()
     this.lang = localStorage.getItem('lang') || window.navigator.language
