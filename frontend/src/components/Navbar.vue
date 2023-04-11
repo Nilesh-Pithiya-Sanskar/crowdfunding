@@ -1,19 +1,35 @@
   <template>
-  <section class=" bg-white text-center px-4 pb-0 pt-2 pb-2 border-t border-white border-opacity-10 border-neutral-100">
-       <div class="flex justify-center md:justify-end lg:justify-end">
-            <button class="transition bg-[#40b751] text-white font-medium text-base mt-0 mb-1 md:mb-2 lg:mb-2 mr-2 pt-1 md:pt-1 lg:pt-1 pb-1 md:pb-1 lg:pb-1 pl-2 md:pl-4 lg:pl-4 pr-2 md:pr-4 lg:pr-4 transition duration-300 rounded-lg hover:bg-white hover:text-[#40b751] hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी</button>
-            <button class="transition bg-[#40b751] text-white font-medium text-base mt-0 mb-1 md:mb-2 lg:mb-2 mr-2 pt-1 md:pt-1 lg:pt-1 pb-1 md:pb-1 lg:pb-1 pl-2 md:pl-4 lg:pl-4 pr-2 md:pr-4 lg:pr-4 transition duration-300 rounded-lg hover:bg-white hover:text-[#40b751] hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'hi' || language == 'en-US'" @click="set_language('gu')">ગુજરાતી</button>
-            <button class="transition bg-[#40b751] text-white font-medium text-base mt-0 mb-1 md:mb-2 lg:mb-2 mr-2 pt-1 md:pt-1 lg:pt-1 pb-1 md:pb-1 lg:pb-1 pl-2 md:pl-4 lg:pl-4 pr-2 md:pr-4 lg:pr-4 transition duration-300 rounded-lg hover:bg-white hover:text-[#40b751] hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'hi'" @click="set_language('en-US')">English</button>
+   <section class=" bg-[#ebf8ec] text-center sm:px-2 md:px-2 lg:px-4 pb-0 pt-2 pb-2 border-t border-white border-opacity-10 border-neutral-100">
+       <div class="flex justify-center md:justify-between lg:justify-between" >
+            <div class="hidden md:flex  ">
+                    <a href="#" class="cursor-pointer transition font-medium text-[#40b751]  sm:mr-1 md:mr-2 lg:mr-4 text-[16px]  transition duration-300 rounded  hover:text-[#364958]">{{$t('+91 9999999999')}}</a>
+                    <a href="#" class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]">{{ $t('info@bestdeed.org')}}</a>
+            </div>
 
-           <a v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
-              class=" cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:bg-white hover:text-[#364958]">{{ $t("Logout") }}</a>
+            <div class="flex justify-end">
+           <div class="mr-4 md:mr-2 lg:mr-4 menu">
+            <a class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]" v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी  </a>
+            <a class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]" v-if="language == 'hi' || language == 'en-US'" @click="set_language('gu')"> ગુજરાતી </a>
+            <a class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]" v-if="language == 'gu' || language == 'hi'" @click="set_language('en-US')"> English</a>
+            </div>
+
+            <div class="mr-4 md:mr-2 lg:mr-4">
+                <a v-if="this.user.isLoggedIn()" @click="profile()"
+            class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">
+            {{ $t('Profile') }}
+          </a>
+            </div>
+
+              <a v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
+              class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">{{ $t("Logout") }}</a>
             <a v-else @click="this.$router.push(`/sadbhavna/auto-login`)"
-              class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:bg-white hover:text-[#364958]">{{ $t('Login / Registration') }}</a>
+              class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">{{ $t('Login / Registration') }}</a>
+       </div>
        </div>
   </section>
 
-  <div class=" pt-2 pl-2 md:pl-4 lg:pl-[46px] xl:pl-24 pr-2 md:pr-4 lg:pr-[46px] xl:pr-24">
-    <div class="rounded-xl bg-[#40b751]">
+  <div class="">
+    <div class="bg-[#40b751]">
       <nav class="px-[5px] md:px-[5px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[5px] lg:py-[20px] lg:flex lg:justify-between lg:items-center">
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
@@ -61,10 +77,10 @@
               </ul>-->
             </span>
           </li>
-          <li v-if="this.user.isLoggedIn()" @click="profile()"
+          <!--<li v-if="this.user.isLoggedIn()" @click="profile()"
             class="font-bold text-white hover:text-black cursor-pointer">
             {{ $t('Profile') }}
-          </li>
+          </li>-->
           <li>
             <!--<button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी</button>
             <button class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-1 pt-1 pb-1 pl-4 pr-4 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1" v-if="language == 'hi' || language == 'en-US'" @click="set_language('gu')">ગુજરાતી</button>

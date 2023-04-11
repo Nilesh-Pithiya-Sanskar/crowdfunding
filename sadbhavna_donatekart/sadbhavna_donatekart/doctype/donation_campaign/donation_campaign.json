@@ -37,6 +37,7 @@
   "about_campaign_gu",
   "about_campaign_hi",
   "description",
+  "benefits",
   "campaign_request",
   "ngo",
   "ngo_email",
@@ -258,6 +259,12 @@
    "fieldname": "total_donor",
    "fieldtype": "Data",
    "label": "Total Donor"
+  },
+  {
+   "fieldname": "benefits",
+   "fieldtype": "Table",
+   "label": "Benefits",
+   "options": "Campaign Donation Benefits"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -268,7 +275,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-10 17:16:31.745957",
+ "modified": "2023-04-11 12:13:35.959158",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

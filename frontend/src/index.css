@@ -165,3 +165,13 @@ div {
     text-align: center;
   }
 }
+
+.menu a:after {
+content: "|";
+padding-right: 2px;
+padding-left: 2px;
+}
+
+.menu a:last-child::after {
+  display: none
+}

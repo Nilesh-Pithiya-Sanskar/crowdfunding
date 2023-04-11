@@ -115,7 +115,8 @@
             </a>
             <a href="/sadbhavna"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
           </div></div>
-          <p class="text-white  lg:-mr-[60px] dark:text-gray-400">We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact. Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.</p>
+          <p class="text-white  lg:-mr-[60px] dark:text-gray-400">
+            {{$t("We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact. Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.")}}</p>
           <div class="my-5 pr-4">
             <div class="flex space-x-6 mt-6 md:mt-6 lg:mt-8">
               <a href="#" class="text-gray-400 text-white">
@@ -182,12 +183,12 @@
           <h2 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl -ml-[0px] md:-ml-[0px] lg:-ml-[80px] pt-5 md:pt-5 lg:pt-0">
             {{$t('Contact Us')}}</h2>
           <div class="text-white lg:-ml-[80px]">
-            <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="pt-1 w-6 md:w-8 lg:w-8 h-6 md:h-5 lg:h-6" src="../../src/assets/Inter/img/location-pin.png" /></div>
-                    <p class="ml-4"><span>Head Office, India</span><br>98 new Mylapore<br>Raidurgam Panmaktha, Mumbai, Maharashtra, 400003</p></div>
+            <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="pt-1 w-8 md:w-8 lg:w-10 h-6 md:h-5 lg:h-6" src="../../src/assets/Inter/img/location-pin.png" /></div>
+                    <p class="ml-4"><span>{{$t('Head Office, India')}}</span><br>{{$t('98 new Mylapore Raidurgam Panmaktha, Mumbai, Maharashtra, 400003')}}</p></div>
             <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4 "><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
-                    <p class="cursor-pointer ml-4  hover:font-semibold hover:underline"><a>+91 9999999999</a></p></div>
+                    <p class="cursor-pointer ml-4  hover:font-semibold hover:underline"><a>{{$t('+91 9999999999')}}</a></p></div>
             <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4"><div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
-                    <p class="cursor-pointer ml-4  hover:font-semibold  hover:underline"><a>info@bestdeed.com</a></p></div>
+                    <p class="cursor-pointer ml-4  hover:font-semibold  hover:underline"><a>{{$t('info@bestdeed.org')}}</a></p></div>
           </div>
         </div>
       </div>
@@ -196,8 +197,7 @@
   </div>
 
      <section class=" bg-white text-center px-4 pb-4 pt-2 border-t border-white border-opacity-10 border-neutral-100">
-    <span class="text-[#40b751] font-[600] text-[16px] ">BestDeed
-          &copy; 2023 | All Rights Reserved</span>
+    <span class="text-[#40b751] font-[600] text-[16px] ">{{ $t('BestDeed &copy; 2023 | All Rights Reserved')}}</span>
   </section>
 </template>
 

@@ -42,8 +42,7 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                                                 <div class="mb-4">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Organisation
-                                                                                                            Name')}} <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Name')}} <span class="text-red-600">*</span></label>
 
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
@@ -52,8 +51,7 @@
                                                     <p class="text-red-600">{{ organizationNameError }}</p>
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Organisation
-                                                                                                            Website')}}</label>
+                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Website')}}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         type="text" placeholder="Enter Organisation Website"
@@ -62,8 +60,8 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone
-                                                                                                            Number')}} <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Phone Number')}} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         type="number" @keyup="phoneError = ''"
@@ -80,8 +78,8 @@
                                                     <p class="text-red-600">{{ emailError }}</p>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Social Media
-                                                                                                            Page')}}</label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Social Media Page')}}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         type="text" placeholder="Enter Social Media Page"
@@ -91,8 +89,8 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Campaign
-                                                                                                            Story')}} <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Campaign Story')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" @keyup="campaignStoryError = ''" rows="4"
                                                         v-model="campaign_story"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
@@ -100,8 +98,8 @@
                                                     <p class="text-red-600">{{ campaignStoryError }}</p>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Beneficiary
-                                                                                                            Group')}} <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" @keyup="beneficiaryGroupError = ''"
                                                         v-model="beneficiary_group"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
@@ -130,8 +128,8 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone
-                                                                                                            Number')}} <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Phone Number')}} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         type="number" placeholder="Enter Phone Number"
@@ -148,8 +146,8 @@
                                                     <p class="text-red-600">{{ emailErrorig }}</p>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Social Media
-                                                                                                            Page')}}</label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Social Media Page')}}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         type="text" placeholder="Enter Social Media Page"
@@ -159,8 +157,8 @@
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Campaign
-                                                                                                            Story')}} <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Campaign Story')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" @keyup="campaignStoryErrorig = ''"
                                                         v-model="campaign_storyig"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
@@ -168,8 +166,8 @@
                                                     <p class="text-red-600">{{ campaignStoryErrorig }}</p>
                                                 </div>
                                                 <div class="mb-6">
-                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Beneficiary
-                                                                                                            Group')}} <span class="text-red-600">*</span></label>
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" @keyup="beneficiaryGroupErrorig = ''"
                                                         v-model="beneficiary_groupig"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"

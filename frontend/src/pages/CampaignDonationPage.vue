@@ -7,51 +7,20 @@
               <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu"
                     class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
                     {{ $t(campaign_detail.data.campaign_title_gu) }}
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Tax Benefit') }}
-                    </button>
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Assured') }}
-                    </button>
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Old Ages') }}
-                    </button>
                 </h2>
                 <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi"
                     class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
                     {{ $t(campaign_detail.data.campaign_title_hi) }}
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Tax Benefit') }}
-                    </button>
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Assured') }}
-                    </button>
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Old Ages') }}
-                    </button>
                 </h2>
                 <h2 v-else
                     class="w-full mb-1 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
                     {{ $t(campaign_detail.data.campaign_title) }}
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[10px] md:px-[20px] lg:px-[10px] rounded-[12px] cursor-text">
-                        {{ $t('Tax Benefit') }}
-                    </button>
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Assured') }}
-                    </button>
-                    <button
-                        class="h-[35px] bg-[#40b751] mr-[4px] capitalize text-[13px] font-normal text-white px-[18px] md:px-[20px] lg:px-[18px] rounded-[12px] cursor-text">
-                        {{ $t('Old Ages') }}
-                    </button>
                 </h2>
+                <button v-for="benefit in campaign_detail.data.benefits"
+                        class="h-[30px] bg-[#40b751] mr-[2px] mt-1 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit }}
+                </button>
+                    
             <p v-if="lang == 'gu' && campaign_detail.data.short_description_gu" style="line-height:1.7;"
                 class="mb-4 text-base text-[#364958] font-normal">{{
                     $t(campaign_detail.data.short_description_gu) }}</p>
@@ -83,10 +52,15 @@
                     </div>
                     <div class="w-full h-[16px] bg-gray-200 rounded-md dark:bg-gray-700">
                         <!-- <div class="bg-green-500 text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md" style="width: 40%"> 40%</div> -->
-                        <div class="bg-[#40b751] text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
+                       <div class="bg-[#40b751] h-[16px] text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
                             :style="{ width: campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount + '%' }">
-                            {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
-                            }}%</div>
+                           <!-- {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
+                            }}%--></div>
+
+                            <!--<div class="bg-[#40b751]  text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
+                            :style="{ width: campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount + '%' }">
+                           {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
+                            }}%</div>-->
                     </div>
 
                     <!-- <div class="pt-4 pb-2 mt-[4px] mb-[6px] flex flex-wrap text-[#364958] font-bold">
@@ -747,14 +721,14 @@
         appearance: 'info',
         size: 'lg',
         actions: [
-            {
-                label: $t('Get 80G Certificate'),
-                appearance: 'success',
-                handler: ({ close }) => {
-                    this.download_80g(donation_name)
-                    close() // closes dialog
-                },
-            },
+            // {
+            //     label: $t('Get 80G Certificate'),
+            //     appearance: 'success',
+            //     handler: ({ close }) => {
+            //         this.download_80g(donation_name)
+            //         close() // closes dialog
+            //     },
+            // },
             {
                 label: $t('View Profile'),
                 appearance: 'success',
@@ -774,8 +748,76 @@
     }" v-model="showDialog" />
 
 
-    <DonationCheckout v-if="showCheckout == true" :i_qty="i_qty" :total_price="total_price" :showCheckout="showCheckout"
-        @donate_checkout="donate_checkout" />
+    <!-- <DonationCheckout v-if="showCheckout == true" :i_qty="i_qty" :total_price="total_price" :showCheckout="showCheckout"
+        @donate_checkout="donate_checkout" /> -->
+
+        <Dialog v-model="showDialog_c" >
+        <template #body>
+                    <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
+                        <h1
+                            class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
+                            {{ $t('Donation Checkout') }}
+                        </h1>
+                        <div class="relative z-0">
+                            <div class="mb-4">
+                                <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Name') }}
+                                    <span class="text-red-600">*</span></label> -->
+                                <input
+                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="name" type="text" @keyup="nameError = ''" placeholder="Name" required>
+                                <p class="text-red-600">{{ $t(nameError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                    <span class="text-red-600">*</span></label> -->
+                                <input
+                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="email" type="email" @keyup="emailError = ''" placeholder="Email" required>
+                                <p class="text-red-600">{{ $t(emailError) }}</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
+                                        class="text-red-600">*</span></label> -->
+                                <input
+                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="phone_number" type="text" @keyup="phoneNumberError = ''"
+                                    placeholder="Phone number" required>
+                                <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
+                            </div>
+
+                            <!-- <div class="mb-4">
+                            <label class="block text-gray-600 text-base  mb-2">{{ $t('PAN Number') }} <span
+                                    class="text-red-600">*</span></label>
+                            <input
+                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="pan_number" type="text" @keyup="panError = ''" placeholder="PAN number" required>
+                            <p class="text-red-600">{{ $t(panError) }}</p>
+                        </div> -->
+                            <div class="mb-4">
+                                <input type="checkbox" id="anonymous" v-model="anonymous">
+                                <label for="checkbox" class="text-sm pl-2">{{ $t('Make my donation anonymous') }}</label>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="flex justify-center">
+                                    <div class="text-[#40b751] text-lg font-bold ml-5">{{ i_qty }} {{ $t('Item(s)') }} |</div>
+                                    <div class="text-[#40b751] text-lg font-bold ml-2">₹ {{ numberWithCommas(total_price) }}</div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button
+                                    class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                                    type="button" @click="donate_dialog_c(total_price, anonymous)"> {{ $t('Continue To Pay') }}
+                                </button>
+                            </div>                           
+                        </div>
+                    </div>    
+        </template>
+    </Dialog>
+
+
+
 
 
     <!-- <div>item_cart{{ item_cart }}</div><br> -->
@@ -820,6 +862,14 @@ export default {
         Avatar,
         Dialog,
         DonationCheckout,
+    },
+    metaInfo: {
+      title: 'My Example App',
+      titleTemplate: '%s - Yay!',
+      htmlAttrs: {
+        lang: 'en',
+        amp: true
+      }
     },
     setup() {
         const user = inject("user")
@@ -872,7 +922,20 @@ export default {
             user_c: '',
             isLoggedIn: false,
 
-            url: window.location.href
+            url: window.location.href,
+
+            showDialog_c: false,    
+            nameError: '',
+            emailError: '',
+            phoneNumberError: '',
+            panError: '',
+            pan_number: '',
+            error: false,
+
+            email: '',
+            name: '',
+            phone_number: '',
+            
         }
     },
     created() {
@@ -882,6 +945,7 @@ export default {
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
         this.get_generous_donation(name.params.name)
+        this.scrollToTop()
         var item_cart = this.get_cookies('item')
         var i_qty = this.get_cookies('i_qty')
         var total_price = this.get_cookies('total_price')
@@ -936,9 +1000,21 @@ export default {
                 method: 'sadbhavna_donatekart.api.donor.download_80g',
                 onSuccess: (res) => {
                     // console.log('okey', res)
-                    let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
-                    // window.location = url
-                    window.open(url, "_blank");
+                    if (res == 'Please set pan number in your profile')
+                    {
+                        this.$toast({
+                            title: 'Please add Pan Number',
+                            text: 'please add pan number in edit profile to get 80g certificate',
+                            icon: 'x-circle',
+                            appearance: 'denger',
+                            position: "top-center",
+                            })
+                    }
+                    else{
+                        let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
+                        // window.location = url
+                        window.open(url, "_blank");
+                    }
                 },
                 onError: (error) => {
                     console.log('somthing want wrong!', error)
@@ -1027,6 +1103,9 @@ export default {
 
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo(0,0);
+        },
         copyURL() {
             const url = window.location.href
             navigator.clipboard.writeText(url)
@@ -1078,6 +1157,7 @@ export default {
             })
                 .then(response => {
                     response.json().then(res => {
+                        console.log("donation", res)
                         this.campaign_detail = res
                         this.total_desc = res.data.description.length
                         // this.campaign_start_date = new Date(res.data.start_date)
@@ -1112,7 +1192,7 @@ export default {
             console.log("donate called")
             if (!this.user.isLoggedIn()) {
                 console.log("okey")
-                this.showCheckout = true
+                this.showDialog_c = true
                 this.$cookies.set('route', `/sadbhavna/campaign-donation/${this.campaign}`);
                 // this.$router.push(`/sadbhavna/donation-checkout`)
                 // return
@@ -1372,6 +1452,41 @@ export default {
 
         phone(){
             alert("clicked")
+        },
+
+        donate_dialog_c(){
+            var email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var phone = /^[6-9]\d{9}$/;
+            // var pan = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+            if (this.name == '') {
+                this.nameError = 'Enter your name'
+            }
+            if (this.email == '') {
+                this.emailError = 'Enter email'
+            }
+            else if (email.test(this.email) == false && this.email) {
+                this.emailError = 'Enter valid email'
+                console.log('email')
+            }
+            if (this.phone_number == '') {
+                this.phoneNumberError = 'Enter phone'
+            }
+            else if (this.phone_number && phone.test(this.phone_number) == false) {
+                this.phoneNumberError = 'Enter valid phone number'
+                console.log('phone')
+            }
+            // if (this.pan_number == '') {
+            //     this.panError = 'Enter PAN number'
+            // }
+            // else if (this.pan_number && pan.test(this.pan_number) == false) {
+            //     this.panError = 'Enter valid PAN number'
+            //     console.log('PAN')
+            // }
+            else {
+                console.log('done')
+                this.donate_checkout(this.anonymous, this.name, this.email, this.phone_number)
+                
+            }
         }
 
     }

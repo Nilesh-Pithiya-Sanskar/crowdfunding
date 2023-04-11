@@ -138,14 +138,6 @@
                             <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@bestdeed.com</p>
                         </a>
                     </div>
-                    <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center">
-                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/worldwide.png" />
-                        </div>
-                        <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">https://mywebsite.com</p>
-                        </a>
-                    </div>
                 </div>
 
             </div>

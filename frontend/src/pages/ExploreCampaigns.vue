@@ -3,7 +3,7 @@
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
-            <p class="text-[30px] md:text-[30px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
+            <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
                 {{ $t('Join hands with') }} <span class="text-[#40b751]">{{ $t('Sadbhana Campaigns') }}</span>
                 {{ $t('to help needy.') }}
@@ -74,7 +74,7 @@
 
                 <div class="grid w-full p-2">
                     <select
-                        class="appearance-none border rounded-lg border-gray-300 mt-2 hover:border-[#40b751]    h-10 py-2 px-3 text-grey-darker"
+                        class="appearance-none border rounded-lg border-gray-300 mt-2 hover:border-[#40b751]  text-[16px] h-10 py-2 px-3 text-grey-darker"
                         v-model="location" @change="handleChange($event)">
                         <option :value="null" disabled hidden>{{ $t('Location') }}</option>
                         <option>{{ $t('Ahmedabad') }}</option>
@@ -85,7 +85,7 @@
 
                 <div class="grid w-full p-2">
                     <select
-                        class="appearance-none border rounded-lg border-gray-300 mt-2 hover:border-[#40b751]   h-10 py-2 px-3 text-grey-darker"
+                        class="appearance-none border rounded-lg border-gray-300 mt-2 hover:border-[#40b751] text-[16px] h-10 py-2 px-3 text-grey-darker"
                         v-model="selected" @change="handleChange($event)">
                         <option selected>{{ $t('All Types') }}</option>
                         <option value="urgent">{{ $t('Urgent') }}</option>

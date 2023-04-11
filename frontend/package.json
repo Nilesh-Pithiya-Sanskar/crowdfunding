@@ -44,6 +44,7 @@
     "vue-facebook-login-component": "^4.0.2",
     "vue-google-oauth2": "^1.5.8",
     "vue-i18n": "^9.2.2",
+    "vue-meta": "^2.4.0",
     "vue-router": "^4.0.12",
     "vue-social-sharing": "^4.0.0-alpha4",
     "vue3-cookies": "^1.0.6",

@@ -8,6 +8,8 @@ import { createToast, clearToasts } from "@/utils/toasts"
 import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
+// import VueMeta from 'vue-meta'
+
 
 // import GAuth from 'vue3-google-oauth2';
 import vue3GoogleLogin from 'vue3-google-login';
@@ -39,6 +41,7 @@ import VueSocialSharing from 'vue-social-sharing'
 let app = createApp(App)
 app.use(VueSocialSharing);
 
+// app.use(VueMeta)
 app.use(i18n)
 app.use(router)
 app.use(FrappeUI)

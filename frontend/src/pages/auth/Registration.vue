@@ -138,11 +138,19 @@ export default {
             return {
                 method: 'sadbhavna_donatekart.api.api.register',
                 onSuccess: (res) => {
-                    // this.recent_donation = res
-                    if (confirm("your registration is successfully now you can login") == true) {
-                        this.$router.push(`/sadbhavna/login`)
-                    } else {
-                        this.$router.go(-1)
+                    console.log("res",res)
+                    if (res == 'This email is already registered'){
+                        this.emailError = 'This email is already registered'
+                    }
+                    else if (res == 'This phone number is already registered'){
+                        this.phoneNumberError = 'This phone number is already registered'
+                    }
+                    else{
+                        if (confirm("your registration is successfully now you can login") == true) {
+                            this.$router.push(`/sadbhavna/login`)
+                        } else {
+                            this.$router.go(-1)
+                        }
                     }
                 },
                 onError: (error) => {

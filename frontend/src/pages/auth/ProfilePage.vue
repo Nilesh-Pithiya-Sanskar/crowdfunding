@@ -14,9 +14,9 @@
                   <div class="grid justify-items-center profile">
                     <div v-if="user_data.data.user_image" class="relative">
                       <img :src="user_data.data.user_image"
-                        class="shadow-xl rounded-full h-40 align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
+                        class="shadow-xl rounded-full h-48 align-middle border-none absolute -m-16 -ml-20 lg:-ml-40 max-w-200-px" />
 
-                      <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-16 lg:ml-16">
+                      <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-24 lg:ml-20">
                         <FileUploader @success="(file) => upload_image(file.file_url)">
                           <template v-slot="{
                             openFileSelector,
@@ -34,8 +34,8 @@
                     <div v-else class="relative">
                       <div>
                         <img src="https://crowdfunding.frappe.cloud/files/default_profile.jpeg"
-                          class="shadow-xl rounded-full h-40 align-middle border-2 border-solid border-gray-300 absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
-                        <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-16 lg:ml-16">
+                          class="shadow-xl rounded-full h-48 align-middle border-2 border-solid border-gray-300 absolute -m-16 -ml-20 lg:-ml-40 max-w-200-px" />
+                        <div class="shadow-xl rounded-full align-middle border-none absolute ml-12 mt-24 lg:ml-20">
                           <FileUploader @success="(file) => upload_image(file.file_url)">
                             <template v-slot="{
                               openFileSelector,
@@ -133,13 +133,13 @@
                       </div>
                       <div class="w-28 text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-blue-500">
-                          {{ campaign_report.total_pending_campaign || 0}}
+                          {{ campaign_report.total_pending_campaign || 0 }}
                         </span>
                         <span class="text-sm text-blueGray-500">{{ $t('Total Pending Campaign') }}</span>
                       </div>
                       <div class="w-28 text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-red-500">
-                          {{ campaign_report.total_rejected_campaign || 0}}
+                          {{ campaign_report.total_rejected_campaign || 0 }}
                         </span>
                         <span class="text-sm text-blueGray-500">{{ $t('Total Rejected Campaign') }}</span>
                       </div>
@@ -320,20 +320,31 @@
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   v-model="phone" type="number" placeholder="Your phone number" required />
                               </div>
-
-                              <div  class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
-                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">{{$t('Set New Password')}} <span class="text-red-600"></span></label>
+                              <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="pan number">
+                                  {{ $t('Pan Number')}}</label>
+                                <input class="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                                  v-model="pan_number" type="text" @keyup="errorPancard = ''"
+                                  placeholder="Your pan number" required>
+                                <p class="text-red-600">{{ $t(errorPancard) }}</p>
+                              </div>
+                              <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">
+                                  {{ $t('Set New Password')}} <span class="text-red-600"></span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
-                                   type="password" v-model="password" @keyup="errorMessagePassword = ''" placeholder="Enter New Password" />
-                                 <p class="text-red-600">{{ $t(errorMessagePassword) }}</p>
+                                  type="password" v-model="password" @keyup="errorMessagePassword = ''"
+                                  placeholder="Enter New Password" />
+                                <p class="text-red-600">{{ $t(errorMessagePassword) }}</p>
                               </div>
                               <div v-if="password != ''" class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
-                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">{{$t('Confirm Password')}} <span class="text-red-600">*</span></label>
+                                <label class="block text-grey-darker text-sm font-bold mb-2" for="number">
+                                  {{ $t('Confirm Password')}} <span class="text-red-600">*</span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
-                                   type="password" v-model="confirmPassword" @keyup="errorMessageConfirmPassword = ''" placeholder="Enter Again Password" required />
-                                 <p class="text-red-600">{{ $t(errorMessageConfirmPassword) }}</p>
+                                  type="password" v-model="confirmPassword" @keyup="errorMessageConfirmPassword = ''"
+                                  placeholder="Enter Again Password" required />
+                                <p class="text-red-600">{{ $t(errorMessageConfirmPassword) }}</p>
                               </div>
 
                               <!-- <div></div> -->
@@ -347,15 +358,7 @@
                                 type="button">
                                 {{ $t('cancel') }}
                               </button>
-                              <!-- <div class="mb-4">
-                                                        <label class="block text-grey-darker text-sm font-bold mb-2"
-                                                            for="pan number">Pan
-                                                            Number</label>
-                                                        <input
-                                                            class="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-                                                            v-model="pan_number" type="text" placeholder="Your pan number"
-                                                            required>
-                                                    </div> -->
+
                             </div>
                             <div class="grid justify-items-center " v-for="roles in user_data.data.roles">
                               <div class="mt-4 sm:mt-2 " v-if="roles.role == 'Donor'">
@@ -591,21 +594,23 @@ export default {
       first_name: '',
       last_name: '',
       pan_number: '',
+      errorPancard: '',
       password: '',
       confirmPassword: '',
       errorMessagePassword: '',
       errorMessageConfirmPassword: ''
     }
   },
-  created(){
-    if(!this.user.isLoggedIn()){
+  created() {
+    if (!this.user.isLoggedIn()) {
       this.$router.push('/sadbhavna')
     }
   },
   mounted() {
     const name = useRoute()
-    document.title = 'Profile'+' '+ name.params.name
+    document.title = 'Profile' + ' ' + name.params.name
     this.get_user_detail(name.params.name)
+    this.get_user_pan(name.params.name)
     this.get_donation_details(name.params.name)
     this.get_campaign_details(name.params.name)
     this.get_details_of_donor_donations(name.params.name)
@@ -619,9 +624,21 @@ export default {
         method: 'sadbhavna_donatekart.api.donor.download_80g',
         onSuccess: (res) => {
           console.log('okey', res)
-          let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
-          // window.location = url
-          window.open(url, "_blank");
+          if (res == 'Please set pan number in your profile')
+          {
+              this.$toast({
+                  title: 'Please add Pan Number',
+                  text: 'please add pan number in edit profile to get 80g certificate',
+                  icon: 'x-circle',
+                  appearance: 'denger',
+                  position: "top-center",
+                  })
+          }
+          else{
+            let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=BestDeed 80g Certificate`
+            // window.location = url
+            window.open(url, "_blank");
+          }
         },
         onError: (error) => {
           console.log('somthing want wrong!', error)
@@ -717,13 +734,28 @@ export default {
             this.phone = res.data.phone
             this.first_name = res.data.first_name
             this.last_name = res.data.last_name
-            this.pan_number = ''
+            // this.pan_number = ''
             // var fullname = res.data.fullname
             // var space = fullname.indexOf(" ");
             // this.first_name = fullname.substring(0, space);
             // this.last_name = fullname.substring(space + 1);
 
             // console.log("role", res)
+          })
+        })
+        .catch((err) => {
+          console.error(err)
+        })
+    },
+    get_user_pan(name) {
+      let url = `/api/resource/Donor?filters={"email": "${name}"}&fields=["pan_number"]`
+      fetch(url, {
+        method: 'GET',
+      })
+        .then((response) => {
+          console.log("response", response)
+          response.json().then((res) => {
+            this.pan_number = res.data[0]['pan_number']
           })
         })
         .catch((err) => {
@@ -745,11 +777,23 @@ export default {
         })
     },
     download_80g(donation, date) {
-      this.$resources.download_80g.submit({
-        donation: donation,
-        date: date,
-        donor: this.donor,
-      })
+      if (this.pan_number == null) {
+        this.$toast({
+          title: 'Please add Pan Number',
+          text: 'please add pan number in edit profile to get 80g certificate',
+          icon: 'x-circle',
+          appearance: 'denger',
+          position: "top-center",
+        })
+      }
+      else {
+        this.$resources.download_80g.submit({
+          donation: donation,
+          date: date,
+          donor: this.donor,
+          // pan_number: this.pan_number
+        })
+      }
     },
     get_campaign_details(name) {
       let url = `/api/resource/NGO?filters={"email": "${name}"}&fields=["name"]`
@@ -789,21 +833,26 @@ export default {
     save() {
 
       var pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-          if (this.password == '') {
-              this.errorMessagePassword = 'Enter password'
-          }
-          else if (pw.test(this.password) == false) {
-              this.errorMessagePassword = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
-              console.log('pw')
-          }
-          if (this.confirmPassword == '') {
-              this.errorMessageConfirmPassword = 'Enter confirm password'
-          }
-          if (this.password !== this.confirmPassword) {
-          this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
-          return true;
+      var pan = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+      if (this.password == '') {
+        this.errorMessagePassword = 'Enter password'
+      }
+      else if (pw.test(this.password) == false) {
+        this.errorMessagePassword = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
+        console.log('pw')
+      }
+      if (this.confirmPassword == '') {
+        this.errorMessageConfirmPassword = 'Enter confirm password'
+      }
+      if (this.password !== this.confirmPassword) {
+        this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
+        return true;
+      }
+      if (this.pan_number != '') {
+        if (this.pan_number && pan.test(this.pan_number) == false) {
+          this.errorPancard = 'Enter valid PAN number'
         }
-
+      }
       else {
         this.edit_profile = false
         this.$resources.update_donor.submit({

@@ -11,16 +11,19 @@ def download_80g(donor, donation, date=''):
     print("donation", donation, "\n\n")
     if date == '':
         date = today()
-    donor = frappe.db.get_value("Donor", filters={"email": donor}, fieldname=["name"])
-    data = frappe.db.get_value("Tax Exemption 80G Certificate", filters={"donor": donor, "date": date, "donation": donation}, fieldname=['name'])
-    if data:
-        return data
+    donor, pan_number = frappe.db.get_value("Donor", filters={"email": donor}, fieldname=["name", "pan_number"])
+    if pan_number:
+        data = frappe.db.get_value("Tax Exemption 80G Certificate", filters={"donor": donor, "date": date, "donation": donation}, fieldname=['name'])
+        if data:
+            return data
+        else:
+            doc = frappe.get_doc({"doctype": "Tax Exemption 80G Certificate", "recipient": "Donor", "donor": donor, "date": date, "donation": donation})
+            doc.insert(ignore_permissions=True)
+            frappe.db.commit()
+            doc = frappe.get_last_doc("Tax Exemption 80G Certificate")
+            return doc.name
     else:
-        doc = frappe.get_doc({"doctype": "Tax Exemption 80G Certificate", "recipient": "Donor", "donor": donor, "date": date, "donation": donation})
-        doc.insert(ignore_permissions=True)
-        frappe.db.commit()
-        doc = frappe.get_last_doc("Tax Exemption 80G Certificate")
-        return doc.name
+        return 'Please set pan number in your profile'
 
 @frappe.whitelist(allow_guest=True)
 def get_details_of_donor_donations(donor):

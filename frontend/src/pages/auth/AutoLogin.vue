@@ -103,12 +103,18 @@
                                 </fb:login-button>
                             </div> -->
 
-                            <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
+                            <!--<span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
                                     href="/sadbhavna/login">{{ $t('Login via ID Password') }}</a></span>
 
                             <span><a class="block text-[#40b751] text-center font-bold text-lg"
                                     href="/sadbhavna/registration">{{
-                                        $t('Register') }}</a></span>
+                                        $t('Register') }}</a></span>-->
+
+                            <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
+                                    href="/sadbhavna/login">{{ $t('Login Via Email') }}</a></span>
+ <span class="block text-gray-600  text-center text-base  mb-2"> {{ $t('New to BestDeed?') }} <router-link
+                                to="/sadbhavna/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+
                             <!-- <div class="mb-4">
                                 <div class="flex mb-2 justify-between">
                                     <span class="text-gray-600">{{ $t('Forget password?') }}
