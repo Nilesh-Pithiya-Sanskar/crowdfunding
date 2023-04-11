@@ -74,6 +74,12 @@ div {
   }
 }
 
+@media (max-width:1084px) {
+  .card-space {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 
 @media (max-width: 762px) {
   .profile {
@@ -167,9 +173,9 @@ div {
 }
 
 .menu a:after {
-content: "|";
-padding-right: 2px;
-padding-left: 2px;
+  content: "|";
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
 .menu a:last-child::after {

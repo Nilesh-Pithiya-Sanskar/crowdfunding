@@ -2,7 +2,7 @@
     <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
-        <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+        <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
             <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
                 {{ $t('Join hands with') }} <span class="text-[#40b751]">{{ $t('BestDeed Campaigns') }}</span>
@@ -13,7 +13,7 @@
 
 
     <!-- Categories -->
-    <section class="container mx-auto h-full categorycard pb-8 ">
+    <section class="container mx-auto h-full categorycard pb-8 card-space">
         <!-- <div class="text-center mt-10">
             <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
             <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
@@ -459,10 +459,9 @@
 
                 </div>
 
-
                         </div>
                         <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 pt-2 flex justify-between">
-                            <ShareNetwork network="WhatsApp" :url="url" :title="campaigns[index - 1].campaign_title"
+                            <ShareNetwork network="WhatsApp" :url="url + '/campaign-donation/' + campaigns[index - 1].name" :title="campaigns[index - 1].campaign_title"
                                 :description="campaigns[index - 1].short_description">
                                 <button
                                     class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
@@ -579,7 +578,8 @@ export default {
             lang: '',
 
             start: 0,
-            page_length: 6
+            page_length: 6,
+            url: window.location.origin,
         }
     },
     // computed: {

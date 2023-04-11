@@ -57,12 +57,12 @@
                 <div></div>
               </div>
 
-              <div class=" grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 justify-center">
+              <div class=" grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 justify-center p-16 md:p-8 lg:p-8">
 
                 <div class="">
                   <div v-if="user_data" v-for="roles in user_data.data.roles" class="">
 
-                    <div v-if="roles.role == 'Donor'" class="flex justify-center pt-8">
+                    <div v-if="roles.role == 'Donor'" class="flex justify-center">
                       <div class="w-28  text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                           {{ donor_count_campaign }}
@@ -108,7 +108,7 @@
                 <div>
                   <div v-if="user_data" v-for="roles in user_data.data.roles" class="">
 
-                    <div v-if="roles.role == 'Donor'" class="flex justify-center pt-8">
+                    <div v-if="roles.role == 'Donor'" class="flex justify-center ">
                       <!-- <div class="w-28  text-center">
                         <span class="text-xl font-bold block uppercase tracking-wide text-green-500">
                           {{ donor_count_campaign }}

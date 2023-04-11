@@ -9,10 +9,23 @@ import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 // import VueMeta from 'vue-meta'
+// import { createHead } from '@vueuse/head'
+// import { createMetaManager } from 'vue-meta'
+
+import createMetaManager from 'vue-meta'
+
+// import { createMetaManager, useMeta } from 'vue-meta'
+
+// import { createMetaManager, VueMetaPlugin } from 'vue-meta'
+
+
+// import { createMetaManager } from "vue-meta";
+// import { plugin as vueMetaPlugin } from "vue-meta";
 
 
 // import GAuth from 'vue3-google-oauth2';
 import vue3GoogleLogin from 'vue3-google-login';
+import VueSocialSharing from 'vue-social-sharing'
 
 import gu from './assets/i18n/gu.json';
 import hi from './assets/i18n/hi.json';
@@ -36,12 +49,36 @@ const i18n = createI18n({
     }
 })
 
-import VueSocialSharing from 'vue-social-sharing'
+// const meta = VueMeta()
+// const head = createHead()
+// const metaManager = createMetaManager()
+
 
 let app = createApp(App)
 app.use(VueSocialSharing);
 
-// app.use(VueMeta)
+// app.use(VueMeta, {
+//   refreshOnceOnNavigation: true
+// })
+// app.use(head)
+// app.use(metaManager)
+
+// app.use(VueMetaPlugin)
+// app.use(createMetaManager)
+
+// const metaManager = createMetaManager()
+// app.provide('meta', metaManager)
+
+// app.use(VueMetaPlugin, {
+//   keyName: 'metaInfo', // optional, default value is 'metaInfo'
+//   attribute: 'data-vue-meta', // optional, default value is 'data-vue-meta'
+//   ssrAttribute: 'data-vue-meta-server-rendered', // optional, default value is 'data-vue-meta-server-rendered'
+//   tagIDKeyName: 'vmid' // optional, default value is 'vmid'
+// })
+
+// app.use(vueMetaPlugin);
+// app.use(createMetaManager());
+
 app.use(i18n)
 app.use(router)
 app.use(FrappeUI)

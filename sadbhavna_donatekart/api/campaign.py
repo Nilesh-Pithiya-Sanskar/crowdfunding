@@ -8,9 +8,9 @@ def get_campaign_detail(name):
 
 @frappe.whitelist(allow_guest=True)
 def get_campaigns(start=0, page_length=12, category = '', language = ''):
-    print("\n\n start", start)
-    print("\n\n page_langth", page_length, "\n\n")
-    print("\n\n category", category, "\n\n")
+    # print("\n\n start", start)
+    # print("\n\n page_langth", page_length, "\n\n")
+    # print("\n\n category", category, "\n\n")
     from frappe.utils import getdate
     today = getdate()
     if category != '':
@@ -37,7 +37,6 @@ def get_campaigns(start=0, page_length=12, category = '', language = ''):
 
 @frappe.whitelist(allow_guest=True)
 def get_search_campaigns(search):
-    print("\n\n search", search)
     from frappe.utils import getdate
     today = getdate()
     # return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'status': 'Live', 'end_date': ['>=', today], 'campaign_title': ['like', f"%{search}%"] }, fields=["*"], order_by='start_date desc')

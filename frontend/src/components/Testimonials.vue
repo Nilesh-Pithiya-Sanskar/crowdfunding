@@ -46,7 +46,7 @@
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6  overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -86,7 +86,7 @@
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -127,7 +127,7 @@
                 <div
                   class="mb-24 md:mb-0 lg:mb-0  flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 h-full no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -174,7 +174,7 @@
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6  overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -214,7 +214,7 @@
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -255,7 +255,7 @@
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6  overflow-scroll overflow-x-hidden  shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 no-scrollbar overflow-scroll overflow-x-hidden  shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -301,7 +301,7 @@
               <div class="pb-6 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20">
                 <div class="flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 h-3/4 md:h-4/6 lg:h-full no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -341,7 +341,7 @@
 
                 <div class="h-[440px] flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
+                    class="px-6 h-3/4 md:h-4/6 lg:h-full no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white lg:mr-6 md:mr-6">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -382,7 +382,7 @@
 
                 <div class="h-[440px] flex flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
-                    class="px-6 h-3/4 md:h-4/6 lg:h-full overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white md:mr-6 lg:mr-6 ">
+                    class="px-6 h-3/4 md:h-4/6 lg:h-full no-scrollbar overflow-scroll overflow-x-hidden shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white md:mr-6 lg:mr-6 ">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -442,3 +442,17 @@ export default {
   }
 }
 </script>
+<style>
+
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    
+
+</style>

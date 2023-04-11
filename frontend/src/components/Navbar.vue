@@ -43,7 +43,7 @@
   <div class="">
     <div class="bg-[#40b751]">
       <nav
-        class="px-[5px] md:px-[5px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[5px] lg:py-[20px] lg:flex lg:justify-between lg:items-center">
+        class="px-[20px] md:px-[20px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[5px] lg:py-[20px] lg:flex lg:justify-between lg:items-center">
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">

@@ -81,8 +81,8 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
 
 @frappe.whitelist(allow_guest=True)
 def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payment_id, anonymous):
-    print("\n\n user", user_id, "\n\n")
-    print("\n\n anonymouse", anonymous, "\n\n")
+    # print("\n\n user", user_id, "\n\n")
+    # print("\n\n anonymouse", anonymous, "\n\n")
     donor = frappe.db.get_value(
         "Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
     donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}",

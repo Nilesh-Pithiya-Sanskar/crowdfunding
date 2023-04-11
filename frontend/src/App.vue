@@ -5,6 +5,7 @@
 </style>
 <template>
   <div>
+    <!-- <h1>{{ $meta.title }}</h1> -->
     <!-- <Navbar /> -->
     <router-view />
     <!-- <Footer /> -->

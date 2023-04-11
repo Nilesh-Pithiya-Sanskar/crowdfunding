@@ -56,7 +56,7 @@
     </section>
 
     <!-- Categories -->
-    <section class="container mx-auto h-full categorycard">
+    <section class="container mx-auto h-full categorycard  card-space">
       <div class="text-center mt-10">
         <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
         <!-- <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p> -->
@@ -494,15 +494,15 @@
             <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
               <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
                 @click="donate(campaigns[index - 1].name)">
-              <div class="pt-[30px] pr-[30px] pl-[30px]">
+              <div class="pt-[20px] md:pt-[30px] lg:pt-[30px] pr-[20px] md:pr-[30px] lg:pr-[30px] pl-[20px] md:pl-[30px] lg:pl-[30px]">
                 <div v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu"
-                  class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                  class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
                   {{ campaigns[index - 1].campaign_title_gu }}</div>
                 <div v-else-if="lang == 'hi' && campaigns[index - 1].campaign_title_hi"
-                  class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                  class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
                   {{ campaigns[index - 1].campaign_title_hi }}</div>
                 <div v-else
-                  class="fontfamily font-bold text-[#40b751] text-[25px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                  class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
                   {{ campaigns[index - 1].campaign_title }}</div>
 
                 <p class="text-gray-700 text-[18px] md:text-[16px] lg:text-[16px]  truncate">
@@ -516,22 +516,23 @@
                 </div>
 
                 <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mb-3 ">
-                   <!--<div v-if="campaigns[index - 1].raised_amount"
+                  <!--<div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
                     {{ (campaigns[index - 1].raised_amount * 100
                       /
                       campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
 
-                      <div v-if="campaigns[index - 1].raised_amount"
+                  <div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-[16px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
                     <!--{{ (campaigns[index - 1].raised_amount * 100
                       /
-                      campaigns[index - 1].donation_amount).toFixed(2) }}%--></div>
+                      campaigns[index - 1].donation_amount).toFixed(2) }}%-->
+                  </div>
                 </div>
 
-                <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
+               <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
                   <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="feather w-[18px] md:w-[18px] lg:w-[24px] h-[18px] md:h-[20px] lg:h-[24px] feather-clock mr-1 md:mr-1 lg:mr-2">
@@ -569,10 +570,10 @@
                     </svg>
                   </button> -->
                   <button
-                  class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                  type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17" version="1.1"
-                      id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                      viewBox="0 0 308 308" xml:space="preserve">
+                    class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white"
+                      fill="none" height="17" width="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
                       <g id="XMLID_468_">
                         <path id="XMLID_469_"
                           d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z" />
@@ -734,6 +735,10 @@ import { inject, provide, ref } from "vue";
 import Sliders from "../components/Sliders.vue";
 import Testimonials from "../components/Testimonials.vue";
 import { useRoute } from 'vue-router'
+// import { useMeta } from 'vue-meta'
+
+
+// import { useHead } from '@vueuse/head'
 
 
 export default {
@@ -748,7 +753,84 @@ export default {
     Sliders,
     Testimonials,
   },
+ // head() {
+  //   return {
+  //     title: 'My Page Title',
+  //     meta: [
+  //       { name: 'description', content: 'My page description' },
+  //       { property: 'og:title', content: 'My Open Graph title' },
+  //       { property: 'og:description', content: 'My Open Graph description' },
+  //       { name: 'twitter:title', content: 'My Twitter title' },
+  //       { name: 'twitter:description', content: 'My Twitter description' },
+  //     ],
+  //   }
+  // },
+
+  // metaInfo() {
+  //   return { 
+  //       title: "Epiloge - Build your network in your field of interest",
+  //       meta: [
+  //         {
+  //           name: 'Description',
+  //           constent: 'asdfasdfadsf'
+  //         }
+  //       ]
+  //   }
+  // },
+
+
+  // metaInfo: {
+  //   title: 'My Page Title',
+  //   meta: [
+  //     {
+  //       name: 'description',
+  //       content: 'My page description'
+  //     }
+  //   ]
+  // },
+
+  // metaInfo: {
+  //   title: 'My Page Title',
+  //   meta: [
+  //     { name: 'description', content: 'This is the description of my page' },
+  //     { name: 'keywords', content: 'vue, meta, example' }
+  //   ]
+  // },
+
+  // metaInfo:{
+  //   title: 'asdfadsf'
+  // },
+
+
+  // metaInfo: {
+  //   title: 'Default App Title',
+  //   titleTemplate: '%s | vue-meta Example App'
+  // },
+
+  metaInfo: {
+    title: 'My Page Title',
+    meta: [
+      { name: 'description', content: 'My page description' },
+      { name: 'keywords', content: 'my, page, keywords' },
+      { name: 'author', content: 'John Doe' }
+    ]
+  },
+
   setup() {
+
+      // useHead({
+      //   title: 'About',
+      //   meta:[
+      //     {
+      //       name: 'description',
+      //       content: 'this about page'
+      //     }
+      //   ]
+      // })
+    //   const { meta } = useMeta()
+
+    // meta.value = { title: 'My App' }
+
     const user = inject("user")
     // console.log("param id", this.$route.params.razorpay_payment_id)
 
@@ -757,6 +839,8 @@ export default {
     }
   },
   mounted() {
+    document.title = 'asdfasdf'
+    document.description = 'asdfasdf adsf'
     this.get_campaigns()
     this.get_featured_campaigns()
     this.lang = localStorage.getItem('lang') || window.navigator.language

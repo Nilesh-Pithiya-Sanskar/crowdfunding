@@ -1120,7 +1120,7 @@ export default {
         donate_now() {
             this.$toast({
                 title: "Please Add Item",
-                text: "Please Select Item for Donate",
+                text: "Please Select Item To Donate",
                 icon: "smile",
                 appearance: "denger",
                 position: "top-center"
