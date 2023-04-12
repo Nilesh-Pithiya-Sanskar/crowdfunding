@@ -6,19 +6,31 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "benefit"
+  "benefit",
+  "benefit_gu",
+  "benefit_hi"
  ],
  "fields": [
   {
    "fieldname": "benefit",
    "fieldtype": "Data",
    "label": "Benefit"
+  },
+  {
+   "fieldname": "benefit_gu",
+   "fieldtype": "Data",
+   "label": "\u0ab2\u0abe\u0aad"
+  },
+  {
+   "fieldname": "benefit_hi",
+   "fieldtype": "Data",
+   "label": "\u092b\u093c\u093e\u092f\u0926\u093e"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-12 11:40:00.007074",
+ "modified": "2023-04-12 15:12:11.571680",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Campaign Donation Benefits",

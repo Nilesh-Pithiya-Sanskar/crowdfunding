@@ -2,7 +2,19 @@
 # yarn lockfile v1
 
 
+deepmerge@^4.2.2:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.3.1.tgz#44b5f2147cd3b00d4b56137685966f26fd25dd4a"
+  integrity sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==
+
 vee-validate@^3.4.15:
   version "3.4.15"
   resolved "https://registry.npmjs.org/vee-validate/-/vee-validate-3.4.15.tgz"
   integrity sha512-qEtvq9X2N7l5pjBe/6YGrrIBHxJA4KTrb3QrER3qzM7fzkH730m8LyVWMIzM47l//618nlUa7VvTdMFTRKr8tQ==
+
+vue-3-meta@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vue-3-meta/-/vue-3-meta-2.4.0.tgz#2dd505d8d34b063fac6e5ca5db00c99793944ffd"
+  integrity sha512-OK7foSVxm7kmqvTkLDCBGlujEMVxtNdlkl1n5iUtVYsHpX8+tQTGroNBcCMX8RmFlvD/bUlrTMVFykQRLSwEVQ==
+  dependencies:
+    deepmerge "^4.2.2"

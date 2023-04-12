@@ -5,21 +5,31 @@
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
               <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu"
-                    class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
+                    class="w-full mb-1 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">
                     {{ $t(campaign_detail.data.campaign_title_gu) }}
                 </h2>
                 <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi"
-                    class="w-full mb-4 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
+                    class="w-full mb-1 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
                     {{ $t(campaign_detail.data.campaign_title_hi) }}
                 </h2>
                 <h2 v-else
                     class="w-full mb-1 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
                     {{ $t(campaign_detail.data.campaign_title) }}
                 </h2>
-                <button v-for="benefit in campaign_detail.data.benefits"
-                        class="h-[30px] bg-[#40b751] mr-[2px] mt-1 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                        {{ benefit.benefit }}
-                </button>
+                <span v-for="benefit in campaign_detail.data.benefits">
+                    <button v-if="lang == 'gu' && benefit.benefit_gu"
+                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit_gu }}
+                    </button>
+                    <button v-else-if="lang == 'hi' && benefit.benefit_hi"
+                            class="h-[30px] bg-[#40b751] mr-[2px] mt-1 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit_hi }}
+                    </button>
+                    <button v-else
+                            class="h-[30px] bg-[#40b751] mr-[2px] mt-1 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit }}
+                    </button>
+                </span>
                     
             <p v-if="lang == 'gu' && campaign_detail.data.short_description_gu" style="line-height:1.7;"
                 class="mb-4 text-base text-[#364958] font-normal">{{
@@ -282,7 +292,7 @@
                     <div class="text-center" v-else>
                         <button
                             class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                            type="button" @click="descToShow = 1" v-if="total_desc > 0">{{ $t('View Less') }}</button>
+                            type="button" @click="descToShow = 1" v-if="total_desc > 1">{{ $t('View Less') }}</button>
                     </div>
                 </div>
 
