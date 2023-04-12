@@ -916,6 +916,17 @@ export default {
         Dialog,
         DonationCheckout,
     },
+    // watch: {
+    //     $route: {
+    //         immediate: true,
+    //         handler(to, from) {
+    //             document.title = to.meta.title || 'Some Default Title';
+    //             console.log("asdf", to.meta.metaTags[0].name)
+    //             to.meta.metaTags[0].name = 'asdfasf'
+    //             console.log("asdfasf")
+    //         }
+    //     },
+    // },
     // metaInfo: {
     //   title: 'My Example App',
     //   titleTemplate: '%s - Yay!',
@@ -1001,6 +1012,10 @@ export default {
         const name = useRoute();
         this.campaign = name.params.name
         document.title = 'campaign details' +' '+ name.params.name
+        // this.$route.meta.title = 'asdfadsf'
+        // this.$route.meta.title = 'asdf'
+        this.metaTitle = 'adsf'
+
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
         this.get_generous_donation(name.params.name)

@@ -1,9 +1,10 @@
 <template>
   <section
-    class=" bg-[#ebf8ec] text-center sm:px-2 md:px-2 lg:px-4 pb-0 pt-2 pb-2 border-t border-white border-opacity-10 border-neutral-100">
+    class=" bg-[#ebf8ec] text-center  border-t border-white border-opacity-10 pr-3 border-neutral-100">
     <div class="flex justify-center md:justify-between lg:justify-between">
       <div class="hidden md:flex  ">
-        <img class="h-6 w-6" src="../assets/Inter/img/icon/navbar_phone.png">
+        <div class="flex items-center">
+        <img class="h-6 w-6 ml-4" src="../assets/Inter/img/icon/navbar_phone.png">
         <a href="tel:+91 9999999999"
           class="cursor-pointer transition font-medium text-[#40b751]  sm:mr-1 md:mr-2 lg:mr-4 text-[16px]  transition duration-300 rounded  hover:text-[#364958]">
           {{ $t('+91 9999999999') }}</a>
@@ -11,6 +12,7 @@
         <a href="mailto:info@bestdeed.org"
           class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]">
           {{ $t('info@bestdeed.org') }}</a>
+      </div>
       </div>
 
       <div class="flex justify-end">

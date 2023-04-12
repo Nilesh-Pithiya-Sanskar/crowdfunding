@@ -10,6 +10,8 @@ import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 // import VueMeta from 'vue-meta'
 // import VueMeta from 'vue-meta'
+// import { createMetaManager, plugin as metaPlugin } from 'vue-meta'
+
 
 
 // import { createHead } from '@vueuse/head'
@@ -56,6 +58,8 @@ const i18n = createI18n({
 // const head = createHead()
 // const metaManager = createMetaManager()
 
+// const metaManager = createMetaManager()
+
 
 let app = createApp(App)
 app.use(VueSocialSharing);
@@ -87,6 +91,9 @@ app.use(VueSocialSharing);
 //   // optional pluginOptions
 //   refreshOnceOnNavigation: true
 // })
+
+// app.use(metaManager)
+// app.use(metaPlugin)
 
 // app.use(VueMeta)
 app.use(i18n)

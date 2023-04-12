@@ -118,26 +118,32 @@
                 <a href="#" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                    src="../../src/assets/Inter/img/facebook.svg" />
+                    src="../../src/assets/Inter/img/icon/facebookwhite.svg" />
                   <p class="sr-only">Facebook page</p>
                 </a>
                 <a href="#" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                    src="../../src/assets/Inter/img/twitter.svg" />
+                    src="../../src/assets/Inter/img/icon/twitterwhite.svg" />
                   <p class="sr-only">Twitter page</p>
                 </a>
                 <a href="#" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                    src="../../src/assets/Inter/img/insta.svg" />
+                    src="../../src/assets/Inter/img/icon/instawhite.svg" />
                   <p class="sr-only">Instagram page</p>
                 </a>
                 <a href="#" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                    src="../../src/assets/Inter/img/linkedin.svg" />
+                    src="../../src/assets/Inter/img/icon/linkedinwhite.svg" />
                   <p class="sr-only">Linkedin account</p>
+                </a>
+                <a href="#" class="text-gray-400 text-white">
+                  <img
+                    class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    src="../../src/assets/Inter/img/icon/youtubewhite.png" />
+                  <p class="sr-only">Youtube</p>
                 </a>
               </div>
             </div>
