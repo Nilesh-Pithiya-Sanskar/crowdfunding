@@ -867,6 +867,7 @@ export default {
     // document.title = 'asdfasdf'
     // document.description = 'asdfasdf adsf'
     window.scrollTo(0,0);
+    this.get_language()
     this.get_campaigns()
     this.get_featured_campaigns()
     this.lang = localStorage.getItem('lang') || window.navigator.language
@@ -893,9 +894,6 @@ export default {
       url: window.location.href,
       start: 0
     }
-  },
-  mounted(){
-    this.get_language()
   },
   resources: {
     get_campaigns() {
