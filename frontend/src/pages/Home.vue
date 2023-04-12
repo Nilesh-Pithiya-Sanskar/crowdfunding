@@ -61,8 +61,9 @@
         <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
         <!-- <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p> -->
       </div>
-      <div class="text-right mr-3 text-green-500 font-bold">
-        <router-link to="/sadbhavna/explore-campaigns">{{ $t('View More') }}</router-link>
+      <div class=" mr-3 text-green-500 font-bold flex flex-row-reverse">
+        <img class="h-5 w-4 ml-2 mt-1" src="../assets/Inter/img/icon/right-arrow.png">
+        <router-link class="hover:underline" to="/sadbhavna/explore-campaigns">{{ $t('View More') }}</router-link>
       </div>
       <!-- <div class="flex mt-3 border-b sm:mr-4 lg:mr-3 ">
         <div class="overflow-x-auto">
@@ -494,7 +495,8 @@
             <div class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
               <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
                 @click="donate(campaigns[index - 1].name)">
-              <div class="pt-[20px] md:pt-[30px] lg:pt-[30px] pr-[20px] md:pr-[30px] lg:pr-[30px] pl-[20px] md:pl-[30px] lg:pl-[30px]">
+              <div
+                class="pt-[20px] md:pt-[30px] lg:pt-[30px] pr-[20px] md:pr-[30px] lg:pr-[30px] pl-[20px] md:pl-[30px] lg:pl-[30px]">
                 <div v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu"
                   class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
                   {{ campaigns[index - 1].campaign_title_gu }}</div>
@@ -532,16 +534,18 @@
                   </div>
                 </div>
 
-               <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
-                  <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
+                  <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"
                       class="feather w-[18px] md:w-[18px] lg:w-[24px] h-[18px] md:h-[20px] lg:h-[24px] feather-clock mr-1 md:mr-1 lg:mr-2">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Days Left') }}
                   </p>
-                  <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"
                       class="feather w-[18px] md:w-[18px] lg:w-[24px] h-[18px] md:h-[20px] lg:h-[24px] feather-users mr-1 md:mr-1 lg:mr-2">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                       <circle cx="9" cy="7" r="4"></circle>
@@ -753,7 +757,7 @@ export default {
     Sliders,
     Testimonials,
   },
- // head() {
+  // head() {
   //   return {
   //     title: 'My Page Title',
   //     meta: [
@@ -818,15 +822,15 @@ export default {
 
   setup() {
 
-      // useHead({
-      //   title: 'About',
-      //   meta:[
-      //     {
-      //       name: 'description',
-      //       content: 'this about page'
-      //     }
-      //   ]
-      // })
+    // useHead({
+    //   title: 'About',
+    //   meta:[
+    //     {
+    //       name: 'description',
+    //       content: 'this about page'
+    //     }
+    //   ]
+    // })
     //   const { meta } = useMeta()
 
     // meta.value = { title: 'My App' }

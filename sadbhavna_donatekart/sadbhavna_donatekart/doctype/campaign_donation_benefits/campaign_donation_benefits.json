@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-12 11:40:00.007074",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "benefit"
+ ],
+ "fields": [
+  {
+   "fieldname": "benefit",
+   "fieldtype": "Data",
+   "label": "Benefit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-12 11:40:00.007074",
+ "modified_by": "Administrator",
+ "module": "Sadbhavna Donatekart",
+ "name": "Campaign Donation Benefits",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
