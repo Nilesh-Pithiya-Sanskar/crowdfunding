@@ -1,10 +1,10 @@
 <template>
     <Navbar />
-    <div class=" container mx-auto h-full px-5 pb-10 pt-4 md:pt-8 lg:pt-8">
+    <div class=" container mx-auto h-full px-5 pb-10 pt-4 md:pt-6 lg:pt-6">
         <div>
-            <h1 class="text-center text-4xl font-black text-[#40b751] mb-2">{{ $t('Blog') }}</h1>
+            <h1 class="text-center text-[27px] md:text-[33px] lg:text-[35px] font-black text-[#40b751]">{{ $t('Blog') }}</h1>
         </div>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4 md:mt-10 lg:mt-10">
             <div v-for="data in blogs" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
                 <div
                     class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">

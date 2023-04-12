@@ -109,7 +109,7 @@
     "View Profile": "प्रोफ़ाइल देखें",
     "Discover": "खोज करना",
     "Explore Campaigns": "अभियानों का अन्वेषण करें",
-    "We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact. Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.": "हम सामाजिक प्रभाव पैदा करने के विजन के साथ भारत के सबसे भरोसेमंद और पारदर्शी क्राउडफंडिंग प्लेटफॉर्म हैं। हमारा अनूठा मॉडल दुनिया भर के लोगों को भारत में गैर-सरकारी संगठनों और धर्मार्थ संस्थाओं द्वारा आवश्यक उत्पादों के लिए धन जुटाने की दिशा में दान करने की अनुमति देता है, जो बाद में हमारे द्वारा उन्हें वितरित किए जाते हैं।",
+    "We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact.Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.": "हम सामाजिक प्रभाव पैदा करने के विजन के साथ भारत के सबसे भरोसेमंद और पारदर्शी क्राउडफंडिंग प्लेटफॉर्म हैं। हमारा अनूठा मॉडल दुनिया भर के लोगों को भारत में गैर-सरकारी संगठनों और धर्मार्थ संस्थाओं द्वारा आवश्यक उत्पादों के लिए धन जुटाने की दिशा में दान करने की अनुमति देता है, जो बाद में हमारे द्वारा उन्हें वितरित किए जाते हैं।",
     "Request A Campaign": "इस अभियान का अनुरोध करें",
     "About Us": "हमारे बारे में",
     "Learn": "ऋृण",
@@ -126,5 +126,24 @@
     "Join hands with": "से हाथ मिलाओ",
     "BestDeed Campaigns": "बेस्टडीड अभियान",
     "to help needy.": "जरूरतमंदों की मदद करने के लिए।",
-    "Search by Campaign/NGO": "अभियान/एनजीओ द्वारा खोजें"
+    "Search by Campaign/NGO": "अभियान/एनजीओ द्वारा खोजें",
+    "Terms of Use": "उपयोग की शर्तें",
+    "Privacy Policy": "गोपनीयता नीति",
+    "Login Via Email": "ईमेल द्वारा लॉग इन करें",
+    "New to BestDeed?": "बेस्टडीड मे नए हो?",
+    "Register now": "अभी पंजीकरण करें",
+    "98 new Mylapore": "98 नए मायलापुर",
+    "Raidurgam Panmaktha,": "रायदुर्गम पनमक्था,",
+    "Mumbai, Maharashtra, 400003": "मुंबई, महाराष्ट्र, 400003",
+    "Location": "जगह",
+    "Ahmedabad": "अहमदाबाद",
+    "Rajkot": "राजकोट",
+    "All Types": "सभी प्रकार के",
+    "Urgent": "अति आवश्यक",
+    "Newly Launched":  "नया लॉन्च किया गया",
+    "Closed": "बंद किया हुआ",
+    "Most Raised": "सबसे बढ़ा हुआ"
+
+
+
 }

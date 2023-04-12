@@ -197,11 +197,11 @@
               </div>
               <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
-                <p class="cursor-pointer ml-4  hover:font-semibold hover:underline"><a>{{ $t('+91 9999999999') }}</a></p>
+                <p class="cursor-pointer ml-4  hover:font-semibold hover:underline"><a href="tel:+91 9999999999">{{ $t('+91 9999999999') }}</a></p>
               </div>
               <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
-                <p class="cursor-pointer ml-4  hover:font-semibold  hover:underline"><a>{{ $t('info@bestdeed.org') }}</a>
+                <p class="cursor-pointer ml-4  hover:font-semibold  hover:underline"> <a href="mailto:info@bestdeed.org" >{{ $t('info@bestdeed.org') }}</a>
                 </p>
               </div>
             </div>

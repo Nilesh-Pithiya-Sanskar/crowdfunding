@@ -2,7 +2,24 @@
     <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
-        <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
+        <div v-if="lang == 'hi'" class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
+            <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
+                style="text-shadow:3px 6px 6px #c9c9c9;">
+                जरूरतमंदों की मदद करने के लिए
+                <span class="text-[#40b751]">बेस्टडीड अभियान</span>
+                से हाथ मिलाओ।
+                
+            </p>
+        </div>
+        <div v-else-if="lang == 'gu'" class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
+            <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
+                style="text-shadow:3px 6px 6px #c9c9c9;">
+                જરૂરિયાતમંદોને મદદ કરવા
+                <span class="text-[#40b751]">બેસ્ટડીડ ઝુંબેશ</span> 
+                સાથે હાથ જોડો.
+            </p>
+        </div>
+        <div v-else class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
             <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
                 style="text-shadow:3px 6px 6px #c9c9c9;">
                 {{ $t('Join hands with') }} <span class="text-[#40b751]">{{ $t('BestDeed Campaigns') }}</span>
@@ -396,7 +413,7 @@
         </div>
 
         <!--Cards-->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
             <div v-for="index in campaignToShow">
                 <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
                     <div
@@ -440,31 +457,32 @@
                       campaigns[index - 1].donation_amount).toFixed(2) }}%--></div>
                 </div>
 
-                <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
-                  <p class="flex"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
+                  <p class="flex text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-clock mr-2">
+                      class="feather w-[18px] md:w-[18px] lg:w-[20px] h-[18px] md:h-[20px] lg:h-[20px] feather-clock mr-1 md:mr-1 lg:mr-2">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Days Left') }}
                   </p>
-                  <p class="flex mr-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  <p class="flex text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-users mr-2">
+                      class="feather w-[18px] md:w-[18px] lg:w-[20px] h-[18px] md:h-[20px] lg:h-[20px] feather-users mr-1 md:mr-1 lg:mr-2">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                       <circle cx="9" cy="7" r="4"></circle>
                       <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                       <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
-
                 </div>
 
+
                         </div>
-                        <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 pt-2 flex justify-between">
+                        <!--<div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 md:pl-9 lg:pl-9 pt-2 flex justify-between">-->
+                        <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
                             <ShareNetwork network="WhatsApp" :url="url + '/sadbhavna/campaign-donation/' + campaigns[index - 1].name" :title="campaigns[index - 1].campaign_title"
                                 :description="campaigns[index - 1].short_description">
                                 <button
-                                    class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                                    class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
                                     type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17" version="1.1"
                                         id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         viewBox="0 0 308 308" xml:space="preserve">
@@ -476,14 +494,15 @@
                                         </g>
                                         </svg> </button>
                             </ShareNetwork>
-                            <button
-                                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
+                           <button
+                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4  ease-linear transition-all duration-150"
+
+                  type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
                         </div>
                         <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">
                             <button class="text-[#40b751] text-base">{{ $t('Share') }}</button>
                             <button
-                                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm sm:px-2 md:px-2 lg:px-4 sm:py-2 md:py-2 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
                         </div> -->
                     </div>
@@ -513,6 +532,7 @@ export default {
     name: "Explore Campaigns",
     components: { Navbar, Footer },
     mounted() {
+        this.get_language()
         this.get_campaigns()
         // const route = useRoute()
         // if(route.query.razorpay_payment_id){
@@ -580,6 +600,8 @@ export default {
             start: 0,
             page_length: 6,
             url: window.location.origin,
+
+            lang: this.get_language(),
         }
     },
     // computed: {
@@ -696,6 +718,9 @@ export default {
             const timeDiff = end_date.getTime() - today.getTime();
             const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
             return daysDiff;
+        },
+        get_language() {
+            return this.$cookies.get('lang') || localStorage.getItem('lang')
         },
     },
 }

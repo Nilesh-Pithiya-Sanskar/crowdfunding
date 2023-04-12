@@ -125,7 +125,7 @@
     "View Profile": "પ્રોફાઇલ જુઓ",
     "Explore Campaigns": "ઝુંબેશનું અન્વેષણ કરો",
     "Discover": "શોધ",
-    "We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact. Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.": "'અમે ભારતનું સૌથી ભરોસાપાત્ર અને પારદર્શક ક્રાઉડફંડિંગ પ્લેટફોર્મ છીએ, જેમાં સામાજિક અસર ઊભી કરવાની વિઝન છે. અમારું અનોખું મૉડલ વિશ્વભરના લોકોને ભારતમાં NGO અને સખાવતી સંસ્થાઓ દ્વારા જરૂરી ઉત્પાદનો માટે ભંડોળ ઊભું કરવા માટે દાન કરવાની મંજૂરી આપે છે, જે પછી અમારા દ્વારા તેમને પહોંચાડવામાં આવે છે.",
+    "We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact.Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.": "'અમે ભારતનું સૌથી ભરોસાપાત્ર અને પારદર્શક ક્રાઉડફંડિંગ પ્લેટફોર્મ છીએ, જેમાં સામાજિક અસર ઊભી કરવાની વિઝન છે. અમારું અનોખું મૉડલ વિશ્વભરના લોકોને ભારતમાં NGO અને સખાવતી સંસ્થાઓ દ્વારા જરૂરી ઉત્પાદનો માટે ભંડોળ ઊભું કરવા માટે દાન કરવાની મંજૂરી આપે છે, જે પછી અમારા દ્વારા તેમને પહોંચાડવામાં આવે છે.",
     "Request A Campaign": "ઝુંબેશની વિનંતી કરો",
     "About Us": "અમારા વિશે",
     "Learn": "શીખો",
@@ -142,6 +142,22 @@
     "Join hands with": "સાથે હાથ જોડો",
     "BestDeed Campaigns": "બેસ્ટડીડ ઝુંબેશ",
     "to help needy.": "જરૂરિયાતમંદોને મદદ કરવા.",
-    "Search by Campaign/NGO": "ઝુંબેશ/એનજીઓ દ્વારા શોધો"
+    "Search by Campaign/NGO": "ઝુંબેશ/એનજીઓ દ્વારા શોધો",
+    "Terms of Use": "વાપરવાના નિયમો",
+    "Privacy Policy": "ગોપનીયતા નીતિ",
+    "Login Via Email": "ઈમેલ દ્વારા લોગિન કરો",
+    "New to BestDeed?": "બેસ્ટડીડ મા નવા છો?", 
+    "Register now": "અત્યારે નોંધાવો",
+    "98 new Mylapore": "98 નવું માયલાપુર",
+    "Raidurgam Panmaktha,": "રાયદુરગામ પનમકથા,",
+    "Mumbai, Maharashtra, 400003": "મુંબઈ, મહારાષ્ટ્ર, 400003",
+    "Location": "સ્થાન",
+    "Ahmedabad": "અમદાવાદ",
+    "Rajkot": "રાજકોટ",
+    "All Types": "બધા પ્રકારો",
+    "Urgent": "અર્જન્ટ",
+    "Newly Launched": "નવા લોન્ચ થયા",
+    "Closed": "બંધ",
+    "Most Raised": "સૌથી વધુ ઉછેર"
 
 }

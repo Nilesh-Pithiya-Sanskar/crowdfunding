@@ -9,10 +9,11 @@ import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 // import VueMeta from 'vue-meta'
+
 // import { createHead } from '@vueuse/head'
 // import { createMetaManager } from 'vue-meta'
 
-import createMetaManager from 'vue-meta'
+// import createMetaManager from 'vue-meta'
 
 // import { createMetaManager, useMeta } from 'vue-meta'
 
@@ -64,7 +65,7 @@ app.use(VueSocialSharing);
 // app.use(metaManager)
 
 // app.use(VueMetaPlugin)
-// app.use(createMetaManager)
+// app.use(createMetaManager())
 
 // const metaManager = createMetaManager()
 // app.provide('meta', metaManager)
@@ -77,7 +78,13 @@ app.use(VueSocialSharing);
 // })
 
 // app.use(vueMetaPlugin);
-// app.use(createMetaManager());
+// app.use(createMetaManager);
+// app.use(metaManager)
+
+// app.use(VueMeta, {
+//   // optional pluginOptions
+//   refreshOnceOnNavigation: true
+// })
 
 app.use(i18n)
 app.use(router)

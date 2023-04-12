@@ -322,7 +322,7 @@
                               </div>
                               <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
                                 <label class="block text-grey-darker text-sm font-bold mb-2" for="pan number">
-                                  {{ $t('Pan Number')}}</label>
+                                  {{ $t('Pan Number') }}</label>
                                 <input class="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
                                   v-model="pan_number" type="text" @keyup="errorPancard = ''"
                                   placeholder="Your pan number" required>
@@ -330,7 +330,7 @@
                               </div>
                               <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
                                 <label class="block text-grey-darker text-sm font-bold mb-2" for="number">
-                                  {{ $t('Set New Password')}} <span class="text-red-600"></span></label>
+                                  {{ $t('Set New Password') }} <span class="text-red-600"></span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   type="password" v-model="password" @keyup="errorMessagePassword = ''"
@@ -339,7 +339,7 @@
                               </div>
                               <div v-if="password != ''" class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
                                 <label class="block text-grey-darker text-sm font-bold mb-2" for="number">
-                                  {{ $t('Confirm Password')}} <span class="text-red-600">*</span></label>
+                                  {{ $t('Confirm Password') }} <span class="text-red-600">*</span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   type="password" v-model="confirmPassword" @keyup="errorMessageConfirmPassword = ''"
@@ -433,7 +433,7 @@
                                   {{ donation.amount }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ donation.date }}
+                                  {{ formattedDate(donation.date) }}
                                 </td>
                                 <!-- <td
                                                                 class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
@@ -512,10 +512,10 @@
                                   {{ campaign.raised_amount }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign.start_date }}
+                                  {{ formattedDate(campaign.start_date) }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign.end_date }}
+                                  {{ formattedDate(campaign.end_date) }}
                                 </td>
                                 <!-- <td
                                   class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap"
@@ -569,6 +569,8 @@ import { Avatar, FileUploader } from 'frappe-ui'
 // import { toast } from 'frappe-ui'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
+import moment from 'moment';
+
 
 export default {
   name: 'Login',
@@ -591,6 +593,7 @@ export default {
       edit_profile: false,
       email: '',
       phone: '',
+      date: '',
       first_name: '',
       last_name: '',
       pan_number: '',
@@ -624,17 +627,16 @@ export default {
         method: 'sadbhavna_donatekart.api.donor.download_80g',
         onSuccess: (res) => {
           console.log('okey', res)
-          if (res == 'Please set pan number in your profile')
-          {
-              this.$toast({
-                  title: 'Please add Pan Number',
-                  text: 'please add pan number in edit profile to get 80g certificate',
-                  icon: 'x-circle',
-                  appearance: 'denger',
-                  position: "top-center",
-                  })
+          if (res == 'Please set pan number in your profile') {
+            this.$toast({
+              title: 'Please add Pan Number',
+              text: 'please add pan number in edit profile to get 80g certificate',
+              icon: 'x-circle',
+              appearance: 'denger',
+              position: "top-center",
+            })
           }
-          else{
+          else {
             let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=BestDeed 80g Certificate`
             // window.location = url
             window.open(url, "_blank");
@@ -722,6 +724,12 @@ export default {
     }
   },
   methods: {
+    formattedDate(date) {
+      var dateObj = moment(date, 'YYYY-MM-DD');
+      var formattedDate = dateObj.format('DD-MM-YYYY');
+      return formattedDate;
+    },
+
     get_user_detail(name) {
       let url = '/api/resource/User/' + name
       fetch(url, {
@@ -797,7 +805,7 @@ export default {
     },
     get_campaign_details(name) {
       let url = `/api/resource/NGO?filters={"email": "${name}"}&fields=["name"]`
-      fetch(url, {  
+      fetch(url, {
         method: 'GET',
       })
         .then((response) => {
@@ -845,12 +853,12 @@ export default {
           this.errorMessageConfirmPassword = 'Confirm Password must be same of password';
           return true;
         }
-      }      
+      }
       if (this.pan_number != '') {
         if (this.pan_number && pan.test(this.pan_number) == false) {
           this.errorPancard = 'Enter valid PAN number'
         }
-          else{
+        else {
           this.edit_profile = false
           this.$resources.update_donor.submit({
             first_name: this.first_name,

@@ -120,7 +120,7 @@
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
                         </div>
                         <!-- <p class="text-black-500 mb-2 pt-2 pl-14">{{ $t('Head Office, India') }}</p> -->
-                        <p class="text-green-500 mb-2 pt-2 pl-14"><span>Head Office, India</span><br>98 new Mylapore<br>Raidurgam Panmaktha,<br>Mumbai, Maharashtra, 400003</p>
+                        <p class="text-green-500 mb-2 pt-2 pl-14"><span>{{$t('Head Office, India')}}</span><br>{{$t('98 new Mylapore')}}<br>{{$t('Raidurgam Panmaktha,')}}<br>{{$t('Mumbai, Maharashtra, 400003')}}</p>
                     </div>
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">

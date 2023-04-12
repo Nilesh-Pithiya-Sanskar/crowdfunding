@@ -101,7 +101,10 @@ const routes = [{
   {
     path: '/sadbhavna/terms-of-service',
     name: 'Terms Of Service',
-    component: () => import('@/pages/TermsOfService.vue')
+    component: () => import('@/pages/TermsOfService.vue'),
+    // meta: {
+    //   title: 'terms of service'
+    // }
   },
   {
     path: '/sadbhavna/translation',
@@ -124,5 +127,10 @@ let router = createRouter({
   history: createWebHistory('/'),
   routes,
 })
+
+// router.beforeEach((to, from, next) => {
+//   document.title = `${to.meta.title}`
+//   next();
+// })
 
 export default router

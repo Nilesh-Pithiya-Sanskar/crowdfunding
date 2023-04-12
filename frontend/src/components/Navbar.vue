@@ -4,11 +4,11 @@
     <div class="flex justify-center md:justify-between lg:justify-between">
       <div class="hidden md:flex  ">
         <img class="h-6 w-6" src="../assets/Inter/img/icon/navbar_phone.png">
-        <a href="#"
+        <a href="tel:+91 9999999999"
           class="cursor-pointer transition font-medium text-[#40b751]  sm:mr-1 md:mr-2 lg:mr-4 text-[16px]  transition duration-300 rounded  hover:text-[#364958]">
           {{ $t('+91 9999999999') }}</a>
         <img class="h-6 w-6 mr-1" src="../assets/Inter/img/icon/navbar_email.png">
-        <a href="#"
+        <a href="mailto:info@bestdeed.org"
           class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]">
           {{ $t('info@bestdeed.org') }}</a>
       </div>
