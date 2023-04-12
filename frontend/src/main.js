@@ -9,6 +9,8 @@ import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 // import VueMeta from 'vue-meta'
+// import VueMeta from 'vue-meta'
+
 
 // import { createHead } from '@vueuse/head'
 // import { createMetaManager } from 'vue-meta'
@@ -86,6 +88,7 @@ app.use(VueSocialSharing);
 //   refreshOnceOnNavigation: true
 // })
 
+// app.use(VueMeta)
 app.use(i18n)
 app.use(router)
 app.use(FrappeUI)

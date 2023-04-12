@@ -4,19 +4,59 @@
     <div class="container mx-auto mt-[40px]">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
-              <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu"
-                    class="w-full mb-1 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">
-                    {{ $t(campaign_detail.data.campaign_title_gu) }}
+                <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu">
+                    <span class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{ $t(campaign_detail.data.campaign_title_gu) }} </span>
+                    <span class="" v-for="benefit in campaign_detail.data.benefits">
+                    <button v-if="lang == 'gu' && benefit.benefit_gu"
+                            class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit_gu }}
+                    </button>
+                    <button v-else-if="lang == 'hi' && benefit.benefit_hi"
+                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit_hi }}
+                    </button>
+                    <button v-else
+                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit }}
+                    </button>
+                    </span>
                 </h2>
-                <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi"
-                    class="w-full mb-1 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
-                    {{ $t(campaign_detail.data.campaign_title_hi) }}
+                
+                <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi">
+                    <span class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{ $t(campaign_detail.data.campaign_title_hi) }} </span>
+                    <span class="" v-for="benefit in campaign_detail.data.benefits">
+                    <button v-if="lang == 'gu' && benefit.benefit_gu"
+                            class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit_gu }}
+                    </button>
+                    <button v-else-if="lang == 'hi' && benefit.benefit_hi"
+                        class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit_hi }}
+                    </button>
+                    <button v-else
+                            class="h-[30px] bg-[#40b751] mr-[2 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit }}
+                    </button>
+                    </span>
                 </h2>
-                <h2 v-else
-                    class="w-full mb-1 leading-10 md:leading-0 lg:heading-12 mb-1.5 text-[25px] font-bold text-[#364958] capitalize">
-                    {{ $t(campaign_detail.data.campaign_title) }}
+                <h2 v-else>
+                    <span class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{ $t(campaign_detail.data.campaign_title) }} </span>
+                    <span class="" v-for="benefit in campaign_detail.data.benefits">
+                    <button v-if="lang == 'gu' && benefit.benefit_gu"
+                            class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit_gu }}
+                    </button>
+                    <button v-else-if="lang == 'hi' && benefit.benefit_hi"
+                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit_hi }}
+                    </button>
+                    <button v-else
+                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                            {{ benefit.benefit }}
+                    </button>
+                    </span>
                 </h2>
-                <span v-for="benefit in campaign_detail.data.benefits">
+                <!-- <span v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
                             class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
                             {{ benefit.benefit_gu }}
@@ -29,7 +69,8 @@
                             class="h-[30px] bg-[#40b751] mr-[2px] mt-1 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
                             {{ benefit.benefit }}
                     </button>
-                </span>
+                </span> -->
+           
                     
             <p v-if="lang == 'gu' && campaign_detail.data.short_description_gu" style="line-height:1.7;"
                 class="mb-4 text-base text-[#364958] font-normal">{{
@@ -855,6 +896,8 @@ import { computeStyles } from '@popperjs/core';
 // import DonationDetail from "../components/DonationDetail.vue";
 import DonationCheckout from "../components/DonationCheckout.vue";
 
+import VueMeta from 'vue-meta';
+
 
 // import Razorpay from 'razorpay';
 // const rzp = new Razorpay({
@@ -873,14 +916,20 @@ export default {
         Dialog,
         DonationCheckout,
     },
-    metaInfo: {
-      title: 'My Example App',
-      titleTemplate: '%s - Yay!',
-      htmlAttrs: {
-        lang: 'en',
-        amp: true
-      }
-    },
+    // metaInfo: {
+    //   title: 'My Example App',
+    //   titleTemplate: '%s - Yay!',
+    //   htmlAttrs: {
+    //     lang: 'en',
+    //     amp: true
+    //   }
+    // },
+    // metaInfo: {
+    //   // if no subcomponents specify a metaInfo.title, this title will be used
+    //   title: 'Default Title',
+    //   // all titles will be injected into this template
+    //   titleTemplate: null
+    // },
     setup() {
         const user = inject("user")
         const cookie = Object.fromEntries(
