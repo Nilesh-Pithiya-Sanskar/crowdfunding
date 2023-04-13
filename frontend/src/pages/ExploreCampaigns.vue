@@ -36,15 +36,15 @@
             <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
         </div> -->
 
-        <div class="">
+       <div class="">
             <div class="grid lg:grid-cols-6 md:grid-cols-6 sm:grid-cols-2 ">
 
                 <div class="grid col-span-4 pl-2 pr-2 pb-0 pt-4 w-full">
-                    <div class="border rounded-lg h-10">
+                    <div class="border border-[#40b751] rounded-lg h-10">
                         <div class="border-hidden -pl-96">
                             <div class="grid place-items-center h-10 float-left text-gray-300 ">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
+                                    stroke="#40b751">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
@@ -58,7 +58,7 @@
                                     </svg>
                                 </div> -->
 
-                                <input class="h-10 w-full text-md border-hidden  text-gray-700 pr-2" type="text"
+                                <input class="h-10 w-full text-md placeholder-gray-400 border-hidden  text-gray-700 pr-2" type="text"
                                     @keyup="get_search_campaigns()" v-model="searchQuery"
                                     :placeholder="$t('Search by Campaign/NGO')" />
 
@@ -91,7 +91,7 @@
 
                 <div class="grid w-full p-2">
                     <select
-                        class="appearance-none border rounded-lg border-gray-300 mt-2 hover:border-[#40b751]  text-[16px] h-10 py-2 px-3 text-grey-darker"
+                        class="cursor-pointer rounded-lg mt-2 border border-[#40b751] text-[16px] h-10 py-2 px-3 text-grey-darker"
                         v-model="location" @change="handleChange($event)">
                         <option :value="null" disabled hidden>{{ $t('Location') }}</option>
                         <option>{{ $t('Ahmedabad') }}</option>
@@ -102,7 +102,7 @@
 
                 <div class="grid w-full p-2">
                     <select
-                        class="appearance-none border rounded-lg border-gray-300 mt-2 hover:border-[#40b751] text-[16px] h-10 py-2 px-3 text-grey-darker"
+                        class="cursor-pointer appearance-none rounded-lg mt-2 border border-[#40b751]   text-[16px] h-10 py-2 px-3 text-grey-darker"
                         v-model="selected" @change="handleChange($event)">
                         <option selected>{{ $t('All Types') }}</option>
                         <option value="urgent">{{ $t('Urgent') }}</option>
@@ -413,7 +413,7 @@
         </div>
 
         <!--Cards-->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4">
             <div v-for="index in campaignToShow">
                 <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
                     <div
@@ -428,20 +428,20 @@
                                 class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
                                 {{ campaigns[index - 1].campaign_title_hi }}</div>
                             <div v-else
-                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
+                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines">
                                 {{ campaigns[index - 1].campaign_title }}</div>
 
-                            <p class="text-gray-700 text-[15px] md:text-[15px] lg:text-[15px]  truncate">
+                            <p class="text-gray-700 text-[13px]  truncate">
                                 {{ $t('By') }}: {{ campaigns[index - 1].ngo }}
                             </p>
                             <div
-                                class="fontcard flex  justify-between mt-3 mb-0 pb-3 text-[14px] md:text-[12px] lg:text-[14px]">
+                                class="fontcard flex  justify-between mt-1 mb-0 pb-1 text-[14px]">
                                 <span class="font-[600] text-[#222222]">{{ $t('Raised') }}: ₹{{
                                     numberWithCommas(campaigns[index - 1].raised_amount)
                                 }}</span><span class="font-[600] text-[#222222]">{{ $t('Goal') }}: ₹{{
     numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mb-3 ">
+                            <div class="w-full bg-gray-200 rounded h-[10px] dark:bg-gray-700 mb-2 ">
                    <!--<div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
@@ -450,24 +450,24 @@
                       campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
 
                       <div v-if="campaigns[index - 1].raised_amount"
-                    class="bg-[#40b751] h-[16px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                    class="bg-[#40b751] h-[10px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
                     <!--{{ (campaigns[index - 1].raised_amount * 100
                       /
                       campaigns[index - 1].donation_amount).toFixed(2) }}%--></div>
                 </div>
 
-               <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
-                  <p class="flex text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               <div class="flex fontcard font-[600] justify-between border-b-2 pb-1 border-b-gray-100 mb-1">
+                  <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather w-[18px] md:w-[18px] lg:w-[20px] h-[18px] md:h-[20px] lg:h-[20px] feather-clock mr-1 md:mr-1 lg:mr-2">
+                      class="feather h-4 w-4 feather-clock mr-1 md:mr-1 lg:mr-2">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Days Left') }}
+                    </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Goal') }}
                   </p>
-                  <p class="flex text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather w-[18px] md:w-[18px] lg:w-[20px] h-[18px] md:h-[20px] lg:h-[20px] feather-users mr-1 md:mr-1 lg:mr-2">
+                      class="feather h-4 w-4 feather-users mr-1 md:mr-1 lg:mr-2">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                       <circle cx="9" cy="7" r="4"></circle>
                       <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -477,7 +477,6 @@
 
 
                         </div>
-                        <!--<div class="sm:pr-9 md:pr-2 lg:pr-9 pb-4 pl-9 md:pl-9 lg:pl-9 pt-2 flex justify-between">-->
                         <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
                             <ShareNetwork network="WhatsApp" :url="url + '/sadbhavna/campaign-donation/' + campaigns[index - 1].name" :title="campaigns[index - 1].campaign_title"
                                 :description="campaigns[index - 1].short_description">
@@ -532,6 +531,7 @@ export default {
     name: "Explore Campaigns",
     components: { Navbar, Footer },
     mounted() {
+        document.title = this.$t('Explore Different Donation Campaigns | BestDeed')
         this.get_language()
         this.get_campaigns()
         // const route = useRoute()

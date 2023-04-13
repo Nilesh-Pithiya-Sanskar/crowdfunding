@@ -61,7 +61,7 @@ export default{
     },
     created(){
         const name = useRoute();
-        document.title = 'Reset Password'+' '+ name.params.email
+        document.title = this.$t('Reset Password')+' '+ name.params.email
         this.email = name.params.email,
         this.key = name.params.key
     },

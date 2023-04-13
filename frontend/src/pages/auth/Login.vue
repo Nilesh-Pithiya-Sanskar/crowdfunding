@@ -13,7 +13,7 @@
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                   {{$t('Email')}} <span class="text-red-600">*</span>
                 </label>
-                <input v-model="email" @keyup="emailError = ''" type="email"
+                <input v-model="email" @keyup="emailError = ''" @keydown.enter="login" type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   :placeholder="$t('Email')" required />
                 <p class="text-red-600">{{ emailError }}</p>
@@ -23,7 +23,7 @@
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                   {{$t('Password')}}<span class="text-red-600">*</span>
                 </label>
-                <input v-model="password" type="password"
+                <input v-model="password" @keydown.enter="login" type="password"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   :placeholder="$t('Password')" required />
                 <p class="text-red-600">{{ passwordError }}</p>
@@ -153,6 +153,9 @@ export default {
       email: "",
       isLogin: false
     };
+  },
+  created(){
+    document.title = this.$t('Login now | BestDeed')
   },
   resources: {
     login() {

@@ -166,6 +166,7 @@ export default {
         };
     },
     mounted() {
+        document.title = this.$t('Login now | BestDeed')
         // 203313835661247
         // 1616534218770661
         FB.init({

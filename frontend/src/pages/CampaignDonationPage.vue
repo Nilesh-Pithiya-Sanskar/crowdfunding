@@ -520,73 +520,39 @@
                                     </div>
                                     <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
                                         <div class="w-full py-2">
-                                            <details class="mb-4">
+                                            <details class="mb-4" open>
                                                 <summary
                                                     class="font-medium cursor-pointer border-2 border-b-1 border-solid border-b-gray-300 text-xl text-[#40b751] list-none bg-gray-100 rounded py-3 px-4">
-                                                    {{ $t('What is Donatekart ?') }}</summary>
+                                                    {{ $t('How can I get my tax redemption?') }}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="border-2 font-normal border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] ">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                        terry richardson ad squid. 3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                        truck quinoa nesciunt laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                                        squid
-                                                        single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                                                        labore wes anderson cred nesciunt
-                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                                        occaecat craft beer
-                                                        farm-to-table.
+                                                        {{ $t("You may quickly obtain your tax receipt because all of our partner NGOs are 80G approved. On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button. Please enter your PAN number, complete location, and PAN-compliant name before clicking 'Submit.'You will receive an email and a download link for your 80G certificate.") }}
                                                     </p>
                                                 </span>
                                             </details>
+
                                             <details class="mb-4">
                                                 <summary
                                                     class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
-                                                    {{ $t('How to claim Tax-Exemption for my contributions on Donatekart?')
-                                                    }}
-                                                </summary>
-
+                                                    {{ $t('What if my fundraising target is not reached? Will I still receive the products?') }}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                        terry richardson ad squid. 3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                        truck quinoa nesciunt laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                                        squid
-                                                        single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                                                        labore wes anderson cred nesciunt
-                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                                        occaecat craft beer
-                                                        farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                                        haven't
-                                                        heard of them accusamus labore
-                                                        sustainable VHS.</p>
+                                                        {{$t('According to Best Deed, every work put into the campaign should be rewarded. Therefore, even if you fall short of your fundraising target, you still receive all of the products you have received so far.')}}</p>
                                                 </span>
                                             </details>
                                             <details class="mb-4">
                                                 <summary
                                                     class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
-                                                    {{ $t('How to Donate ?') }}</summary>
+                                                    {{ $t('What is the reliability of your crowdfunding platform? ') }}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                        terry richardson ad squid. 3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                        truck quinoa nesciunt laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                                        squid
-                                                        single-origin coffee nulla
-                                                        assumenda shoreditch et.</p>
+                                                        {{ $t("The environment, structure, and sophistication of crowdfunding platforms can vary greatly. Our crowdfunding platform is governed by a local exchange and securities commission and is required to follow strict guidelines to ensure the security of investors' investments.Look for a license number in the page's footer to quickly spot these sites. On the other hand, some crowdfunding platforms work independently, with no supervision to ensure the safety of investors.Best Deed accepts credit cards, debit cards, bank transfers, UPI, PayPal, and other payment methods. You can select the most convenient option and carry out the necessary actions.")}}</p>
                                                 </span>
                                             </details>
                                             <details class="mb-4">
@@ -1246,8 +1212,17 @@ export default {
                         const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
                         this.campaign_days = daysDiff;
 
-                        
-                        document.title = res.data.campaign_title + " | " + 'BestDeed' 
+                        if(this.lang == 'gu' && res.data.campaign_title_gu)
+                        {
+                            document.title = res.data.campaign_title_gu + " | " + this.$t('BestDeed') 
+                        }
+                        else if (this.lang == 'hi' && res.data.campaign_title_hi){
+                            document.title = res.data.campaign_title_hi + " | " + this.$t('BestDeed') 
+                        }
+                        else{
+                            document.title = res.data.campaign_title + " | " + this.$t('BestDeed')
+                        }
+
                         var meta = document.createElement('meta');
                         meta.name = 'keywords';
                         meta.content = "donation,charity,crowdfunding,fundraising,donate online,donate online to charity,donations for nonprofits,donation websites for nonprofit,donate online india";
@@ -1255,7 +1230,17 @@ export default {
 
                         var meta = document.createElement('meta');
                         meta.name = "description";
-                        meta.content = res.data.short_description
+                        if (this.lang == 'gu' && res.data.short_description_gu)
+                        {
+                            meta.content = res.data.short_description_gu
+                        }
+                        else if (this.lang == 'hi' && res.data.short_description_hi)
+                        {
+                            meta.content = res.data.short_description_hi
+                        }
+                        else{
+                            meta.content = res.data.short_description
+                        }
                         document.head.appendChild(meta);
 
                         var meta1 = document.createElement('meta');
@@ -1265,12 +1250,32 @@ export default {
 
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:title');
-                        meta1.content = res.data.campaign_title;
+                        if(this.lang == 'gu' && res.data.campaign_title_gu)
+                        {
+                            meta1.content = res.data.campaign_title_gu; 
+                        }
+                        else if (this.lang == 'hi' && res.data.campaign_title_hi){
+                            meta1.content = res.data.campaign_title_hi;
+                        }
+                        else{
+                            meta1.content = res.data.campaign_title;
+                        }                        
                         document.head.appendChild(meta1);
+
 
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:description');
-                        meta1.content = res.data.short_description;
+                        if (this.lang == 'gu' && res.data.short_description_gu)
+                        {
+                            meta1.content = res.data.short_description_gu
+                        }
+                        else if (this.lang == 'hi' && res.data.short_description_hi)
+                        {
+                            meta1.content = res.data.short_description_hi
+                        }
+                        else{
+                            meta1.content = res.data.short_description
+                        }
                         document.head.appendChild(meta1);
 
                         var meta1 = document.createElement('meta');

@@ -177,6 +177,9 @@ export default {
     //         this.validateEmail(value);
     //     }
     // },
+    created(){
+        document.title = this.$t("Contact Us | BestDeed")
+    },
     resources: {
         contact_us() {
             return {

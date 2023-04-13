@@ -196,16 +196,16 @@
               {{ $t('Contact Us') }}</h2>
             <div class="text-white lg:-ml-[80px]">
               <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4">
-                <div><img class="pt-1 w-8 md:w-8 lg:w-10 h-6 md:h-5 lg:h-6"
-                    src="../../src/assets/Inter/img/location-pin.png" /></div>
+               <img class="w-5 h-5 mt-1"
+                    src="../../src/assets/Inter/img/location-pin.png" />
                 <p class="ml-4"><span>{{ $t('Head Office, India') }}</span><br>
                   {{ $t('98 new Mylapore Raidurgam Panmaktha, Mumbai, Maharashtra, 400003')}}</p>
               </div>
-              <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
+              <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
                 <p class="cursor-pointer ml-4  hover:font-semibold hover:underline"><a href="tel:+91 9999999999">{{ $t('+91 9999999999') }}</a></p>
               </div>
-              <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4">
+              <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
                 <p class="cursor-pointer ml-4  hover:font-semibold  hover:underline"> <a href="mailto:info@bestdeed.org" >{{ $t('info@bestdeed.org') }}</a>
                 </p>

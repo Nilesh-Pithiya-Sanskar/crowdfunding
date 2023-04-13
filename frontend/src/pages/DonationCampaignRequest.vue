@@ -250,6 +250,9 @@ export default {
     //         this.request_campaign(value);
     //     }
     // },
+    created(){
+        document.title = this.$t('Request a Campaign | BestDeed')
+    },
     resources: {
         request_campaign() {
             return {

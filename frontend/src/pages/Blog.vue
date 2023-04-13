@@ -32,6 +32,7 @@ import { inject, provide, ref } from "vue"
 export default {
     name: "Blog",
     created() {
+        document.title = this.$t('BestDeed Blogs | BestDeed')
         this.get_blogs()
     },
     components: {

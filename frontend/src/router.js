@@ -201,6 +201,20 @@ const routes = [{
     }
   },
   {
+    path: '/sadbhavna/about-us',
+    name: 'About Us',
+    component: () => import('@/pages/AboutUs.vue'),
+    meta: {
+      title: 'Get to know more about BestDeed',
+      metaTags: [
+        {
+          name: 'description',
+          content: "Donate with Purpose - Support NGOs and Their Causes Directly on BestDeed. Enjoy a Transparent Process, Regular Updates, and Dedicated Support from Our Team!"
+        },
+      ]
+    }
+  },
+  {
     path: '/sadbhavna/translation',
     name: 'Translation',
     component: () => import('@/pages/Translations.vue')

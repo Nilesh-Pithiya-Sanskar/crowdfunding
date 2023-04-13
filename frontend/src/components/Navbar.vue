@@ -3,23 +3,23 @@
     class=" bg-[#ebf8ec] text-center  border-t border-white border-opacity-10 pr-3 border-neutral-100">
     <div class="flex justify-center md:justify-between lg:justify-between">
       <div class="hidden md:flex  ">
-        <div class="flex items-center">
-        <img class="h-6 w-6 ml-4" src="../assets/Inter/img/icon/navbar_phone.png">
+       <div class="flex items-center">
+        <img class="h-5 w-5 ml-4" src="../assets/Inter/img/icon/navbar_phone.png">
         <a href="tel:+91 9999999999"
           class="cursor-pointer transition font-medium text-[#40b751]  sm:mr-1 md:mr-2 lg:mr-4 text-[16px]  transition duration-300 rounded  hover:text-[#364958]">
           {{ $t('+91 9999999999') }}</a>
-        <img class="h-6 w-6 mr-1" src="../assets/Inter/img/icon/navbar_email.png">
+        <img class="h-5 w-5 mr-1" src="../assets/Inter/img/icon/navbar_email.png">
         <a href="mailto:info@bestdeed.org"
           class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]">
           {{ $t('info@bestdeed.org') }}</a>
       </div>
       </div>
 
-      <div class="flex justify-end">
+      <div class="flex justify-end items-center">
         <div class="mr-4 md:mr-2 lg:mr-4 menu">
           <a class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]"
             v-if="language == 'gu' || language == 'en-US'" @click="set_language('hi')">हिंदी </a>
-          <a class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]"
+          <a class="cursor-pointer transition font-medium text-[#40b751]  text-[20px] transition duration-300 rounded  hover:text-[#364958]"
             v-if="language == 'hi' || language == 'en-US'" @click="set_language('gu')"> ગુજરાતી </a>
           <a class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] transition duration-300 rounded  hover:text-[#364958]"
             v-if="language == 'gu' || language == 'hi'" @click="set_language('en-US')"> English</a>
@@ -28,7 +28,7 @@
         <div class="mr-4 md:mr-2 lg:mr-4">
           <a v-if="this.user.isLoggedIn()" @click="profile()"
             class="cursor-pointer transition font-medium text-[#40b751]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">
-            {{ $t('Profile') }}
+            {{ $t('My Account') }}
           </a>
         </div>
 
@@ -45,7 +45,7 @@
   <div class="">
     <div class="bg-[#40b751]">
       <nav
-        class="px-[20px] md:px-[20px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[5px] lg:py-[20px] lg:flex lg:justify-between lg:items-center">
+        class="px-[10px] md:px-[20px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[10px] lg:py-[16px] lg:flex lg:justify-between lg:items-center">
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/sadbhavna">

@@ -423,30 +423,34 @@
                                 </th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr v-for="donation in donation_details.data"
-                                class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ donation.name }}
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ donation.amount }}
-                                </td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ formattedDate(donation.date) }}
-                                </td>
-                                <!-- <td
-                                                                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                {{ donation.mode_of_payment }}</td> -->
-                                <td class="text-sm text-gray-900 font-light px-6 py-4  cursor-pointer" @click="
-                                  download_80g(donation.name, donation.date)
-                                ">
-                                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> -->
-                                  {{ $t('Download') }}
-                                </td>
-                              </tr>
+                            <tbody v-for="index in donationToShow">
+                              <!-- <div >         -->
+                                <tr v-if="index - 1 < donation_details.data.length"
+                                  class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                  <td class="text-sm text-gray-900 font-light px-6 py-4">
+                                    {{ donation_details.data[index - 1].name }}
+                                  </td>
+                                  <td class="text-sm text-gray-900 font-light px-6 py-4">
+                                    {{ donation_details.data[index - 1].amount }}
+                                  </td>
+                                  <td class="text-sm text-gray-900 font-light px-6 py-4">
+                                    {{ formattedDate(donation_details.data[index - 1].date) }}
+                                  </td>
+                                  <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"> {{ donation.mode_of_payment }}</td> -->
+                                  <td class="text-sm text-gray-900 font-light px-6 py-4 cursor-pointer" @click="
+                                    download_80g(donation_details.data[index - 1].name, donation_details.data[index - 1].date)">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> -->
+                                    {{ $t('Download') }}
+                                  </td>
+                                </tr>
+                              <!-- </div> -->
                             </tbody>
                           </table>
+                          <div v-if="donationToShow < donation_details.data.length || donation_details.data.length > donationToShow" class="text-center">
+                              <button
+                                class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" @click="donationToShow += 6">{{ $t('Show More') }}</button>
+                            </div>
                         </div>
                       </div>
                     </div>
@@ -496,26 +500,26 @@
                                 </th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr v-for="campaign in campaign_details"
+                            <tbody v-for="index in campaignToShow">
+                                <tr v-if="index - 1 < campaign_details.data.length"
                                 class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign.campaign_title }}
+                                  {{ campaign_details.data[index - 1].campaign_title }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign.campaign_category }}
+                                  {{ campaign_details.data[index - 1].campaign_category }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign.donation_amount }}
+                                  {{ campaign_details.data[index - 1].donation_amount }}
                                 </td>
                                 <td class="text-sm text-green-500 font-bold px-6 py-4">
-                                  {{ campaign.raised_amount }}
+                                  {{campaign_details.data[index - 1].raised_amount }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ formattedDate(campaign.start_date) }}
+                                  {{ formattedDate(campaign_details.data[index - 1].start_date) }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ formattedDate(campaign.end_date) }}
+                                  {{ formattedDate(campaign_details.data[index - 1].end_date) }}
                                 </td>
                                 <!-- <td
                                   class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap"
@@ -524,13 +528,18 @@
                                 </td> -->
 
                                 <td
-                                  :class="['text-sm font-bold px-6 py-4', (campaign.status === 'Live' ? 'text-green-500' : ''), (campaign.status === 'Pending' ? 'text-blue-500' : ''), (campaign.status === 'Rejected' ? 'text-red-500' : ''), (campaign.status === 'Closed' ? 'text-orange-500' : '')]">
-                                  {{ campaign.status }}
+                                  :class="['text-sm font-bold px-6 py-4', (campaign_details.data[index - 1].status === 'Live' ? 'text-green-500' : ''), (campaign_details.data[index - 1].status === 'Pending' ? 'text-blue-500' : ''), (campaign_details.data[index - 1].status === 'Rejected' ? 'text-red-500' : ''), (campaign_details.data[index - 1].status === 'Closed' ? 'text-orange-500' : '')]">
+                                  {{ campaign_details.data[index - 1].status }}
                                 </td>
 
                               </tr>
                             </tbody>
                           </table>
+                          <div v-if="campaignToShow < campaign_details.data.length || campaign_details.data.length > campaignToShow" class="text-center">
+                              <button
+                                class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
+                            </div>
                         </div>
                         <div class="text-center text-sm leading-normal m-4 text-blue-400 font-bold">
                           <router-link to="/sadbhavna/request-campaign">{{ $t('Request New Campaign') }}</router-link>
@@ -601,7 +610,13 @@ export default {
       password: '',
       confirmPassword: '',
       errorMessagePassword: '',
-      errorMessageConfirmPassword: ''
+      errorMessageConfirmPassword: '',
+
+      donationToShow: 6,
+      totalDonation: 0,
+
+      camapignToShow: 6,
+      totalCampaign: 0
     }
   },
   created() {
@@ -611,7 +626,7 @@ export default {
   },
   mounted() {
     const name = useRoute()
-    document.title = 'Profile' + '-' + name.params.name + '|' + 'BestDeed'
+    document.title = this.$t('Profile') + '-' + name.params.name + '|' + this.$t('BestDeed')
     this.get_user_detail(name.params.name)
     this.get_user_pan(name.params.name)
     this.get_donation_details(name.params.name)
@@ -778,6 +793,8 @@ export default {
         .then((response) => {
           response.json().then((res) => {
             this.donation_details = res
+            this.totalDonation = res.data.length
+            // this.totalDonation = res.length
           })
         })
         .catch((error) => {
@@ -817,6 +834,7 @@ export default {
             }).then((response) => {
               response.json().then((res) => {
                 this.campaign_details = res.data
+                this.totalCampaign = res.data.length
               })
             })
           })

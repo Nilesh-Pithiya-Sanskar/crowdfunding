@@ -131,7 +131,7 @@ export default {
         }
     },
     created(){
-        document.title = 'Register | BestDeed'
+        document.title = this.$t('Register | BestDeed')
     },
     resources: {
         register() {

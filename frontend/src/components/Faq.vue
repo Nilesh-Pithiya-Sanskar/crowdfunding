@@ -59,92 +59,47 @@
                     <div class="container px-0 py-7 mx-auto">
                       <div class="">
                         <div class="w-full lg:w-1/2 px-4 py-2">
-                          <details class="mb-4">
+                          <details class="mb-4" open>
                             <summary
                               class="font-medium border-2 border-b-4 border-solid border-gray-200 text-xl text-green-500 list-none bg-gray-100 rounded py-3 px-4"
-                            >
-                              Collapsible Group Item #1
+                            >{{ $t('How can I get my tax redemption?') }}
                             </summary>
 
                             <span>
                               <p
                                 class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-gray-700 dark:text-gray-300"
-                              >
-                                Anim pariatur cliche reprehenderit, enim eiusmod
-                                high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard
-                                dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                                put a bird on it squid single-origin coffee
-                                nulla assumenda shoreditch et. Nihil anim
-                                keffiyeh helvetica, craft beer labore wes
-                                anderson cred nesciunt sapiente ea proident. Ad
-                                vegan excepteur butcher vice lomo. Leggings
-                                occaecat craft beer farm-to-table, raw denim
-                                aesthetic synth nesciunt you probably haven't
-                                heard of them accusamus labore sustainable VHS.
-                              </p>
+                              >{{ $t("You may quickly obtain your tax receipt because all of our partner NGOs are 80G approved. On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button. Please enter your PAN number, complete location, and PAN-compliant name before clicking 'Submit.'You will receive an email and a download link for your 80G certificate.") }}</p>
                             </span>
                           </details>
                           <details class="mb-4">
                             <summary
                               class="font-medium border-2 cursor-pointer border-b-4 border-solid border-gray-200 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4"
-                            >
-                              Collapsible Group Item #2
-                            </summary>
+                            >{{ $t('What if my fundraising target is not reached? Will I still receive the products?') }}</summary>
 
                             <span>
                               <p
                                 class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-gray-700 dark:text-gray-300"
-                              >
-                                Anim pariatur cliche reprehenderit, enim eiusmod
-                                high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard
-                                dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                                put a bird on it squid single-origin coffee
-                                nulla assumenda shoreditch et. Nihil anim
-                                keffiyeh helvetica, craft beer labore wes
-                                anderson cred nesciunt sapiente ea proident. Ad
-                                vegan excepteur butcher vice lomo. Leggings
-                                occaecat craft beer farm-to-table, raw denim
-                                aesthetic synth nesciunt you probably haven't
-                                heard of them accusamus labore sustainable VHS.
-                              </p>
+                              >{{$t('According to Best Deed, every work put into the campaign should be rewarded. Therefore, even if you fall short of your fundraising target, you still receive all of the products you have received so far.')}}s</p>
                             </span>
                           </details>
                           <details class="mb-4">
                             <summary
                               class="font-medium border-2 cursor-pointer border-b-4 border-solid border-gray-200 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4"
-                            >
-                              Collapsible Group Item #3
-                            </summary>
+                            >{{ $t('What is the reliability of your crowdfunding platform? ') }}</summary>
 
                             <span>
                               <p
                                 class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-gray-700 dark:text-gray-300"
-                              >
-                                Anim pariatur cliche reprehenderit, enim eiusmod
-                                high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard
-                                dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-                                put a bird on it squid single-origin coffee
-                                nulla assumenda shoreditch et. Nihil anim
-                                keffiyeh helvetica, craft beer labore wes
-                                anderson cred nesciunt sapiente ea proident. Ad
-                                vegan excepteur butcher vice lomo. Leggings
-                                occaecat craft beer farm-to-table, raw denim
-                                aesthetic synth nesciunt you probably haven't
-                                heard of them accusamus labore sustainable VHS.
-                              </p>
+                              >{{ $t("The environment, structure, and sophistication of crowdfunding platforms can vary greatly. Our crowdfunding platform is governed by a local exchange and securities commission and is required to follow strict guidelines to ensure the security of investors' investments.Look for a license number in the page's footer to quickly spot these sites. On the other hand, some crowdfunding platforms work independently, with no supervision to ensure the safety of investors.Best Deed accepts credit cards, debit cards, bank transfers, UPI, PayPal, and other payment methods. You can select the most convenient option and carry out the necessary actions.")}}</p>
                             </span>
                           </details>
                         </div>
                       </div>
                     </div>
                   </section>
-                </div>
+
+                  
+              </div>
                 <div
                   v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }"
                 >
