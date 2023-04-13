@@ -244,9 +244,6 @@ export default {
             beneficiary_groupig: ''
         }
     },
-    created() {
-        document.title = 'Camapign Request'
-    },
     // watch: {
     //     email(value) {
     //         this.email = value;

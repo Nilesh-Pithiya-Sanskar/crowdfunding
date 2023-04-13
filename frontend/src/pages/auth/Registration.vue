@@ -131,7 +131,7 @@ export default {
         }
     },
     created(){
-        document.title = 'Register'
+        document.title = 'Register | BestDeed'
     },
     resources: {
         register() {

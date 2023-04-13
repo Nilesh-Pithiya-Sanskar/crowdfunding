@@ -924,6 +924,7 @@ export default {
     //             console.log("asdf", to.meta.metaTags[0].name)
     //             to.meta.metaTags[0].name = 'asdfasf'
     //             console.log("asdfasf")
+                
     //         }
     //     },
     // },
@@ -1011,10 +1012,14 @@ export default {
     created() {
         const name = useRoute();
         this.campaign = name.params.name
-        document.title = 'campaign details' +' '+ name.params.name
+        // const para = document.createElement("p");
+        // para.innerText = "This is a paragraph";
+        // document.head.appendChild(para)
+
+        // document.title = 'campaign details' +' '+ name.params.name
         // this.$route.meta.title = 'asdfadsf'
         // this.$route.meta.title = 'asdf'
-        this.metaTitle = 'adsf'
+        // this.metaTitle = 'adsf'
 
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
@@ -1240,6 +1245,39 @@ export default {
                         const timeDiff = this.campaign_end_date.getTime() - today.getTime();
                         const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
                         this.campaign_days = daysDiff;
+
+                        
+                        document.title = res.data.campaign_title + " | " + 'BestDeed' 
+                        var meta = document.createElement('meta');
+                        meta.name = 'keywords';
+                        meta.content = "donation,charity,crowdfunding,fundraising,donate online,donate online to charity,donations for nonprofits,donation websites for nonprofit,donate online india";
+                        document.head.appendChild(meta);
+
+                        var meta = document.createElement('meta');
+                        meta.name = "description";
+                        meta.content = res.data.short_description
+                        document.head.appendChild(meta);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:type');
+                        meta1.content = 'Website';
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:title');
+                        meta1.content = res.data.campaign_title;
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:description');
+                        meta1.content = res.data.short_description;
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:image');
+                        meta1.content = window.origin + res.data.campain_image;
+                        document.head.appendChild(meta1);
+                        
                     });
                 })
                 .catch(err => {

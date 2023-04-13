@@ -8,16 +8,20 @@ const routes = [{
     name: 'Home',
     component: () => import('@/pages/Home.vue'),
     meta: {
-      title: 'Home Page - BestDeed',
+      title: 'Donate with 100% Transparency | BestDeed',
       metaTags: [
         {
-          name: 'description',
-          content: 'The home page of our BestDeed.'
+          name: 'keyword',
+          content: 'donation,charity,crowdfunding,fundraising,donate online,donate online to charity,donations for nonprofits,donation websites for nonprofit,donate online india'
         },
         {
-          property: 'og:description',
-          content: 'The home page of our BestDeed.'
-        }
+          name: 'description',
+          content: "BestDeed is India's most trusted and transparent donation platform. It enables donors to reach people in need and donate to the cause directly."
+        },
+        // {
+        //   property: 'og:description',
+        //   content: 'The home page of our example app.'
+        // }
       ]
     }
   },
@@ -25,34 +29,52 @@ const routes = [{
     path: '/sadbhavna/login',
     name: 'Login',
     component: () => import('@/pages/auth/Login.vue'),
+    meta: {
+      title: 'Login now | BestDeed',
+      metaTags: [
+        {
+          name: 'description',
+          content: "India's top-rated and transparent non-profit platform provides a seamless way for individuals and organizations to donate or raise funds for various charitable causes. By logging in, you can make a significant difference in the lives of people who are in need of support."
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/auto-login',
     name: 'Auto Login',
-    component: () => import('@/pages/auth/AutoLogin.vue')
+    component: () => import('@/pages/auth/AutoLogin.vue'),
+    meta: {
+      title: 'Login now | BestDeed',
+      metaTags: [
+        {
+          name: 'description',
+          content: "India's top-rated and transparent non-profit platform provides a seamless way for individuals and organizations to donate or raise funds for various charitable causes. By logging in, you can make a significant difference in the lives of people who are in need of support."
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/campaign-donation/:name',
     name: 'CampaignDonation',
     component: () => import('@/pages/CampaignDonationPage.vue'),
-    // meta: {
-    //   title: '',
-    //   metaTags: [
-    //     {
-    //       name: 'asdfasd',
-    //       content: 'The home page of our example app.'
-    //     },
-    //     {
-    //       property: 'og:description',
-    //       content: 'The home page of our example app1.'
-    //     }
-    //   ]
-    // }
   },
   {
     path: '/sadbhavna/explore-campaigns',
     name: 'ExploreCampaigns',
-    component: () => import('@/pages/ExploreCampaigns.vue')
+    component: () => import('@/pages/ExploreCampaigns.vue'),
+    meta: {
+      title: 'Explore Different Donation Campaigns | BestDeed',
+      metaTags: [
+        {
+          name: 'keyword',
+          content: 'explore campaign,donation,charity,crowdfunding,donate online to charity,donations for nonprofits,explore,explore donation campaign'
+        },
+        {
+          name: 'description',
+          content: "Bestdeed showcases various charitable causes or fundraising initiatives seeking donations from the public. The page provides information about the cause, its impact, and the fundraising goal, along with updates on the amount of money raised. Donors can contribute to the cause and may also find photos, videos, and testimonials on the page."
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/donate/:name&:price',
@@ -62,7 +84,16 @@ const routes = [{
   {
     path: '/sadbhavna/blog',
     name: 'Blog',
-    component: () => import('@/pages/Blog.vue')
+    component: () => import('@/pages/Blog.vue'),
+    meta: {
+      title: 'BestDeed Blogs | BestDeed',
+      metaTags: [
+        {
+          name: 'description',
+          content: "Welcome to our Bestdeed's blog page! Here, we share inspiring stories, useful tips, and valuable insights to help you make a difference in the world. Our team of experts is passionate about fundraising and committed to helping you achieve your goals. So, sit back, grab a cup of coffee, and explore our latest posts to learn how you can make a positive difference in the world."
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/blog-post/:name',
@@ -82,7 +113,16 @@ const routes = [{
   {
     path: '/sadbhavna/contact-us',
     name: 'Contact Us',
-    component: () => import('@/pages/ContactUs.vue')
+    component: () => import('@/pages/ContactUs.vue'),
+    meta: {
+      title: 'Contact Us | BestDeed',
+      metaTags: [
+        {
+          name: 'description',
+          content: "As India's leading transparent crowdfunding platform, we're committed to creating a lasting impact and helping those in need. Whether you have questions about our platform, want to inquire about partnering with us, or simply want to learn more about our mission, our team is here to help. Contact us today and let's work together to make a positive difference in the world."
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/profile/:name',
@@ -92,7 +132,20 @@ const routes = [{
   {
     path: '/sadbhavna/request-campaign',
     name: 'Donation Campaign Request',
-    component: () => import('@/pages/DonationCampaignRequest.vue')
+    component: () => import('@/pages/DonationCampaignRequest.vue'),
+    meta: {
+      title: 'Request a Campaign | BestDeed',
+      metaTags: [
+        {
+          name: 'keyword',
+          content: 'donation,charity,crowdfunding,request a campaign for fundraising,donate online to charity,donations for nonprofits,donation websites for nonprofit,request a campaign,ngo request for campaign,individul group request'
+        },
+        {
+          name: 'description',
+          content: "Requesting a Donation campaign is now easy with India's most trusted and transparent online donation platform. Create a fundraising campaign to collect funds for any cause with BestDeed"
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/donation-success-page/:donation/:name/:email/:item:/campaign',
@@ -122,15 +175,30 @@ const routes = [{
   {
     path: '/sadbhavna/privacy-policy',
     name: 'Privacy Policy',
-    component: () => import('@/pages/PrivacyPolicy1.vue')
+    component: () => import('@/pages/PrivacyPolicy1.vue'),
+    meta: {
+      title: 'Privacy Policy Page | BestDeed',
+      metaTags: [
+        {
+          name: 'description',
+          content: "Privacy Policy - At BestDeed, we respect your privacy and understand the importance of protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard the information you provide to us. We are committed to being transparent and accountable in the way we handle your personal data."
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/terms-of-service',
     name: 'Terms Of Service',
     component: () => import('@/pages/TermsOfService.vue'),
-    // meta: {
-    //   title: 'terms of service'
-    // }
+    meta: {
+      title: 'Terms of Use | BestDeed',
+      metaTags: [
+        {
+          name: 'description',
+          content: "BestDeed is committed to protecting your privacy, and we have created this terms of use to ensure the security of your personal information. We strive to meet the requirements outlined in our donor privacy policy, which is also included in our terms of service. Please read this policy carefully to understand how we collect, use, and safeguard your information."
+        },
+      ]
+    }
   },
   {
     path: '/sadbhavna/translation',

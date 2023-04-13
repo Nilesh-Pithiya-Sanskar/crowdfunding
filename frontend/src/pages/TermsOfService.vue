@@ -75,7 +75,6 @@ export default{
   },
   created(){
     window.scrollTo(0,0);
-    document.title = 'Terms Of Service'
   }
 }
 </script>

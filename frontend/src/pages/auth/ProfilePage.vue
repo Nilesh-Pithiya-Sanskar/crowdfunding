@@ -611,7 +611,7 @@ export default {
   },
   mounted() {
     const name = useRoute()
-    document.title = 'Profile' + ' ' + name.params.name
+    document.title = 'Profile' + '-' + name.params.name + '|' + 'BestDeed'
     this.get_user_detail(name.params.name)
     this.get_user_pan(name.params.name)
     this.get_donation_details(name.params.name)

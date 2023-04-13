@@ -165,9 +165,6 @@ export default {
             // isLogin: false,
         };
     },
-    created(){
-        document.title = 'Login'
-    },
     mounted() {
         // 203313835661247
         // 1616534218770661

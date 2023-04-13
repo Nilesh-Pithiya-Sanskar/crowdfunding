@@ -1,9 +1,9 @@
 <template>
   <!-- Header-->
   <main>
+    <Navbar />
     <section class=" bg-no-repeat  bg-cover bg-center"
       style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
-      <Navbar />
       <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-[100px] container mx-auto h-fullsssss">
         <div class="grid lg:grid-cols-2 mt-5 md:mt-10 lg:mt-0">
 
@@ -11,21 +11,22 @@
             class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
             <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
               class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:3px 6px 6px #c9c9c9]">
-              <span class="text-gray-700">100% पारदर्शिता</span>
-              साथे दान किजिए भारत का
+              भारत का
               <span class="text-gray-700">सबसे भरोसेमंद</span>
-              क्राउड फंडिंग प्लेटफॉर्म।
+              क्राउड फंडिंग प्लेटफॉर्म
+              <span class="text-gray-700">100% पारदर्शिता</span>
+              साथे दान किजिए।
             </h1>
           </div>
           <div v-else-if="lang == 'gu'"
             class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
             <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
               class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:3px 6px 6px #c9c9c9]">
-              <span class="text-gray-700">100% પારદર્શિતા</span>
-              સાથે દાન કરો ભારતનું
+              ભારતનું
               <span class="text-gray-700">સૌથી વિશ્વસનીય</span>
-              ક્રાઉડ ફંડિંગ પ્લેટફોર્મ.
-
+              ક્રાઉડ ફંડિંગ પ્લેટફોર્મ
+              <span class="text-gray-700">100% પારદર્શિતા</span>
+              સાથે દાન કરો.
             </h1>
           </div>
           <div v-else
@@ -302,7 +303,7 @@
 
       <div class="flex border-b sm:mr-4 lg:mr-4 ">
         <div class="overflow-x-auto">
-          <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-hidden ">
+          <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden no-scrollbar overflow-x-scroll overflow-x-hidden">
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
               <div
                 class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
@@ -886,8 +887,6 @@ export default {
     // })
   },
   mounted() {
-    // document.title = 'asdfasdf'
-    // document.description = 'asdfasdf adsf'
     window.scrollTo(0, 0);
     this.get_language()
     this.get_campaigns()

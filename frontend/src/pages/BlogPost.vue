@@ -147,6 +147,37 @@ export default {
                 .then(response => {
                     response.json().then(res => {
                         this.blog_detail = res
+
+                        document.title = res.data.title + " | " + 'BestDeed' 
+                        var meta = document.createElement('meta');
+                        meta.name = 'keywords';
+                        meta.content = "donation,charity,crowdfunding,fundraising,donate online,donate online to charity,donations for nonprofits,donation websites for nonprofit,donate online india";
+                        document.head.appendChild(meta);
+
+                        var meta = document.createElement('meta');
+                        meta.name = "description";
+                        meta.content = res.data.blog_intro
+                        document.head.appendChild(meta);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:type');
+                        meta1.content = 'Website';
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:title');
+                        meta1.content = res.data.title;
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:description');
+                        meta1.content = res.data.blog_intro;
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.createElement('meta');
+                        meta1.setAttribute('property', 'og:image');
+                        meta1.content = window.origin + res.data.meta_image;
+                        document.head.appendChild(meta1);
                     });
                 })
                 .catch(err => {

@@ -52,7 +52,7 @@ export default {
         Footer
     },
     created(){
-        document.title = 'Verify OTP'
+        document.title = 'Verify OTP | BestDeed'
     }
 }
 </script>

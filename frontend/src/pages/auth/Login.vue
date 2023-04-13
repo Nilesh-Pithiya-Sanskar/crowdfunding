@@ -154,9 +154,6 @@ export default {
       isLogin: false
     };
   },
-  created(){
-    document.title = 'Login'
-  },
   resources: {
     login() {
       return {
