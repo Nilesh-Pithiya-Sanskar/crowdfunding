@@ -155,16 +155,16 @@
             <h2 class="font-bold text-white mb-3 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-3 md:pt-5 lg:pt-0">
               {{ $t('Discover') }}</h2>
             <ul class="text-white">
-              <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/sadbhavna/explore-campaigns">{{ $t('Explore Campaigns') }}</router-link>
               </li>
-              <li class=" hover:underline  hover:font-semibold sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
+              <li class=" sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/sadbhavna/request-campaign">{{ $t('Request A Campaign') }}</router-link>
               </li>
-              <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <a href="#">{{ $t('About Us') }}</a>
               </li>
-              <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/sadbhavna/contact-us">{{ $t('Contact Us') }}</router-link>
               </li>
             </ul>
@@ -173,24 +173,24 @@
             <h2 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl pt-5 md:pt-5 lg:pt-0">
               {{ $t('Learn') }}</h2>
             <ul class="text-white">
-              <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <a href="#">{{ $t('How it Works') }}</a>
               </li>
-              <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/sadbhavna/faq">{{ $t('FAQs') }}</router-link>
               </li>
-              <li class=" hover:underline  hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
                 <router-link to="/sadbhavna/blog">{{ $t('Blogs') }}</router-link>
               </li>
-              <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <router-link to="/sadbhavna/terms-of-service">{{ $t('Terms of Use') }}</router-link>
               </li>
-              <li class=" hover:underline hover:font-semibold sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
+              <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
               <router-link to="/sadbhavna/privacy-policy">{{ $t('Privacy Policy') }}</router-link>
               </li>
             </ul>
           </div>
-          <div class="sm:pl-[0px] lg:pt-4 md:pl-[0px] lg:pl-[60px] ">
+           <div class="sm:pl-[0px] lg:pt-4 md:pl-[0px] lg:pl-[60px] ">
             <h2
               class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl -ml-[0px] md:-ml-[0px] lg:-ml-[80px] pt-5 md:pt-5 lg:pt-0">
               {{ $t('Contact Us') }}</h2>
@@ -203,11 +203,11 @@
               </div>
               <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
-                <p class="cursor-pointer ml-4  hover:font-semibold hover:underline"><a href="tel:+91 9999999999">{{ $t('+91 9999999999') }}</a></p>
+                <p class="cursor-pointer ml-4 "><a href="tel:+91 9999999999">{{ $t('+91 9999999999') }}</a></p>
               </div>
               <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
-                <p class="cursor-pointer ml-4  hover:font-semibold  hover:underline"> <a href="mailto:info@bestdeed.org" >{{ $t('info@bestdeed.org') }}</a>
+                <p class="cursor-pointer ml-4 "> <a href="mailto:info@bestdeed.org" >{{ $t('info@bestdeed.org') }}</a>
                 </p>
               </div>
             </div>

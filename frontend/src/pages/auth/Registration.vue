@@ -19,7 +19,7 @@
                                 <input
                                     class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                     v-model="first_name" @keyup="firstNameError = ''" type="text" placeholder="First name"
-                                    required>
+                                    required ref="first_name">
                                 <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             </div>
                             <div class="mb-4">
@@ -132,6 +132,9 @@ export default {
     },
     created(){
         document.title = this.$t('Register | BestDeed')
+    },
+    mounted(){
+        this.$nextTick(() => this.$refs.first_name.focus())
     },
     resources: {
         register() {

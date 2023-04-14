@@ -48,7 +48,8 @@
   "column_break_6",
   "raised_amount",
   "column_break_2wrro",
-  "add_campaign_items"
+  "add_campaign_items",
+  "remark"
  ],
  "fields": [
   {
@@ -265,6 +266,11 @@
    "fieldtype": "Table",
    "label": "Benefits",
    "options": "Campaign Donation Benefits"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -275,7 +281,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-11 12:13:35.959158",
+ "modified": "2023-04-13 19:15:18.726455",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

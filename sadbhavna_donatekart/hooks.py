@@ -10,7 +10,7 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 
-fixtures = ["Custom DocPerm", "Custom Field"]
+fixtures = ["Custom DocPerm", "Custom Field", "Print Format"]
 # include js, css files in header of desk.html
 # app_include_css = "/assets/sadbhavna_donatekart/css/sadbhavna_donatekart.css"
 # app_include_js = "/assets/sadbhavna_donatekart/js/sadbhavna_donatekart.js"
@@ -135,9 +135,9 @@ doc_events = {
 #	"all": [
 #		"sadbhavna_donatekart.tasks.all"
 #	],
-#	"daily": [
-#		"sadbhavna_donatekart.tasks.daily"
-#	],
+	# "daily": [
+		# "sadbhavna_donatekart.api.api.close_end_date_campaign"
+	# ],
 #	"hourly": [
 #		"sadbhavna_donatekart.tasks.hourly"
 #	],

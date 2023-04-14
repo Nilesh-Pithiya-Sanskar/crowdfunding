@@ -213,3 +213,85 @@ div {
 .menu a:last-child::after {
   display: none
 }
+
+.menubar a:last-child::after {
+  content: "|";
+  padding-right: 8px;
+  padding-left: 8px;
+  font-weight: 500;
+  height: 3rem;
+}
+
+@media (max-width:1024px){
+.menubar a:last-child::after {
+ display: none
+}
+}
+
+/*Update-14042023*/
+.menubar {
+  padding: 8px 0;
+}
+.menubar img,
+.menubar a,
+.menu a,
+.opacity-6 {
+  opacity: .6;
+}
+
+.menubar img {
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(0);
+}
+.menubar a:last-child::after {
+  display: none;
+}
+.bg-overlay {
+  position: relative;
+  z-index: 2;
+}
+.bg-overlay::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, .7);
+  content: '';
+  z-index: -1;
+}
+.custom-tabs {
+  flex-wrap: wrap;
+  border-bottom: 0;
+}
+
+.custom-tabs li {
+  width: 100%;
+}
+.category-tab-content img {
+  object-fit: cover;
+}
+.custom-tabs li img {
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.custom-tabs li:hover img {
+  filter: brightness(3);
+}
+.category-tab-content .card-shodow > div .truncate {
+  opacity: .45;
+  margin-bottom: 10px;
+}
+.category-tab-content .card-shodow > div:last-child {
+  margin-top: 10px;
+}
+.category-tab-content .card-shodow > div:last-child > button:last-child {
+  font-weight: 900;
+}
+.category-tab-content .card-shodow .truncate-2-lines {
+  color: #364958;
+}

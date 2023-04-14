@@ -9,7 +9,7 @@
         <p
           class="text-[30px] md:text-[36px] lg:text-[48px] p-[120px] md:p-[160px] lg:p-[180px] text-center text-[#40b751] font-medium"
         >
-          FAQ
+          {{$t('FAQ')}}
         </p>
       </div>
     </div>
@@ -33,7 +33,7 @@
                       'text-white bg-[#40b751]': openTab === 1,
                     }"
                   >
-                    Recent
+                    {{$t('Recent')}}
                   </a>
                 </li>
                 <li class="-mb-px mr-2 hover:shadow last:mr-0 text-center">
@@ -45,7 +45,7 @@
                       'text-white bg-[#40b751]': openTab === 2,
                     }"
                   >
-                    Most Generous
+                    {{$t('Most Generous')}}
                   </a>
                 </li>
               </ul>
@@ -106,7 +106,7 @@
                   <div
                     class="container text-gray-600 py-7 px-3 md:px-4 lg:px-0 mx-auto"
                   >
-                    profile
+                    {{$t('profile')}}
                   </div>
                 </div>
               </div>

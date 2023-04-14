@@ -13,7 +13,7 @@
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                   {{$t('Email')}} <span class="text-red-600">*</span>
                 </label>
-                <input v-model="email" @keyup="emailError = ''" @keydown.enter="login" type="email"
+                <input v-model="email" ref="email" @keyup="emailError = ''" @keydown.enter="login" type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   :placeholder="$t('Email')" required />
                 <p class="text-red-600">{{ emailError }}</p>
@@ -60,72 +60,6 @@
   </div>
 
 
-  <!-- <div class="container mx-auto h-full">
-    <div class="w-full pt-0 md:pt-5 lg:pt-12 bg-grey-lightest">
-      <div class="container mx-auto py-0">
-        <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-          <div class="py-8 px-10 text-gray-600 text-black text-center text-4xl">Register & Login
-          </div>
-          <div class="py-4 px-8">
-            <div class="mb-4">
-              <label class="block text-gray-600 text-base  mb-2" for="email">Enter WhatsApp Number</label>
-              <input class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker" v-model="email"
-                type="number">
-              <span class="text-sm text-gray-400"> An OTP will be sent to this whats app number</span>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with Whatsapp</button>
-            </div>
-            <div class="mb-4">
-              <div
-                class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
-                <p class="text-center mx-4 mb-0">Or</p>
-              </div>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with SMS</button>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with Email</button>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with Facebook</button>
-            </div>
-            <GoogleLogin :callback="login_with_google" class="w-full">
-              <div class="mb-4">
-                <button
-                  class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                  with Google</button>
-              </div>
-            </GoogleLogin>
-            <div class="mb-4">
-              <div class="flex mb-10 justify-between">
-                <span class="text-gray-600">Forget password? <a class="text-green-500" href="/login.html">Click
-                    here</a></span><a class="text-green-500" href="registration.html">Register</a>
-              </div>
-            </div>
-            <div class="mb-4">
-              <span class="block text-gray-600 text-center text-base  mb-2"><a class="text-green-500"
-                  href="registration.html">Login </a> &nbsp;via ID Password</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-
-
-
 
   <Footer />
 </template>
@@ -156,6 +90,9 @@ export default {
   },
   created(){
     document.title = this.$t('Login now | BestDeed')
+  },
+  mounted(){
+    this.$nextTick(() => this.$refs.email.focus())
   },
   resources: {
     login() {

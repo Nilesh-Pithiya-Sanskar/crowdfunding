@@ -2,15 +2,15 @@
   <!-- Header-->
   <main>
     <Navbar />
-    <section class=" bg-no-repeat  bg-cover bg-center"
+    <section class=" bg-no-repeat  bg-cover bg-center bg-overlay"
       style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
-      <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-[100px] container mx-auto h-fullsssss">
+      <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-48 container mx-auto h-fullsssss">
         <div class="grid lg:grid-cols-2 mt-5 md:mt-10 lg:mt-0">
 
           <div v-if="lang == 'hi'"
             class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
-            <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
-              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:3px 6px 6px #c9c9c9]">
+            <h1
+              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:12x 2px 2px #c9c9c9]">
               भारत का
               <span class="text-gray-700">सबसे भरोसेमंद</span>
               क्राउड फंडिंग प्लेटफॉर्म
@@ -20,8 +20,8 @@
           </div>
           <div v-else-if="lang == 'gu'"
             class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
-            <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
-              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:3px 6px 6px #c9c9c9]">
+            <h1
+              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:2px 2px 2px #c9c9c9]">
               ભારતનું
               <span class="text-gray-700">સૌથી વિશ્વસનીય</span>
               ક્રાઉડ ફંડિંગ પ્લેટફોર્મ
@@ -31,8 +31,8 @@
           </div>
           <div v-else
             class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
-            <h1 style="text-shadow:3px 6px 6px #c9c9c9;"
-              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:3px 6px 6px #c9c9c9]">
+            <h1
+              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:2px 2px 2px #c9c9c9]">
               {{ $t('Donate') }} {{ $t('with') }}
               <span class="text-gray-700">{{ $t('100% Transparency') }}</span>
               {{ $t('on') }}
@@ -69,8 +69,8 @@
         </div>
       </div>
     </div> -->
-    <section class="container mx-auto h-full">
-      <div class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[60px] pl-4 lg:pl-0 pr-4 lg:pr-0">
+    <section class="container mx-auto h-full relative z-10">
+      <div class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[141px] pl-4 lg:pl-0 pr-4 lg:pr-0">
         <div class="bg-white rounded-xl drop-shadow-xl">
           <Sliders :featured_campaigns="featured_campaigns" :interval="3000" :lang="lang" />
         </div>
@@ -78,17 +78,18 @@
     </section>
 
     <!-- Categories -->
-    <section class="container mx-auto h-full categorycard  card-space">
-      <h2
-        class="sm:text-left md:text-center lg:text-center mt-4 md:mt-6 lg:mt-10 text-3xl font-black text-[#40b751] mb-0">
-        {{
-          $t('Categories') }}</h2>
-      <!-- <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p> -->
+    <section class="container mx-auto h-full categorycard card-space py-20">
+      <div class="flex flex-wrap justify-between items-center mb-2">
+        <h2 class="sm:text-left md:text-center lg:text-center text-3xl font-black text-[#40b751] my-0">
+          {{
+            $t('Categories') }}</h2>
+        <!-- <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p> -->
 
-      <div class=" mr-3 text-green-500 font-bold flex flex-row-reverse">
-        <img class="h-5 w-3 md:w-4 lg:w-4 ml-2 lg:mt-1" src="../assets/Inter/img/icon/right-arrow.png">
-        <router-link class="text-[13px] md:text-[16px] lg:text-[16px] hover:underline"
-          to="/sadbhavna/explore-campaigns">{{ $t('View More') }}</router-link>
+        <div class=" mr-3 text-green-500 font-bold flex flex-row-reverse">
+          <img class="h-5 w-3 md:w-4 lg:w-4 ml-2 lg:mt-1" src="../assets/Inter/img/icon/right-arrow.png">
+          <router-link class="text-[13px] md:text-[16px] lg:text-[16px] hover:underline"
+            to="/sadbhavna/explore-campaigns">{{ $t('View More') }}</router-link>
+        </div>
       </div>
       <!-- <div class="flex mt-3 border-b sm:mr-4 lg:mr-3 ">
         <div class="overflow-x-auto">
@@ -301,40 +302,38 @@
       </div> -->
 
 
-      <div class="flex border-b sm:mr-4 lg:mr-4 ">
-        <div class="overflow-x-auto">
-          <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden no-scrollbar overflow-x-scroll overflow-x-hidden">
+      <div class="flex sm:mr-0 lg:mr-0">
+        <div class="lg:w-[16rem] w-100 mr-3">
+          <ul
+            class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden no-scrollbar overflow-x-scroll overflow-x-hidden custom-tabs">
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(1)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 1 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 1">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/grid(2).png" />
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'bg-[#40b751] text-white': openTab === 1 }">
+                <div class="flex" v-if="openTab !== 1">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/grid(2).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 1">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/grid.png" />
+                <div class="flex" v-else="openTab === 1">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/grid.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
-
-
               </div>
             </li>
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2  cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(2)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 2, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 2 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 2, 'bg-[#40b751] text-white': openTab === 2 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 2">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/paw(1).png" />
+                <div class="flex" v-if="openTab !== 2">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/paw(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Animal') }}</p>
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 2">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/paw.png" />
+                <div class="flex" v-else="openTab === 2">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/paw.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Animal') }}</p>
                 </div>
@@ -342,22 +341,21 @@
 
               </div>
             </li>
-
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Education Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16 pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer  transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(3)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 3, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 3 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 3, 'bg-[#40b751] text-white': openTab === 3 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 3">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 "
+                <div class="flex" v-if="openTab !== 3">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon/mortarboard(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Education') }}
                   </p>
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 3">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
+                <div class="flex" v-else="openTab === 3">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon/mortarboard.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Education') }}
@@ -369,19 +367,19 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Children Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer  transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(4)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 4, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 4 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 4, 'bg-[#40b751] text-white': openTab === 4 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 4">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
+                <div class="flex" v-if="openTab !== 4">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon/children(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Children') }}
                   </p>
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 4">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/children.png" />
+                <div class="flex" v-else="openTab === 4">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/children.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Children') }}
                   </p>
@@ -392,19 +390,19 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Medical Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(5)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 5, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 5 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 5, 'bg-[#40b751] text-white': openTab === 5 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 5">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
+                <div class="flex" v-if="openTab !== 5">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon/healthcare(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Medical') }}</p>
 
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 5">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/healthcare.png" />
+                <div class="flex" v-else="openTab === 5">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/healthcare.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Medical') }}</p>
 
@@ -415,19 +413,19 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Hunger Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(6)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 6, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 6 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 6, 'bg-[#40b751] text-white': openTab === 6 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 6">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
+                <div class="flex" v-if="openTab !== 6">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon/supplies(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
 
                 </div>
                 <div class="grid justify-items-center" v-else="openTab === 6">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/supplies.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/supplies.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
 
@@ -437,19 +435,19 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Religiouse Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(7)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 7 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'bg-[#40b751] text-white': openTab === 7 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 7">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/pray(1).png" />
+                <div class="flex" v-if="openTab !== 7">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/pray(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religiouse') }}
                   </p>
 
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 7">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/pray.png" />
+                <div class="flex" v-else="openTab === 7">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/pray.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religiouse') }}
                   </p>
@@ -461,44 +459,43 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Disability Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16 pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(8)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 8, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 8 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 8, 'bg-[#40b751] text-white': openTab === 8 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 8">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
+                <div class="flex" v-if="openTab !== 8">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon/disability(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
 
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 8">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/disability.png" />
+                <div class="flex" v-else="openTab === 8">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/disability.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
 
                 </div>
 
-
               </div>
             </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Elder Campaign')">
+            <li class="-mb-px mr-3 last:mr-3 last:mb-0 flex-auto text-center" @click="get_campaigns('Elder Campaign')">
               <div
-                class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
+                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(9)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 9 }">
+                v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'bg-[#40b751] text-white': openTab === 9 }">
 
-                <div class="grid justify-items-center" v-if="openTab !== 9">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/old-man(1).png" />
+                <div class="flex" v-if="openTab !== 9">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/old-man(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Elder') }}
                   </p>
 
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 9">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6" src="../../src/assets/Inter/img/icon/old-man.png" />
+                <div class="flex" v-else="openTab === 9">
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/old-man.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Elder') }}
                   </p>
@@ -509,106 +506,110 @@
             </li>
           </ul>
         </div>
-      </div>
+        <!--Cards-->
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4 category-tab-content">
+          <div v-for="index in campaignToShow">
+            <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+              <div
+                class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+                <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
+                  @click="donate(campaigns[index - 1].name)">
+                <div class="pt-[10px] pr-[20px] pl-[20px] leading-6">
+                  <div v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu"
+                    class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
+                    {{ campaigns[index - 1].campaign_title_gu }}</div>
+                  <div v-else-if="lang == 'hi' && campaigns[index - 1].campaign_title_hi"
+                    class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
+                    {{ campaigns[index - 1].campaign_title_hi }}</div>
+                  <div v-else
+                    class="fontfamily cursor-pointer font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines"
+                    @click="donate(campaigns[index - 1].name)">
+                    {{ campaigns[index - 1].campaign_title }}</div>
 
-
-
-     <!--Cards-->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4">
-            <div v-for="index in campaignToShow">
-                <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
-                    <div
-                        class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
-                        <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
-                            @click="donate(campaigns[index - 1].name)">
-                        <div class="pt-[10px] pr-[20px] pl-[20px] leading-6">
-                            <div v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu"
-                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
-                                {{ campaigns[index - 1].campaign_title_gu }}</div>
-                            <div v-else-if="lang == 'hi' && campaigns[index - 1].campaign_title_hi"
-                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
-                                {{ campaigns[index - 1].campaign_title_hi }}</div>
-                            <div v-else
-                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines">
-                                {{ campaigns[index - 1].campaign_title }}</div>
-
-                            <p class="text-gray-700 text-[13px]  truncate">
-                                {{ $t('By') }}: {{ campaigns[index - 1].ngo }}
-                            </p>
-                            <div
-                                class="fontcard flex  justify-between mt-1 mb-0 pb-1 text-[14px]">
-                                <span class="font-[600] text-[#222222]">{{ $t('Raised') }}: ₹{{
-                                    numberWithCommas(campaigns[index - 1].raised_amount)
-                                }}</span><span class="font-[600] text-[#222222]">{{ $t('Goal') }}: ₹{{
-    numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded h-[10px] dark:bg-gray-700 mb-2 ">
-                   <!--<div v-if="campaigns[index - 1].raised_amount"
+                  <p class="text-gray-700 text-[13px]  truncate">
+                    {{ $t('By') }}: {{ campaigns[index - 1].ngo }}
+                  </p>
+                  <div class="fontcard flex  justify-between mt-1 mb-0 pb-1 text-[14px]">
+                    <span class="font-[600] text-[#222222]">{{ $t('Raised') }}: ₹{{
+                      numberWithCommas(campaigns[index - 1].raised_amount)
+                    }}</span><span class="font-[600] text-[#222222]">{{ $t('Goal') }}: ₹{{
+  numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded h-[10px] dark:bg-gray-700 mb-2 ">
+                    <!--<div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
                     {{ (campaigns[index - 1].raised_amount * 100
                       /
                       campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
 
-                      <div v-if="campaigns[index - 1].raised_amount"
-                    class="bg-[#40b751] h-[10px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                    :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
-                    <!--{{ (campaigns[index - 1].raised_amount * 100
+                    <div v-if="campaigns[index - 1].raised_amount"
+                      class="bg-[#40b751] h-[10px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                      :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
+                      <!--{{ (campaigns[index - 1].raised_amount * 100
                       /
-                      campaigns[index - 1].donation_amount).toFixed(2) }}%--></div>
+                      campaigns[index - 1].donation_amount).toFixed(2) }}%-->
+                    </div>
+                  </div>
+
+                  <div class="flex fontcard font-[600] justify-between border-b-2 pb-1 border-b-gray-100 mb-1">
+                    <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather h-4 w-4 feather-clock mr-1 md:mr-1 lg:mr-2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Goal') }}
+                    </p>
+                    <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather h-4 w-4 feather-users mr-1 md:mr-1 lg:mr-2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
+                  </div>
+
+
                 </div>
-
-               <div class="flex fontcard font-[600] justify-between border-b-2 pb-1 border-b-gray-100 mb-1">
-                  <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather h-4 w-4 feather-clock mr-1 md:mr-1 lg:mr-2">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Goal') }}
-                  </p>
-                  <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather h-4 w-4 feather-users mr-1 md:mr-1 lg:mr-2">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
+                <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
+                  <ShareNetwork network="WhatsApp"
+                    :url="url + '/sadbhavna/campaign-donation/' + campaigns[index - 1].name"
+                    :title="campaigns[index - 1].campaign_title" :description="campaigns[index - 1].short_description">
+                    <button
+                      class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
+                      type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white"
+                        fill="none" height="17" width="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
+                        <g id="XMLID_468_">
+                          <path id="XMLID_469_"
+                            d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z" />
+                          <path id="XMLID_470_"
+                            d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
+                        </g>
+                      </svg> </button>
+                  </ShareNetwork>
+                  <button
+                    class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
+                    type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
                 </div>
-
-
-                        </div>
-                        <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
-                            <ShareNetwork network="WhatsApp" :url="url + '/sadbhavna/campaign-donation/' + campaigns[index - 1].name" :title="campaigns[index - 1].campaign_title"
-                                :description="campaigns[index - 1].short_description">
-                                <button
-                                    class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
-                                    type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17" version="1.1"
-                                        id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        viewBox="0 0 308 308" xml:space="preserve">
-                                        <g id="XMLID_468_">
-                                            <path id="XMLID_469_"
-                                            d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z" />
-                                            <path id="XMLID_470_"
-                                            d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
-                                        </g>
-                                        </svg> </button>
-                            </ShareNetwork>
-                           <button
-                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
-
-                  type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
-                        </div>
-                        <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">
+                <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">
                             <button class="text-[#40b751] text-base">{{ $t('Share') }}</button>
                             <button
                                 class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm sm:px-2 md:px-2 lg:px-4 sm:py-2 md:py-2 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
                         </div> -->
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+
+
+
+
       <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
         <button
           class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
@@ -625,7 +626,7 @@
       </div> -->
     <!--Testimonials-->
 
-    <Testimonials :featured_campaigns="featured_campaigns" :interval="3000" :lang="lang" />
+    <Testimonials />
 
     <!--Featured In-->
 

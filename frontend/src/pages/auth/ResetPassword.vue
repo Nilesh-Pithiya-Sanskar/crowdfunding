@@ -18,7 +18,7 @@
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                 v-model="password" type="password" @keyup="passwordError = ''" placeholder="Password"
-                                required>
+                                required ref="password">
                             <p class="text-red-600">{{ $t(passwordError) }}</p>
                         </div>
                         <div class="mb-4">
@@ -64,6 +64,9 @@ export default{
         document.title = this.$t('Reset Password')+' '+ name.params.email
         this.email = name.params.email,
         this.key = name.params.key
+    },
+    mounte(){
+        this.$nextTick(() => this.$refs.password.focus())
     },
     data(){
         return{

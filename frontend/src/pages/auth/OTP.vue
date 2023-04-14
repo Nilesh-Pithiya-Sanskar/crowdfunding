@@ -14,7 +14,7 @@
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base mb-2" for="email">{{$t('Enter OTP')}}</label>
                             <input  @keyup="otp_message = ''" class="appearance-none border-gray-300 rounded w-full py-2 px-3 text-grey-darker"
-                                v-model="otp" type="number">                                
+                                v-model="otp" type="number" ref="otp">                                
                             <span class="block text-red-600 text-base mb-2">{{ otp_message }}</span>
                         </div>
                         <div class="mb-4">
@@ -93,6 +93,7 @@ export default {
     mounted(){
         const name = useRoute();
         document.title = this.$t('OTP | BestDeed')
+        this.$nextTick(() => this.$refs.otp.focus())
         this.message = name.params.message
         this.number = name.params.number
         this.m_type = name.params.m_type

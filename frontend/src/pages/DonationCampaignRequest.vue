@@ -37,7 +37,7 @@
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                     placeholder="Enter Full Name" @keyup="fullNameError = ''"
-                                                    v-model="full_name" type="text">
+                                                    v-model="full_name" ref="fullname" type="text">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -252,6 +252,9 @@ export default {
     // },
     created(){
         document.title = this.$t('Request a Campaign | BestDeed')
+    },
+    mounted(){
+        this.$nextTick(() => this.$refs.fullname.focus())
     },
     resources: {
         request_campaign() {

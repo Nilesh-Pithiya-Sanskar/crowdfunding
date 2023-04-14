@@ -36,7 +36,7 @@
                         <div class="flex flex-wrap lg:pt-0 md:pt-0 sm:pt-2">
                             <div
                                 class="bg-blue-700 rounded-full h-10 w-10 sm:ml-0 pt-2 pb-1 pl-2 pr-1 hover:cursor-pointer">
-                                <ShareNetwork network="facebook" :url="url" :title="blog_detail.data.blog_detail"
+                                <ShareNetwork network="facebook" :url="url" :title="blog_detail.data.title"
                                     :description="blog_detail.data.blog_intro">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="#ffffff" stroke="currentColor" stroke-width="0" stroke-linecap="round"
@@ -46,7 +46,7 @@
                                 </ShareNetwork>
                             </div>
                             <div class="bg-sky-400 rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2 pr-1 hover:cursor-pointer">
-                                <ShareNetwork network="Twitter" :url="url" :title="blog_detail.data.blog_detail">
+                                <ShareNetwork network="Twitter" :url="url" :title="blog_detail.data.title">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="#ffffff" stroke="currentColor" stroke-width="0" stroke-linecap="round"
                                         stroke-linejoin="round" class="feather feather-twitter">
@@ -57,7 +57,7 @@
                                 </ShareNetwork>
                             </div>
                             <div class="bg-[#40b751] rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2 pr-1 hover:cursor-pointer">
-                                <ShareNetwork network="WhatsApp" :url="url" :title="blog_detail.data.blog_detail"
+                                <ShareNetwork network="WhatsApp" :url="url" :title="blog_detail.data.title"
                                     :description="blog_detail.data.blog_intro">
                                     <svg fill="#ffffff" height="24" width="24" version="1.1" id="Layer_1"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

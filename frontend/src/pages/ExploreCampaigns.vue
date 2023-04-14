@@ -428,7 +428,7 @@
                                 class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
                                 {{ campaigns[index - 1].campaign_title_hi }}</div>
                             <div v-else
-                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines">
+                                class="fontfamily cursor-pointer font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines" @click="donate(campaigns[index - 1].name)">
                                 {{ campaigns[index - 1].campaign_title }}</div>
 
                             <p class="text-gray-700 text-[13px]  truncate">

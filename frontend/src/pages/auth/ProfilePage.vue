@@ -324,7 +324,7 @@
                                 <label class="block text-grey-darker text-sm font-bold mb-2" for="pan number">
                                   {{ $t('Pan Number') }}</label>
                                 <input class="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-                                  v-model="pan_number" type="text" @keyup="errorPancard = ''"
+                                  v-model="pan_number" ref="pan" type="text" @keyup="errorPancard = ''"
                                   placeholder="Your pan number" required>
                                 <p class="text-red-600">{{ $t(errorPancard) }}</p>
                               </div>
@@ -425,7 +425,7 @@
                             </thead>
                             <tbody v-for="index in donationToShow">
                               <!-- <div >         -->
-                                <tr v-if="index - 1 < donation_details.data.length"
+                                <tr v-if="index - 1 < totalDonation"
                                   class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                   <td class="text-sm text-gray-900 font-light px-6 py-4">
                                     {{ donation_details.data[index - 1].name }}
@@ -446,7 +446,7 @@
                               <!-- </div> -->
                             </tbody>
                           </table>
-                          <div v-if="donationToShow < donation_details.data.length || donation_details.data.length > donationToShow" class="text-center">
+                          <div v-if="donationToShow < totalDonation || totalDonation > donationToShow" class="text-center">
                               <button
                                 class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" @click="donationToShow += 6">{{ $t('Show More') }}</button>
@@ -501,7 +501,7 @@
                               </tr>
                             </thead>
                             <tbody v-for="index in campaignToShow">
-                                <tr v-if="index - 1 < campaign_details.data.length"
+                                <tr v-if="index - 1 < totalCampaign"
                                 class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ campaign_details.data[index - 1].campaign_title }}
@@ -535,7 +535,7 @@
                               </tr>
                             </tbody>
                           </table>
-                          <div v-if="campaignToShow < campaign_details.data.length || campaign_details.data.length > campaignToShow" class="text-center">
+                          <div v-if="campaign_details != '' && campaignToShow < totalCampaign || totalCampaign > campaignToShow" class="text-center">
                               <button
                                 class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
@@ -650,6 +650,8 @@ export default {
               appearance: 'denger',
               position: "top-center",
             })
+            this.edit_profile = true
+            this.$nextTick(() => this.$refs.pan.focus())
           }
           else {
             let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=BestDeed 80g Certificate`
@@ -810,6 +812,8 @@ export default {
           appearance: 'denger',
           position: "top-center",
         })
+        this.edit_profile = true
+        this.$nextTick(() => this.$refs.pan.focus())
       }
       else {
         this.$resources.download_80g.submit({

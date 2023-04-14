@@ -23,7 +23,7 @@
     <div class="bg-[#ebf8ec] bg-auto w-full h-full bg-local bg-center bg-cover">
         <Navbar />
         <div class="grid justify-items-center">
-            <div class="px-4 pb-10 md:pb-18 lg:pb-30 pt-5 md:pt-26 lg:pt-26">
+            <div class="py-5">
                 <!-- <p class="text-[#40b751] tracking-widest text-center uppercase font-bold text-xs">
                     {{ $t('Contact') }}
                 </p> -->
@@ -43,11 +43,11 @@
     <div class="container my-10 px-6 mx-auto">
 
         <!-- Section: Design Block -->
-        <section class="mb-32 text-gray-800">
+        <section class="text-gray-800">
             <div class="flex flex-wrap">
 
 
-                <div class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
+                <div class="grow-0 shrink-0 basis-auto mb-8 md:mb-2 lg:mb-2 w-full md:w-6/12 px-3 lg:px-6">
                     <!-- <p v-if="error.length">
                         <b>Please correct the following error(s):</b>
                     <ul>
@@ -116,7 +116,7 @@
                 <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
                     <!-- <p class="text-base font-bold mb-6">{{ $t('Quick info') }}</p> -->
                     <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left  grid justify-items-center ">
+                        <div class="bg-zinc-100 mt-1 rounded-full w-10 h-10 float-left  grid justify-items-center ">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
                         </div>
                         <!-- <p class="text-black-500 mb-2 pt-2 pl-14">{{ $t('Head Office, India') }}</p> -->
@@ -124,7 +124,7 @@
                     </div>
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
-                            <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/phonecall.png" />
+                            <img class="p-1 mt-2 h-7" src="../assets/Inter/img/icon/navbar_phone.png" />
                         </div>
                         <a href="#">
                             <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+91 9999999999</p>
