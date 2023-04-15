@@ -136,28 +136,26 @@
                 </div>
             </div>
         </div> -->
-        <div v-if="searchQuery != ''" class="relative flex flex-col min-w-0 break-words bg-white w-full  shadow-lg rounded">
+        <div v-if="searchQuery != ''" class="relative flex flex-col border border-[#40b751] min-w-0 break-words bg-white w-full  shadow-lg rounded">
 
-            <div class="tab-content tab-space overflow-y-auto h-96">
-                <div class="" v-for="item in filteredList" :key="item" @click="donate(item.name)">
+<div class="tab-content tab-space overflow-y-auto h-96">
+    <div class="" v-for="item in filteredList" :key="item" @click="donate(item.name)">
 
-                    <div
-                        class="grid border p-[10px] md:p-[30px] lg:p-[30px] overscroll-y-contain grid-cols-3 gap-2 hover:bg-gray-100">
-                        <div class="">
-                            <img class="h-32 w-68" :src="item.campain_image" alt="Mountain" @click="donate(item.name)">
-                        </div>
-                        <div class="fontfamily fontcolor col-span-2 leading-tight ">
-                            <h3 class="text-[16px] md:text-[19px] lg:text-[21px] font-bold mb-1">
-                                {{
-                                    $t(item.campaign_title) }}
-                            </h3>
-                            <p class="text-[#36495875] mb-[16px] text-[14px] md:text-[16px] lg:text-[16px]  italic">
-                                {{ $t(item.ngo) }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <div
+            class="cursor-pointer grid  p-[10px] md:p-[30px] lg:p-[30px] overscroll-y-contain grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 hover:bg-gray-100">
+                <img class="h-32 w-52" :src="item.campain_image" alt="Mountain" @click="donate(item.name)">
+            <div class="fontfamily fontcolor col-span-2 md:col-span-2 lg:col-span-3 leading-tight  ">
+                <h3 class="text-[16px] md:text-[19px] lg:text-[21px] font-bold mb-1">
+                    {{
+                        $t(item.campaign_title) }}
+                </h3>
+                <p class="text-[#36495875] mb-[16px] text-[14px] md:text-[16px] lg:text-[16px]  italic">
+                    {{ $t(item.ngo) }}
+                </p>
             </div>
+        </div>
+    </div>
+</div>
 
         </div>
         <!-- <div class="border hover:bg-gray-100" v-for="item in filteredList" :key="item" @click="donate(item.name)">

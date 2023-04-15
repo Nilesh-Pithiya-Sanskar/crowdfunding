@@ -340,19 +340,19 @@
                 <div class=" w-full lg:w-4/12 pr-0 md:pr-4 lg:pr-4">
                     <div class="sticky top-0">
                         <div class="overflow-hidden hidden lg:block">
-                            <table class="text-[#364958]" v-if="item_cart != ''">
+                            <table class=" stext-[#364958]" v-if="item_cart != ''">
                                 <thead class="bg-white border-b">
-                                    <tr>
-                                        <th scope="col" class="font-bold py-4 text-left">
+                                    <tr class="">
+                                            <th scope="col" class="font-bold px-2 py-4 text-left">
                                             {{ $t('Item Name') }}
                                         </th>
                                         <!-- <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
                                             Rate
                                         </th> -->
-                                        <th scope="col" class="font-bold px-6 py-4 text-left">
+                                        <th scope="col" class="font-bold px-10 py-4 text-left">
                                             {{ $t('Qty') }}
                                         </th>
-                                        <th scope="col" class="font-bold px-6 py-4 text-left">
+                                        <th scope="col" class="font-bold px-10 py-4 text-left">
                                             {{ $t('Amount') }}
                                         </th>
                                     </tr>
@@ -360,26 +360,25 @@
                                 <tbody>
                                     <tr v-for="item in item_cart"
                                         class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                        <td class="text-sm text-gray-900 py-4">
+                                        <td class="text-sm text-gray-900 px-2 py-4">
                                             {{ $t(item.item) }}
                                         </td>
-                                        <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <!-- <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
                                             {{ item.rate }}
                                         </td> -->
-                                        <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
+                                        <td class="text-sm text-gray-900 px-10 py-4 whitespace-nowrap">
                                             {{ item.qty }}
                                         </td>
-                                        <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
+                                        <td class="text-sm text-gray-900 px-10 py-4 whitespace-nowrap">
                                             {{ item.amount }}
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                        <td class="text-gray-900 font-bold py-4 whitespace-nowrap">{{ $t('Total') }}</td>
-                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">{{ i_qty }}</td>
-                                        <td class="text-gray-900 font-bold px-6 py-4 whitespace-nowrap">₹ {{
+                                        <td class="text-gray-900 font-bold px-2 py-4 whitespace-nowrap">{{ $t('Total') }}</td>
+                                                                        <td class="text-gray-900 font-bold px-10 py-4 whitespace-nowrap">{{ i_qty }}</td>
+                                        <td class="text-gray-900 font-bold px-10 py-4 whitespace-nowrap">₹ {{
                                             numberWithCommas(total_price) }}</td>
                                     </tr>
-
                                 </tbody>
                             </table>
                             <div class="text-center mt-5" v-if="item_cart == ''">
@@ -509,7 +508,7 @@
                         <div>
                             <div class="text-gray-700">
                                 <div class="pr-5 py-4">
-                                    <div class="mb-4">
+                                    <div class="mb-2">
                                         <p
                                             class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold  title-font">
                                             {{ $t('FAQ') }}
@@ -518,52 +517,53 @@
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!
                                         </p> -->
                                     </div>
+                                   
                                     <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
                                         <div class="w-full py-2">
-                                            <details class="mb-4" open>
+                                            <details class="mb-3" open>
                                                 <summary
-                                                    class="font-medium cursor-pointer border-2 border-b-1 border-solid border-b-gray-300 text-xl text-[#40b751] list-none bg-gray-100 rounded py-3 px-4">
+                                                    class="font-medium cursor-pointer border-2 border-b-1 border-solid border-b-gray-300 text-lg text-[#40b751] list-none bg-gray-100 rounded py-3 px-2">
                                                     {{ $t('How can I get my tax redemption?') }}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
-                                                        class="border-2 font-normal border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] ">
+                                                        class="border-2 font-normal border-solid border-gray-200 border-t-0 py-2 px-2 text-base text-[#364958] ">
                                                         {{ $t("You may quickly obtain your tax receipt because all of our partner NGOs are 80G approved. On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button. Please enter your PAN number, complete location, and PAN-compliant name before clicking 'Submit.'You will receive an email and a download link for your 80G certificate.") }}
                                                     </p>
                                                 </span>
                                             </details>
 
-                                            <details class="mb-4">
+                                            <details class="mb-3">
                                                 <summary
-                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
+                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-lg list-none bg-gray-100 rounded py-3 px-2">
                                                     {{ $t('What if my fundraising target is not reached? Will I still receive the products?') }}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
-                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
+                                                        class="border-2 border-solid border-gray-200 border-t-0 py-2 px-2 text-base text-[#364958] dark:text-gray-300">
                                                         {{$t('According to Best Deed, every work put into the campaign should be rewarded. Therefore, even if you fall short of your fundraising target, you still receive all of the products you have received so far.')}}</p>
                                                 </span>
                                             </details>
-                                            <details class="mb-4">
+                                            <details class="mb-3">
                                                 <summary
-                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
+                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-lg list-none bg-gray-100 rounded py-3 px-2">
                                                     {{ $t('What is the reliability of your crowdfunding platform? ') }}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
-                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
+                                                        class="border-2 border-solid border-gray-200 border-t-0 py-2 px-2 text-base text-[#364958] dark:text-gray-300">
                                                         {{ $t("The environment, structure, and sophistication of crowdfunding platforms can vary greatly. Our crowdfunding platform is governed by a local exchange and securities commission and is required to follow strict guidelines to ensure the security of investors' investments.Look for a license number in the page's footer to quickly spot these sites. On the other hand, some crowdfunding platforms work independently, with no supervision to ensure the safety of investors.Best Deed accepts credit cards, debit cards, bank transfers, UPI, PayPal, and other payment methods. You can select the most convenient option and carry out the necessary actions.")}}</p>
                                                 </span>
                                             </details>
-                                            <details class="mb-4">
+                                            <details class="mb-3">
                                                 <summary
-                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-xl list-none bg-gray-100 rounded py-3 px-4">
+                                                    class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-lg list-none bg-gray-100 rounded py-3 px-2">
                                                     {{ $t('How to claim Tax-Exemption ?') }}</summary>
 
 
                                                 <span>
                                                     <p style="line-height:1.7;"
-                                                        class="border-2 border-solid border-gray-200 border-t-0 p-5 text-lg text-[#364958] dark:text-gray-300">
+                                                        class="border-2 border-solid border-gray-200 border-t-0 py-2 px-2 text-base text-[#364958] dark:text-gray-300">
                                                         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
                                                         terry richardson ad squid. 3
                                                         wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
@@ -592,7 +592,7 @@
                 <div class="w-full md:w-6/12 lg:w-4/12 mb-10 md:mb-0 lg:mb-0">
                     <div style="font-size: 2rem;" class="mt-6 mb-3 font-medium text-gray-800">{{ $t('Donors') }} ({{
                         total_donors }})</div>
-                    <div class="flex flex-wrap shadow">
+                    <div class="flex  mb-10  flex-wrap shadow">
                         <div class="w-full">
                             <ul class="flex mb-0 list-none flex-wrap flex-row">
                                 <li class="-mb-px flex-auto text-center">
@@ -612,8 +612,8 @@
                             </ul>
 
                             <div class="relative flex flex-col min-w-0 break-words bg-white w-full  shadow-lg rounded">
-                                <div class="px-4 py-5 flex-auto">
-                                    <div class="tab-content tab-space overflow-y-auto lg:h-[12rem] md:h-[13rem] sm:h-[17rem] h-[17rem]">
+                                <div class=" px-4 py-5 flex-auto">
+                                    <div class=" tab-content tab-space overflow-y-auto lg:h-[20rem] md:h-[13rem] sm:h-[17rem] h-[17rem]">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
                                             <div class="pb-6" v-if="recent_donation != ''" v-for="donation in recent_donation">
 
@@ -642,9 +642,7 @@
                                                             <p class="text-gray-600 text-sm">{{ formatDate(donation.date) }}
                                                             </p>
                                                         </div>
-                                                    </div>
-
-                                                    <div class="grid justify-end">
+                                                    </div><div class="grid justify-end">
                                                         <p class="">₹ {{ numberWithCommas(donation.amount) }}</p>
                                                     </div>
                                                 </div>
@@ -653,6 +651,7 @@
                                                 {{$t('No Recent Donation')}}
                                             </div>
                                         </div>
+                                        
                                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
                                             <div class="pb-6" v-if="most_generous != ''" v-for="m_donation in most_generous">
                                                 <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">

@@ -1,30 +1,39 @@
 <template>
-  <Navbar />
-  <div class="container mx-auto h-full my-20">
-    <div class="flex content-center items-center justify-center h-full">
-      <div class="w-11/12 md:w-6/12 lg:w-4/12 px-4">
-        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
-          <div class="flex-auto px-4 lg:px-10 py-10 pt-5">
-            <div class="text-blueGray-400 text-center mb-3 font-bold text-[40px] md:text-[45px] lg:text-[45px]">
+  <Navbar /><section class="flex justify-center gradient-form h-full">
+  <div class="container h-full px-8 lg:px-40 py-10">
+    <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+      <div class="w-full">
+        <div class="block rounded-lg bg-white shadow-lg card-shodow dark:bg-neutral-800">
+          <div class="g-0 lg:flex lg:flex-wrap">
+            <!-- Left column container-->
+            <div class="px-10 py-5 px-4 md:px-0 lg:w-6/12">
+              <div class="p-1 md:p-2 lg:p-4">
+                <!--Logo-->
+                <div class="text-center">
+                  <img src="/src/assets/Inter/img/logo-1.1.ico"
+                class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
+                  <div class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
               <small>{{$t('Sign In')}} </small>
             </div>
-            <form>
-              <div class="relative w-full mb-3">
-                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                  {{$t('Email')}} <span class="text-red-600">*</span>
+                </div>
+
+                <form>
+ <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                  {{$t('Email ')}} <span class="text-red-600">*</span>
                 </label>
-                <input v-model="email" ref="email" @keyup="emailError = ''" @keydown.enter="login" type="email"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                <input v-model="email" @keyup="emailError = ''" type="email"
+                  class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3"
                   :placeholder="$t('Email')" required />
                 <p class="text-red-600">{{ emailError }}</p>
               </div>
 
               <div class="relative w-full mb-3">
-                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                  {{$t('Password')}}<span class="text-red-600">*</span>
+                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                  {{$t('Password ')}}<span class="text-red-600">*</span>
                 </label>
-                <input v-model="password" @keydown.enter="login" type="password"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                <input v-model="password" type="password"
+                  class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3 ease-linear transition-all duration-150"
                   :placeholder="$t('Password')" required />
                 <p class="text-red-600">{{ passwordError }}</p>
 
@@ -32,23 +41,35 @@
               <p class="text-red-600">{{ errorMsg }}</p>
               <div class="text-center mt-6">
                 <button style="background-color: #40b751;"
-                  class="cursor-pointer border-[#40b751] hover:border-[#40b751] bg-[#40b751] hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
+                  class="cursor-pointer border-[#40b751] hover:border-[#40b751] bg-gradient-to-l from-green-400 to-lime-600 hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
                   type="button" @click="login()">
                   {{$t('Sign In')}}
                 </button>
+               <div @click="forgotPassword()" class="cursor-pointer text-green-500 ">{{$t('Forgot Password?')}}</div>
               </div>
-              <div class="grid md:grid-cols-2 sm:grid-cols-2 cursor-pointer">
-                <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
-                <div @click="forgotPassword()" class="text-green-500 text-right">{{$t('Forgot Password?')}}</div>
+
+
+             <div class="flex items-center justify-between">
+                    <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
+                    <router-link to="/sadbhavna/registration" class="text-green-500 text-center border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{$t('Register')}}</router-link>
+                  </div>
+
+                </form>
               </div>
-              <div class="text-center font-bold">
-                <router-link to="/sadbhavna/registration" class="text-green-500 text-center">{{$t('Register')}}</router-link>
+            </div>
+
+            <!-- Right column container with background and description-->
+            <div class="flex items-center rounded-b-lg bg-gradient-to-l from-lime-600 to-green-400 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
+              <div class="px-4 py-6 text-white md:mx-6 md:p-12">
+                <h4 class="mb-6 text-xl font-semibold">We are more than just a company</h4>
+                <p class="text-sm">{{ $t('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')}}</p>
               </div>
-              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <!-- <GoogleLogin :callback="login_with_google">
         </GoogleLogin>
 
@@ -56,8 +77,7 @@
         <div>{{ isLogin }}</div> -->
 
 
-
-  </div>
+      </section>
 
 
 

@@ -116,7 +116,7 @@ export default{
                     email: this.email,
                     password: this.password,
                     key: this.key
-                })
+                })  
             }
         }
     }

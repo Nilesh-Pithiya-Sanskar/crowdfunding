@@ -546,10 +546,12 @@ def reset_password(email, password, key):
     # frappe.db.set_value("User", email, "new_password", password)
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def close_end_date_campaign():
     today_end_date_campaign = frappe.db.get_list("Donation Campaign", filters={'end_date': ["<", today()]}, fields=['name', 'ngo_email', 'campaign_title', 'raised_amount'])
     for i in today_end_date_campaign:
         frappe.db.set_value("Donation Campaign", i.name, {'status': 'Closed', 'published': 0, 'remark': 'Your Camapign is close due to reached time limit.'})
-        # frappe.sendmail(recipients=i.ngo_email, subject=f'You Campaign {i.campaign_title}', message=f'your campaign {i.campaign_title} is closed due to reached time limit, your total raised amount is {i.raised_amount}')
+        frappe.db.commit()
+        frappe.sendmail(recipients=i.ngo_email, subject=f'You Campaign {i.campaign_title}', message=f'your campaign {i.campaign_title} is closed due to reached time limit, your total raised amount is {i.raised_amount}')
+        
     return today_end_date_campaign

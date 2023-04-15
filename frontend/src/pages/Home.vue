@@ -755,7 +755,7 @@ import Sliders from "../components/Sliders.vue";
 import Testimonials from "../components/Testimonials.vue";
 import { useRoute } from 'vue-router'
 // import { useMeta } from 'vue-meta'
-import meta from 'vue-meta'
+// import meta from 'vue-meta'
 
 
 
