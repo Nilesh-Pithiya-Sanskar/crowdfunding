@@ -228,12 +228,23 @@ const routes = [{
     path: '/sadbhavna/reset_password/:key&:email',
     name: 'Reset Password',
     component: () => import('@/pages/auth/ResetPassword.vue')
+  },
+  { 
+    path: '/:pathMatch(.*)*',
+    name: '404 Page Not Found',
+    component: () => import('@/pages/PageNotFound.vue')
   }
 ]
 
 let router = createRouter({
   history: createWebHistory('/'),
   routes,
+  scrollBehavior(to, form, savedPosition){
+    if (savedPosition){
+      return savedPosition
+    }
+    return { left: 0, top: 0}
+  }
 })
 
 // router.beforeEach((to, from, next) => {

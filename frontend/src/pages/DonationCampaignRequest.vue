@@ -31,17 +31,17 @@
                                 <div class="px-0 py-2 flex-auto">
                                     <div class="tab-content tab-space">
                                         <div v-if="openTab == 1" class="py-4 px-8">
-                                            <div class="mb-4">
+                                            <div class="mb-2 md:mb-4 lg:mb-6">
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">{{
                                                     $t('FullName') }} <span class="text-red-600">*</span></label>
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                     placeholder="Enter Full Name" @keyup="fullNameError = ''"
-                                                    v-model="full_name" ref="fullname" type="text">
+                                                    v-model="full_name" type="text">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                                                <div class="mb-4">
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:gap-0 md:gap-4 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Name')}} <span class="text-red-600">*</span></label>
 
                                                     <input
@@ -50,7 +50,7 @@
                                                         placeholder="Enter Organisation Name" v-model="organisation_name">
                                                     <p class="text-red-600">{{ organizationNameError }}</p>
                                                 </div>
-                                                <div class="mb-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Website')}}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
@@ -58,8 +58,8 @@
                                                         v-model="organisation_website">
                                                 </div>
                                             </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-                                                <div class="mb-6">
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Phone Number')}} <span class="text-red-600">*</span></label>
                                                     <input
@@ -68,7 +68,7 @@
                                                         placeholder="Enter Phone Number" v-model="phone">
                                                     <p class="text-red-600">{{ phoneError }}</p>
                                                 </div>
-                                                <div class="mb-6">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
                                                         <span class="text-red-600">*</span></label>
                                                     <input
@@ -77,7 +77,7 @@
                                                         v-model="email">
                                                     <p class="text-red-600">{{ emailError }}</p>
                                                 </div>
-                                                <div class="mb-6">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Social Media Page')}}</label>
                                                     <input
@@ -87,8 +87,8 @@
 
                                                 </div>
                                             </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-                                                <div class="mb-6">
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-0 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Campaign Story')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" @keyup="campaignStoryError = ''" rows="4"
@@ -97,7 +97,7 @@
                                                         placeholder="Enter Campaign Story"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryError }}</p>
                                                 </div>
-                                                <div class="mb-6">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" @keyup="beneficiaryGroupError = ''"
@@ -117,7 +117,7 @@
                                             </div>
                                         </div>
                                         <div v-if="openTab == 2" class="py-4 px-8">
-                                            <div class="mb-4">
+                                            <div class="mb-2 md:mb-4 lg:mb-6">
                                                 <label class="block text-gray-600 text-base  mb-2" for="email">{{
                                                     $t('FullName') }} <span class="text-red-600">*</span></label>
                                                 <input
@@ -126,8 +126,8 @@
                                                     v-model="full_nameig" type="text">
                                                 <p class="text-red-600">{{ fullNameErrorig }}</p>
                                             </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-                                                <div class="mb-6">
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Phone Number')}} <span class="text-red-600">*</span></label>
                                                     <input
@@ -136,7 +136,7 @@
                                                         @keyup="phoneErrorig = ''" v-model="phoneig">
                                                     <p class="text-red-600">{{ phoneErrorig }}</p>
                                                 </div>
-                                                <div class="mb-6">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
                                                         <span class="text-red-600">*</span></label>
                                                     <input
@@ -145,7 +145,7 @@
                                                         v-model="emailig">
                                                     <p class="text-red-600">{{ emailErrorig }}</p>
                                                 </div>
-                                                <div class="mb-6">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Social Media Page')}}</label>
                                                     <input
@@ -155,8 +155,8 @@
 
                                                 </div>
                                             </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-                                                <div class="mb-6">
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Campaign Story')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" @keyup="campaignStoryErrorig = ''"
@@ -165,7 +165,7 @@
                                                         placeholder="Enter Campaign Story"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryErrorig }}</p>
                                                 </div>
-                                                <div class="mb-6">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Beneficiary Group')}} <span class="text-red-600">*</span></label>
                                                     <textarea id="comment" rows="4" @keyup="beneficiaryGroupErrorig = ''"
@@ -176,7 +176,7 @@
                                                     <p class="text-red-600">{{ beneficiaryGroupErrorig }}</p>
                                                 </div>
                                             </div>
-                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4 mb-6">
                                                 <button
                                                     class="appearance-none transition hover:text-gray-700 border-gray-600 rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
                                                     @click="request_campaignig()">{{ $t('Request a Campaign') }}</button>

@@ -86,7 +86,6 @@ export default{
     Footer,
   },
   created(){
-        window.scrollTo(0,0);
         document.title = this.$t("Get to know more about BestDeed")
     }
 }

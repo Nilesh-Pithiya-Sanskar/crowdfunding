@@ -989,7 +989,6 @@ export default {
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
         this.get_generous_donation(name.params.name)
-        this.scrollToTop()
         var item_cart = this.get_cookies('item')
         var i_qty = this.get_cookies('i_qty')
         var total_price = this.get_cookies('total_price')
@@ -1147,9 +1146,6 @@ export default {
 
     },
     methods: {
-        scrollToTop() {
-            window.scrollTo(0,0);
-        },
         copyURL() {
             const url = window.location.href
             navigator.clipboard.writeText(url)

@@ -74,7 +74,6 @@ export default{
     Footer,
   },
   created(){
-    window.scrollTo(0,0);
     document.title = this.$nextTick('Terms of Use | BestDeed')
   }
 }

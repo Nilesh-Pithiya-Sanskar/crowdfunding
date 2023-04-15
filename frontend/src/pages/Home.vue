@@ -608,8 +608,6 @@
       </div>
 
 
-
-
       <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
         <button
           class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
@@ -754,12 +752,6 @@ import { inject, provide, ref } from "vue";
 import Sliders from "../components/Sliders.vue";
 import Testimonials from "../components/Testimonials.vue";
 import { useRoute } from 'vue-router'
-// import { useMeta } from 'vue-meta'
-// import meta from 'vue-meta'
-
-
-
-// import { useHead } from '@vueuse/head'
 
 
 export default {
@@ -774,87 +766,6 @@ export default {
     Sliders,
     Testimonials,
   },
-  // metaInfo() {
-  //       return { 
-  //           title: "Epiloge - Build your network in your field of interest",
-  //           meta: [
-  //               { name: 'description', content:  'Epiloge is about connecting in your field of interest. Our vision is to help people share their knowledge, work, projects, papers and ideas and build their network through what they do rather where they live, study or work.'},
-  //               { property: 'og:title', content: "Epiloge - Build your network in your field of interest"},
-  //               { property: 'og:site_name', content: 'Epiloge'},
-  //               {property: 'og:type', content: 'website'},    
-  //               {name: 'robots', content: 'index,follow'} 
-  //           ]
-  //       }
-  //   },
-  // metaInfo: {
-  //   // if no subcomponents specify a metaInfo.title, this title will be used
-  //   title: 'Default Title',
-  //   // all titles will be injected into this template
-  //   titleTemplate: '%s | My Awesome Webapp'
-  // },
-
-  // head() {
-  //   return {
-  //     title: 'My Page Title',
-  //     meta: [
-  //       { name: 'description', content: 'My page description' },
-  //       { property: 'og:title', content: 'My Open Graph title' },
-  //       { property: 'og:description', content: 'My Open Graph description' },
-  //       { name: 'twitter:title', content: 'My Twitter title' },
-  //       { name: 'twitter:description', content: 'My Twitter description' },
-  //     ],
-  //   }
-  // },
-
-  // metaInfo() {
-  //   return { 
-  //       title: "Epiloge - Build your network in your field of interest",
-  //       meta: [
-  //         {
-  //           name: 'Description',
-  //           constent: 'asdfasdfadsf'
-  //         }
-  //       ]
-  //   }
-  // },
-
-
-  // metaInfo: {
-  //   title: 'My Page Title',
-  //   meta: [
-  //     {
-  //       name: 'description',
-  //       content: 'My page description'
-  //     }
-  //   ]
-  // },
-
-  // metaInfo: {
-  //   title: 'My Page Title',
-  //   meta: [
-  //     { name: 'description', content: 'This is the description of my page' },
-  //     { name: 'keywords', content: 'vue, meta, example' }
-  //   ]
-  // },
-
-  // metaInfo:{
-  //   title: 'asdfadsf'
-  // },
-
-
-  // metaInfo: {
-  //   title: 'Default App Title',
-  //   titleTemplate: '%s | vue-meta Example App'
-  // },
-
-  // metaInfo: {
-  //   title: 'My Page Title',
-  //   meta: [
-  //     { name: 'description', content: 'My page description' },
-  //     { name: 'keywords', content: 'my, page, keywords' },
-  //     { name: 'author', content: 'John Doe' }
-  //   ]
-  // },
 
   setup() {
     // this.$meta.useMeta({
@@ -889,7 +800,6 @@ export default {
     // })
   },
   mounted() {
-    window.scrollTo(0, 0);
     this.get_language()
     this.get_campaigns()
     this.get_featured_campaigns()
@@ -923,7 +833,7 @@ export default {
       return {
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
         onSuccess: (res) => {
-          console.log("get_campaign_success", res)
+          // console.log("get_campaign_success", res)
           this.campaigns = res
           this.totalCampaign = this.campaigns.length
         },
@@ -936,7 +846,7 @@ export default {
       return {
         method: '/api/method/sadbhavna_donatekart.api.campaign.get_featured_campaigns',
         onSuccess: (res) => {
-          console.log("get_featured_success", res)
+          // console.log("get_featured_success", res)
           this.featured_campaigns = res
         },
         onError() {

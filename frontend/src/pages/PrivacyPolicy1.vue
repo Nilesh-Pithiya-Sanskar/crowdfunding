@@ -62,7 +62,6 @@ export default{
     Footer,
   },
   created(){
-        window.scrollTo(0,0);
         document.title = this.$t('Privacy Policy Page | BestDeed')
     }
 }
