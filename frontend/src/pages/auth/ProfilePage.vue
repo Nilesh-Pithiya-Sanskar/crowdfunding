@@ -206,7 +206,7 @@
                 </div> -->
                 <!-- <div class="lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center" v-for="roles in user_data.data.roles">
                   <div class="py-6 px-3 mt-32 sm:mt-0" v-if="roles.role == 'Donor'"> -->
-                <!-- <router-link to="/sadbhavna"
+                <!-- <router-link to="/bestdeed"
                                         class="bg-green-500  uppercase text-white font-bold hover:bg-white hover:text-green-500 hover:outline hover:outline-1 hover:outline-offset-1 shadow text-xs px-4 py-2 rounded  sm:mr-2 mb-1 ease-linear transition-all duration-150"
                                         type="button">
                                         Donate More
@@ -460,7 +460,7 @@
                       {{ $t('Donate Item to see Donations and Download Certificate') }}
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/sadbhavna">{{ $t('Click Here To Explore Campaign') }}</router-link>
+                      <router-link to="/bestdeed">{{ $t('Click Here To Explore Campaign') }}</router-link>
                     </div>
                   </div>
                 </div>
@@ -542,7 +542,7 @@
                             </div>
                         </div>
                         <div class="text-center text-sm leading-normal m-4 text-blue-400 font-bold">
-                          <router-link to="/sadbhavna/request-campaign">{{ $t('Request New Campaign') }}</router-link>
+                          <router-link to="/bestdeed/request-campaign">{{ $t('Request New Campaign') }}</router-link>
                         </div>
                       </div>
                     </div>
@@ -552,7 +552,7 @@
                       {{ $t(`You don't have any campaign live yet.`) }}
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/sadbhavna/request-campaign">
+                      <router-link to="/bestdeed/request-campaign">
                         {{ $t('Click Here To Request A New Campaign') }}</router-link>
                     </div>
                   </div>
@@ -621,7 +621,7 @@ export default {
   },
   created() {
     if (!this.user.isLoggedIn()) {
-      this.$router.push('/sadbhavna')
+      this.$router.push('/bestdeed')
     }
   },
   mounted() {

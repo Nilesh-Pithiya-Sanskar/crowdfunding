@@ -21,7 +21,7 @@
               100% of your money will fund for people in need and also make a real difference to people's lives.
             </p>
 
-            <router-link to="/sadbhavna" class="text-green-500">Explore More Campaign</router-link>
+            <router-link to="/bestdeed" class="text-green-500">Explore More Campaign</router-link>
           </div>
         </div>
       </div>

@@ -121,11 +121,11 @@ export default {
                             // this.$router.push(route)
                         }
                         else{
-                            this.$router.push(`/sadbhavna`);
+                            this.$router.push(`/bestdeed`);
                         }
                     }
                     // console.log("verified", res)
-                    // this.$router.push('/sadbhavna')
+                    // this.$router.push('/bestdeed')
                 },
                 onError: (error) => {
                     console.log("error", error)

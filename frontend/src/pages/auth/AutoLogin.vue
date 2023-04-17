@@ -64,9 +64,9 @@
                                 </button>
                             </div>
                              <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                    href="/sadbhavna/login">{{ $t('Login Via Email') }}</a></span>
+                                    href="/bestdeed/login">{{ $t('Login Via Email') }}</a></span>
  <span class="block text-gray-600  text-center text-base  mb-2"> {{ $t('New to BestDeed?') }} <router-link
-                                to="/sadbhavna/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+                                to="/bestdeed/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
               </div>
             </div>
 
@@ -136,7 +136,7 @@ export default {
                     let otp_message = res[0]
                     let number = res[1]
                     let m_type = res[2]
-                    this.$router.push(`/sadbhavna/otp/${otp_message}&${number}&${m_type}`);
+                    this.$router.push(`/bestdeed/otp/${otp_message}&${number}&${m_type}`);
                 },
                 onError: (error) => {
                     console.log("error", error)
@@ -151,7 +151,7 @@ export default {
                     let otp_message = res[0]
                     let number = res[1]
                     let m_type = res[2]
-                    this.$router.push(`/sadbhavna/otp/${otp_message}&${number}&${m_type}`);
+                    this.$router.push(`/bestdeed/otp/${otp_message}&${number}&${m_type}`);
                 },
                 onError: (error) => {
                     console.log("error", error)
@@ -168,7 +168,7 @@ export default {
                         icon: 'check',
                         position: "top-center",
                     })
-                    this.$router.push(`/sadbhavna`);
+                    this.$router.push(`/bestdeed`);
 
                     },
                 onError: (error) => {
@@ -214,14 +214,14 @@ export default {
             //                 // this.$router.push(route)
             //             }
             //             else {
-            //                 this.$router.push(`/sadbhavna`);
-            //                 this.$router.push(`/sadbhavna`);
+            //                 this.$router.push(`/bestdeed`);
+            //                 this.$router.push(`/bestdeed`);
             //             }
             //             // console.log("asdf", res.message)
             //             // console.log("asdf", res)
             //             // let token = res.message
             //             // this.$router.push('/home')
-            //             // window.location = 'https://crowdfunding.frappe.cloud/sadbhavna'
+            //             // window.location = 'https://crowdfunding.frappe.cloud/bestdeed'
             //             // https://crowdfunding.frappe.cloud/
             //         });
             //     })

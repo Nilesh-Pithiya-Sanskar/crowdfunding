@@ -114,7 +114,7 @@ export default {
             })
         },
         openblog(name) {
-            this.$router.push(`/sadbhavna/blog-post/${name}`)
+            this.$router.push(`/bestdeed/blog-post/${name}`)
         },
     },
 }

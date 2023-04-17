@@ -87,7 +87,7 @@ export default{
                         conform_passwordError = res
                     }
                     else{
-                        this.$router.push('/sadbhavna')
+                        this.$router.push('/bestdeed')
                     }
                 },
                 onError: (error) =>{

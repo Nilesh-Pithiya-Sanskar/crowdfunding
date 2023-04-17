@@ -49,13 +49,13 @@ fixtures = ["Custom DocPerm", "Custom Field", "Print Format"]
 
 website_route_rules = [
 	# Desk
-	{"from_route": "/sadbhavna/<path:app_path>", "to_route": "sadbhavna"},
+	{"from_route": "/bestdeed/<path:app_path>", "to_route": "bestdeed"},
 	# Customer Portal
 	# {"from_route": "/support/<path:app_path>", "to_route": "frappedesk"},
 ]
 
 website_redirects = [
-  {"source": "/", "target": "/sadbhavna"},
+  {"source": "/", "target": "/bestdeed"},
 ]
 
 # Generators

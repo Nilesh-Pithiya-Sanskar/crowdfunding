@@ -186,8 +186,8 @@ export default {
                 method: 'sadbhavna_donatekart.api.contactus.contact_us',
                 onSuccess: (res) => {
                     // this.recent_donation = res
-                    if (confirm("Your message is successfully sent to sadbhavna donatekart") == true) {
-                        this.$router.push(`/sadbhavna`)
+                    if (confirm("Your message is successfully sent to bestdeed donatekart") == true) {
+                        this.$router.push(`/bestdeed`)
                     } else {
                         this.$router.go(-1)
                     }
@@ -205,7 +205,7 @@ export default {
                 // onSuccess: (res) => {
                 //     this.$toast({
                 //         title: "Success",
-                //         text: "Your message is successfully sent to sadbhavna donatekart",
+                //         text: "Your message is successfully sent to bestdeed donatekart",
                 //         customIcon: "check",
                 //     })
 

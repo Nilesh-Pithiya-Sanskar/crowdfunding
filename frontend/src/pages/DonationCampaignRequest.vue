@@ -264,12 +264,12 @@ export default {
                     // this.recent_donation = res
                     // this.$toast({
                     //     title: "Success",
-                    //     text: "Your Request is successfully sent to sadbhavna donatekart",
+                    //     text: "Your Request is successfully sent to bestdeed donatekart",
                     //     customIcon: "check",
                     // })
                     // this.$router.go();
-                    if (confirm("Your Request is successfully sent to sadbhavna donatekart") == true) {
-                        this.$router.push(`/sadbhavna`)
+                    if (confirm("Your Request is successfully sent to bestdeed donatekart") == true) {
+                        this.$router.push(`/bestdeed`)
                     } else {
                         this.$router.go(-1)
                     }

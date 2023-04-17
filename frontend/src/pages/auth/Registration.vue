@@ -83,8 +83,8 @@
                             </button>
                         </div>
                         <span class="block text-gray-600 text-base  mb-2"> {{ $t('Already have an account?') }} <router-link
-                                to="/sadbhavna/login" class="text-[#40b751]">{{ $t('Sign In') }}</router-link></span>
-                        <!-- <a href="/sadbhavna/login">Already have an account? Sign In</a> -->
+                                to="/bestdeed/login" class="text-[#40b751]">{{ $t('Sign In') }}</router-link></span>
+                        <!-- <a href="/bestdeed/login">Already have an account? Sign In</a> -->
 
                         <!-- <p class="text-grey text-xs mt-1"></p> -->
                     </div>
@@ -150,7 +150,7 @@ export default {
                     }
                     else{
                         if (confirm("your registration is successfully now you can login") == true) {
-                            this.$router.push(`/sadbhavna/login`)
+                            this.$router.push(`/bestdeed/login`)
                         } else {
                             this.$router.go(-1)
                         }

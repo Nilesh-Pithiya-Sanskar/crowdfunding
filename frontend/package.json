@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build --base=/assets/sadbhavna_donatekart/frontend/ && yarn copy-html-entry",
     "preview": "vite preview",
-    "copy-html-entry": "cp ../sadbhavna_donatekart/public/frontend/index.html ../sadbhavna_donatekart/www/sadbhavna/index.html"
+    "copy-html-entry": "cp ../sadbhavna_donatekart/public/frontend/index.html ../sadbhavna_donatekart/www/bestdeed/index.html"
   },
   "dependencies": {
     "@headlessui/vue": "^1.5.0",

@@ -105,11 +105,11 @@
         <div class="sm:col-span-2  md:col-span-2 lg:col-auto">
                     <div class="flex  justify-start lg:-mr-[60px]">
           <div class="flex items-center flex-shrink-0">
-            <a href="/sadbhavna">
+            <a href="/bestdeed">
               <img src="../../src/assets/Inter/img/logo-1.1.ico"
                 class="mb-2 sm:mt-2 lg:mt-0 mr-2 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
             </a>
-            <a href="/sadbhavna"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
+            <a href="/bestdeed"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
           </div></div>
             <p class="text-white  lg:-mr-[60px] dark:text-gray-400">
               {{ $t("We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact.Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.")}}</p>
@@ -156,16 +156,16 @@
               {{ $t('Discover') }}</h2>
             <ul class="text-white">
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/sadbhavna/explore-campaigns">{{ $t('Explore Campaigns') }}</router-link>
+                <router-link to="/bestdeed/explore-campaigns">{{ $t('Explore Campaigns') }}</router-link>
               </li>
               <li class=" sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/sadbhavna/request-campaign">{{ $t('Request A Campaign') }}</router-link>
+                <router-link to="/bestdeed/request-campaign">{{ $t('Request A Campaign') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <a href="#">{{ $t('About Us') }}</a>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/sadbhavna/contact-us">{{ $t('Contact Us') }}</router-link>
+                <router-link to="/bestdeed/contact-us">{{ $t('Contact Us') }}</router-link>
               </li>
             </ul>
           </div>
@@ -177,16 +177,16 @@
                 <a href="#">{{ $t('How it Works') }}</a>
               </li>
               <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/sadbhavna/faq">{{ $t('FAQs') }}</router-link>
+                <router-link to="/bestdeed/faq">{{ $t('FAQs') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-                <router-link to="/sadbhavna/blog">{{ $t('Blogs') }}</router-link>
+                <router-link to="/bestdeed/blog">{{ $t('Blogs') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <router-link to="/sadbhavna/terms-of-service">{{ $t('Terms of Use') }}</router-link>
+              <router-link to="/bestdeed/terms-of-service">{{ $t('Terms of Use') }}</router-link>
               </li>
               <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-              <router-link to="/sadbhavna/privacy-policy">{{ $t('Privacy Policy') }}</router-link>
+              <router-link to="/bestdeed/privacy-policy">{{ $t('Privacy Policy') }}</router-link>
               </li>
             </ul>
           </div>
