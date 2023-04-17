@@ -395,10 +395,10 @@
                             </div> -->
               <div v-if="user_data" v-for="roles in user_data.data.roles">
                 <div v-if="roles.role == 'Donor'">
-                  <div v-if="donation_details.data != ''" class="text-center pt-4 text-2xl text-gray-600">
+                  <div v-if="donation_details != ''" class="text-center pt-4 text-2xl text-gray-600">
                     {{ $t('Your Donations') }}
                   </div>
-                  <div v-if="donation_details.data != ''" class="flex flex-col">
+                  <div v-if="donation_details != ''" class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="overflow-hidden">
@@ -428,17 +428,17 @@
                                 <tr v-if="index - 1 < totalDonation"
                                   class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                   <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                    {{ donation_details.data[index - 1].name }}
+                                    {{ donation_details[index - 1].name }}
                                   </td>
                                   <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                    {{ donation_details.data[index - 1].amount }}
+                                    {{ donation_details[index - 1].amount }}
                                   </td>
                                   <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                    {{ formattedDate(donation_details.data[index - 1].date) }}
+                                    {{ formattedDate(donation_details[index - 1].date) }}
                                   </td>
                                   <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"> {{ donation.mode_of_payment }}</td> -->
                                   <td class="text-sm text-gray-900 font-light px-6 py-4 cursor-pointer" @click="
-                                    download_80g(donation_details.data[index - 1].name, donation_details.data[index - 1].date)">
+                                    download_80g(donation_details[index - 1].name, donation_details[index - 1].date)">
                                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> -->
                                     {{ $t('Download') }}
                                   </td>
@@ -467,10 +467,10 @@
                 <!-- if user role is ngo -->
                 <div v-else-if="roles.role == 'Ngo'">
                   <!-- {{ campaign_details }} -->
-                  <div v-if="campaign_details.data != ''" class="text-center text-2xl text-gray-600">
+                  <div v-if="campaign_details != ''" class="text-center text-2xl text-gray-600">
                     {{ $t('Your Campaign') }}
                   </div>
-                  <div v-if="campaign_details.data != ''" class="flex flex-col">
+                  <div v-if="campaign_details != ''" class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="overflow-hidden">
@@ -504,22 +504,22 @@
                                 <tr v-if="index - 1 < totalCampaign"
                                 class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign_details.data[index - 1].campaign_title }}
+                                  {{ campaign_details[index - 1].campaign_title }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign_details.data[index - 1].campaign_category }}
+                                  {{ campaign_details[index - 1].campaign_category }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ campaign_details.data[index - 1].donation_amount }}
+                                  {{ campaign_details[index - 1].donation_amount }}
                                 </td>
                                 <td class="text-sm text-green-500 font-bold px-6 py-4">
-                                  {{campaign_details.data[index - 1].raised_amount }}
+                                  {{campaign_details[index - 1].raised_amount }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ formattedDate(campaign_details.data[index - 1].start_date) }}
+                                  {{ formattedDate(campaign_details[index - 1].start_date) }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                  {{ formattedDate(campaign_details.data[index - 1].end_date) }}
+                                  {{ formattedDate(campaign_details[index - 1].end_date) }}
                                 </td>
                                 <!-- <td
                                   class="text-sm text-green-500 font-bold px-6 py-4 whitespace-nowrap"
@@ -528,8 +528,8 @@
                                 </td> -->
 
                                 <td
-                                  :class="['text-sm font-bold px-6 py-4', (campaign_details.data[index - 1].status === 'Live' ? 'text-green-500' : ''), (campaign_details.data[index - 1].status === 'Pending' ? 'text-blue-500' : ''), (campaign_details.data[index - 1].status === 'Rejected' ? 'text-red-500' : ''), (campaign_details.data[index - 1].status === 'Closed' ? 'text-orange-500' : '')]">
-                                  {{ campaign_details.data[index - 1].status }}
+                                  :class="['text-sm font-bold px-6 py-4', (campaign_details[index - 1].status === 'Live' ? 'text-green-500' : ''), (campaign_details[index - 1].status === 'Pending' ? 'text-blue-500' : ''), (campaign_details[index - 1].status === 'Rejected' ? 'text-red-500' : ''), (campaign_details[index - 1].status === 'Closed' ? 'text-orange-500' : '')]">
+                                  {{ campaign_details[index - 1].status }}
                                 </td>
 
                               </tr>
@@ -563,7 +563,6 @@
           </div>
         </div>
       </div>
-
 
       <Footer />
     </section>
@@ -615,7 +614,7 @@ export default {
       donationToShow: 6,
       totalDonation: 0,
 
-      camapignToShow: 6,
+      campaignToShow: 6,
       totalCampaign: 0
     }
   },
@@ -738,7 +737,40 @@ export default {
         },
 
       }
+    },
+
+    get_donation_details(){
+      return{
+        method: 'sadbhavna_donatekart.api.donor.get_donation_details',
+        onSuccess: (res) => {
+          this.donation_details = res
+          this.totalDonation = res.length
+      //       // this.totalDonation = res.length
+        },
+        onError: (error) => {
+          
+        },
+
+      }
+    },
+
+    get_campaign_details(){
+      return{
+        method: 'sadbhavna_donatekart.api.campaign.get_campaign_details',
+        onSuccess: (res) => {
+          console.log("res", res)
+          this.campaign_details = res
+          this.totalCampaign = res.length
+        },
+        onError: (error) => {
+
+        }
+      }
     }
+
+
+
+
   },
   methods: {
     formattedDate(date) {
@@ -787,22 +819,6 @@ export default {
           console.error(err)
         })
     },
-    get_donation_details(name) {
-      let url = `/api/resource/Donation?filters={"email": "${name}"}&fields=["*"]`
-      fetch(url, {
-        method: 'GET',
-      })
-        .then((response) => {
-          response.json().then((res) => {
-            this.donation_details = res
-            this.totalDonation = res.data.length
-            // this.totalDonation = res.length
-          })
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    },
     download_80g(donation, date) {
       if (this.pan_number == null) {
         this.$toast({
@@ -824,28 +840,55 @@ export default {
         })
       }
     },
-    get_campaign_details(name) {
-      let url = `/api/resource/NGO?filters={"email": "${name}"}&fields=["name"]`
-      fetch(url, {
-        method: 'GET',
+
+    get_donation_details(name) {
+      // let url = `/api/resource/Donation?filters={"email": "${name}"}&fields=["*"]&limit_page_length=100`
+      // fetch(url, {
+      //   method: 'GET',
+      // })
+      //   .then((response) => {
+      //     response.json().then((res) => {
+      //       this.donation_details = res
+      //       this.totalDonation = res.data.length
+      //       // this.totalDonation = res.length
+      //     })
+      //   })
+      //   .catch((error) => {
+      //     console.log(error)
+      //   })
+
+      this.$resources.get_donation_details.submit({
+        email: name,
+        page_length: 100
       })
-        .then((response) => {
-          response.json().then((res) => {
-            let ngo = res.data[0].name
-            let url = `/api/resource/Donation Campaign?filters={"ngo": "${ngo}"}&fields=["*"]`
-            fetch(url, {
-              method: 'GET',
-            }).then((response) => {
-              response.json().then((res) => {
-                this.campaign_details = res.data
-                this.totalCampaign = res.data.length
-              })
-            })
-          })
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+    },
+    
+    get_campaign_details(name) {
+      // let url = `/api/resource/NGO?filters={"email": "${name}"}&fields=["name"]`
+      // fetch(url, {
+      //   method: 'GET',
+      // })
+      //   .then((response) => {
+      //     response.json().then((res) => {
+      //       let ngo = res.data[0].name
+      //       let url = `/api/resource/Donation Campaign?filters={"ngo": "${ngo}"}&fields=["*"]`
+      //       fetch(url, {
+      //         method: 'GET',
+      //       }).then((response) => {
+      //         response.json().then((res) => {
+      //           this.campaign_details = res.data
+      //           this.totalCampaign = res.data.length
+      //         })
+      //       })
+      //     })
+      //   })
+      //   .catch((error) => {
+      //     console.log(error)
+      //   })
+      this.$resources.get_campaign_details.submit({
+        email: name,
+        page_length: 100
+      })
     },
     get_details_of_donor_donations(name) {
       this.$resources.get_details_of_donor_donations.submit({

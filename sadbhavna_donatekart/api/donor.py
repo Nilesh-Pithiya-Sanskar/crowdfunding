@@ -7,8 +7,8 @@ from frappe.utils import today
 
 @frappe.whitelist(allow_guest=True)
 def download_80g(donor, donation, date=''):
-    print("\n\n donor g", donor)
-    print("donation", donation, "\n\n")
+    # print("\n\n donor g", donor)
+    # print("donation", donation, "\n\n")
     if date == '':
         date = today()
     donor, pan_number = frappe.db.get_value("Donor", filters={"email": donor}, fieldname=["name", "pan_number"])
@@ -25,7 +25,7 @@ def download_80g(donor, donation, date=''):
     else:
         return 'Please set pan number in your profile'
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist()
 def get_details_of_donor_donations(donor):
     # donor = frappe.db.get_value("Donor", filters={"email": donor}, fieldname=["name"])
     total_campaign = 0
@@ -35,6 +35,10 @@ def get_details_of_donor_donations(donor):
         total_campaign += 1
         total_donation += i.amount
     return total_campaign, total_donation
+
+@frappe.whitelist()
+def get_donation_details(email, page_length):
+    return frappe.db.get_list("Donation", filters={"email": email}, fields=['*'], page_length=page_length, order_by='date desc')
 
 @frappe.whitelist()
 def update_donor(first_name, last_name, phone, old_email, pan_number, password):

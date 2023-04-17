@@ -69,8 +69,8 @@ def get_details_of_ngo_campaigns(ngo):
     total_rejected_campaign = 0
     total_raised_amount = 0
     total_requested_amount = 0
-    ngo_name = frappe.db.get_value("NGO", filters={"email": ngo}, fieldname=['name'])
-    data = frappe.db.get_list("Donation Campaign", filters={"ngo": ngo_name}, fields=['name', 'raised_amount', 'donation_amount', 'status'])
+    # ngo_name = frappe.db.get_value("NGO", filters={"email": ngo}, fieldname=['name'])
+    data = frappe.db.get_list("Donation Campaign", filters={"ngo_email": ngo}, fields=['name', 'raised_amount', 'donation_amount', 'status'])
     
     for i in data:
         total_raised_amount += i.raised_amount
@@ -84,3 +84,8 @@ def get_details_of_ngo_campaigns(ngo):
 
     data = [{"total_live_campaign": total_live_campaign, "total_pending_campaign": total_pending_campaign, "total_raised_amount": total_raised_amount, "total_rejected_campaign": total_rejected_campaign, "total_requested_amount":total_requested_amount}]
     return data
+
+@frappe.whitelist()
+def get_campaign_details(email, page_length):
+    # ngo = frappe.db.get_value("NGO", filters={"email": email}, fieldname=['name'])
+    return frappe.db.get_list("Donation Campaign", filters={"ngo_email": email}, fields=['*'], page_length=page_length)
