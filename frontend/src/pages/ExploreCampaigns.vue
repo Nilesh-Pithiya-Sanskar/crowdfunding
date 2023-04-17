@@ -8,7 +8,6 @@
                 जरूरतमंदों की मदद करने के लिए
                 <span class="text-[#40b751]">बेस्टडीड अभियान</span>
                 से हाथ मिलाओ।
-                
             </p>
         </div>
         <div v-else-if="lang == 'gu'" class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
@@ -412,32 +411,32 @@
 
         <!--Cards-->
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4">
-            <div v-for="index in campaignToShow">
-                <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+            <!-- <div v-for="index in campaignToShow"> -->
+                <div v-for="campaign in campaigns" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
                     <div
                         class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
-                        <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
-                            @click="donate(campaigns[index - 1].name)">
+                        <img class="w-full h-52 cursor-pointer" :src="campaign.campain_image" alt="Mountain"
+                            @click="donate(campaign.name)">
                         <div class="pt-[10px] pr-[20px] pl-[20px] leading-6">
-                            <div v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu"
+                            <div v-if="lang == 'gu' && campaign.campaign_title_gu"
                                 class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
-                                {{ campaigns[index - 1].campaign_title_gu }}</div>
-                            <div v-else-if="lang == 'hi' && campaigns[index - 1].campaign_title_hi"
+                                {{ campaign.campaign_title_gu }}</div>
+                            <div v-else-if="lang == 'hi' && campaign.campaign_title_hi"
                                 class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
-                                {{ campaigns[index - 1].campaign_title_hi }}</div>
+                                {{ campaign.campaign_title_hi }}</div>
                             <div v-else
-                                class="fontfamily cursor-pointer font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines" @click="donate(campaigns[index - 1].name)">
-                                {{ campaigns[index - 1].campaign_title }}</div>
+                                class="fontfamily cursor-pointer font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines" @click="donate(campaign.name)">
+                                {{ campaign.campaign_title }}</div>
 
                             <p class="text-gray-700 text-[13px]  truncate">
-                                {{ $t('By') }}: {{ campaigns[index - 1].ngo }}
+                                {{ $t('By') }}: {{ campaign.ngo }}
                             </p>
                             <div
                                 class="fontcard flex  justify-between mt-1 mb-0 pb-1 text-[14px]">
                                 <span class="font-[600] text-[#222222]">{{ $t('Raised') }}: ₹{{
-                                    numberWithCommas(campaigns[index - 1].raised_amount)
+                                    numberWithCommas(campaign.raised_amount)
                                 }}</span><span class="font-[600] text-[#222222]">{{ $t('Goal') }}: ₹{{
-    numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+    numberWithCommas(campaign.donation_amount) }}</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded h-[10px] dark:bg-gray-700 mb-2 ">
                    <!--<div v-if="campaigns[index - 1].raised_amount"
@@ -447,9 +446,9 @@
                       /
                       campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
 
-                      <div v-if="campaigns[index - 1].raised_amount"
+                      <div v-if="campaign.raised_amount"
                     class="bg-[#40b751] h-[10px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                    :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
+                    :style="{ width: campaign.raised_amount * 100 / campaign.donation_amount + '%' }">
                     <!--{{ (campaigns[index - 1].raised_amount * 100
                       /
                       campaigns[index - 1].donation_amount).toFixed(2) }}%--></div>
@@ -461,7 +460,7 @@
                       class="feather h-4 w-4 feather-clock mr-1 md:mr-1 lg:mr-2">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Goal') }}
+                    </svg> {{ dayCalculate(campaign.end_date) }} {{ $t('Goal') }}
                   </p>
                   <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -470,14 +469,14 @@
                       <circle cx="9" cy="7" r="4"></circle>
                       <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                       <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
+                    </svg>{{ campaign.total_donor || 0 }} {{ $t('Donors') }}</p>
                 </div>
 
 
                         </div>
                         <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
-                            <ShareNetwork network="WhatsApp" :url="url + '/sadbhavna/campaign-donation/' + campaigns[index - 1].name" :title="campaigns[index - 1].campaign_title"
-                                :description="campaigns[index - 1].short_description">
+                            <ShareNetwork network="WhatsApp" :url="url + '/sadbhavna/campaign-donation/' + campaign.name" :title="campaign.campaign_title"
+                                :description="campaign.short_description">
                                 <button
                                     class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
                                     type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17" version="1.1"
@@ -494,7 +493,7 @@
                            <button
                   class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
 
-                  type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
+                  type="button" @click="donate(campaign.name)"> {{ $t('Donate Now') }} </button>
                         </div>
                         <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">
                             <button class="text-[#40b751] text-base">{{ $t('Share') }}</button>
@@ -504,19 +503,21 @@
                         </div> -->
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
-        <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
+        <!-- <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
             <button
                 class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
-        </div>
-        <div v-else class="text-center">
+        </div> -->
+        <div class="text-center" v-if="last_campaigns == false">
             <button
                 class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button" @click="get_more_campagins()">{{ $t('Show More') }}</button>
         </div>
     </section>
+    
+
     <!-- {{ campaigns }} -->
     <Footer />
 </template>
@@ -587,7 +588,7 @@ export default {
             campain_image: '',
             location: null,
             selected: 'newly launched',
-            campaignToShow: 6,
+            // campaignToShow: 6,
             totalCampaign: 0,
             loading: false,
             selection: 1,
@@ -599,6 +600,7 @@ export default {
             start: 0,
             page_length: 6,
             url: window.location.origin,
+            last_campaigns: false,
 
             lang: this.get_language(),
         }
@@ -646,11 +648,29 @@ export default {
             return {
                 method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
                 onSuccess: (res) => {
-                    console.log("get_campaign_success", res)
-                    console.log("get_campaign_success")
-                    this.campaigns = res
+                    if(res != '')
+                    {
+                        var a = res.length
+                        for(a = 0; a < res.length; a++ ){
+                            this.campaigns.push(res[a])
+                        }
+                    }
+                    if(res.length < this.page_length){
+                        this.last_campaigns = true
+                    }
+                    if(res == '')
+                    {
+                        this.$toast({
+                        title: "No More Campaigns",
+                        text: "No More Campaigns Found.",
+                        icon: "x-circle",
+                        appearance: "denger",
+                        position: "top-center",
+                        })
+                    }
                     // this.campaigns.push(res)
-                    this.totalCampaign = this.campaigns.length
+                    // this.campaigns = res
+                    // this.totalCampaign += this.res.length
                     // this.start = this.page_length
                 },
                 onError: (error) => {
@@ -702,9 +722,11 @@ export default {
         },
         get_more_campagins() {
             // var start = this.start + this.page_length
-            this.page_length += this.page_length
-            this.campaignToShow += 6
-            this.get_campaigns('', 0)
+            // this.page_length += this.page_length
+            // this.start = this.start + this.page_length
+            // this.campaignToShow += 6
+            this.start += 6
+            this.get_campaigns('', this.start)
         },
         get_search_campaigns() {
             this.$resources.get_search_campaigns.submit({
