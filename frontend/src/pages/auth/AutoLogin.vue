@@ -119,11 +119,12 @@ export default {
         this.$nextTick(() => this.$refs.number.focus())
         // 203313835661247
         // 1616534218770661
+        // 875989810135839
         FB.init({
             appId: '1616534218770661',
             cookie: true,
             xfbml: true,
-            version: 'v16.0'
+            version: 'v13.0'
         });
     },
     resources: {
