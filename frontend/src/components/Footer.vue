@@ -97,7 +97,7 @@
 </template> -->
 
 <template>
-  <div class="px-2 md:px-50 lg:px-30 pt-6 pr-4 pl-4 pb-4  xl:px-0 bg-[#40b751] ">
+  <div class="pt-6 px-6 md:px-10 lg:px-4 pb-4 bg-[#40b751]">
     <footer class="container  w-full  ml-auto mr-auto">
        <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
       <div
@@ -169,7 +169,7 @@
               </li>
             </ul>
           </div>
-          <div class="sm:pl-[0px] lg:pt-4 md:pl-[0px] lg:pl-[40px] ">
+          <div class="sm:pl-[20px] lg:pt-4 md:pl-[20px] lg:pl-[48px] ">
             <h2 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl pt-5 md:pt-5 lg:pt-0">
               {{ $t('Learn') }}</h2>
             <ul class="text-white">

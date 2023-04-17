@@ -2,7 +2,7 @@
     <Navbar />
 
     <section class="flex justify-center gradient-form h-full">
-  <div class="container h-full px-8 lg:px-48 py-10">
+  <div class="container h-full px-8 md:px-14 lg:px-24 xl:px-48 py-10">
     <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
       <div class="w-full">
         <div class="block rounded-lg bg-white shadow-lg card-shodow dark:bg-neutral-800">
@@ -40,7 +40,7 @@
                                     @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
 
                                 <button
-                                    class="appearance-none border-gray-600 lg:ml-2 mb-5 sm:ml-2 rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    class="appearance-none border-gray-600 sm:ml-0 md:ml-2 lg:ml-2 mb-5  rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_sms()">
                                     {{ $t('Login With SMS') }}</button>
 
@@ -273,6 +273,3 @@ export default {
     }
 };
 </script>
-  
-  
-  
