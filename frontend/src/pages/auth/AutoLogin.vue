@@ -259,6 +259,7 @@ export default {
         },
         checkLoginState() {
             FB.getLoginStatus(function (response) {
+                console.log("login state response", response)
                 if (response.status === 'connected') {
                     // User is logged in with Facebook, so you can retrieve user information here
                     // FB.api('/me', function (userInfo) {
