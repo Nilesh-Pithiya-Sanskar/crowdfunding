@@ -26,7 +26,7 @@
                                 </label>
                                 <input @keyup="error = ''"
                                     :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
-                                    v-model="phone" type="number">
+                                    v-model="phone" ref="number" type="number">
 
                                 <div v-if="error" class="text-red-500">{{ error }}</div>
                                 <span v-if="phone && !error" class="text-sm text-gray-400"> {{ $t('An OTP will be sent to')
@@ -123,7 +123,7 @@ export default {
             appId: '1616534218770661',
             cookie: true,
             xfbml: true,
-            version: 'v13.0'
+            version: 'v16.0'
         });
     },
     resources: {
@@ -258,6 +258,7 @@ export default {
             }
         },
         checkLoginState() {
+            console.log("fb called")
             FB.getLoginStatus(function (response) {
                 console.log("login state response", response)
                 if (response.status === 'connected') {
