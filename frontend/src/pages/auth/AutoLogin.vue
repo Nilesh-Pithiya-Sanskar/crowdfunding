@@ -261,9 +261,17 @@ export default {
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
                     // User is logged in with Facebook, so you can retrieve user information here
-                    FB.api('/me', function (userInfo) {
-                        console.log('UserInfo:', userInfo);
-                    });
+                    // FB.api('/me', function (userInfo) {
+                    //     console.log('UserInfo:', userInfo);
+                    // });
+                    FB.api(
+                        '/me',
+                        'GET',
+                        {"fields":"id,email,picture,gender,first_name,last_name,name"},
+                        function(response) {
+                            console.log("fb data", response)
+                        }
+                    );
                 } else {
                     // User is not logged in with Facebook, or user did not grant permission to your app
                     console.log('User is not logged in with Facebook');
