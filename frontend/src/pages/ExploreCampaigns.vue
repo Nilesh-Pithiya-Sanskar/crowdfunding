@@ -661,8 +661,8 @@ export default {
                     if(res == '')
                     {
                         this.$toast({
-                        title: "No More Campaigns",
-                        text: "No More Campaigns Found.",
+                        title: "No Campaigns",
+                        text: `No Campaigns Found For ${this.category}.`,
                         icon: "x-circle",
                         appearance: "denger",
                         position: "top-center",
@@ -709,7 +709,7 @@ export default {
             }
             this.last_campaigns = false
             this.$resources.get_campaigns.submit({
-                category: category,
+                category: this.category,
                 language: localStorage.getItem('lang') || window.navigator.language,
                 start: start,
                 page_length: this.page_length
