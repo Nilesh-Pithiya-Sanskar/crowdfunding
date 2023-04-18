@@ -705,6 +705,7 @@ export default {
             if(category != '')
             {
                 this.campaigns = []
+                this.category = category
             }
             this.last_campaigns = false
             this.$resources.get_campaigns.submit({

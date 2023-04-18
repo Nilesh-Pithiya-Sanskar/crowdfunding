@@ -4,59 +4,65 @@
     <div class="container mx-auto mt-[40px]">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
-                <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu">
-                    <span class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{ $t(campaign_detail.data.campaign_title_gu) }} </span>
-                    <span class="" v-for="benefit in campaign_detail.data.benefits">
+            <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu">
+                <span
+                    class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{
+                        $t(campaign_detail.data.campaign_title_gu) }} </span>
+                <span class="" v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
-                            class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit_gu }}
-                    </button>
-                    <button v-else-if="lang == 'hi' && benefit.benefit_hi"
-                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit_hi }}
-                    </button>
-                    <button v-else
-                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit }}
-                    </button>
-                    </span>
-                </h2>
-                
-                <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi">
-                    <span class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{ $t(campaign_detail.data.campaign_title_hi) }} </span>
-                    <span class="" v-for="benefit in campaign_detail.data.benefits">
-                    <button v-if="lang == 'gu' && benefit.benefit_gu"
-                            class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit_gu }}
+                        class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit_gu }}
                     </button>
                     <button v-else-if="lang == 'hi' && benefit.benefit_hi"
                         class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
                         {{ benefit.benefit_hi }}
                     </button>
                     <button v-else
-                            class="h-[30px] bg-[#40b751] mr-[2 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit }}
+                        class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit }}
                     </button>
-                    </span>
-                </h2>
-                <h2 v-else>
-                    <span class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{ $t(campaign_detail.data.campaign_title) }} </span>
-                    <span class="" v-for="benefit in campaign_detail.data.benefits">
+                </span>
+            </h2>
+
+            <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi">
+                <span
+                    class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{
+                        $t(campaign_detail.data.campaign_title_hi) }} </span>
+                <span class="" v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
-                            class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit_gu }}
+                        class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit_gu }}
                     </button>
                     <button v-else-if="lang == 'hi' && benefit.benefit_hi"
-                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit_hi }}
+                        class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit_hi }}
                     </button>
                     <button v-else
-                            class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
-                            {{ benefit.benefit }}
+                        class="h-[30px] bg-[#40b751] mr-[2 capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit }}
                     </button>
-                    </span>
-                </h2>
-                <!-- <span v-for="benefit in campaign_detail.data.benefits">
+                </span>
+            </h2>
+            <h2 v-else>
+                <span
+                    class="w-full mb-1 mr-2 leading-10 md:leading-0 lg:heading-12 text-[25px] font-bold text-[#364958] capitalize">{{
+                        $t(campaign_detail.data.campaign_title) }} </span>
+                <span class="" v-for="benefit in campaign_detail.data.benefits">
+                    <button v-if="lang == 'gu' && benefit.benefit_gu"
+                        class="h-[25px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit_gu }}
+                    </button>
+                    <button v-else-if="lang == 'hi' && benefit.benefit_hi"
+                        class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit_hi }}
+                    </button>
+                    <button v-else
+                        class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
+                        {{ benefit.benefit }}
+                    </button>
+                </span>
+            </h2>
+            <!-- <span v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
                             class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
                             {{ benefit.benefit_gu }}
@@ -70,8 +76,8 @@
                             {{ benefit.benefit }}
                     </button>
                 </span> -->
-           
-                    
+
+
             <p v-if="lang == 'gu' && campaign_detail.data.short_description_gu" style="line-height:1.7;"
                 class="mb-4 text-base text-[#364958] font-normal">{{
                     $t(campaign_detail.data.short_description_gu) }}</p>
@@ -103,12 +109,14 @@
                     </div>
                     <div class="w-full h-[16px] bg-gray-200 rounded-md dark:bg-gray-700">
                         <!-- <div class="bg-green-500 text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md" style="width: 40%"> 40%</div> -->
-                       <div class="bg-[#40b751] h-[16px] text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
+                        <div v-if="campaign_detail.data.raised_amount == 0" class="bg-[#e4e4e7] "></div>
+                        <div v-else class="bg-[#40b751] h-[16px] text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
                             :style="{ width: campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount + '%' }">
-                           <!-- {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
-                            }}%--></div>
+                            <!-- {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
+                            }}%-->
+                        </div>
 
-                            <!--<div class="bg-[#40b751]  text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
+                        <!--<div class="bg-[#40b751]  text-[11px] font-medium text-black text-center p-0.5 leading-none rounded"
                             :style="{ width: campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount + '%' }">
                            {{ (campaign_detail.data.raised_amount * 100 / campaign_detail.data.donation_amount).toFixed(2)
                             }}%</div>-->
@@ -164,45 +172,34 @@
 
                         </div>
                         <div class="flex flex-wrap lg:mt-0 md:mt-0 sm:mt-4">
-                            <div class="bg-blue-700 rounded-full h-10 w-10 sm:ml-2 pt-2 pb-1 pl-2 pr-1 hover:cursor-pointer">
-                                <ShareNetwork
-                                    network="facebook"
-                                    :url="url"
-                                    :title="campaign_detail.data.campaign_title"
-                                    :description="campaign_detail.data.short_description"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="#ffffff" stroke="currentColor" stroke-width="0" stroke-linecap="round"
-                                            stroke-linejoin="round" class="feather feather-facebook">
-                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                        </svg>
+                            <div
+                                class="bg-blue-700 rounded-full h-10 w-10 sm:ml-2 pt-2 pb-1 pl-2 pr-1 hover:cursor-pointer">
+                                <ShareNetwork network="facebook" :url="url" :title="campaign_detail.data.campaign_title"
+                                    :description="campaign_detail.data.short_description">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="#ffffff" stroke="currentColor" stroke-width="0" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-facebook">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                    </svg>
                                 </ShareNetwork>
-                                
+
                             </div>
                             <div class="bg-sky-400 rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2 pr-1 hover:cursor-pointer">
-                                <ShareNetwork
-                                    network="Twitter"
-                                    :url="url"
-                                    :title="campaign_detail.data.campaign_title"
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                <ShareNetwork network="Twitter" :url="url" :title="campaign_detail.data.campaign_title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="#ffffff" stroke="currentColor" stroke-width="0" stroke-linecap="round"
                                         stroke-linejoin="round" class="feather feather-twitter">
                                         <path
                                             d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
                                         </path>
-                                        </svg>
+                                    </svg>
                                 </ShareNetwork>
-                                
+
                             </div>
                             <div class="bg-[#40b751] rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2 pr-1 hover:cursor-pointer">
-                                <ShareNetwork
-                                    network="WhatsApp"
-                                    :url="url"
-                                    :title="campaign_detail.data.campaign_title"
-                                    :description="campaign_detail.data.short_description"
-                                    >
-                                        <svg fill="#ffffff" height="24" width="24" version="1.1" id="Layer_1"
+                                <ShareNetwork network="WhatsApp" :url="url" :title="campaign_detail.data.campaign_title"
+                                    :description="campaign_detail.data.short_description">
+                                    <svg fill="#ffffff" height="24" width="24" version="1.1" id="Layer_1"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         viewBox="0 0 308 308" xml:space="preserve">
                                         <g id="XMLID_468_">
@@ -211,7 +208,7 @@
                                             <path id="XMLID_470_"
                                                 d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
                                         </g>
-                                        </svg>
+                                    </svg>
                                 </ShareNetwork>
                             </div>
                             <div class="bg-gray-600 rounded-full h-10 w-10 ml-2 pt-2 pb-1 pl-2.5 pr-1 hover:cursor-pointer"
@@ -343,7 +340,7 @@
                             <table class=" stext-[#364958]" v-if="item_cart != ''">
                                 <thead class="bg-white border-b">
                                     <tr class="">
-                                            <th scope="col" class="font-bold px-2 py-4 text-left">
+                                        <th scope="col" class="font-bold px-2 py-4 text-left">
                                             {{ $t('Item Name') }}
                                         </th>
                                         <!-- <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-left">
@@ -374,8 +371,9 @@
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                        <td class="text-gray-900 font-bold px-2 py-4 whitespace-nowrap">{{ $t('Total') }}</td>
-                                                                        <td class="text-gray-900 font-bold px-10 py-4 whitespace-nowrap">{{ i_qty }}</td>
+                                        <td class="text-gray-900 font-bold px-2 py-4 whitespace-nowrap">{{ $t('Total') }}
+                                        </td>
+                                        <td class="text-gray-900 font-bold px-10 py-4 whitespace-nowrap">{{ i_qty }}</td>
                                         <td class="text-gray-900 font-bold px-10 py-4 whitespace-nowrap">₹ {{
                                             numberWithCommas(total_price) }}</td>
                                     </tr>
@@ -517,7 +515,7 @@
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!
                                         </p> -->
                                     </div>
-                                   
+
                                     <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
                                         <div class="w-full py-2">
                                             <details class="mb-3" open>
@@ -528,7 +526,7 @@
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="border-2 font-normal border-solid border-gray-200 border-t-0 py-2 px-2 text-base text-[#364958] ">
-                                                        {{ $t("You may quickly obtain your tax receipt because all of our partner NGOs are 80G approved. On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button. Please enter your PAN number, complete location, and PAN-compliant name before clicking 'Submit.'You will receive an email and a download link for your 80G certificate.") }}
+                                                        {{ $t("You may quickly obtain your tax receipt because all of our partner NGOs are 80G approved.On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button.Please enter your PAN number, complete location, and PAN - compliant name before clicking 'Submit.'You will receive an email and a download link for your 80G certificate.") }}
                                                     </p>
                                                 </span>
                                             </details>
@@ -536,23 +534,24 @@
                                             <details class="mb-3">
                                                 <summary
                                                     class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-lg list-none bg-gray-100 rounded py-3 px-2">
-                                                    {{ $t('What if my fundraising target is not reached? Will I still receive the products?') }}</summary>
+                                                    {{ $t('What if my fundraising target is not reached? Will I still receive the products ? ') }}</summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="border-2 border-solid border-gray-200 border-t-0 py-2 px-2 text-base text-[#364958] dark:text-gray-300">
-                                                        {{$t('According to Best Deed, every work put into the campaign should be rewarded. Therefore, even if you fall short of your fundraising target, you still receive all of the products you have received so far.')}}</p>
+                                                        {{ $t('According to Best Deed, every work put into the campaign should be rewarded.Therefore, even if you fall short of your fundraising target, you still receive all of the products you have received so far.')}}</p>
                                                 </span>
                                             </details>
                                             <details class="mb-3">
                                                 <summary
                                                     class="font-medium border-2 cursor-pointer border-b-1 border-solid border-b-gray-300 text-[#40b751] text-lg list-none bg-gray-100 rounded py-3 px-2">
-                                                    {{ $t('What is the reliability of your crowdfunding platform? ') }}</summary>
+                                                    {{ $t('What is the reliability of your crowdfunding platform? ') }}
+                                                </summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="border-2 border-solid border-gray-200 border-t-0 py-2 px-2 text-base text-[#364958] dark:text-gray-300">
-                                                        {{ $t("The environment, structure, and sophistication of crowdfunding platforms can vary greatly. Our crowdfunding platform is governed by a local exchange and securities commission and is required to follow strict guidelines to ensure the security of investors' investments.Look for a license number in the page's footer to quickly spot these sites. On the other hand, some crowdfunding platforms work independently, with no supervision to ensure the safety of investors.Best Deed accepts credit cards, debit cards, bank transfers, UPI, PayPal, and other payment methods. You can select the most convenient option and carry out the necessary actions.")}}</p>
+                                                        {{ $t("The environment, structure, and sophistication of crowdfunding platforms can vary greatly.Our crowdfunding platform is governed by a local exchange and securities commission and is required to follow strict guidelines to ensure the security of investors' investments.Look for a license number in the page's footer to quickly spot these sites.On the other hand, some crowdfunding platforms work independently, with no supervision to ensure the safety of investors.Best Deed accepts credit cards, debit cards, bank transfers, UPI, PayPal, and other payment methods.You can select the most convenient option and carry out the necessary actions.")}}</p>
                                                 </span>
                                             </details>
                                             <details class="mb-3">
@@ -613,9 +612,11 @@
 
                             <div class="relative flex flex-col min-w-0 break-words bg-white w-full  shadow-lg rounded">
                                 <div class=" px-4 py-5 flex-auto">
-                                    <div class=" tab-content tab-space overflow-y-auto lg:h-[20rem] md:h-[13rem] sm:h-[17rem] h-[17rem]">
+                                    <div
+                                        class=" tab-content tab-space  lg:h-[20rem] md:h-[13rem] sm:h-[17rem] h-[17rem] overflow-y-scroll custom-scrollbar">
                                         <div v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-                                            <div class="pb-6" v-if="recent_donation != ''" v-for="donation in recent_donation">
+                                            <div class="pb-6" v-if="recent_donation != ''"
+                                                v-for="donation in recent_donation">
 
                                                 <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
 
@@ -642,18 +643,20 @@
                                                             <p class="text-gray-600 text-sm">{{ formatDate(donation.date) }}
                                                             </p>
                                                         </div>
-                                                    </div><div class="grid justify-end">
+                                                    </div>
+                                                    <div class="grid justify-end">
                                                         <p class="">₹ {{ numberWithCommas(donation.amount) }}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div v-else>
-                                                {{$t('No Recent Donation')}}
+                                                {{ $t('No Recent Donation') }}
                                             </div>
                                         </div>
-                                        
+
                                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
-                                            <div class="pb-6" v-if="most_generous != ''" v-for="m_donation in most_generous">
+                                            <div class="pb-6" v-if="most_generous != ''"
+                                                v-for="m_donation in most_generous">
                                                 <div class="grid grid-cols-[200px_minmax(80px,_1fr)_100px]">
 
                                                     <div>
@@ -688,7 +691,7 @@
                                                 </div>
                                             </div>
                                             <div v-else>
-                                                {{$t('No Recent Donation')}}
+                                                {{ $t('No Recent Donation') }}
                                             </div>
                                         </div>
                                     </div>
@@ -701,9 +704,9 @@
         </div>
 
         <div class="md:block sm:block lg:hidden rounded-2xl w-full h-16 bg-white border-t-4 border-green-500
-                                                                                                    fixed left-0 bottom-0
-                                                                                                    flex justify-center items-center
-                                                                                                    text-white text-2xl "
+                                                                                                                fixed left-0 bottom-0
+                                                                                                                flex justify-center items-center
+                                                                                                                text-white text-2xl "
             v-if="total_price != 0">
             <!-- <div class="">asdfasdfasd</div> -->
             <div class="flex justify-between text-center font-bold text-lg mt-5">
@@ -767,42 +770,42 @@
     <!-- <DonationCheckout v-if="showCheckout == true" :i_qty="i_qty" :total_price="total_price" :showCheckout="showCheckout"
         @donate_checkout="donate_checkout" /> -->
 
-        <Dialog v-model="showDialog_c" >
+    <Dialog v-model="showDialog_c">
         <template #body>
-                    <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-                        <h1
-                            class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
-                            {{ $t('Donation Checkout') }}
-                        </h1>
-                        <div class="relative z-0">
-                            <div class="mb-4">
-                                <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Name') }}
+            <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
+                <h1
+                    class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
+                    {{ $t('Donation Checkout') }}
+                </h1>
+                <div class="relative z-0">
+                    <div class="mb-4">
+                        <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Name') }}
                                     <span class="text-red-600">*</span></label> -->
-                                <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="name" type="text" @keyup="nameError = ''" placeholder="Name" required>
-                                <p class="text-red-600">{{ $t(nameError) }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                        <input
+                            class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                            v-model="name" type="text" @keyup="nameError = ''" placeholder="Name" required>
+                        <p class="text-red-600">{{ $t(nameError) }}</p>
+                    </div>
+                    <div class="mb-4">
+                        <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
                                     <span class="text-red-600">*</span></label> -->
-                                <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="email" type="email" @keyup="emailError = ''" placeholder="Email" required>
-                                <p class="text-red-600">{{ $t(emailError) }}</p>
-                            </div>
+                        <input
+                            class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                            v-model="email" type="email" @keyup="emailError = ''" placeholder="Email" required>
+                        <p class="text-red-600">{{ $t(emailError) }}</p>
+                    </div>
 
-                            <div class="mb-4">
-                                <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
+                    <div class="mb-4">
+                        <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
                                         class="text-red-600">*</span></label> -->
-                                <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="phone_number" type="text" @keyup="phoneNumberError = ''"
-                                    placeholder="Phone number" required>
-                                <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
-                            </div>
+                        <input
+                            class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                            v-model="phone_number" type="text" @keyup="phoneNumberError = ''" placeholder="Phone number"
+                            required>
+                        <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
+                    </div>
 
-                            <!-- <div class="mb-4">
+                    <!-- <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">{{ $t('PAN Number') }} <span
                                     class="text-red-600">*</span></label>
                             <input
@@ -810,25 +813,25 @@
                                 v-model="pan_number" type="text" @keyup="panError = ''" placeholder="PAN number" required>
                             <p class="text-red-600">{{ $t(panError) }}</p>
                         </div> -->
-                            <div class="mb-4">
-                                <input type="checkbox" id="anonymous" v-model="anonymous">
-                                <label for="checkbox" class="text-sm pl-2">{{ $t('Make my donation anonymous') }}</label>
-                            </div>
+                    <div class="mb-4">
+                        <input type="checkbox" id="anonymous" v-model="anonymous">
+                        <label for="checkbox" class="text-sm pl-2">{{ $t('Make my donation anonymous') }}</label>
+                    </div>
 
-                            <div class="mb-4">
-                                <div class="flex justify-center">
-                                    <div class="text-[#40b751] text-lg font-bold ml-5">{{ i_qty }} {{ $t('Item(s)') }} |</div>
-                                    <div class="text-[#40b751] text-lg font-bold ml-2">₹ {{ numberWithCommas(total_price) }}</div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button
-                                    class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
-                                    type="button" @click="donate_dialog_c(total_price, anonymous)"> {{ $t('Continue To Pay') }}
-                                </button>
-                            </div>                           
+                    <div class="mb-4">
+                        <div class="flex justify-center">
+                            <div class="text-[#40b751] text-lg font-bold ml-5">{{ i_qty }} {{ $t('Item(s)') }} |</div>
+                            <div class="text-[#40b751] text-lg font-bold ml-2">₹ {{ numberWithCommas(total_price) }}</div>
                         </div>
-                    </div>    
+                    </div>
+                    <div class="text-center">
+                        <button
+                            class="mb-5 ml-2 rounded-lg bg-[#40b751] text-white active:bg-[#40b751] hover:border-green-600 uppercase text-sm px-6 py-3 shadow hover:bg-white hover:text-black hover:border-green-500 hover:border-2mr-1 ease-linear transition-all duration-150"
+                            type="button" @click="donate_dialog_c(total_price, anonymous)"> {{ $t('Continue To Pay') }}
+                        </button>
+                    </div>
+                </div>
+            </div>
         </template>
     </Dialog>
 
@@ -889,7 +892,7 @@ export default {
     //             console.log("asdf", to.meta.metaTags[0].name)
     //             to.meta.metaTags[0].name = 'asdfasf'
     //             console.log("asdfasf")
-                
+
     //         }
     //     },
     // },
@@ -960,7 +963,7 @@ export default {
 
             url: window.location.href,
 
-            showDialog_c: false,    
+            showDialog_c: false,
             nameError: '',
             emailError: '',
             phoneNumberError: '',
@@ -971,7 +974,7 @@ export default {
             email: '',
             name: '',
             phone_number: '',
-            
+
         }
     },
     created() {
@@ -1043,17 +1046,16 @@ export default {
                 method: 'sadbhavna_donatekart.api.donor.download_80g',
                 onSuccess: (res) => {
                     // console.log('okey', res)
-                    if (res == 'Please set pan number in your profile')
-                    {
+                    if (res == 'Please set pan number in your profile') {
                         this.$toast({
                             title: 'Please add Pan Number',
                             text: 'please add pan number in edit profile to get 80g certificate',
                             icon: 'x-circle',
                             appearance: 'denger',
                             position: "top-center",
-                            })
+                        })
                     }
-                    else{
+                    else {
                         let url = `/api/method/frappe.utils.print_format.download_pdf?doctype=Tax Exemption 80G Certificate&name=${res}&format=80G Certificate for Donation`
                         // window.location = url
                         window.open(url, "_blank");
@@ -1207,14 +1209,13 @@ export default {
                         const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
                         this.campaign_days = daysDiff;
 
-                        if(this.lang == 'gu' && res.data.campaign_title_gu)
-                        {
-                            document.title = res.data.campaign_title_gu + " | " + this.$t('BestDeed') 
+                        if (this.lang == 'gu' && res.data.campaign_title_gu) {
+                            document.title = res.data.campaign_title_gu + " | " + this.$t('BestDeed')
                         }
-                        else if (this.lang == 'hi' && res.data.campaign_title_hi){
-                            document.title = res.data.campaign_title_hi + " | " + this.$t('BestDeed') 
+                        else if (this.lang == 'hi' && res.data.campaign_title_hi) {
+                            document.title = res.data.campaign_title_hi + " | " + this.$t('BestDeed')
                         }
-                        else{
+                        else {
                             document.title = res.data.campaign_title + " | " + this.$t('BestDeed')
                         }
 
@@ -1225,15 +1226,13 @@ export default {
 
                         var meta = document.createElement('meta');
                         meta.name = "description";
-                        if (this.lang == 'gu' && res.data.short_description_gu)
-                        {
+                        if (this.lang == 'gu' && res.data.short_description_gu) {
                             meta.content = res.data.short_description_gu
                         }
-                        else if (this.lang == 'hi' && res.data.short_description_hi)
-                        {
+                        else if (this.lang == 'hi' && res.data.short_description_hi) {
                             meta.content = res.data.short_description_hi
                         }
-                        else{
+                        else {
                             meta.content = res.data.short_description
                         }
                         document.head.appendChild(meta);
@@ -1245,30 +1244,27 @@ export default {
 
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:title');
-                        if(this.lang == 'gu' && res.data.campaign_title_gu)
-                        {
-                            meta1.content = res.data.campaign_title_gu; 
+                        if (this.lang == 'gu' && res.data.campaign_title_gu) {
+                            meta1.content = res.data.campaign_title_gu;
                         }
-                        else if (this.lang == 'hi' && res.data.campaign_title_hi){
+                        else if (this.lang == 'hi' && res.data.campaign_title_hi) {
                             meta1.content = res.data.campaign_title_hi;
                         }
-                        else{
+                        else {
                             meta1.content = res.data.campaign_title;
-                        }                        
+                        }
                         document.head.appendChild(meta1);
 
 
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:description');
-                        if (this.lang == 'gu' && res.data.short_description_gu)
-                        {
+                        if (this.lang == 'gu' && res.data.short_description_gu) {
                             meta1.content = res.data.short_description_gu
                         }
-                        else if (this.lang == 'hi' && res.data.short_description_hi)
-                        {
+                        else if (this.lang == 'hi' && res.data.short_description_hi) {
                             meta1.content = res.data.short_description_hi
                         }
-                        else{
+                        else {
                             meta1.content = res.data.short_description
                         }
                         document.head.appendChild(meta1);
@@ -1277,7 +1273,7 @@ export default {
                         meta1.setAttribute('property', 'og:image');
                         meta1.content = window.origin + res.data.campain_image;
                         document.head.appendChild(meta1);
-                        
+
                     });
                 })
                 .catch(err => {
@@ -1562,11 +1558,11 @@ export default {
             // }
         },
 
-        phone(){
+        phone() {
             alert("clicked")
         },
 
-        donate_dialog_c(){
+        donate_dialog_c() {
             var email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             var phone = /^[6-9]\d{9}$/;
             // var pan = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
@@ -1597,10 +1593,25 @@ export default {
             else {
                 console.log('done')
                 this.donate_checkout(this.anonymous, this.name, this.email, this.phone_number)
-                
+
             }
         }
 
     }
 }
 </script>
+<style>
+.custom-scrollbar::-webkit-scrollbar {
+    width: 1px;
+    background-color: #ffffff;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #c3c3c3;
+    border-radius: 4px;
+}
+.custom-scrollbar {
+    scrollbar-width: thin;
+  
+    scrollbar-color: #c3c3c3 #f3f3f3;
+}
+</style>
