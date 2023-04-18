@@ -61,7 +61,7 @@
                             <label class="block text-gray-700 text-sm mb-2" for="">
                                 {{ $t('First Name') }} <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="first_name" type="text" placeholder="Firstname" @keyup="firstNameError = ''"
+                            <input v-model="first_name" type="text" placeholder="Firstname" @keyup="firstNameError = ''" ref="first_name"
                                 class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
                             <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             <!-- <p>{{ error }}</p> -->
@@ -179,6 +179,9 @@ export default {
     // },
     created(){
         document.title = this.$t("Contact Us | BestDeed")
+    },
+    mounted(){
+        this.$nextTick(() => this.$refs.first_name.focus())
     },
     resources: {
         contact_us() {

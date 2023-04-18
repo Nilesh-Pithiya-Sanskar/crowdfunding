@@ -40,7 +40,7 @@
               </p>
             </div>
 
-            <button class="text-[#40b751] font-bold hover:underline h-[60px] underline text-[18x]" type="button" @click="donate(data.name)">
+            <button class="text-[#40b751] font-bold hover:underline md:h-[60px] mb-3 md:mb-0 underline text-[18x]" type="button" @click="donate(data.name)">
               {{ $t('Donate Now') }}</button>
           </div>
         </div>

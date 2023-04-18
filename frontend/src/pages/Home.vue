@@ -70,7 +70,7 @@
       </div>
     </div> -->
     <section class="container mx-auto h-full relative z-10">
-      <div class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[141px] pl-4 lg:pl-0 pr-4 lg:pr-0">
+      <div class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[141px] pl-4 lg:!pl-0 pr-4 lg:!pr-0">
         <div class="bg-white rounded-xl drop-shadow-xl">
           <Sliders :featured_campaigns="featured_campaigns" :interval="3000" :lang="lang" />
         </div>
@@ -78,7 +78,7 @@
     </section>
 
     <!-- Categories -->
-    <section class="container mx-auto h-full categorycard card-space py-20">
+    <section class="container mx-auto h-full categorycard card-space lg:!py-[5rem] py-5">
       <div class="flex flex-wrap justify-between items-center mb-2">
         <h2 class="sm:text-left md:text-center lg:text-center text-3xl font-black text-[#40b751] my-0">
           {{
@@ -302,8 +302,8 @@
       </div> -->
  
  
-      <div class="flex sm:mr-0 lg:mr-0">
-        <div class="lg:w-[16rem] w-100 mr-3">
+      <div class="flex sm:mr-0 lg:mr-0 flex-wrap lg:!flex-nowrap">
+        <div class="lg:mr-3 w-full lg:!w-[16rem] ">
           <ul
             class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden no-scrollbar overflow-x-scroll overflow-x-hidden custom-tabs">
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
@@ -424,7 +424,7 @@
                     $t('Hunger') }}</p>
 
                 </div>
-                <div class="grid justify-items-center" v-else="openTab === 6">
+                <div class="flex" v-else="openTab === 6">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/supplies.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
@@ -507,7 +507,7 @@
           </ul>
         </div>
         <!--Cards-->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4 category-tab-content">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4 category-tab-content">
           <div v-for="index in campaignToShow">
             <div v-if="index - 1 < campaigns.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
               <div
@@ -610,12 +610,12 @@
 
       <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
         <button
-          class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+          class="mt-10 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-0 mb-1 ease-linear transition-all duration-150"
           type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
       </div>
       <div v-else class="text-center">
         <button
-          class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+          class="mt-10 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-0 mb-1 ease-linear transition-all duration-150"
           type="button" @click="exploreCampaigns()">{{ $t('Explore Campaigns') }}</button>
       </div>
     </section>

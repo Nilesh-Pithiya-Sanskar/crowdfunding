@@ -37,7 +37,7 @@
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                     placeholder="Enter Full Name" @keyup="fullNameError = ''"
-                                                    v-model="full_name" type="text">
+                                                    v-model="full_name" type="text" ref="fullname">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:gap-0 md:gap-4 lg:gap-4">
@@ -123,7 +123,7 @@
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                     placeholder="Enter Full Name" @keyup="fullNameErrorig = ''"
-                                                    v-model="full_nameig" type="text">
+                                                    v-model="full_nameig" type="text" ref="fullname">
                                                 <p class="text-red-600">{{ fullNameErrorig }}</p>
                                             </div>
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:gap-0 md:gap-0 lg:gap-4">
@@ -252,6 +252,7 @@ export default {
     // },
     created(){
         document.title = this.$t('Request a Campaign | BestDeed')
+        this.$nextTick(() => this.$refs.fullname.focus())
     },
     mounted(){
         this.$nextTick(() => this.$refs.fullname.focus())
@@ -329,6 +330,7 @@ export default {
         toggleTabs: function (tabNumber) {
             this.openTab = tabNumber
             this.tab = this.tabNumber
+            this.$nextTick(() => this.$refs.fullname.focus())
         },
         //validPassword: function (password) {
         //   var re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;

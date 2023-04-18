@@ -1,40 +1,39 @@
 <template>
-  <section class="bg-[#ebf8ec]">
+  <section class="bg-[#ebf8ec] testimonial-wrap pt-5 lg:!pt-[5rem]">
     <div class="container mx-auto h-full">
-      <div class="fontfamily text-center mt-4">
-        <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-8 font-black text-[#40b751] mb-0 ">{{ $t('Testimonials')
-        }}</h2>
-        <!-- <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Amet,
-          voluptate!</p> -->
-      </div>
+     
 
-      <div class="flex border-b-2 ml-4 mr-8 border-b-solid border-gray-200 flex-wrap justify-center mt-5">
-        <div class="">
-          <ul class="flex mb-0 list-none flex-wrap pt-0  flex-row">
-            <!-- <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] transition ease-in-out delay-100  px-[12px] md:px-[20px] lg:px-[30px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
-                v-on:click="toggleTabsTestimonials(1)"
-                v-bind:class="{ 'bg-white': openTabTestimonials !== 1, 'bg-[#40b751] text-white': openTabTestimonials === 1 }">
-                <i class="fas fa-space-shuttle text-base mr-1"></i> {{ $t('Celebrities') }}
-              </a>
-            </li> -->
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] transition ease-in-out delay-100 px-[12px] md:px-[20px] lg:px-[40px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
-                v-on:click="toggleTabsTestimonials(2)"
-                v-bind:class="{ 'bg-white': openTabTestimonials !== 2, 'bg-[#40b751] text-white': openTabTestimonials === 2 }">
-                <i class="fas fa-cog text-base mr-1"></i> {{ $t('Donors') }}
-              </a>
-            </li>
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-              <a class="text-[16px] transition ease-in-out delay-100   margintop md:mt-0 lg:mt-0 px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
-                v-on:click="toggleTabsTestimonials(3)"
-                v-bind:class="{ 'bg-white': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
-                <i class="fas fa-cog text-base mr-1"></i> {{ $t('NGOs') }}
-              </a>
-            </li>
-          </ul>
+      <div class="flex flex-wrap justify-between items-center lg:mb-10 mb-5">
+        <div class="fontfamily text-center mt-0">
+          <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-0 font-black text-[#40b751] mb-0 ">{{ $t('Testimonials')
+          }}</h2>
+          <!-- <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Amet,
+            voluptate!</p> -->
         </div>
+        <ul class="flex mb-0 list-none flex-wrap pt-0  flex-row">
+          <!-- <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a class="text-[16px] transition ease-in-out delay-100  px-[12px] md:px-[20px] lg:px-[30px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
+              v-on:click="toggleTabsTestimonials(1)"
+              v-bind:class="{ 'bg-white': openTabTestimonials !== 1, 'bg-[#40b751] text-white': openTabTestimonials === 1 }">
+              <i class="fas fa-space-shuttle text-base mr-1"></i> {{ $t('Celebrities') }}
+            </a>
+          </li> -->
+          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a class="text-[16px] transition ease-in-out delay-100 px-[12px] md:px-[20px] lg:px-[40px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer border border-[#40b751] text-[#40b751]"
+              v-on:click="toggleTabsTestimonials(2)"
+              v-bind:class="{ 'bg-transparent': openTabTestimonials !== 2, 'bg-[#40b751] text-white': openTabTestimonials === 2 }">
+              <i class="fas fa-cog text-base mr-1"></i> {{ $t('Donors') }}
+            </a>
+          </li>
+          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a class="text-[16px] transition ease-in-out delay-100 margintop md:mt-0 lg:mt-0 px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer border border-[#40b751] text-[#40b751]"
+              v-on:click="toggleTabsTestimonials(3)"
+              v-bind:class="{ 'bg-transparent': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
+              <i class="fas fa-cog text-base mr-1"></i> {{ $t('NGOs') }}
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="flex flex-col min-w-0 break-words w-full">
         <div class="flex-auto">
@@ -44,7 +43,7 @@
               <!-- <div class="pb-16 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20 gap-4">
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
-                  <div class="px-4 rounded-lg shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white ">
+                  <div clas44444s="px-4 rounded-lg shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white ">
                     <div class="flex flex-wrap justify-center">
                       <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                         <div class="">
@@ -158,7 +157,7 @@
 
             <div v-bind:class="{ 'hidden': openTabTestimonials !== 2, 'block': openTabTestimonials === 2 }">
 
-              <div class="pb-16 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20 gap-4">
+              <div class="pb-16 grid lg:!grid-cols-3  md:grid-cols-2 sm:grid-cols-1 lg:!mt-20 mt-16 gap-4">
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div class="px-4 rounded-lg shadow-xl shadow-[rgb(0 0 0 / 5%)] bg-white ">
@@ -274,7 +273,7 @@
 
 
 
-              <div class="pb-16 grid lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 mt-20 gap-4">
+              <div class="pb-16 grid lg:!grid-cols-3  md:grid-cols-2 sm:grid-cols-1 lg:!mt-20 mt-16  mt-20 gap-4">
                 <div
                   class="mb-24 md:mb-0 lg:mb-0 flex h-[440px] flex-col min-w-0 break-words w-full sm:mb-0 md:mb-2 lg:mb-10 ">
                   <div
