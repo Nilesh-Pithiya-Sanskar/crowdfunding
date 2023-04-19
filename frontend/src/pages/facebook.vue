@@ -88,6 +88,25 @@ appId="1616534218770661"
                                     Login with Facebook
                                 </button> -->
 
+                                <div id="spinner"
+                                    style="
+                                        background: #4267b2;
+                                        border-radius: 5px;
+                                        color: white;
+                                        height: 40px;
+                                        text-align: center;
+                                        width: 250px;">
+                                    Loading
+                                    <div
+                                    class="fb-login-button"
+                                    data-max-rows="1"
+                                    data-size="large"
+                                    data-button-type="continue_with"
+                                    data-use-continue-as="true"
+                                    ></div>
+                                </div>
+
+
   <!-- <div class="container vue">
     <div v-for="index in commentsToShow">
       <div v-if="index < reviews.length">
@@ -144,6 +163,8 @@ export default {
     });
     // this.totalComments = this.reviews.length
     // console.log(this.reviews.length)
+
+  
   },
   methods: {
     loginWithFacebook() {
@@ -163,16 +184,16 @@ export default {
 
     checkLoginState1() {
             console.log("fb called1")
-            FB.login(function(response) {
-              if (response.authResponse) {
-                console.log('Welcome!  Fetching your information.... ');
-                FB.api('/me', function(response) {
-                  console.log('Good to see you, ' + response.name + '.');
-                });
-              } else {
-                console.log('User cancelled login or did not fully authorize.');
-              }
-            });
+            // FB.login(function(response) {
+            //   if (response.authResponse) {
+            //     console.log('Welcome!  Fetching your information.... ');
+            //     FB.api('/me', function(response) {
+            //       console.log('Good to see you, ' + response.name + '.');
+            //     });
+            //   } else {
+            //     console.log('User cancelled login or did not fully authorize.');
+            //   }
+            // });
             console.log("fb login closed")
             FB.getLoginStatus(function(response) {
               if (response.status === 'connected') {

@@ -58,10 +58,27 @@
                                     </GoogleLogin>
                                 </div>
 
-                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
+                                <!-- <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
                                     data-width="" data-hight="" @click="checkLoginState()">
                                     Login with Facebook
-                                </button>
+                                </button> -->
+                                <div id="spinner"
+                                    style="
+                                        background: #4267b2;
+                                        border-radius: 5px;
+                                        color: white;
+                                        height: 40px;
+                                        text-align: center;
+                                        width: 20px">
+                                    Loading
+                                    <div
+                                    class="fb-login-button"
+                                    data-max-rows="1"
+                                    data-size="small"
+                                    data-button-type="continue_with"
+                                    data-use-continue-as="true"
+                                    ></div>
+                                </div>
                             </div>
                              <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
                                     href="/bestdeed/login">{{ $t('Login Via Email') }}</a></span>
@@ -126,6 +143,13 @@ export default {
             xfbml: true,
             version: 'v13.0'
         });
+        var finished_rendering = function() {
+        console.log("finished rendering plugins");
+        var spinner = document.getElementById("spinner");
+        spinner.removeAttribute("style");
+        spinner.removeChild(spinner.childNodes[0]);
+        }
+        FB.Event.subscribe('xfbml.render', finished_rendering);
     },
     resources: {
         login_with_whatsapp() {
