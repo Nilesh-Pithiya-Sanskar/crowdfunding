@@ -163,6 +163,17 @@ export default {
 
     checkLoginState1() {
             console.log("fb called1")
+            FB.login(function(response) {
+              if (response.authResponse) {
+                console.log('Welcome!  Fetching your information.... ');
+                FB.api('/me', function(response) {
+                  console.log('Good to see you, ' + response.name + '.');
+                });
+              } else {
+                console.log('User cancelled login or did not fully authorize.');
+              }
+            });
+            console.log("fb login closed")
             FB.getLoginStatus(function(response) {
               if (response.status === 'connected') {
                 // The user is logged in and has authenticated your
