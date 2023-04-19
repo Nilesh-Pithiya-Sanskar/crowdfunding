@@ -61,6 +61,10 @@ appId="1616534218770661"
     <fb:login-button scope="public_profile,email" size="large" :onlogin="checkLoginState2()">
     </fb:login-button>
   </div>
+  <div>
+    <fb:login-button scope="public_profile,email" size="large" :onlogin="loginWithFacebook()">
+    </fb:login-button>
+  </div>
 
 
 
@@ -77,6 +81,11 @@ appId="1616534218770661"
                                 <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
                                     data-width="" data-hight="" @click="checkLoginState2()">
                                     Login with Facebook2
+                                </button>
+
+                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
+                                    data-width="" data-hight="" @click="loginWithFacebook()">
+                                    Login with Facebook
                                 </button>
 
   <!-- <div class="container vue">
@@ -131,7 +140,7 @@ export default {
       appId: '1616534218770661',
       cookie: true,
       xfbml: true,
-      version: 'v13.0'
+      version: 'v16.0'
     });
     this.totalComments = this.reviews.length
     console.log(this.reviews.length)
