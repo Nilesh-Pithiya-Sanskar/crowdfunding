@@ -53,8 +53,33 @@ appId="1616534218770661"
     <fb:login-button scope="public_profile,email" size="large" :onlogin="checkLoginState()">
     </fb:login-button>
   </div>
+  <div>
+    <fb:login-button scope="public_profile,email" size="large" :onlogin="checkLoginState1()">
+    </fb:login-button>
+  </div>
+  <div>
+    <fb:login-button scope="public_profile,email" size="large" :onlogin="checkLoginState2()">
+    </fb:login-button>
+  </div>
 
-  <div class="container vue">
+
+
+                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
+                                    data-width="" data-hight="" @click="checkLoginState()">
+                                    Login with Facebook
+                                </button>
+
+                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
+                                    data-width="" data-hight="" @click="checkLoginState1()">
+                                    Login with Facebook1
+                                </button>
+
+                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
+                                    data-width="" data-hight="" @click="checkLoginState2()">
+                                    Login with Facebook2
+                                </button>
+
+  <!-- <div class="container vue">
     <div v-for="index in commentsToShow">
       <div v-if="index < reviews.length">
         <div>{{ reviews[index].name }} says:</div>
@@ -67,7 +92,7 @@ appId="1616534218770661"
     <div v-if="commentsToShow < reviews.length || reviews.length > commentsToShow">
       <button @click="commentsToShow += 5">show more reviews</button>
     </div>
-  </div>
+  </div> -->
 </template>
 <script>
 
@@ -127,6 +152,56 @@ export default {
       }, { scope: 'public_profile,email' });
     },
 
+    checkLoginState1() {
+            console.log("fb called1")
+            FB.getLoginStatus(function (response) {
+                console.log("login state response1", response)
+                if (response.status === 'connected') {
+                  console.log("asdf1")
+                    // User is logged in with Facebook, so you can retrieve user information here
+                    FB.api('/me', function (userInfo) {
+                        console.log('UserInfo:', userInfo);
+                    });
+                    // FB.api(
+                    //     '/me',
+                    //     'GET',
+                    //     {"fields":"id,email,picture,gender,first_name,last_name,name"},
+                    //     function(response) {
+                    //         console.log("fb data", response)
+                    //     }
+                    // );
+                } else {
+                    // User is not logged in with Facebook, or user did not grant permission to your app
+                    console.log('User is not logged in with Facebook');
+                }
+            });
+        },
+
+        checkLoginState2() {
+            console.log("fb called2")
+            FB.getLoginStatus(function (response) {
+                console.log("login state response2", response)
+                if (response.status === 'connected') {
+                  console.log("asdf2")
+                    // User is logged in with Facebook, so you can retrieve user information here
+                    FB.api('/me', function (userInfo) {
+                        console.log('UserInfo:', userInfo);
+                    });
+                    // FB.api(
+                    //     '/me',
+                    //     'GET',
+                    //     {"fields":"id,email,picture,gender,first_name,last_name,name"},
+                    //     function(response) {
+                    //         console.log("fb data", response)
+                    //     }
+                    // );
+                } else {
+                    // User is not logged in with Facebook, or user did not grant permission to your app
+                    console.log('User is not logged in with Facebook');
+                }
+            });
+        },
+
 
     //         // handleLogin(response) {
     //         //     console.log("User Successfully Logged In" , response)
@@ -160,8 +235,11 @@ export default {
     //   }
     // }
     checkLoginState() {
+      console.log("called")
       FB.getLoginStatus(function (response) {
+        console.log("response", response)
         if (response.status === 'connected') {
+          console.log("asdf")
           // User is logged in with Facebook, so you can retrieve user information here
           FB.api('/me', function (userInfo) {
             console.log('UserInfo:', userInfo);
