@@ -69,12 +69,12 @@
                                         color: white;
                                         height: 40px;
                                         text-align: center;
-                                        width: 20px">
+                                        width: 250px;">
                                     Loading
                                     <div
                                     class="fb-login-button"
                                     data-max-rows="1"
-                                    data-size="small"
+                                    data-size="large"
                                     data-button-type="continue_with"
                                     data-use-continue-as="true"
                                     ></div>
