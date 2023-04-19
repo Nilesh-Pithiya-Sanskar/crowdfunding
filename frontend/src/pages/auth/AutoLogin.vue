@@ -58,11 +58,11 @@
                                     </GoogleLogin>
                                 </div>
 
-                                <!-- <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
+                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
                                     data-width="" data-hight="" @click="checkLoginState()">
                                     Login with Facebook
-                                </button> -->
-                                <div id="spinner"
+                                </button>
+                                <!-- <div id="spinner"
                                     style="
                                         background: #4267b2;
                                         border-radius: 5px;
@@ -78,7 +78,7 @@
                                     data-button-type="continue_with"
                                     data-use-continue-as="true"
                                     ></div>
-                                </div>
+                                </div> -->
                             </div>
                              <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
                                     href="/bestdeed/login">{{ $t('Login Via Email') }}</a></span>
