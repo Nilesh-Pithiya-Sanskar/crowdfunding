@@ -198,6 +198,10 @@ export default {
                 } else {
                     // User is not logged in with Facebook, or user did not grant permission to your app
                     console.log('User is not logged in with Facebook');
+                    FB.api('/me', function (userInfo) {
+                        console.log('UserInfo:', userInfo);
+                    });
+                    console.log("after fb api")
                 }
             });
         },
