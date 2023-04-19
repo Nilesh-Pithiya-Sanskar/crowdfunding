@@ -21,10 +21,12 @@ export default {
       });
       return false;
     },
+    // 203313835661247
+    // 1616534218770661
     async initFacebook() {
       window.fbAsyncInit = function() {
         window.FB.init({
-          appId: "1616534218770661", //You will need to change this
+          appId: "203313835661247", //You will need to change this
           cookie: true, // This is important, it's not enabled by default
           version: "v16.0"
         });
