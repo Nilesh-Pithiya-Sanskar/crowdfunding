@@ -28,7 +28,7 @@ export default {
         window.FB.init({
           appId: "203313835661247", //You will need to change this
           cookie: true, // This is important, it's not enabled by default
-          version: "v16.0"
+          version: "v2.7"
         });
       };
     },
