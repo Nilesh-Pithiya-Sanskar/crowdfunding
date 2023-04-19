@@ -320,7 +320,7 @@
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
               </div>
-            </li>
+            </li> 
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
               <div
                 class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
@@ -514,7 +514,7 @@
                 class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
                 <img class="w-full h-52 cursor-pointer" :src="campaigns[index - 1].campain_image" alt="Mountain"
                   @click="donate(campaigns[index - 1].name)">
-                <div class="pt-[10px] pr-[20px] pl-[20px] leading-6">
+                <div class="pt-[20px] pr-[20px] pl-[20px] leading-6">
                   <div v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu"
                     class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
                     {{ campaigns[index - 1].campaign_title_gu }}</div>
@@ -527,40 +527,17 @@
                     {{ campaigns[index - 1].campaign_title }}</div>
 
                   <p class="text-gray-700 text-[13px]  truncate">
-                    {{ $t('By') }}: {{ campaigns[index - 1].ngo }}
+                    {{ $t('Funds from') }}: <strong>{{ campaigns[index - 1].ngo }}</strong>
                   </p>
-                  <div class="fontcard flex  justify-between mt-1 mb-0 pb-1 text-[14px]">
-                    <span class="font-[600] text-[#222222]">{{ $t('Raised') }}: ₹{{
-                      numberWithCommas(campaigns[index - 1].raised_amount)
-                    }}</span><span class="font-[600] text-[#222222]">{{ $t('Goal') }}: ₹{{
-  numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
-                  </div>
-                  <div class="w-full bg-gray-200 rounded h-[10px] dark:bg-gray-700 mb-2 ">
-                    <!--<div v-if="campaigns[index - 1].raised_amount"
-                    class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                    :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
-                    {{ (campaigns[index - 1].raised_amount * 100
-                      /
-                      campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
-
-                    <div v-if="campaigns[index - 1].raised_amount"
-                      class="bg-[#40b751] h-[10px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                      :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
-                      <!--{{ (campaigns[index - 1].raised_amount * 100
-                      /
-                      campaigns[index - 1].donation_amount).toFixed(2) }}%-->
-                    </div>
-                  </div>
-
                   <div class="flex fontcard font-[600] justify-between border-b-2 pb-1 border-b-gray-100 mb-1">
-                    <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
+                    <!-- <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather h-4 w-4 feather-clock mr-1 md:mr-1 lg:mr-2">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
                       </svg> {{ dayCalculate(campaigns[index - 1].end_date) }} {{ $t('Goal') }}
-                    </p>
+                    </p> -->
                     <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -571,6 +548,30 @@
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                       </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
                   </div>
+                  
+                  <div class="w-full bg-gray-200 rounded dark:bg-gray-700 mb-2">
+                    <!--<div v-if="campaigns[index - 1].raised_amount"
+                    class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                    :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
+                    {{ (campaigns[index - 1].raised_amount * 100
+                      /
+                      campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
+
+                    <div v-if="campaigns[index - 1].raised_amount"
+                      class="bg-[#40b751] h-[5px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                      :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
+                      <!--{{ (campaigns[index - 1].raised_amount * 100
+                      /
+                      campaigns[index - 1].donation_amount).toFixed(2) }}%-->
+                    </div>
+                  </div>
+                  <div class="fontcard flex mt-1 mb-0 pb-1 text-[14px]">
+                    <span class="font-[600] text-[#222222]">₹{{
+                      numberWithCommas(campaigns[index - 1].raised_amount)
+                    }}{{ $t('raised') }}</span><span class="text-[#222222]">{{ $t('of') }}  ₹{{
+  numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
+                  </div>
+                  
 
 
                 </div>
@@ -684,7 +685,7 @@
 
     <!--Awards-->
 
-    <section class="bg-[#f5f3ff]">
+    <section class="bg-blueGray-100">
       <div class="container mx-auto h-full">
 
         <div class="text-center mt-10">

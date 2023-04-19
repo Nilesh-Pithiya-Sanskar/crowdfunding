@@ -1,8 +1,6 @@
 <template>
   <section class="bg-[#ebf8ec] testimonial-wrap pt-5 lg:!pt-[5rem]">
     <div class="container mx-auto h-full">
-     
-
       <div class="flex flex-wrap justify-between items-center lg:mb-10 mb-5">
         <div class="fontfamily text-center mt-0">
           <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-0 font-black text-[#40b751] mb-0 ">{{ $t('Testimonials')

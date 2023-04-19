@@ -505,7 +505,7 @@
                     <div class="bg-white dark:bg-gray-900">
                         <div>
                             <div class="text-gray-700">
-                                <div class="pr-5 py-4">
+                                <div class="sm:pr-0 md:pr-5 lg:pr-5  py-4">
                                     <div class="mb-2">
                                         <p
                                             class="text-[30px] md:text-[26px] lg:text-[30px] text-[#40b751] font-semibold  title-font">

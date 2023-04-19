@@ -107,23 +107,23 @@
             }}</router-link>
           </li>
           <li>
-            <a href="#" class="transition font-bold text-white hover:text-black text-[18px]">{{ $t('About') }}</a>
+            <a href="#" class="transition font-bold text-white text-[18px]">{{ $t('About') }}</a>
           </li>
           <li>
-            <router-link to="/bestdeed/request-campaign" class="transition font-bold text-white hover:text-black text-[18px]">{{
+            <router-link to="/bestdeed/request-campaign" class="transition font-bold text-white text-[18px]">{{
               $t('Request a Campaign') }}</router-link>
           </li>
           <li>
-            <router-link to="/bestdeed/explore-campaigns" class="transition font-bold text-white hover:text-black text-[18px]">{{
+            <router-link to="/bestdeed/explore-campaigns" class="transition font-bold text-white text-[18px]">{{
               $t('Explore Campaigns') }}</router-link>
           </li>
           <li>
-            <router-link to="/bestdeed/contact-us" class="transition font-bold text-white hover:text-black text-[18px]">{{
+            <router-link to="/bestdeed/contact-us" class="transition font-bold text-white text-[18px]">{{
               $t('Contact') }}</router-link>
           </li>
           <li>
             <span class="group relative inline-block">
-              <a href="/bestdeed/blog" class="transition font-bold text-white hover:text-black text-[18px]">{{ $t('Blog') }}</a>
+              <a href="/bestdeed/blog" class="transition font-bold text-white text-[18px]">{{ $t('Blog') }}</a>
               <!--<ul class="absolute hidden pt-4 group-hover:block">
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/bestdeed/blog">Blog</a></li>
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>

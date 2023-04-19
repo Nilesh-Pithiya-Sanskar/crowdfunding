@@ -285,12 +285,13 @@ div {
 .category-tab-content img {
   object-fit: cover;
 }
-.custom-tabs li img {
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+.custom-tabs li img,
+.category-horizontal-tab li img {
+  transition: none;
 }
 
-.custom-tabs li:hover img {
+.custom-tabs li:hover img,
+.category-horizontal-tab li:hover img {
   filter: brightness(3);
 }
 .category-tab-content .card-shodow > div .truncate {
@@ -309,7 +310,19 @@ div {
 .testimonial-wrap .block h3 {
   color: #364958;
 }
-
+.header-bottom  ul li a:hover {
+  opacity: .8;
+}
+select:focus {
+  outline: 0;
+  border-color: inherit;
+}
+.category-horizontal-tab li > div {
+  border-radius: 0;
+}
+.category-horizontal-tab .-mb-px {
+  margin-bottom: 0;
+}
 /*media-responsive*/
 @media(min-width: 1024px) {
   .custom-tabs {

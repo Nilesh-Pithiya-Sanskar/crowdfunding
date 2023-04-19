@@ -1,120 +1,122 @@
 <template>
-    <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover"
+    <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover mb-10"
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
-        <div v-if="lang == 'hi'" class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
-            <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
-                style="text-shadow:3px 6px 6px #c9c9c9;">
-                जरूरतमंदों की मदद करने के लिए
-                <span class="text-[#40b751]">बेस्टडीड अभियान</span>
-                से हाथ मिलाओ।
-            </p>
-        </div>
-        <div v-else-if="lang == 'gu'" class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
-            <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
-                style="text-shadow:3px 6px 6px #c9c9c9;">
-                જરૂરિયાતમંદોને મદદ કરવા
-                <span class="text-[#40b751]">બેસ્ટડીડ ઝુંબેશ</span> 
-                સાથે હાથ જોડો.
-            </p>
-        </div>
-        <div v-else class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 card-space">
-            <p class="text-[24px] md:text-[28px] lg:text-[28px]  sm:pr-10 md:pr-20 lg:pr-12 xl:pr-32  mb-24 text-center md:text-center  lg:text-left pt-16 font-bold text-[#364958] leading-none"
-                style="text-shadow:3px 6px 6px #c9c9c9;">
-                {{ $t('Join hands with') }} <span class="text-[#40b751]">{{ $t('BestDeed Campaigns') }}</span>
-                {{ $t('to help needy.') }}
-            </p>
-        </div>
-    </div>
-
-
-    <!-- Categories -->
-    <section class="container mx-auto h-full categorycard pb-8 card-space">
-        <!-- <div class="text-center mt-10">
-            <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
-            <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
-        </div> -->
-
-       <div class="">
-            <div class="grid lg:grid-cols-6 md:grid-cols-6 sm:grid-cols-2 ">
-
-                <div class="grid col-span-4 pl-2 pr-2 pb-0 pt-4 w-full">
-                    <div class="border border-[#40b751] rounded-lg h-10">
-                        <div class="border-hidden -pl-96">
-                            <div class="grid place-items-center h-10 float-left text-gray-300 ">
+        <div class="bg-overlay lg:!py-24 py-10">
+            <div v-if="lang == 'hi'"
+                class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 card-space mb-4">
+                <p
+                    class="text-[24px] md:text-[28px] lg:text-[34px] mb-1.5 text-center font-bold text-[#364958] leading-normal">
+                    जरूरतमंदों की मदद करने के लिए
+                    <span class="text-[#40b751]">बेस्टडीड अभियान</span>
+                    से हाथ मिलाओ।
+                </p>
+            </div>
+            <div v-else-if="lang == 'gu'"
+                class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 card-space mb-4">
+                <p
+                    class="text-[24px] md:text-[28px] lg:text-[34px] mb-1.5 text-center font-bold text-[#364958] leading-normal">
+                    જરૂરિયાતમંદોને મદદ કરવા
+                    <span class="text-[#40b751]">બેસ્ટડીડ ઝુંબેશ</span>
+                    સાથે હાથ જોડો.
+                </p>
+            </div>
+            <div v-else class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 card-space mb-4">
+                <p
+                    class="text-[24px] md:text-[28px] lg:text-[34px] mb-1.5 text-center font-bold text-[#364958] leading-normal">
+                    {{ $t('Join hands with') }} <span class="text-[#40b751]">{{ $t('BestDeed Campaigns') }}</span>
+                    {{ $t('to help needy.') }}
+                </p>
+            </div>
+            <div class="container mx-auto card-space campaign-search mb-12">
+                <div class="flex justify-center mx-auto lg:!w-4/6 w-full sm:!w-1/2 flex-wrap lg:!flex-nowrap">
+                    <div class="grid col-span-2 pl-0 lg:pr-2 pb-0 pt-0 w-full mb-2 lg:mb-0">
+                        <div class="border border-[#40b751] rounded-lg">
+                            <div class="grid place-items-center h-12 float-left text-gray-300 ">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-6 w-6" fill="none" viewBox="0 0 24 24"
                                     stroke="#40b751">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </div>
-                            <div class="relative flex h-8 rounded-lg  bg-white overflow-hidden">
+                            <div class="relative flex h-12 rounded-lg overflow-hidden">
                                 <!-- <div class="grid place-items-center h-10  text-gray-300 ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-6 w-6" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                    </svg>
-                                </div> -->
-
-                                <input class="h-10 w-full text-md placeholder-gray-400 border-hidden  text-gray-700 pr-2" type="text"
-                                    @keyup="get_search_campaigns()" v-model="searchQuery"
-                                    :placeholder="$t('Search by Campaign/NGO')" />
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 
-            <div class=" col-span-2 grid justify-items-start ">
-                <div class="border rounded-lg w-[603px]  h-12 ">
-                    <div>
-                        <div
-                            class="relative flex  w-[600px] h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
-                            <div class="grid place-items-center h-full w-12 text-gray-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
-                            </div>
+                            </div> -->
 
-                            <input class=" h-full w-[600px] text-md border-none text-gray-700 pr-2" type="text" id="search"
-                                placeholder="Search something..." />
+                                <input
+                                    class="w-full text-md placeholder-gray-400 border-hidden text-gray-700 pr-2 !bg-transparent"
+                                    type="text" @keyup="get_search_campaigns()" v-model="searchQuery"
+                                    :placeholder="$t('Search by Campaign/NGO')" />
+
+
+                            </div>
                         </div>
                     </div>
+
+                    <!-- 
+        <div class=" col-span-2 grid justify-items-start ">
+            <div class="border rounded-lg w-[603px]  h-12 ">
+                <div>
+                    <div
+                        class="relative flex  w-[600px] h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+                        <div class="grid place-items-center h-full w-12 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+
+                        <input class=" h-full w-[600px] text-md border-none text-gray-700 pr-2" type="text" id="search"
+                            placeholder="Search something..." />
+                    </div>
                 </div>
-            </div> -->
+            </div>
+        </div> -->
 
-                <div class="grid w-full p-2">
-                    <select
-                        class="cursor-pointer rounded-lg mt-2 border border-[#40b751] text-[16px] h-10 py-2 px-3 text-grey-darker"
-                        v-model="location" @change="handleChange($event)">
-                        <option :value="null" disabled hidden>{{ $t('Location') }}</option>
-                        <option>{{ $t('Ahmedabad') }}</option>
-                        <option>{{ $t('Rajkot') }}</option>
+                    <div class="grid lg:pr-2 lg:w-6/12 w-full mb-2 lg:mb-0">
+                        <select
+                            class="cursor-pointer rounded-lg mt-0 border border-[#40b751] text-[16px] h-12 py-2 px-3 text-grey-darker !bg-transparent"
+                            v-model="location" @change="handleChange($event)">
+                            <option :value="null" disabled hidden>{{ $t('Location') }}</option>
+                            <option>{{ $t('Ahmedabad') }}</option>
+                            <option>{{ $t('Rajkot') }}</option>
 
-                    </select>
+                        </select>
+                    </div>
+
+                    <div class="grid lg:w-6/12 w-full">
+                        <select
+                            class="cursor-pointer appearance-none rounded-lg mt-0 border border-[#40b751] text-[16px] h-12 py-2 px-3 text-grey-darker !bg-transparent"
+                            v-model="selected" @change="handleChange($event)">
+                            <option selected>{{ $t('All Types') }}</option>
+                            <option value="urgent">{{ $t('Urgent') }}</option>
+                            <option value="newly launched">{{ $t('Newly Launched') }}</option>
+                            <option value="closed">{{ $t('Closed') }}</option>
+                            <option value="most raised">{{ $t('Most Raised') }}</option>
+                        </select>
+                    </div>
+
+
+
                 </div>
-
-                <div class="grid w-full p-2">
-                    <select
-                        class="cursor-pointer appearance-none rounded-lg mt-2 border border-[#40b751]   text-[16px] h-10 py-2 px-3 text-grey-darker"
-                        v-model="selected" @change="handleChange($event)">
-                        <option selected>{{ $t('All Types') }}</option>
-                        <option value="urgent">{{ $t('Urgent') }}</option>
-                        <option value="newly launched">{{ $t('Newly Launched') }}</option>
-                        <option value="closed">{{ $t('Closed') }}</option>
-                        <option value="most raised">{{ $t('Most Raised') }}</option>
-                    </select>
-                </div>
-
-
-
             </div>
         </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="container mx-auto h-full categorycard pb-16 card-space z-2 relative -mt-[125px]">
+        <!-- <div class="text-center mt-10">
+            <h2 class="text-3xl font-black text-[#40b751] mb-2">{{ $t('Categories') }}</h2>
+            <p class="text-[#364958]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, voluptate!</p>
+        </div> -->
+
+
         <!-- <div class="">
             <div class="border" v-for="item in filteredList" :key="item">
                 <div>
@@ -135,26 +137,27 @@
                 </div>
             </div>
         </div> -->
-        <div v-if="searchQuery != ''" class="relative flex flex-col border border-[#40b751] min-w-0 break-words bg-white w-full  shadow-lg rounded">
+        <div v-if="searchQuery != ''"
+            class="relative flex flex-col border border-[#40b751] min-w-0 break-words bg-white w-full  shadow-lg rounded">
 
-<div class="tab-content tab-space overflow-y-auto h-96">
-    <div class="" v-for="item in filteredList" :key="item" @click="donate(item.name)">
+            <div class="tab-content tab-space overflow-y-auto h-96">
+                <div class="" v-for="item in filteredList" :key="item" @click="donate(item.name)">
 
-        <div
-            class="cursor-pointer grid  p-[10px] md:p-[30px] lg:p-[30px] overscroll-y-contain grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 hover:bg-gray-100">
-                <img class="h-32 w-52" :src="item.campain_image" alt="Mountain" @click="donate(item.name)">
-            <div class="fontfamily fontcolor col-span-2 md:col-span-2 lg:col-span-3 leading-tight  ">
-                <h3 class="text-[16px] md:text-[19px] lg:text-[21px] font-bold mb-1">
-                    {{
-                        $t(item.campaign_title) }}
-                </h3>
-                <p class="text-[#36495875] mb-[16px] text-[14px] md:text-[16px] lg:text-[16px]  italic">
-                    {{ $t(item.ngo) }}
-                </p>
+                    <div
+                        class="cursor-pointer grid  p-[10px] md:p-[30px] lg:p-[30px] overscroll-y-contain grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 hover:bg-gray-100">
+                        <img class="h-32 w-52" :src="item.campain_image" alt="Mountain" @click="donate(item.name)">
+                        <div class="fontfamily fontcolor col-span-2 md:col-span-2 lg:col-span-3 leading-tight  ">
+                            <h3 class="text-[16px] md:text-[19px] lg:text-[21px] font-bold mb-1">
+                                {{
+                                    $t(item.campaign_title) }}
+                            </h3>
+                            <p class="text-[#36495875] mb-[16px] text-[14px] md:text-[16px] lg:text-[16px]  italic">
+                                {{ $t(item.ngo) }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
         </div>
         <!-- <div class="border hover:bg-gray-100" v-for="item in filteredList" :key="item" @click="donate(item.name)">
@@ -196,9 +199,9 @@
             </div>
         </div> -->
 
-        <div class="flex border-b sm:mr-4 lg:mr-4 ">
+        <div class="flex">
             <div class="overflow-x-auto">
-                <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-hidden ">
+                <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-hidden category-horizontal-tab">
                     <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
                         <div class="font-bold w-28 md:w-28 lg:w-28 sm:h-16 md:h-16 lg:h-16  pt-2 md:pt-2 lg:pt-2 pb-2 md:pb-2 lg:pb-2 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
                             v-on:click="toggleTabs(1)"
@@ -410,101 +413,109 @@
         </div>
 
         <!--Cards-->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4">
+        <div v-if="campaigns != ''" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-16">
             <!-- <div v-for="index in campaignToShow"> -->
-                <div v-for="campaign in campaigns" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
-                    <div
-                        class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
-                        <img class="w-full h-52 cursor-pointer" :src="campaign.campain_image" alt="Mountain"
+            <div v-for="campaign in campaigns" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid category-tab-content">
+                <div
+                    class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+                    <img class="w-full h-52 cursor-pointer" :src="campaign.campain_image" alt="Mountain"
+                        @click="donate(campaign.name)">
+                    <div class="pt-[20px] pr-[20px] pl-[20px] leading-6">
+                        <div v-if="lang == 'gu' && campaign.campaign_title_gu"
+                            class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
+                            {{ campaign.campaign_title_gu }}</div>
+                        <div v-else-if="lang == 'hi' && campaign.campaign_title_hi"
+                            class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
+                            {{ campaign.campaign_title_hi }}</div>
+                        <div v-else
+                            class="fontfamily cursor-pointer font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines"
                             @click="donate(campaign.name)">
-                        <div class="pt-[10px] pr-[20px] pl-[20px] leading-6">
-                            <div v-if="lang == 'gu' && campaign.campaign_title_gu"
-                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
-                                {{ campaign.campaign_title_gu }}</div>
-                            <div v-else-if="lang == 'hi' && campaign.campaign_title_hi"
-                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-2 truncate-2-lines">
-                                {{ campaign.campaign_title_hi }}</div>
-                            <div v-else
-                                class="fontfamily cursor-pointer font-bold text-[#40b751] text-[18px] md:text-[18px] lg:text-[18px] mb-1 truncate-2-lines" @click="donate(campaign.name)">
-                                {{ campaign.campaign_title }}</div>
+                            {{ campaign.campaign_title }}</div>
 
-                            <p class="text-gray-700 text-[13px]  truncate">
-                                {{ $t('By') }}: {{ campaign.ngo }}
-                            </p>
-                            <div
-                                class="fontcard flex  justify-between mt-1 mb-0 pb-1 text-[14px]">
-                                <span class="font-[600] text-[#222222]">{{ $t('Raised') }}: ₹{{
-                                    numberWithCommas(campaign.raised_amount)
-                                }}</span><span class="font-[600] text-[#222222]">{{ $t('Goal') }}: ₹{{
-    numberWithCommas(campaign.donation_amount) }}</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded h-[10px] dark:bg-gray-700 mb-2 ">
-                   <!--<div v-if="campaigns[index - 1].raised_amount"
+                        <p class="text-gray-700 text-[13px]  truncate">
+                            {{ $t('Funds from') }}: <strong>{{ campaign.ngo }}</strong>
+                        </p>
+                        <div class="flex fontcard font-[600] justify-between border-b-0 pb-1 border-b-gray-100 mb-1">
+                            <!-- <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather h-4 w-4 feather-clock mr-1 md:mr-1 lg:mr-2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg> {{ dayCalculate(campaign.end_date) }} {{ $t('Goal') }}
+                            </p> -->
+                            <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather h-4 w-4 feather-users mr-1 md:mr-1 lg:mr-2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>{{ campaign.total_donor || 0 }} {{ $t('Donors') }}</p>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded dark:bg-gray-700 mb-2 ">
+                            <!--<div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
                     {{ (campaigns[index - 1].raised_amount * 100
                       /
                       campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
 
-                      <div v-if="campaign.raised_amount"
-                    class="bg-[#40b751] h-[10px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                    :style="{ width: campaign.raised_amount * 100 / campaign.donation_amount + '%' }">
-                    <!--{{ (campaigns[index - 1].raised_amount * 100
+                            <div v-if="campaign.raised_amount"
+                                class="bg-[#40b751] h-[5px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                                :style="{ width: campaign.raised_amount * 100 / campaign.donation_amount + '%' }">
+                                <!--{{ (campaigns[index - 1].raised_amount * 100
                       /
-                      campaigns[index - 1].donation_amount).toFixed(2) }}%--></div>
-                </div>
-
-               <div class="flex fontcard font-[600] justify-between border-b-2 pb-1 border-b-gray-100 mb-1">
-                  <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather h-4 w-4 feather-clock mr-1 md:mr-1 lg:mr-2">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg> {{ dayCalculate(campaign.end_date) }} {{ $t('Goal') }}
-                  </p>
-                  <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather h-4 w-4 feather-users mr-1 md:mr-1 lg:mr-2">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>{{ campaign.total_donor || 0 }} {{ $t('Donors') }}</p>
-                </div>
-
-
+                      campaigns[index - 1].donation_amount).toFixed(2) }}%-->
+                            </div>
                         </div>
-                        <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
-                            <ShareNetwork network="WhatsApp" :url="url + '/bestdeed/campaign-donation/' + campaign.name" :title="campaign.campaign_title"
-                                :description="campaign.short_description">
-                                <button
-                                    class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
-                                    type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17" version="1.1"
-                                        id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        viewBox="0 0 308 308" xml:space="preserve">
-                                        <g id="XMLID_468_">
-                                            <path id="XMLID_469_"
+
+                        <div class="fontcard flex mt-1 mb-0 pb-1 text-[14px]">
+                            <span class="font-[600] text-[#222222]"> ₹{{
+                                numberWithCommas(campaign.raised_amount)
+                            }} {{ $t('raised') }}</span><span class="text-[#222222] ml-1">{{ $t('of') }} ₹{{
+    numberWithCommas(campaign.donation_amount) }}</span>
+                        </div>
+
+                 
+
+
+                    </div>
+                    <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
+                        <ShareNetwork network="WhatsApp" :url="url + '/bestdeed/campaign-donation/' + campaign.name"
+                            :title="campaign.campaign_title" :description="campaign.short_description">
+                            <button
+                                class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
+                                type="button" @click=""> <svg
+                                    class="fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17"
+                                    version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
+                                    <g id="XMLID_468_">
+                                        <path id="XMLID_469_"
                                             d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z" />
-                                            <path id="XMLID_470_"
+                                        <path id="XMLID_470_"
                                             d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z" />
-                                        </g>
-                                        </svg> </button>
-                            </ShareNetwork>
-                           <button
-                  class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
-
-                  type="button" @click="donate(campaign.name)"> {{ $t('Donate Now') }} </button>
-                        </div>
-                        <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">
+                                    </g>
+                                </svg> </button>
+                        </ShareNetwork>
+                        <button
+                            class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
+                            type="button" @click="donate(campaign.name)"> {{ $t('Donate Now') }} </button>
+                    </div>
+                    <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">
                             <button class="text-[#40b751] text-base">{{ $t('Share') }}</button>
                             <button
                                 class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm sm:px-2 md:px-2 lg:px-4 sm:py-2 md:py-2 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
                         </div> -->
-                    </div>
                 </div>
+            </div>
             <!-- </div> -->
         </div>
+        <!-- <div v-else class="text-center text-bold mt-5"> 
+            {{ $t('No Campaign Found For') }} <span v-if="category">{{ $t(category) }}</span>
+        </div> -->
         <!-- <div v-if="campaignToShow < campaigns.length || campaigns.length > campaignToShow" class="text-center">
             <button
                 class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
@@ -516,7 +527,7 @@
                 type="button" @click="get_more_campagins()">{{ $t('Show More') }}</button>
         </div>
     </section>
-    
+
 
     <!-- {{ campaigns }} -->
     <Footer />
@@ -546,7 +557,7 @@ export default {
         return {
             searchQuery: '',
             filteredList: [],
-            campaigns : [],
+            campaigns: [],
             // campaigns: [{
             //     about_campaign: "“I have never had a happy married life. One that parents hope for when they marry off their daughters. My husband was an alcoholic and used to hit me when he came home drunk. It was horrible but I survived because of my sons. I worked hard to put food on the table, and did everything to give them a good education but finally when it was their turn to look after me, they forced me to live on the streets,” - Durga Devi*, an aged widow living in Vrindavan. ",
             //     about_campaign_gu: "“મેં ક્યારેય સુખી લગ્ન જીવન નથી કર્યું. એક જેની માતા-પિતા આશા રાખે છે કે જ્યારે તેઓ તેમની દીકરીઓના લગ્ન કરે છે. મારા પતિ દારૂના નશામાં હતા અને જ્યારે તે નશામાં ઘરે આવતો ત્યારે મને મારતો હતો. તે ભયાનક હતું પરંતુ મારા પુત્રોને કારણે હું બચી ગયો. મેં ટેબલ પર ખોરાક મૂકવા માટે સખત મહેનત કરી, અને તેમને સારું શિક્ષણ આપવા માટે બધું જ કર્યું પરંતુ આખરે જ્યારે મારી સંભાળ રાખવાનો તેમનો વારો આવ્યો, ત્યારે તેઓએ મને શેરીઓમાં રહેવા માટે મજબૂર કરી,” - દુર્ગા દેવી*, એક વૃદ્ધ વિધવા રહે છે વૃંદાવનમાં.",
@@ -648,24 +659,22 @@ export default {
             return {
                 method: '/api/method/sadbhavna_donatekart.api.campaign.get_campaigns',
                 onSuccess: (res) => {
-                    if(res != '')
-                    {
+                    if (res != '') {
                         var a = res.length
-                        for(a = 0; a < res.length; a++ ){
+                        for (a = 0; a < res.length; a++) {
                             this.campaigns.push(res[a])
                         }
                     }
-                    if(res.length < this.page_length){
+                    if (res.length < this.page_length) {
                         this.last_campaigns = true
                     }
-                    if(res == '')
-                    {
+                    if (res == '') {
                         this.$toast({
-                        title: "No Campaigns",
-                        text: `No Campaigns Found For ${this.category}.`,
-                        icon: "x-circle",
-                        appearance: "denger",
-                        position: "top-center",
+                            title: "No Campaigns",
+                            text: `No Campaigns Found For ${this.category}.`,
+                            icon: "x-circle",
+                            appearance: "denger",
+                            position: "top-center",
                         })
                     }
                     // this.campaigns.push(res)
@@ -702,8 +711,7 @@ export default {
             this.openTab = tabNumber
         },
         get_campaigns(category, start) {
-            if(category != '')
-            {
+            if (category != '') {
                 this.campaigns = []
                 this.category = category
             }
