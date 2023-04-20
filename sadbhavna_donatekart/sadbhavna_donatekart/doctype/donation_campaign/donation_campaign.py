@@ -21,3 +21,14 @@ class DonationCampaign(WebsiteGenerator):
 			ngo=frappe.get_doc("NGO", self.ngo)
 			# print("\n\n\Changed",self.ngo.email,frappe.db.exists("User", "jane@example.org"))
 	pass
+
+@frappe.whitelist()
+def check_user(email):
+    return frappe.db.exists("User", email)
+
+@frappe.whitelist()
+def create_ngo_user(ngo):
+    ngo_data = frappe.db.get_value("NGO", ngo, ['full_name', 'state', 'city', 'phone', 'email', 'requester_type'], as_dict=True)
+    
+    doc = frappe.get_doc(doctype='User', first_name = ngo_data.full_name, email = ngo_data.email, phone = ngo_data.phone, state = ngo_data.state, city = ngo_data.city, role_profile_name='NGO')
+    doc.insert()
