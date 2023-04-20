@@ -70,7 +70,8 @@
       </div>
     </div> -->
     <section class="container mx-auto h-full relative z-10">
-      <div class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[141px] pl-4 lg:!pl-0 pr-4 lg:!pr-0">
+      <div
+        class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[141px] pl-4 lg:!pl-0 pr-4 lg:!pr-0">
         <div class="bg-white rounded-xl drop-shadow-xl">
           <Sliders :featured_campaigns="featured_campaigns" :interval="3000" :lang="lang" />
         </div>
@@ -300,8 +301,8 @@
           </ul>
         </div>
       </div> -->
- 
- 
+
+
       <div class="flex sm:mr-0 lg:mr-0 flex-wrap lg:!flex-nowrap">
         <div class="lg:mr-3 w-full lg:!w-[16rem] ">
           <ul
@@ -312,7 +313,8 @@
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'bg-[#40b751] text-white': openTab === 1 }">
                 <div class="flex" v-if="openTab !== 1">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/grid(2).png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/grid(2).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
                 <div class="flex" v-else="openTab === 1">
@@ -320,7 +322,7 @@
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
               </div>
-            </li> 
+            </li>
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
               <div
                 class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
@@ -328,7 +330,8 @@
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 2, 'bg-[#40b751] text-white': openTab === 2 }">
 
                 <div class="flex" v-if="openTab !== 2">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/paw(1).png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/paw(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Animal') }}</p>
                 </div>
@@ -379,7 +382,8 @@
                   </p>
                 </div>
                 <div class="flex" v-else="openTab === 4">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/children.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/children.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Children') }}
                   </p>
@@ -402,7 +406,8 @@
 
                 </div>
                 <div class="flex" v-else="openTab === 5">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/healthcare.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/healthcare.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Medical') }}</p>
 
@@ -425,7 +430,8 @@
 
                 </div>
                 <div class="flex" v-else="openTab === 6">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/supplies.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/supplies.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
 
@@ -440,7 +446,8 @@
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'bg-[#40b751] text-white': openTab === 7 }">
 
                 <div class="flex" v-if="openTab !== 7">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/pray(1).png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/pray(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religiouse') }}
                   </p>
@@ -472,7 +479,8 @@
 
                 </div>
                 <div class="flex" v-else="openTab === 8">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/disability.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/disability.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
@@ -488,14 +496,16 @@
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'bg-[#40b751] text-white': openTab === 9 }">
 
                 <div class="flex" v-if="openTab !== 9">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/old-man(1).png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/old-man(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Elder') }}
                   </p>
 
                 </div>
                 <div class="flex" v-else="openTab === 9">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/old-man.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
+                    src="../../src/assets/Inter/img/icon/old-man.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Elder') }}
                   </p>
@@ -529,7 +539,7 @@
                   <p class="text-gray-700 text-[13px]  truncate">
                     {{ $t('Funds from') }}: <strong>{{ campaigns[index - 1].ngo }}</strong>
                   </p>
-                  <div class="flex fontcard font-[600] justify-between border-b-2 pb-1 border-b-gray-100 mb-1">
+                  <div class="flex fontcard font-[600] justify-between mb-1">
                     <!-- <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -548,7 +558,7 @@
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                       </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
                   </div>
-                  
+
                   <div class="w-full bg-gray-200 rounded dark:bg-gray-700 mb-2">
                     <!--<div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
@@ -568,21 +578,17 @@
                   <div class="fontcard flex mt-1 mb-0 pb-1 text-[14px]">
                     <span class="font-[600] text-[#222222]">₹{{
                       numberWithCommas(campaigns[index - 1].raised_amount)
-                    }}{{ $t('raised') }}</span><span class="text-[#222222]">{{ $t('of') }}  ₹{{
+                    }}{{ $t('raised') }}</span><span class="text-[#222222] ml-1">{{ $t('of') }} ₹{{
   numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
                   </div>
-                  
-
-
                 </div>
                 <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
-                  <ShareNetwork network="WhatsApp"
-                    :url="url + '/bestdeed/campaign-donation/' + campaigns[index - 1].name"
+                  <ShareNetwork network="WhatsApp" :url="url + '/bestdeed/campaign-donation/' + campaigns[index - 1].name"
                     :title="campaigns[index - 1].campaign_title" :description="campaigns[index - 1].short_description">
                     <button
                       class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
-                      type="button" @click=""> {{ $t('Share') }} <svg class="ml-2 fill-[#40b751] group-hover:fill-white"
-                        fill="none" height="17" width="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                      type="button" @click=""> <svg class="fill-[#40b751] group-hover:fill-white" fill="none" height="17"
+                        width="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
                         <g id="XMLID_468_">
                           <path id="XMLID_469_"
@@ -593,7 +599,7 @@
                       </svg> </button>
                   </ShareNetwork>
                   <button
-                    class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
+                    class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
                     type="button" @click="donate(campaigns[index - 1].name)"> {{ $t('Donate Now') }} </button>
                 </div>
                 <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">

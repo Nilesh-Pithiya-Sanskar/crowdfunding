@@ -478,7 +478,7 @@
     numberWithCommas(campaign.donation_amount) }}</span>
                         </div>
 
-                 
+
 
 
                     </div>
@@ -487,9 +487,8 @@
                             :title="campaign.campaign_title" :description="campaign.short_description">
                             <button
                                 class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
-                                type="button" @click=""> <svg
-                                    class="fill-[#40b751] group-hover:fill-white" fill="none" height="17" width="17"
-                                    version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                type="button" @click=""> <svg class="fill-[#40b751] group-hover:fill-white" fill="none"
+                                    height="17" width="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
                                     <g id="XMLID_468_">
                                         <path id="XMLID_469_"
@@ -500,7 +499,7 @@
                                 </svg> </button>
                         </ShareNetwork>
                         <button
-                            class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
+                            class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-3 md:px-0 lg:px-6 py-2 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
                             type="button" @click="donate(campaign.name)"> {{ $t('Donate Now') }} </button>
                     </div>
                     <!-- <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-3 pl-9 flex justify-between">

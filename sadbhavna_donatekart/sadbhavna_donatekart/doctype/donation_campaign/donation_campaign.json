@@ -40,6 +40,12 @@
   "benefits",
   "campaign_request",
   "ngo",
+  "about_ngo",
+  "about_ngo_gujrati",
+  "about_ngo_hindi",
+  "ngo_tittle",
+  "ngo_tittle_gujrati",
+  "ngo_tittle_hindi",
   "ngo_email",
   "total_donor",
   "naming_series",
@@ -271,6 +277,48 @@
    "fieldname": "remark",
    "fieldtype": "Text",
    "label": "Remark"
+  },
+  {
+   "fetch_from": "ngo.about_ngo",
+   "fieldname": "about_ngo",
+   "fieldtype": "Data",
+   "label": "About NGO",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.about_ngo_gujrati",
+   "fieldname": "about_ngo_gujrati",
+   "fieldtype": "Data",
+   "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.ngo_tittle_hindi",
+   "fieldname": "about_ngo_hindi",
+   "fieldtype": "Data",
+   "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.ngo_tittle",
+   "fieldname": "ngo_tittle",
+   "fieldtype": "Data",
+   "label": "NGO Tittle",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.ngo_tittle_gujrati",
+   "fieldname": "ngo_tittle_gujrati",
+   "fieldtype": "Data",
+   "label": "NGO \u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.ngo_tittle_hindi",
+   "fieldname": "ngo_tittle_hindi",
+   "fieldtype": "Data",
+   "label": "NGO \u0936\u0940\u0930\u094d\u0937\u0915",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -281,7 +329,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-13 19:15:18.726455",
+ "modified": "2023-04-20 14:30:17.928054",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

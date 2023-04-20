@@ -24,31 +24,19 @@
                     <div>
                         <img class="object-fill w-full pb-2" :src="blog_detail.data.meta_image">
                     </div>
-                    <!-- <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 pt-1 pb-4">
-                        <div class="pt-1">
-                            <div class="flex">
-                                <img class="h-5 w-5 " src="../assets/Inter/img/icon/calendar.png">
-                                <p class="pl-2 font-bold">{{ $t(formatDate(blog_detail.data.published_on)) }}</p>
-                            </div>
-                        </div>
-                        <div class="grid lg:justify-items-end md:justify-items-end sm:justify-items-start pt-1">
-                            <div class="flex">
-                                <img class="h-5 w-5 " src="../assets/Inter/img/icon/user.png">
-                                <p class="pl-2 font-bold ">{{ $t(blog_detail.data.blogger) }}</p>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="flex justify-center">
-                        <img src="../assets/Inter/img/icon/clock.png" class="h-5 w-5 mr-1 flex">
 
-                        <p class=" text-[14px] md:text-[12px] lg:text-[16px] mb-1">
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 mr-1">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg> -->
-                            {{ $t('2 min read') }}
-                        </p>
+                    <div class="grid justify-items-center">
+                        <div class="flex">
+                            <img class="h-5 w-5 mr-1 " src="../assets/Inter/img/icon/folder.png">
+                            <p class="mr-4 text-[14px] md:text-[12px] lg:text-[16px] mb-1 cursor-pointer"
+                                @click="get_blogs(blog_detail.data.blog_category)">{{
+                                    blog_detail.data.blog_category
+                                }}
+                            </p>
+                            <img src="../assets/Inter/img/icon/clock.png" class="h-5 w-5 mr-1 ">
+
+                            <p class=" text-[14px] md:text-[12px] lg:text-[16px] mb-1">{{ $t('2 min read') }}</p>
+                        </div>
                     </div>
                     <div class="text-justify pt-2">
                         <h4 class="pb-4 font-black text-[15px] md:text-[19px] lg:text-[19px]">
@@ -113,6 +101,36 @@
             </div>
         </div>
     </div>
+    <section class="container mx-auto h-full categorycard  card-space">
+
+        <!--Cards-->
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+            <div v-for="index in blogToShow">
+                <div v-if="index - 1 < blogs.length" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
+                    <div
+                        class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+                        <img class="w-full h-52 cursor-pointer" :src="blogs[index - 1].meta_image" alt="Mountain"
+                            @click="donate(blogs[index - 1].name)">
+                        <div
+                            class="pt-[20px] md:pt-[30px] lg:pt-[30px] pr-[20px] md:pr-[30px] lg:pr-[30px] pl-[20px] md:pl-[30px] lg:pl-[30px]">
+                            <div v-if="lang == 'gu' && blogs[index - 1].title_gu"
+                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                                {{ blogs[index - 1].itle_gu }}</div>
+                            <div v-else-if="lang == 'hi' && blogs[index - 1].title_hi"
+                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                                {{ blogs[index - 1].title_hi }}</div>
+                            <div v-else
+                                class="fontfamily font-bold text-[#40b751] text-[18px] md:text-[20px] lg:text-[20px] mb-2 truncate-2-lines">
+                                {{ blogs[index - 1].title }}</div>
+                            <p class="text-gray-700 text-[18px] md:text-[16px] lg:text-[16px]  truncate">
+                                {{ $t('By') }}: {{ blogs[index - 1].blogger }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <Footer />
 </template>
 <script>
@@ -122,7 +140,6 @@ import Footer from "../components/Footer.vue";
 import { useRoute } from 'vue-router';
 import { Dialog } from 'frappe-ui'
 import { inject } from 'vue';
-
 export default {
     name: "Blog Post",
     components: {
@@ -140,15 +157,40 @@ export default {
         return {
             blog_detail: '',
             blog: '',
-            campaign: '',
-            campaign_detail: '',
-            url: window.location.href
+            blogs: [],
+            blogToShow: 6,
+            totalBlog: 0,
+            loading: false,
+            selection: 1,
+            openTab: 1,
+            lang: '',
+            url: window.location.href,
+            start: 0,
+
         }
     },
     mounted() {
+        this.get_blogs()
+        this.lang = localStorage.getItem('lang') || window.navigator.language
         const name = useRoute();
         this.blog = name.params.name
         this.get_blog_detail(name.params.name)
+    },
+    resources: {
+        get_blogs() {
+            return {
+                method: '/api/method/sadbhavna_donatekart.api.blog.get_blogs',
+                onSuccess: (res) => {
+                    console.log("get_blog_success", res)
+                    this.blogs = res
+                    this.totalCampaign = this.blogs.length
+                },
+                onError: (error) => {
+                    console.log("Error", error)
+                }
+            }
+        },
+
     },
     methods: {
         formatDate(dateString) {
@@ -166,6 +208,21 @@ export default {
                 position: "top-center"
             })
         },
+        get_blogs(category) {
+            this.$resources.get_blogs.submit({
+                category: category,
+                language: localStorage.getItem('lang') || window.navigator.language,
+                start: this.start,
+                page_length: 6,
+            })
+        },
+        reserve() {
+            this.loading = true
+            setTimeout(() => (this.loading = false), 2000)
+        },
+        donate(name) {
+            this.$router.push(`/sadbhavna/campaign-donation/${name}`)
+        },
         get_blog_detail(name) {
             let url = "/api/resource/Blog Post/" + name
             fetch(url, {
@@ -174,33 +231,27 @@ export default {
                 .then(response => {
                     response.json().then(res => {
                         this.blog_detail = res
-
                         document.title = res.data.title + " | " + 'BestDeed'
                         var meta = document.createElement('meta');
                         meta.name = 'keywords';
                         meta.content = "donation,charity,crowdfunding,fundraising,donate online,donate online to charity,donations for nonprofits,donation websites for nonprofit,donate online india";
                         document.head.appendChild(meta);
-
                         var meta = document.createElement('meta');
                         meta.name = "description";
                         meta.content = res.data.blog_intro
                         document.head.appendChild(meta);
-
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:type');
                         meta1.content = 'Website';
                         document.head.appendChild(meta1);
-
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:title');
                         meta1.content = res.data.title;
                         document.head.appendChild(meta1);
-
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:description');
                         meta1.content = res.data.blog_intro;
                         document.head.appendChild(meta1);
-
                         var meta1 = document.createElement('meta');
                         meta1.setAttribute('property', 'og:image');
                         meta1.content = window.origin + res.data.meta_image;

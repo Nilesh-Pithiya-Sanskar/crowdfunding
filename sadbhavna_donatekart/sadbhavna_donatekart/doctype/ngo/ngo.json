@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:organisation_name",
  "creation": "2023-01-03 15:56:18.486684",
  "default_view": "List",
  "doctype": "DocType",
@@ -41,11 +40,16 @@
   "12a_registration_number",
   "section_break_33",
   "about_ngo",
+  "about_ngo_gujrati",
+  "about_ngo_hindi",
   "column_break_35",
   "causes_you_support",
   "section_break_37",
   "user",
-  "requester_type"
+  "requester_type",
+  "ngo_tittle",
+  "ngo_tittle_gujrati",
+  "ngo_tittle_hindi"
  ],
  "fields": [
   {
@@ -142,8 +146,7 @@
    "fieldname": "organisation_name",
    "fieldtype": "Data",
    "label": "Organisation Name",
-   "mandatory_depends_on": "eval:doc.requester_type=='NGO';",
-   "unique": 0
+   "mandatory_depends_on": "eval:doc.requester_type=='NGO';"
   },
   {
    "fieldname": "organisation_website",
@@ -237,6 +240,31 @@
   {
    "fieldname": "section_break_37",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "about_ngo_gujrati",
+   "fieldtype": "Small Text",
+   "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7"
+  },
+  {
+   "fieldname": "about_ngo_hindi",
+   "fieldtype": "Small Text",
+   "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
+  },
+  {
+   "fieldname": "ngo_tittle",
+   "fieldtype": "Data",
+   "label": "NGO Tittle"
+  },
+  {
+   "fieldname": "ngo_tittle_hindi",
+   "fieldtype": "Data",
+   "label": "NGO \u0936\u0940\u0930\u094d\u0937\u0915"
+  },
+  {
+   "fieldname": "ngo_tittle_gujrati",
+   "fieldtype": "Data",
+   "label": "NGO \u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -250,7 +278,7 @@
    "link_fieldname": "ngo"
   }
  ],
- "modified": "2023-04-04 13:13:11.574036",
+ "modified": "2023-04-20 14:23:31.008880",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "NGO",

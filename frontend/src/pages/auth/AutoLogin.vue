@@ -72,9 +72,9 @@
 
             <!-- Right column container with background and description-->
            <div class="flex items-center rounded-b-lg bg-gradient-to-l from-lime-600 to-green-400 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
-              <div class="px-4 py-6 text-white md:mx-6 md:p-12">
-                <h4 class="mb-6 text-xl font-semibold">We are more than just a company</h4>
-                <p class="text-sm">{{ $t('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')}}</p>
+            <div class="px-6 py-6 text-white">
+                <h4 class="mb-6 text-xl font-semibold">Welcome to BestDeed!</h4>
+                <p class="text-sm">{{ $t('BestDeed is a leading platform that connects donors with non-profit organizations worldwide. We strive to create a world where everyone has the opportunity to make a positive impact on society. Through our user-friendly website, users can easily discover and donate to a variety of causes, from education to environmental sustainability. We are committed to providing a safe and secure platform for donors and organizations to collaborate and make a meaningful difference in the world. Thank you for choosing BestDeed as your go-to platform for charitable giving.')}}</p>
               </div>
             </div>
           </div>
