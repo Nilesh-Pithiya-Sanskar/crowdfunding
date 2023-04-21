@@ -162,7 +162,7 @@
                                                 </div>
                                                 <div class="text-gray-500 text-[12px] mt-1">{{ products.c_qty || 0 }} / {{
                                                     products.qty
-                                                }} Quantity Obtained</div>
+                                                }} {{$t('Quantity Obtained')}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -454,7 +454,7 @@
 
                         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
                             <div>
-                                <div @click="phone()" class="cursor-pointer rounded-t-lg  pt-4 pb-4">
+                                <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
                                         <img src="../../src/assets/Inter/img/phonepay.png" class="w-12 h-12">
                                     </div>

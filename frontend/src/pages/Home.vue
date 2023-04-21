@@ -583,7 +583,7 @@
                   </div>
                 </div>
                 <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
-                  <ShareNetwork network="WhatsApp" :url="url + '/bestdeed/campaign-donation/' + campaigns[index - 1].name"
+                  <ShareNetwork network="WhatsApp" :url="url + 'bestdeed/campaign-donation/' + campaigns[index - 1].name"
                     :title="campaigns[index - 1].campaign_title" :description="campaigns[index - 1].short_description">
                     <button
                       class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
