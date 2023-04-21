@@ -168,7 +168,7 @@ export default {
                         icon: 'check',
                         position: "top-center",
                     })
-                    this.$router.push(`/bestdeed`);
+                    this.$router.push(`/`);
 
                     },
                 onError: (error) => {

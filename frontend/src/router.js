@@ -4,7 +4,7 @@ import {
 } from 'vue-router'
 
 const routes = [{
-    path: '/bestdeed',
+    path: '/',
     name: 'Home',
     component: () => import('@/pages/Home.vue'),
     meta: {

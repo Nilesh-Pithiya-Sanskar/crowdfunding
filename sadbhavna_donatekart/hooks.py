@@ -54,9 +54,9 @@ website_route_rules = [
 	# {"from_route": "/support/<path:app_path>", "to_route": "frappedesk"},
 ]
 
-website_redirects = [
-  {"source": "/", "target": "/bestdeed"},
-]
+# website_redirects = [
+#   {"source": "/", "target": "/bestdeed"},
+# ]
 
 # Generators
 # ----------

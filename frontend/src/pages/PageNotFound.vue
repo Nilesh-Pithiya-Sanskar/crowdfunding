@@ -12,7 +12,7 @@
         {{$t('The page you are looking for has gone missing.')}}
         </p>
         <router-link class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm md:px-0 lg:px-6 md:py-0 lg:py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-[16px] md:mr-[8px] lg:mr-[8px]  ease-linear transition-all duration-150"
-         to="/bestdeed"> {{ $t('Back To Home') }} </router-link>
+         to="/"> {{ $t('Back To Home') }} </router-link>
   
 
 

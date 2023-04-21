@@ -41,11 +41,8 @@
   "campaign_request",
   "ngo",
   "about_ngo",
-  "about_ngo_gujrati",
-  "about_ngo_hindi",
-  "ngo_tittle",
-  "ngo_tittle_gujrati",
-  "ngo_tittle_hindi",
+  "about_ngo_gu",
+  "about_ngo_hi",
   "ngo_email",
   "total_donor",
   "naming_series",
@@ -265,7 +262,8 @@
   {
    "fieldname": "total_donor",
    "fieldtype": "Data",
-   "label": "Total Donor"
+   "label": "Total Donor",
+   "read_only": 1
   },
   {
    "fieldname": "benefits",
@@ -281,44 +279,21 @@
   {
    "fetch_from": "ngo.about_ngo",
    "fieldname": "about_ngo",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "About NGO",
    "read_only": 1
   },
   {
-   "fetch_from": "ngo.about_ngo_gujrati",
-   "fieldname": "about_ngo_gujrati",
-   "fieldtype": "Data",
-   "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7",
-   "read_only": 1
+   "fetch_from": "ngo.about_ngo_gu",
+   "fieldname": "about_ngo_gu",
+   "fieldtype": "Small Text",
+   "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7"
   },
   {
-   "fetch_from": "ngo.ngo_tittle_hindi",
-   "fieldname": "about_ngo_hindi",
-   "fieldtype": "Data",
-   "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "ngo.ngo_tittle",
-   "fieldname": "ngo_tittle",
-   "fieldtype": "Data",
-   "label": "NGO Tittle",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "ngo.ngo_tittle_gujrati",
-   "fieldname": "ngo_tittle_gujrati",
-   "fieldtype": "Data",
-   "label": "NGO \u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "ngo.ngo_tittle_hindi",
-   "fieldname": "ngo_tittle_hindi",
-   "fieldtype": "Data",
-   "label": "NGO \u0936\u0940\u0930\u094d\u0937\u0915",
-   "read_only": 1
+   "fetch_from": "ngo.about_ngo_hi",
+   "fieldname": "about_ngo_hi",
+   "fieldtype": "Small Text",
+   "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -329,7 +304,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-20 14:30:17.928054",
+ "modified": "2023-04-21 10:55:47.399015",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

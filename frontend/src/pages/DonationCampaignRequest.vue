@@ -270,7 +270,7 @@ export default {
                     // })
                     // this.$router.go();
                     if (confirm("Your Request is successfully sent to bestdeed donatekart") == true) {
-                        this.$router.push(`/bestdeed`)
+                        this.$router.push(`/`)
                     } else {
                         this.$router.go(-1)
                     }

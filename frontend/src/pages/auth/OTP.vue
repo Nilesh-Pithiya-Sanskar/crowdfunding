@@ -121,7 +121,7 @@ export default {
                             // this.$router.push(route)
                         }
                         else{
-                            this.$router.push(`/bestdeed`);
+                            this.$router.push(`/`);
                         }
                     }
                     // console.log("verified", res)

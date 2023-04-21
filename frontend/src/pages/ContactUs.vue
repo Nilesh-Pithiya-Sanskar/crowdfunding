@@ -190,7 +190,7 @@ export default {
                 onSuccess: (res) => {
                     // this.recent_donation = res
                     if (confirm("Your message is successfully sent to bestdeed donatekart") == true) {
-                        this.$router.push(`/bestdeed`)
+                        this.$router.push(`/`)
                     } else {
                         this.$router.go(-1)
                     }

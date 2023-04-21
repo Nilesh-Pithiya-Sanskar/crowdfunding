@@ -47,32 +47,6 @@
                             </p>
 
                         </div>
-
-
-
-
-
-
-                        <!-- <div class="flex justify-between border-b-2 pb-3 border-b-gray-100 mb-2">
-                            <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather w-[18px] md:w-[18px] lg:w-[24px] h-[18px] md:h-[20px] lg:h-[24px] feather-clock mr-1 md:mr-1 lg:mr-2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg> {{ $t('Days Left') }}
-                            </p>
-                            <p class="flex text-[14px] md:text-[12px] lg:text-[16px]"> <svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather w-[18px] md:w-[18px] lg:w-[24px] h-[18px] md:h-[20px] lg:h-[24px] feather-users mr-1 md:mr-1 lg:mr-2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>{{ $t('Donors') }}</p>
-                        </div> -->
-
                     </div>
                 </div>
             </div>

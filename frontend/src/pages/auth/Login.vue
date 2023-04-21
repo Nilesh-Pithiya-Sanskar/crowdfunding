@@ -127,7 +127,7 @@ export default {
             // this.$router.push(route)
           }
           else {
-            this.$router.push(`/bestdeed`);
+            this.$router.push(`/`);
           }
         },
         onError: (error) => {
@@ -148,7 +148,7 @@ export default {
         method: 'frappe.www.login.login_via_token',
         onSuccess: () => {
           // console.log("okey")
-          this.$router.push('/bestdeed')
+          this.$router.push('/')
         },
         onError: (error) => {
           console.log("error", error)

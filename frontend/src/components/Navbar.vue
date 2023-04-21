@@ -81,11 +81,11 @@
         class="px-[10px] md:px-[20px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[10px] lg:py-[16px] lg:flex lg:justify-between lg:items-center">
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
-            <a href="/bestdeed">
+            <a href="/">
               <img src="../../src/assets/Inter/img/logo-1.1.ico"
                 class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 mr-2 w-16" />
             </a>
-            <a href="/bestdeed"><span
+            <a href="/"><span
                 class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[28px] md:mr-5">BestDeed</span></a>
           </div>
           <!-- Mobile menu button -->
@@ -103,7 +103,7 @@
         <ul :class="showMenu ? 'flex' : 'hidden'"
           class="fontfamily p-[15px] md:p-[15px] lg:px-0 lg:py-[15px] flex-col sm:mt-8 md:mt-2 lg:mt-0 space-y-4 lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6 lg:mt-0">
           <li>
-            <router-link to="/bestdeed" class="transition font-bold text-white hover:text-black">{{ $t('Home')
+            <router-link to="/" class="transition font-bold text-white hover:text-black">{{ $t('Home')
             }}</router-link>
           </li>
           <li>

@@ -620,7 +620,7 @@ export default {
   },
   created() {
     if (!this.user.isLoggedIn()) {
-      this.$router.push('/bestdeed')
+      this.$router.push('/')
     }
   },
   mounted() {

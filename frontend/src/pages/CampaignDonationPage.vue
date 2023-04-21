@@ -227,16 +227,13 @@
 
                     <div v-for="index in descToShow">
                         <div v-if="index - 1 < campaign_detail.data.description.length">
-                            <img class="h-96 mb-4 object-cover w-full rounded-[6px]"
-                                :src="campaign_detail.data.description[index - 1].image">
-                            <h4 v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_tittle_gujrati"
-                                class="font-[700] text-xl mt-3 text-[#364958]">{{
-                                    $t(campaign_detail.data.description[index - 1].image_tittle_gujrati) }}</h4>
-                            <h4 v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_tittle_hindi"
-                                class="font-[700] text-xl mt-3 text-[#364958]">{{
-                                    $t(campaign_detail.data.description[index - 1].image_tittle_hindi) }}</h4>
-                            <h4 v-else class="font-[700] text-xl mt-3 text-[#364958]">{{
-                                $t(campaign_detail.data.description[index - 1].image_tittle) }}</h4>
+                            <img class="object-fill w-full" :src="campaign_detail.data.description[index - 1].image">
+                             <h4  v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_title_gu" class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                     $t(campaign_detail.data.description[index - 1].image_title_gu) }}</h4>
+                            <h4 v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_title_hi" class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                     $t(campaign_detail.data.description[index - 1].image_title_hi) }}</h4>
+                            <h4 v-else class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                     $t(campaign_detail.data.description[index - 1].image_title) }}</h4>
 
                             <p v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_description_gu"
                                 style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
@@ -245,7 +242,7 @@
                                 style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
                                     $t(campaign_detail.data.description[index - 1].image_description_hi) }}</p>
                             <p v-else style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
-                                $t(campaign_detail.data.description[index - 1].image_description) }} </p>
+                                $t(campaign_detail.data.description[index - 1].image_description) }}</p>
                         </div>
                     </div>
 
@@ -260,6 +257,18 @@
                             class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button" @click="descToShow = 1" v-if="total_desc > 1">{{ $t('View Less') }}</button>
                     </div>
+
+                   <!-- <div v-if="campaign_detail.data.about_ngo != ''" class="mt-10 ">
+                            <h4 class="font-[700] text-2xl mt-3 text-[#40b751]">{{ 'About '}}{{ campaign_detail.data.ngo }}</h4>
+                            <p v-if="lang == 'gu' && campaign_detail.data.description[index - 1].about_ngo_gu"
+                                style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
+                                    campaign_detail.data.about_ngo_gu }}</p>
+                            <p v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].about_ngo_hi"
+                                style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
+                                    campaign_detail.data.about_ngo_hi }}</p>
+                            <p v-else style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
+                            campaign_detail.data.about_ngo}}</p>
+                     </div>-->
                 </div>
 
                 <div class=" w-full lg:w-4/12 pr-0 md:pr-4 lg:pr-4">
@@ -1460,7 +1469,7 @@ export default {
             }
         },
         cancel() {
-            this.$router.push('/bestdeed')
+            this.$router.push('/')
         },
 
         increment(item, rate, qty = 1, p_qty, p_c_qty) {
