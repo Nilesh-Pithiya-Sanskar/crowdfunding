@@ -160,7 +160,7 @@
                                                 }}% -->
                                                     </div>
                                                 </div>
-                                                <div class="text-gray-500 text-[12px] mt-1">{{ products.c_qty || 0 }} {{
+                                                <div class="text-gray-500 text-[12px] mt-1">{{ products.c_qty || 0 }} / {{
                                                     products.qty
                                                 }} Quantity Obtained</div>
                                             </div>
@@ -229,20 +229,20 @@
                         <div v-if="index - 1 < campaign_detail.data.description.length">
                             <img class="object-fill w-full" :src="campaign_detail.data.description[index - 1].image">
                              <h4  v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_title_gu" class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     $t(campaign_detail.data.description[index - 1].image_title_gu) }}</h4>
+                                     campaign_detail.data.description[index - 1].image_title_gu }}</h4>
                             <h4 v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_title_hi" class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     $t(campaign_detail.data.description[index - 1].image_title_hi) }}</h4>
+                                     campaign_detail.data.description[index - 1].image_title_hi }}</h4>
                             <h4 v-else class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     $t(campaign_detail.data.description[index - 1].image_title) }}</h4>
+                                     campaign_detail.data.description[index - 1].image_title }}</h4>
 
                             <p v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_description_gu"
                                 style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
-                                    $t(campaign_detail.data.description[index - 1].image_description_gu) }}</p>
+                                    campaign_detail.data.description[index - 1].image_description_gu }}</p>
                             <p v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_description_hi"
                                 style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
-                                    $t(campaign_detail.data.description[index - 1].image_description_hi) }}</p>
+                                    campaign_detail.data.description[index - 1].image_description_hi }}</p>
                             <p v-else style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
-                                $t(campaign_detail.data.description[index - 1].image_description) }}</p>
+                                campaign_detail.data.description[index - 1].image_description }}</p>
                         </div>
                     </div>
 

@@ -578,7 +578,7 @@
                   <div class="fontcard flex mt-1 mb-0 pb-1 text-[14px]">
                     <span class="font-[600] text-[#222222]">₹{{
                       numberWithCommas(campaigns[index - 1].raised_amount)
-                    }}{{ $t('raised') }}</span><span class="text-[#222222] ml-1">{{ $t('of') }} ₹{{
+                    }} {{ $t('raised') }} </span><span class="text-[#222222] ml-1">{{ $t('of') }} ₹{{
   numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
                   </div>
                 </div>
