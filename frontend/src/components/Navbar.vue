@@ -68,7 +68,7 @@
         <a v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
           class="opacity-6 cursor-pointer transition font-medium text-[#000000]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">{{
             $t("Logout") }}</a>
-        <a v-else @click="this.$router.push(`/bestdeed/auto-login`)"
+        <a v-else @click="this.$router.push(`/auto-login`)"
           class="opacity-6 cursor-pointer transition font-medium text-[#000000]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">{{
             $t('Login / Registration') }}</a>
       </div>
@@ -110,22 +110,22 @@
             <a href="#" class="transition font-bold text-white text-[18px]">{{ $t('About') }}</a>
           </li>
           <li>
-            <router-link to="/bestdeed/request-campaign" class="transition font-bold text-white text-[18px]">{{
+            <router-link to="/request-campaign" class="transition font-bold text-white text-[18px]">{{
               $t('Request a Campaign') }}</router-link>
           </li>
           <li>
-            <router-link to="/bestdeed/explore-campaigns" class="transition font-bold text-white text-[18px]">{{
+            <router-link to="/explore-campaigns" class="transition font-bold text-white text-[18px]">{{
               $t('Explore Campaigns') }}</router-link>
           </li>
           <li>
-            <router-link to="/bestdeed/contact-us" class="transition font-bold text-white text-[18px]">{{
+            <router-link to="/contact-us" class="transition font-bold text-white text-[18px]">{{
               $t('Contact') }}</router-link>
           </li>
           <li>
             <span class="group relative inline-block">
-              <a href="/bestdeed/blog" class="transition font-bold text-white text-[18px]">{{ $t('Blog') }}</a>
+              <a href="/blog" class="transition font-bold text-white text-[18px]">{{ $t('Blog') }}</a>
               <!--<ul class="absolute hidden pt-4 group-hover:block">
-                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/bestdeed/blog">Blog</a></li>
+                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/blog">Blog</a></li>
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>
               </ul>-->
             </span>
@@ -158,7 +158,7 @@
           <!-- <li>
             <button v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
               class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t("Logout") }}</button>
-            <button v-else @click="this.$router.push(`/bestdeed/auto-login`)"
+            <button v-else @click="this.$router.push(`/auto-login`)"
               class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t('Login') }}</button>
           </li>-->
 
@@ -289,7 +289,7 @@ export default {
       return
     }
     // else{
-    //   this.$router.push(`/bestdeed/login`)
+    //   this.$router.push(`/login`)
     // }
     // if (!this.user.has_desk_access) {
     // 	this.$router.push({ path: "/home" })
@@ -357,7 +357,7 @@ export default {
           .map((part) => part.split("="))
           .map((d) => [d[0], decodeURIComponent(d[1])])
       )
-      this.$router.push(`/bestdeed/profile/${cookie.user_id}`)
+      this.$router.push(`/profile/${cookie.user_id}`)
     }
 
   },

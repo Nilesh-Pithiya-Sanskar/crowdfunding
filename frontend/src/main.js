@@ -8,7 +8,7 @@ import { createToast, clearToasts } from "@/utils/toasts"
 import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
-import { createHead } from '@vueuse/head'
+// import { createHead } from '@vueuse/head'
 
 
 import vue3GoogleLogin from 'vue3-google-login';
@@ -32,10 +32,10 @@ const i18n = createI18n({
 
 
 let app = createApp(App)
-const head = createHead()
+// const head = createHead()
 
 app.use(VueSocialSharing);
-app.use(head)
+// app.use(head)
 app.use(i18n)
 app.use(router)
 app.use(FrappeUI)

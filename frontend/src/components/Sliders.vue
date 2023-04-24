@@ -106,7 +106,7 @@ export default {
   },
   methods: {
     donate(name) {
-      this.$router.push(`/bestdeed/campaign-donation/${name}`)
+      this.$router.push(`/campaign-donation/${name}`)
     }
   }
 };

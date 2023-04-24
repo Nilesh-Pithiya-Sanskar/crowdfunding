@@ -483,7 +483,7 @@
 
                     </div>
                     <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
-                        <ShareNetwork network="WhatsApp" :url="url + '/bestdeed/campaign-donation/' + campaign.name"
+                        <ShareNetwork network="WhatsApp" :url="url + '/campaign-donation/' + campaign.name"
                             :title="campaign.campaign_title" :description="campaign.short_description">
                             <button
                                 class="flex group rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600 text-sm md:text-xs lg:text-xs px-3 md:px-2 lg:px-6 py-2 md:py-2 lg:py-3   shadow hover:shadow-lg outline-none focus:outline-none mr-1 md:mr-4 lg:mr-4 lg:mr-1 ease-linear transition-all duration-150"
@@ -727,11 +727,11 @@ export default {
             setTimeout(() => (this.loading = false), 2000)
         },
         // viewmore(name) {
-        //   this.$router.push(`/bestdeed/campaign-donation/${name}`)
+        //   this.$router.push(`/campaign-donation/${name}`)
         // },
         donate(name) {
-            // this.$router.push(`/bestdeed/donate/${name}`)
-            this.$router.push(`/bestdeed/campaign-donation/${name}`)
+            // this.$router.push(`/donate/${name}`)
+            this.$router.push(`/campaign-donation/${name}`)
         },
         get_more_campagins() {
             // var start = this.start + this.page_length

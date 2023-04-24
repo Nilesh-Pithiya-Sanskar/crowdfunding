@@ -156,16 +156,16 @@
               {{ $t('Discover') }}</h2>
             <ul class="text-white">
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/bestdeed/explore-campaigns">{{ $t('Explore Campaigns') }}</router-link>
+                <router-link to="/explore-campaigns">{{ $t('Explore Campaigns') }}</router-link>
               </li>
               <li class=" sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/bestdeed/request-campaign">{{ $t('Request A Campaign') }}</router-link>
+                <router-link to="/request-campaign">{{ $t('Request A Campaign') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <a href="#">{{ $t('About Us') }}</a>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/bestdeed/contact-us">{{ $t('Contact Us') }}</router-link>
+                <router-link to="/contact-us">{{ $t('Contact Us') }}</router-link>
               </li>
             </ul>
           </div>
@@ -177,16 +177,16 @@
                 <a href="#">{{ $t('How it Works') }}</a>
               </li>
               <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <router-link to="/bestdeed/faq">{{ $t('FAQs') }}</router-link>
+                <router-link to="/faq">{{ $t('FAQs') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-                <router-link to="/bestdeed/blog">{{ $t('Blogs') }}</router-link>
+                <router-link to="/blog">{{ $t('Blogs') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <router-link to="/bestdeed/terms-of-service">{{ $t('Terms of Use') }}</router-link>
+              <router-link to="/terms-of-service">{{ $t('Terms of Use') }}</router-link>
               </li>
               <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-              <router-link to="/bestdeed/privacy-policy">{{ $t('Privacy Policy') }}</router-link>
+              <router-link to="/privacy-policy">{{ $t('Privacy Policy') }}</router-link>
               </li>
             </ul>
           </div>

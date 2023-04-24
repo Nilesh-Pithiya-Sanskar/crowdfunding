@@ -89,7 +89,7 @@
         <div class=" mr-3 text-green-500 font-bold flex flex-row-reverse">
           <img class="h-5 w-3 md:w-4 lg:w-4 ml-2 lg:mt-1" src="../assets/Inter/img/icon/right-arrow.png">
           <router-link class="text-[13px] md:text-[16px] lg:text-[16px] hover:underline"
-            to="/bestdeed/explore-campaigns">{{ $t('View More') }}</router-link>
+            to="/explore-campaigns">{{ $t('View More') }}</router-link>
         </div>
       </div>
       <!-- <div class="flex mt-3 border-b sm:mr-4 lg:mr-3 ">
@@ -879,7 +879,7 @@ export default {
     //     onSuccess:(res)=>{
     //       console.log("res", res)
     //       if(res[0]){
-    //         // this.$router.push(`/bestdeed/donation-success-page/${res[1]}`)
+    //         // this.$router.push(`/donation-success-page/${res[1]}`)
     //       }
     //       else{
     //         console.log("payment not done")
@@ -961,11 +961,11 @@ export default {
       setTimeout(() => (this.loading = false), 2000)
     },
     // viewmore(name) {
-    //   this.$router.push(`/bestdeed/campaign-donation/${name}`)
+    //   this.$router.push(`/campaign-donation/${name}`)
     // },
     donate(name) {
-      // this.$router.push(`/bestdeed/donate/${name}`)
-      this.$router.push(`/bestdeed/campaign-donation/${name}`)
+      // this.$router.push(`/donate/${name}`)
+      this.$router.push(`/campaign-donation/${name}`)
     },
 
     dayCalculate(end_date) {
@@ -995,7 +995,7 @@ export default {
     //   // return donor
     // },
     exploreCampaigns() {
-      this.$router.push('/bestdeed/explore-campaigns')
+      this.$router.push('/explore-campaigns')
     }
   },
   // mounted(){
@@ -1007,7 +1007,7 @@ export default {
   // 		return
   // 	}
   //   // else{
-  //   //   this.$router.push(`/bestdeed/login`)
+  //   //   this.$router.push(`/login`)
   //   // }
   // 	if (!this.user.has_desk_access) {
   // 		this.$router.push({ path: "/home" })

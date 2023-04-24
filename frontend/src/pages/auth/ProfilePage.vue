@@ -542,7 +542,7 @@
                             </div>
                         </div>
                         <div class="text-center text-sm leading-normal m-4 text-blue-400 font-bold">
-                          <router-link to="/bestdeed/request-campaign">{{ $t('Request New Campaign') }}</router-link>
+                          <router-link to="/request-campaign">{{ $t('Request New Campaign') }}</router-link>
                         </div>
                       </div>
                     </div>
@@ -552,7 +552,7 @@
                       {{ $t(`You don't have any campaign live yet.`) }}
                     </div>
                     <div class="text-center text-sm leading-normal mt-2 mb-5 text-blue-400 font-bold">
-                      <router-link to="/bestdeed/request-campaign">
+                      <router-link to="/request-campaign">
                         {{ $t('Click Here To Request A New Campaign') }}</router-link>
                     </div>
                   </div>

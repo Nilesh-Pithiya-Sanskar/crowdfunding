@@ -88,7 +88,7 @@ export default {
             })
         },
         openblog(name) {
-            this.$router.push(`/bestdeed/blog-post/${name}`)
+            this.$router.push(`/blog-post/${name}`)
         },
     },
 }

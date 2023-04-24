@@ -1158,7 +1158,7 @@ export default {
                     this.delete_cookies('total_price')
                     this.showDialog = true
 
-                    // this.$router.push(`/bestdeed/donation-success-page/${d_amount}`)
+                    // this.$router.push(`/donation-success-page/${d_amount}`)
                     // alert("your donation is successfull")
                 },
                 onError: (error) => {
@@ -1197,7 +1197,7 @@ export default {
             })
         },
         delete_cookies(name) {
-            this.$cookies.remove(name, `/bestdeed/campaign-donation/${this.campaign}`);
+            this.$cookies.remove(name, `/campaign-donation/${this.campaign}`);
         },
         get_cookies(name) {
             // console.log("cookies", name, this.$cookies.get(name))
@@ -1206,7 +1206,7 @@ export default {
         set_cookies(name, value) {
             // VueCookies.set('myCookie', '123', '1d', '/THE-ELE-16-01-2023-0001')
             // console.log("campaign", this.campaign)
-            this.$cookies.set(name, value, "60 + 30", `/bestdeed/campaign-donation/${this.campaign}`);
+            this.$cookies.set(name, value, "60 + 30", `/campaign-donation/${this.campaign}`);
         },
 
         formatDate(dateString) {
@@ -1329,8 +1329,8 @@ export default {
             if (!this.user.isLoggedIn()) {
                 console.log("okey")
                 this.showDialog_c = true
-                this.$cookies.set('route', `/bestdeed/campaign-donation/${this.campaign}`);
-                // this.$router.push(`/bestdeed/donation-checkout`)
+                this.$cookies.set('route', `/campaign-donation/${this.campaign}`);
+                // this.$router.push(`/donation-checkout`)
                 // return
             }
             else {
@@ -1378,7 +1378,7 @@ export default {
 
                 // ************************main code************************
 
-                // this.$router.push(`/bestdeed/donate/${name}&${price}`)
+                // this.$router.push(`/donate/${name}&${price}`)
             }
         },
         donate_checkout(anonymous, f_name, email, phone_number) {
@@ -1463,10 +1463,10 @@ export default {
         },
         view_profile() {
             if (this.user_c != '') {
-                this.$router.push(`/bestdeed/profile/${this.user_c}`)
+                this.$router.push(`/profile/${this.user_c}`)
             }
             else {
-                this.$router.push(`/bestdeed/profile/${this.cookie.user_id}`)
+                this.$router.push(`/profile/${this.cookie.user_id}`)
             }
         },
         cancel() {

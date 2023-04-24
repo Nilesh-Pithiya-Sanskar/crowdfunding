@@ -26,7 +26,7 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/login',
+    path: '/login',
     name: 'Login',
     component: () => import('@/pages/auth/Login.vue'),
     meta: {
@@ -40,7 +40,7 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/auto-login',
+    path: '/auto-login',
     name: 'Auto Login',
     component: () => import('@/pages/auth/AutoLogin.vue'),
     meta: {
@@ -54,12 +54,12 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/campaign-donation/:name',
+    path: '/campaign-donation/:name',
     name: 'CampaignDonation',
     component: () => import('@/pages/CampaignDonationPage.vue'),
   },
   {
-    path: '/bestdeed/explore-campaigns',
+    path: '/explore-campaigns',
     name: 'ExploreCampaigns',
     component: () => import('@/pages/ExploreCampaigns.vue'),
     meta: {
@@ -77,12 +77,12 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/donate/:name&:price',
+    path: '/donate/:name&:price',
     name: 'Donate',
     component: () => import('@/pages/Donate.vue')
   },
   {
-    path: '/bestdeed/blog',
+    path: '/blog',
     name: 'Blog',
     component: () => import('@/pages/Blog.vue'),
     meta: {
@@ -96,22 +96,22 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/blog-post/:name',
+    path: '/blog-post/:name',
     name: 'BlogPost',
     component: () => import('@/pages/BlogPost.vue')
   },
   // {
-  //   path: '/bestdeed/test',
+  //   path: '/test',
   //   name: 'Test',
   //   component: () => import('@/pages/auth/Test.vue')
   // },
   {
-    path: '/bestdeed/registration',
+    path: '/registration',
     name: 'Registration',
     component: () => import('@/pages/auth/Registration.vue')
   },
   {
-    path: '/bestdeed/contact-us',
+    path: '/contact-us',
     name: 'Contact Us',
     component: () => import('@/pages/ContactUs.vue'),
     meta: {
@@ -125,12 +125,12 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/profile/:name',
+    path: '/profile/:name',
     name: 'Profile',
     component: () => import('@/pages/auth/ProfilePage.vue')
   },
   {
-    path: '/bestdeed/request-campaign',
+    path: '/request-campaign',
     name: 'Donation Campaign Request',
     component: () => import('@/pages/DonationCampaignRequest.vue'),
     meta: {
@@ -148,32 +148,32 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/donation-success-page/:donation/:name/:email/:item:/campaign',
+    path: '/donation-success-page/:donation/:name/:email/:item:/campaign',
     name: 'Donation Success Page',
     component: () => import('@/components/DonationSuccessPage.vue')
   },
   {
-    path: '/bestdeed/faq',
+    path: '/faq',
     name: 'Faq',
     component: () => import('@/components/Faq.vue')
   },
   {
-    path: '/bestdeed/Verifyotp',
+    path: '/Verifyotp',
     name: 'Verifyotp',
     component: () => import('@/components/Verifyotp.vue')
   },
   {
-    path: '/bestdeed/otp/:message&:number&:m_type',
+    path: '/otp/:message&:number&:m_type',
     name: 'OTP',
     component: () => import('@/pages/auth/OTP.vue')
   },
   {
-    path: '/bestdeed/facebook',
+    path: '/facebook',
     name: 'facebook',
     component: () => import('@/pages/facebook.vue')
   },
   {
-    path: '/bestdeed/privacy-policy',
+    path: '/privacy-policy',
     name: 'Privacy Policy',
     component: () => import('@/pages/PrivacyPolicy1.vue'),
     meta: {
@@ -187,7 +187,7 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/terms-of-service',
+    path: '/terms-of-service',
     name: 'Terms Of Service',
     component: () => import('@/pages/TermsOfService.vue'),
     meta: {
@@ -201,7 +201,7 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/about-us',
+    path: '/about-us',
     name: 'About Us',
     component: () => import('@/pages/AboutUs.vue'),
     meta: {
@@ -215,17 +215,17 @@ const routes = [{
     }
   },
   {
-    path: '/bestdeed/translation',
+    path: '/translation',
     name: 'Translation',
     component: () => import('@/pages/Translations.vue')
   },
   {
-    path: '/bestdeed/donation-checkout',
+    path: '/donation-checkout',
     name: 'Donation Checkout',
     component: () => import('@/components/DonationCheckout.vue')
   },
   {
-    path: '/bestdeed/reset_password/:key&:email',
+    path: '/reset_password/:key&:email',
     name: 'Reset Password',
     component: () => import('@/pages/auth/ResetPassword.vue')
   },

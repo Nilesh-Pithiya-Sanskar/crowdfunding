@@ -51,7 +51,7 @@
 
              <div class="flex items-center justify-between">
                     <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
-                    <router-link to="/bestdeed/registration" class="text-green-500 text-center border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{$t('Register')}}</router-link>
+                    <router-link to="/registration" class="text-green-500 text-center border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{$t('Register')}}</router-link>
                   </div>
 
                 </form>
@@ -188,7 +188,7 @@ export default {
             // let otp_message = res[0]
             // let number = res[1]
             // let m_type = res[2]
-            // this.$router.push(`/bestdeed/otp/${otp_message}&${number}&${m_type}`);
+            // this.$router.push(`/otp/${otp_message}&${number}&${m_type}`);
             console.log("mail send")
             this.$toast({
             title: "Mail Sent",

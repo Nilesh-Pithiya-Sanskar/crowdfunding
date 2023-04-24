@@ -64,9 +64,9 @@
                                 </button>
                             </div>
                              <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                    href="/bestdeed/login">{{ $t('Login Via Email') }}</a></span>
+                                    href="/login">{{ $t('Login Via Email') }}</a></span>
  <span class="block text-gray-600  text-center text-base  mb-2"> {{ $t('New to BestDeed?') }} <router-link
-                                to="/bestdeed/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+                                to="/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
               </div>
             </div>
 
@@ -136,7 +136,7 @@ export default {
                     let otp_message = res[0]
                     let number = res[1]
                     let m_type = res[2]
-                    this.$router.push(`/bestdeed/otp/${otp_message}&${number}&${m_type}`);
+                    this.$router.push(`/otp/${otp_message}&${number}&${m_type}`);
                 },
                 onError: (error) => {
                     console.log("error", error)
@@ -151,7 +151,7 @@ export default {
                     let otp_message = res[0]
                     let number = res[1]
                     let m_type = res[2]
-                    this.$router.push(`/bestdeed/otp/${otp_message}&${number}&${m_type}`);
+                    this.$router.push(`/otp/${otp_message}&${number}&${m_type}`);
                 },
                 onError: (error) => {
                     console.log("error", error)
