@@ -16,7 +16,7 @@
                             <div class="flex flex-wrap justify-center">
                             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                                 <div class="relative">
-                                <img alt="..." src="../../src/assets/Inter/img/kunj.png"
+                                <img alt="..." src="../../assets/Inter/img/kunj.png"
                                     class=" rounded-full h-auto align-middle border-none absolute -m-14 object-center max-w-100-px" />
                                 </div>
                             </div>

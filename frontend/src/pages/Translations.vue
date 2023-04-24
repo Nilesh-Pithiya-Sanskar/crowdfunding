@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>test</div>
     <test class="lg:block sm:hidden md:hidden" :data="data" :t="3"></test>
     <test class="block sm:hidden lg:hidden" :data="data" :t="2"></test>
@@ -15,7 +15,7 @@ export default{
         }
     }
 }
-</script>
+</script> -->
 
 
 <!-- <template>
@@ -195,3 +195,36 @@ export default{
   }
   </style>
    -->
+
+
+
+   <!-- down head in vue3 -->
+
+<template>
+  <div>Test</div>
+</template>
+
+   <script>
+import { defineComponent, computed, reactive } from 'vue'
+import { useHead } from '@vueuse/head'
+
+export default defineComponent({
+  setup() {
+    const siteData = reactive({
+      title: `My website`,
+      description: `My beautiful website`,
+    })
+
+    useHead({
+      // Can be static or computed
+      title: computed(() => siteData.title),
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => siteData.description),
+        },
+      ],
+    })
+  },
+})
+</script>
