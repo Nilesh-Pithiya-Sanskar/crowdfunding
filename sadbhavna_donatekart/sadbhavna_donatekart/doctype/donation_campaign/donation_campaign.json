@@ -11,14 +11,14 @@
  "field_order": [
   "details_tab",
   "campaign_title",
+  "campaign_title_gu",
   "section_break_4",
   "status",
-  "section_break_0gbxv",
   "campaign_title_hi",
+  "section_break_0gbxv",
   "column_break_7e2rr",
   "start_date",
   "section_break_4gm4e",
-  "campaign_title_gu",
   "column_break_10",
   "end_date",
   "section_break_12",
@@ -40,6 +40,8 @@
   "benefits",
   "campaign_request",
   "ngo",
+  "ngo_gu",
+  "ngo_hi",
   "about_ngo",
   "about_ngo_gu",
   "about_ngo_hi",
@@ -151,6 +153,20 @@
    "label": "NGO",
    "options": "NGO",
    "reqd": 1
+  },
+  {
+   "fetch_from": "ngo.organisation_name_gu",
+   "fieldname": "ngo_gu",
+   "fieldtype": "Data",
+   "label": "NGO \u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.organisation_name_hi",
+   "fieldname": "ngo_hi",
+   "fieldtype": "Data",
+   "label": "\u090f\u0928\u091c\u0940\u0913 \u0915\u093e \u0928\u093e\u092e",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_14",
@@ -287,13 +303,15 @@
    "fetch_from": "ngo.about_ngo_gu",
    "fieldname": "about_ngo_gu",
    "fieldtype": "Small Text",
-   "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7"
+   "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7",
+   "read_only": 1
   },
   {
    "fetch_from": "ngo.about_ngo_hi",
    "fieldname": "about_ngo_hi",
    "fieldtype": "Small Text",
-   "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
+   "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -304,7 +322,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-21 10:55:47.399015",
+ "modified": "2023-04-24 10:52:43.159083",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

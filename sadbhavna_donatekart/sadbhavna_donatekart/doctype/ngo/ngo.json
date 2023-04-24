@@ -9,6 +9,8 @@
     "engine": "InnoDB",
     "field_order": [
      "organisation_name",
+     "organisation_name_gu",
+     "organisation_name_hi",
      "section_break_8",
      "full_name",
      "column_break_15",
@@ -44,7 +46,10 @@
      "causes_you_support",
      "section_break_37",
      "user",
-     "requester_type"
+     "requester_type",
+     "about_ngo",
+     "about_ngo_gu",
+     "about_ngo_hi"
     ],
     "fields": [
      {
@@ -145,6 +150,18 @@
       "unique": 0
      },
      {
+      "fieldname": "organisation_name_gu",
+      "fieldtype": "Data",
+      "label": "\u0ab8\u0a82\u0ab8\u0acd\u0aa5\u0abe\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae",
+      "reqd": 1
+     },
+     {
+      "fieldname": "organisation_name_hi",
+      "fieldtype": "Data",
+      "label": "\u0938\u0902\u0917\u0920\u0928 \u0915\u093e \u0928\u093e\u092e",
+      "reqd": 1
+     },
+     {
       "fieldname": "organisation_website",
       "fieldtype": "Data",
       "label": "Organisation Website"
@@ -223,6 +240,21 @@
       "fieldtype": "Select",
       "label": "Requester Type",
       "options": "NGO\nIndivisual/Group"
+     },
+     {
+     "fieldname": "about_ngo",
+     "fieldtype": "Small Text",
+     "label": "About NGO"
+     },
+     {
+     "fieldname": "about_ngo_gu",
+     "fieldtype": "Small Text",
+     "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7"
+     },
+     {
+     "fieldname": "about_ngo_hi",
+     "fieldtype": "Small Text",
+     "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
      },
      {
       "fieldname": "column_break_35",

@@ -258,17 +258,18 @@
                             type="button" @click="descToShow = 1" v-if="total_desc > 1">{{ $t('View Less') }}</button>
                     </div>
 
-                   <!-- <div v-if="campaign_detail.data.about_ngo != ''" class="mt-10 ">
-                            <h4 class="font-[700] text-2xl mt-3 text-[#40b751]">{{ 'About '}}{{ campaign_detail.data.ngo }}</h4>
-                            <p v-if="lang == 'gu' && campaign_detail.data.description[index - 1].about_ngo_gu"
-                                style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
-                                    campaign_detail.data.about_ngo_gu }}</p>
-                            <p v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].about_ngo_hi"
-                                style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
-                                    campaign_detail.data.about_ngo_hi }}</p>
-                            <p v-else style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
-                            campaign_detail.data.about_ngo}}</p>
-                     </div>-->
+                   <!-- <div v-if="campaign_detail.data.about_ngo != ''"  class=" mt-10 ">
+                          <div  class="px-2 bg-[#40b751] py-4 " >
+                               <h4 v-if="lang == 'gu' && campaign_detail.data.ngo_gu" class="font-[700] text-xl mt-3 text-[#40b751]">{{ (campaign_detail.data.ngo_gu) }} {{ $t('About')}}</h4>
+                               <h4 v-else-if="lang == 'hi' && campaign_detail.data.ngo_hi" class="font-[700] text-xl mt-3 text-[#40b751]">{{ (campaign_detail.data.ngo_hi) }} {{ $t('About')}}</h4>
+                               <h4 v-else class="font-[700] text-xl text-white">{{ $t('About')}} {{ (campaign_detail.data.ngo) }}</h4>
+                          </div>
+                          <div class="border-2 border-solid border-gray-300 px-2">
+                                <p v-if="lang == 'gu' && campaign_detail.data.about_ngo_gu" style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{ campaign_detail.data.about_ngo_gu }}</p>
+                                <p v-else-if="lang == 'hi' && campaign_detail.data.about_ngo_hi" style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{ campaign_detail.data.about_ngo_hi }}</p>
+                                <p v-else class="text-[#364958] mt-2 mb-5">{{ campaign_detail.data.about_ngo}}</p>
+                          </div>
+                    </div>-->
                 </div>
 
                 <div class=" w-full lg:w-4/12 pr-0 md:pr-4 lg:pr-4">
