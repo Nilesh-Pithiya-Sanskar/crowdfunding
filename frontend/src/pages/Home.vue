@@ -309,7 +309,7 @@
             class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden no-scrollbar overflow-x-scroll overflow-x-hidden custom-tabs">
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'bg-[#40b751] text-white': openTab === 1 }">
                 <div class="flex" v-if="openTab !== 1">
@@ -325,7 +325,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(2)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 2, 'bg-[#40b751] text-white': openTab === 2 }">
 
@@ -346,7 +346,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Education Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(3)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 3, 'bg-[#40b751] text-white': openTab === 3 }">
 
@@ -370,7 +370,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Children Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(4)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 4, 'bg-[#40b751] text-white': openTab === 4 }">
 
@@ -394,7 +394,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Medical Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(5)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 5, 'bg-[#40b751] text-white': openTab === 5 }">
 
@@ -418,7 +418,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Hunger Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(6)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 6, 'bg-[#40b751] text-white': openTab === 6 }">
 
@@ -439,9 +439,9 @@
 
               </div>
             </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Religiouse Campaign')">
+            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Religious Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(7)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'bg-[#40b751] text-white': openTab === 7 }">
 
@@ -449,14 +449,14 @@
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon/pray(1).png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Religiouse') }}
+                    $t('Religious') }}
                   </p>
 
                 </div>
                 <div class="flex" v-else="openTab === 7">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/pray.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Religiouse') }}
+                    $t('Religious') }}
                   </p>
 
                 </div>
@@ -466,7 +466,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Disability Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(8)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 8, 'bg-[#40b751] text-white': openTab === 8 }">
 
@@ -491,7 +491,7 @@
             </li>
             <li class="-mb-px mr-3 last:mr-3 last:mb-0 flex-auto text-center" @click="get_campaigns('Elder Campaign')">
               <div
-                class="font-bold w-full p-4 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border border-gray-200"
+                class="font-bold w-full p-4 cursor-pointer hover:transition ease-in duration-200 hover:bg-[#40b751] hover:text-white border border-gray-200"
                 v-on:click="toggleTabs(9)"
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'bg-[#40b751] text-white': openTab === 9 }">
 

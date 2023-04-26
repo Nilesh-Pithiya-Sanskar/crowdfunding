@@ -1,8 +1,10 @@
-<!-- <template>
-    <div>test</div>
+<!-- <template> -->
+    <!--<div>test</div>
     <test class="lg:block sm:hidden md:hidden" :data="data" :t="3"></test>
     <test class="block sm:hidden lg:hidden" :data="data" :t="2"></test>
-    <test class="block lg:hidden md:hidden" :data="data" :t="1"></test>
+    <test class="block lg:hidden md:hidden" :data="data" :t="1"></test>-->
+
+    <!-- <test class="block" :data="data" ></test>
 </template>
 <script>
 import test from '../pages/auth/Test.vue'
@@ -209,6 +211,20 @@ import { defineComponent, computed, reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 
 export default defineComponent({
+
+  metaInfo: {
+    title: 'My Page Title',
+    meta: [
+      {
+        name: 'description',
+        content: 'This is my page description'
+      },
+      {
+        property: 'og:title',
+        content: 'My Open Graph Title'
+      }
+    ]
+  },
   setup() {
     const siteData = reactive({
       title: `My website`,

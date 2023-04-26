@@ -9,6 +9,8 @@ import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 // import { createHead } from '@vueuse/head'
+import { createMetaManager } from 'vue-meta'
+
 
 
 import vue3GoogleLogin from 'vue3-google-login';
@@ -45,6 +47,8 @@ app.use(FrappeUI, {
     port: socketio_port,
   },
 })
+app.use(createMetaManager())
+
 
 // app.use(GAuth, gauthOption)
 app.use(vue3GoogleLogin, {

@@ -455,7 +455,7 @@
 
                         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
                             <div>
-                                <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
+                                <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
                                         <img src="../../src/assets/Inter/img/phonepay.png" class="w-12 h-12">
                                     </div>
@@ -466,7 +466,7 @@
                             </div>
 
                             <div>
-                                <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
+                                <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
                                         <img src="../../src/assets/Inter/img/gpay.png" class="w-12 h-12">
                                     </div>
@@ -477,7 +477,7 @@
                             </div>
 
                             <div>
-                                <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
+                                <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
                                         <img src="../../src/assets/Inter/img/bhim.png" class="w-12 h-12">
                                     </div>
@@ -488,7 +488,7 @@
                             </div>
 
                             <div>
-                                <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
+                                <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
                                         <img src="../../src/assets/Inter/img/paytm.png" class="w-12 h-12">
                                     </div>
@@ -499,7 +499,7 @@
                             </div>
 
                             <div>
-                                <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
+                                <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
                                         <img src="../../src/assets/Inter/img/crditcard.png" class="w-12 h-12">
                                     </div>
@@ -510,7 +510,7 @@
                             </div>
 
                             <div>
-                                <div class="cursor-pointer rounded-t-lg  pt-4 pb-4">
+                                <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
                                         <img src="../../src/assets/Inter/img/banktransfer.png" class="w-12 h-12">
                                     </div>

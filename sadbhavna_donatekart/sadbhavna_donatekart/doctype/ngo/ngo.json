@@ -152,14 +152,12 @@
      {
       "fieldname": "organisation_name_gu",
       "fieldtype": "Data",
-      "label": "\u0ab8\u0a82\u0ab8\u0acd\u0aa5\u0abe\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae",
-      "reqd": 1
+      "label": "\u0ab8\u0a82\u0ab8\u0acd\u0aa5\u0abe\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae"
      },
      {
       "fieldname": "organisation_name_hi",
       "fieldtype": "Data",
-      "label": "\u0938\u0902\u0917\u0920\u0928 \u0915\u093e \u0928\u093e\u092e",
-      "reqd": 1
+      "label": "\u0938\u0902\u0917\u0920\u0928 \u0915\u093e \u0928\u093e\u092e"
      },
      {
       "fieldname": "organisation_website",

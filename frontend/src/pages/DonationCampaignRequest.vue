@@ -373,7 +373,7 @@ export default {
                 }
 
                 if (this.beneficiary_group == '') {
-                    this.beneficiaryGroupError = 'Enter benificiary group name'
+                    this.beneficiaryGroupError = 'Enter beneficiary group name'
                     console.log('group')
                 }
                 if (this.email == '') {
@@ -518,7 +518,7 @@ export default {
                 }
 
                 if (this.beneficiary_groupig == '') {
-                    this.beneficiaryGroupErrorig = 'Enter benificiary group name'
+                    this.beneficiaryGroupErrorig = 'Enter beneficiary group name'
                     console.log('group')
                 }
                 if (this.emailig == '') {

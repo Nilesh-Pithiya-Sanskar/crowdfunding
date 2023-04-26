@@ -65,11 +65,7 @@ export default {
     interval: {
       type: Number,
       default: 4000
-    },
-    t: {
-      type: Number,
-      default: 3
-    },
+    }
   },
   setup(props) {
     const currentSlide = ref(0);
@@ -81,8 +77,14 @@ export default {
     };
 
     const nextSlide = () => {
-      currentSlide.value = (currentSlide.value + 1) % (props.data.length / props.t);
-    };
+      if (window.innerWidth > 1024) {
+      currentSlide.value = (currentSlide.value + 1) % (props.data.length / 3);
+    } else if (window.innerWidth > 767) {
+      currentSlide.value = (currentSlide.value + 1) % (props.data.length / 2);
+    } else {
+      currentSlide.value = (currentSlide.value + 1) % (props.data.length / 1);
+    }
+      };
 
     const startAutoPlay = () => {
       timerId = setInterval(nextSlide, props.interval);

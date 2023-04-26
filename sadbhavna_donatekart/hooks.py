@@ -51,7 +51,8 @@ website_route_rules = [
 	# Desk
 	{"from_route": "/<path:app_path>", "to_route": "bestdeed"},
 	# {"from_route": "/<path:app_path>", "to_route": "bestdeed"},
-	{"from_route": "/app", "to_route": "/app"}
+	{"from_route": "/app", "to_route": "/app"},
+    {"from_route": "/blog", "to_route": "bestdeed"}
 ]
 
 website_redirects = [

@@ -123,7 +123,7 @@
           </li>
           <li>
             <span class="group relative inline-block">
-              <a href="/blog" class="transition font-bold text-white text-[18px]">{{ $t('Blog') }}</a>
+              <router-link to="/blog" class="transition font-bold text-white text-[18px]">{{ $t('Blog') }}</router-link>
               <!--<ul class="absolute hidden pt-4 group-hover:block">
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/blog">Blog</a></li>
                 <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>
