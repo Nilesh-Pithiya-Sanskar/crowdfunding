@@ -892,7 +892,7 @@ import { computeStyles } from '@popperjs/core';
 // import DonationDetail from "../components/DonationDetail.vue";
 import DonationCheckout from "../components/DonationCheckout.vue";
 
-import VueMeta from 'vue-meta';
+// import VueMeta from 'vue-meta';
 
 
 // import Razorpay from 'razorpay';
