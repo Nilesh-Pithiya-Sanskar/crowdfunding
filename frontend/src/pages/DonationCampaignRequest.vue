@@ -198,18 +198,40 @@
             style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
     </div>
+    <Dialog :options="{
+        title: $t('Thank You For Request'),
+        message: $t('We Reach You Soon as possible'),
+        // icon: {
+        //   name: 'alert-triangle',
+        //   appearance: 'warning',
+        // },
+        size: 'sm',
+        actions: [
+          {
+            label: $t('Okay'),
+            appearance: 'success',
+            handler: ({ close }) => {
+              this.$router.push('/')
+              close() // closes dialog
+            },
+          },
+          { label: $t('Cancel') },
+        ],
+      }" v-model="showDialog" />
     <Footer />
 </template>
    
 <script>
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
+import { Dialog } from "frappe-ui";
 
 export default {
     name: "Donation Campaign Request",
     components: {
         Navbar,
-        Footer
+        Footer,
+        Dialog
     },
     data() {
         return {
@@ -241,7 +263,8 @@ export default {
             emailig: '',
             social_media_pageig: '',
             campaign_storyig: '',
-            beneficiary_groupig: ''
+            beneficiary_groupig: '',
+            showDialog: false
         }
     },
     // watch: {
@@ -269,11 +292,12 @@ export default {
                     //     customIcon: "check",
                     // })
                     // this.$router.go();
-                    if (confirm("Your Request is successfully sent to bestdeed donatekart") == true) {
-                        this.$router.push(`/`)
-                    } else {
-                        this.$router.go(-1)
-                    }
+                    // if (confirm("Your Request is successfully sent to bestdeed donatekart") == true) {
+                    //     this.$router.push(`/`)
+                    // } else {
+                    //     this.$router.go(-1)
+                    // }
+                    this.showDialog = true
                 },
                 onError: (error) => {
                     console.log(error)

@@ -153,6 +153,26 @@
         <!-- Section: Design Block -->
 
     </div>
+    <Dialog :options="{
+        title: $t('Thank You For Contact'),
+        message: $t('We Reach You Soon as possible'),
+        // icon: {
+        //   name: 'alert-triangle',
+        //   appearance: 'warning',
+        // },
+        size: 'sm',
+        actions: [
+          {
+            label: $t('Okay'),
+            appearance: 'success',
+            handler: ({ close }) => {
+              this.$router.push('/')
+              close() // closes dialog
+            },
+          },
+          { label: $t('Cancel') },
+        ],
+      }" v-model="showDialog" />
     <!-- Container for demo purpose -->
     <Footer />
 </template>
@@ -160,10 +180,11 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
+import { Dialog } from "frappe-ui";
 
 export default {
     name: "Contact Us",
-    components: { Navbar, Footer },
+    components: { Navbar, Footer, Dialog},
     data() {
         return {
             first_name: '',
@@ -179,6 +200,7 @@ export default {
             // errorMessage: '',
             // error: false,
             // errors: false,
+            showDialog: false
         }
     },
     // watch: {
@@ -198,12 +220,12 @@ export default {
             return {
                 method: 'sadbhavna_donatekart.api.contactus.contact_us',
                 onSuccess: (res) => {
-                    // this.recent_donation = res
-                    if (confirm("Your message is successfully sent to bestdeed donatekart") == true) {
-                        this.$router.push(`/`)
-                    } else {
-                        this.$router.go(-1)
-                    }
+                    // if (confirm("Your message is successfully sent to bestdeed") == true) {
+                    //     this.$router.push(`/`)
+                    // } else {
+                    //     this.$router.go(-1)
+                    // }
+                    this.showDialog = true
                 },
                 onError: (error) => {
                     this.$toast({
@@ -334,8 +356,6 @@ export default {
                     subject: this.subject,
                     message: this.message,
                 })
-                console.log('done')
-
             }
 
 
