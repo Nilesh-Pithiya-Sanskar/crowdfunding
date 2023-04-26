@@ -559,7 +559,7 @@
                       </svg>{{ campaigns[index - 1].total_donor || 0 }} {{ $t('Donors') }}</p>
                   </div>
 
-                  <div class="w-full bg-gray-200 rounded dark:bg-gray-700 mb-2">
+                  <div class="w-full bg-gray-200 h-[5px] rounded dark:bg-gray-700 mb-2">
                     <!--<div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
@@ -799,27 +799,6 @@ export default {
       user
     }
   },
-  created() {
-    document.title = this.$t('Donate with 100% Transparency | BestDeed')
-    // addMeta({
-    //   name: 'author',
-    //   content: 'John Doe'
-    // })
-  },
-  mounted() {
-    this.get_language()
-    this.get_campaigns()
-    this.get_featured_campaigns()
-    this.lang = localStorage.getItem('lang') || window.navigator.language
-    // const route = useRoute()
-    // if(route.query.razorpay_payment_id){
-    //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
-    // }
-    // else{
-    //   console.log("not found")
-    // }
-  },
-
   data() {
     return {
       campaigns: [],
@@ -835,6 +814,33 @@ export default {
       start: 0
     }
   },
+  // created() {
+  //   document.title = this.$t('Donate with 100% Transparency | BestDeed')
+  //   // addMeta({
+  //   //   name: 'author',
+  //   //   content: 'John Doe'
+  //   // })
+  // },
+  mounted() {
+    this.get_language()
+    this.get_campaigns()
+    this.get_featured_campaigns()
+    this.lang = localStorage.getItem('lang') || window.navigator.language
+    // const route = useRoute()
+    // if(route.query.razorpay_payment_id){
+    //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
+    // }
+    // else{
+    //   console.log("not found")
+    // }
+  },
+
+  // pageMeta() {
+  //       return {
+  //           title: 'Page Title',
+  //           emoji: '🌈'
+  //       }
+  //   },
   resources: {
     get_campaigns() {
       return {

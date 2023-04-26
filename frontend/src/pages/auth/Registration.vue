@@ -8,7 +8,7 @@
             <div class="container mx-auto py-0">
                 <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
                     <h1
-                        class="text-[20px] md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-gray-600 text-bold text-center">
+                        class="text-[20px] md:text-[30px] lg:text-[36px] font-bold py-8 px-10 text-[#40b751] text-bold text-center">
                         {{ $t('Donor Registration') }}
                     </h1>
                     <div class="relative z-0">
@@ -17,8 +17,8 @@
                                 <label class="block text-gray-600 text-base  mb-2">{{ $t('First Name') }} <span
                                         class="text-red-600">*</span></label>
                                 <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="first_name" @keyup="firstNameError = ''" type="text" placeholder="First name"
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="first_name" @keyup="firstNameError = ''" type="text" placeholder="Enter First Name"
                                     required ref="first_name">
                                 <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             </div>
@@ -26,8 +26,8 @@
                                 <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }} <span
                                         class="text-red-600">*</span></label>
                                 <input
-                                    class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="last_name" @keyup="firstNameError = ''" type="text" placeholder="Last name"
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="last_name" @keyup="firstNameError = ''" type="text" placeholder="Enter Last Name"
                                     required>
                                 <p class="text-red-600">{{ $t(lastNameError) }}</p>
                             </div>
@@ -36,16 +36,16 @@
                             <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
                                 <span class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="email" type="email" @keyup="emailError = ''" placeholder="Email" required>
+                                class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="email" type="email" @keyup="emailError = ''" placeholder="Enter Email" required>
                             <p class="text-red-600">{{ $t(emailError) }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">{{ $t('Password') }} <span
                                     class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="password" type="password" @keyup="passwordError = ''" placeholder="Password"
+                                class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="password" type="password" @keyup="passwordError = ''" placeholder="Enter Password"
                                 required>
                             <p class="text-red-600">{{ $t(passwordError) }}</p>
                         </div>
@@ -53,17 +53,17 @@
                             <label class="block text-gray-600 text-base  mb-2">{{ $t('Confirm Password') }} <span
                                     class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                 v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
-                                placeholder="Confirm password" required>
+                                placeholder="Enter Confirm Password" required>
                             <p class="text-red-600">{{ $t(confirmPasswordError) }}</p>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
                                     class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="phone_number" type="text" @keyup="phoneNumberError = ''" placeholder="Phone number"
+                                class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="phone_number" type="tel" @keyup="phoneNumberError = ''" placeholder="Enter Phone Number"
                                 required>
                             <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
                         </div>
@@ -71,8 +71,8 @@
                             <label class="block text-gray-600 text-base  mb-2">{{ $t('PAN Number') }} <span
                                     class="text-red-600">*</span></label>
                             <input
-                                class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="pan_number" type="text" @keyup="panError = ''" placeholder="PAN number" required>
+                                class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                v-model="pan_number" type="text" @keyup="panError = ''" placeholder="Enter PAN Number" required>
                             <p class="text-red-600">{{ $t(panError) }}</p>
                         </div>
                         <div class="flex items-center justify-between mt-8">

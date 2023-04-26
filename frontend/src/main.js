@@ -9,7 +9,9 @@ import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 // import { createHead } from '@vueuse/head'
-import { createMetaManager } from 'vue-meta'
+// import { createMetaManager } from 'vue-meta'
+
+import { pageMeta } from 'frappe-ui'
 
 
 
@@ -39,6 +41,7 @@ let app = createApp(App)
 app.use(VueSocialSharing);
 // app.use(head)
 app.use(i18n)
+app.use(pageMeta)
 app.use(router)
 app.use(FrappeUI)
 app.use(VueCookies)
@@ -47,7 +50,7 @@ app.use(FrappeUI, {
     port: socketio_port,
   },
 })
-app.use(createMetaManager())
+// app.use(createMetaManager()) 
 
 
 // app.use(GAuth, gauthOption)

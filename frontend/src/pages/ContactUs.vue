@@ -61,8 +61,8 @@
                             <label class="block text-gray-700 text-sm mb-2" for="">
                                 {{ $t('First Name') }} <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="first_name" type="text" placeholder="Firstname" @keyup="firstNameError = ''" ref="first_name"
-                                class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+                            <input v-model="first_name" type="text" placeholder="Enter First Name" @keyup="firstNameError = ''" ref="first_name"
+                                class="appearance-none placeholder-gray-400 border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
                             <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             <!-- <p>{{ error }}</p> -->
                         </div>
@@ -71,16 +71,24 @@
                             <label class="block text-gray-700 text-sm mb-2" for="">
                                 {{ $t('Last Name') }}
                             </label>
-                            <input v-model="last_name" type="text" placeholder="Lastname"
-                                class="appearance-none border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+                            <input v-model="last_name" type="text" placeholder="Enter Last Name"
+                                class="appearance-none placeholder-gray-400 border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
                         </div>
+                    </div>
+                    <div class="form-group mb-6">
+                        <label class="block text-gray-700 text-sm mb-2" for="">
+                            {{ $t('Phone Number') }} <span class="text-red-600">*</span>
+                        </label>
+                        <input v-model="phone" type="tel" placeholder="Enter Phone Number" @keyup="phoneError = ''"
+                            class="form-control block placeholder-gray-400 hover:border-[#40b751] placeholder-gray-400 w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <p class="text-red-600">{{ $t(phoneError) }}</p>
                     </div>
                     <div class="form-group mb-6">
                         <label class="block text-gray-700 text-sm mb-2" for="">
                             {{ $t('Email') }} <span class="text-red-600">*</span>
                         </label>
-                        <input v-model="email_id" type="email" placeholder="Email" @keyup="emailError = ''"
-                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <input v-model="email_id" type="email" placeholder="Enter Email" @keyup="emailError = ''"
+                            class="form-control placeholder-gray-400 block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
                         <!-- <span v-if="msg.email_id" className="text-danger mrgnbtn">{{ msg.email_id }}</span> -->
                         <p class="text-red-600">{{ $t(emailError) }}</p>
                         <!-- <p>{{ error }}</p> -->
@@ -90,8 +98,8 @@
                         <label class="block text-gray-700 text-sm mb-2" for="">
                             {{ $t('Subject') }} <span class="text-red-600">*</span>
                         </label>
-                        <input v-model="subject" type="text" placeholder="Subject" @keyup="subjectError = ''"
-                            class="form-control block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                        <input v-model="subject" type="text" placeholder="Enter Subject" @keyup="subjectError = ''"
+                            class="form-control placeholder-gray-400 block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
                         <p class="text-red-600">{{ $t(subjectError) }}</p>
                         <!-- <p>{{ error }}</p> -->
                     </div>
@@ -100,8 +108,8 @@
                         <label class="block text-gray-700 text-sm mb-2" for="">
                             {{ $t('Message') }}
                         </label>
-                        <textarea v-model="message" placeholder="Message"
-                            class="hover:border-[#40b751] form-control block w-full px-3 py-5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none"
+                        <textarea v-model="message" placeholder="Enter Message"
+                            class="hover:border-[#40b751] placeholder-gray-400 form-control block w-full px-3 py-5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none"
                             rows="3"></textarea>
                     </div>
 
@@ -166,6 +174,8 @@ export default {
             subject: '',
             subjectError: '',
             message: '',
+            phone: '',
+            phoneError: '',
             // errorMessage: '',
             // error: false,
             // errors: false,
@@ -255,7 +265,7 @@ export default {
         // },
         contact_us() {
             var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+            var phone = /^[6-9][0-9]{9}$/;
             // if (this.first_name == '') {
             //     this.firstNameError = 'Please enter first name!'
             //     console.log('firstname')
@@ -287,29 +297,39 @@ export default {
             // }
 
 
-            if (!this.first_name && !this.email_id && !this.subject) {
+            if (!this.first_name) {
                 this.firstNameError = 'Enter first name'
-                this.emailError = 'Enter email'
+
+            }
+             if (!this.subject) {
                 this.subjectError = 'Enter subject'
 
             }
 
-            else if (!this.email_id) {
-                this.emailError = 'Enter email'
+            if (this.phone == '') {
+                    this.phoneError = 'Enter phone number'
+                    console.log('phone number')
             }
+            else if (this.phone && phone.test(this.phone) == false) {
+                    this.phoneError = 'Enter valid phone number'
+                    console.log('phone')
+            }
+            if ( !this.email_id) {
+                this.emailError = 'Enter email'
 
+            }
             else if (re.test(this.email_id) == false) {
 
                 this.emailError = 'Enter valid email'
 
                 console.log('email')
             }
-
             else {
 
                 this.$resources.contact_us.submit({
                     first_name: this.first_name,
                     last_name: this.last_name,
+                    phone: this.phone,
                     email_id: this.email_id,
                     subject: this.subject,
                     message: this.message,

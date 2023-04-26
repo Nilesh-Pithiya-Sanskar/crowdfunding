@@ -234,6 +234,7 @@ def login_user(user):
 @frappe.whitelist(allow_guest=True)
 def login_via_token(login_token: str, number):
     sid = frappe.cache().get_value(f"login_token:{login_token}", expires=True)
+    print("api login_via_token", sid)
     if not sid:
         frappe.respond_as_web_page(_("Invalid Request"), _(
             "Invalid Login Token"), http_status_code=417)

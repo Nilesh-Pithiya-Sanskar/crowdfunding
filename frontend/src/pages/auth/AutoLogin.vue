@@ -26,7 +26,7 @@
                                 </label>
                                 <input @keyup="error = ''"
                                     :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
-                                    v-model="phone" ref="number" type="number">
+                                    v-model="phone" ref="number" type="tel">
 
                                 <div v-if="error" class="text-red-500">{{ error }}</div>
                                 <span v-if="phone && !error" class="text-sm text-gray-400"> {{ $t('An OTP will be sent to')

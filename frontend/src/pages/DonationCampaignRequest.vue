@@ -64,7 +64,7 @@
                                                         {{ $t('Phone Number')}} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="number" @keyup="phoneError = ''"
+                                                        type="tel" @keyup="phoneError = ''"
                                                         placeholder="Enter Phone Number" v-model="phone">
                                                     <p class="text-red-600">{{ phoneError }}</p>
                                                 </div>
@@ -132,7 +132,7 @@
                                                         {{ $t('Phone Number')}} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="number" placeholder="Enter Phone Number"
+                                                        type="tel" placeholder="Enter Phone Number"
                                                         @keyup="phoneErrorig = ''" v-model="phoneig">
                                                     <p class="text-red-600">{{ phoneErrorig }}</p>
                                                 </div>
