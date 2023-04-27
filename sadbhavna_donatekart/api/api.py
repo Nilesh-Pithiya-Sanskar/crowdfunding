@@ -83,6 +83,7 @@ def register(first_name, last_name, email, password, phone_number, pan_number):
 def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payment_id, anonymous):
     # print("\n\n user", user_id, "\n\n")
     # print("\n\n anonymouse", anonymous, "\n\n")
+    from frappe.utils import now
     donor = frappe.db.get_value(
         "Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
     donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}",
@@ -91,8 +92,6 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     frappe.db.commit()
     
     donors = frappe.db.sql(f"select count(name) as donors from `tabDonation` where campaign='{campaign}'", as_dict=True)
-    print("\n\n\ndonors", donors)
-
     donation_campaign = frappe.get_doc("Donation Campaign",  campaign)
     item_dict = {}
     item_list = []
@@ -110,7 +109,7 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     if total >= int(donation_amount):
         # frappe.db.set_value("Donation Campaign", campaign,
         #                     "raised_amount", total)
-        frappe.db.set_value("Donation Campaign", campaign, {"raised_amount": total, "published": 0, "status": "Closed", "total_donor": donors[0].donors})
+        frappe.db.set_value("Donation Campaign", campaign, {"raised_amount": total, "published": 0, "status": "Closed", "total_donor": donors[0].donors, "remark": "amount target is completed", "completion_date": now()})
     else:
         frappe.db.set_value("Donation Campaign", campaign, {"raised_amount": total, "total_donor": donors[0].donors})
     # donation = frappe.db.get_value("Donation", filters={'donor': user_id, 'campaign': campaign, 'donation_item': item, "payment_id": payment_id, 'date': today()}, fieldname=['name'])
@@ -549,10 +548,10 @@ def reset_password(email, password, key):
 
 @frappe.whitelist(allow_guest=True)
 def close_end_date_campaign():
+    from frappe.utils import now
     today_end_date_campaign = frappe.db.get_list("Donation Campaign", filters={'end_date': ["<", today()]}, fields=['name', 'ngo_email', 'campaign_title', 'raised_amount'])
     for i in today_end_date_campaign:
-        frappe.db.set_value("Donation Campaign", i.name, {'status': 'Closed', 'published': 0, 'remark': 'Your Camapign is close due to reached time limit.'})
+        frappe.db.set_value("Donation Campaign", i.name, {'status': 'Closed', 'published': 0, 'remark': 'Your Camapign is close due to reached time limit.', 'completion_date': now()})
         frappe.db.commit()
         frappe.sendmail(recipients=i.ngo_email, subject=f'You Campaign {i.campaign_title}', message=f'your campaign {i.campaign_title} is closed due to reached time limit, your total raised amount is {i.raised_amount}')
-        
     return today_end_date_campaign

@@ -180,7 +180,7 @@
                 <router-link to="/faq">{{ $t('FAQs') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-                <router-link to="/blog">{{ $t('Blogs') }}</router-link>
+                <router-link to="/blog">{{ $t('Blog') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
               <router-link to="/terms-of-service">{{ $t('Terms of Use') }}</router-link>

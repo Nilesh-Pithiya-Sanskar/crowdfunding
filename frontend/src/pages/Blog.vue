@@ -1,6 +1,6 @@
 <template>
     <Navbar />
-    <div class=" container mx-auto h-full px-5 pb-10 pt-4 md:pt-6 lg:pt-6">
+    <div class=" container mx-auto h-full pb-10 pt-4 md:pt-6 lg:pt-6">
         <div>
             <h1 class="text-center text-[27px] md:text-[33px] lg:text-[35px] font-black text-[#40b751] ">
                 {{ $t('Blog') }}</h1>
@@ -12,13 +12,13 @@
                     <img class="w-full h-52 cursor-pointer" :src="data.meta_image" alt="" @click="openblog(data.name)">
                     <div class="pt-5 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
 
-                        <h5 class="font-bold text-[#40b751] text-xl mb-2 truncate cursor-pointer"
+                        <h3 class="fontfamily cursor-pointer text-[#364958] font-bold text-[18px] md:text-[18px] lg:text-[20px] mb-2 truncate-2-lines"
                             @click="openblog(data.name)">
                             {{ $t(data.title) }}
-                        </h5>
-                        <p class="text-black text-base truncate-2-lines-blog h-[50px]">{{ $t(data.blog_intro) }}</p>
+                        </h3>
+                        <p class="text-gray-700 text-[16px]  truncate-2-lines ">{{ $t(data.blog_intro) }}</p>
 
-                        <p class="pb-4 pt-2 text-gray-700 text-[18px] md:text-[16px] lg:text-[16px] truncate">By: {{
+                        <p class="pb-2 pt-2 text-gray-500  text-[13px] truncate"><strong>By: </strong>{{
                             $t(data.blogger) }}
                         </p>
                         <!-- <hr> -->
@@ -27,9 +27,9 @@
 
                             <!-- <img class="h-5 w-5 " src="../assets/Inter/img/icon/calendar.png"> -->
 
-                            <p class="flex text-[14px] md:text-[12px] lg:text-[16px]">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-6 h-6  mr-1">
+                            <p class="flex items-center text-[12px] md:text-[10px] lg:text-[14px]">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="w-5 h-5  mr-1">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                                 </svg>
@@ -37,15 +37,14 @@
                             </p>
 
 
-                            <p class="flex text-[14px] md:text-[12px] lg:text-[16px]">
+                            <p class="flex items-center text-[12px] md:text-[10px] lg:text-[14px]">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-6 h-6 mr-1">
+                                    stroke="currentColor" class="w-5 h-5 mr-1">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 {{ $t('2 min read') }}
                             </p>
-
                         </div>
                     </div>
                 </div>

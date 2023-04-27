@@ -6,11 +6,11 @@
                 <div v-if="blog_detail">
                     <div class="flex justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6  mr-1 flex">
+                            stroke="currentColor" class="w-5 h-5  mr-1 flex">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                         </svg>
-                        <p class=" text-center text-[14px] md:text-[12px] lg:text-[16px]">
+                        <p class=" text-center text-[12px] md:text-[10px] lg:text-[14px]">
 
                             {{
                                 $t(formatDate(blog_detail.data.published_on)) }}
@@ -18,38 +18,38 @@
                     </div>
 
                     <h1
-                        class="text-center text-[25px] md:text-[30px] lg:text-[30px]  uppercase pt-2 pb-4 text-[#40b751] font-black ">
+                        class="w-full block mb-2 mr-2 text-center leading-normal md:leading-0 lg:heading-12 lg:text-[32px] text-[28px] font-bold text-[#364958] capitalize">
                         {{ $t(blog_detail.data.title) }}
                     </h1>
                     <div>
-                        <img class="object-fill w-full pb-2" :src="blog_detail.data.meta_image">
+                        <img class="object-fill w-full pb-3" :src="blog_detail.data.meta_image">
                     </div>
 
                     <div class="grid justify-items-center">
-                        <div class="flex">
-                            <img class="h-5 w-5 mr-1 " src="../assets/Inter/img/icon/folder.png">
+                        <div class="flex items-center">
+                            <img class="h-4 w-4 mr-2 " src="../assets/Inter/img/icon/folder.png">
                             <p class="mr-4 text-[14px] md:text-[12px] lg:text-[16px] mb-1 cursor-pointer"
                                 @click="get_blogs(blog_detail.data.blog_category)">{{
                                     blog_detail.data.blog_category
                                 }}
                             </p>
-                            <img src="../assets/Inter/img/icon/clock.png" class="h-5 w-5 mr-1 ">
-                            <p class=" text-[14px] md:text-[12px] lg:text-[16px] mb-1">
+                            <img src="../assets/Inter/img/icon/clock.png" class="h-4 w-4 mr-2 ">
+                            <p class=" text-[12px] md:text-[10px] lg:text-[14px] mb-1">
                             </p>
-                            <p class=" text-[14px] md:text-[12px] lg:text-[16px] mb-1">{{ blog_detail.data.reading_time }}
+                            <p class=" text-[12px] md:text-[10px] lg:text-[14px] mb-1">{{ blog_detail.data.reading_time }}
                                 {{
                                     $t('min read') }}</p>
                         </div>
                     </div>
                     <div class="text-justify pt-2">
-                        <h4 class="pb-4 font-black text-[15px] md:text-[19px] lg:text-[19px]">
+                        <h4 class="pb-2 pt-2 text-[#364958] font-bold text-[15px] md:text-[19px] lg:text-[19px]">
                             {{ $t(blog_detail.data.blog_intro) }}
                         </h4>
                     </div>
-                    <p class="pb-4 text-justify">{{ $t(blog_detail.data.content_md) }}</p>
-                    <p class="font-bold pb-4">By: {{ $t(blog_detail.data.blogger) }}</p>
+                    <p class="text-[#364958] text-[16px] mb-4">{{ $t(blog_detail.data.content_md) }}</p>
+                    <p class=" text-[#364958] text-[16px] pb-2"><strong>By:</strong> {{ $t(blog_detail.data.blogger) }}</p>
                     <hr>
-                    <p class="pt-2 font-bold">{{ $t('SHARE ARTICLE') }}</p>
+                    <p class="pt-3 text-[#364958] font-bold">{{ $t('SHARE ARTICLE') }}</p>
                     <div class="flex flex-wrap pt-3 justify-between">
                         <div class="flex flex-wrap lg:pt-0 md:pt-0 sm:pt-2">
                             <div
@@ -104,11 +104,12 @@
             </div>
         </div>
     </div>
-    <section class="container mx-auto h-full categorycard  card-space pb-8">
+    
+    <section class="container mx-auto p-4 ">
         <!--Cards-->
         <!-- <h1 class="text-center text-[25px] md:text-[30px] lg:text-[30px]  uppercase pt-2 pb-4 text-[#40b751] font-black ">
             {{ $t("Related Post") }}</h1> -->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0">
 
             <div v-for="index in blogToShow">
 
@@ -118,21 +119,21 @@
 
                         <img class="w-full h-52 cursor-pointer" :src="blogs[index - 1].meta_image" @click="openblog(blogs[index - 1].name
                             )" alt="Mountain">
-                        
-                        <div class="pt-5 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
-                            <h5 class="font-bold text-[#40b751] text-xl mb-2 truncate cursor-pointer">
+
+                        <div class="pt-[20px] pr-[20px] pl-[20px] leading-6 ">
+                            <h5 class="fontfamily cursor-pointer text-[#364958] font-bold text-[18px] md:text-[18px] lg:text-[20px] mb-2 truncate-2-lines">
                                 {{ blogs[index - 1].title }}
                             </h5>
-                            <p class="text-black text-base truncate-2-lines-blog h-[50px]">{{ blogs[index - 1].blog_intro }}
+                            <p class="text-gray-700 text-[16px] truncate-2-lines">{{ blogs[index - 1].blog_intro }}
                             </p>
 
-                            <p class="pb-4 pt-2 text-gray-700 text-[18px] md:text-[16px] lg:text-[16px] truncate">By: {{
+                            <p class="pb-2 pt-2 text-gray-500 text-[13px] truncate"><strong>By: </strong>{{
                                 blogs[index - 1].blogger }}
                             </p>
                             <div class="flex justify-between border-t-2 pt-3 border-b-gray-100 mb-6">
-                                <p class="flex text-[14px] md:text-[12px] lg:text-[16px]">
+                                <p class="flex items-center text-[12px] md:text-[10px] lg:text-[14px]">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6  mr-1">
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5  mr-1">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                                     </svg>
@@ -140,9 +141,9 @@
                                 </p>
 
 
-                                <p class="flex text-[14px] md:text-[12px] lg:text-[16px]">
+                                <p class="flex items-center text-[12px] md:text-[10px] lg:text-[14px]">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-1">
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>

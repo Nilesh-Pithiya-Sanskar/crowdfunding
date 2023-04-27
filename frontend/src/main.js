@@ -13,6 +13,10 @@ import "@/assets/Inter/styles/tailwind.css"
 
 import { pageMeta } from 'frappe-ui'
 
+// import 'vuetify/styles'
+// import { createVuetify } from 'vuetify'
+// import * as components from 'vuetify/components'
+// import * as directives from 'vuetify/directives'
 
 
 import vue3GoogleLogin from 'vue3-google-login';
@@ -34,6 +38,10 @@ const i18n = createI18n({
     }
 })
 
+// const vuetify = createVuetify({
+//   components,
+//   directives,
+// })
 
 let app = createApp(App)
 // const head = createHead()
@@ -45,13 +53,13 @@ app.use(pageMeta)
 app.use(router)
 app.use(FrappeUI)
 app.use(VueCookies)
+// app.use(vuetify)
 app.use(FrappeUI, {
   socketio: {
     port: socketio_port,
   },
 })
 // app.use(createMetaManager()) 
-
 
 // app.use(GAuth, gauthOption)
 app.use(vue3GoogleLogin, {

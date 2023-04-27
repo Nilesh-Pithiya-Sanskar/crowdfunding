@@ -454,7 +454,7 @@
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                 </svg>{{ campaign.total_donor || 0 }} {{ $t('Donors') }}</p>
                         </div>
-                        <div class="w-full bg-gray-200 rounded dark:bg-gray-700 mb-2 ">
+                        <div class="w-full h-[5px] bg-gray-200 rounded dark:bg-gray-700 mb-2 ">
                             <!--<div v-if="campaigns[index - 1].raised_amount"
                     class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                     :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">

@@ -13,6 +13,8 @@ def get_campaigns(start=0, page_length=12, category = '', language = ''):
     # print("\n\n category", category, "\n\n")
     from frappe.utils import getdate
     today = getdate()
+    # from frappe.utils import now
+    # today = now()
     if category != '':
         return frappe.db.get_list("Donation Campaign", filters={'published': 1, 'status': 'Live', 'campaign_category': f'{category}', 'end_date': ['>=', today], 'start_date': ['<=', today]}, fields=["*"], order_by='start_date desc', start=start, page_length=page_length)
     else:

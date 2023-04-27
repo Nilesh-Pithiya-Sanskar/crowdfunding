@@ -71,7 +71,7 @@ frappe.ui.form.on('Donation Campaign', {
 	refresh: function(frm) {
 		prev_page_route = frappe.get_prev_route()
 		if(frm.doc.ngo){
-			frm.events.show_go_to_ngo_campaign_form(frm,"NGO",frm.doc.ngo);
+			frm.events.show_go_to_ngo_campaign_form(frm,"View NGO",frm.doc.ngo);
 		}
 		if(frm.doc.campaign_request){
 			frm.events.show_go_to_ngo_campaign_form(frm,"Donation Campaign Request",frm.doc.campaign_request);
@@ -132,7 +132,7 @@ frappe.ui.form.on('Donation Campaign', {
 		// open NGO page
 		frm.add_custom_button(__(`Preview Campaign`), function() {
 			let html_link = '/'
-			window.open(`/bestdeed/campaign-donation/${frm.doc.name}`, '_blank');
+			window.open(`/campaign-donation/${frm.doc.name}`, '_blank');
 		});
 	},
 });
