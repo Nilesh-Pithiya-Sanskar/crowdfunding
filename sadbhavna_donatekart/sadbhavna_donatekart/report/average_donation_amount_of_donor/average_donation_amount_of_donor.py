@@ -5,7 +5,6 @@ import frappe
 
 def execute(filters=None):
     columns = [
-        {"label": "Date", "fieldname": "date", "fieldtype": "date"},
         {"label": "Donor Name", "fieldname": "donor_name", "fieldtype": "data"},
         {"label": "Email", "fieldname": "email", "fieldtype": "email"},
         {"label": "Total Amount", "fieldname": "total_amount", "fieldtype": "Currency"}
