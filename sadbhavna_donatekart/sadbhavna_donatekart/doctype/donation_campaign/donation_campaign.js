@@ -125,6 +125,10 @@ frappe.ui.form.on('Donation Campaign', {
 	show_go_to_ngo_campaign_form: function(frm,type,name) {
 		// open NGO page
 		frm.add_custom_button(__(`${type}`), function() {
+			if(type === 'View NGO')
+			{
+				type = 'NGO'
+			}
 			frappe.set_route("Form",type,name);
 		});
 	},

@@ -2,8 +2,15 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["Average Donation Amount Of Donor"] = {
+frappe.query_reports["Average Donation amount per category"] = {
 	"filters": [
+		{
+			"fieldname": "campaign_category",
+			"fieldtype": "Link",
+			"label": "Campaign Category",
+			"options": "Donation Campaign Category",
+			"reqd": 0
+		},
 		{
 			"fieldname":"from_date",
 			"label": __("From Date"),
@@ -18,5 +25,5 @@ frappe.query_reports["Average Donation Amount Of Donor"] = {
 			"default": frappe.datetime.get_today(),
 			"reqd": 0
 		}
-	]
+		]
 };

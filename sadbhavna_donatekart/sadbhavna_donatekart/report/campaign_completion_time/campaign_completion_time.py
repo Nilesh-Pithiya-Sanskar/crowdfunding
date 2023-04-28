@@ -52,7 +52,7 @@ def get_data(filters):
 		GROUP BY
 			name
 		ORDER BY
-			creation asc """.format(
+			completion_days asc """.format(
 			conditions=get_conditions(filters)
 		),
 		filters,

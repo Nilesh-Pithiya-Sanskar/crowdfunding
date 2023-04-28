@@ -19,7 +19,7 @@ def get_columns():
 		# 	"options": "Donation Campaign request",
 		# 	"width": 150,
 		# },
-		{"label": _("Campaign"), "fieldname": "campaign", "fieldtype": "Link", "options": "Donation Campaign", "width": 200},
+		{"label": _("Campaign"), "fieldname": "campaign", "fieldtype": "Link", "options": "Donation Campaign", "width": 250},
 		{"label": _("NGO"), "fieldname": "ngo", "fieldtype": "Link", "options": "NGO", "width": 250},
 		# {
 		# 	"label": _("Email"),
@@ -32,8 +32,8 @@ def get_columns():
 		{"fieldname": "status", "label": _("Status"), "fieldtype": "Data", "width": 100},
 
 		{"label": _("Campaign Category"), "fieldname": "campaign_category", "fieldtype": "Data", "width": 150},
-		{"label": _("Requester Type"), "fieldname": "requester_type", "fieldtype": "Data", "width": 100},
-		{"label": _("Organisation Name"), "fieldname": "organisation_name", "fieldtype": "Data", "width": 100},
+		{"label": _("Requester Type"), "fieldname": "requester_type", "fieldtype": "Data", "width": 150},
+		{"label": _("Organisation Name"), "fieldname": "organisation_name", "fieldtype": "Data", "width": 200},
 		# {"label": _("Date"), "fieldname": "date", "fieldtype": "Date", "width": 100},
 		{"label": _("Amount"), "fieldname": "amount", "fieldtype": "Data", "width": 100},
 		# {
@@ -57,12 +57,16 @@ def get_data(filters):
 			`tabDonation Campaign` as campaign
 		ON
 			donation.campaign = campaign.name
+		INNER JOIN
+			`tabNGO` as ngo
+		ON
+			campaign.ngo = ngo.name
 		WHERE
 			{conditions}
 		GROUP BY
 			donation.campaign
 		ORDER BY
-			donation.creation asc """.format(
+			donation.amount desc """.format(
 			conditions=get_conditions(filters)
 		),
 		filters,
@@ -90,6 +94,7 @@ def get_conditions(filters):
 	# 	else:
 	# 		conditions.append(f"creation BETWEEN {add_to_date(datetime.now().strftime('%Y-%m-%d'), days=-300)} AND {today()}")
 	
+
 	if filters.get('from_date'):
 		conditions.append("donation.creation BETWEEN %(from_date)s AND %(to_date)s")
 

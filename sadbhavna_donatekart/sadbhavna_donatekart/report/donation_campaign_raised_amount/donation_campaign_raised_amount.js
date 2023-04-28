@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["Donation Campaign"] = {
+frappe.query_reports["Donation Campaign Raised Amount"] = {
 	"filters": [
 		{
 			"fieldname":"campaign_category",
