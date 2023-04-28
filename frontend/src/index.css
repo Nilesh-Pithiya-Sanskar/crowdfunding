@@ -501,3 +501,30 @@ select:focus {
     padding: 5px;
   }
 }
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: #ddd;
+}
+::-webkit-scrollbar:hover {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button {
+    background: #ccc;
+    width:2px;
+    height:2px;
+}
+::-webkit-scrollbar-track-piece {
+    background: #ccc
+}
+::-webkit-scrollbar-thumb {
+    background: #40b751;
+}
+
+.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+  background: #000;
+}
