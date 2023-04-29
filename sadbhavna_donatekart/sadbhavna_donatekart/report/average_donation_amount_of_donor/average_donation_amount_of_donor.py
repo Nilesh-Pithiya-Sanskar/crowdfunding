@@ -6,17 +6,14 @@ import frappe
 def execute(filters=None):
     columns = [
         {"label": "Email", "fieldname": "email", "fieldtype": "Data", "options": "Donor", "width": 250, "align": "left"},
-        {"label": "Donor Name", "fieldname": "donor_name", "fieldtype": "data", "width": 200, "align": "left"},
-        {"label": "Total Amount", "fieldname": "total_amount", "fieldtype": "Currency", "width": 150}
+        {"label": "Average Amount", "fieldname": "total_amount", "fieldtype": "Currency", "width": 150}
     ]
 
     if filters and filters.get("from_date") and filters.get("to_date"):
         data = frappe.db.sql("""
             select
-                date,
-                donor_name,
                 email,
-                sum(amount) as total_amount 
+                avg(amount) as total_amount 
             from
                 `tabDonation`
             where
@@ -27,10 +24,8 @@ def execute(filters=None):
     else:
         data = frappe.db.sql("""
             select
-                date,
-                donor_name,
                 email,
-                sum(amount) as total_amount 
+                avg(amount) as total_amount 
             from
                 `tabDonation`
             where

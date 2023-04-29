@@ -38,7 +38,7 @@ def get_details_of_donor_donations(donor):
 
 @frappe.whitelist()
 def get_donation_details(email, page_length):
-    return frappe.db.get_list("Donation", filters={"email": email}, fields=['*'], page_length=page_length, order_by='date desc')
+    return frappe.db.get_list("Donation", filters={"email": email}, fields=['*'], page_length=page_length, order_by='creation desc')
 
 @frappe.whitelist()
 def update_donor(first_name, last_name, phone, old_email, pan_number, password):
@@ -92,3 +92,4 @@ def create_donor_from_checkout(f_name, phone_number, email):
             if user:
                 login_user(user)
                 return f_name, email, phone_number
+            

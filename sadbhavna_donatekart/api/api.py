@@ -86,11 +86,14 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
     from frappe.utils import now
     donor = frappe.db.get_value(
         "Donor", filters={"email": f"{user_id}"}, fieldname=["name"], pluck="name")
+   
     donation = frappe.get_doc({"doctype": "Donation", "donor": donor, "campaign": f"{campaign}",
                               "date": today(), "amount": amount, "donation_item": item, "payment_id": payment_id, "anonymous": anonymous, "paid": 1})
-    donation.insert(ignore_permissions=True)
-    frappe.db.commit()
     
+    payment = frappe.get_doc({"doctype": "Payment Entry", "payment_type": "Receive", "party_type": "Donor", "party": donor, "paid_to": "Axis - ST",
+                               "paid_from": "Debtors - ST", "posting_date": today(), "reference_date": today(), "reference_no": payment_id,
+                               "received_amount": amount, "paid_amount": amount})
+       
     donors = frappe.db.sql(f"select count(name) as donors from `tabDonation` where campaign='{campaign}'", as_dict=True)
     donation_campaign = frappe.get_doc("Donation Campaign",  campaign)
     item_dict = {}
@@ -114,6 +117,13 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
         frappe.db.set_value("Donation Campaign", campaign, {"raised_amount": total, "total_donor": donors[0].donors})
     # donation = frappe.db.get_value("Donation", filters={'donor': user_id, 'campaign': campaign, 'donation_item': item, "payment_id": payment_id, 'date': today()}, fieldname=['name'])
     # print("\n\n donation", donation, "\n\n")
+
+    payment.insert(ignore_permissions=True)
+    frappe.db.commit()
+
+    donation.insert(ignore_permissions=True)
+    frappe.db.commit()
+
     donation = frappe.get_last_doc('Donation', filters={"payment_id": payment_id})
 
     return amount, donation.name
@@ -463,13 +473,7 @@ def set_translation_from_erpnext(doc, method):
     import json
     import os
 
-    print("\n\n event", doc, "\n\n")
-    print("\n\n method", method, "\n\n")
-
     language, source_text, translated_text = frappe.db.get_value("Translation", doc.name, ['language', "source_text", "translated_text"])
-    print("\n\n language", language, "\n\n")
-    print("\n\n source", source_text, "\n\n")
-    print("\n\n trans", translated_text, "\n\n")
 
     file_path = 'File.json'
     if language == 'en':
@@ -486,12 +490,10 @@ def set_translation_from_erpnext(doc, method):
         #         print("\n\n key alredy exist")
         # else:
         existing_data[source_text] = translated_text
-        print("\n\n dsfadsf", existing_data, "\n\n")
 
     with open(file_path, "w") as d:
         data = json.dumps(existing_data)
         d.write(data)
-        print("\n\n dsfadsfasdfsd", existing_data, "\n\n")
         
 
     # with open('File.json', 'r') as file:

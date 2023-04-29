@@ -168,8 +168,9 @@
                                     </div>
                                 </div>
 
-                                <div class="flex justify-between !items-end flex-wrap !self-end">
-                                    <hr class="h-px my-2 bg-gray-300 border-0 w-full">
+
+                                <hr class="h-px my-2 bg-gray-300 border-0 w-full">
+                                <div class="flex justify-between !items-end justify-center !self-end">
                                     <div>
                                         <p class="text-gray-500 font-bold">
                                             ₹ {{ numberWithCommas(products.price) }}
@@ -397,19 +398,19 @@
                                         <!-- <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
                                             {{ item.rate }}
                                         </td> -->
-                                        <td class="text-sm text-gray-900 px-10 py-2 whitespace-nowrap text-center">
+                                        <td class="text-sm text-gray-900 px-10 py-2 text-center">
                                             {{ item.qty }}
                                         </td>
-                                        <td class="text-sm text-gray-900 px-10 py-2 whitespace-nowrap text-right">
+                                        <td class="text-sm text-gray-900 px-10 py-2 text-right">
                                             {{ item.amount }}
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                        <td class="text-[#364958] font-bold px-2 py-2 whitespace-nowrap">{{ $t('Total') }}
+                                        <td class="text-[#364958] font-bold px-2 py-2 ">{{ $t('Total') }}
                                         </td>
-                                        <td class="text-[#364958] font-bold px-10 py-2 whitespace-nowrap text-center">{{
+                                        <td class="text-[#364958] font-bold px-10 py-2 text-center">{{
                                             i_qty }}</td>
-                                        <td class="text-#364958] font-bold px-10 py-2 whitespace-nowrap text-right">₹ {{
+                                        <td class="text-#364958] font-bold px-10 py-2 text-right">₹ {{
                                             numberWithCommas(total_price) }}</td>
                                     </tr>
                                 </tbody>
@@ -553,7 +554,7 @@
 
                                     <div class="flex flex-wrap sm:mx-auto sm:mb-2 mx-auto">
                                         <div class="w-full py-2">
-                                            <details class="mb-3">
+                                            <details class="mb-3" open>
                                                 <summary
                                                     class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
                                                     {{ $t('How can I get my tax redemption?') }}</summary>
