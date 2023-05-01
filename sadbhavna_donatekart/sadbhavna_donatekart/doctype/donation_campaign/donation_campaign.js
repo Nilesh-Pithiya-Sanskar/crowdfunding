@@ -67,6 +67,7 @@
 // For license information, please see license.txt
 let prev_page_route = ['','','']
 let is_form_new = false
+
 frappe.ui.form.on('Donation Campaign', {
 	refresh: function(frm) {
 		prev_page_route = frappe.get_prev_route()
@@ -88,11 +89,11 @@ frappe.ui.form.on('Donation Campaign', {
 					if(r.message != null){
 						frm.events.show_go_to_ngo_campaign_form(frm, "User", frm.doc.ngo_email)
 					}
-					else{
+					else if(frm.doc.status == 'Live'){
 						// frm.events.show_go_to_ngo_campaign_form(frm, "User1", frm.doc.ngo_email)
 						frm.add_custom_button(__('Create User of NGO'), function(){
 							frappe.call({
-					method: 'sadbhavna_donatekart.sadbhavna_donatekart.doctype.donation_campaign.donation_campaign.create_ngo_user',
+								method: 'sadbhavna_donatekart.sadbhavna_donatekart.doctype.donation_campaign.donation_campaign.create_ngo_user',
 								args: {
 									'ngo': frm.doc.ngo
 								},
@@ -105,7 +106,9 @@ frappe.ui.form.on('Donation Campaign', {
 				}
 			})
 		}
-		frm.events.show_preview_campaign(frm)
+		if(frm.doc.status == 'Live'){
+			frm.events.show_preview_campaign(frm)
+		}
 	},
 	before_save: function(frm) {
 		is_form_new = frm.doc.name.includes('new')
@@ -122,6 +125,15 @@ frappe.ui.form.on('Donation Campaign', {
 			});
 		}
 	},
+
+	status:function(frm){
+		if(frm.doc.status == 'Live'){
+			frappe.msgprint("send mail code here in doctype_name.js line 131")
+			var message = `Hello, Your campaign ${frm.doc.campaign_title} is now live, you can check here ${frappe.urllib.get_base_url()}/campaign-donation/${frm.doc.name}`
+			// frappe.sendmail(recipients=frm.doc.ngo_email, subject='Your Campaign is Live', message=message)
+		}
+	},
+
 	show_go_to_ngo_campaign_form: function(frm,type,name) {
 		// open NGO page
 		frm.add_custom_button(__(`${type}`), function() {
@@ -133,10 +145,16 @@ frappe.ui.form.on('Donation Campaign', {
 		});
 	},
 	show_preview_campaign: function(frm) {
-		// open NGO page
 		frm.add_custom_button(__(`Preview Campaign`), function() {
 			let html_link = '/'
-			window.open(`/campaign-donation/${frm.doc.name}`, '_blank');
+			if(frm.doc.status == 'Live'){
+				window.open(`/campaign-donation/${frm.doc.name}`, '_blank');
+			}
+			else{
+				frappe.throw("Make sure this camapign is live and filled all mendetory fields")
+				// frappe.msgprint("Make sure this camapign is live and filled mendetory fields")
+			}
+			
 		});
 	},
 });

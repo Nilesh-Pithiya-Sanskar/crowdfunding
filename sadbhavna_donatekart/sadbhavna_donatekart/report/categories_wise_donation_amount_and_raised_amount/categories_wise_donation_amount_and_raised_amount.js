@@ -10,6 +10,15 @@ frappe.query_reports["Categories Wise donation amount and raised amount"] = {
 			"label": "Campaign Category",
 			"options": "Donation Campaign Category",
 			"reqd": 0
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			options:[
+				"Live",
+				"Closed"
+			]
 		}
 	]
 };

@@ -34,7 +34,7 @@ def get_columns():
 		{"label": _("Campaign Category"), "fieldname": "campaign_category", "fieldtype": "Data", "width": 150},
 		{"label": _("Requester Type"), "fieldname": "requester_type", "fieldtype": "Data", "width": 150},
 		{"label": _("Organisation Name"), "fieldname": "organisation_name", "fieldtype": "Data", "width": 200},
-		# {"label": _("Date"), "fieldname": "date", "fieldtype": "Date", "width": 100},
+		# {"label": _("Donation Amount"), "fieldname": "", "fieldtype": "Date", "width": 100},
 		{"label": _("Amount"), "fieldname": "amount", "fieldtype": "Data", "width": 100},
 		# {
 		# 	"label": _("Owner"),
@@ -75,6 +75,7 @@ def get_data(filters):
 # creation BETWEEN %(from_date)s AND %(to_date)s
 	# print("\n\n data", data,"\n\n")
 
+
 def get_conditions(filters):
 	from datetime import datetime # from python std library
 	from frappe.utils import add_to_date
@@ -104,6 +105,9 @@ def get_conditions(filters):
 	if filters.get("email"):
 		conditions.append("and donation.email=%(email)s")
 	
+	if filters.get("status"):
+		conditions.append("and campaign.status=%(status)s")
+
 	if filters.get("organisation_name"):
 		conditions.append("and campaign.organisation_name = %(organisation_name)s")
 

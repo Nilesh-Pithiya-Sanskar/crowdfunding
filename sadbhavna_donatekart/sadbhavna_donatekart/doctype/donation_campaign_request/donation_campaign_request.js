@@ -74,6 +74,7 @@ frappe.ui.form.on('Donation Campaign request', {
 						doc.phone = frm.doc.phone
 						doc.full_name = frm.doc.full_name
 						doc.requester_type = frm.doc.requester_type
+						doc.fcra_registered = frm.doc.fcra_registered
 						frappe.set_route("Form", "NGO", doc.name);                                                                        
 					})
 				}

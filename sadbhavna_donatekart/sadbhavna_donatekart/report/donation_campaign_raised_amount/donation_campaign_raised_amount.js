@@ -25,15 +25,21 @@ frappe.query_reports["Donation Campaign Raised Amount"] = {
 			// "reqd": 1
 		},
 		{
-			"fieldname":"date",
-			"label": __("Date"),
+			"fieldname":"status",
+			"label": __("Status"),
 			"fieldtype": "Select",
-			options: [
-				{ "value": "Weekly", "label": __("Weekly") },
-				{ "value": "Monthly", "label": __("Monthly") },
-			],
-			"default": "Weekly"
+			options:['Live', 'Closed']
 		},
+		// {
+		// 	"fieldname":"date",
+		// 	"label": __("Date"),
+		// 	"fieldtype": "Select",
+		// 	options: [
+		// 		{ "value": "Weekly", "label": __("Weekly") },
+		// 		{ "value": "Monthly", "label": __("Monthly") },
+		// 	],
+		// 	"default": "Weekly"
+		// },
 		// {
 		// 	"fieldname": "ngo_email",
 		// 	"lable": __("Email"),

@@ -10,51 +10,49 @@
  "engine": "InnoDB",
  "field_order": [
   "details_tab",
+  "published",
   "campaign_title",
   "campaign_title_gu",
-  "section_break_4",
-  "status",
   "campaign_title_hi",
+  "section_break_4",
+  "is_featured",
+  "status",
+  "ngo",
+  "ngo_email",
   "section_break_0gbxv",
   "column_break_7e2rr",
   "start_date",
-  "column_break_pv0n5",
-  "end_date",
-  "section_break_12",
   "campaign_category",
+  "donation_amount",
   "column_break_14",
+  "end_date",
   "campain_image",
+  "raised_amount",
   "section_break_16",
-  "published",
-  "is_featured",
   "column_break_2",
   "section_break_0tx0a",
+  "add_campaign_items",
+  "description",
+  "benefits",
   "short_description",
   "short_description_gu",
   "short_description_hi",
   "about_campaign",
   "about_campaign_gu",
   "about_campaign_hi",
-  "description",
-  "benefits",
-  "campaign_request",
-  "ngo",
   "ngo_gu",
   "ngo_hi",
   "about_ngo",
   "about_ngo_gu",
   "about_ngo_hi",
-  "ngo_email",
+  "campaign_item_tab",
   "total_donor",
   "naming_series",
-  "campaign_item_tab",
-  "donation_amount",
   "column_break_6",
-  "raised_amount",
   "column_break_2wrro",
-  "add_campaign_items",
   "remark",
-  "completion_date"
+  "completion_date",
+  "campaign_request"
  ],
  "fields": [
   {
@@ -85,14 +83,13 @@
   {
    "fieldname": "about_campaign",
    "fieldtype": "Text",
+   "hidden": 1,
    "label": "About Camapign (In Details)"
   },
   {
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Status",
    "options": "Pending\nLive\nClosed\nRejected",
    "reqd": 1
@@ -107,7 +104,8 @@
    "fieldname": "start_date",
    "fieldtype": "Datetime",
    "label": "Start date",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "campaign_title",
@@ -128,10 +126,6 @@
   {
    "fieldname": "column_break_6",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_12",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "campain_image",
@@ -238,11 +232,13 @@
   {
    "fieldname": "about_campaign_gu",
    "fieldtype": "Text",
+   "hidden": 1,
    "label": "\u0a9d\u0ac1\u0a82\u0aac\u0ac7\u0ab6 \u0ab5\u0abf\u0ab6\u0ac7"
   },
   {
    "fieldname": "about_campaign_hi",
    "fieldtype": "Text",
+   "hidden": 1,
    "label": "\u0905\u092d\u093f\u092f\u093e\u0928 \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
   },
   {
@@ -319,11 +315,8 @@
   {
    "fieldname": "completion_date",
    "fieldtype": "Datetime",
-   "label": "Completion Date"
-  },
-  {
-   "fieldname": "column_break_pv0n5",
-   "fieldtype": "Column Break"
+   "label": "Completion Date",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -334,7 +327,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-05-01 11:28:35.263503",
+ "modified": "2023-05-01 16:35:55.802898",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

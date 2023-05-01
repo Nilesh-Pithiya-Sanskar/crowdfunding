@@ -77,7 +77,7 @@
                                                         v-model="email">
                                                     <p class="text-red-600">{{ emailError }}</p>
                                                 </div>
-                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                <div class="mb-2 md:mb-4 lg:mb-4">
                                                     <label class="block text-gray-600 text-base  mb-2">
                                                         {{ $t('Social Media Page')}}</label>
                                                     <input
@@ -87,6 +87,14 @@
 
                                                 </div>
                                             </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="text-gray-600 text-base mb-2">
+                                                        {{ $t('FCRA Registered')}}<span class="text-red-600 mr-2">*</span></label>
+                                                        <input class="mr-1" type="radio" v-model="fcra_registered" v-bind:value="1">{{ $t('Yes') }}
+                                                        <input class="ml-2 mr-1" type="radio" v-model="fcra_registered" v-bind:value="0">{{ $t('No') }}
+                                                        <p class="text-red-600">{{ fcra_registeredError }}</p>
+                                                </div>
+                                            
                                             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4">
                                                 <div class="mb-0 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2">
@@ -264,7 +272,11 @@ export default {
             social_media_pageig: '',
             campaign_storyig: '',
             beneficiary_groupig: '',
-            showDialog: false
+            showDialog: false,
+
+            fcra_registered: '',
+            fcra_registeredError: ''
+
         }
     },
     // watch: {
@@ -327,6 +339,7 @@ export default {
             this.social_media_page = "";
             this.campaign_story = "";
             this.beneficiary_group = "";
+            this.fcra_registered = "";
         },
         resetFormIg() {
             this.full_nameig = "";
@@ -343,6 +356,7 @@ export default {
             this.emailError = "";
             this.campaignStoryError = "";
             this.beneficiaryGroupError = "";
+            this.fcra_registeredError = "";
         },
         resetFormErrorResetIg() {
             this.fullNameErrorig = "";
@@ -384,39 +398,42 @@ export default {
 
                 if (this.full_name == '') {
                     this.fullNameError = 'Enter full name'
-                    console.log('full name')
+                    // console.log('full name')
                 }
                 if (this.organisation_name == '') {
                     this.organizationNameError = 'Enter organisation name'
-                    console.log('org name')
+                    // console.log('org name')
                 }
 
                 if (this.campaign_story == '') {
                     this.campaignStoryError = 'Enter campaign story'
-                    console.log('story')
+                    // console.log('story')
                 }
 
                 if (this.beneficiary_group == '') {
                     this.beneficiaryGroupError = 'Enter beneficiary group name'
-                    console.log('group')
+                    // console.log('group')
                 }
                 if (this.email == '') {
                     this.emailError = 'Enter email'
-                    console.log('email id')
+                    // console.log('email id')
                 }
                 else if (email.test(this.email) == false && this.email) {
                     this.emailError = 'Enter valid email'
-                    console.log('email')
+                    // console.log('email')
                 }
                 if (this.phone == '') {
                     this.phoneError = 'Enter phone number'
-                    console.log('phone number')
+                    // console.log('phone number')
                 }
                 else if (this.phone && phone.test(this.phone) == false) {
                     this.phoneError = 'Enter valid phone number'
-                    console.log('phone')
+                    // console.log('phone')
                 }
-
+                if (this.fcra_registered == '') {
+                    this.fcra_registeredError = 'Please select your ngo is FCRA Registered or not'
+                    // console.log('phone')
+                }
                 //     if (!this.full_name && !this.organisation_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
                 //         this.fullNameError = 'Please enter Fullname!'
                 //         this.organizationNameError = 'Please enter organization name!'
@@ -475,7 +492,8 @@ export default {
                         phone: this.phone,
                         campaign_story: this.campaign_story,
                         social_media_page: this.social_media_page,
-                        beneficiary_group: this.beneficiary_group
+                        beneficiary_group: this.beneficiary_group,
+                        fcra_registered: this.fcra_registered
                     })
                     // this.error == false
 

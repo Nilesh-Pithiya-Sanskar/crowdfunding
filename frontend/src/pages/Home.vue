@@ -760,7 +760,17 @@ import Sliders from "../components/Sliders.vue";
 import Testimonials from "../components/Testimonials.vue";
 import { useRoute } from 'vue-router'
 
+import { useHead } from '@vueuse/head'
 
+useHead({
+  title: 'Website Title',
+  meta: [
+    {
+      name: 'description',
+      content: 'Website description',
+    },
+  ],
+})
 export default {
   name: 'Home',
   // created() {
@@ -799,6 +809,7 @@ export default {
       user
     }
   },
+
   data() {
     return {
       campaigns: [],

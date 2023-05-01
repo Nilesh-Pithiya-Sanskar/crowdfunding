@@ -85,7 +85,7 @@ def create_donor_from_checkout(f_name, phone_number, email):
             user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
             user.insert(ignore_permissions=True)
             frappe.db.commit()
-            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{f_name}", "donor_type": "Defult", "mobile": phone_number})
+            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{f_name}", "donor_type": "Default", "mobile": phone_number})
             donor.insert(ignore_permissions=True)
             frappe.db.commit()
             user = frappe.db.get_value("User", email, fieldname=['name'])

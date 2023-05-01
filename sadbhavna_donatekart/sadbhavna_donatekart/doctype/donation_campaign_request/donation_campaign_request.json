@@ -29,6 +29,8 @@
   "beneficiary_group",
   "section_break_18",
   "status",
+  "fcra_registered",
+  "column_break_d6mep",
   "ngo",
   "campaign"
  ],
@@ -163,15 +165,23 @@
    "default": "New Request",
    "fieldname": "status",
    "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Request Status",
    "options": "New Request\nVerified\nPending Campaign\nLive Campaign\nClose Campaign\nRejected"
+  },
+  {
+   "default": "0",
+   "fieldname": "fcra_registered",
+   "fieldtype": "Check",
+   "label": "Fcra Registered"
+  },
+  {
+   "fieldname": "column_break_d6mep",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-01 11:34:21.986858",
+ "modified": "2023-05-01 19:58:12.999183",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign request",
@@ -200,11 +210,11 @@
    "title": "New Request"
   },
   {
-   "color": "Yellow",
+   "color": "Green",
    "title": "Verified"
   },
   {
-   "color": "Light Blue",
+   "color": "Orange",
    "title": "Pending Campaign"
   },
   {
@@ -212,11 +222,11 @@
    "title": "Live Campaign"
   },
   {
-   "color": "Gray",
+   "color": "Blue",
    "title": "Close Campaign"
   },
   {
-   "color": "Orange",
+   "color": "Yellow",
    "title": "Rejected "
   }
  ]

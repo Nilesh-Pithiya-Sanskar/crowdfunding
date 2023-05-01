@@ -11,6 +11,7 @@
      "organisation_name",
      "organisation_name_gu",
      "organisation_name_hi",
+     "fcra_registered",
      "section_break_8",
      "full_name",
      "column_break_15",
@@ -168,6 +169,13 @@
       "label": "Organisation Website",
       "in_list_view": 1,
       "in_standard_filter": 1
+     },
+     {
+        "fieldname": "fcra_registered",
+        "fieldtype": "Check",
+        "label": "FCRA Registered",
+        "in_list_view": 1,
+        "in_standard_filter": 1
      },
      {
       "fieldname": "section_break_5",
