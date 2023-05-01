@@ -91,6 +91,8 @@
    "default": "Pending",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "Pending\nLive\nClosed\nRejected",
    "reqd": 1
@@ -110,6 +112,8 @@
   {
    "fieldname": "campaign_title",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Campaign Title",
    "reqd": 1
   },
@@ -146,6 +150,7 @@
    "fieldname": "ngo",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "NGO",
    "options": "NGO",
    "reqd": 1
@@ -192,6 +197,8 @@
   {
    "fieldname": "campaign_category",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Campaign category",
    "options": "Donation Campaign Category",
    "reqd": 1
@@ -258,12 +265,16 @@
    "default": "0",
    "fieldname": "is_featured",
    "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Is Featured"
   },
   {
    "fetch_from": "ngo.email",
    "fieldname": "ngo_email",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Ngo Email",
    "options": "Email"
   },
@@ -323,7 +334,7 @@
    "link_fieldname": "campaign"
   }
  ],
- "modified": "2023-04-27 17:16:49.854581",
+ "modified": "2023-05-01 11:28:35.263503",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

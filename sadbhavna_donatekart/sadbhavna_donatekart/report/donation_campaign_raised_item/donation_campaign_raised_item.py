@@ -187,8 +187,6 @@ def get_campaign_name(filters):
 # 	return query.run(as_dict=True)
 
 
-
-
 def get_columns():
 	columns = [
 		{"label": _("Campaign"), "fieldname": "name", "fieldtype": "Link", "options": "Donation Campaign", "width": 150},

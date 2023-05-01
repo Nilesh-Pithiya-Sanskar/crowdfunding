@@ -70,12 +70,13 @@
      {
       "fieldname": "email",
       "fieldtype": "Data",
-      "in_list_view": 1,
       "label": "Email",
       "no_copy": 1,
       "options": "Email",
       "reqd": 1,
-      "unique": 1
+      "unique": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
      },
      {
       "fieldname": "regestered_address",
@@ -147,7 +148,9 @@
       "fieldtype": "Data",
       "label": "Organisation Name",
       "mandatory_depends_on": "eval:doc.requester_type=='NGO';",
-      "unique": 0
+      "unique": 0,
+      "in_list_view": 1,
+      "in_standard_filter": 1
      },
      {
       "fieldname": "organisation_name_gu",
@@ -162,7 +165,9 @@
      {
       "fieldname": "organisation_website",
       "fieldtype": "Data",
-      "label": "Organisation Website"
+      "label": "Organisation Website",
+      "in_list_view": 1,
+      "in_standard_filter": 1
      },
      {
       "fieldname": "section_break_5",
@@ -228,16 +233,19 @@
      {
       "fieldname": "phone",
       "fieldtype": "Data",
-      "in_list_view": 1,
       "label": "Phone",
       "options": "Phone",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
      },
      {
       "fieldname": "requester_type",
       "fieldtype": "Select",
       "label": "Requester Type",
-      "options": "NGO\nIndivisual/Group"
+      "options": "NGO\nIndivisual/Group",
+      "in_list_view": 1,
+      "in_standard_filter": 1
      },
      {
      "fieldname": "about_ngo",
