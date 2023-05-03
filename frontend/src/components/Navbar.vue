@@ -107,7 +107,7 @@
             }}</router-link>
           </li>
           <li>
-            <a href="#" class="transition font-bold text-white text-[18px]">{{ $t('About') }}</a>
+            <router-link to="/" class="transition font-bold text-white text-[18px]">{{ $t('About') }}</router-link>
           </li>
           <li>
             <router-link to="/request-campaign" class="transition font-bold text-white text-[18px]">{{

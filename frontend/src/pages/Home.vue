@@ -2,9 +2,9 @@
   <!-- Header-->
   <main>
     <Navbar />
-    <section class=" bg-no-repeat  bg-cover bg-center bg-overlay"
+    <section class="bg-no-repeat  bg-cover bg-center bg-overlay"
       style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
-      <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-48 container mx-auto h-fullsssss">
+      <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-48 container mx-auto h-full">
         <div class="grid lg:grid-cols-2 mt-5 md:mt-10 lg:mt-0">
 
           <div v-if="lang == 'hi'"
