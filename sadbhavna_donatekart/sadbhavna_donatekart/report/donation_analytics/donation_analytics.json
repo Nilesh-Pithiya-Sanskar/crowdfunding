@@ -1,0 +1,56 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2023-04-28 19:38:32.218766",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 0,
+   "options": "",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "options": "",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-04-28 19:56:19.550602",
+ "modified_by": "Administrator",
+ "module": "Sadbhavna Donatekart",
+ "name": "Donation Analytics",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "with daily as(\n    select\n        donor, amount,\n        creation,\n        name\n    from\n        `tabDonation`\n    where\n        creation >= now() - INTERVAL 1 DAY\n    group by\n        donor,\n        creation\n),\nweek as(\n    select\n        donor, amount,\n        creation,\n        name\n    from\n        `tabDonation`\n    where\n        creation >= now() - INTERVAL 7 DAY\n    group by\n        donor,\n        creation\n),\nquarterly as(\n    select\n        donor, amount,\n        creation,\n        name\n    from\n        `tabDonation`\n    where\n        creation >= now() - INTERVAL 14 DAY\n    group by\n        donor,\n        creation\n),\nmonthly as(\n    select\n        donor, amount,\n        creation,\n        name\n    from\n        `tabDonation`\n    where\n        creation >= now() - INTERVAL 30 DAY\n    group by\n        donor,\n        creation\n)\nselect\n    d.donor_name as 'Donor::100',\n    d.campaign as Campaign,\n    sum(d.amount) as 'Total::150',\n    sum(daily.amount) as \"Today::150\",\n    sum(week.amount) as \"In 7 Days::150\",\n    sum(quarterly.amount) as \"In 15 Days::150\",\n    sum(monthly.amount) as \"In 30 Days::150\"\nfrom\n    `tabDonation` d\n    left outer join daily on daily.amount = d.amount\n    and daily.creation = d.creation\n    left outer join week on week.amount = d.amount\n    and week.creation = d.creation\n    left outer join quarterly on quarterly.amount = d.amount\n    and quarterly.creation = d.creation\n    left outer join monthly on monthly.amount = d.amount\n    and monthly.creation = d.creation\nwhere\n\n    (\n       DATE(d.creation) between %(from_date) s\n       and %(to_date) s\n   )\n\ngroup by\n    d.donor",
+ "ref_doctype": "Donation",
+ "report_name": "Donation Analytics",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Guest"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Non Profit Manager"
+  },
+  {
+   "role": "Donor"
+  },
+  {
+   "role": "Ngo"
+  }
+ ]
+}

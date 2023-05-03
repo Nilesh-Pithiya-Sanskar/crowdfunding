@@ -10,7 +10,7 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 
-fixtures = ["Custom DocPerm", "Custom Field"]
+fixtures = ["Custom DocPerm", "Custom Field", "Print Format"]
 # include js, css files in header of desk.html
 # app_include_css = "/assets/sadbhavna_donatekart/css/sadbhavna_donatekart.css"
 # app_include_js = "/assets/sadbhavna_donatekart/js/sadbhavna_donatekart.js"
@@ -49,13 +49,15 @@ fixtures = ["Custom DocPerm", "Custom Field"]
 
 website_route_rules = [
 	# Desk
-	{"from_route": "/sadbhavna/<path:app_path>", "to_route": "sadbhavna"},
-	# Customer Portal
-	# {"from_route": "/support/<path:app_path>", "to_route": "frappedesk"},
+	# {"from_route": "/<path:app_path>", "to_route": "bestdeed"},
+	{"from_route": "/<path:app_path>", "to_route": "bestdeed"},
+	{"from_route": "/app", "to_route": "/app"},
+    {"from_route": "/blog", "to_route": "bestdeed"},
+    {"from_route": "/printview", "to_route": "/printview"}
 ]
 
 website_redirects = [
-  {"source": "/", "target": "/sadbhavna"},
+#   {"source": "/login", "target": "/bestdeed"},
 ]
 
 # Generators
@@ -115,13 +117,18 @@ website_redirects = [
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+	"Translation": {
+    	# "after_save": "sadbhavna_donatekart.api.api.set_translation_from_erpnext",
+		"after_insert": "sadbhavna_donatekart.api.api.set_translation_from_erpnext",
+        # "after_update": "sadbhavna_donatekart.api.api.set_translation_from_erpnext"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -130,9 +137,9 @@ website_redirects = [
 #	"all": [
 #		"sadbhavna_donatekart.tasks.all"
 #	],
-#	"daily": [
-#		"sadbhavna_donatekart.tasks.daily"
-#	],
+	# "daily": [
+		# "sadbhavna_donatekart.api.api.close_end_date_campaign"
+	# ],
 #	"hourly": [
 #		"sadbhavna_donatekart.tasks.hourly"
 #	],

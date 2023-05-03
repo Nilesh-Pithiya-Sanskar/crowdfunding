@@ -1,54 +1,58 @@
 <template>
- <div class=" bg-gray-100">
     <Navbar />
-    <br><br>
-
-     <div class="container bg-white mx-auto px-5 pb-5 mt-10 mb-10">
-
-        <!-- BLOG -->
-
+    <div class=" container mx-auto h-full pb-10 pt-4 md:pt-6 lg:pt-6">
         <div>
-            <h1 class="text-center pt-10 text-4xl font-bold text-[#40b751] mb-2">Blog</h1>
+            <h1 class="text-center text-[27px] md:text-[33px] lg:text-[35px] font-black text-[#40b751] ">
+                {{ $t('Blog') }}</h1>
         </div>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-10">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-0 mt-4 md:mt-10 lg:mt-10">
             <div v-for="data in blogs" class="pb-0 md:pb-0 lg:pb-0 pt-0 md:pt-0 lg:pt-0 grid ">
-                      <div
-                        class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden shadow-lg">
-                        <img class="w-full h-52 cursor-pointer" :src="data.meta_image" alt="">
-                        <div class="pt-9 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
-                            <div class="font-medium text-[#40b751] text-xl mb-2 truncate">{{ data.title }}
-                            </div>
+                <div
+                    class="max-w-[580px] md:max-w-[350px] lg:max-w-[400px] lg:max-w-sm rounded overflow-hidden card-shodow">
+                    <img class="w-full h-52 cursor-pointer" :src="data.meta_image" alt="" @click="openblog(data.name)">
+                    <div class="pt-5 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
 
-                            <p class="text-gray-700 text-base truncate pb-4">{{ data.blog_intro }}
+                        <h3 class="fontfamily cursor-pointer text-[#364958] font-bold text-[18px] md:text-[18px] lg:text-[20px] mb-2 truncate-2-lines"
+                            @click="openblog(data.name)">
+                            {{ $t(data.title) }}
+                        </h3>
+                        <p class="text-gray-700 text-[16px]  truncate-2-lines ">{{ $t(data.blog_intro) }}</p>
 
-                                <!-- <div class="w-full bg-gray-200 rounded h-[16px] dark:bg-gray-700 mt-6 mb-6 ">
-                                <div v-if="data.raised_amount"
-                                    class="bg-[#40b751] h-3.5 rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
-                                    :style="{ width: data.raised_amount * 100 / data.donation_amount + '%' }"> {{
-                                        data.raised_amount * 100 /
-                                        data.donation_amount }}%</div>
-                            </div>
-                            <div
-                                class="flex border-b-2 border-b-gray-100  justify-between mt-6 mb-6 pb-6 text-sm font-bold">
-                                <span>Raised: {{ data.raised_amount }}</span><span>Goal: {{ data.donation_amount }}</span>
-                            </div> -->
+                        <p class="pb-2 pt-2 text-gray-500  text-[13px] truncate"><strong>By: </strong>{{
+                            $t(data.blogger) }}
+                        </p>
+                        <!-- <hr> -->
+                        <!-- <p class="pb-4">{{ $t(data.blog_category) }}</p> -->
+                        <div class="flex justify-between border-t-2 pt-3 border-b-gray-100 mb-6">
+
+                            <!-- <img class="h-5 w-5 " src="../assets/Inter/img/icon/calendar.png"> -->
+
+                            <p class="flex items-center text-[12px] md:text-[10px] lg:text-[14px]">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="w-5 h-5  mr-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                                </svg>
+                                {{ $t(formatDate(data.published_on)) }}
                             </p>
-                        </div>
-                        <div class="sm:pr-9 md:pr-2 lg:pr-9 pb-7 pl-9 flex justify-between">
-                            <!-- <button class="text-[#40b751] text-base">Share</button> -->
-                            <button
-                                class="rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" @click="openblog(data.name)"> Open </button>
+
+
+                            <p class="flex items-center text-[12px] md:text-[10px] lg:text-[14px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="w-5 h-5 mr-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                {{ $t('2 min read') }}
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-</div>
-    <Footer />
     </div>
-</template>
-
-
+    <Footer />
+</template> 
 <script>
 import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
@@ -58,28 +62,23 @@ export default {
     name: "Blog",
     created() {
         this.get_blogs()
-
     },
     components: {
-
         Navbar,
         Footer
-
     },
     data() {
         return {
             blogs: [],
-
         }
     },
     methods: {
-
+        formatDate(dateString) {
+            const date = new Date(dateString);
+            return new Intl.DateTimeFormat('default', { dateStyle: 'long' }).format(date);
+        },
         get_blogs() {
-
-            let url = '/api/resource/Blog Post?filters={"published": 1}&fields=["name", "title", "meta_image", "blog_category", "blog_intro", "content_md"]';
-
-
-
+            let url = '/api/resource/Blog Post?filters={"published": 1}&fields=["*"]';
             axios.get(url).then((response) => {
                 console.log("blog", response)
                 this.blogs = response.data['data']
@@ -88,14 +87,8 @@ export default {
             })
         },
         openblog(name) {
-
-            this.$router.push(`/sadbhavna/blog-post/${name}`)
+            this.$router.push(`/blog-post/${name}`)
         },
-        opencampaign(name) {
-            this.$router.push(`/sadbhavna/campaign-donation/${name}`)
-        }
-
-
     },
 }
 </script>

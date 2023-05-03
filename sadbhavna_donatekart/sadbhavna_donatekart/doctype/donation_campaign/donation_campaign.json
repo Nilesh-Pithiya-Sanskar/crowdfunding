@@ -10,38 +10,56 @@
  "engine": "InnoDB",
  "field_order": [
   "details_tab",
+  "published",
   "campaign_title",
-  "column_break_2",
-  "status",
+  "campaign_title_gu",
+  "campaign_title_hi",
   "section_break_4",
-  "donation_amount",
-  "column_break_6",
-  "raised_amount",
-  "section_break_8",
-  "start_date",
-  "column_break_10",
-  "end_date",
-  "section_break_12",
-  "campaign_category",
-  "column_break_14",
-  "campain_image",
-  "section_break_16",
-  "short_description",
-  "about_campaign",
-  "description",
-  "campaign_request",
+  "is_featured",
+  "status",
   "ngo",
-  "naming_series",
-  "campaign_item_tab",
+  "ngo_email",
+  "section_break_0gbxv",
+  "column_break_7e2rr",
+  "start_date",
+  "campaign_category",
+  "donation_amount",
+  "column_break_14",
+  "end_date",
+  "campain_image",
+  "raised_amount",
+  "section_break_16",
+  "column_break_2",
+  "section_break_0tx0a",
   "add_campaign_items",
-  "route",
-  "published"
+  "description",
+  "benefits",
+  "short_description",
+  "short_description_gu",
+  "short_description_hi",
+  "about_campaign",
+  "about_campaign_gu",
+  "about_campaign_hi",
+  "ngo_gu",
+  "ngo_hi",
+  "about_ngo",
+  "about_ngo_gu",
+  "about_ngo_hi",
+  "campaign_item_tab",
+  "total_donor",
+  "naming_series",
+  "column_break_6",
+  "column_break_2wrro",
+  "remark",
+  "completion_date",
+  "campaign_request"
  ],
  "fields": [
   {
    "fieldname": "raised_amount",
    "fieldtype": "Currency",
-   "label": "Raised Amount"
+   "label": "Raised Amount",
+   "read_only": 1
   },
   {
    "fieldname": "campaign_request",
@@ -53,16 +71,19 @@
   {
    "fieldname": "short_description",
    "fieldtype": "Text",
-   "label": "Short Description"
+   "label": "Short Description",
+   "reqd": 1
   },
   {
    "fieldname": "donation_amount",
    "fieldtype": "Currency",
-   "label": "Donation Amount"
+   "label": "Donation Amount",
+   "read_only": 1
   },
   {
    "fieldname": "about_campaign",
    "fieldtype": "Text",
+   "hidden": 1,
    "label": "About Camapign (In Details)"
   },
   {
@@ -70,22 +91,29 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nLive\nClosed\nRejected"
+   "options": "Pending\nLive\nClosed\nRejected",
+   "reqd": 1
   },
   {
    "fieldname": "end_date",
-   "fieldtype": "Date",
-   "label": "End date"
+   "fieldtype": "Datetime",
+   "label": "End date",
+   "reqd": 1
   },
   {
    "fieldname": "start_date",
-   "fieldtype": "Date",
-   "label": "Start date"
+   "fieldtype": "Datetime",
+   "label": "Start date",
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "campaign_title",
    "fieldtype": "Data",
-   "label": "Campaign Title"
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Campaign Title",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_2",
@@ -93,29 +121,18 @@
   },
   {
    "fieldname": "section_break_4",
-   "fieldtype": "Section Break"
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "column_break_6",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_8",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_10",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_12",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "campain_image",
    "fieldtype": "Attach Image",
    "label": "Campaign Image",
-   "options": "Image"
+   "options": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "naming_series",
@@ -126,10 +143,25 @@
   {
    "fieldname": "ngo",
    "fieldtype": "Link",
-   "hidden": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "NGO",
-   "options": "NGO"
+   "options": "NGO",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "ngo.organisation_name_gu",
+   "fieldname": "ngo_gu",
+   "fieldtype": "Data",
+   "label": "NGO \u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.organisation_name_hi",
+   "fieldname": "ngo_hi",
+   "fieldtype": "Data",
+   "label": "\u090f\u0928\u091c\u0940\u0913 \u0915\u093e \u0928\u093e\u092e",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_14",
@@ -153,19 +185,17 @@
   {
    "fieldname": "campaign_item_tab",
    "fieldtype": "Tab Break",
-   "label": "Campaign Items"
+   "label": "Campaign Items",
+   "show_dashboard": 1
   },
   {
    "fieldname": "campaign_category",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Campaign category",
    "options": "Donation Campaign Category",
    "reqd": 1
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "Route"
   },
   {
    "default": "0",
@@ -178,13 +208,126 @@
    "fieldtype": "Table",
    "label": "Description",
    "options": "Donation Campaign Description"
+  },
+  {
+   "fieldname": "campaign_title_gu",
+   "fieldtype": "Data",
+   "label": "\u0a9d\u0ac1\u0a82\u0aac\u0ac7\u0ab6 \u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95"
+  },
+  {
+   "fieldname": "campaign_title_hi",
+   "fieldtype": "Data",
+   "label": "\u0905\u092d\u093f\u092f\u093e\u0928 \u0936\u0940\u0930\u094d\u0937\u0915"
+  },
+  {
+   "fieldname": "short_description_gu",
+   "fieldtype": "Text",
+   "label": "\u0a9f\u0ac2\u0a82\u0a95\u0ac1\u0a82 \u0ab5\u0ab0\u0acd\u0aa3\u0aa8"
+  },
+  {
+   "fieldname": "short_description_hi",
+   "fieldtype": "Text",
+   "label": "\u0938\u0902\u0915\u094d\u0937\u093f\u092a\u094d\u0924 \u0935\u0930\u094d\u0923\u0928"
+  },
+  {
+   "fieldname": "about_campaign_gu",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "\u0a9d\u0ac1\u0a82\u0aac\u0ac7\u0ab6 \u0ab5\u0abf\u0ab6\u0ac7"
+  },
+  {
+   "fieldname": "about_campaign_hi",
+   "fieldtype": "Text",
+   "hidden": 1,
+   "label": "\u0905\u092d\u093f\u092f\u093e\u0928 \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
+  },
+  {
+   "fieldname": "section_break_0gbxv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7e2rr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_0tx0a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_2wrro",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Featured"
+  },
+  {
+   "fetch_from": "ngo.email",
+   "fieldname": "ngo_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Ngo Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "total_donor",
+   "fieldtype": "Data",
+   "label": "Total Donor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "benefits",
+   "fieldtype": "Table",
+   "label": "Benefits",
+   "options": "Campaign Donation Benefits"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "fetch_from": "ngo.about_ngo",
+   "fieldname": "about_ngo",
+   "fieldtype": "Small Text",
+   "label": "About NGO",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.about_ngo_gu",
+   "fieldname": "about_ngo_gu",
+   "fieldtype": "Small Text",
+   "label": "NGO \u0ab5\u0abf\u0ab6\u0ac7",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ngo.about_ngo_hi",
+   "fieldname": "about_ngo_hi",
+   "fieldtype": "Small Text",
+   "label": "NGO \u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Datetime",
+   "label": "Completion Date",
+   "read_only": 1
   }
  ],
- "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
- "links": [],
- "modified": "2023-03-24 13:04:17.591401",
+ "links": [
+  {
+   "link_doctype": "Donation",
+   "link_fieldname": "campaign"
+  }
+ ],
+ "modified": "2023-05-01 16:35:55.802898",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign",

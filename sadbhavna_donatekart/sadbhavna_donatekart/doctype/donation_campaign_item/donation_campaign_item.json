@@ -11,11 +11,21 @@
   "column_break_2",
   "display_as_name",
   "section_break_4",
-  "price",
+  "display_as_name_gu",
   "column_break_3",
   "image",
+  "section_break_cf8us",
+  "display_as_name_hi",
+  "column_break_dug4g",
+  "price",
   "section_break_5",
-  "about"
+  "qty",
+  "column_break_6qu27",
+  "c_qty",
+  "section_break_8naml",
+  "about",
+  "about_gu",
+  "about_hi"
  ],
  "fields": [
   {
@@ -29,7 +39,8 @@
    "fieldname": "image",
    "fieldtype": "Attach Image",
    "label": "Image",
-   "options": "Image"
+   "options": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "item",
@@ -43,7 +54,8 @@
    "fieldname": "about",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "About"
+   "label": "About",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_3",
@@ -67,12 +79,60 @@
   {
    "fieldname": "section_break_4",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "display_as_name_gu",
+   "fieldtype": "Data",
+   "label": "\u0aa8\u0abe\u0aae \u0aa4\u0ab0\u0ac0\u0a95\u0ac7 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0acb"
+  },
+  {
+   "fieldname": "display_as_name_hi",
+   "fieldtype": "Data",
+   "label": "\u090f\u0915 \u0928\u093e\u092e \u0915\u0947 \u0930\u0942\u092a \u092e\u0947\u0902 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u0930\u0947\u0902"
+  },
+  {
+   "fieldname": "about_gu",
+   "fieldtype": "Small Text",
+   "label": "\u0ab5\u0abf\u0ab6\u0ac7"
+  },
+  {
+   "fieldname": "about_hi",
+   "fieldtype": "Small Text",
+   "label": "\u0915\u0947 \u092c\u093e\u0930\u0947 \u092e\u0947\u0902"
+  },
+  {
+   "fieldname": "column_break_dug4g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cf8us",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Data",
+   "label": "Qty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "c_qty",
+   "fieldtype": "Data",
+   "label": "C Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6qu27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8naml",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-01-17 17:36:05.874604",
+ "modified": "2023-04-20 20:00:15.118689",
  "modified_by": "Administrator",
  "module": "Sadbhavna Donatekart",
  "name": "Donation Campaign Item",

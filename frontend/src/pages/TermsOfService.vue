@@ -1,53 +1,65 @@
 <template>
     <Navbar />
-    <div class="container mx-auto h-full mt-10 ">
-        <h1 class="text-4xl">Website Terms and Conditions of Use</h1>
+    <div class="container mx-auto h-full mt-10 mb-5 text-[#364958]">
+      <h1 class="text-3xl mb-5 font-bold">Terms & Conditions</h1>
+        <p class="mb-5">Best Deed operates this Website (Add website link). These Terms of Use apply to your use of this Website and all services provided by us through this Website. Using this Website, you agree to be bound by these Terms of Use. If you disagree with these terms, we request you to stop using this website.</p>
 
-        <h2 class="text-3xl">1. Terms</h2>
+        <p class="mb-5">The Best Deed was created using the general crowdfunding paradigm to assist NGOs and other charitable organizations in raising in-kind donations through products. The terms and restrictions outlined below tightly restrict usage. </p>
 
-        <p>By accessing this Website, accessible from https://crowdfunding.frappe.cloud, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p>
+        <p class="mb-5">You agree to abide by and be subject to these terms and conditions in addition to our privacy policy when you use our Website to browse or make donations. You are not permitted to use this Website in its entirety if you disagree with any portion of these Terms of Use.   </p>
+ 
+        <h1 class="text-xl font-bold">Copyright & Intellectual property rights </h1>
 
-        <h2 class="text-3xl">2. Use License</h2>
+        <p class="mb-5">The contents of this Website, including text, graphics, images, and other material, are intended for informational purposes only. You may not use this Website for commercial purposes or in any illegal or unethical manner.</p>
 
-        <p>Permission is granted to temporarily download one copy of the materials on crowdfunding's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+        <p class="mb-5">The contents of this Website, including all text, graphics, images, logos, and other material, are protected by copyright and other intellectual property laws. You may not use any of these materials without the express written consent of Charity Name.</p>
 
-        <ul>
-            <li>modify or copy the materials;</li>
-            <li>use the materials for any commercial purpose or for any public display;</li>
-            <li>attempt to reverse engineer any software contained on crowdfunding's Website;</li>
-            <li>remove any copyright or other proprietary notations from the materials; or</li>
-            <li>transferring the materials to another person or "mirror" the materials on any other server.</li>
-        </ul>
 
-        <p>This will let crowdfunding to terminate upon violations of any of these restrictions. Upon termination, your viewing right will also be terminated and you should destroy any downloaded materials in your possession whether it is printed or electronic format. These Terms of Service has been created with the help of the <a href="https://www.termsfeed.com/terms-service-generator/">Terms Of Service Generator</a>.</p>
+        <h1 class="text-xl font-bold">Limitation of Liability</h1>
+        <p class="mb-5">The Best Deed shall not be liable for any damages of any kind arising from the use of this Website, including, but not limited to, direct, indirect, incidental, punitive, and consequential damages.</p>
 
-        <h2 class="text-3xl">3. Disclaimer</h2>
+        <p class="mb-5">Best Deed does not support or represent any outside parties. In the case that you use a third-party website or interact with them through our platform, we will not be held responsible for any actions or inactions on their side.</p>
 
-        <p>All the materials on crowdfunding's Website are provided "as is". crowdfunding makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, crowdfunding does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website.</p>
+        <p class="mb-5">With regard to every one of the features and Content made available on the Best Deed, we now unequivocally exclude all guarantees and assurances of any kind.</p>
 
-        <h2 class="text-3xl">4. Limitations</h2>
+        <p class="mb-5">In regards to the Content, usage of the Platform or any Services, any third party complaints, or any harm incurred by any person that results from the use of Our Platform. Any consequences—direct or indirect—arising from contracts, carelessness, or other causes shall not be our responsibility.</p>
 
-        <p>crowdfunding or its suppliers will not be hold accountable for any damages that will arise with the use or inability to use the materials on crowdfunding's Website, even if crowdfunding or an authorize representative of this Website has been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on implied warranties or limitations of liability for incidental damages, these limitations may not apply to you.</p>
+        <p class="mb-5">Any virus assaults, service assaults, and Trojan threats, such as but not limited to loss of earnings or income or any other business or financial loss, or for any choice taken or action being taken by any 3rd person in dependence upon the Content, whether directly or indirectly.</p>
 
-        <h2 class="text-3xl">5. Revisions and Errata</h2>
+        <h1 class="text-xl font-bold">Payment details </h1>
+        <p class="mb-5">A card payment gateway or suitable payment processing platform is used to handle all legitimate credit, debit, and cash cards and other payment tools. These are also subject to the terms and conditions agreed upon by the donor and the particular issuing bank and payment instrument granting company.</p>
 
-        <p>The materials appearing on crowdfunding's Website may include technical, typographical, or photographic errors. crowdfunding will not promise that any of the materials in this Website are accurate, complete, or current. crowdfunding may change the materials contained on its Website at any time without notice. crowdfunding does not make any commitment to update the materials.</p>
+        <p class="mb-5">To deliver these Services to its Users, all internet banking payments from legitimate bank accounts are handled through the gateway offered by the relevant issuing bank. </p>
 
-        <h2 class="text-3xl">6. Links</h2>
+        <p class="mb-5">This gateway supports payment capabilities. The terms and conditions outlined in the agreement between the contributor and the particular issuing bank likewise apply to all such online bank transfers made using the payments mechanism.</p>
 
-        <p>crowdfunding has not reviewed all of the sites linked to its Website and is not responsible for the contents of any such linked site. The presence of any link does not imply endorsement by crowdfunding of the site. The use of any linked website is at the user's own risk.</p>
+        <h1 class="text-xl font-bold">Rights to take necessary action </h1>
+        <p class="mb-5">Without restricting other options, we have the right to restrict your behavior, instantly delete your information, alert other Users to your activities, instantly stop or cancel your registration, ban your use of the Website, and limit your engagement.</p>
 
-        <h2 class="text-3xl">7. Site Terms of Use Modifications</h2>
+        <p class="mb-5">Prior to being rehabilitated by us, a User who has been prohibited or banned is not permitted to register with us, continue to register with us or use the Website in any way.</p>
 
-        <p>crowdfunding may revise these Terms of Use for its Website at any time without prior notice. By using this Website, you are agreeing to be bound by the current version of these Terms and Conditions of Use.</p>
+        <p class="mb-5">We are entitled to take appropriate legal proceedings, including but not limited to reporting you to the proper police or other officials if you violate the Terms of Use or other laws and policies. </p>
 
-        <h2 class="text-3xl">8. Your Privacy</h2>
 
-        <p>Please read our Privacy Policy.</p>
+        <h1 class="text-xl font-bold">Indemnification</h1>
+        <p class="mb-5">In the event that you violate any of these Terms of Use, you undertake to indemnify, hold harmless, and defend Best Deed, its officials, managers, personnel, agencies, licensees, and providers from and against any claims, costs, liabilities, including reasonable attorneys' costs.</p>
 
-        <h2 class="text-3xl">9. Governing Law</h2>
+        <h1 class="text-xl font-bold">Return & Refund policy</h1>
+        <p class="mb-5">The products will be delivered either at the conclusion of the campaign or once the campaign has reached its objective. Vendors ship the goods directly to the recipients, and we pay close attention to the quality of the goods. The sum will not be reimbursed after the payment has been made. After the vendor confirms, goods can be returned if there was any damage during delivery.</p>
 
-        <p>Any claim related to crowdfunding's Website shall be governed by the laws of in without regards to its conflict of law provisions.</p>
+        <h1 class="text-xl font-bold">Changes to Terms of Use:</h1>
+        <p class="mb-5">The Best Deed reserves the right to make changes to these Terms of Use at any time. Your continued use of this Website following any changes to these Terms of Use constitutes your acceptance of modifications.</p>
+
+        <h1 class="text-xl font-bold">Governing Law:</h1>
+        <p class="mb-5">These Terms of Use shall be governed by and construed in accordance with the laws of the state.</p>
+
+        <h1 class="text-xl font-bold">Privacy Policy</h1>
+        <p class="mb-5">The Best Deed's Privacy Policy is incorporated into these Terms of Use and governs the collection and use of personal information through this Website.</p>
+
+        <h1 class="text-xl font-bold">Contact Information</h1>
+        <p class="mb-5">If you have any questions regarding these Terms of Use, please contact us at <a class="text-blue-500" href="mailto:info@bestdeed.org">info@bestdeed.org</a></p>
+
+
     </div>
     <Footer />
 </template>
@@ -58,8 +70,11 @@ import Footer from "../components/Footer.vue";
 export default{
     name: 'Terms Of Service',
     components: {
-    Navbar,
+    Navbar, 
     Footer,
   },
+  created(){
+    document.title = this.$nextTick('Terms of Use | BestDeed')
+  }
 }
 </script>

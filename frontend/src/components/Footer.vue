@@ -97,106 +97,129 @@
 </template> -->
 
 <template>
-  <div class="px-10 md:px-50 lg:px-30 xl:px-0 bg-[#40b751]">
-    <footer class="container w-full pt-10 md:pt-10 lg:pt-20 sm:pb-0  ml-auto mr-auto text-neutral-50">
+  <div class="pt-6 px-6 md:px-10 lg:px-4 pb-4 bg-[#40b751]">
+    <footer class="container  w-full  ml-auto mr-auto">
+       <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
       <div
-        class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 sm:gap-auto md-gap:4 lg:gap-auto pb-5 md:pb-10 lg:pb-2 px-0 py-0 ">
-        <div class="sm:col-span-2 md:col-span-2 lg:col-auto">
-          <h2 class="font-medium md:font-semibold lg:font-normal text-white mb-6 text-[20px] md:text-2xl lg:text-xl mb-4">
-            About</h2>
-          <p class="text-whitetext-gray-500 -pr-[200px] dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Modi cumque tenetur inventore veniam, hic vel
-            ipsa necessitatibus ducimus architecto fugiat!</p>
-          <div class="my-5 pr-4">
-            <div class="flex mt-4 space-x-6 mt-12">
-              <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4" src="../../src/assets/Inter/img/facebook.svg" />
-                <span class="sr-only">Facebook page</span>
-              </a>
-              <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4" src="../../src/assets/Inter/img/twitter.svg" />
-                <span class="sr-only">Twitter page</span>
-              </a>
-              <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4 " src="../../src/assets/Inter/img/insta.svg" />
-                <span class="sr-only">Instagram page</span>
-              </a>
-              <a href="#" class="text-gray-400 text-white">
-                <img class="w-4 h-4" src="../../src/assets/Inter/img/linkedin.svg" />
-                <span class="sr-only">Linkedin account</span>
-              </a>
+        class="grid grid-cols-1 lg:mr-64 sm:gap-auto md-gap:4 lg:gap-auto pb-0 md:pb-10 lg:pb-2 px-0 py-0 ">
+        <div class="sm:col-span-2  md:col-span-2 lg:col-auto">
+                    <div class="flex  justify-start lg:-mr-[60px]">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/">
+              <img src="../../src/assets/Inter/img/logo-1.1.ico"
+                class="mb-2 sm:mt-2 lg:mt-0 mr-2 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
+            </a>
+            <a href="/"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>
+          </div></div>
+            <p class="text-white  lg:-mr-[60px] dark:text-gray-400">
+              {{ $t("We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact.Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.")}}</p>
+            <div class="my-5 pr-4">
+              <div class="flex space-x-6 mt-6 md:mt-6 lg:mt-8">
+                <a href="#" class="text-gray-400 text-white">
+                  <img
+                    class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    src="../../src/assets/Inter/img/icon/facebookwhite.svg" />
+                  <p class="sr-only">Facebook page</p>
+                </a>
+                <a href="#" class="text-gray-400 text-white">
+                  <img
+                    class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    src="../../src/assets/Inter/img/icon/twitterwhite.svg" />
+                  <p class="sr-only">Twitter page</p>
+                </a>
+                <a href="#" class="text-gray-400 text-white">
+                  <img
+                    class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    src="../../src/assets/Inter/img/icon/instawhite.svg" />
+                  <p class="sr-only">Instagram page</p>
+                </a>
+                <a href="#" class="text-gray-400 text-white">
+                  <img
+                    class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    src="../../src/assets/Inter/img/icon/linkedinwhite.svg" />
+                  <p class="sr-only">Linkedin account</p>
+                </a>
+                <a href="#" class="text-gray-400 text-white">
+                  <img
+                    class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    src="../../src/assets/Inter/img/icon/youtubewhite.png" />
+                  <p class="sr-only">Youtube</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px] md:pb-10 sm:pb-10 ">
-          <h2
-            class="font-medium md:font-semibold lg:font-normal text-white mb-6 text-[20px] md:text-2xl lg:text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            Quick Links</h2>
-          <ul class="lg:font-semibold text-whitetext-gray-500 dark:text-gray-400">
-            <li class="sm:mb-2 md:mb-2 lg:mb-4">
-              <a href="#">Symptoms</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Prevention</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">FAQs</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">About Coronavirus</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Contact Us</a>
-            </li>
-          </ul>
+        <div class="grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 lg:-ml-64">
+          <div
+            class="sm:pl-[0px] lg:pt-4 lg:ml-[72px] pl-[0px] md:pl-[0px] lg:pl-[20px] xl:pl-[30px] pb-0 md:pb-0 sm:pb-10 ">
+            <h2 class="font-bold text-white mb-3 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-3 md:pt-5 lg:pt-0">
+              {{ $t('Discover') }}</h2>
+            <ul class="text-white">
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+                <router-link to="/explore-campaigns">{{ $t('Explore Campaigns') }}</router-link>
+              </li>
+              <li class=" sm:mb-1  md:mb-2 lg:mb-4 xl:mb-4">
+                <router-link to="/request-campaign">{{ $t('Request A Campaign') }}</router-link>
+              </li>
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+                <a href="#">{{ $t('About Us') }}</a>
+              </li>
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+                <router-link to="/contact-us">{{ $t('Contact Us') }}</router-link>
+              </li>
+            </ul>
+          </div>
+          <div class="sm:pl-[20px] lg:pt-4 md:pl-[20px] lg:pl-[48px] ">
+            <h2 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl pt-5 md:pt-5 lg:pt-0">
+              {{ $t('Learn') }}</h2>
+            <ul class="text-white">
+              <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+                <a href="#">{{ $t('How it Works') }}</a>
+              </li>
+              <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+                <router-link to="/faq">{{ $t('FAQs') }}</router-link>
+              </li>
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
+                <router-link to="/blog">{{ $t('Blog') }}</router-link>
+              </li>
+              <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
+              <router-link to="/terms-of-service">{{ $t('Terms of Use') }}</router-link>
+              </li>
+              <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
+              <router-link to="/privacy-policy">{{ $t('Privacy Policy') }}</router-link>
+              </li>
+            </ul>
+          </div>
+           <div class="sm:pl-[0px] lg:pt-4 md:pl-[0px] lg:pl-[60px] ">
+            <h2
+              class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl -ml-[0px] md:-ml-[0px] lg:-ml-[80px] pt-5 md:pt-5 lg:pt-0">
+              {{ $t('Contact Us') }}</h2>
+            <div class="text-white lg:-ml-[80px]">
+              <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4">
+               <img class="w-5 h-5 mt-1"
+                    src="../../src/assets/Inter/img/location-pin.png" />
+                <p class="ml-4"><span>{{ $t('Head Office, India') }}</span><br>
+                  {{ $t('98 new Mylapore Raidurgam Panmaktha, Mumbai, Maharashtra, 400003')}}</p>
+              </div>
+              <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
+                <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
+                <p class="cursor-pointer ml-4 "><a href="tel:+91 9999999999">{{ $t('+91 9999999999') }}</a></p>
+              </div>
+              <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4">
+                <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
+                <p class="cursor-pointer ml-4 "> <a href="mailto:info@bestdeed.org" >{{ $t('info@bestdeed.org') }}</a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[50px] sm:pr-28 md:pr-32 lg:pr-0">
-          <h2
-            class="font-medium md:font-bold lg:font-normal text-white mb-6 text-[20px]  md:text-2xl lg:text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            Helpful Link</h2>
-          <ul class="lg:font-semibold text-whitetext-gray-500 dark:text-gray-400">
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Helathcare Professional</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">LGU Facilities</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Protect Your Family</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4 ">
-              <a href="#">World Health</a>
-            </li>
-          </ul>
-        </div>
-        <div class="sm:pl-[0px] md:pl-[0px] lg:pl-[60px]">
-          <h2
-            class="sm:font-semibold md:font-semibold lg:font-normal text-white mb-6 text-[20px] md:text-2xl lg:text-xl mb-4 pt-10 md:pt-5 lg:pt-0">
-            Resources</h2>
-          <ul class="lg:font-semibold text-whitetext-gray-500 dark:text-gray-400">
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">WHO Website</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">CDC Website</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">Gov Website</a>
-            </li>
-            <li class="sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-              <a href="#">DOH Website</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="text-center px-4 pb-8 pt-12 border-t border-white border-opacity-10 border-neutral-100">
-        <span class="text-sm  font-normal mb-4 mt-0font-semiboldtext-whitetext-gray-500 dark:text-gray-400">Copyright
-          &copy; 2023 All rights reserved
-        </span>
-
       </div>
     </footer>
   </div>
+
+  <section class=" bg-white text-center px-4 pb-1 pt-1 border-t border-white border-opacity-10 border-neutral-100">
+    <span class="text-[#40b751] font-[600] text-[16px] ">{{ $t('BestDeed &copy; 2023 | All Rights Reserved') }}</span>
+  </section>
 </template>
 
 

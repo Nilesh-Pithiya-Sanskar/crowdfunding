@@ -1,48 +1,75 @@
 <template>
-  <Navbar />
-  <div class="container mx-auto h-full my-20">
-    <div class="flex content-center items-center justify-center h-full">
-      <div class="w-11/12 md:w-6/12 lg:w-4/12 px-4">
-        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
-          <div class="flex-auto px-4 lg:px-10 py-10 pt-5">
-            <div class="text-blueGray-400 text-center mb-3 font-bold text-[40px] md:text-[45px] lg:text-[45px]">
-              <small>sign in </small>
+  <Navbar /><section class="flex justify-center gradient-form h-full">
+  <div class="container h-full px-8 lg:px-40 py-10">
+    <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+      <div class="w-full">
+        <div class="block rounded-lg bg-white shadow-lg card-shodow dark:bg-neutral-800">
+          <div class="g-0 lg:flex lg:flex-wrap">
+            <!-- Left column container-->
+            <div class="px-10 py-5 px-4 md:px-0 lg:w-6/12">
+              <div class="p-1 md:p-2 lg:p-4">
+                <!--Logo-->
+                <div class="text-center">
+                  <img src="/src/assets/Inter/img/logo-1.1.ico"
+                class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
+                  <div class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
+              <small>{{$t('Sign In')}} </small>
             </div>
-            <form>
-              <div class="relative w-full mb-3">
-                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                  Email <span class="text-red-600">*</span>
-                </label>
-                <input v-model="email" type="email"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  placeholder="Email" required />
+                </div>
 
+                <form>
+ <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                  {{$t('Email ')}} <span class="text-red-600">*</span>
+                </label>
+                <input v-model="email" @keyup="emailError = ''" type="email"
+                  class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3"
+                  :placeholder="$t('Email')" required />
+                <p class="text-red-600">{{ emailError }}</p>
               </div>
 
               <div class="relative w-full mb-3">
-                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                  Password <span class="text-red-600">*</span>
+                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                  {{$t('Password ')}}<span class="text-red-600">*</span>
                 </label>
                 <input v-model="password" type="password"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  placeholder="Password" required />
+                  class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3 ease-linear transition-all duration-150"
+                  :placeholder="$t('Password')" required />
+                <p class="text-red-600">{{ passwordError }}</p>
 
               </div>
               <p class="text-red-600">{{ errorMsg }}</p>
               <div class="text-center mt-6">
                 <button style="background-color: #40b751;"
-                  class="cursor-pointer border-[#40b751] hover:border-[#40b751] bg-[#40b751] hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
+                  class="cursor-pointer border-[#40b751] hover:border-[#40b751] bg-gradient-to-l from-green-400 to-lime-600 hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
                   type="button" @click="login()">
-                  Sign In
+                  {{$t('Sign In')}}
                 </button>
+               <div @click="forgotPassword()" class="cursor-pointer text-green-500 ">{{$t('Forgot Password?')}}</div>
               </div>
-              <router-link to="/sadbhavna/registration" class="text-green-500">Register</router-link><br>
-              <router-link to="auto-login" class="text-green-500">Other Login Method</router-link>
-            </form>
+
+
+             <div class="flex items-center justify-between">
+                    <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
+                    <router-link to="/registration" class="text-green-500 text-center border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{$t('Register')}}</router-link>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+
+            <!-- Right column container with background and description-->
+            <div class="flex items-center rounded-b-lg bg-gradient-to-l from-lime-600 to-green-400 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
+              <div class="px-6 py-6 text-white">
+                <h4 class="mb-6 text-xl font-semibold">Welcome to BestDeed!</h4>
+                <p class="text-sm">{{ $t('BestDeed is a leading platform that connects donors with non-profit organizations worldwide. We strive to create a world where everyone has the opportunity to make a positive impact on society. Through our user-friendly website, users can easily discover and donate to a variety of causes, from education to environmental sustainability. We are committed to providing a safe and secure platform for donors and organizations to collaborate and make a meaningful difference in the world. Thank you for choosing BestDeed as your go-to platform for charitable giving.')}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <!-- <GoogleLogin :callback="login_with_google">
         </GoogleLogin>
 
@@ -50,74 +77,7 @@
         <div>{{ isLogin }}</div> -->
 
 
-
-  </div>
-
-
-  <!-- <div class="container mx-auto h-full">
-    <div class="w-full pt-0 md:pt-5 lg:pt-12 bg-grey-lightest">
-      <div class="container mx-auto py-0">
-        <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-          <div class="py-8 px-10 text-gray-600 text-black text-center text-4xl">Register & Login
-          </div>
-          <div class="py-4 px-8">
-            <div class="mb-4">
-              <label class="block text-gray-600 text-base  mb-2" for="email">Enter WhatsApp Number</label>
-              <input class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker" v-model="email"
-                type="number">
-              <span class="text-sm text-gray-400"> An OTP will be sent to this whats app number</span>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with Whatsapp</button>
-            </div>
-            <div class="mb-4">
-              <div
-                class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
-                <p class="text-center mx-4 mb-0">Or</p>
-              </div>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with SMS</button>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with Email</button>
-            </div>
-            <div class="mb-4">
-              <button
-                class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                with Facebook</button>
-            </div>
-            <GoogleLogin :callback="login_with_google" class="w-full">
-              <div class="mb-4">
-                <button
-                  class="appearance-none border-gray-600 rounded w-full py-2 px-3 text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 py-2 tracking-wide px-4 border border-green-500 hover:border-green-500 py-3 text-xs uppercase rounded">Login
-                  with Google</button>
-              </div>
-            </GoogleLogin>
-            <div class="mb-4">
-              <div class="flex mb-10 justify-between">
-                <span class="text-gray-600">Forget password? <a class="text-green-500" href="/login.html">Click
-                    here</a></span><a class="text-green-500" href="registration.html">Register</a>
-              </div>
-            </div>
-            <div class="mb-4">
-              <span class="block text-gray-600 text-center text-base  mb-2"><a class="text-green-500"
-                  href="registration.html">Login </a> &nbsp;via ID Password</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-
+      </section>
 
 
 
@@ -142,10 +102,17 @@ export default {
       // google,
       password: "",
       error: false,
-      errorMsg: '',
+      passwordError: '',
+      emailError: '',
       email: "",
       isLogin: false
     };
+  },
+  created(){
+    document.title = this.$t('Login now | BestDeed')
+  },
+  mounted(){
+    this.$nextTick(() => this.$refs.email.focus())
   },
   resources: {
     login() {
@@ -153,14 +120,23 @@ export default {
         method: "/api/method/login",
         // method: '/api/method/frappe.integrations.oauth2.get_token',
         onSuccess: async () => {
-          this.$router.push(`/sadbhavna`);
+          var route = this.$cookies.get('route');
+          console.log("route", route)
+          if (route != null) {
+            this.$router.go(-2)
+            // this.$router.push(route)
+          }
+          else {
+            this.$router.push(`/`);
+          }
         },
         onError: (error) => {
           this.$toast({
             title: "Error",
             text: "User Name or Password Incorrect",
-            customIcon: "circle-fail",
+            icon: "x-circle",
             appearance: "denger",
+            position: "top-center",
           })
           this.email = "";
           this.password = "";
@@ -172,19 +148,21 @@ export default {
         method: 'frappe.www.login.login_via_token',
         onSuccess: () => {
           // console.log("okey")
-          this.$router.push('/sadbhavna')
+          this.$router.push('/')
         },
         onError: (error) => {
           console.log("error", error)
           this.$toast({
             title: "Error",
             text: 'Something want Wrong!',
-            customIcon: "circle-fail",
+            icon: "x-circle",
             appearance: "denger",
+            position: "top-center",
           })
         }
       }
     },
+
     // googleAuthCodeLogin(){
     //   return{
     //     method: '/sadbhavna_donatekart.api.api.login_with_google',
@@ -196,50 +174,52 @@ export default {
     //     }
     //   }
     // }
+
+    forgotPassword(){
+      return{
+        method: 'sadbhavna_donatekart.api.api.forgot_password',
+        onSuccess:(res) => {
+          // console.log("susseddd", res)
+          if(res=='user not found with this email')
+          {
+            this.emailError = res
+          }
+          else{
+            // let otp_message = res[0]
+            // let number = res[1]
+            // let m_type = res[2]
+            // this.$router.push(`/otp/${otp_message}&${number}&${m_type}`);
+            console.log("mail send")
+            this.$toast({
+            title: "Mail Sent",
+            text: 'forgot password mail is sent open link to set password',
+            icon: "right",
+            position: "top-center",
+            
+          })
+          }
+        },
+        onError:(error) =>{
+          console.log("error for pass", error)
+        }
+      }
+    }
+
   },
   methods: {
-    validEmail: function (email) {
-      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    },
-    validPassword: function (password) {
-      var re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-      return re.test(password);
-    },
     login() {
-      // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      //   this.error = ''
-      // } else {
-      //   this.error = 'Email or Password incorrect!'
-      // }
-
-
-      // if (this.email == '') {
-      //   this.error = 'Email or Password incorrect!'
-      // }
-
-      // if (this.password == '') {
-      //   this.error = 'Email or Password incorrect!'
-      // }
-
-      // if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      //   this.errorMsg = 'Email or Password incorrect!'
-      //   this.error = true
-      //   console.log('email')
-      // }
-
-
-
-
-      if (this.email == '' || !this.validEmail(this.email)) {
+      if (!this.email && !this.password) {
+        this.error == true
+      }
+      else if (this.email == '') {
         // this.email_id == this.error
-        this.errorMsg = 'Email or Password incorrect!'
+        this.emailError = 'Please enter email!'
         this.error = true
         console.log('email')
       }
-      else if (this.password == '' || !this.validPassword(this.password)) {
+      else if (this.password == '') {
         // this.email_id == this.error
-        this.errorMsg = 'Email or Password incorrect!'
+        this.passwordError = 'Please enter password!'
         this.error = true
         console.log('password')
       }
@@ -250,6 +230,24 @@ export default {
           pwd: this.password,
         });
       }
+
+      // if (this.email == '') {
+      //   // this.email_id == this.error
+      //   this.errorMsg = 'Please enter email!'
+      //   this.error = true
+      // }
+      // else if (this.password == '') {
+      //   // this.email_id == this.error
+      //   this.errorMsg = 'Please enter password!'
+      //   this.error = true
+      // }
+      // else {
+      // this.error == false
+      // this.$resources.login.submit({
+      //   usr: this.email,
+      //   pwd: this.password,
+      // });
+      // }
 
       // axios.get('/api/method/login', {
       //   params: {
@@ -326,6 +324,22 @@ export default {
       //   user_data: response
       // })
     },
+
+    forgotPassword(){
+      var email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(this.email == ''){
+        this.emailError = 'Please enter email'
+      }
+      else if (email.test(this.email) == false && this.email) {
+        this.emailError = 'Please enter valid email'
+      }
+      else{
+          this.$resources.forgotPassword.submit({
+          email: this.email
+        })
+      }
+
+    }
     // login_with_google1(){
 
     // }

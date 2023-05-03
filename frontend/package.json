@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build --base=/assets/sadbhavna_donatekart/frontend/ && yarn copy-html-entry",
     "preview": "vite preview",
-    "copy-html-entry": "cp ../sadbhavna_donatekart/public/frontend/index.html ../sadbhavna_donatekart/www/sadbhavna/index.html"
+    "copy-html-entry": "cp ../sadbhavna_donatekart/public/frontend/index.html ../sadbhavna_donatekart/www/bestdeed/index.html"
   },
   "dependencies": {
     "@headlessui/vue": "^1.5.0",
@@ -17,11 +17,16 @@
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",
+    "csv-parse": "^5.3.6",
+    "csvtojson": "^2.0.10",
     "dayjs": "^1.10.7",
+    "deepmerge": "^4.3.1",
     "echarts": "^5.4.1",
     "facebook-login-vuejs": "^2.1.3",
     "frappe-ui": "^0.0.84",
+    "i18n-csv-loader": "^1.0.3",
     "luxon": "^2.3.2",
+    "moment": "^2.29.4",
     "prosemirror-commands": "^1.5.1",
     "prosemirror-dropcursor": "^1.7.1",
     "prosemirror-gapcursor": "^1.3.1",
@@ -35,25 +40,32 @@
     "razorpay": "^2.8.6",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "vue": "^3.2.47",
+    "vue-3-meta": "^2.4.0",
     "vue-cookies": "^1.8.3",
     "vue-echarts": "^6.3.1",
     "vue-facebook-login-component": "^4.0.2",
     "vue-google-oauth2": "^1.5.8",
-    "vue-router": "^4.0.12",
+    "vue-i18n": "^9.2.2",
+    "vue-social-sharing": "^4.0.0-alpha4",
     "vue3-cookies": "^1.0.6",
     "vue3-facebook-login": "0.0.1",
     "vue3-google-login": "^2.0.14",
     "vue3-google-oauth2": "^1.0.6",
     "vue3-google-signin": "^1.3.0",
-    "vuedraggable": "^4.1.0"
+    "vuedraggable": "^4.1.0",
+    "vuetify": "^3.1.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "@vueuse/head": "^1.1.26",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.12",
     "vite": "^2.0.5",
+    "vite-ssg": "^0.22.2",
+    "vue-router": "^4.1.6",
     "vue-template-compiler": "^2.6.14"
   }
 }

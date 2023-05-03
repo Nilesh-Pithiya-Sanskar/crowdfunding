@@ -10,6 +10,7 @@
 		"build": "cd frontend && yarn build"
 	},
 	"dependencies": {
-		"vee-validate": "^3.4.15"
+		"vee-validate": "^3.4.15",
+		"vue-3-meta": "^2.4.0"
 	}
 }
