@@ -128,7 +128,7 @@ export default{
     </section>
 
 
-    <section class="container mx-auto h-full">
+    <section class="container mx-auto h-full ml-auto">
       <!-- <h2 class="text-center text-3xl mt-8 mb-8 font-bold text-[#364958]">{{ $t('About us') }}</h2>
       <img class="text-center w-full h-[20rem]" src="../assets/Inter/img/crowdfunding-money-business-bulb-graphic-260nw-480471112.webp">
       <p class="text-lg leading-relaxed text-slate-500">For individuals who believe in the importance of contributing and
@@ -145,11 +145,11 @@ export default{
         utmost trust, integrity, and compassion.</p> -->
 
         <div class="mb-2">
-        <h2 class="text-3xl mt-8 mb-3 font-bold text-[#364958]">{{ $t('About Us') }}</h2>
+        <h2 class="text-3xl mt-8 mb-3 ml-2 font-bold text-[#364958]">{{ $t('About Us') }}</h2>
         <div class="flex flex-wrap">
 
           <div class="w-full lg:w-6/12 md:w-6/12 sm:12/12 mr-auto">
-            <div class="">
+            <div class="ml-2">
               <p class="text-lg leading-relaxed text-slate-500">For individuals who believe in the importance of contributing and
                 desire to be part of the transformation they want to see, Best Deed works with a distinctive approach and helps
                 streamline the crowdfunding environment.</p>
@@ -166,7 +166,7 @@ export default{
           </div>
 
           <div class="w-full lg:w-5/12 md:w-5/12 sm:12/12 ml-auto mr-auto h-auto w-auto">
-            <img alt="..." class="max-w-full rounded-lg shadow-lg lg:h-[25rem] w-full mt-2" src="../assets/Inter/img/Nonprofit-Crowdfunding-Platforms_Feature.jpg">
+            <img alt="..." class="max-w-full shadow-lg lg:h-[25rem] w-full mt-2" src="../assets/Inter/img/Nonprofit-Crowdfunding-Platforms_Feature.jpg">
           </div>
           
         </div>
@@ -185,7 +185,7 @@ export default{
         <!-- <div class="w-full mr-auto px-4">
                     <img alt="..." class="max-w-full rounded-lg shadow-lg" src="../assets/Inter/img/istockphoto-1248915720-612x612.jpg">
                 </div> -->
-        <div class="text-lg leading-relaxed text-slate-500 mb-10">It all began in 2023, and since then, we have developed
+        <div class="text-lg leading-relaxed text-slate-500 mb-10 ml-2">It all began in 2023, and since then, we have developed
           the most reputable crowdfunding platform. The foundation of what we do is the conviction that people are
           naturally compassionate and willing to assist. By utilizing technology to its fullest, we have been able to
           create an easy and transparent method for online donations.
@@ -330,7 +330,7 @@ export default{
               class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
-                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-red-400">
+                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/partners.png" alt="organization" />
                 </div>
                 <h6 class="text-xl font-semibold">People-centric organization</h6>
@@ -347,7 +347,7 @@ export default{
               class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
-                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-red-400">
+                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/rate.png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Greater satisfaction</h6>
@@ -365,7 +365,7 @@ export default{
               class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
-                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-red-400">
+                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/passion.png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Passionate people</h6>
@@ -382,7 +382,7 @@ export default{
               class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
-                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-red-400">
+                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/benefits.png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Top-notch benefits</h6>
@@ -400,7 +400,7 @@ export default{
               class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
-                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-red-400">
+                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/ecosystem.png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Building an ecosystem</h6>
@@ -418,7 +418,7 @@ export default{
               class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
-                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-red-400">
+                  class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/award.png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Awarded Agency</h6>
@@ -445,18 +445,19 @@ export default{
           </h2>
         </div>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
-          <div class="flex pb-[34px] md:pb-[20px] lg:pb-[34px] ">
-            <div class="">
-              <img class="h-20 w-20 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/1238733.avif" />
-            </div>
-            <div class="lg:w-9/12 xl:w-9/12 mt-5">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+
+          <div class="flex flex-auto pb-[34px] md:pb-[20px] lg:pb-[34px]">
+            <!-- <div class=""> -->
+              <img class="h-20 w-20 mr-3 pt-2" src="../../src/assets/Inter/img/1238733.avif" />
+            <!-- </div> -->
+            <div class="mt-5">
               <p class="text-[16px] font-black">{{ $t('Driving the change blended with tech.') }}</p>
             </div>
           </div>
 
-          <div class="flex pb-[34px] md:pb-[20px] lg:pb-[34px] ">
-            <img class="h-20 w-20 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/1545955.avif" />
+          <div class="flex flex-auto pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+            <img class="h-20 w-20 mr-3 pt-2" src="../../src/assets/Inter/img/1545955.avif" />
             <!-- <div class="h-[46px] md:h-[50px] lg:h-[48px] w-[40px] md:w-[50px] lg:w-[40px] ml-8 md:ml-0 lg:ml-0 pt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
                 </div> -->
@@ -466,9 +467,9 @@ export default{
             </div>
           </div>
 
-          <div class="flex pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+          <div class="flex flex-auto pb-[34px] md:pb-[20px] lg:pb-[34px] ">
             <div class="">
-              <img class="h-20 w-20 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/1306033.avif" />
+              <img class="h-20 w-20 mr-3 pt-2" src="../../src/assets/Inter/img/1306033.avif" />
             </div>
             <!-- <div class="h-[46px] md:h-[50px] lg:h-[48px] w-[40px] md:w-[50px] lg:w-[40px] ml-8 md:ml-0 lg:ml-0 pt-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -478,9 +479,9 @@ export default{
             </div>
           </div>
 
-          <div class="flex pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+          <div class="flex flex-auto pb-[34px] md:pb-[20px] lg:pb-[34px] ">
             <div class="">
-              <img class="h-20 w-20 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/2112822.avif" />
+              <img class="h-20 w-20 mr-3 pt-2" src="../../src/assets/Inter/img/2112822.avif" />
             </div>
             <!-- <div class="h-[46px] md:h-[50px] lg:h-[48px] w-[40px] md:w-[50px] lg:w-[40px] ml-8 md:ml-0 lg:ml-0 pt-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -490,18 +491,18 @@ export default{
             </div>
           </div>
 
-          <div class="flex pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+          <div class="flex flex-auto pb-[34px] md:pb-[20px] lg:pb-[34px] ">
             <div class="">
-              <img class="h-20 w-20 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/3392072.avif" />
+              <img class="h-20 w-20 mr-3 pt-2" src="../../src/assets/Inter/img/3392072.avif" />
             </div>
             <div class="lg:w-9/12 xl:w-9/12 mt-5">
               <p class="text-[16px] font-black">{{ $t('Pushing the people-centric environment.') }}</p>
             </div>
           </div>
 
-          <div class="flex pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+          <div class="flex flex-auto pb-[34px] md:pb-[20px] lg:pb-[34px] ">
             <div class="">
-              <img class="h-20 w-20 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/3469599.avif" />
+              <img class="h-20 w-20 mr-3 pt-2" src="../../src/assets/Inter/img/3469599.avif" />
             </div>
             <!-- <div class="h-[46px] md:h-[50px] lg:h-[48px] w-[40px] md:w-[50px] lg:w-[40px] ml-8 md:ml-0 lg:ml-0 pt-2">
 
@@ -523,7 +524,7 @@ export default{
         <h2 class="ml-4 text-3xl mt-8 mb-3 font-bold text-[#364958]">{{ $t('Mission') }}</h2>
         <div class="flex flex-wrap">
           <div class="w-full md:w-4/12 ml-auto mr-auto px-4 h-auto w-20">
-            <img alt="..." class="max-w-full rounded-lg shadow-lg h-[18rem] w-full" src="../assets/Inter/img/images_mission(1).png">
+            <img alt="..." class="max-w-full shadow-lg h-[18rem] w-full" src="../assets/Inter/img/images_mission(1).png">
           </div>
           <div class="w-full md:w-8/12 mr-auto px-4">
             <div class="md:pr-12">
@@ -568,7 +569,7 @@ export default{
             </div>
           </div>
           <div class="w-full md:w-4/12 ml-auto px-4">
-            <img alt="..." class="max-w-full rounded-lg shadow-lg h-[18rem] w-full" src="../assets/Inter/img/vision.jpeg">
+            <img alt="..." class="max-w-full shadow-lg h-[18rem] w-full" src="../assets/Inter/img/vision.jpeg">
           </div>
         </div>
       </div>

@@ -12,11 +12,7 @@
                 </div>
             </div> -->
 
-            <!-- <div class="w-full md:w-6/12  ml-auto mr-auto px-4 h-auto w-auto">
-                <img alt="..." class="max-w-full rounded-lg lg:h-[18rem] w-full mt-2"
-                    src="../assets/Inter/img/Nonprofit-Crowdfunding-Platforms_Feature.jpg">
-            </div> -->
-            <div class="w-full mr-auto px-4">
+            <div class="md:w-7/12 sm:w-full lg:w-7/12 mr-auto px-4">
                 <h3 class="font-bold text-[#364958] text-xl mb-2 mt-1">Simplifying the way crowdfunding campaigns
             operate!</h3>
                 <p class="leading-relaxed text-slate-500">For individuals who believe in the importance of
@@ -39,6 +35,12 @@
                     this with the
                     utmost trust, integrity, and compassion.</p>
             </div>
+
+            <div class="md:w-5/12 sm:w-full ml-auto mr-auto px-4 h-auto w-auto">
+                <img alt="..." class="max-w-full rounded-lg lg:h-[18rem] w-full mt-2"
+                    src="../assets/Inter/img/Nonprofit-Crowdfunding-Platforms_Feature.jpg">
+            </div>
+            
         </div>
 
     </section>
