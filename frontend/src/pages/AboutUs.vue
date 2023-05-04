@@ -474,7 +474,7 @@ export default{
 
           <div class="lg:pt-12 pt-6 w-full lg:w-4/12 md:w-6/12 sm:w-3/12 px-4">
             <div
-              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
+              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg hover:shadow-2xl rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
@@ -491,11 +491,11 @@ export default{
 
           <div class="lg:pt-12 pt-6 w-full lg:w-4/12 md:w-6/12 sm:w-3/12 px-4">
             <div
-              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
+              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg hover:shadow-2xl rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
-                  <img src="../assets/Inter/img/rate.png" alt="" />
+                  <img src="../assets/Inter/img/satisfaction.png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Greater satisfaction</h6>
                 <p class="mt-2 mb-4 text-gray-600">
@@ -509,11 +509,11 @@ export default{
 
           <div class="lg:pt-12 pt-6 w-full lg:w-4/12 md:w-6/12 sm:w-3/12 px-4">
             <div
-              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
+              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg hover:shadow-2xl rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
-                  <img src="../assets/Inter/img/passion.png" alt="" />
+                  <img src="../assets/Inter/img/passion(1).png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Passionate people</h6>
                 <p class="mt-2 mb-4 text-gray-600">
@@ -526,7 +526,7 @@ export default{
 
           <div class="lg:pt-12 pt-6 w-full lg:w-4/12 md:w-6/12 sm:w-3/12 px-4">
             <div
-              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
+              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg hover:shadow-2xl rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
@@ -544,7 +544,7 @@ export default{
 
           <div class="lg:pt-12 pt-6 w-full lg:w-4/12 md:w-6/12 sm:w-3/12 px-4">
             <div
-              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
+              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg hover:shadow-2xl rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
@@ -562,11 +562,11 @@ export default{
 
           <div class="lg:pt-12 pt-6 w-full lg:w-4/12 md:w-6/12 sm:w-3/12 px-4">
             <div
-              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
+              class="flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg hover:shadow-2xl rounded-lg lg:h-[23rem] md:h-[25rem] sm:h-[18rem]">
               <div class="px-4 py-5 flex-auto">
                 <div
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
-                  <img src="../assets/Inter/img/award.png" alt="" />
+                  <img src="../assets/Inter/img/goverment.png" alt="" />
                 </div>
                 <h6 class="text-xl font-semibold">Awarded Agency</h6>
                 <p class="mt-2 mb-4 text-gray-600">
@@ -644,7 +644,7 @@ export default{
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
         <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
           <div class="">
-            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/4750782.avif" />
+            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/insignia.png" />
           </div>
           <div class="lg:w-9/12 xl:w-9/12">
             <p class="text-[16px] font-black ml-3">{{ $t('Reliability') }}</p>
@@ -662,17 +662,17 @@ export default{
 
         <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
           <div class="">
-
-            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/features.png" />
+            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/cyber-security.png" />
           </div>
+
           <div class="lg:w-9/12 xl:w-9/12">
-            <p class="text-[16px] font-black ml-2">{{ $t('Feature-rich') }}</p>
+            <p class="text-[16px] font-black">{{ $t('Security at the core') }}</p>
           </div>
         </div>
 
         <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
           <div class="">
-            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/4751838.avif" />
+            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/trust.png" />
           </div>
 
           <div class="lg:w-9/12 xl:w-9/12">
@@ -682,17 +682,17 @@ export default{
 
         <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
           <div class="">
-            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/1977296.avif" />
-          </div>
 
+            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/new-features.png" />
+          </div>
           <div class="lg:w-9/12 xl:w-9/12">
-            <p class="text-[16px] font-black">{{ $t('Security at the core') }}</p>
+            <p class="text-[16px] font-black ml-2">{{ $t('Feature-rich') }}</p>
           </div>
         </div>
 
         <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px]">
           <div class="">
-            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/317143.avif" />
+            <img class="h-16 w-16 mr-3 ml-8 md:ml-0 lg:ml-0 pt-2" src="../../src/assets/Inter/img/creative-brain.png" />
           </div>
 
           <div class="lg:w-9/12 xl:w-9/12">
