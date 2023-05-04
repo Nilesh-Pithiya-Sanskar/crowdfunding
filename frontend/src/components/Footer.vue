@@ -162,7 +162,7 @@
                 <router-link to="/request-campaign">{{ $t('Request A Campaign') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <a href="#">{{ $t('About Us') }}</a>
+                <router-link to="/about-us">{{ $t('About Us') }}</router-link>
               </li>
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/contact-us">{{ $t('Contact Us') }}</router-link>
@@ -174,7 +174,7 @@
               {{ $t('Learn') }}</h2>
             <ul class="text-white">
               <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
-                <a href="#">{{ $t('How it Works') }}</a>
+                <router-link to="/how-it-works">{{ $t('How it Works') }}</router-link>
               </li>
               <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/faq">{{ $t('FAQs') }}</router-link>

@@ -215,6 +215,11 @@ const routes = [{
     }
   },
   {
+    path: '/how-it-works',
+    name: 'How It Works',
+    component: () => import('@/pages/HowItWorks.vue'),
+  },
+  {
     path: '/translation',
     name: 'Translation',
     component: () => import('@/pages/Translations.vue')

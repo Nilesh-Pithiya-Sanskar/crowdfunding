@@ -602,3 +602,14 @@ def generate_keys(user):
     user_details.save(ignore_permissions=True)
 
     return api_secret
+
+
+@frappe.whitelist(allow_guest=True)
+def get_about_data():
+    total_campaigns = frappe.db.count('Donation Campaign')
+    total_donations = frappe.db.count('Donation')
+    total_donors = frappe.db.count('Donor')
+    total_ngos = frappe.db.count('NGO')
+    total_live_campaigns = frappe.db.count('Donation Campaign', {'status': 'Live'})
+
+    return total_campaigns, total_donations, total_donors, total_ngos, total_live_campaigns
