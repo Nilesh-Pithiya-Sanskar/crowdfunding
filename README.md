@@ -1,6 +1,6 @@
 ## Sadbhavna Donatekart
 
-this app for sadbhavna donatekart
+this app for bestdeed
 
 #### License
 
