@@ -883,7 +883,7 @@
 // import { ContentMatch } from 'prosemirror-model';
 import { useRoute } from 'vue-router';
 import { inject } from 'vue';
-import { Avatar } from 'frappe-ui'
+import { Avatar, FrappeUI } from 'frappe-ui'
 import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
@@ -1175,6 +1175,24 @@ export default {
             }
         },
 
+        ondismiss_payment(){
+            return{
+                method: "sadbhavna_donatekart.api.api.ondismiss_payment",
+                onSuccess: (res) => {
+                    console.log("payment cancelled")
+                },
+                onError: (error) => {
+                    this.$toast({
+                        title: "Error",
+                        text: error,
+                        icon: "x-circle",
+                        appearance: "denger",
+                        position: "top-center",
+                    })
+                }
+            }
+        }
+
     },
     methods: {
         copyURL() {
@@ -1228,7 +1246,7 @@ export default {
             })
                 .then(response => {
                     response.json().then(res => {
-                        console.log("donation", res)
+                        // console.log("donation", res)
                         this.campaign_detail = res
                         this.total_desc = res.data.description.length
                         // this.campaign_start_date = new Date(res.data.start_date)
@@ -1326,7 +1344,8 @@ export default {
             })
         },
         donate(total_price, anonymous) {
-            console.log("donate called")
+            // console.log("donate called")
+            this.$cookies.set('added_item', 1)
             if (!this.user.isLoggedIn()) {
                 console.log("okey")
                 this.showDialog_c = true
@@ -1347,7 +1366,7 @@ export default {
                     // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     handler: (response) => {
                         this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
-
+                        this.$cookies.remove('added_item')
                         // this.verifySignature(response);
                     },
                     // "handler": function (response){
@@ -1363,17 +1382,35 @@ export default {
                     },
                     "theme": {
                         "color": "#40b751"
-                    }
+                    },
+                    // modal: (response) => {
+                    //     console.log("modal", response)
+                    // }
+                    "modal": {
+                            "ondismiss": () => {
+                                // this.ondismiss_payment()
+                                this.$resources.ondismiss_payment.submit({
+                                    item_cart: this.get_cookies('item'),
+                                    i_qty: this.get_cookies('i_qty'),
+                                    total_price: this.get_cookies('total_price'),
+                                    item_b: this.get_cookies('item_b'),
+                                    campaign: this.campaign,
+                                    email: this.cookie.user_id,
+                                    phone: this.cookie.number,
+                                    name: this.cookie.full_name
+                                })
+                            },
+                        }
                 };
                 var rzp1 = new Razorpay(options);
                 rzp1.on('payment.failed', function (response) {
-                    alert(response.error.code);
-                    alert(response.error.description);
-                    alert(response.error.source);
-                    alert(response.error.step);
-                    alert(response.error.reason);
-                    alert(response.error.metadata.order_id);
-                    alert(response.error.metadata.payment_id);
+                    console.log(response.error.description);
+                    console.log(response.error.source);
+                    console.log(response.error.code);
+                    console.log(response.error.step);
+                    console.log(response.error.reason);
+                    console.log(response.error.metadata.order_id);
+                    console.log(response.error.metadata.payment_id);
                 });
                 rzp1.open();
 
@@ -1407,7 +1444,7 @@ export default {
                 // "order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                 handler: (response) => {
                     this.set_details_in_doctype_after_donation(total_price, anonymous, response.razorpay_payment_id)
-
+                    this.$cookies.remove('added_item')
                     // this.verifySignature(response);
                 },
                 // "handler": function (response){
@@ -1423,17 +1460,33 @@ export default {
                 },
                 "theme": {
                     "color": "#40b751"
-                }
+                },
+                "modal": {
+                            "ondismiss": () => {
+                                // this.ondismiss_payment_c()
+                                this.$resources.ondismiss_payment.submit({
+                                item_cart: this.get_cookies('item'),
+                                i_qty: this.get_cookies('i_qty'),
+                                total_price: this.get_cookies('total_price'),
+                                item_b: this.get_cookies('item_b'),
+                                campaign: this.campaign,
+                                email: email,
+                                phone: phone,
+                                name: f_name
+                            })
+
+                            },
+                        }
             };
             var rzp1 = new Razorpay(options);
             rzp1.on('payment.failed', function (response) {
-                alert(response.error.code);
-                alert(response.error.description);
-                alert(response.error.source);
-                alert(response.error.step);
-                alert(response.error.reason);
-                alert(response.error.metadata.order_id);
-                alert(response.error.metadata.payment_id);
+                console.log(response.error.code);
+                console.log(response.error.description);
+                console.log(response.error.source);
+                console.log(response.error.step);
+                console.log(response.error.reason);
+                console.log(response.error.metadata.order_id);
+                console.log(response.error.metadata.payment_id);
             });
             rzp1.open();
         },
@@ -1486,8 +1539,6 @@ export default {
                     // }
                 });
                 let amount = rate * (qty1 + 1)
-                console.log("pqty", p_qty)
-                console.log("p_cqty", p_c_qty)
 
                 var remining_item = p_qty - p_c_qty
                 if (!remining_item) {
@@ -1610,7 +1661,6 @@ export default {
             }
             else if (this.phone_number && phone.test(this.phone_number) == false) {
                 this.phoneNumberError = 'Enter valid phone number'
-                console.log('phone')
             }
             // if (this.pan_number == '') {
             //     this.panError = 'Enter PAN number'
@@ -1624,12 +1674,40 @@ export default {
                 this.donate_checkout(this.anonymous, this.name, this.email, this.phone_number)
 
             }
-        }
+        },
+
+        // ondismiss_payment(){
+        //     this.$resources.ondismiss_payment.submit({
+        //         item_cart: this.get_cookies('item'),
+        //         i_qty: this.get_cookies('i_qty'),
+        //         total_price: this.get_cookies('total_price'),
+        //         item_b: this.get_cookies('item_b'),
+        //         campaign: this.campaign,
+        //         email: this.cookie.user_id,
+        //         phone: this.cookie.number,
+        //         name: this.cookie.full_name
+        //     })
+        // },
+
+        // ondismiss_payment_c(){
+        //     this.$resources.ondismiss_payment.submit({
+        //         item_cart: this.get_cookies('item'),
+        //         i_qty: this.get_cookies('i_qty'),
+        //         total_price: this.get_cookies('total_price'),
+        //         item_b: this.get_cookies('item_b'),
+        //         campaign: this.campaign,
+        //         email: this.email,
+        //         phone: this.phone_number,
+        //         name: this.f_name
+        //     })
+        // }
 
     }
 }
 </script>
-<style>.custom-scrollbar::-webkit-scrollbar {
+
+
+<!-- <style>.custom-scrollbar::-webkit-scrollbar {
     width: 1px;
     background-color: #ffffff;
 }
@@ -1643,4 +1721,4 @@ export default {
     scrollbar-width: thin;
 
     scrollbar-color: #c3c3c3 #f3f3f3;
-}</style>
+}</style> -->

@@ -613,3 +613,24 @@ def get_about_data():
     total_live_campaigns = frappe.db.count('Donation Campaign', {'status': 'Live'})
 
     return total_campaigns, total_donations, total_donors, total_ngos, total_live_campaigns
+
+
+@frappe.whitelist(allow_guest=True)
+def ondismiss_payment(item_cart, i_qty, total_price, item_b, campaign, email, name, phone=''):
+    # print("\n\n item_cart", item_cart)
+    # print("\n\n i_qty", i_qty)
+    # print("\n\n total_price", total_price)
+    # print("\n\n item_b", item_b)
+    # print("\n\n campaign", campaign)
+    # print("\n\n email", email)
+    # print("\n\n name", name)
+    # print("\n\n phone", phone)
+
+    message = f'''
+        <p>Hello {name},</p>
+        <p>You recently visit our platform BestDeed and try to donate but your payment is not done.</p>
+        <a href="https://bestdeed.org/campaign-donation/{campaign}">Click here to donate</a>
+        <p> Thank You </p>
+    '''
+    frappe.sendmail(recipients=email, subject='Donation Not Completed | BestDeed', message=message)
+

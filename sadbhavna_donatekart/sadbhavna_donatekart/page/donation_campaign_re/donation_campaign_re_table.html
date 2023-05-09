@@ -14,15 +14,15 @@
         <th>Total Donors</th>
 
         <tr>
-            <td>{{message[0].campaign_category}}</td>
-            <td>{{message[0].campaign_title}}</td>
-            <td>{{message[0].donation_amount}}</td>
-            <td>{{message[0].raised_amount}}</td>
-            <td>{{message[0].start_date}}</td>
-            <td>{{message[0].end_date}}</td>
+            <td>{{message[0][0].campaign_category}}</td>
+            <td>{{message[0][0].campaign_title}}</td>
+            <td>{{message[0][0].donation_amount}}</td>
+            <td>{{message[0][0].raised_amount}}</td>
+            <td>{{message[0][0].start_date}}</td>
+            <td>{{message[0][0].end_date}}</td>
             <!-- <th>{{(message[0].completion_date - message[0].start_date).days}}</th> -->
-            <td>{{message[0].completion_date}} Days</td>
-            <td>{{message[0].total_donor}}</td>
+            <td>{{message[0][0].completion_date}} Days</td>
+            <td>{{message[0][0].total_donor}}</td>
         </tr>
     </table>
 

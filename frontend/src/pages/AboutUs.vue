@@ -150,7 +150,7 @@ export default{
 
           <div class="w-full lg:w-6/12 md:w-6/12 sm:12/12 mr-auto">
             <div class="ml-2">
-              <p class="text-lg leading-relaxed text-slate-500">{{$t('For individuals who believe in the importance of contributing and desire to be part of the transformation they want to see, Best Deed works with a distinctive approach and helps streamline the crowdfunding environment.')}}</p>
+              <p class="text-lg leading-relaxed text-slate-500">{{$t('For individuals who believe in the importance of contributing and desire to be part of the transformation they want to see, BestDeed works with a distinctive approach and helps streamline the crowdfunding environment.')}}</p>
 
               <p class="text-lg leading-relaxed text-slate-500 mt-3">{{$t("Whether it's your cause or one that you support, we'll assemble communities, pertinent partners, cutting-edge tools, and resources to meet your product needs efficiently.")}}</p>
 
