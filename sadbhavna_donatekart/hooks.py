@@ -133,23 +133,23 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"sadbhavna_donatekart.tasks.all"
-#	],
-	# "daily": [
-		# "sadbhavna_donatekart.api.api.close_end_date_campaign"
+scheduler_events = {
+	# "all": [
+	# 	"sadbhavna_donatekart.tasks.all"
 	# ],
-#	"hourly": [
-#		"sadbhavna_donatekart.tasks.hourly"
-#	],
-#	"weekly": [
-#		"sadbhavna_donatekart.tasks.weekly"
-#	],
-#	"monthly": [
-#		"sadbhavna_donatekart.tasks.monthly"
-#	],
-# }
+	"daily": [
+		"sadbhavna_donatekart.api.api.close_end_date_campaign"
+	]
+	# "hourly": [
+	# 	"sadbhavna_donatekart.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"sadbhavna_donatekart.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"sadbhavna_donatekart.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------

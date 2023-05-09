@@ -540,7 +540,7 @@ export default {
     name: "Explore Campaigns",
     components: { Navbar, Footer },
     mounted() {
-        document.title = this.$t('Explore Different Donation Campaigns | BestDeed')
+        document.title = this.$t('Support Causes That Matter: BestDeed - Your Trusted and 100% Transparent Crowdfunding Platform | Bestdeed')
         this.get_language()
         this.get_campaigns()
         // const route = useRoute()

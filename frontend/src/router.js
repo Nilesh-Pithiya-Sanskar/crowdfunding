@@ -8,7 +8,7 @@ const routes = [{
     name: 'Home',
     component: () => import('@/pages/Home.vue'),
     meta: {
-      title: 'Donate with 100% Transparency | BestDeed',
+      title: 'Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed',
       metaTags: [
         {
           name: 'keyword',
@@ -30,7 +30,7 @@ const routes = [{
     name: 'Login',
     component: () => import('@/pages/auth/Login.vue'),
     meta: {
-      title: 'Login now | BestDeed',
+      title: 'Login Now | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed',
       metaTags: [
         {
           name: 'description',
@@ -44,7 +44,7 @@ const routes = [{
     name: 'Auto Login',
     component: () => import('@/pages/auth/AutoLogin.vue'),
     meta: {
-      title: 'Login now | BestDeed',
+      title: 'Login Now | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed',
       metaTags: [
         {
           name: 'description',
@@ -63,7 +63,7 @@ const routes = [{
     name: 'ExploreCampaigns',
     component: () => import('@/pages/ExploreCampaigns.vue'),
     meta: {
-      title: 'Explore Different Donation Campaigns | BestDeed',
+      title: 'Support Causes That Matter: BestDeed - Your Trusted and 100% Transparent Crowdfunding Platform | Bestdeed',
       metaTags: [
         {
           name: 'keyword',
@@ -86,7 +86,7 @@ const routes = [{
     name: 'Blog',
     component: () => import('@/pages/Blog.vue'),
     meta: {
-      title: 'BestDeed Blogs | BestDeed',
+      title: 'Discover Inspiring Stories and Expert Insights on BestDeed Blogs | Bestdeed',
       metaTags: [
         {
           name: 'description',
@@ -115,7 +115,7 @@ const routes = [{
     name: 'Contact Us',
     component: () => import('@/pages/ContactUs.vue'),
     meta: {
-      title: 'Contact Us | BestDeed',
+      title: 'Contact Us | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed',
       metaTags: [
         {
           name: 'description',
@@ -134,7 +134,7 @@ const routes = [{
     name: 'Donation Campaign Request',
     component: () => import('@/pages/DonationCampaignRequest.vue'),
     meta: {
-      title: 'Request a Campaign | BestDeed',
+      title: 'Request a Campaign on BestDeed, the Trusted, and 100% Transparent Crowdfunding Platform  | BestDeed',
       metaTags: [
         {
           name: 'keyword',
@@ -177,7 +177,7 @@ const routes = [{
     name: 'Privacy Policy',
     component: () => import('@/pages/PrivacyPolicy1.vue'),
     meta: {
-      title: 'Privacy Policy Page | BestDeed',
+      title: 'Privacy Policy Page | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed',
       metaTags: [
         {
           name: 'description',
@@ -191,7 +191,7 @@ const routes = [{
     name: 'Terms Of Service',
     component: () => import('@/pages/TermsOfService.vue'),
     meta: {
-      title: 'Terms of Use | BestDeed',
+      title: 'Terms of Use | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed',
       metaTags: [
         {
           name: 'description',
@@ -205,7 +205,7 @@ const routes = [{
     name: 'About Us',
     component: () => import('@/pages/AboutUs.vue'),
     meta: {
-      title: 'Get to know more about BestDeed',
+      title: 'Empowering Positive Change - Learn About BestDeed and Our Commitment to Supporting NGOs and Their Causes | BestDeed',
       metaTags: [
         {
           name: 'description',

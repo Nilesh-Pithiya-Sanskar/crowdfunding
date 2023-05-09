@@ -74,7 +74,7 @@ export default{
     Footer,
   },
   created(){
-    document.title = this.$nextTick('Terms of Use | BestDeed')
+    document.title = this.$t('Terms of Use | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
   }
 }
 </script>

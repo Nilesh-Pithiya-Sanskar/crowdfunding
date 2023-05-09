@@ -762,15 +762,15 @@ import { useRoute } from 'vue-router'
 
 import { useHead } from '@vueuse/head'
 
-useHead({
-  title: 'Website Title',
-  meta: [
-    {
-      name: 'description',
-      content: 'Website description',
-    },
-  ],
-})
+// useHead({
+//   title: 'Website Title',
+//   meta: [
+//     {
+//       name: 'description',
+//       content: 'Website description',
+//     },
+//   ],
+// })
 export default {
   name: 'Home',
   // created() {
@@ -825,13 +825,13 @@ export default {
       start: 0
     }
   },
-  // created() {
-  //   document.title = this.$t('Donate with 100% Transparency | BestDeed')
-  //   // addMeta({
-  //   //   name: 'author',
-  //   //   content: 'John Doe'
-  //   // })
-  // },
+  created() {
+    document.title = this.$t('Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
+    // addMeta({
+    //   name: 'author',
+    //   content: 'John Doe'
+    // })
+  },
   mounted() {
     this.get_language()
     this.get_campaigns()

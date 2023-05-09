@@ -115,7 +115,7 @@ export default {
         };
     },
     mounted() {
-        document.title = this.$t('Login now | BestDeed')
+        document.title = this.$t('Login Now | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
         this.$nextTick(() => this.$refs.number.focus())
         // 203313835661247
         // 1616534218770661

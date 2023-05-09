@@ -210,7 +210,7 @@ export default {
     //     }
     // },
     created(){
-        document.title = this.$t("Contact Us | BestDeed")
+        document.title = this.$t("Contact Us | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed")
     },
     mounted(){
         this.$nextTick(() => this.$refs.first_name.focus())

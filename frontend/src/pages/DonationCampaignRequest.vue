@@ -286,7 +286,7 @@ export default {
     //     }
     // },
     created(){
-        document.title = this.$t('Request a Campaign | BestDeed')
+        document.title = this.$t('Request a Campaign on BestDeed, the Trusted, and 100% Transparent Crowdfunding Platform  | BestDeed')
         this.$nextTick(() => this.$refs.fullname.focus())
     },
     mounted(){

@@ -555,7 +555,7 @@ def close_end_date_campaign():
     for i in today_end_date_campaign:
         frappe.db.set_value("Donation Campaign", i.name, {'status': 'Closed', 'published': 0, 'remark': 'Your Camapign is close due to reached time limit.', 'completion_date': now()})
         frappe.db.commit()
-        frappe.sendmail(recipients=i.ngo_email, subject=f'You Campaign {i.campaign_title}', message=f'your campaign {i.campaign_title} is closed due to reached time limit, your total raised amount is {i.raised_amount}')
+        # frappe.sendmail(recipients=i.ngo_email, subject=f'You Campaign {i.campaign_title}', message=f'your campaign {i.campaign_title} is closed due to reached time limit, your total raised amount is {i.raised_amount}')
     return today_end_date_campaign
 
 

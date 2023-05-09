@@ -119,10 +119,10 @@ export default{
                 </div> -->
         <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 card-space mb-2">
           <p class="text-[24px] md:text-[28px] lg:text-[34px] text-center font-bold text-[#364958] leading-normal">
-            Join hands with us to contribute your bit!
+            {{$t('Join hands with us to contribute your bit!')}}
           </p>
         </div>
-        <div class="text-center text-[20px]">Best Deed is working with a vision to drive change and help everyone in need!
+        <div class="text-center text-[20px]">{{$t('BestDeed is working with a vision to drive change and help everyone in need!')}}
         </div>
       </div>
     </section>
@@ -150,24 +150,11 @@ export default{
 
           <div class="w-full lg:w-6/12 md:w-6/12 sm:12/12 mr-auto">
             <div class="ml-2">
-              <p class="text-lg leading-relaxed text-slate-500">For individuals who believe in the importance of
-                contributing and
-                desire to be part of the transformation they want to see, Best Deed works with a distinctive approach and
-                helps
-                streamline the crowdfunding environment.</p>
+              <p class="text-lg leading-relaxed text-slate-500">{{$t('For individuals who believe in the importance of contributing and desire to be part of the transformation they want to see, Best Deed works with a distinctive approach and helps streamline the crowdfunding environment.')}}</p>
 
-              <p class="text-lg leading-relaxed text-slate-500 mt-3">Whether it's your cause or one that you support,
-                we'll
-                assemble communities, pertinent partners, cutting-edge tools, and resources to meet your product needs
-                efficiently.</p>
+              <p class="text-lg leading-relaxed text-slate-500 mt-3">{{$t("Whether it's your cause or one that you support, we'll assemble communities, pertinent partners, cutting-edge tools, and resources to meet your product needs efficiently.")}}</p>
 
-              <p class="text-lg leading-relaxed text-slate-500 mt-3">With our one-of-a-kind platform that enables people
-                all
-                around the world to give towards goods required by NGOs, we have revolutionized the crowdfunding sector.
-                We are
-                working hard to change the world by connecting people together to have a lasting influence. We do this
-                with the
-                utmost trust, integrity, and compassion.</p>
+              <p class="text-lg leading-relaxed text-slate-500 mt-3">{{$t("With our one-of-a-kind platform that enables people all around the world to give towards goods required by NGOs, we have revolutionized the crowdfunding sector. We are working hard to change the world by connecting people together to have a lasting influence. We do this with the utmost trust, integrity, and compassion.")}}</p>
             </div>
           </div>
 
@@ -192,15 +179,7 @@ export default{
         <!-- <div class="w-full mr-auto px-4">
                     <img alt="..." class="max-w-full rounded-lg shadow-lg" src="../assets/Inter/img/istockphoto-1248915720-612x612.jpg">
                 </div> -->
-        <div class="text-lg leading-relaxed text-slate-500 mb-10 ml-2">It all began in 2023, and since then, we have
-          developed
-          the most reputable crowdfunding platform. The foundation of what we do is the conviction that people are
-          naturally compassionate and willing to assist. By utilizing technology to its fullest, we have been able to
-          create an easy and transparent method for online donations.
-
-          Regardless of their socioeconomic status, anybody in the nation has the ability to start or contribute to a
-          campaign. We are making the best use of online donations since we think they will become "the" means to perform
-          charitable and humanitarian deeds in the next few years.
+        <div class="text-lg leading-relaxed text-slate-500 mb-10 ml-2">{{$t("It all began in 2023, and since then, we have developed the most reputable crowdfunding platform. The foundation of what we do is the conviction that people are naturally compassionate and willing to assist. By utilizing technology to its fullest, we have been able to create an easy and transparent method for online donations. Regardless of their socioeconomic status, anybody in the nation has the ability to start or contribute to a campaign. We are making the best use of online donations since we think they will become 'the' means to perform charitable and humanitarian deeds in the next few years.")}}
         </div>
       </div>
     </section>
@@ -336,15 +315,8 @@ export default{
           </div>
           <div class="w-full md:w-8/12 mr-auto px-4">
             <div class="md:pr-12">
-              <p class="text-lg text-slate-500">Over the years, we have seen that individuals want to
-                donate but are hesitant to donate money. Instead, they believe in donating products as per their needs.
-                So,
-                Best Deed comes with a solution through which individuals can donate to NGOs, charitable organizations,
-                groups and individuals the product they need through our platform. </p>
-              <p class="mt-4 text-lg text-slate-500">At Best Deed, we even encourage the individuals to help
-                the ones in need through our platform. They have the chance to volunteer with us in any way possible based
-                on the availability, expertise and location. Volunteering can provide a sense of purpose, fulfillment, and
-                satisfaction, and can also help build skills, networks, and relationships.</p>
+              <p class="text-lg text-slate-500">{{$t("Over the years, we have seen that individuals want to donate but are hesitant to donate money. Instead, they believe in donating products as per their needs. So, BestDeed comes with a solution through which individuals can donate to NGOs, charitable organizations, groups and individuals the product they need through our platform.")}} </p>
+              <p class="mt-4 text-lg text-slate-500">{{$t('At BestDeed, we even encourage the individuals to help the ones in need through our platform. They have the chance to volunteer with us in any way possible based on the availability, expertise and location. Volunteering can provide a sense of purpose, fulfillment, and satisfaction, and can also help build skills, networks, and relationships.')}}</p>
             </div>
           </div>
         </div>
@@ -366,14 +338,9 @@ export default{
 
           <div class="w-full md:w-8/12 px-4">
             <div class="md:pr-12">
-              <p class="mt-4 text-lg leading-relaxed text-slate-500">The team at Best Deed works with a vision to promote
-                the feeling of giving and eliminate the hesitancy of donating directly through money. </p>
-              <p class="mt-4 text-lg leading-relaxed text-slate-500">With a unique donating model, the organizations will
-                put up their requirements through the crowdfunding campaign, and individuals can donate at their
-                convenience.</p>
-              <p class="mt-4 text-lg leading-relaxed text-slate-500">Our vision totally aligns with our mission in making
-                proactive steps to encourage individuals and groups in volunteering with us. Through this, we are moving a
-                step ahead in making it easier for people to make a difference in their communities and beyond.</p>
+              <p class="mt-4 text-lg leading-relaxed text-slate-500">{{$t("The team at BestDeed works with a vision to promote the feeling of giving and eliminate the hesitancy of donating directly through money.")}} </p>
+              <p class="mt-4 text-lg leading-relaxed text-slate-500">{{$t("With a unique donating model, the organizations will put up their requirements through the crowdfunding campaign, and individuals can donate at their convenience.")}}</p>
+              <p class="mt-4 text-lg leading-relaxed text-slate-500">{{$t("Our vision totally aligns with our mission in making proactive steps to encourage individuals and groups in volunteering with us. Through this, we are moving a step ahead in making it easier for people to make a difference in their communities and beyond.")}}</p>
             </div>
           </div>
           <div class="w-full md:w-4/12 ml-auto px-4">
@@ -469,7 +436,7 @@ export default{
 
     <section class="pb-10">
       <div class="container mx-auto px-4">
-        <div class="text-center text-3xl text-[#364958] mt-8 font-bold">Here's more about Best Deed.</div>
+        <div class="text-center text-3xl text-[#364958] mt-8 font-bold">{{$t("Here's more about BestDeed.")}}</div>
         <div class="flex flex-wrap">
 
           <div class="lg:pt-12 pt-6 w-full lg:w-4/12 md:w-6/12 sm:w-3/12 px-4">
@@ -480,10 +447,9 @@ export default{
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/partners.png" alt="organization" />
                 </div>
-                <h6 class="text-xl font-semibold">People-centric organization</h6>
+                <h6 class="text-xl font-semibold">{{$t("People-centric organization")}}</h6>
                 <p class="mt-2 mb-4 text-gray-600">
-                  We constantly put the needs of the people first. Along with rewards, perks, incentives, and recognition,
-                  we strive to adopt compassionate leadership.
+                 {{$t("We constantly put the needs of the people first. Along with rewards, perks, incentives, and recognition, we strive to adopt compassionate leadership.")}}
                 </p>
               </div>
             </div>
@@ -497,11 +463,9 @@ export default{
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/satisfaction.png" alt="" />
                 </div>
-                <h6 class="text-xl font-semibold">Greater satisfaction</h6>
+                <h6 class="text-xl font-semibold">{{$t("Greater satisfaction")}}</h6>
                 <p class="mt-2 mb-4 text-gray-600">
-                  We place great importance on how you feel before, during, and after donating. As a result, the campaign
-                  to which you donated will provide you with constant updates on the products' shipment, delivery, and
-                  usage as well.
+                  {{$t("We place great importance on how you feel before, during, and after donating. As a result, the campaign to which you donated will provide you with constant updates on the products' shipment, delivery, and usage as well.")}}
                 </p>
               </div>
             </div>
@@ -515,10 +479,9 @@ export default{
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/passion(1).png" alt="" />
                 </div>
-                <h6 class="text-xl font-semibold">Passionate people</h6>
+                <h6 class="text-xl font-semibold">{{$t("Passionate people")}}</h6>
                 <p class="mt-2 mb-4 text-gray-600">
-                  The process of bringing about transformation calls for an amazing team. We appreciate that some of the
-                  most creative and dedicated young leaders are leading our company.
+                  {{$t("The process of bringing about transformation calls for an amazing team. We appreciate that some of the most creative and dedicated young leaders are leading our company.")}}
                 </p>
               </div>
             </div>
@@ -532,11 +495,9 @@ export default{
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/benefits.png" alt="" />
                 </div>
-                <h6 class="text-xl font-semibold">Top-notch benefits</h6>
+                <h6 class="text-xl font-semibold">{{$t("Top-notch benefits")}}</h6>
                 <p class="mt-2 mb-4 text-gray-600">
-                  We ensure that every interaction you have with Best Deed is beneficial, so regardless of whether you
-                  want to start a campaign or make a contribution, you are always eligible to receive incredible benefits
-                  and points.
+                  {{$t("We ensure that every interaction you have with BestDeed is beneficial, so regardless of whether you want to start a campaign or make a contribution, you are always eligible to receive incredible benefits and points.")}}
                 </p>
               </div>
             </div>
@@ -550,11 +511,9 @@ export default{
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/ecosystem.png" alt="" />
                 </div>
-                <h6 class="text-xl font-semibold">Building an ecosystem</h6>
+                <h6 class="text-xl font-semibold">{{$t("Building an ecosystem")}}</h6>
                 <p class="mt-2 mb-4 text-gray-600">
-                  We are not simply another crowdfunding company; rather, our goal is to build a trustworthy ECOSYSTEM
-                  that brings together the greatest campaigns, NGOs, donors, nonprofits, and sponsors on this platform to
-                  address a variety of issues.
+                  {{$t("We are not simply another crowdfunding company; rather, our goal is to build a trustworthy ECOSYSTEM that brings together the greatest campaigns, NGOs, donors, nonprofits, and sponsors on this platform to address a variety of issues.")}}
                 </p>
               </div>
             </div>
@@ -568,10 +527,9 @@ export default{
                   class="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-indigo-100">
                   <img src="../assets/Inter/img/goverment.png" alt="" />
                 </div>
-                <h6 class="text-xl font-semibold">Awarded Agency</h6>
+                <h6 class="text-xl font-semibold">{{$t("Awarded Agency")}}</h6>
                 <p class="mt-2 mb-4 text-gray-600">
-                  Divide details about your product or agency work into parts.
-                  A paragraph describing a feature will be enough.
+                 {{$t("Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.")}}
                 </p>
               </div>
             </div>
@@ -587,48 +545,48 @@ export default{
 
 
     <section class="bg-[#ebf8ec] pt-10 pb-10 mb-10">
-      <div class="flex flex-wrap justify-between container mx-auto h-full">
+      <div class="flex flex-wrap justify-between text-center container mx-auto h-full">
 
         <div>
           <div
-            class="ml-5 font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
+            class="font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
             <div>{{ total_donors }}</div>
           </div>
-          <div class="font-bold text-lg">Total Donors</div>
+          <div class="font-bold text-lg">{{$t("Total Donors")}}</div>
         </div>
 
         <div>
           <div
-            class="ml-5 font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
+            class="font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
             <div>{{ total_ngos }}</div>
           </div>
-          <div class="font-bold text-lg">Total Ngos</div>
+          <div class="font-bold text-lg">{{$t("Total Ngos")}}</div>
         </div>
 
 
         <div>
           <div
-            class="ml-10 font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
+            class="font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
             <div>{{ total_donations }}</div>
           </div>
-          <div class="font-bold text-lg">Total Donations</div>
+          <div class="font-bold text-lg">{{$t("Total Donations")}}</div>
         </div>
 
 
         <div>
           <div
-            class="ml-10 font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
+            class="font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
             <div>{{ total_campaigns }}</div>
           </div>
-          <div class="font-bold text-lg">Total Campaigns</div>
+          <div class="font-bold text-lg">{{$t("Total Campaigns")}}</div>
         </div>
 
         <div>
           <div
-            class="ml-14 font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
+            class="font-bold text-2xl p-3 w-14 h-14 text-center inline-flex items-center justify-center mb-5 shadow-lg rounded-full bg-indigo-100">
             <div>{{ total_live_campaigns }}</div>
           </div>
-          <div class="font-bold text-lg">Total Live Campaigns</div>
+          <div class="font-bold text-lg">{{$t("Total Live Campaigns")}}</div>
         </div>
 
       </div>
@@ -637,7 +595,7 @@ export default{
 
     <section class="container mx-auto h-full">
       <div class="text-center mt-10 mb-5">
-        <h2 class="text-center text-3xl text-[#364958] mt-8 font-bold">{{ $t('Why the Best Deed?') }}
+        <h2 class="text-center text-3xl text-[#364958] mt-8 font-bold">{{ $t('Why the BestDeed?') }}
         </h2>
       </div>
 
@@ -722,7 +680,7 @@ export default {
   },
 
   created() {
-    document.title = this.$t("Get to know more about BestDeed")
+    document.title = this.$t("Empowering Positive Change - Learn About BestDeed and Our Commitment to Supporting NGOs and Their Causes | BestDeed")
     this.get_about_data()
   },
 

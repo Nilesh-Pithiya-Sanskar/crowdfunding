@@ -62,7 +62,7 @@ export default{
     Footer,
   },
   created(){
-        document.title = this.$t('Privacy Policy Page | BestDeed')
+        document.title = this.$t('Privacy Policy Page | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
     }
 }
 </script>
