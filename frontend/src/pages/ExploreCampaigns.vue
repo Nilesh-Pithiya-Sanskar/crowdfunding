@@ -140,7 +140,7 @@
         <div v-if="searchQuery != ''"
             class="relative flex flex-col border border-[#40b751] min-w-0 break-words bg-white w-full  shadow-lg rounded">
 
-            <div class="tab-content tab-space overflow-y-auto h-96">
+            <div class="tab-content tab-space overflow-y-auto h-auto">
                 <div class="" v-for="item in filteredList" :key="item" @click="donate(item.name)">
 
                     <div
@@ -668,13 +668,24 @@ export default {
                         this.last_campaigns = true
                     }
                     if (res == '') {
-                        this.$toast({
+                        if (this.category){
+                            this.$toast({
+                                title: "No Campaigns",
+                                text: `No Campaigns Found For ${this.category}.`,
+                                icon: "x-circle",
+                                appearance: "denger",
+                                position: "top-center",
+                            })
+                        }
+                        else{
+                            this.$toast({
                             title: "No Campaigns",
-                            text: `No Campaigns Found For ${this.category}.`,
+                            text: `No Campaigns Found`,
                             icon: "x-circle",
                             appearance: "denger",
                             position: "top-center",
                         })
+                        }
                     }
                     // this.campaigns.push(res)
                     // this.campaigns = res
@@ -710,6 +721,7 @@ export default {
             this.openTab = tabNumber
         },
         get_campaigns(category, start) {
+            this.start = 0
             if (category != '') {
                 this.campaigns = []
                 this.category = category
@@ -738,8 +750,17 @@ export default {
             // this.page_length += this.page_length
             // this.start = this.start + this.page_length
             // this.campaignToShow += 6
+
             this.start += 6
-            this.get_campaigns('', this.start)
+
+            // this.get_campaigns('', this.start)
+            this.last_campaigns = false
+            this.$resources.get_campaigns.submit({
+                category: this.category,
+                language: localStorage.getItem('lang') || window.navigator.language,
+                start: this.start,
+                page_length: this.page_length
+            })
         },
         get_search_campaigns() {
             this.$resources.get_search_campaigns.submit({

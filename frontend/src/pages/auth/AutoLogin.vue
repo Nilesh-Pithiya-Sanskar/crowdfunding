@@ -35,6 +35,7 @@
 
                             </div>
                             <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
+                                <!-- <div class="flex flex-wrap justify-between"> -->
                                 <button
                                     class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
@@ -43,6 +44,11 @@
                                     class="appearance-none border-gray-600 sm:ml-0 md:ml-2 lg:ml-2 mb-5  rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_sms()">
                                     {{ $t('Login With SMS') }}</button>
+
+                                    <!-- <div class="text-center">
+                                    <GoogleLogin :callback="login_with_google">
+                                    </GoogleLogin>
+                                </div> -->
 
                             </div>
                             <div class="mb-4">
