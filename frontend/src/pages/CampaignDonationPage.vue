@@ -1179,7 +1179,7 @@ export default {
             return{
                 method: "sadbhavna_donatekart.api.api.ondismiss_payment",
                 onSuccess: (res) => {
-                    console.log("payment cancelled")
+                    console.log("payment cancelled", res)
                 },
                 onError: (error) => {
                     this.$toast({

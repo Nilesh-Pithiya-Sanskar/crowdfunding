@@ -615,22 +615,52 @@ def get_about_data():
     return total_campaigns, total_donations, total_donors, total_ngos, total_live_campaigns
 
 
+# @frappe.whitelist(allow_guest=True)
+# def ondismiss_payment(item_cart, i_qty, total_price, item_b, campaign, email, name, phone=''):
+#     # print("\n\n item_cart", item_cart)
+#     # print("\n\n i_qty", i_qty)
+#     # print("\n\n total_price", total_price)
+#     # print("\n\n item_b", item_b)
+#     # print("\n\n campaign", campaign)
+#     # print("\n\n email", email)
+#     # print("\n\n name", name)
+#     # print("\n\n phone", phone)
+
+#     message = f'''
+#         <p>Hello {name},</p>
+#         <p>You recently visit our platform BestDeed and try to donate but your payment is not done.</p>
+#         <a href="https://bestdeed.org/campaign-donation/{campaign}">Click here to donate</a>
+#         <p> Thank You </p>
+#     '''
+#     frappe.sendmail(recipients=email, subject='Donation Not Completed | BestDeed', message=message)
+
+
 @frappe.whitelist(allow_guest=True)
 def ondismiss_payment(item_cart, i_qty, total_price, item_b, campaign, email, name, phone=''):
-    # print("\n\n item_cart", item_cart)
-    # print("\n\n i_qty", i_qty)
-    # print("\n\n total_price", total_price)
-    # print("\n\n item_b", item_b)
-    # print("\n\n campaign", campaign)
-    # print("\n\n email", email)
+# def ondismiss_payment(name):
+    pass
     # print("\n\n name", name)
-    # print("\n\n phone", phone)
+    # donation = frappe.get_list("Donation", filters={"donor_name": name}, fields=["name"])
+    # if donation:
+    #     donation_doc = frappe.get_doc("Donation", donation[0].name)
+    #     message = f'''
+    #         <p>Dear {donation_doc.donor_name },<p>
+    #         <p>We hope this email finds you well. We wanted to reach out and remind you about the donation you started for { frappe.db.get_value('Donation Campaign', donation_doc.campaign, 'campaign_title') } on BestDeed. It seems that you added an item to your cart but did not complete the transaction.</p>
+    #         <p>Your contribution towards acquiring {{ for item in doc.donation_item }}{{ item.item }} for { frappe.get_doc("Donation Campaign", campaign).ngo }'s campaign is vital and will make a real difference in their mission to [describe the mission/goals of the NGO/Individual]. Your support is highly valued and deeply appreciated.</p>
+    #         <p>To complete your donation and ensure your generous contribution reaches its intended destination, please visit [Campaign Donation Link] and proceed with the transaction. By finalizing your donation, you will help bring us closer to our fundraising goal and enable us to achieve a tangible impact.</p>
+    #         <p>If you have any questions or encounter any difficulties during the donation process, please do not hesitate to contact us. We are here to assist you and make your donation experience as seamless as possible.</p>
+    #         <p>Thank you for considering completing your donation for {{ frappe.get_doc('Donation Campaign', donation_doc.campaign).campaign_title }}. Your generosity has the power to create meaningful change, and we are grateful for your support.</p>
+    #         <p>Best regards,</p>
+    #         <p>BestDeed</p>
+    #     '''
+    #     subject = f"Don't Miss Out! Complete Your Donation for { frappe.db.get_value('Donation Campaign', donation_doc.campaign, 'campaign_title') } on BestDeed"
 
-    message = f'''
-        <p>Hello {name},</p>
-        <p>You recently visit our platform BestDeed and try to donate but your payment is not done.</p>
-        <a href="https://bestdeed.org/campaign-donation/{campaign}">Click here to donate</a>
-        <p> Thank You </p>
-    '''
-    frappe.sendmail(recipients=email, subject='Donation Not Completed | BestDeed', message=message)
+        
+    #     frappe.sendmail(recipients='nilesh@sanskartechnolab.com', subject=subject, message=message)
+        
+    #     # frappe.sendmail(recipients='nilesh@sanskartechnolab.com', subject="Don't Miss Out! Complete Your Donation for on BestDeed", message='asdfadsfasd')
+
+    #     return {'success': True, 'message': 'Notification sent successfully.'}
+    # else:
+    #     return {'success': False, 'message': 'No donation found for the given donor name.'}
 
