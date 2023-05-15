@@ -2,7 +2,7 @@
   <!-- Header-->
   <main>
     <Navbar />
-    <section class="bg-no-repeat  bg-cover bg-center bg-overlay"
+    <!-- <section class="bg-no-repeat  bg-cover bg-center bg-overlay"
       style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
       <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-48 container mx-auto h-full">
         <div class="grid lg:grid-cols-2 mt-5 md:mt-10 lg:mt-0">
@@ -45,7 +45,81 @@
           </div>
         </div>
       </div>
+    </section> -->
+
+
+    <section class="bg-image bg-no-repeat bg-center bg-cover"
+      style="background-image: url('https://bestdeed.org/files/BG.png');">
+      <div class="container mx-auto md:pb-[0rem] lg:pb-[5rem]">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-2">
+          <div class="sm:mt-5 md:mt-36 lg:mt-36 mb-5 ml-5 md:ml-0 lg:ml-0">
+            <h1
+              class="text-[#40b751] font-extrabold text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
+              {{ $t('BestDeed') }}
+            </h1>
+            <h3
+              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[28px] md:text-[28px] lg:text-[38px]">
+              Most trusted crowdfunding platform of india.</h3>
+
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 mt-20">
+              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+                <div><img src="../../src/assets/Inter/img/0.png" class="" /></div>
+                <div
+                  class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+                  <div>Platform</div>
+                  <div class="-mt-2">Fees</div>
+                </div>
+              </div>
+
+              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+                <div><img src="../../src/assets/Inter/img/100.png" class="" /></div>
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[22px] ml-2">
+                  <div>Donate With</div>
+                  <div class="-mt-2">Transparency</div>
+                </div>
+              </div>
+
+              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+                <div><img src="../../src/assets/Inter/img/layer.png" class="" /></div>
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[22px] ml-2">
+                  <div>Verified</div>
+                  <div class="-mt-2">NGOs</div>
+                </div>
+              </div>
+
+              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+                <div><img src="../../src/assets/Inter/img/ellipse.png" class="" /></div>
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[22px] ml-2">
+                  <div>Tax</div>
+                  <div class="-mt-2">Exemption</div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+            <h3
+              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-gray-600 font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
+              Raise funds online for <strong>social causes</strong></h3>
+            <router-link to="/request-campaign"
+              class="bg-[#40b751] px-4 py-2 text-white rounded-full text-[14px] md:text-[16px] lg:text-[18px] mr-10 md:mr-20 lg:mr-64 break-keep">
+              Start a Fundraiser for <strong>FREE</strong></router-link>
+          </div>
+
+          <div class="grid place-items-center mx-auto">
+            <img src="../../src/assets/Inter/img/rightside.png" class="sm:mt-16 md:mt-36 lg:mt-36 sm:ml-0 md:ml-36 lg:ml-36" />
+          </div>
+        </div>
+
+      </div>
     </section>
+
+
+
+
 
     <!-- <div class="bg-white rounded-xl product-shodow">
 
@@ -70,8 +144,7 @@
       </div>
     </div> -->
     <section class="container mx-auto h-full relative z-10">
-      <div
-        class="container mx-auto h-full p-4 lg:p-6 -mt-[50px] md:-mt-[56px] lg:-mt-[141px] pl-4 lg:!pl-0 pr-4 lg:!pr-0">
+      <div class="container mx-auto h-full p-4 lg:p-6 mt-5 pl-4 lg:!pl-0 pr-4 lg:!pr-0">
         <div class="bg-white rounded-xl drop-shadow-xl">
           <Sliders :featured_campaigns="featured_campaigns" :interval="3000" :lang="lang" />
         </div>
@@ -88,8 +161,8 @@
 
         <div class=" mr-3 text-green-500 font-bold flex flex-row-reverse">
           <img class="h-5 w-3 md:w-4 lg:w-4 ml-2 lg:mt-1" src="../assets/Inter/img/icon/right-arrow.png">
-          <router-link class="text-[13px] md:text-[16px] lg:text-[16px] hover:underline"
-            to="/explore-campaigns">{{ $t('View More') }}</router-link>
+          <router-link class="text-[13px] md:text-[16px] lg:text-[16px] hover:underline" to="/explore-campaigns">{{
+            $t('View More') }}</router-link>
         </div>
       </div>
       <!-- <div class="flex mt-3 border-b sm:mr-4 lg:mr-3 ">
