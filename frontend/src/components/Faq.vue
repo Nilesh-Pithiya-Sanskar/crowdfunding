@@ -241,13 +241,13 @@ export default {
 
       ngofaq: [
         {
-          questionngo: this.$t("In what cases will you reject my campaign request? <br> Here are some of the cases why your request might be rejected -"),
-          answerngo: this.$t("<ul style='list-style-type:disc' class='px-6'><li>The stated objective amount and fund usage have not been justified.</li><li>Creating a campaign when there is already an acknowledged one by the same person and for the same cause</li><li>False information given or details misrepresented in the campaign.</li><li>Documents needed for authentication are missing.</li><li>Using language that promotes hate or violence</li><li>Usage of fake documents</li><li>Copied text from another fundraising campaign.</li></ul>"),
+          questionngo: this.$t("In what cases will you reject my campaign request?"),
+          answerngo: this.$t("Here are some of the cases why your request might be rejected - <br><ul style='list-style-type:disc' class='px-6'><li>The stated objective amount and fund usage have not been justified.</li><li>Creating a campaign when there is already an acknowledged one by the same person and for the same cause</li><li>False information given or details misrepresented in the campaign.</li><li>Documents needed for authentication are missing.</li><li>Using language that promotes hate or violence</li><li>Usage of fake documents</li><li>Copied text from another fundraising campaign.</li></ul>"),
           open: false,
         },
         {
-          questionngo: this.$t("What am I going to need to start a campaign?<br>Here are some of the things you need to start a campaign - "),
-          answerngo: this.$t("<ul style='list-style-type:disc' class='px-6'><li>A narrative outlining your mission, vision, and detailed organization explanation.</li><li>Type and number of products needed or any other help needed.</li><li>Timeline for the campaign.</li><li>Video, ideally one with a pitch</li><li>High-resolution images and videos</li></ul>"),
+          questionngo: this.$t("What am I going to need to start a campaign?"),
+          answerngo: this.$t("Here are some of the things you need to start a campaign - <br><ul style='list-style-type:disc' class='px-6'><li>A narrative outlining your mission, vision, and detailed organization explanation.</li><li>Type and number of products needed or any other help needed.</li><li>Timeline for the campaign.</li><li>Video, ideally one with a pitch</li><li>High-resolution images and videos</li></ul>"),
           open: false,
         },
         {
