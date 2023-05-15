@@ -57,7 +57,7 @@
         <p class="mb-5">The Best Deed's Privacy Policy is incorporated into these Terms of Use and governs the collection and use of personal information through this Website.</p>
 
         <h1 class="text-xl font-bold">Contact Information</h1>
-        <p class="mb-5">If you have any questions regarding these Terms of Use, please contact us at <a class="text-blue-500" href="mailto:info@bestdeed.org">info@bestdeed.org</a></p>
+        <p class="mb-5">If you have any questions regarding these Terms of Use, please contact us at <a class="text-blue-500" href="mailto:bestdeed2023@gmail.com">bestdeed2023@gmail.com</a></p>
 
 
     </div>

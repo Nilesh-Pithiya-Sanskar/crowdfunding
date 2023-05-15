@@ -207,7 +207,7 @@
               </div>
               <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>
-                <p class="cursor-pointer ml-4 "> <a href="mailto:info@bestdeed.org" >{{ $t('info@bestdeed.org') }}</a>
+                <p class="cursor-pointer ml-4 "> <a href="mailto:bestdeed2023@gmail.com" >{{ $t('bestdeed2023@gmail.com') }}</a>
                 </p>
               </div>
             </div>

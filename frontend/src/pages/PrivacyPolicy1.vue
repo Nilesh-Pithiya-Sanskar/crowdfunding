@@ -47,7 +47,7 @@
         <p class="pb-5">Your continuous utilization of the access on our Website following the posting of any updates to the Privacy Policy on this page will be construed as your acceptance of those updates and your agreement to follow and be governed by the Privacy Policy as updated.</p>
         <p class="pb-5">If we make any significant modifications to this Privacy Policy, we'll notify you via email by posting a clear notice on the Portal or on this page. Therefore, we ask that you regularly review our Website's privacy notice.</p>
         <h2 class="text-2xl">Contact us!</h2>
-        <p class="pb-5">If you have any queries about our privacy policy, then you can reach out to the Best Deed at <a class="text-blue-500" href="mailto:info@bestdeed.org">info@bestdeed.org</a></p>
+        <p class="pb-5">If you have any queries about our privacy policy, then you can reach out to the Best Deed at <a class="text-blue-500" href="mailto:bestdeed2023@gmail.com">bestdeed2023@gmail.com</a></p>
 
     </div>
     <Footer />

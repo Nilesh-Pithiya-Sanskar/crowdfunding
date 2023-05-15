@@ -9,9 +9,9 @@
             class="cursor-pointer transition font-medium text-black  sm:mr-1 md:mr-2 lg:mr-4 text-[14px]  transition duration-300 rounded  hover:text-[#364958]">
             {{ $t('+91 9999999999') }}</a>
           <img class="mr-1" src="../assets/Inter/img/icon/navbar_email.png">
-          <a href="mailto:info@bestdeed.org"
+          <a href="mailto:bestdeed2023@gmail.com"
             class="cursor-pointer transition font-medium text-black  text-[14px] transition duration-300 rounded  hover:text-[#364958]">
-            {{ $t('info@bestdeed.org') }}</a>
+            {{ $t('bestdeed2023@gmail.com') }}</a>
         </div>
         <!-- <div class="social-icons hidden md:hidden lg:flex items-center ">
           <i class="fa fa-hand-right"></i>
