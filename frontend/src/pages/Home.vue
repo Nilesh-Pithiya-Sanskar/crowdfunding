@@ -55,43 +55,43 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-2">
           <div class="sm:mt-5 md:mt-36 lg:mt-36 mb-5 ml-5 md:ml-0 lg:ml-0">
             <h1
-              class="text-[#40b751] font-extrabold text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
+              class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
               {{ $t('BestDeed') }}
             </h1>
             <h3
               class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[28px] md:text-[28px] lg:text-[38px]">
-              Most trusted crowdfunding platform of india.</h3>
+              Most trusted crowd <br>funding platform of india.</h3>
 
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 mt-20">
-              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+            <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-16 mb-8 sm:mr-auto md:mr-24 lg:mr-24">
+              <div class="flex items-center">
                 <div><img src="../../src/assets/Inter/img/0.png" class="" /></div>
                 <div
-                  class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+                  class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
                   <div>Platform</div>
                   <div class="-mt-2">Fees</div>
                 </div>
               </div>
 
-              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+              <div class="flex items-center">
                 <div><img src="../../src/assets/Inter/img/100.png" class="" /></div>
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[22px] ml-2">
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[22px] ml-2">
                   <div>Donate With</div>
                   <div class="-mt-2">Transparency</div>
                 </div>
               </div>
 
-              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+              <div class="flex items-center">
                 <div><img src="../../src/assets/Inter/img/layer.png" class="" /></div>
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[22px] ml-2">
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[22px] ml-2">
                   <div>Verified</div>
                   <div class="-mt-2">NGOs</div>
                 </div>
               </div>
 
-              <div class="flex items-center pb-[34px] md:pb-[20px] lg:pb-[34px] ">
+              <div class="flex items-center">
                 <div><img src="../../src/assets/Inter/img/ellipse.png" class="" /></div>
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-gray-600 font-bold text-[22px] ml-2">
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[22px] ml-2">
                   <div>Tax</div>
                   <div class="-mt-2">Exemption</div>
                 </div>
@@ -102,10 +102,10 @@
 
 
             <h3
-              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-gray-600 font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
+              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
               Raise funds online for <strong>social causes</strong></h3>
             <router-link to="/request-campaign"
-              class="bg-[#40b751] px-4 py-2 text-white rounded-full text-[14px] md:text-[16px] lg:text-[18px] mr-10 md:mr-20 lg:mr-64 break-keep">
+              class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[14px] md:text-[16px] lg:text-[18px] mr-10 md:mr-20 lg:mr-64 break-keep">
               Start a Fundraiser for <strong>FREE</strong></router-link>
           </div>
 

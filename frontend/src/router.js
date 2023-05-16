@@ -16,7 +16,7 @@ const routes = [{
         },
         {
           name: 'description',
-          content: "BestDeed is India's most trusted and transparent donation platform. It enables donors to reach people in need and donate to the cause directly."
+          content: "Discover transparent giving on BestDeed, the trusted global crowdfunding platform. Donate with confidence, make an impact. Join us to support causes with 100% transparency."
         },
         // {
         //   property: 'og:description',
@@ -34,7 +34,7 @@ const routes = [{
       metaTags: [
         {
           name: 'description',
-          content: "India's top-rated and transparent non-profit platform provides a seamless way for individuals and organizations to donate or raise funds for various charitable causes. By logging in, you can make a significant difference in the lives of people who are in need of support."
+          content: "Login Now | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed"
         },
       ]
     }
@@ -48,7 +48,7 @@ const routes = [{
       metaTags: [
         {
           name: 'description',
-          content: "India's top-rated and transparent non-profit platform provides a seamless way for individuals and organizations to donate or raise funds for various charitable causes. By logging in, you can make a significant difference in the lives of people who are in need of support."
+          content: "Login Now | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed"
         },
       ]
     }
@@ -71,7 +71,7 @@ const routes = [{
         },
         {
           name: 'description',
-          content: "Bestdeed showcases various charitable causes or fundraising initiatives seeking donations from the public. The page provides information about the cause, its impact, and the fundraising goal, along with updates on the amount of money raised. Donors can contribute to the cause and may also find photos, videos, and testimonials on the page."
+          content: "Make a difference with BestDeed, the trusted crowdfunding platform. Explore and support charitable causes, learn about their impact, goals, and donation progress. Join us in supporting meaningful initiatives today."
         },
       ]
     }
@@ -90,7 +90,7 @@ const routes = [{
       metaTags: [
         {
           name: 'description',
-          content: "Welcome to our Bestdeed's blog page! Here, we share inspiring stories, useful tips, and valuable insights to help you make a difference in the world. Our team of experts is passionate about fundraising and committed to helping you achieve your goals. So, sit back, grab a cup of coffee, and explore our latest posts to learn how you can make a positive difference in the world."
+          content: "Explore inspiring stories and expert insights on the BestDeed blog. Get valuable tips to make a positive impact and achieve your fundraising goals. Join our passionate team and make a difference today."
         },
       ]
     }
@@ -119,7 +119,7 @@ const routes = [{
       metaTags: [
         {
           name: 'description',
-          content: "As India's leading transparent crowdfunding platform, we're committed to creating a lasting impact and helping those in need. Whether you have questions about our platform, want to inquire about partnering with us, or simply want to learn more about our mission, our team is here to help. Contact us today and let's work together to make a positive difference in the world."
+          content: "Connect with us, India's trusted and transparent crowdfunding platform. We're here to make a lasting impact, answer your queries, explore partnerships, and share our mission. Contact our team today for a positive difference."
         },
       ]
     }
@@ -142,7 +142,7 @@ const routes = [{
         },
         {
           name: 'description',
-          content: "Requesting a Donation campaign is now easy with India's most trusted and transparent online donation platform. Create a fundraising campaign to collect funds for any cause with BestDeed"
+          content: "Request donation campaigns easily on India's trusted crowdfunding platform. Create impact and collect funds for any cause with BestDeed's 100% transparency. Join us now!"
         },
       ]
     }
@@ -181,7 +181,7 @@ const routes = [{
       metaTags: [
         {
           name: 'description',
-          content: "Privacy Policy - At BestDeed, we respect your privacy and understand the importance of protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard the information you provide to us. We are committed to being transparent and accountable in the way we handle your personal data."
+          content: "Protecting your privacy is our top priority. Learn about BestDeed's transparent and accountable approach to handling your personal information in our Privacy Policy page."
         },
       ]
     }
@@ -195,7 +195,7 @@ const routes = [{
       metaTags: [
         {
           name: 'description',
-          content: "BestDeed is committed to protecting your privacy, and we have created this terms of use to ensure the security of your personal information. We strive to meet the requirements outlined in our donor privacy policy, which is also included in our terms of service. Please read this policy carefully to understand how we collect, use, and safeguard your information."
+          content: "Explore BestDeed's Terms of Use for our trusted and transparent online crowdfunding platform. Discover how we prioritize security and transparency in protecting your information."
         },
       ]
     }
@@ -209,7 +209,7 @@ const routes = [{
       metaTags: [
         {
           name: 'description',
-          content: "Donate with Purpose - Support NGOs and Their Causes Directly on BestDeed. Enjoy a Transparent Process, Regular Updates, and Dedicated Support from Our Team!"
+          content: "Discover BestDeed, the platform empowering positive change through supporting NGOs and their causes. Donate with purpose, transparency, and dedicated support from our team."
         },
       ]
     }
