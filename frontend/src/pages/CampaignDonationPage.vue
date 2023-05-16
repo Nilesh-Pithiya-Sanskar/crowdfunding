@@ -410,7 +410,7 @@
                                         </td>
                                         <td class="text-[#364958] font-bold px-10 py-2 text-center">{{
                                             i_qty }}</td>
-                                        <td class="text-#364958] font-bold px-10 py-2 text-right">₹ {{
+                                        <td class="text-#364958] font-bold px-10 py-2 text-right whitespace-nowrap">₹ {{
                                             numberWithCommas(total_price) }}</td>
                                     </tr>
                                 </tbody>
@@ -516,7 +516,7 @@
                                         <img src="../../src/assets/Inter/img/banktransfer.png" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
-                                        <p class="text-xs  text-[#364958]">{{ $t('Bank Transfer') }}</p>
+                                        <p class="text-xs  text-[#364958]">{{ $t('Amazon Pay') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -531,6 +531,28 @@
                                     </div>
                                 </div>
                             </div>-->
+
+                            <div>
+                                <div class="rounded-t-lg  pt-4 pb-4">
+                                    <div class="grid justify-center">
+                                        <img src="../../src/assets/Inter/img/whatsapp.png" class="w-12 h-12">
+                                    </div>
+                                    <div class="text-center pt-2">
+                                        <p class="text-xs text-[#364958]">{{ $t('WhatsApp') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="rounded-t-lg  pt-4 pb-4">
+                                    <div class="grid justify-center">
+                                        <img src="../../src/assets/Inter/img/mobikwik.png" class="w-12 h-12">
+                                    </div>
+                                    <div class="text-center pt-2">
+                                        <p class="text-xs text-[#364958]">{{ $t('Mobikwik') }}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
