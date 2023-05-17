@@ -239,11 +239,6 @@ const routes = [{
     name: '404 Page Not Found',
     component: () => import('@/pages/PageNotFound.vue')
   },
-  {
-    path: "/bestdeed",
-    name: 'bestdeed xml',
-    component: () => import('../public/bestdeed.xml')
-  }
 ]
 
 let router = createRouter({
