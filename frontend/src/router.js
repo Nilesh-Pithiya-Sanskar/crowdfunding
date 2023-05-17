@@ -26,7 +26,7 @@ const routes = [{
     }
   },
   {
-    path: '/login-via-mobile',
+    path: '/login-via-email',
     name: 'Login',
     component: () => import('@/pages/auth/Login.vue'),
     meta: {
