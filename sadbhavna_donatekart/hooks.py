@@ -55,6 +55,7 @@ website_route_rules = [
     {"from_route": "/blog", "to_route": "bestdeed"},
     {"from_route": "/printview", "to_route": "/printview"},
     {"from_route": "/sitemap.xml", "to_route": "/site/sitemap.xml"}
+    {"from_route": "/robots.txt", "to_route": "/robots/robots.txt"}
 ]
 
 website_redirects = [

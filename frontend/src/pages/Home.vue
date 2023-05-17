@@ -65,6 +65,7 @@
 
             <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-16 mb-8 sm:mr-auto md:mr-24 lg:mr-24">
               <div class="flex items-center">
+                <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
                 <div><img src="../../src/assets/Inter/img/0.png" class="" /></div>
                 <div
                   class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
