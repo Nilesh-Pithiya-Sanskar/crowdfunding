@@ -203,10 +203,17 @@ export default {
         const name = useRoute();
         this.blog = name.params.name
         this.get_blog_detail(name.params.name)
-        var link = document.createElement('link');
+        const linkElement = document.querySelector('link[rel="canonical"]');
+    if (!linkElement) {
+      var link = document.createElement('link');
     link.rel = 'canonical';
     link.href = "https://bestdeed.org/blog-post"
     document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/blog-post"
+      document.head.appendChild(linkElement)
+    }
     },
     resources: {
         get_blogs() {

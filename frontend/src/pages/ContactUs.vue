@@ -211,10 +211,18 @@ export default {
     // },
     created(){
         document.title = this.$t("Contact Us | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed")
-        var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/contact-us"
-    document.head.appendChild(link);
+       
+        const linkElement = document.querySelector('link[rel="canonical"]');
+        if (!linkElement) {
+            var link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = "https://bestdeed.org/contact-us"
+        document.head.appendChild(link);
+        }
+        else{
+        linkElement.href = "https://bestdeed.org/contact-us"
+        document.head.appendChild(linkElement)
+        }
     },
     mounted(){
         this.$nextTick(() => this.$refs.first_name.focus())

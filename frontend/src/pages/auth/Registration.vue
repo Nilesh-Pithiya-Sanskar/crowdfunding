@@ -132,10 +132,17 @@ export default {
     },
     created(){
         document.title = this.$t('Register | BestDeed')
-        var link = document.createElement('link');
+        const linkElement = document.querySelector('link[rel="canonical"]');
+    if (!linkElement) {
+      var link = document.createElement('link');
     link.rel = 'canonical';
     link.href = "https://bestdeed.org/registration"
     document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/registration"
+      document.head.appendChild(linkElement)
+    }
     },
     mounted(){
         this.$nextTick(() => this.$refs.first_name.focus())

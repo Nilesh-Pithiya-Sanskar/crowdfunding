@@ -543,10 +543,17 @@ export default {
         document.title = this.$t('Support Causes That Matter: BestDeed - Your Trusted and 100% Transparent Crowdfunding Platform | Bestdeed')
         this.get_language()
         this.get_campaigns()
-        var link = document.createElement('link');
+        const linkElement = document.querySelector('link[rel="canonical"]');
+    if (!linkElement) {
+      var link = document.createElement('link');
     link.rel = 'canonical';
     link.href = "https://bestdeed.org/explore-campaign"
     document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/explore-campaign"
+      document.head.appendChild(linkElement)
+    }
         // const route = useRoute()
         // if(route.query.razorpay_payment_id){
         //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)

@@ -626,10 +626,17 @@ export default {
   mounted() {
     const name = useRoute()
     document.title = this.$t('Profile') + '-' + name.params.name + '|' + this.$t('BestDeed')
-    var link = document.createElement('link');
+    const linkElement = document.querySelector('link[rel="canonical"]');
+    if (!linkElement) {
+      var link = document.createElement('link');
     link.rel = 'canonical';
     link.href = "https://bestdeed.org/profile"
     document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/profile"
+      document.head.appendChild(linkElement)
+    }
     this.get_user_detail(name.params.name)
     this.get_user_pan(name.params.name)
     this.get_donation_details(name.params.name)

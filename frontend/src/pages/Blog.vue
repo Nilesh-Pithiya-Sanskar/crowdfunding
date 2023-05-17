@@ -63,10 +63,17 @@ export default {
     created() {
         document.title = this.$t('Discover Inspiring Stories and Expert Insights on BestDeed Blogs | Bestdeed')
         this.get_blogs()
-        var link = document.createElement('link');
+        const linkElement = document.querySelector('link[rel="canonical"]');
+    if (!linkElement) {
+      var link = document.createElement('link');
     link.rel = 'canonical';
     link.href = "https://bestdeed.org/blog"
     document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/blog"
+      document.head.appendChild(linkElement)
+    }
     },
     components: {
         Navbar,

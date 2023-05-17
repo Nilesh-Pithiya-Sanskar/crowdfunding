@@ -63,10 +63,17 @@ export default{
   },
   created(){
         document.title = this.$t('Privacy Policy Page | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
-        var link = document.createElement('link');
+        const linkElement = document.querySelector('link[rel="canonical"]');
+    if (!linkElement) {
+      var link = document.createElement('link');
     link.rel = 'canonical';
     link.href = "https://bestdeed.org/privacy-policy"
     document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/privacy-policy"
+      document.head.appendChild(linkElement)
+    }
     }
 }
 </script>

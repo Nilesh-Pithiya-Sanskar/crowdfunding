@@ -1039,10 +1039,17 @@ export default {
         // this.$route.meta.title = 'asdfadsf'
         // this.$route.meta.title = 'asdf'
         // this.metaTitle = 'adsf'
-        var link = document.createElement('link');
+            const linkElement = document.querySelector('link[rel="canonical"]');
+    if (!linkElement) {
+      var link = document.createElement('link');
     link.rel = 'canonical';
     link.href = "https://bestdeed.org/campaign-donation"
     document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/campaign-donation"
+      document.head.appendChild(linkElement)
+    }
 
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
