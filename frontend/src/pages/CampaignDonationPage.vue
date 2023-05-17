@@ -906,7 +906,7 @@
 import { useRoute } from 'vue-router';
 import { inject } from 'vue';
 import { Avatar, FrappeUI } from 'frappe-ui'
-import axios from 'axios';
+// import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import { Dialog } from 'frappe-ui'

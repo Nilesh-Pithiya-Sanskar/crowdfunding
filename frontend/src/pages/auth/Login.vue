@@ -20,9 +20,9 @@
                 <form>
  <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
-                  {{$t('Email ')}} <span class="text-red-600">*</span>
+                  {{$t('Email')}} <span class="text-red-600">*</span>
                 </label>
-                <input v-model="email" @keyup="emailError = ''" type="email"
+                <input v-model="email" @keyup="emailError = ''" type="email" @keyup.enter="login"
                   class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3"
                   :placeholder="$t('Email')" required />
                 <p class="text-red-600">{{ emailError }}</p>
@@ -32,7 +32,7 @@
                 <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
                   {{$t('Password ')}}<span class="text-red-600">*</span>
                 </label>
-                <input v-model="password" type="password"
+                <input v-model="password" type="password" @keyup.enter="login"
                   class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3 ease-linear transition-all duration-150"
                   :placeholder="$t('Password')" required />
                 <p class="text-red-600">{{ passwordError }}</p>
@@ -50,7 +50,7 @@
 
 
              <div class="flex items-center justify-between">
-                    <router-link to="auto-login" class="text-green-500 text-left">{{$t('Other Login Method')}}</router-link>
+                    <router-link to="/login" class="text-green-500 text-left">{{$t('Login With Mobile')}}</router-link>
                     <router-link to="/registration" class="text-green-500 text-center border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{$t('Register')}}</router-link>
                   </div>
 
@@ -61,7 +61,7 @@
             <!-- Right column container with background and description-->
             <div class="flex items-center rounded-b-lg bg-gradient-to-l from-lime-600 to-green-400 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
               <div class="px-6 py-6 text-white">
-                <h4 class="mb-6 text-xl font-semibold">Welcome to BestDeed!</h4>
+                <h4 class="mb-6 text-xl font-semibold">{{$t('Welcome to BestDeed!')}}</h4>
                 <p class="text-sm">{{ $t('BestDeed is a leading platform that connects donors with non-profit organizations worldwide. We strive to create a world where everyone has the opportunity to make a positive impact on society. Through our user-friendly website, users can easily discover and donate to a variety of causes, from education to environmental sustainability. We are committed to providing a safe and secure platform for donors and organizations to collaborate and make a meaningful difference in the world. Thank you for choosing BestDeed as your go-to platform for charitable giving.')}}</p>
               </div>
             </div>
@@ -208,6 +208,7 @@ export default {
   },
   methods: {
     login() {
+      console.log("email dsfas")
       if (!this.email && !this.password) {
         this.error == true
       }

@@ -26,7 +26,7 @@ const routes = [{
     }
   },
   {
-    path: '/login',
+    path: '/login-via-mobile',
     name: 'Login',
     component: () => import('@/pages/auth/Login.vue'),
     meta: {
@@ -40,7 +40,7 @@ const routes = [{
     }
   },
   {
-    path: '/auto-login',
+    path: '/login',
     name: 'Auto Login',
     component: () => import('@/pages/auth/AutoLogin.vue'),
     meta: {
@@ -234,6 +234,16 @@ const routes = [{
     name: 'Reset Password',
     component: () => import('@/pages/auth/ResetPassword.vue')
   },
+  {
+    path: '/sitemap',
+    name: 'Sitemap',
+    component: () => import('@/pages/Sitemap.vue')
+  },
+  // {
+  //   path: '/site',
+  //   name: 'Sitemap',
+  //   component: () => import('@/pages/sitemap.xml')
+  // },
   { 
     path: '/:pathMatch(.*)*',
     name: '404 Page Not Found',

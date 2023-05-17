@@ -65,12 +65,15 @@
           </a>
         </div>
 
-        <a v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
-          class="opacity-6 cursor-pointer transition font-medium text-[#000000]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">{{
-            $t("Logout") }}</a>
-        <a v-else @click="this.$router.push(`/auto-login`)"
-          class="opacity-6 cursor-pointer transition font-medium text-[#000000]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">{{
-            $t('Login / Registration') }}</a>
+            <div class="group relative inline-block">
+              <router-link to="/blog" class="opacity-6 cursor-pointer transition font-medium text-[#000000]  text-[16px] font-[600] ml-0 md:ml-2 lg:ml-2 transition duration-300 rounded  hover:text-[#364958]">{{ $t('Blog') }}</router-link>
+              <!--<ul class="absolute hidden pt-4 group-hover:block">
+                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/blog">Blog</a></li>
+                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>
+              </ul>-->
+            </div>
+
+        
       </div>
     </div>
   </section>
@@ -103,33 +106,31 @@
         <ul :class="showMenu ? 'flex' : 'hidden'"
           class="fontfamily p-[15px] md:p-[15px] lg:px-0 lg:py-[15px] flex-col sm:mt-8 md:mt-2 lg:mt-0 space-y-4 lg:flex lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6 lg:mt-0">
           <li>
-            <router-link to="/" class="transition font-bold text-white hover:text-black">{{ $t('Home')
+            <router-link to="/" class="transition font-bold text-white text-[18px] hover:text-black">{{ $t('Home')
             }}</router-link>
           </li>
+          <a v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
+          class="transition font-bold text-white text-[18px] hover:text-black cursor-pointer">{{
+            $t("Logout") }}</a>
+        <a v-else @click="this.$router.push(`/login`)"
+          class="transition font-bold text-white text-[18px] hover:text-black cursor-pointer">{{
+            $t('Login / Registration') }}</a>
           <li>
-            <router-link to="/about-us" class="transition font-bold text-white text-[18px]">{{ $t('About') }}</router-link>
+            <router-link to="/about-us" class="transition font-bold text-white text-[18px] hover:text-black">{{ $t('About Us') }}</router-link>
           </li>
           <li>
-            <router-link to="/request-campaign" class="transition font-bold text-white text-[18px]">{{
+            <router-link to="/request-campaign" class="transition font-bold text-white text-[18px] hover:text-black">{{
               $t('Request a Campaign') }}</router-link>
           </li>
           <li>
-            <router-link to="/explore-campaigns" class="transition font-bold text-white text-[18px]">{{
+            <router-link to="/explore-campaigns" class="transition font-bold text-white text-[18px] hover:text-black">{{
               $t('Explore Campaigns') }}</router-link>
           </li>
           <li>
-            <router-link to="/contact-us" class="transition font-bold text-white text-[18px]">{{
+            <router-link to="/contact-us" class="transition font-bold text-white text-[18px] hover:text-black">{{
               $t('Contact') }}</router-link>
           </li>
-          <li>
-            <span class="group relative inline-block">
-              <router-link to="/blog" class="transition font-bold text-white text-[18px]">{{ $t('Blog') }}</router-link>
-              <!--<ul class="absolute hidden pt-4 group-hover:block">
-                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="/blog">Blog</a></li>
-                <li class=""><a class="whitespace-pre block bg-white py-2 px-8" href="#">Single - Blog</a></li>
-              </ul>-->
-            </span>
-          </li>
+          
           <!--<li v-if="this.user.isLoggedIn()" @click="profile()"
             class="font-bold text-white hover:text-black cursor-pointer">
             {{ $t('Profile') }}
@@ -158,7 +159,7 @@
           <!-- <li>
             <button v-if="this.user.isLoggedIn()" @click="show_logout_dialog()"
               class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t("Logout") }}</button>
-            <button v-else @click="this.$router.push(`/auto-login`)"
+            <button v-else @click="this.$router.push(`/login`)"
               class="transition bg-white text-black font-medium text-base mt-2 mb-2 lg:mb-0 mr-4 pt-2 pb-2 pl-8 pr-8 transition duration-300 rounded hover:bg-[#40b751] hover:text-white hover:outline hover:outline-1 hover:outline-offset-1">{{ $t('Login') }}</button>
           </li>-->
 
@@ -289,7 +290,7 @@ export default {
       return
     }
     // else{
-    //   this.$router.push(`/login`)
+    //   this.$router.push(`/login-via-mobile`)
     // }
     // if (!this.user.has_desk_access) {
     // 	this.$router.push({ path: "/home" })

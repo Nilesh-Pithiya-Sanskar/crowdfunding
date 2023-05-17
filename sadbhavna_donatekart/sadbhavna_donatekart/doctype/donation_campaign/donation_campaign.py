@@ -33,9 +33,41 @@ class DonationCampaign(WebsiteGenerator):
 	# def after_insert(self):
 
 	def before_save(self):
-		if self.end_date <= self.start_date:
+		if self.end_date < self.start_date:
 			frappe.throw("end date should be after the start date")
 	# pass
+	# def after_insert(self):
+		print("self.name", self.name)
+
+		import xml.etree.ElementTree as ET
+		
+		# Parse the existing XML file
+		tree = ET.parse('../apps/sadbhavna_donatekart/frontend/public/sitemap.xml')
+		root = tree.getroot()
+
+		# Create a new element and add it to the root
+		url = ET.Element('url')
+		loc = ET.Element('loc')
+		lastmod = ET.Element('lastmod')
+
+		from datetime import datetime, timezone
+
+		# Get the current time in UTC
+		current_time = datetime.now(timezone.utc)
+
+		# Format the time as a string
+		formatted_time = current_time.isoformat()
+
+		# a = 'adsf'
+		loc.text = f"https://bestdeed.org/campaign-donation/{self.name}"
+		lastmod.text = formatted_time
+
+		url.append(loc)
+		url.append(lastmod)
+		root.append(url)
+
+		# Write the updated XML back to the file
+		tree.write('../apps/sadbhavna_donatekart/frontend/public/sitemap.xml', encoding='utf-8', xml_declaration=True)
 
 @frappe.whitelist()
 def check_user(email):

@@ -5,7 +5,7 @@ import App from './App.vue'
 import VueCookies from 'vue-cookies'
 import './index.css'
 import { createToast, clearToasts } from "@/utils/toasts"
-import axios from 'axios';
+// import axios from 'axios';
 import { socketio_port } from "../../../../sites/common_site_config.json"
 import "@/assets/Inter/styles/tailwind.css"
 // import { createHead } from '@vueuse/head'

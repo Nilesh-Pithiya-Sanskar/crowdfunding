@@ -103,10 +103,10 @@
 
             <h3
               class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
-              Raise funds online for <strong>social causes</strong></h3>
+              Your help goes a long way!</h3>
             <router-link to="/request-campaign"
               class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[14px] md:text-[16px] lg:text-[18px] mr-10 md:mr-20 lg:mr-64 break-keep">
-              Start a Fundraiser for <strong>FREE</strong></router-link>
+              Start a GoFundMe  </router-link>
           </div>
 
           <div class="grid place-items-center mx-auto">
@@ -699,6 +699,17 @@
           type="button" @click="exploreCampaigns()">{{ $t('Explore Campaigns') }}</button>
       </div>
     </section>
+
+
+    <section class="mx-auto container">
+      <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">{{ $t('Featured in') }}</h2>
+      <div class="overflow-x-scroll overflow-y-hidden custom-scrollbar scrollbar-thin">
+        <div class="flex">
+          <a href="https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html"><img src="../assets/Inter/img/mainlogo_gujrati.png" /></a>
+        </div>
+      </div>
+    </section>
+
     <!-- </div>
 
       </div> -->
@@ -708,7 +719,7 @@
 
     <!--Featured In-->
 
-    <section class="container mx-auto h-full">
+    <!-- <section class="container mx-auto h-full">
       <div class="text-center mt-10">
         <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">{{ $t('Featured in') }}
         </h2>
@@ -760,7 +771,7 @@
         </div>
 
       </div>
-    </section>
+    </section> -->
 
     <!--Awards-->
 
@@ -825,7 +836,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import { inject, provide, ref } from "vue";
@@ -1097,7 +1108,7 @@ export default {
   // 		return
   // 	}
   //   // else{
-  //   //   this.$router.push(`/login`)
+  //   //   this.$router.push(`/login-via-mobile`)
   //   // }
   // 	if (!this.user.has_desk_access) {
   // 		this.$router.push({ path: "/home" })

@@ -138,7 +138,8 @@ scheduler_events = {
 	# 	"sadbhavna_donatekart.tasks.all"
 	# ],
 	"daily": [
-		"sadbhavna_donatekart.api.api.close_end_date_campaign"
+		"sadbhavna_donatekart.api.api.close_end_date_campaign",
+        "sadbhavna_donatekart.api.api.delete_verified_otp"
 	]
 	# "hourly": [
 	# 	"sadbhavna_donatekart.tasks.hourly"

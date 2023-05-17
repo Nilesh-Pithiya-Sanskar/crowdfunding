@@ -10,9 +10,19 @@ import {
   webserver_port
 } from '../../../sites/common_site_config.json'
 
+import Pages from 'vite-plugin-pages'
+import generateSitemap from 'vite-plugin-pages-sitemap'
+
+// import vueXml from 'vite-plugin-vue-xml';
+
+import Sitemap from 'vite-plugin-sitemap'
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), Sitemap({ exclude: ['/', '/faq'] }), Pages({
+    onRoutesGenerated: routes => (generateSitemap({ routes})),
+  }),],
   server: {
     port: 8080,
     proxy: getProxyOptions({

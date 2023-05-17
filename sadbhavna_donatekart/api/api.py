@@ -271,6 +271,7 @@ def login_with_whatsapp(phone):
     frappe.db.commit()
 
     message = send_whatsapp_otp(phone, otp)
+    message = f'OTP sent to your whatsapp number: {phone}'
     result = {"message": message, "number": phone}
     # return result
     return message, phone, 'whatsapp'
@@ -313,10 +314,7 @@ def send_whatsapp_otp(phone, otp):
 # login with sms
 @frappe.whitelist(allow_guest=True)
 def login_with_sms(phone):
-    # if whatsapp integration
-    print("\n\n called")
     otp = generateOTP(4)
-    # doc = frappe.get_doc({"doctype": "Whatsapp OTP", "number": f'{phone}', "otp": otp, "status": "Pending"})
     doc = frappe.get_doc({"doctype": "SMS OTP",
                          "number": f'{phone}', "otp": otp, "status": "Sent"})
     doc.insert(ignore_permissions=True)
@@ -340,7 +338,6 @@ def send_sms_otp(number, otp):
     body= f'{otp} is your one time password (OTP) to login to crowdfunding. Don`t share OTP With anyone. Please enter the OTP to proceed.',
     to= f'+91{number}'
     )
-    print("\n\n message.sid", message.sid, "\n\n")
     return f'OTP sent to your mobile number: {number}'
 
 # generate OTP
@@ -360,6 +357,8 @@ def verify_otp(number, otp, m_type):
                                 "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
         if data:
             frappe.db.set_value("Whatsapp OTP", data, {"status": "Verified"})
+            frappe.db.delete("Whatsapp OTP", {"name": data})
+            frappe.db.commit()
             user = frappe.db.get_value(
                 "User", filters={"phone": number}, fieldname=['name'])
             if user:
@@ -387,6 +386,8 @@ def verify_otp(number, otp, m_type):
                                 "number": number, "otp": otp, "status": "Sent"}, fieldname=['name'])
         if data:
             frappe.db.set_value("SMS OTP", data, {"status": "Verified"})
+            frappe.db.delete("SMS OTP", {"name": data})
+            frappe.db.commit()
             user = frappe.db.get_value(
                 "User", filters={"phone": number}, fieldname=['name'])
             if user:
@@ -406,8 +407,6 @@ def verify_otp(number, otp, m_type):
                     login_user(user)
         else:
             return 'failed', 'a'
-            # OTP not match write your logic here
-            return f'Your OTP is not match with your number: {number}'
         
     elif m_type == 'email':
         data = frappe.db.get_value("Email OTP", filters={
@@ -664,3 +663,9 @@ def ondismiss_payment(item_cart, i_qty, total_price, item_b, campaign, email, na
     # else:
     #     return {'success': False, 'message': 'No donation found for the given donor name.'}
 
+
+@frappe.whitelist(allow_guest=True)
+def delete_verified_otp():
+    frappe.db.delete("Whatsapp OTP", {"status": "Verified"})
+    frappe.db.delete("SMS OTP", {"status": "Verified"})
+    frappe.db.commit()

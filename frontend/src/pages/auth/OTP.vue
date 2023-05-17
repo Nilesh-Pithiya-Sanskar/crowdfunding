@@ -17,12 +17,19 @@
                                 v-model="otp" type="number" ref="otp">                                
                             <span class="block text-red-600 text-base mb-2">{{ otp_message }}</span>
                         </div>
-                        <div class="mb-4">
-                            <button
+                        <div class="mb-4 flex flex-wrap justify-between">
+                            <button v-if="countDown == 0"
+                                class="appearance-none border-gray-600 rounded w-auto text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 px-7 py-2 tracking-wide border border-green-500 hover:border-green-500 text-xs uppercase rounded"
+                                @click="resend_otp()"
+                                >Resend OTP</button>
+                            <button v-else
                                 class="appearance-none border-gray-600 rounded w-auto text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 px-7 py-2 tracking-wide border border-green-500 hover:border-green-500 text-xs uppercase rounded"
                                 @click="verify_otp()"
                                 >{{$t('Verify OTP')}}</button>
+                            <span v-if="countDown != 0">{{ countDown }}</span>
+                            
                         </div>
+                        
                     </div>
                 </div>
             </div>  
@@ -87,9 +94,13 @@ export default {
             passwordError: '',
             re_passwordError: '',
             email: '',
-            showDialog: false
+            showDialog: false,
+            countDown: 5
         }
     },
+    created () {
+            this.countDownTimer()
+        },
     mounted(){
         const name = useRoute();
         document.title = this.$t('OTP | BestDeed')
@@ -138,12 +149,37 @@ export default {
                 method: 'sadbhavna_donatekart.api.api.reset_password',
                 onSuccess: (res) => {
                     console.log("okey")
+                    this.countDownTimer()
+                },
+                onError: (error) =>{
+                    console.log("error")
+                }
+            }
+        },
+        login_with_whatsapp(){
+            return{
+                method: 'sadbhavna_donatekart.api.api.login_with_whatsapp',
+                onSuccess: (res) => {
+                    console.log("okey")
+                    this.countDownTimer()
+                },
+                onError: (error) =>{
+                    console.log("error")
+                }
+            }
+        },
+        login_with_sms(){
+            return{
+                method: 'sadbhavna_donatekart.api.api.login_with_sms',
+                onSuccess: (res) => {
+                    console.log("okey")
                 },
                 onError: (error) =>{
                     console.log("error")
                 }
             }
         }
+        
     },
 
     methods:{
@@ -164,6 +200,27 @@ export default {
                 email: this.email,
                 password: this.password
             })
+        },
+
+        countDownTimer () {
+                if (this.countDown > 0) {
+                    setTimeout(() => {
+                        this.countDown -= 1
+                        this.countDownTimer()
+                    }, 1000)
+                }
+            },
+        resend_otp(){
+            if(this.m_type == 'whatsapp'){
+                this.$resources.login_with_whatsapp.submit({
+                    phone: this.number
+                })
+            }
+            else if(this.m_type == 'sms'){
+                this.$resources.login_with_sms.submit({
+                    phone: this.number
+                })
+            }
         }
     }
 
