@@ -238,11 +238,17 @@ const routes = [{
     path: '/:pathMatch(.*)*',
     name: '404 Page Not Found',
     component: () => import('@/pages/PageNotFound.vue')
+  },
+  {
+    path: "/bestdeed",
+    name: 'bestdeed xml',
+    component: () => import('../public/bestdeed.xml')
   }
 ]
 
 let router = createRouter({
-  history: createWebHistory('/'),
+  // history: createWebHistory('/'),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, form, savedPosition){
     if (savedPosition){
@@ -251,6 +257,9 @@ let router = createRouter({
     return { left: 0, top: 0}
   }
 })
+
+
+
 
 // router.beforeEach((to, from, next) => {
 //   document.title = `${to.meta.title}`
