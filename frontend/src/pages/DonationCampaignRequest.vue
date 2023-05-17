@@ -288,6 +288,10 @@ export default {
     created(){
         document.title = this.$t('Request a Campaign on BestDeed, the Trusted, and 100% Transparent Crowdfunding Platform  | BestDeed')
         this.$nextTick(() => this.$refs.fullname.focus())
+        var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/request-campaign"
+    document.head.appendChild(link);
     },
     mounted(){
         this.$nextTick(() => this.$refs.fullname.focus())

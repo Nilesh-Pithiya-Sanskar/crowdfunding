@@ -64,8 +64,12 @@ export default{
         document.title = this.$t('Reset Password')+' '+ name.params.email
         this.email = name.params.email,
         this.key = name.params.key
+        var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/reset_password"
+    document.head.appendChild(link);
     },
-    mounte(){
+    mounted(){
         this.$nextTick(() => this.$refs.password.focus())
     },
     data(){

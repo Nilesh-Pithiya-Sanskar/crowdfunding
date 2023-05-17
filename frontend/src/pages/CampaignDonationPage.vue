@@ -1039,6 +1039,10 @@ export default {
         // this.$route.meta.title = 'asdfadsf'
         // this.$route.meta.title = 'asdf'
         // this.metaTitle = 'adsf'
+        var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/campaign-donation"
+    document.head.appendChild(link);
 
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)

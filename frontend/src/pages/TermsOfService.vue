@@ -75,6 +75,10 @@ export default{
   },
   created(){
     document.title = this.$t('Terms of Use | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
+    var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/terms-of-service"
+    document.head.appendChild(link);
   }
 }
 </script>

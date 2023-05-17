@@ -192,6 +192,12 @@ export default {
     Navbar,
     Footer,
   },
+  created(){
+    var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/faq"
+    document.head.appendChild(link);
+  },
   data() {
     return {
       openTab: 1,

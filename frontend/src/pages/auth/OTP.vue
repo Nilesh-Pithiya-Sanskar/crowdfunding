@@ -100,6 +100,10 @@ export default {
     },
     created () {
             this.countDownTimer()
+            var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/otp"
+    document.head.appendChild(link);
         },
     mounted(){
         const name = useRoute();

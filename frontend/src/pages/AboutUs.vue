@@ -679,6 +679,10 @@ export default {
   created() {
     document.title = this.$t("Empowering Positive Change - Learn About BestDeed and Our Commitment to Supporting NGOs and Their Causes | BestDeed")
     this.get_about_data()
+    var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/about-us"
+    document.head.appendChild(link);
   },
 
   data() {
