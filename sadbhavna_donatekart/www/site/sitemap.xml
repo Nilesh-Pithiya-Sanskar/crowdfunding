@@ -1,11 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<urlset>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 <url>
   <loc>https://bestdeed.org/</loc>
   <lastmod>2023-05-17T05:00:55+00:00</lastmod>
 </url>
-
 <url>
   <loc>https://bestdeed.org/about-us</loc>
   <lastmod>2023-05-17T05:00:55+00:00</lastmod>
@@ -54,7 +52,6 @@
   <loc>https://bestdeed.org/how-it-works</loc>
   <lastmod>2023-05-17T05:00:55+00:00</lastmod>
 </url>
-
 <url>
   <loc>https://bestdeed.org/campaign-donation/SADBHAV-11-05-2023-0001</loc>
   <lastmod>2023-05-17T05:00:55+00:00</lastmod>
@@ -101,7 +98,7 @@
 </url>
 <url>
   <loc>https://bestdeed.org/blog-post/crowdfunding</loc>
-  <lastmod>2023-05-17T05:00:55+00:00</lastmod>
+  <lastmod>2023-05-18T13:02:13.630709+00:00</lastmod>
 </url>
 <url>
   <loc>https://bestdeed.org/blog-post/disaster-relief</loc>

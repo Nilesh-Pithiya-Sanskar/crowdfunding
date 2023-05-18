@@ -51,6 +51,7 @@
     "vue-notification-system": "^1.0.9",
     "vue-router-sitemap": "0.0.4",
     "vue-social-sharing": "^4.0.0-alpha4",
+    "vue-yoast": "^1.0.1",
     "vue3-cookies": "^1.0.6",
     "vue3-facebook-login": "0.0.1",
     "vue3-google-login": "^2.0.14",

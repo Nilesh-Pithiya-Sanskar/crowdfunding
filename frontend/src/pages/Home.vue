@@ -105,13 +105,14 @@
             <h3
               class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
               Your help goes a long way!</h3>
-            <router-link to="/request-campaign"
+            <router-link to="/explore-campaign"
               class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[14px] md:text-[16px] lg:text-[18px] mr-10 md:mr-20 lg:mr-64 break-keep">
-              Start a GoFundMe  </router-link>
+              Support an NGOs </router-link>
           </div>
 
           <div class="grid place-items-center mx-auto">
-            <img src="../../src/assets/Inter/img/rightside.png" class="sm:mt-16 md:mt-36 lg:mt-36 sm:ml-0 md:ml-36 lg:ml-36" />
+            <img src="../../src/assets/Inter/img/rightside.png"
+              class="sm:mt-16 md:mt-36 lg:mt-36 sm:ml-0 md:ml-36 lg:ml-36" />
           </div>
         </div>
 
@@ -739,6 +740,258 @@
       </div> -->
     <!--Testimonials-->
 
+    <section class="container mx-auto h-full mb-20 lg:px-10 xl:px-10">
+      <div class="mb-28 mt-10">
+        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-10">
+          {{ $t('Why join us in this noble cause?') }}</h3>
+        <div class="grid grid-cols-3 justify-items-center gap-8 mb-8 ">
+          <div class="grid justify-items-center">
+            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/firstimage.png" />
+            <h4 class="capitalize -mt-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Easy process
+            </h4>
+            <p class="text-[#3f4640] -mt-2 text-center text-[14px] md:text-[14px] lg:text-[16px]">Donating to NGOs and
+              making an impact is quite easier with Best Deed. Within just 4 simple steps, you can make a move.</p>
+          </div>
+          <div class="grid justify-items-center">
+            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/secondimage.png" />
+            <h4 class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">End-to-end
+              transparency</h4>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">We maintain end-to-end
+              transparency of every donation we receive with our donors so that they can better track where and how we are
+              using it!</p>
+          </div>
+          <div class="grid justify-items-center">
+            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/thirdimage.png" />
+            <h4 class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+              Fundraisers for various causes</h4>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed has fundraisers for
+              a diverse range of causes, right, from education, environment, animals, etc., and you can select the one
+              that resonates with your values and passions.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 justify-items-center gap-2 mb-6">
+          <div class="grid justify-items-center">
+            <img
+              class="h-[46px] mt-10 md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[70px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/fourthimage.png" />
+            <h4 class="capitalize mt-2 mb-1 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Multiple
+              Ways to Donate</h4>
+            <p class=" mb-10 text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]"> Best Deed offers
+              flexibility when it comes to donating. Whether through monetary donations, donating through products, or
+              even volunteering, you can make a difference in any way possible.</p>
+          </div>
+          <div class="grid justify-items-center">
+            <img
+              class="h-[46px] md:h-[300px] lg:-m-10 lg:h-[400px] w-[40px] md:w-[1300px] lg:w-[1500px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/fifthimage.png" />
+
+          </div>
+          <div class="grid justify-items-center">
+            <img
+              class="h-[46px] mt-10 md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/siximage.png" />
+            <h4 class="capitalize mt-2 mb-1 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+              Hassle-free payment</h4>
+            <p class=" mb-10 text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">When you choose the
+              products you want to donate, you can easily make the payment through your preferred payment mode and
+              currency. </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 justify-items-center gap-8 mb-8 ">
+          <div class="grid justify-items-center">
+            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[68px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/sevenimage.png" />
+            <h4 class="capitalize text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Trusted platform
+            </h4>
+            <p class="text-[#3f4640] -mt-2 text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed is a trusted
+              and reliable crowdfunding platform backed with all the required certificates, licenses, permits, and a
+              robust security system. </p>
+          </div>
+          <div class="grid justify-items-center">
+            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/eightimage.png" />
+            <h4 class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Smart
+              dashboard</h4>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed believes in keeping
+              donors and NGOs updated with the donation received and paid with the help of a smart dashboard and real-time
+              alerts. </p>
+          </div>
+          <div class="grid justify-items-center">
+            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[70px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              src="../../src/assets/Inter/img/nineimage.png" />
+            <h4 class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">0% charges
+            </h4>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">At Best Deed, we do not charge
+              anything from the NGOs or donors while donating or starting a campaign. Donating or starting a campaign is
+              100% free.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-8">
+          {{ $t('how can you do it?') }}</h3>
+        <div class="pt-0">
+          <div class="w-full bg-grey-lightest">
+            <div class="py-0">
+              <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
+                <ul class="flex justify-center flex-wrap ">
+                  <a class="cursor-pointer text-center text-[14px] md:text-[14px] lg:text-[16px] mr-4 block leading-normal"
+                    v-on:click="toggleTabs(1)" v-bind:class="{
+                      'text-[#3f4640] bg-white': openTab !== 1,
+                      'border-b-2 border-[#40b751] text-[#40b751] font-bold bg-white': openTab === 1,
+                    }">
+                    For Donors
+                  </a>
+                  <a class="cursor-pointer text-center text-[14px] md:text-[14px] lg:text-[16px] block leading-normal"
+                    v-on:click="toggleTabs(2)" v-bind:class="{
+                      'text-[#3f4640] bg-white': openTab !== 2,
+                      'border-b-2 border-[#40b751] text-[#40b751] font-bold bg-white': openTab === 2,
+                    }">
+                    For NGOs
+                  </a>
+                </ul>
+                <div class="px-0 py-px flex-auto">
+                  <div class="tab-content tab-space">
+                    <div v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }">
+                      <section class="text-[#3f4640] mt-10">
+                        <div class="grid grid-cols-5 gap-6">
+                          <div class="relative  grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-4 w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/firstimagedonor.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Select a cause</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">First things
+                              first, you need to choose the fundraiser and select the cause you would like to support. You
+                              can even choose multiple campaigns as well.</p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="relative grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-2 w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/secondimagedonor.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Choose the type</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">After
+                              selecting the cause you want to donate to, you can decide whether you need to donate
+                              monetarily or through products.</p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="relative grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-4 w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/thirdimagedonor.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Decide the what & how</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">After choosing
+                              the type of donation, you have to enter the amount you would like to donate or the products
+                              you want to donate.</p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="relative grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-2  w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/fourthimagedonor.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Add the essential details</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Moving
+                              forward, you need to add essential details such as your name, email id, and contact number.
+                            </p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-4 w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/fifthimagedonor.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Make a payment </h4>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">After entering
+                              the required details, you can make the payment through your preferred payment method, and
+                              IT'S DONE! </p>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
+                      <section class="text-[#3f4640] mt-10">
+                        <div class="grid grid-cols-5 gap-6">
+                          <div class="relative grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/imagefirstngo.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Fill up the details</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] -mt-6 md:text-[14px] lg:text-[16px]">To start
+                              a campaign on Best Deed; you need to fill up all the essential details. To start a campaign,
+                              click here, <u class="font-bold cursor-pointer">start a campaign.</u></p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="relative grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/imagesecondngo.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Verification</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] -mt-8 md:text-[14px] lg:text-[16px]">To start
+                              a campaign on Best Deed; you need to fill up all the essential details. To start a campaign,
+                              click here, start a campaign.</p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="relative grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/imagethirdngo.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              It's LIVE</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] -mt-8 md:text-[14px] lg:text-[16px]">If
+                              everything goes well, we will live your campaign with the story, your requirements, images,
+                              and videos. </p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="relative grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/imagefourthngo.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mt-10 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Share it</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] mt-2 md:text-[14px] lg:text-[16px]">To get
+                              better support; you can easily share your campaign with your friends, family, colleagues,
+                              and even on social media directly from our dashboard.</p>
+                            <span
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                          </div>
+                          <div class="grid justify-items-center">
+                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                              src="../../src/assets/Inter/img/imagefifthngo.png" />
+                            <h4
+                              class="capitalize text-[#3f4640] text-center mt-6 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              Manage it seamlessly</h4>
+                            <p class="text-[#3f4640] text-center text-[14px] -mt-4 md:text-[14px] lg:text-[16px]">After
+                              the campaign is live, you can manage it through your personalized dashboard and stay updated
+                              with real-time alerts.</p>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <Testimonials />
 
     <!--Featured In-->
@@ -935,7 +1188,7 @@ export default {
   },
   created() {
     document.title = this.$t('Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
-    
+
     const linkElement = document.querySelector('link[rel="canonical"]');
 
     if (!linkElement) {
@@ -944,11 +1197,11 @@ export default {
       link.href = "https://bestdeed.org/"
       document.head.appendChild(link);
     }
-    else{
+    else {
       linkElement.href = "https://bestdeed.org/"
       document.head.appendChild(linkElement)
     }
-    
+
     // addMeta({
     //   name: 'author',
     //   content: 'John Doe'

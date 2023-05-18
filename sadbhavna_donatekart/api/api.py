@@ -689,6 +689,47 @@ def set_sitemap_for_blog(doc, method):
     tree = ET.parse(xml_file_path)
     root = tree.getroot()
 
+    # root.attrib['xmlns:xsi'] = 'http://www.w3.org/2001/XMLSchema-instance'
+    # root.attrib['xmlns'] = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    # root.attrib['xsi:schemaLocation'] = 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd'
+
+    # if root.attrib['xmlns:xsi'] != 'http://www.w3.org/2001/XMLSchema-instance':
+    #     root.attrib['xmlns:xsi'] = 'http://www.w3.org/2001/XMLSchema-instance'
+    # if root.attrib['xmlns'] != "http://www.sitemaps.org/schemas/sitemap/0.9":
+    #     root.attrib['xmlns'] = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    # # if root.attrib['xmlns:image'] !="http://www.google.com/schemas/sitemap-image/1.1":
+    #     # root.attrib['xmlns:image'] ="http://www.google.com/schemas/sitemap-image/1.1"
+    # if root.attrib['xsi:schemaLocation'] != 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd':
+    #     root.attrib['xsi:schemaLocation'] = 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd'
+
+    # if 'xmlns:xsi' not in root.attrib or root.attrib['xmlns:xsi'] != 'http://www.w3.org/2001/XMLSchema-instance':
+    #     root.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+    # if 'xmlns' not in root.attrib or root.attrib['xmlns'] != "http://www.sitemaps.org/schemas/sitemap/0.9":
+    #     root.set('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+    # if 'xsi:schemaLocation' not in root.attrib or root.attrib['xsi:schemaLocation'] != 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd':
+    #     root.set('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd')
+
+
+    attribute_name = 'xmlns:xsi'
+    attribute_value = 'http://www.w3.org/2001/XMLSchema-instance'
+    if not any(attribute_name in attr for attr in root.attrib.values()):
+    # if not any(attribute_name in elem.attrib for elem in root):
+        root.set(attribute_name, attribute_value)
+
+    attribute_name1 = 'xmlns'
+    attribute_value1 = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+    if not any(attribute_name in attr for attr in root.attrib.values()):
+    # if not any(attribute_name1 in elem.attrib for elem in root):
+        root.set(attribute_name1, attribute_value1)
+
+    attribute_name2 = 'xsi:schemaLocation'
+    attribute_value2 = 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd'
+    if not any(attribute_name in attr for attr in root.attrib.values()):
+    # if not any(attribute_name2 in elem.attrib for elem in root):
+        root.set(attribute_name2, attribute_value2)
+
+
+
     # Check if the <url> tag with the specified <loc> exists
     url_exists = False
     for url_elem in root.findall('url'):
@@ -715,7 +756,7 @@ def set_sitemap_for_blog(doc, method):
         root.append(new_url_elem)
 
     # Save the updated XML to a file
-    tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
+    tree.write(xml_file_path, encoding='utf-8')
 
 
 @frappe.whitelist(allow_guest=True)

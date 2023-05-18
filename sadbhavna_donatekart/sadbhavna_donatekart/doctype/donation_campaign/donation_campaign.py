@@ -36,93 +36,93 @@ class DonationCampaign(WebsiteGenerator):
 		if self.end_date < self.start_date:
 			frappe.throw("end date should be after the start date")
 	# pass
-	def on_update(self):
-		import xml.etree.ElementTree as ET
+	# def on_update(self):
+	# 	import xml.etree.ElementTree as ET
 
-		from datetime import datetime, timezone
-		# Get the current time in UTC
-		current_time = datetime.now(timezone.utc)
-		# Format the time as a string
-		formatted_time = current_time.isoformat()
+	# 	from datetime import datetime, timezone
+	# 	# Get the current time in UTC
+	# 	current_time = datetime.now(timezone.utc)
+	# 	# Format the time as a string
+	# 	formatted_time = current_time.isoformat()
 
-		xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
-		loc = f"https://bestdeed.org/campaign-donation/{self.name}"
-		lastmod = formatted_time
+	# 	xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+	# 	loc = f"https://bestdeed.org/campaign-donation/{self.name}"
+	# 	lastmod = formatted_time
 
-		tree = ET.parse(xml_file_path)
-		root = tree.getroot()
+	# 	tree = ET.parse(xml_file_path)
+	# 	root = tree.getroot()
 
-		# Check if the <url> tag with the specified <loc> exists
-		url_exists = False
-		for url_elem in root.findall('url'):
-			loc_elem = url_elem.find('loc')
-			if loc_elem is not None and loc_elem.text == loc:
-				# Update the <lastmod> text
-				lastmod_elem = url_elem.find('lastmod')
-				if lastmod_elem is not None:
-					lastmod_elem.text = lastmod
-				url_exists = True
-				break
+	# 	# Check if the <url> tag with the specified <loc> exists
+	# 	url_exists = False
+	# 	for url_elem in root.findall('url'):
+	# 		loc_elem = url_elem.find('loc')
+	# 		if loc_elem is not None and loc_elem.text == loc:
+	# 			# Update the <lastmod> text
+	# 			lastmod_elem = url_elem.find('lastmod')
+	# 			if lastmod_elem is not None:
+	# 				lastmod_elem.text = lastmod
+	# 			url_exists = True
+	# 			break
 
-		if not url_exists:
-			# Create a new <url> tag
-			new_url_elem = ET.Element('url')
+	# 	if not url_exists:
+	# 		# Create a new <url> tag
+	# 		new_url_elem = ET.Element('url')
 
-			loc_elem = ET.SubElement(new_url_elem, 'loc')
-			loc_elem.text = loc
+	# 		loc_elem = ET.SubElement(new_url_elem, 'loc')
+	# 		loc_elem.text = loc
 
-			lastmod_elem = ET.SubElement(new_url_elem, 'lastmod')
-			lastmod_elem.text = lastmod
+	# 		lastmod_elem = ET.SubElement(new_url_elem, 'lastmod')
+	# 		lastmod_elem.text = lastmod
 
-			# Append the new <url> tag to the root
-			root.append(new_url_elem)
+	# 		# Append the new <url> tag to the root
+	# 		root.append(new_url_elem)
 
-		# Save the updated XML to a file
-		tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
+	# 	# Save the updated XML to a file
+	# 	tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
 
-	def after_insert(self):
-		import xml.etree.ElementTree as ET
+	# def after_insert(self):
+	# 	import xml.etree.ElementTree as ET
 
-		from datetime import datetime, timezone
-		# Get the current time in UTC
-		current_time = datetime.now(timezone.utc)
-		# Format the time as a string
-		formatted_time = current_time.isoformat()
+	# 	from datetime import datetime, timezone
+	# 	# Get the current time in UTC
+	# 	current_time = datetime.now(timezone.utc)
+	# 	# Format the time as a string
+	# 	formatted_time = current_time.isoformat()
 
-		xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
-		loc = f"https://bestdeed.org/campaign-donation/{self.name}"
-		lastmod = formatted_time
+	# 	xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+	# 	loc = f"https://bestdeed.org/campaign-donation/{self.name}"
+	# 	lastmod = formatted_time
 
-		tree = ET.parse(xml_file_path)
-		root = tree.getroot()
+	# 	tree = ET.parse(xml_file_path)
+	# 	root = tree.getroot()
 
-		# Check if the <url> tag with the specified <loc> exists
-		url_exists = False
-		for url_elem in root.findall('url'):
-			loc_elem = url_elem.find('loc')
-			if loc_elem is not None and loc_elem.text == loc:
-				# Update the <lastmod> text
-				lastmod_elem = url_elem.find('lastmod')
-				if lastmod_elem is not None:
-					lastmod_elem.text = lastmod
-				url_exists = True
-				break
+	# 	# Check if the <url> tag with the specified <loc> exists
+	# 	url_exists = False
+	# 	for url_elem in root.findall('url'):
+	# 		loc_elem = url_elem.find('loc')
+	# 		if loc_elem is not None and loc_elem.text == loc:
+	# 			# Update the <lastmod> text
+	# 			lastmod_elem = url_elem.find('lastmod')
+	# 			if lastmod_elem is not None:
+	# 				lastmod_elem.text = lastmod
+	# 			url_exists = True
+	# 			break
 
-		if not url_exists:
-			# Create a new <url> tag
-			new_url_elem = ET.Element('url')
+	# 	if not url_exists:
+	# 		# Create a new <url> tag
+	# 		new_url_elem = ET.Element('url')
 
-			loc_elem = ET.SubElement(new_url_elem, 'loc')
-			loc_elem.text = loc
+	# 		loc_elem = ET.SubElement(new_url_elem, 'loc')
+	# 		loc_elem.text = loc
 
-			lastmod_elem = ET.SubElement(new_url_elem, 'lastmod')
-			lastmod_elem.text = lastmod
+	# 		lastmod_elem = ET.SubElement(new_url_elem, 'lastmod')
+	# 		lastmod_elem.text = lastmod
 
-			# Append the new <url> tag to the root
-			root.append(new_url_elem)
+	# 		# Append the new <url> tag to the root
+	# 		root.append(new_url_elem)
 
-		# Save the updated XML to a file
-		tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
+	# 	# Save the updated XML to a file
+	# 	tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
 
 	def after_delete(self):
 		import xml.etree.ElementTree as ET
@@ -132,6 +132,7 @@ class DonationCampaign(WebsiteGenerator):
 
 		tree = ET.parse(xml_file_path)
 		root = tree.getroot()
+
 
 		# Find the <url> tags with matching <loc> text
 		urls_to_remove = []
