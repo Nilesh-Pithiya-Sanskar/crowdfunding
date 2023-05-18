@@ -702,7 +702,7 @@
     </section>
 
 
-    <section class="mx-auto container">
+    <!-- <section class="mx-auto container">
       <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">{{ $t('Featured in') }}</h2>
       <div class="overflow-x-scroll overflow-y-hidden flex">
         <div class="h-24 w-24">
@@ -732,7 +732,7 @@
       </div>
       
     </section>
-    
+     -->
 
     <!-- </div>
 
