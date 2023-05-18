@@ -106,7 +106,7 @@
                     <div class="flex  justify-start lg:-mr-[60px]">
           <div class="flex items-center flex-shrink-0">
             <a href="/">
-              <img src="../../src/assets/Inter/img/logo-1.1.ico"
+              <img src="../../src/assets/Inter/img/logo256x256.svg"
                 class="mb-2 sm:mt-2 lg:mt-0 mr-2 md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-18 ml-0 lg:ml-0" />
             </a>
             <a href="/"><span class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[30px] md:mr-5">BestDeed</span></a>

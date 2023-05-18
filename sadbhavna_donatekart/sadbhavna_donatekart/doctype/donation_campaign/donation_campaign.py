@@ -36,38 +36,118 @@ class DonationCampaign(WebsiteGenerator):
 		if self.end_date < self.start_date:
 			frappe.throw("end date should be after the start date")
 	# pass
-	def after_insert(self):
-		print("self.name", self.name)
-
+	def on_update(self):
 		import xml.etree.ElementTree as ET
-		
-		# Parse the existing XML file
-		tree = ET.parse('../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml')
-		root = tree.getroot()
-
-		# Create a new element and add it to the root
-		url = ET.Element('url')
-		loc = ET.Element('loc')
-		lastmod = ET.Element('lastmod')
 
 		from datetime import datetime, timezone
-
 		# Get the current time in UTC
 		current_time = datetime.now(timezone.utc)
-
 		# Format the time as a string
 		formatted_time = current_time.isoformat()
 
-		# a = 'adsf'
-		loc.text = f"https://bestdeed.org/campaign-donation/{self.name}"
-		lastmod.text = formatted_time
+		xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+		loc = f"https://bestdeed.org/campaign-donation/{self.name}"
+		lastmod = formatted_time
 
-		url.append(loc)
-		url.append(lastmod)
-		root.append(url)
+		tree = ET.parse(xml_file_path)
+		root = tree.getroot()
 
-		# Write the updated XML back to the file
-		tree.write('../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml', encoding='utf-8', xml_declaration=True)
+		# Check if the <url> tag with the specified <loc> exists
+		url_exists = False
+		for url_elem in root.findall('url'):
+			loc_elem = url_elem.find('loc')
+			if loc_elem is not None and loc_elem.text == loc:
+				# Update the <lastmod> text
+				lastmod_elem = url_elem.find('lastmod')
+				if lastmod_elem is not None:
+					lastmod_elem.text = lastmod
+				url_exists = True
+				break
+
+		if not url_exists:
+			# Create a new <url> tag
+			new_url_elem = ET.Element('url')
+
+			loc_elem = ET.SubElement(new_url_elem, 'loc')
+			loc_elem.text = loc
+
+			lastmod_elem = ET.SubElement(new_url_elem, 'lastmod')
+			lastmod_elem.text = lastmod
+
+			# Append the new <url> tag to the root
+			root.append(new_url_elem)
+
+		# Save the updated XML to a file
+		tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
+
+	def after_insert(self):
+		import xml.etree.ElementTree as ET
+
+		from datetime import datetime, timezone
+		# Get the current time in UTC
+		current_time = datetime.now(timezone.utc)
+		# Format the time as a string
+		formatted_time = current_time.isoformat()
+
+		xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+		loc = f"https://bestdeed.org/campaign-donation/{self.name}"
+		lastmod = formatted_time
+
+		tree = ET.parse(xml_file_path)
+		root = tree.getroot()
+
+		# Check if the <url> tag with the specified <loc> exists
+		url_exists = False
+		for url_elem in root.findall('url'):
+			loc_elem = url_elem.find('loc')
+			if loc_elem is not None and loc_elem.text == loc:
+				# Update the <lastmod> text
+				lastmod_elem = url_elem.find('lastmod')
+				if lastmod_elem is not None:
+					lastmod_elem.text = lastmod
+				url_exists = True
+				break
+
+		if not url_exists:
+			# Create a new <url> tag
+			new_url_elem = ET.Element('url')
+
+			loc_elem = ET.SubElement(new_url_elem, 'loc')
+			loc_elem.text = loc
+
+			lastmod_elem = ET.SubElement(new_url_elem, 'lastmod')
+			lastmod_elem.text = lastmod
+
+			# Append the new <url> tag to the root
+			root.append(new_url_elem)
+
+		# Save the updated XML to a file
+		tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
+
+	def after_delete(self):
+		import xml.etree.ElementTree as ET
+
+		xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+		loc = f"https://bestdeed.org/campaign-donation/{self.name}"
+
+		tree = ET.parse(xml_file_path)
+		root = tree.getroot()
+
+		# Find the <url> tags with matching <loc> text
+		urls_to_remove = []
+		for url_elem in root.findall('url'):
+			loc_elem = url_elem.find('loc')
+			if loc_elem is not None and loc_elem.text == loc:
+				urls_to_remove.append(url_elem)
+
+		# Remove the matching <url> tags from the root
+		for url_elem in urls_to_remove:
+			root.remove(url_elem)
+
+		# Save the updated XML to a file
+		tree.write(xml_file_path, encoding='utf-8')
+
+
 
 @frappe.whitelist()
 def check_user(email):

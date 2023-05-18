@@ -664,8 +664,82 @@ def ondismiss_payment(item_cart, i_qty, total_price, item_b, campaign, email, na
     #     return {'success': False, 'message': 'No donation found for the given donor name.'}
 
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist()
 def delete_verified_otp():
     frappe.db.delete("Whatsapp OTP", {"status": "Verified"})
     frappe.db.delete("SMS OTP", {"status": "Verified"})
     frappe.db.commit()
+
+
+@frappe.whitelist(allow_guest=True)
+def set_sitemap_for_blog(doc, method):
+
+    import xml.etree.ElementTree as ET
+
+    from datetime import datetime, timezone
+	# Get the current time in UTC
+    current_time = datetime.now(timezone.utc)
+	# Format the time as a string
+    formatted_time = current_time.isoformat()
+
+    xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+    loc = f'https://bestdeed.org/blog-post/{doc.name}'
+    lastmod = formatted_time
+
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Check if the <url> tag with the specified <loc> exists
+    url_exists = False
+    for url_elem in root.findall('url'):
+        loc_elem = url_elem.find('loc')
+        if loc_elem is not None and loc_elem.text == loc:
+            # Update the <lastmod> text
+            lastmod_elem = url_elem.find('lastmod')
+            if lastmod_elem is not None:
+                lastmod_elem.text = lastmod
+            url_exists = True
+            break
+
+    if not url_exists:
+        # Create a new <url> tag
+        new_url_elem = ET.Element('url')
+
+        loc_elem = ET.SubElement(new_url_elem, 'loc')
+        loc_elem.text = loc
+
+        lastmod_elem = ET.SubElement(new_url_elem, 'lastmod')
+        lastmod_elem.text = lastmod
+
+        # Append the new <url> tag to the root
+        root.append(new_url_elem)
+
+    # Save the updated XML to a file
+    tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
+
+
+@frappe.whitelist(allow_guest=True)
+def remove_sitemap_for_blog(doc, method):
+
+    import xml.etree.ElementTree as ET
+
+    xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+    loc = f'https://bestdeed.org/blog-post/{doc.name}'
+
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+
+    # Find the <url> tags with matching <loc> text
+    urls_to_remove = []
+    for url_elem in root.findall('url'):
+        loc_elem = url_elem.find('loc')
+        if loc_elem is not None and loc_elem.text == loc:
+            urls_to_remove.append(url_elem)
+
+    # Remove the matching <url> tags from the root
+    for url_elem in urls_to_remove:
+        root.remove(url_elem)
+
+    # Save the updated XML to a file
+    tree.write(xml_file_path, encoding='utf-8')
+    

@@ -114,11 +114,11 @@ export default {
     if (!linkElement) {
       var link = document.createElement('link');
     link.rel = 'canonical';
-    link.href = "https://bestdeed.org/login-via-mobile"
+    link.href = "https://bestdeed.org/login-via-email"
     document.head.appendChild(link);
     }
     else{
-      linkElement.href = "https://bestdeed.org/login-via-mobile"
+      linkElement.href = "https://bestdeed.org/login-via-email"
       document.head.appendChild(linkElement)
     }
   },

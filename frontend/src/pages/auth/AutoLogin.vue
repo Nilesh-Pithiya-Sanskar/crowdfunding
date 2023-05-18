@@ -70,7 +70,7 @@
                                 </button>
                             </div>
                              <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                href="/login-via-mobile">{{ $t('Login Via Email') }}</a></span>
+                                href="/login-via-email">{{ $t('Login Via Email') }}</a></span>
  <span class="block text-gray-600  text-center text-base  mb-2"> {{ $t('New to BestDeed?') }} <router-link
                                 to="/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
               </div>

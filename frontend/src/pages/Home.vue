@@ -704,12 +704,35 @@
 
     <section class="mx-auto container">
       <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">{{ $t('Featured in') }}</h2>
-      <div class="overflow-x-scroll overflow-y-hidden custom-scrollbar scrollbar-thin">
-        <div class="flex">
+      <div class="overflow-x-scroll overflow-y-hidden flex">
+        <div class="h-24 w-24">
+          <a href="https://cmogujarat.gov.in/en/photo-gallery/cm-shri-vijaybhai-rupani-inaugurated-pipaliya-bhawan-sadbhavna-vriddhashram-in-rajkot/"><img src="../assets/Inter/img/cmo-gujraat-logo.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a href="https://www.divyabhaskar.co.in/dvb-original/news/rajkot-sadbhavana-old-age-home-opened-school-bull-and-treat-as-a-family-mamber-129038474.html"><img src="../assets/Inter/img/divyabhaskar.png" /></a>
+        </div>
+        <div class="h-24 w-24">
           <a href="https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html"><img src="../assets/Inter/img/mainlogo_gujrati.png" /></a>
         </div>
+        <div class="h-24 w-24 ">
+          <a href="https://www.dnaindia.com/india/video-rajkot-man-makes-city-green-by-planting-over-7-lakh-trees-2908027"><img src="../assets/Inter/img/dna.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a href="https://www.abtakmedia.com/make-a-call-sadbhavna-old-age-home-will-come-home-and-plant-a-tree/"><img src="../assets/Inter/img/NEW-Abtak-rr-logo-png-1.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a href="https://timesofindia.indiatimes.com/videos/city/ahmedabad/rajkot-man-makes-city-green-by-planting-over-7-lakh-trees/videoshow/85666112.cms?from=mdr"><img src="../assets/Inter/img/images.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a href="https://www.zee5.com/articles/gujarat-man-plants-750000-trees-in-rajkot-aims-to-turn-entire-state-green"><img src="../assets/Inter/img/zee5.png" /></a>
+        </div>               
+        <div class="h-24 w-24">
+          <a href="https://ahmedabadmirror.com/bizman-on-green-mission-recruits-280-to-water-plants/79726987.html"><img src="../assets/Inter/img/am-logo.png" /></a>
+        </div>
       </div>
+      
     </section>
+    
 
     <!-- </div>
 
@@ -1123,7 +1146,7 @@ export default {
   // 		return
   // 	}
   //   // else{
-  //   //   this.$router.push(`/login-via-mobile`)
+  //   //   this.$router.push(`/login-via-email`)
   //   // }
   // 	if (!this.user.has_desk_access) {
   // 		this.$router.push({ path: "/home" })

@@ -85,7 +85,7 @@
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/">
-              <img src="../../src/assets/Inter/img/logo-1.1.ico"
+              <img src="../../src/assets/Inter/img//logo256x256.svg"
                 class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 mr-2 w-16" />
             </a>
             <a href="/"><span
@@ -290,7 +290,7 @@ export default {
       return
     }
     // else{
-    //   this.$router.push(`/login-via-mobile`)
+    //   this.$router.push(`/login-via-email`)
     // }
     // if (!this.user.has_desk_access) {
     // 	this.$router.push({ path: "/home" })
