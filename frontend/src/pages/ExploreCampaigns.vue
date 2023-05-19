@@ -5,28 +5,28 @@
         <div class="bg-overlay lg:!py-24 py-10">
             <div v-if="lang == 'hi'"
                 class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 card-space mb-4">
-                <p
+                <h1
                     class="text-[24px] md:text-[28px] lg:text-[34px] mb-1.5 text-center font-bold text-[#364958] leading-normal">
                     जरूरतमंदों की मदद करने के लिए
                     <span class="text-[#40b751]">बेस्टडीड अभियान</span>
                     से हाथ मिलाओ।
-                </p>
+                </h1>
             </div>
             <div v-else-if="lang == 'gu'"
                 class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 card-space mb-4">
-                <p
+                <h1
                     class="text-[24px] md:text-[28px] lg:text-[34px] mb-1.5 text-center font-bold text-[#364958] leading-normal">
                     જરૂરિયાતમંદોને મદદ કરવા
                     <span class="text-[#40b751]">બેસ્ટડીડ ઝુંબેશ</span>
                     સાથે હાથ જોડો.
-                </p>
+                </h1>
             </div>
             <div v-else class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 card-space mb-4">
-                <p
+                <h1
                     class="text-[24px] md:text-[28px] lg:text-[34px] mb-1.5 text-center font-bold text-[#364958] leading-normal">
                     {{ $t('Join hands with') }} <span class="text-[#40b751]">{{ $t('BestDeed Campaigns') }}</span>
                     {{ $t('to help needy.') }}
-                </p>
+                </h1>
             </div>
             <div class="container mx-auto card-space campaign-search mb-12">
                 <div class="flex justify-center mx-auto lg:!w-4/6 w-full sm:!w-1/2 flex-wrap lg:!flex-nowrap">
@@ -540,7 +540,7 @@ export default {
     name: "Explore Campaigns",
     components: { Navbar, Footer },
     mounted() {
-        document.title = this.$t('Support Causes That Matter: BestDeed - Your Trusted and 100% Transparent Crowdfunding Platform | Bestdeed')
+        document.title = this.$t('Support Causes That Matter | Bestdeed')
         this.get_language()
         this.get_campaigns()
         const linkElement = document.querySelector('link[rel="canonical"]');

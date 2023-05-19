@@ -5,9 +5,9 @@
 
         <div class="menubar flex items-center">
           <img src="../assets/Inter/img/icon/navbar_phone.png">
-          <a href="tel:+91 9999999999"
+          <a href="tel:+91 7043029467"
             class="cursor-pointer transition font-medium text-black  sm:mr-1 md:mr-2 lg:mr-4 text-[14px]  transition duration-300 rounded  hover:text-[#364958]">
-            {{ $t('+91 9999999999') }}</a>
+            {{ $t('+91 7043029467') }}</a>
           <img class="mr-1" src="../assets/Inter/img/icon/navbar_email.png">
           <a href="mailto:bestdeed2023@gmail.com"
             class="cursor-pointer transition font-medium text-black  text-[14px] transition duration-300 rounded  hover:text-[#364958]">
@@ -213,10 +213,10 @@
       <Dialog v-model="showLanguageDialog">
         <template #body>
           <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-            <h1
+            <h4
               class="text-[25px] md:text-[30px] lg:text-[36px] font-semibold py-4  text-green-500 text-bold text-center">
               {{ $t('Select Your Language') }}
-            </h1>
+            </h4>
             <div class=" grid justify-items-center">
               <div>
                 <button

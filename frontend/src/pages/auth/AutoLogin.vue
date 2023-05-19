@@ -15,9 +15,9 @@
                <div class="text-center">
                   <img src="/src/assets/Inter/img/logo-1.1.ico"
                 class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
-                  <div class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
+                  <h1 class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
               <small>{{$t('Login')}} </small>
-            </div>
+                  </h1>
                 </div>
                          <div class="relative ">
                             <div class="mb-4">
@@ -79,7 +79,7 @@
             <!-- Right column container with background and description-->
            <div class="flex items-center rounded-b-lg bg-gradient-to-l from-lime-600 to-green-400 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
             <div class="px-6 py-6 text-white">
-                <h4 class="mb-6 text-xl font-semibold">Welcome to BestDeed!</h4>
+                <div class="mb-6 text-xl font-semibold">Welcome to BestDeed!</div>
                 <p class="text-sm">{{ $t('BestDeed is a leading platform that connects donors with non-profit organizations worldwide. We strive to create a world where everyone has the opportunity to make a positive impact on society. Through our user-friendly website, users can easily discover and donate to a variety of causes, from education to environmental sustainability. We are committed to providing a safe and secure platform for donors and organizations to collaborate and make a meaningful difference in the world. Thank you for choosing BestDeed as your go-to platform for charitable giving.')}}</p>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default {
         };
     },
     mounted() {
-        document.title = this.$t('Login Now | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
+        document.title = this.$t('Login Now | BestDeed')
 
     const linkElement = document.querySelector('link[rel="canonical"]');
 

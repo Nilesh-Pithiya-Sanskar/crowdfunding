@@ -12,10 +12,10 @@
                     <img class="w-full h-52 cursor-pointer" :src="data.meta_image" alt="" @click="openblog(data.name)">
                     <div class="pt-5 pr-9  md:pr-6 lg:pr-9 pd-7 pl-9 md:pl-6 lg:pl-9 ">
 
-                        <h3 class="fontfamily cursor-pointer text-[#364958] font-bold text-[18px] md:text-[18px] lg:text-[20px] mb-2 truncate-2-lines"
+                        <h4 class="fontfamily cursor-pointer text-[#364958] font-bold text-[18px] md:text-[18px] lg:text-[20px] mb-2 truncate-2-lines"
                             @click="openblog(data.name)">
                             {{ $t(data.title) }}
-                        </h3>
+                        </h4>
                         <p class="text-gray-700 text-[16px]  truncate-2-lines ">{{ $t(data.blog_intro) }}</p>
 
                         <p class="pb-2 pt-2 text-gray-500  text-[13px] truncate"><strong>By: </strong>{{
@@ -61,7 +61,7 @@ import { inject, provide, ref } from "vue"
 export default {
     name: "Blog",
     created() {
-        document.title = this.$t('Discover Inspiring Stories and Expert Insights on BestDeed Blogs | Bestdeed')
+        document.title = this.$t('Discover Inspiring Stories & on BestDeed Blogs | Bestdeed')
         this.get_blogs()
         const linkElement = document.querySelector('link[rel="canonical"]');
     if (!linkElement) {

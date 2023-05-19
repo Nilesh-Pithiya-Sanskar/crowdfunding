@@ -6,9 +6,9 @@
             <div class="w-full pt-[28px]">
                 <div class="container mx-auto py-0">
                     <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
-                        <div class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
+                        <h1 class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
                             {{ $t('Request a Campaign') }}
-                        </div>
+                        </h1>
                         <div class="relative z-0">
                             <div class=" sm:py-2 md:py-4 lg:py-8 ">
                                 <ul
@@ -286,7 +286,7 @@ export default {
     //     }
     // },
     created(){
-        document.title = this.$t('Request a Campaign on BestDeed, the Trusted, and 100% Transparent Crowdfunding Platform  | BestDeed')
+        document.title = this.$t('Request a Campaign for Your Cause | BestDeed')
         this.$nextTick(() => this.$refs.fullname.focus())
         const linkElement = document.querySelector('link[rel="canonical"]');
     if (!linkElement) {

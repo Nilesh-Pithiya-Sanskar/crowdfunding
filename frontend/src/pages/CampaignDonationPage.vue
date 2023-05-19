@@ -4,7 +4,7 @@
     <div class="container mx-auto mt-[40px]">
         <div v-if="campaign_detail" class="px-[14px] md:px-0 lg:px-0">
             <!-- {{ campaign_detail }}  -->
-            <h2 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu">
+            <h1 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu">
                 <span
                     class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 lg:text-[32px] text-[28px] font-bold text-[#364958] capitalize">{{
                         $t(campaign_detail.data.campaign_title_gu) }} </span>
@@ -22,9 +22,9 @@
                         {{ benefit.benefit }}
                     </button>
                 </span>
-            </h2>
+            </h1>
 
-            <h2 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi">
+            <h1 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi">
                 <span
                     class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 lg:text-[32px] text-[28px] font-bold text-[#364958] capitalize">{{
                         $t(campaign_detail.data.campaign_title_hi) }} </span>
@@ -42,8 +42,8 @@
                         {{ benefit.benefit }}
                     </button>
                 </span>
-            </h2>
-            <h2 v-else>
+            </h1>
+            <h1 v-else>
                 <span
                     class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 lg:text-[32px] text-[28px] font-bold text-[#364958] capitalize">{{
                         $t(campaign_detail.data.campaign_title) }} </span>
@@ -61,7 +61,7 @@
                         {{ benefit.benefit }}
                     </button>
                 </span>
-            </h2>
+            </h1>
             <!-- <span v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
                             class="h-[30px] bg-[#40b751] mr-[2px] capitalize text-[11px] font-normal text-white px-[10px] md:px-[10px] lg:px-[10px] rounded-[12px] cursor-text">
@@ -143,14 +143,14 @@
 
                                     <div class="lg:w-9/12 xl:w-9/12">
                                         <div class="md:pl-3">
-                                            <h4 v-if="lang == 'gu' && products.display_as_name_gu"
+                                            <div v-if="lang == 'gu' && products.display_as_name_gu"
                                                 class="text-xl font-medium text-[#40b751] mb-1">{{
-                                                    $t(products.display_as_name_gu) }}</h4>
-                                            <h4 v-else-if="lang == 'hi' && products.display_as_name_hi"
+                                                    $t(products.display_as_name_gu) }}</div>
+                                            <div v-else-if="lang == 'hi' && products.display_as_name_hi"
                                                 class="text-xl font-medium text-[#40b751]">{{
-                                                    $t(products.display_as_name_hi) }}</h4>
-                                            <h4 v-else class="text-xl font-medium text-[#40b751] mb-1.5">{{
-                                                $t(products.display_as_name) }}</h4>
+                                                    $t(products.display_as_name_hi) }}</div>
+                                            <div v-else class="text-xl font-medium text-[#40b751] mb-1.5">{{
+                                                $t(products.display_as_name) }}</div>
                                             <div class="w-full">
                                                 <div class="flex w-full h-[5px] bg-gray-200 rounded-md dark:bg-gray-700">
                                                     <div v-if="products.c_qty"
@@ -229,12 +229,12 @@
                     <div v-for="index in descToShow">
                         <div v-if="index - 1 < campaign_detail.data.description.length">
                             <img class="object-fill w-full" :src="campaign_detail.data.description[index - 1].image">
-                             <h4  v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_title_gu" class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     campaign_detail.data.description[index - 1].image_title_gu }}</h4>
-                            <h4 v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_title_hi" class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     campaign_detail.data.description[index - 1].image_title_hi }}</h4>
-                            <h4 v-else class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     campaign_detail.data.description[index - 1].image_title }}</h4>
+                             <div  v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_title_gu" class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                     campaign_detail.data.description[index - 1].image_title_gu }}</div>
+                            <div v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_title_hi" class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                     campaign_detail.data.description[index - 1].image_title_hi }}</div>
+                            <div v-else class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                     campaign_detail.data.description[index - 1].image_title }}</div>
 
                             <p v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_description_gu"
                                 style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
@@ -824,10 +824,10 @@
     <Dialog v-model="showDialog_c">
         <template #body>
             <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
-                <h1
+                <h3
                     class="text-2xl md:text-[30px] lg:text-[36px] font-semibold py-8 px-10 text-green-500 text-bold text-center">
                     {{ $t('Donation Checkout') }}
-                </h1>
+                </h3>
                 <div class="relative z-0">
                     <div class="mb-4">
                         <!-- <label class="block text-gray-600 text-base  mb-2">{{ $t('Name') }}
@@ -1039,17 +1039,6 @@ export default {
         // this.$route.meta.title = 'asdfadsf'
         // this.$route.meta.title = 'asdf'
         // this.metaTitle = 'adsf'
-            const linkElement = document.querySelector('link[rel="canonical"]');
-    if (!linkElement) {
-      var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/campaign-donation"
-    document.head.appendChild(link);
-    }
-    else{
-      linkElement.href = "https://bestdeed.org/campaign-donation"
-      document.head.appendChild(linkElement)
-    }
 
         this.get_campaign_donation_detail(name.params.name)
         this.get_recent_donation(name.params.name)
@@ -1299,12 +1288,33 @@ export default {
                             document.title = res.data.campaign_title + " | " + this.$t('BestDeed')
                         }
 
-                        var meta = document.createElement('meta');
+                        var titleTag = document.querySelector('title');
+
+                        const linkElement = document.querySelector('link[rel="canonical"]');
+                        if (!linkElement) {
+                            var link = document.createElement('link');
+                            link.rel = 'canonical';
+                            link.href = `https://bestdeed.org/campaign-donation/${name}`
+                            // document.head.appendChild(link);
+                            titleTag.insertAdjacentElement('afterend', link);
+                        }
+                        else{
+                            linkElement.href = `https://bestdeed.org/campaign-donation/${name}`
+                            document.head.appendChild(linkElement)
+                        }
+
+                        var meta = document.querySelector('meta[name="keyword"]');
+                        if (!meta) {
+                            meta = document.createElement('meta');
+                        }
                         meta.name = 'keywords';
                         meta.content = "donation,charity,crowdfunding,fundraising,donate online,donate online to charity,donations for nonprofits,donation websites for nonprofit,donate online india";
                         document.head.appendChild(meta);
 
-                        var meta = document.createElement('meta');
+                        var meta = document.querySelector('meta[name="description"]');
+                        if (!meta) {
+                            meta = document.createElement('meta');
+                        }
                         meta.name = "description";
                         if (this.lang == 'gu' && res.data.short_description_gu) {
                             meta.content = res.data.short_description_gu
@@ -1317,12 +1327,19 @@ export default {
                         }
                         document.head.appendChild(meta);
 
-                        var meta1 = document.createElement('meta');
+                        
+                        var meta1 = document.querySelector('meta[property="og:type"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:type');
                         meta1.content = 'Website';
                         document.head.appendChild(meta1);
 
-                        var meta1 = document.createElement('meta');
+                        var meta1 = document.querySelector('meta[property="og:title"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:title');
                         if (this.lang == 'gu' && res.data.campaign_title_gu) {
                             meta1.content = res.data.campaign_title_gu;
@@ -1336,8 +1353,12 @@ export default {
                         document.head.appendChild(meta1);
 
 
-                        var meta1 = document.createElement('meta');
+                        var meta1 = document.querySelector('meta[property="og:description"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:description');
+                        
                         if (this.lang == 'gu' && res.data.short_description_gu) {
                             meta1.content = res.data.short_description_gu
                         }
@@ -1349,9 +1370,36 @@ export default {
                         }
                         document.head.appendChild(meta1);
 
-                        var meta1 = document.createElement('meta');
+                        var meta1 = document.querySelector('meta[property="og:image"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:image');
                         meta1.content = window.origin + res.data.campain_image;
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.querySelector('meta[property="og:url"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
+                        meta1.setAttribute('property', 'og:url');
+                        meta1.content = this.url;
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.querySelector('meta[property="article:published_time"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
+                        meta1.setAttribute('property', 'article:published_time');
+                        meta1.content = '2020-01-21T02:17:05+02:00';
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.querySelector('meta[property="article:modified_time"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
+                        meta1.setAttribute('property', 'article:modified_time');
+                        meta1.content = '2020-01-21T11:09:46+02:00';
                         document.head.appendChild(meta1);
 
                     });

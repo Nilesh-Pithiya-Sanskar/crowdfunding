@@ -2,12 +2,12 @@
     <Navbar />
 
     <div class="container mx-auto h-full mt-10 mb-[5rem] text-gray-500 text-center">
-        <h2 class="mb-2 text-[50px] font-bold leading-none sm:text-[80px] md:text-[100px]">
+        <h1 class="mb-2 text-[50px] font-bold leading-none sm:text-[80px] md:text-[100px]">
             404
-        </h2>
-        <h4 class="mb-3 text-[22px] font-semibold leading-tight">
+        </h1>
+        <p class="mb-3 text-[22px] font-semibold leading-tight">
         {{$t('Oops! That page can’t be found')}}
-        </h4>
+        </p>
         <p class="mb-8 text-lg">
         {{$t('The page you are looking for has gone missing.')}}
         </p>

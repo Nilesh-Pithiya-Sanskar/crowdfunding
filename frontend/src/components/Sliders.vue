@@ -16,17 +16,17 @@
             <div class="fontfamily fontcolor  h-[160px]">
               <button class="bg-[#364958] text-[14px] rounded-lg pl-4 pr-4 pt-0 pb-0 text-white mb-2 ">{{
                 $t('Featured') }}</button>
-              <h3 v-if="lang == 'gu' && data.campaign_title_gu"
+              <div v-if="lang == 'gu' && data.campaign_title_gu"
                 class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold truncate-2-lines-card mb-1">{{
                   $t(data.campaign_title_gu) }}
-              </h3>
-              <h3 v-else-if="lang == 'hi' && data.campaign_title_hi"
+              </div>
+              <div v-else-if="lang == 'hi' && data.campaign_title_hi"
                 class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold  truncate-2-lines-card mb-1">{{
                   $t(data.campaign_title_hi) }}
-              </h3>
-              <h3 v-else class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold  truncate-2-lines-card mb-1">
+              </div>
+              <div v-else class="leading-7 text-[20px] md:text-[22px] lg:text-[22px] font-bold  truncate-2-lines-card mb-1">
                 {{
-                  $t(data.campaign_title) }}</h3>
+                  $t(data.campaign_title) }}</div>
               <p v-if="lang == 'gu' && data.short_description_gu"
                 class="text-[#000000] truncate-3-lines text-justify opacity-6">
                 {{ data.short_description_gu }}

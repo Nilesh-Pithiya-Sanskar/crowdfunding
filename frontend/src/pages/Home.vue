@@ -47,77 +47,101 @@
       </div>
     </section> -->
 
+<!-- <section class="relative overflow-hidden bg-cover bg-no-repeat"  -->
+  <section class="bg-image bg-no-repeat bg-center bg-cover"
 
-    <section class="bg-image bg-no-repeat bg-center bg-cover"
-      style="background-image: url('https://bestdeed.org/files/BG.png');">
-      <div class="container mx-auto md:pb-[0rem] lg:pb-[5rem]">
+style="background-image: url('https://bestdeed.org/files/BG.png');">
+  <div class="container mx-auto md:pb-[0rem] lg:pb-[5rem]">
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-2">
-          <div class="sm:mt-5 md:mt-36 lg:mt-36 mb-5 ml-5 md:ml-0 lg:ml-0">
-            <h1
-              class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
-              {{ $t('BestDeed') }}
-            </h1>
-            <h3
-              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[28px] md:text-[28px] lg:text-[38px]">
-              Most trusted crowd <br>funding platform of india.</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-2 ">
+      <div class="sm:mt-20 md:mt-20 lg:mt-36 mb-5 ml-5 md:ml-0 lg:ml-0">
+        <div
+          class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
+          {{ $t('BestDeed') }}
+        </div>
+        <h1
+          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[28px] md:text-[28px] lg:text-[38px]">
+          Most trusted crowd <br>funding platform of india.</h1>
 
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-16 mb-8 sm:mr-auto md:mr-24 lg:mr-24">
-              <div class="flex items-center">
-                <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
-                <div><img src="../../src/assets/Inter/img/0.png" class="" /></div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
+          <div class="flex items-center">
+            <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
+            <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-14 w-18 md:w-14 lg:w-16" />
+            <div
+              class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Platform</div>
+              <div class="-mt-2">Fees</div>
+            </div>
+          </div>
+          <!-- <div class="flex items-center">
+                <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> 
+                <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="" />
                 <div
                   class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
                   <div>Platform</div>
                   <div class="-mt-2">Fees</div>
                 </div>
-              </div>
-
-              <div class="flex items-center">
-                <div><img src="../../src/assets/Inter/img/100.png" class="" /></div>
+              </div> -->
+          <div class="flex items-center">
+            <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Donate With</div>
+              <div class="-mt-2">Transparency</div>
+            </div>
+            <!-- <div class="flex items-center">
+                <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max" />
                 <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[22px] ml-2">
                   <div>Donate With</div>
-                  <div class="-mt-2">Transparency</div>
+                  <div class="-mt-2">Transparency</div>h-10 md:h-22 lg:h-20 w-14 md:w-20 lg:w-14
                 </div>
-              </div>
-
-              <div class="flex items-center">
-                <div><img src="../../src/assets/Inter/img/layer.png" class="" /></div>
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[22px] ml-2">
+              </div> -->
+          </div><div class="flex items-center">
+            <img src="../../src/assets/Inter/img/layer.png" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Verified</div>
+              <div class="-mt-2">NGOs</div>
+            </div>
+          </div>
+          <!-- <div class="flex items-center">
+                <img src="../../src/assets/Inter/img/layer.png" class="" />
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
                   <div>Verified</div>
                   <div class="-mt-2">NGOs</div>
                 </div>
-              </div>
-
-              <div class="flex items-center">
-                <div><img src="../../src/assets/Inter/img/ellipse.png" class="" /></div>
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[22px] ml-2">
+              </div> -->
+          <div class="flex items-center">
+            <img src="../../src/assets/Inter/img/ellipse.png" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Tax</div>
+              <div class="-mt-2">Exemption</div>
+            </div>
+          </div>
+        </div>
+         <!-- <div class="flex items-center">
+                <img src="../../src/assets/Inter/img/ellipse.png" class="" />
+                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
                   <div>Tax</div>
                   <div class="-mt-2">Exemption</div>
                 </div>
-              </div>
+              </div> -->
 
-
-            </div>
-
-
-            <h3
-              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
-              Your help goes a long way!</h3>
-            <router-link to="/explore-campaign"
-              class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[14px] md:text-[16px] lg:text-[18px] mr-10 md:mr-20 lg:mr-64 break-keep">
-              Support an NGOs </router-link>
-          </div>
-
-          <div class="grid place-items-center mx-auto">
-            <img src="../../src/assets/Inter/img/rightside.png"
-              class="sm:mt-16 md:mt-36 lg:mt-36 sm:ml-0 md:ml-36 lg:ml-36" />
-          </div>
-        </div>
-
+        <p
+          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[20px] md:text-[20px] lg:text-[22px] break-keep">
+          Your help goes a long way!</p>
+        <router-link to="/explore-campaigns"
+          class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
+          Support an NGOs </router-link>
       </div>
-    </section>
+
+      <div class="grid place-items-center  mt-5 md:mt-10 lg:mt-0  mx-4 md:mx-10 lg:mx-0">
+        <img src="../../src/assets/Inter/img/rightside.png"
+          class="sm:mt-16 md:mt-16 lg:mt-36 ml-0 md:ml-14 lg:ml-16 xl:ml-36 mb-10 md:mb-16 lg:mb-0" />
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 
@@ -703,37 +727,6 @@
     </section>
 
 
-    <!-- <section class="mx-auto container">
-      <h2 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">{{ $t('Featured in') }}</h2>
-      <div class="overflow-x-scroll overflow-y-hidden flex">
-        <div class="h-24 w-24">
-          <a href="https://cmogujarat.gov.in/en/photo-gallery/cm-shri-vijaybhai-rupani-inaugurated-pipaliya-bhawan-sadbhavna-vriddhashram-in-rajkot/"><img src="../assets/Inter/img/cmo-gujraat-logo.png" /></a>
-        </div>
-        <div class="h-24 w-24">
-          <a href="https://www.divyabhaskar.co.in/dvb-original/news/rajkot-sadbhavana-old-age-home-opened-school-bull-and-treat-as-a-family-mamber-129038474.html"><img src="../assets/Inter/img/divyabhaskar.png" /></a>
-        </div>
-        <div class="h-24 w-24">
-          <a href="https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html"><img src="../assets/Inter/img/mainlogo_gujrati.png" /></a>
-        </div>
-        <div class="h-24 w-24 ">
-          <a href="https://www.dnaindia.com/india/video-rajkot-man-makes-city-green-by-planting-over-7-lakh-trees-2908027"><img src="../assets/Inter/img/dna.png" /></a>
-        </div>
-        <div class="h-24 w-24">
-          <a href="https://www.abtakmedia.com/make-a-call-sadbhavna-old-age-home-will-come-home-and-plant-a-tree/"><img src="../assets/Inter/img/NEW-Abtak-rr-logo-png-1.png" /></a>
-        </div>
-        <div class="h-24 w-24">
-          <a href="https://timesofindia.indiatimes.com/videos/city/ahmedabad/rajkot-man-makes-city-green-by-planting-over-7-lakh-trees/videoshow/85666112.cms?from=mdr"><img src="../assets/Inter/img/images.png" /></a>
-        </div>
-        <div class="h-24 w-24">
-          <a href="https://www.zee5.com/articles/gujarat-man-plants-750000-trees-in-rajkot-aims-to-turn-entire-state-green"><img src="../assets/Inter/img/zee5.png" /></a>
-        </div>               
-        <div class="h-24 w-24">
-          <a href="https://ahmedabadmirror.com/bizman-on-green-mission-recruits-280-to-water-plants/79726987.html"><img src="../assets/Inter/img/am-logo.png" /></a>
-        </div>
-      </div>
-      
-    </section>
-     -->
 
     <!-- </div>
 
@@ -744,244 +737,223 @@
       <div class="mb-28 mt-10">
         <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-10">
           {{ $t('Why join us in this noble cause?') }}</h3>
-        <div class="grid grid-cols-3 justify-items-center gap-8 mb-8 ">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-items-center gap-8 px-10 md:px-10 lg:px-10">         
           <div class="grid justify-items-center">
-            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            <img class="" alt="Simple Process" title=""
               src="../../src/assets/Inter/img/firstimage.png" />
-            <h4 class="capitalize -mt-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Easy process
-            </h4>
-            <p class="text-[#3f4640] -mt-2 text-center text-[14px] md:text-[14px] lg:text-[16px]">Donating to NGOs and
-              making an impact is quite easier with Best Deed. Within just 4 simple steps, you can make a move.</p>
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Easy process
+            </div>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Donating to NGOs and
+              making an impact is quite easier with Best Deed. Within just 4 simple steps, you can make a move. </p>
           </div>
           <div class="grid justify-items-center">
-            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            <img class="" alt="100% transparency" title=""
               src="../../src/assets/Inter/img/secondimage.png" />
-            <h4 class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">End-to-end
-              transparency</h4>
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">End-to-end
+              transparency
+            </div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">We maintain end-to-end
               transparency of every donation we receive with our donors so that they can better track where and how we are
               using it!</p>
           </div>
           <div class="grid justify-items-center">
-            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            <img class="" alt="Fundraisers" title=""
               src="../../src/assets/Inter/img/thirdimage.png" />
-            <h4 class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-              Fundraisers for various causes</h4>
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Fundraisers for various causes
+            </div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed has fundraisers for
               a diverse range of causes, right, from education, environment, animals, etc., and you can select the one
               that resonates with your values and passions.</p>
           </div>
-        </div>
-        <div class="grid grid-cols-3 justify-items-center gap-2 mb-6">
           <div class="grid justify-items-center">
-            <img
-              class="h-[46px] mt-10 md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[70px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
-              src="../../src/assets/Inter/img/fourthimage.png" />
-            <h4 class="capitalize mt-2 mb-1 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Multiple
-              Ways to Donate</h4>
-            <p class=" mb-10 text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]"> Best Deed offers
+            <img class="lg:mt-10" alt="way to donate" title=""
+              src="../../src/assets/Inter/img/sevenimage.png" />
+            <div class="capitalize mt-2 mb-2 text-[#3f4640]  text-[16px] md:text-[16px] lg:text-[18px] font-bold">Multiple
+              Ways to Donate
+            </div>
+            <p class="text-[#3f4640] lg:mb-10 text-center text-[14px] md:text-[14px] lg:text-[16px]"> Best Deed offers
               flexibility when it comes to donating. Whether through monetary donations, donating through products, or
               even volunteering, you can make a difference in any way possible.</p>
           </div>
-          <div class="grid justify-items-center">
+          <div class="grid justify-items-center hidden md:block lg:block ">
             <img
-              class="h-[46px] md:h-[300px] lg:-m-10 lg:h-[400px] w-[40px] md:w-[1300px] lg:w-[1500px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+              class="" alt="Causes" title=""
               src="../../src/assets/Inter/img/fifthimage.png" />
-
           </div>
           <div class="grid justify-items-center">
-            <img
-              class="h-[46px] mt-10 md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            <img class="lg:mt-10" alt="0 payments" title=""
               src="../../src/assets/Inter/img/siximage.png" />
-            <h4 class="capitalize mt-2 mb-1 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-              Hassle-free payment</h4>
-            <p class=" mb-10 text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">When you choose the
+            <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">Hassle-free payment
+            </div>
+            <p class="text-[#3f4640] lg:mb-14 text-center text-[14px] md:text-[14px] lg:text-[16px]">When you choose the
               products you want to donate, you can easily make the payment through your preferred payment mode and
               currency. </p>
           </div>
-        </div>
-        <div class="grid grid-cols-3 justify-items-center gap-8 mb-8 ">
           <div class="grid justify-items-center">
-            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[68px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            <img class="" alt="Plateform" title=""
               src="../../src/assets/Inter/img/sevenimage.png" />
-            <h4 class="capitalize text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Trusted platform
-            </h4>
-            <p class="text-[#3f4640] -mt-2 text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed is a trusted
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Trusted platform
+            </div>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed is a trusted
               and reliable crowdfunding platform backed with all the required certificates, licenses, permits, and a
               robust security system. </p>
           </div>
           <div class="grid justify-items-center">
-            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[62px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            <img class="" alt="Smart" title=""
               src="../../src/assets/Inter/img/eightimage.png" />
-            <h4 class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Smart
-              dashboard</h4>
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Smart
+              dashboard</div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed believes in keeping
               donors and NGOs updated with the donation received and paid with the help of a smart dashboard and real-time
               alerts. </p>
           </div>
           <div class="grid justify-items-center">
-            <img class="h-[46px] md:h-[50px] lg:h-[72px] w-[40px] md:w-[50px] lg:w-[70px] mr-3 ml-8 md:ml-0 lg:ml-0 pt-2"
+            <img class="" alt="0 charges" title=""
               src="../../src/assets/Inter/img/nineimage.png" />
-            <h4 class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">0% charges
-            </h4>
+            <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">0% charges
+            </div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">At Best Deed, we do not charge
               anything from the NGOs or donors while donating or starting a campaign. Donating or starting a campaign is
               100% free.</p>
           </div>
         </div>
       </div>
+    </section>
+    <section class="container mx-auto  h-full mb-20 px-10 md:px-10 lg:px-10">
       <div>
-        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-8">
-          {{ $t('how can you do it?') }}</h3>
+        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold text-[#40b751] mb-8">
+          {{ $t('How Can You Do It?') }}</h3>
         <div class="pt-0">
           <div class="w-full bg-grey-lightest">
             <div class="py-0">
-              <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
+              <div class="">
                 <ul class="flex justify-center flex-wrap ">
                   <a class="cursor-pointer text-center text-[14px] md:text-[14px] lg:text-[16px] mr-4 block leading-normal"
                     v-on:click="toggleTabs(1)" v-bind:class="{
                       'text-[#3f4640] bg-white': openTab !== 1,
                       'border-b-2 border-[#40b751] text-[#40b751] font-bold bg-white': openTab === 1,
                     }">
-                    For Donors
+                    {{ $t('For Donors') }}
                   </a>
                   <a class="cursor-pointer text-center text-[14px] md:text-[14px] lg:text-[16px] block leading-normal"
                     v-on:click="toggleTabs(2)" v-bind:class="{
                       'text-[#3f4640] bg-white': openTab !== 2,
                       'border-b-2 border-[#40b751] text-[#40b751] font-bold bg-white': openTab === 2,
                     }">
-                    For NGOs
+                    {{ $t('For NGOs') }}
                   </a>
                 </ul>
                 <div class="px-0 py-px flex-auto">
                   <div class="tab-content tab-space">
                     <div v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }">
-                      <section class="text-[#3f4640] mt-10">
-                        <div class="grid grid-cols-5 gap-6">
+                      <div class="text-[#3f4640] mt-10">
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                           <div class="relative  grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-4 w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Cause" title=""
                               src="../../src/assets/Inter/img/firstimagedonor.png" />
-                            <h4
+                            <div
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Select a cause</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">First things
-                              first, you need to choose the fundraiser and select the cause you would like to support. You
-                              can even choose multiple campaigns as well.</p>
+                              {{ $t('Select a cause') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('First things first, you need to choose the fundraiser and select the cause you would like to support.You can even choose multiple campaigns as well.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="relative grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-2 w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Type" title=""
                               src="../../src/assets/Inter/img/secondimagedonor.png" />
-                            <h4
+                            <div
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Choose the type</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">After
-                              selecting the cause you want to donate to, you can decide whether you need to donate
-                              monetarily or through products.</p>
+                              {{ $t('Choose the type') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After selecting the cause you want to donate to, you can decide whether you need to donate monetarily or through products.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="relative grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-4 w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Enter amount" title=""
                               src="../../src/assets/Inter/img/thirdimagedonor.png" />
-                            <h4
+                            <div
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Decide the what & how</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">After choosing
-                              the type of donation, you have to enter the amount you would like to donate or the products
-                              you want to donate.</p>
+                              {{ $t('Decide the what & how') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('After choosing the type of donation, you have to enter the amount you would like to donate or the products you want to donate.')}}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="relative grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-2  w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Detail" title=""
                               src="../../src/assets/Inter/img/fourthimagedonor.png" />
-                            <h4
+                            <div
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Add the essential details</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Moving
-                              forward, you need to add essential details such as your name, email id, and contact number.
-                            </p>
+                              {{ $t('Add the essential details') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('Moving forward, you need to add essential details such as your name, email id, and contact number.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] mb-4 w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Payment" title=""
                               src="../../src/assets/Inter/img/fifthimagedonor.png" />
-                            <h4
+                            <div
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Make a payment </h4>
-                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">After entering
-                              the required details, you can make the payment through your preferred payment method, and
-                              IT'S DONE! </p>
+                              {{ $t('Make a payment') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t("After entering the required details, you can make the payment through your preferred payment method, and IT'S DONE!") }}</p>
                           </div>
                         </div>
-                      </section>
+                      </div>
                     </div>
                     <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
-                      <section class="text-[#3f4640] mt-10">
-                        <div class="grid grid-cols-5 gap-6">
-                          <div class="relative grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                      <div class="text-[#3f4640] mt-10">
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                          <div class="relative  grid justify-items-center">
+                            <img class="" alt="Detail" title=""
                               src="../../src/assets/Inter/img/imagefirstngo.png" />
-                            <h4
-                              class="capitalize text-[#3f4640] text-center text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Fill up the details</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] -mt-6 md:text-[14px] lg:text-[16px]">To start
-                              a campaign on Best Deed; you need to fill up all the essential details. To start a campaign,
-                              click here, <u class="font-bold cursor-pointer">start a campaign.</u></p>
+                            <div
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              {{ $t('Fill up the details') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To start a campaign on Best Deed; you need to fill up all the essential details. To start a campaign, For click here,') }}
+                               <a class="underline font-bold">{{ $t('start a campaign.') }}</a></p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="relative grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Verification" title=""
                               src="../../src/assets/Inter/img/imagesecondngo.png" />
-                            <h4
-                              class="capitalize text-[#3f4640] text-center mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Verification</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] -mt-8 md:text-[14px] lg:text-[16px]">To start
-                              a campaign on Best Deed; you need to fill up all the essential details. To start a campaign,
-                              click here, start a campaign.</p>
+                            <div
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              {{ $t('Verification') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After getting all the details from your end, our team will verify everything before getting started with your campaign.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="relative grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Campaign live" title=""
                               src="../../src/assets/Inter/img/imagethirdngo.png" />
-                            <h4
-                              class="capitalize text-[#3f4640] text-center text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              It's LIVE</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] -mt-8 md:text-[14px] lg:text-[16px]">If
-                              everything goes well, we will live your campaign with the story, your requirements, images,
-                              and videos. </p>
+                            <div
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              {{ $t("It's LIVE") }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('If everything goes well, we will live your campaign with the story, your requirements, images, and videos.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="relative grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Campaign Share" title=""
                               src="../../src/assets/Inter/img/imagefourthngo.png" />
-                            <h4
-                              class="capitalize text-[#3f4640] text-center mt-10 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Share it</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] mt-2 md:text-[14px] lg:text-[16px]">To get
-                              better support; you can easily share your campaign with your friends, family, colleagues,
-                              and even on social media directly from our dashboard.</p>
+                            <div
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              {{ $t('Share it') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To get better support; you can easily share your campaign with your friends, family, colleagues, and even on social media directly from our dashboard.') }}
+                            </p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidde hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
                           </div>
                           <div class="grid justify-items-center">
-                            <img class="h-[46px] md:h-[50px] lg:h-[120px] w-[40px] md:w-[50px] lg:w-[140px]"
+                            <img class="" alt="Manage dashboard" title=""
                               src="../../src/assets/Inter/img/imagefifthngo.png" />
-                            <h4
-                              class="capitalize text-[#3f4640] text-center mt-6 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
-                              Manage it seamlessly</h4>
-                            <p class="text-[#3f4640] text-center text-[14px] -mt-4 md:text-[14px] lg:text-[16px]">After
-                              the campaign is live, you can manage it through your personalized dashboard and stay updated
-                              with real-time alerts.</p>
+                            <div
+                              class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
+                              {{ $t('Manage it seamlessly') }}</div>
+                            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After the campaign is live, you can manage it through your personalized dashboard and stay updated with real-time alerts.') }}</p>
                           </div>
                         </div>
-                      </section>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -994,7 +966,92 @@
 
     <Testimonials />
 
-    <!--Featured In-->
+    <!-- <section class="mx-auto container mt-5">
+      <h3 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">{{ $t('Featured in') }}
+      </h3>
+      <div class="overflow-x-scroll overflow-y-hidden flex flex-auto">
+        <div class="h-24 w-24">
+          <a
+            href="https://cmogujarat.gov.in/en/photo-gallery/cm-shri-vijaybhai-rupani-inaugurated-pipaliya-bhawan-sadbhavna-vriddhashram-in-rajkot/"><img
+              src="../assets/Inter/img/cmo-gujraat-logo.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a
+            href="https://www.divyabhaskar.co.in/dvb-original/news/rajkot-sadbhavana-old-age-home-opened-school-bull-and-treat-as-a-family-mamber-129038474.html"><img
+              src="../assets/Inter/img/divyabhaskar.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a
+            href="https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html"><img
+              src="../assets/Inter/img/mainlogo_gujrati.png" /></a>
+        </div>
+        <div class="h-24 w-24 ">
+          <a
+            href="https://www.dnaindia.com/india/video-rajkot-man-makes-city-green-by-planting-over-7-lakh-trees-2908027"><img
+              src="../assets/Inter/img/dna.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a href="https://www.abtakmedia.com/make-a-call-sadbhavna-old-age-home-will-come-home-and-plant-a-tree/"><img
+              src="../assets/Inter/img/NEW-Abtak-rr-logo-png-1.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a   <section class="mx-auto container mt-5">
+      <h3 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mb-[20px]">{{ $t('Featured in') }}
+      </h3>
+      <div class="overflow-x-scroll overflow-y-hidden flex flex-auto">
+        <div class="h-24 w-24">
+          <a
+            href="https://cmogujarat.gov.in/en/photo-gallery/cm-shri-vijaybhai-rupani-inaugurated-pipaliya-bhawan-sadbhavna-vriddhashram-in-rajkot/"><img
+              src="../assets/Inter/img/cmo-gujraat-logo.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a
+            href="https://www.divyabhaskar.co.in/dvb-original/news/rajkot-sadbhavana-old-age-home-opened-school-bull-and-treat-as-a-family-mamber-129038474.html"><img
+              src="../assets/Inter/img/divyabhaskar.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a
+            href="https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html"><img
+              src="../assets/Inter/img/mainlogo_gujrati.png" /></a>
+        </div>
+        <div class="h-24 w-24 ">
+          <a
+            href="https://www.dnaindia.com/india/video-rajkot-man-makes-city-green-by-planting-over-7-lakh-trees-2908027"><img
+              src="../assets/Inter/img/dna.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a href="https://www.abtakmedia.com/make-a-call-sadbhavna-old-age-home-will-come-home-and-plant-a-tree/"><img
+              src="../assets/Inter/img/NEW-Abtak-rr-logo-png-1.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a
+            href="https://timesofindia.indiatimes.com/videos/city/ahmedabad/rajkot-man-makes-city-green-by-planting-over-7-lakh-trees/videoshow/85666112.cms?from=mdr"><img
+              src="../assets/Inter/img/images.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a
+            href="https://www.zee5.com/articles/gujarat-man-plants-750000-trees-in-rajkot-aims-to-turn-entire-state-green"><img
+              src="../assets/Inter/img/zee5.png" /></a>
+        </div>
+        <div class="h-24 w-24">
+          <a href="https://ahmedabadmirror.com/bizman-on-green-mission-recruits-280-to-water-plants/79726987.html"><img
+              src="../assets/Inter/img/am-logo.png" /></a>
+        </div>
+      </div>-->
+
+    <section class="container mx-auto">
+      <h3 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mt-5">{{ $t('Featured in') }}</h3>
+      <div class="flex overflow-x-scroll overflow-y-hidden items-center custom-scrollbar scrollbar-thin">
+        <img alt="cmo gujarat news" class="hover:cursor-pointer" src="../assets/Inter/img/cmo-gujraat-logo.png" @click="redirect_to('https://cmogujarat.gov.in/en/photo-gallery/cm-shri-vijaybhai-rupani-inaugurated-pipaliya-bhawan-sadbhavna-vriddhashram-in-rajkot/')"/>
+        <img alt="divyabhaskar news" class="w-40 h-40 hover:cursor-pointer" src="../assets/Inter/img/divyabhaskar.png" @click="redirect_to('https://www.divyabhaskar.co.in/dvb-original/news/rajkot-sadbhavana-old-age-home-opened-school-bull-and-treat-as-a-family-mamber-129038474.html')"/>
+        <img alt="news 18 gujarati news" class="hover:cursor-pointer" src="../assets/Inter/img/mainlogo_gujrati.png" @click="redirect_to('https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html')"/>
+        <img alt="zee5 news" class="w-48 h-24 hover:cursor-pointer" src="../assets/Inter/img/zee5.png" @click="redirect_to('https://www.zee5.com/articles/gujarat-man-plants-750000-trees-in-rajkot-aims-to-turn-entire-state-green')"/>
+        <img alt="abtak news" class="w-72 h-20 hover:cursor-pointer" src="../assets/Inter/img/NEW-Abtak-rr-logo-png-1.png" @click="redirect_to('https://www.abtakmedia.com/make-a-call-sadbhavna-old-age-home-will-come-home-and-plant-a-tree/')"/>
+        <img alt="times of india news" class="w-64 h-24 hover:cursor-pointer" src="../assets/Inter/img/images.png" @click="redirect_to('https://timesofindia.indiatimes.com/videos/city/ahmedabad/rajkot-man-makes-city-green-by-planting-over-7-lakh-trees/videoshow/85666112.cms?from=mdr')"/>
+        <img alt="dna news" class="m-2 h-20 w-32 hover:cursor-pointer" src="../assets/Inter/img/dna.png" @click="redirect_to('https://www.dnaindia.com/india/video-rajkot-man-makes-city-green-by-planting-over-7-lakh-trees-2908027')"/>
+        <img alt="ahmedabad mirror news" class="w-64 h-16 hover:cursor-pointer" src="../assets/Inter/img/am-logo.png" @click="redirect_to('https://ahmedabadmirror.com/bizman-on-green-mission-recruits-280-to-water-plants/79726987.html')"/>
+      </div>
+    </section>
 
     <!-- <section class="container mx-auto h-full">
       <div class="text-center mt-10">
@@ -1056,7 +1113,7 @@
       <div class="container mx-auto h-full">
 
         <div class="text-center mt-10">
-          <h2 class="text-3xl font-black text-[#40b751] pt-12">{{ $t('Awards') }}</h2>
+          <h3 class="text-3xl font-black text-[#40b751] pt-12">{{ $t('Awards') }}</h3>
         </div>
         <div class="pb-16">
           <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-2 justify-items-center text-center">
@@ -1187,7 +1244,7 @@ export default {
     }
   },
   created() {
-    document.title = this.$t('Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
+    document.title = this.$t('Trusted & 100% Transparent Crowdfunding Platform | BestDeed')
 
     const linkElement = document.querySelector('link[rel="canonical"]');
 
@@ -1388,7 +1445,12 @@ export default {
     // },
     exploreCampaigns() {
       this.$router.push('/explore-campaigns')
+    },
+
+    redirect_to(url){
+      window.location.href = url
     }
+
   },
   // mounted(){
   //   if (!this.user.isLoggedIn()) {

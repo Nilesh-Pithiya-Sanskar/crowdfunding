@@ -1,5 +1,5 @@
 <template>
-    <Dialog v-model="showDialog" >
+    <Dialog v-model="showDialog" > 
         <template #body>
                     <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
                         <h1

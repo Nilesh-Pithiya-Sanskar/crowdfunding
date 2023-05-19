@@ -2,24 +2,65 @@
     <Navbar />
     <div class="container mx-auto h-full mt-10 mb-5 text-[#364958]">
         <h1 class="text-3xl mb-5">Privacy Policy</h1>
-        <p class="pb-5">Customers' right to privacy is vital, and Best Deed works hard to uphold that right. The Company is dedicated to maintaining your right to privacy and will keep all of your private details secure. No matter how you use this Website or its services, the terms of Best Deed's privacy policy are outlined in this document.</p>
-        <p class="pb-5">This privacy statement solely applies to data gathered at the sites. You consent to be legally bound by the conditions of this Privacy Policy by visiting the Sites. If you do not accept, kindly refrain from using or accessing the Website.</p>
+        <p class="pb-5">Customer's right to privacy is vital, and Best Deed works hard to uphold that right. The Company is
+            dedicated to maintaining your right to privacy and will keep all of your private details secure. No matter how
+            you use this Website or its services, the terms of Best Deed's privacy policy are outlined in this document.</p>
+        <p class="pb-5">This privacy statement solely applies to data gathered at the sites. You consent to be legally bound
+            by the conditions of this Privacy Policy by visiting the Sites. If you do not accept, kindly refrain from using
+            or accessing the Website.</p>
         <h2 class="text-2xl">Information that we may collect from you - </h2>
-        <p class="pb-5"><span class="font-bold">Contact Data:</span> Any data you submit on the Website or by any other method is received and stored by us. You might decide not to disclose a particular amount of information depending on your choices. One type of information we may get is your general contact details, such as your name, picture, address, mobile number, birth date, gender, e-mail address, financial data specifics, contacts, etc.</p>
-        <p class="pb-5"><span class="font-bold">Personal Info: </span>Based on how You interact with us and, in particular, how You interact with Recipients, We might ask you for data on a campaign that is going to be added to the Platform.</p>
-        <p class="pb-5"><span class="font-bold">Technical Data: </span>Whenever you connect with us, we receive and keep specific types of information. For more individualized results, we may also gather and retain data about your location, browser type, browsing data, time spent, and other factors.</p>
-        <p class="pb-5"><span class="font-bold">Third-Party Data:</span>We could obtain details about you from other parties and add them to Our database server. You consent to Our use of Your data in accordance with this privacy statement by using or starting to use the Platform.</p>
-        <p class="pb-5"><span class="font-bold">Financial Information:</span>Financial information, including information about your debit card, credit card, bank branch, kind of account, and other banking details, may be stored by us if you give us permission to do so when you make a donation to us.</p>
-        <p class="pb-5"><span class="font-bold">Other Data:</span> Based on how you interact with us, we might occasionally ask you for extra data so that we can offer you the service you've requested.</p>
+        <ul class="list-disc mb-5">
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Contact Data:</span> Any data you submit on the Website or by any
+                    other
+                    method is received and stored by us. Depending on your choices, you might decide not to disclose a
+                    particular
+                    amount of information. One type of information we may get is your general contact details, such as your
+                    name,
+                    picture, address, mobile number, birth date, gender, email address, financial data specifics, contacts,
+                    etc.
+                </p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Personal Info: </span> Based on how you interact with us and, in
+                    particular,
+                    how you interact with recipients, we might ask you about your personal details, such as name, email
+                    address,
+                    contact number, and other personal information.
+                </p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Technical Data: </span>To offer you personalized solutions, we
+                    collect
+                    and
+                    retain your technical data, such as your location, browser type, browsing data, history, time spent, and
+                    other
+                    details.</p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Financial Information:</span>Financial information, including
+                    information
+                    about your debit card, credit card, bank branch, kind of account, and other banking details, may be
+                    stored
+                    by us
+                    if you give us permission to do so when you make a donation to us.</p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Other Data:</span> Based on how you interact with us, we might
+                    occasionally
+                    ask you for additional details to offer you desired results.
+                </p>
+            </li>
+        </ul>
         <h2 class="text-2xl">How do we collect your personal data?</h2>
         <p class="pb-5">We utilize a variety of techniques to get information from and about you, including</p>
         <h2 class="text-xl font-light">DIRECT EXCHANGES</h2>
         <ul class="list-disc mb-5">
-            <li class="ml-10">By utilizing our Platform, you can divulge your identity and contact details to us. </li>
+            <li class="ml-10">Utilizing our Platform lets you divulge your identity and contact details to us. </li>
         </ul>
         <p class="font-bold">It includes the personal information you supply when you:</p>
         <ul class="list-disc mb-5">
-            <li class="ml-10">Open a profile on the Platform;</li>
+            <li class="ml-10">Make a profile on the Platform;</li>
             <li class="ml-10">Register for our newsletters and publications;</li>
             <li class="ml-10">Requesting the delivery of marketing materials to you;</li>
             <li class="ml-10">Participate in a contest, promotion, or survey;</li>
@@ -27,27 +68,159 @@
             <li class="ml-10">When you enter details to donate products.</li>
             <li class="ml-10">When you provide your feedback to us. </li>
         </ul>
-        <p class="pb-5">We may automatically gather technical information about your device, browsing behaviors, and habits as you engage with our Platform. We acquire this personal information through the use of cookies, application logs, as well as other similar technologies</p>
+        <p class="pb-5">We may automatically gather technical information about your device, browsing behaviors, and
+            habits
+            as you engage with our Platform. We acquire this personal information through the use of cookies,
+            application
+            logs, as well as other similar technologies.
+        </p>
         <h2 class="text-2xl">Cookies</h2>
-        <p class="pb-5">We strive to make your interactions with the Services easy and worthwhile. Our web server will transmit a cookie to your computer or mobile device when you visit our Platform.</p>
-        <p class="pb-5">When you browse a website or use a smartphone app, a small piece of data called a cookie is sent to your computer or mobile device. It retains and occasionally records information about how you use the Platform.</p>
-        <p class="pb-5">A few of the cookies we employ expire when you quit your browser or leave an application; they only last for the duration of your online or application session. Other, longer-lasting cookies are utilized to identify you when you visit the Platform again.</p>
+        <p class="pb-5">We strive to make your interactions with our Platform easy and convenient. Our web server will
+            transmit a cookie to your computer or mobile device when you visit our Platform.
+        </p>
+        <p class="pb-5">When you browse a website or use a smartphone app, a small piece of data called a cookie is sent
+            to
+            your computer or mobile device. It retains and occasionally records information about how you use the
+            Platform.
+            A few of the cookies we employ expire when you quit your browser or leave an application; they only last for
+            the
+            duration of your online or application session. Other, longer-lasting cookies are utilized to identify you
+            when
+            you revisit the Platform.
+
+        </p>
+        <!-- <p class="pb-5">A few of the cookies we employ expire when you quit your browser or leave an application; they only
+            last for the duration of your online or application session. Other, longer-lasting cookies are utilized to
+            identify you when you visit the Platform again.</p> -->
+        <h2 class="text-2xl">Payment Information:
+        </h2>
+        <ul class="list-disc mb-5">
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Donations:</span> Best Deed enables users to make donations to
+                    support
+                    NGOs
+                    and their causes. When you make a donation through our Platform, we collect certain payment
+                    information
+                    to
+                    process and facilitate the transaction. It may include credit/debit card details, UPI details,
+                    banking
+                    information, or other payment credentials.
+
+                </p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Secure Payment Processors:</span> To ensure the security of your
+                    payment
+                    information, Best Deed partners with reputable and fast payment processors. These third-party
+                    processors
+                    handle
+                    collecting and processing payment information on our behalf. We do not store or retain your complete
+                    payment
+                    details on our servers.
+
+                </p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Data Protection:</span>We prioritize the protection of your
+                    payment
+                    information and implement industry-standard security measures to safeguard against unauthorized
+                    access,
+                    disclosure, or alteration. All payment transactions are encrypted using secure socket layer
+                    technology
+                    (SSL)
+                    and
+                    comply with Payment Card Industry Data Security Standard (PCI DSS) requirements.
+
+                </p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Donation Acknowledgment:</span>Best Deed will confirm or
+                    acknowledge
+                    your
+                    contribution via email or other communication channels after successful payment. This
+                    acknowledgement
+                    will
+                    include your donation details, such as the amount, date, and the NGO or cause you supported.
+
+                </p>
+            </li>
+            <li class="ml-10">
+                <p class="pb-5"><span class="font-bold">Donor Anonymity:</span> We respect your privacy preferences. If
+                    you
+                    choose
+                    to donate anonymously, your personal information will not be publicly displayed or shared with the
+                    recipient
+                    NGO. However, please note that specific transaction details, such as the donation amount and date,
+                    may
+                    still
+                    be
+                    visible for transparency and accounting purposes.
+                </p>
+            </li>
+        </ul>
         <h2 class="text-2xl">How do we protect your information?</h2>
-        <p class="pb-5">Strict security controls are put in place on our system to guard against the loss, manipulation, and modification of the data we have under our control. We provide the usage of a secure site when you change or access the data associated with your account.</p>
-        <p class="pb-5">Once we have your information, we follow strong security procedures to protect it from unwanted access. To prevent unauthorized use of your information, all of our transaction affiliates, web hosts, and other service providers follow industry standards and best practices.</p>
-        <p class="pb-5">We take appropriate action to either address the breach or notify the proper authorities of a cyber security event. Following receipt of such information, we shall investigate the misuse and take the required corrective action.</p>
+        <p class="pb-5">Strict security controls are put in place on our system to guard against the loss, manipulation,
+            and
+            modification of the data we have under our control. We provide the usage of a secure site when you change or
+            access the data associated with your account.
+        </p>
+        <p class="pb-5">Once we have your information, we follow robust security procedures to protect it from unwanted
+            access. To prevent unauthorized use of your information, all of our transaction affiliates, web hosts, and
+            other
+            service providers follow industry standards and best practices.
+        </p>
+        <p class="pb-5">We take appropriate action to either address the breach or notify the proper authorities of a
+            cyber
+            security event. Following receipt of such information, we shall investigate the misuse and take the required
+            corrective action.
+            However, no data is 100% safe or secured, so we request you utilize the best security practices and usage of
+            strong passwords.
+        </p>
         <h2 class="text-2xl">Links to third-party websites</h2>
-        <p class="pb-5">Links to websites not owned or controlled by Best Deed may be found on the Services. The policies and practices do not cover the Third-Party Sites we detailed in this privacy policy. The inclusion of links does not constitute endorsement or approval by the Best Deed of the Third-Party Sites. We advise getting in touch with such websites directly to learn more about their individual privacy policies.</p>
+        <p class="pb-5">Links to websites not owned or controlled by Best Deed may be found on our Platform. These
+            policies
+            and practices do not cover the Third-Party Sites we might have mentioned on our Website. The inclusion of
+            links
+            does not constitute endorsement or approval by the Best Deed of the Third-Party Sites. We advise you to read
+            their privacy policy and terms of use before using their Platform.
+
+        </p>
         <h2 class="text-2xl">Maintaining your information</h2>
-        <p class="pb-5">We keep your information on file for as long as it's required for the activity it was gathered for and our legal business operations. Your information is only kept as long as necessary or permitted by applicable laws.</p>
-        <p class="pb-5">We consider a number of factors when deciding how long to keep your information after it is collected. It contains information about the kinds of items and services you have sought or received, the nature and duration of our relationship with you, and any potential re-enrollment in our programs.</p>
-        <p class="pb-5">You can contact us, and we'll take the required action if you wish us to delete your information before the retention period expires.</p>
+        <p class="pb-5">We keep your information on file for as long as it's required for the activity it was gathered
+            for
+            and our legal business operations. Your information is only kept as long as necessary or permitted by
+            applicable
+            laws.
+        </p>
+        <p class="pb-5">We consider a number of factors when deciding how long to keep your information after it is
+            collected. It contains information about the types of items and services you have sought or received, the
+            nature
+            and duration of our relationship with you, and any potential re-enrollment in our programs.
+            You can contact us, and we'll take the necessary action if you wish us to delete your information before the
+            retention period expires.
+        </p>
+        <!-- <p class="pb-5">You can contact us, and we'll take the required action if you wish us to delete your information
+            before the retention period expires.</p> -->
         <h2 class="text-2xl">Changes to this privacy policy!</h2>
-        <p class="pb-5">We retain the right to update or change our privacy statement at any time, so please review it frequently.</p>
-        <p class="pb-5">Your continuous utilization of the access on our Website following the posting of any updates to the Privacy Policy on this page will be construed as your acceptance of those updates and your agreement to follow and be governed by the Privacy Policy as updated.</p>
-        <p class="pb-5">If we make any significant modifications to this Privacy Policy, we'll notify you via email by posting a clear notice on the Portal or on this page. Therefore, we ask that you regularly review our Website's privacy notice.</p>
+        <p class="pb-5">We retain the right to update or change our privacy statement at any time, so please review it
+            frequently.
+        </p>
+        <p class="pb-5">Your continuous utilization of the access on our Website following the posting of any updates to
+            the
+            Privacy Policy on this page will be taken as your acceptance of those updates and your agreement to follow
+            and
+            be governed by the Privacy Policy as updated.
+        </p>
+        <p class="pb-5">If we make any significant modifications to this Privacy Policy, we'll notify you via email by
+            posting a clear notice on the Portal or on this page. Therefore, we ask that you regularly review our
+            Website's
+            privacy notice.
+        </p>
         <h2 class="text-2xl">Contact us!</h2>
-        <p class="pb-5">If you have any queries about our privacy policy, then you can reach out to the Best Deed at <a class="text-blue-500" href="mailto:bestdeed2023@gmail.com">bestdeed2023@gmail.com</a></p>
+        <p class="pb-5">If you have any queries about our privacy policy, you can reach out to our team at <a
+                class="text-blue-500" href="mailto:bestdeed2023@gmail.com">bestdeed2023@gmail.com</a> or (Add the
+            contact
+            number).</p>
 
     </div>
     <Footer />
@@ -55,25 +228,26 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
-export default{
+export default {
     name: 'Privacy Policy',
     components: {
-    Navbar,
-    Footer,
-  },
-  created(){
-        document.title = this.$t('Privacy Policy Page | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed')
+        Navbar,
+        Footer,
+    },
+    created() {
+        document.title = this.$t('Privacy Policy Page | BestDeed')
         const linkElement = document.querySelector('link[rel="canonical"]');
-    if (!linkElement) {
-      var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/privacy-policy"
-    document.head.appendChild(link);
-    }
-    else{
-      linkElement.href = "https://bestdeed.org/privacy-policy"
-      document.head.appendChild(linkElement)
-    }
+        if (!linkElement) {
+            var link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = "https://bestdeed.org/privacy-policy"
+            document.head.appendChild(link);
+        }
+        else {
+            linkElement.href = "https://bestdeed.org/privacy-policy"
+            document.head.appendChild(linkElement)
+        }
     }
 }
 </script>
+        

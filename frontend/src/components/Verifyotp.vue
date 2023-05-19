@@ -1,4 +1,4 @@
-<template>
+<template> 
     <Navbar />
 
     <div class="container mx-auto">
@@ -11,10 +11,10 @@
             <div class="w-full sm:pt-0 md:pt-5 lg:pt-12 bg-gray-lightest">
                 <div class="container mx-auto py-0 sm:pb-0 md:pb-0 lg:pb-4 xl:pb-32">
                     <div class="w-5/6 md:w-5/6 lg:w-2/3 xl:w-5/6 mx-auto bg-white">
-                        <h1
+                        <h2
                             class="text-[28px]  md:text-[32px] lg:text-[40px] py-8  text-gray-600 text-black font-bold text-center">
                             Verify your contact detail
-                        </h1>
+                        </h2>
                         <div class="relative pt-4 pb-12 z-0 px-2 md:px-4 lg:px-8">
                             <p class="mb-7">
                                 <span class="block text-gray-600 text-base  mb-2">An OTP has been sent to your whatsapp

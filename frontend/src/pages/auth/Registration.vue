@@ -10,7 +10,7 @@
                     <h1
                         class="text-[20px] md:text-[30px] lg:text-[36px] font-bold py-8 px-10 text-[#40b751] text-bold text-center">
                         {{ $t('Donor Registration') }}
-                    </h1>
+                </h1>
                     <div class="relative z-0">
                         <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
                             <div class="mr-2 mb-4">

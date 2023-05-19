@@ -152,8 +152,8 @@
         <div class="grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 lg:-ml-64">
           <div
             class="sm:pl-[0px] lg:pt-4 lg:ml-[72px] pl-[0px] md:pl-[0px] lg:pl-[20px] xl:pl-[30px] pb-0 md:pb-0 sm:pb-10 ">
-            <h2 class="font-bold text-white mb-3 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-3 md:pt-5 lg:pt-0">
-              {{ $t('Discover') }}</h2>
+            <h4 class="font-bold text-white mb-3 sm:mb-4 md:mb-4 lg:mb-6 text-xl pt-3 md:pt-5 lg:pt-0">
+              {{ $t('Discover') }}</h4>
             <ul class="text-white">
               <li class="  sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/explore-campaigns">{{ $t('Explore Campaigns') }}</router-link>
@@ -170,8 +170,8 @@
             </ul>
           </div>
           <div class="sm:pl-[20px] lg:pt-4 md:pl-[20px] lg:pl-[48px] ">
-            <h2 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl pt-5 md:pt-5 lg:pt-0">
-              {{ $t('Learn') }}</h2>
+            <h4 class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl pt-5 md:pt-5 lg:pt-0">
+              {{ $t('Learn') }}</h4>
             <ul class="text-white">
               <li class=" sm:mb-1 md:mb-2 lg:mb-4 xl:mb-4">
                 <router-link to="/how-it-works">{{ $t('How it Works') }}</router-link>
@@ -191,19 +191,19 @@
             </ul>
           </div>
            <div class="sm:pl-[0px] lg:pt-4 md:pl-[0px] lg:pl-[60px] ">
-            <h2
+            <h4
               class="font-bold text-white mb-3 md:mb-4 lg:mb-6 text-xl -ml-[0px] md:-ml-[0px] lg:-ml-[80px] pt-5 md:pt-5 lg:pt-0">
-              {{ $t('Contact Us') }}</h2>
+              {{ $t('Contact Us') }}</h4>
             <div class="text-white lg:-ml-[80px]">
               <div class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4">
                <img class="w-5 h-5 mt-1"
                     src="../../src/assets/Inter/img/location-pin.png" />
-                <p class="ml-4"><span>{{ $t('Head Office, India') }}</span><br>
-                  {{ $t('98 new Mylapore Raidurgam Panmaktha, Mumbai, Maharashtra, 400003')}}</p>
+                <p class="ml-4"><span>{{ $t('Gondal Road') }}</span><br>
+                  {{ $t('Opp Swami Narayan Gurukul, Near D-Mart Service Road Rajkot 360004')}}</p>
               </div>
               <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
-                <p class="cursor-pointer ml-4 "><a href="tel:+91 9999999999">{{ $t('+91 9999999999') }}</a></p>
+                <p class="cursor-pointer ml-4 "><a href="tel:+91 7043029467">{{ $t('+91 7043029467') }}</a></p>
               </div>
               <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/email.png" /></div>

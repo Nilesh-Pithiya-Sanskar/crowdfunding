@@ -42,9 +42,9 @@
                         </div>
                     </div>
                     <div class="text-justify pt-2">
-                        <h4 class="pb-2 pt-2 text-[#364958] font-bold text-[15px] md:text-[19px] lg:text-[19px]">
+                        <h5 class="pb-2 pt-2 text-[#364958] font-bold text-[15px] md:text-[19px] lg:text-[19px]">
                             {{ $t(blog_detail.data.blog_intro) }}
-                        </h4>
+                        </h5>
                     </div>
                     <p class="text-[#364958] text-[16px] mb-4">{{ $t(blog_detail.data.content_md) }}</p>
                     <p class=" text-[#364958] text-[16px] pb-2"><strong>By:</strong> {{ $t(blog_detail.data.blogger) }}</p>
@@ -121,9 +121,9 @@
                             )" alt="Mountain">
 
                         <div class="pt-[20px] pr-[20px] pl-[20px] leading-6 ">
-                            <h5 class="fontfamily cursor-pointer text-[#364958] font-bold text-[18px] md:text-[18px] lg:text-[20px] mb-2 truncate-2-lines">
+                            <h4 class="fontfamily cursor-pointer text-[#364958] font-bold text-[18px] md:text-[18px] lg:text-[20px] mb-2 truncate-2-lines">
                                 {{ blogs[index - 1].title }}
-                            </h5>
+                            </h4>
                             <p class="text-gray-700 text-[16px] truncate-2-lines">{{ blogs[index - 1].blog_intro }}
                             </p>
 
@@ -203,17 +203,7 @@ export default {
         const name = useRoute();
         this.blog = name.params.name
         this.get_blog_detail(name.params.name)
-        const linkElement = document.querySelector('link[rel="canonical"]');
-    if (!linkElement) {
-      var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/blog-post"
-    document.head.appendChild(link);
-    }
-    else{
-      linkElement.href = "https://bestdeed.org/blog-post"
-      document.head.appendChild(linkElement)
-    }
+        
     },
     resources: {
         get_blogs() {
@@ -268,30 +258,83 @@ export default {
                     response.json().then(res => {
                         this.blog_detail = res
                         document.title = res.data.title + " | " + 'BestDeed'
-                        var meta = document.createElement('meta');
+
+                        const linkElement = document.querySelector('link[rel="canonical"]');
+                        if (!linkElement) {
+                            var link = document.createElement('link');
+                            link.rel = 'canonical';
+                            link.href = `https://bestdeed.org/blog-post/${name}`
+                            document.head.appendChild(link);
+                        }
+                        else{
+                            linkElement.href = `https://bestdeed.org/blog-post/${name}`
+                            document.head.appendChild(linkElement)
+                        }
+
+                        var meta = document.querySelector('meta[name="keywords"]');
+                        if (!meta) {
+                            meta = document.createElement('meta');
+                        }
                         meta.name = 'keywords';
                         meta.content = "donation,charity,crowdfunding,fundraising,donate online,donate online to charity,donations for nonprofits,donation websites for nonprofit,donate online india";
                         document.head.appendChild(meta);
-                        var meta = document.createElement('meta');
+
+                        var meta = document.querySelector('meta[name="description"]');
+                        if (!meta) {
+                            meta = document.createElement('meta');
+                        }
                         meta.name = "description";
                         meta.content = res.data.blog_intro
                         document.head.appendChild(meta);
-                        var meta1 = document.createElement('meta');
+
+                        var meta1 = document.querySelector('meta[property="og:type"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:type');
                         meta1.content = 'Website';
                         document.head.appendChild(meta1);
-                        var meta1 = document.createElement('meta');
+
+                        var meta1 = document.querySelector('meta[property="og:title"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:title');
                         meta1.content = res.data.title;
                         document.head.appendChild(meta1);
-                        var meta1 = document.createElement('meta');
+
+                        var meta1 = document.querySelector('meta[property="og:description"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:description');
                         meta1.content = res.data.blog_intro;
                         document.head.appendChild(meta1);
-                        var meta1 = document.createElement('meta');
+
+                        var meta1 = document.querySelector('meta[property="og:image"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
                         meta1.setAttribute('property', 'og:image');
                         meta1.content = window.origin + res.data.meta_image;
                         document.head.appendChild(meta1);
+
+                        var meta1 = document.querySelector('meta[property="og:url"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
+                        meta1.setAttribute('property', 'og:url');
+                        meta1.content = this.url;
+                        document.head.appendChild(meta1);
+
+                        var meta1 = document.querySelector('meta[property="article:published_time"]');
+                        if (!meta1) {
+                            meta1 = document.createElement('meta');
+                        }
+                        meta1.setAttribute('property', 'article:published_time');
+                        meta1.content = res.data.start_date;
+                        document.head.appendChild(meta1);
+
                     });
                 })
                 .catch(err => {

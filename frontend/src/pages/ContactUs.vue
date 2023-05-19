@@ -128,22 +128,22 @@
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
                         </div>
                         <!-- <p class="text-black-500 mb-2 pt-2 pl-14">{{ $t('Head Office, India') }}</p> -->
-                        <p class="text-green-500 mb-2 pt-2 pl-14"><span>{{$t('Head Office, India')}}</span><br>{{$t('98 new Mylapore')}}<br>{{$t('Raidurgam Panmaktha,')}}<br>{{$t('Mumbai, Maharashtra, 400003')}}</p>
+                        <p class="text-green-500 mb-2 pt-2 pl-14"><span>{{$t('Gondal Road,')}}</span><br>{{$t('Opp Swami Narayan Gurukul,')}}<br>{{$t('Near D-Mart Service Road')}}<br>{{$t('Rajkot, Gujarat, 360004')}}</p>
                     </div>
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
                             <img class="p-1 mt-2 h-7" src="../assets/Inter/img/icon/navbar_phone.png" />
                         </div>
-                        <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+91 9999999999</p>
+                        <a href="tel:+91 7043029467">
+                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+91 7043029467</p>
                         </a>
                     </div>
                     <div class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
                         </div>
-                        <a href="#">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">info@bestdeed.com</p>
+                        <a href="mailto:bestdeed2023@gmail.com">
+                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">bestdeed2023@gmail.com</p>
                         </a>
                     </div>
                 </div>
@@ -210,7 +210,7 @@ export default {
     //     }
     // },
     created(){
-        document.title = this.$t("Contact Us | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed")
+        document.title = this.$t("Contact Us | BestDeed")
        
         const linkElement = document.querySelector('link[rel="canonical"]');
         if (!linkElement) {

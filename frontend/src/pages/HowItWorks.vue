@@ -13,7 +13,7 @@
             </div> -->
 
             <div class="md:w-7/12 sm:w-full lg:w-7/12 mr-auto px-4">
-                <h3 class="font-bold text-[#364958] text-xl mb-2 mt-1">{{$t("Simplifying the way crowdfunding campaigns operate!")}}</h3>
+                <p class="font-bold text-[#364958] text-xl mb-2 mt-1">{{$t("Simplifying the way crowdfunding campaigns operate!")}}</p>
                 <p class="leading-relaxed text-slate-500">{{$t("For individuals who believe in the importance of contributing and desire to be part of the transformation they want to see, BestDeed works with a distinctive approach and helps streamline the crowdfunding environment.")}}</p>
 
                 <p class="leading-relaxed text-slate-500 mt-3">{{$t("Whether it's your cause or one that you support, we'll assemble communities, pertinent partners, cutting-edge tools, and resources to meet your product needs efficiently.")}}</p>
@@ -51,7 +51,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Select the campaign</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Select the campaign</p>
                             <p class="ml-16">For donation, firstly, you need to choose the campaign you would like to
                                 contribute to. You can even select multiple campaigns as well.</p>
                         </div>
@@ -68,7 +68,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Choose the products</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Choose the products</p>
                             <p class="ml-16">After selecting the campaign and its requirements, you can choose the product
                                 and quantity at your convenience.</p>
                         </div>
@@ -85,7 +85,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter the details</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter the details</p>
                             <p class="ml-16">After choosing the product & its quantity, you have to enter essential details
                                 such as your name, bank account details, and the products you want to contribute. </p>
                         </div>
@@ -102,7 +102,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">You did it!</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">You did it!</p>
                             <p class="ml-16"> After entering all the details, you need to click on donate, choose the
                                 campaign and submit with utmost transparency & security. </p>
                         </div>
@@ -141,7 +141,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Start the campaign</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Start the campaign</p>
                             <p class="ml-16">You must sign up on our platform before you can begin the campaign. The process
                                 will take just a few minutes and a few documents.</p>
                         </div>
@@ -158,8 +158,8 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter all the information
-                            </h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter all the information
+                            </p>
                             <p class="ml-16">After registration, you must submit all the information about the project you
                                 are raising money for and the necessary paperwork for verification before proceeding.</p>
                         </div>
@@ -176,7 +176,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Share it quickly</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Share it quickly</p>
                             <p class="ml-16">After filling out all the details, you only need to share the campaign with
                                 your relatives and friends. Support will quickly begin to flow in. Even better, you can post
                                 about your campaign on social media right from your dashboard.</p>
@@ -194,7 +194,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Withdraw Funds</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Withdraw Funds</p>
                             <p class="ml-16">Once the entire campaign is over, all the donated products will be delivered to
                                 you in a matter of days.</p>
                         </div>
@@ -232,7 +232,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Select the campaign</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Select the campaign</p>
                             <p class="ml-16">For donation, firstly, you need to choose the campaign you would like to
                                 contribute to. You can even select multiple campaigns as well.</p>
                         </div>
@@ -250,7 +250,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Choose the products</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Choose the products</p>
                             <p class="ml-16">After selecting the campaign and its requirements, you can choose the product
                                 and quantity at your convenience.</p>
                         </div>
@@ -267,7 +267,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter the details</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter the details</p>
                             <p class="ml-16">After choosing the product & its quantity, you have to enter essential details
                                 such as your name, bank account details, and the products you want to contribute. </p>
                         </div>
@@ -285,7 +285,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">You did it!</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">You did it!</p>
                             <p class="ml-16"> After entering all the details, you need to click on donate, choose the
                                 campaign and submit with utmost transparency & security. </p>
                         </div>
@@ -324,7 +324,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Start the campaign</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Start the campaign</p>
                             <p class="ml-16">You must sign up on our platform before you can begin the campaign. The process
                                 will take just a few minutes and a few documents.</p>
                         </div>
@@ -342,8 +342,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter all the information
-                            </h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter all the information
+                            </p>
                             <p class="ml-16">After registration, you must submit all the information about the project you
                                 are raising money for and the necessary paperwork for verification before proceeding.</p>
                         </div>
@@ -360,7 +360,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Share it quickly</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Share it quickly</p>
                             <p class="ml-16">After filling out all the details, you only need to share the campaign with
                                 your relatives and friends. Support will quickly begin to flow in. Even better, you can post
                                 about your campaign on social media right from your dashboard.</p>
@@ -379,7 +379,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Withdraw Funds</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Withdraw Funds</p>
                             <p class="ml-16">Once the entire campaign is over, all the donated products will be delivered to
                                 you in a matter of days.</p>
                         </div>
@@ -419,7 +419,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Select the campaign")}}</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Select the campaign")}}</p>
                             <p class="ml-16">{{$t("For donation, firstly, you need to choose the campaign you would like to contribute to. You can even select multiple campaigns as well.")}}</p>
                         </div>
 
@@ -435,7 +435,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Choose the products")}}</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Choose the products")}}</p>
                             <p class="ml-16">{{$t('After selecting the campaign and its requirements, you can choose the product and quantity at your convenience.')}}</p>
                         </div>
                         <div class="w-full md:w-6/12 lg:w-6/12 p-5 pb-0">
@@ -451,7 +451,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Enter the details")}}</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Enter the details")}}</p>
                             <p class="ml-16">{{$t("After choosing the product & its quantity, you have to enter essential details such as your name, bank account details, and the products you want to contribute.")}} </p>
                         </div>
                         <div class="w-full md:w-6/12 lg:w-6/12 p-5 pb-0">
@@ -467,7 +467,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("You did it!")}}</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("You did it!")}}</p>
                             <p class="ml-16"> {{$t("After entering all the details, you need to click on donate, choose the campaign and submit with utmost transparency & security.")}} </p>
                         </div>
                     </div>
@@ -505,7 +505,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Start the campaign")}}</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Start the campaign")}}</p>
                             <p class="ml-16">{{$t("You must sign up on our platform before you can begin the campaign. The process will take just a few minutes and a few documents.")}}</p>
                         </div>
 
@@ -521,8 +521,8 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Enter all the information")}}
-                            </h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Enter all the information")}}
+                            </p>
                             <p class="ml-16">{{$t("After registration, you must submit all the information about the project you are raising money for and the necessary paperwork for verification before proceeding.")}}</p>
                         </div>
                         <div class="w-full md:w-6/12 lg:w-6/12 p-5 pb-0">
@@ -538,7 +538,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Share it quickly")}}</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Share it quickly")}}</p>
                             <p class="ml-16">{{$t("After filling out all the details, you only need to share the campaign with your relatives and friends. Support will quickly begin to flow in. Even better, you can post about your campaign on social media right from your dashboard.")}}</p>
                         </div>
                         <div class="w-full md:w-6/12 lg:w-6/12 p-5 pb-0">
@@ -554,7 +554,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Withdraw Funds")}}</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">{{$t("Withdraw Funds")}}</p>
                             <p class="ml-16">{{$t("Once the entire campaign is over, all the donated products will be delivered to you in a matter of days.")}}</p>
                         </div>
 
@@ -592,7 +592,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs">Select the campaign</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs">Select the campaign</p>
                             <p class="mr-16">For donation, firstly, you need to choose the campaign you would like to
                                 contribute to. You can even select multiple campaigns as well.</p>
                         </div>
@@ -612,7 +612,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Choose the products</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Choose the products</p>
                             <p class="ml-16">After selecting the campaign and its requirements, you can choose the product
                                 and quantity at your convenience.</p>
                         </div>
@@ -630,7 +630,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs">Enter the details</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs">Enter the details</p>
                             <p class="mr-16">After choosing the product & its quantity, you have to enter essential details
                                 such as your name, bank account details, and the products you want to contribute. </p>
                         </div>
@@ -649,7 +649,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">You did it!</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">You did it!</p>
                             <p class="ml-16"> After entering all the details, you need to click on donate, choose the
                                 campaign and submit with utmost transparency & security. </p>
                         </div>
@@ -688,7 +688,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Start the campaign</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Start the campaign</p>
                             <p class="ml-16">You must sign up on our platform before you can begin the campaign. The process
                                 will take just a few minutes and a few documents.</p>
                         </div>
@@ -705,8 +705,8 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter all the information
-                            </h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Enter all the information
+                            </p>
                             <p class="ml-16">After registration, you must submit all the information about the project you
                                 are raising money for and the necessary paperwork for verification before proceeding.</p>
                         </div>
@@ -723,7 +723,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Share it quickly</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Share it quickly</p>
                             <p class="ml-16">After filling out all the details, you only need to share the campaign with
                                 your relatives and friends. Support will quickly begin to flow in. Even better, you can post
                                 about your campaign on social media right from your dashboard.</p>
@@ -741,7 +741,7 @@
                                     <div class="w-full h-px bg-gray-200"></div>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Withdraw Funds</h3>
+                            <p class="text-xl font-semibold leading-normal md:max-w-xs ml-16">Withdraw Funds</p>
                             <p class="ml-16">Once the entire campaign is over, all the donated products will be delivered to
                                 you in a matter of days.</p>
                         </div>

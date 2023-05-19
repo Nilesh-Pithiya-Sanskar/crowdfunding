@@ -3,9 +3,9 @@
     <div class="container mx-auto h-full">
       <div class="flex flex-wrap justify-between items-center lg:mb-10 mb-5">
         <div class="fontfamily text-center mt-0">
-          <h2 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-0 font-black text-[#40b751] mb-0 ">{{
+          <h3 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-0 font-black text-[#40b751] mb-0 ">{{
             $t('Testimonials')
-          }}</h2>
+          }}</h3>
           <!-- <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Amet,
             voluptate!</p> -->
@@ -55,9 +55,9 @@
                     <div class="w-full lg:w-4/12 px-4 lg:order-1"> </div>
                   </div>
                   <div class="text-justify ">
-                    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+                    <div class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
                       {{ $t("Kunj Popat") }}
-                    </h3>
+                    </div>
                     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                      {{ $t( 'Assistant Manager')}}
@@ -87,8 +87,8 @@
                     <div class="w-full lg:w-4/12 px-4 lg:order-1"> </div>
                   </div>
                   <div class="text-justify ">
-                    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
-                      Sahil Patel </h3>
+                    <div class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+                      Sahil Patel </div>
                     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                       Developer
@@ -117,8 +117,8 @@
                     <div class="w-full lg:w-4/12 px-4 lg:order-1"> </div>
                   </div>
                   <div class="text-justify ">
-                    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
-                      {{ $t('Jay Bhatt') }} </h3>
+                    <div class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+                      {{ $t('Jay Bhatt') }} </div>
                     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                       {{ $t('It Recruiter') }}
@@ -165,9 +165,9 @@
                   </div>
                   <div class="text-justify ">
                     <div class="h-[55px]">
-                      <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+                      <div class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
                         {{ $t('Vallabh Goshala') }}
-                      </h3>
+                      </div>
                     </div>
                     <!-- <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
               <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
@@ -199,9 +199,9 @@
                   </div>
                   <div class="text-justify ">
                     <div class="h-[55px]">
-                      <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+                      <div class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
                         {{ $t('Sadbhavna Vrudhashram') }}
-                      </h3>
+                      </div>
                     </div>
                     <!-- <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
               <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
@@ -233,9 +233,9 @@
                   </div>
                   <div class="text-justify ">
                     <div class="h-[55px]">
-                      <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+                      <div class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
                         {{ $t('Chinmay Organization') }}
-                      </h3>
+                      </div>
                     </div>
                     <!-- <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
               <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
@@ -328,9 +328,9 @@
               </div>
             </div>
             <div class="text-justify mt-0 pb-0">
-              <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+              <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
                 Name Tab 1
-              </h3>
+              </h4>
               <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                 <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                 Designation
@@ -372,9 +372,9 @@
               </div>
             </div>
             <div class="text-justify mt-0 pb-0">
-              <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+              <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
                 Name Tab 1
-              </h3>
+              </h4>
               <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                 <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                 Designation
@@ -415,9 +415,9 @@
               </div>
             </div>
             <div class="text-justify mt-0 pb-0">
-              <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+              <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
                 Name Tab 1
-              </h3>
+              </h4>
               <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                 <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                 Designation
@@ -459,9 +459,9 @@
     </div>
   </div>
   <div class="text-justify mt-0 pb-0">
-    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 font-semibold text-gray-600 ">
+    <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 font-semibold text-gray-600 ">
       {{ $t('Kunj Popat') }}
-    </h3>
+    </h4>
     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3 text-[#364958] text-opacity-60 ">
       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
       {{ $t('Assistant Manager') }}
@@ -498,8 +498,8 @@
     </div>
   </div>
   <div class="text-justify mt-0 pb-0">
-    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
-      {{ $t('Sahil Patel') }} </h3>
+    <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+      {{ $t('Sahil Patel') }} </h4>
     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
       {{ $t('Developer') }}
@@ -539,9 +539,9 @@
     </div>
   </div>
   <div class="text-justify mt-0 pb-0">
-    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
+    <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
       {{ $t('Jay Bhatt') }}
-    </h3>
+    </h4>
     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
       {{ $t('It Recruiter') }}
@@ -584,9 +584,9 @@
     </div>
   </div>
   <div class="text-justify mt-0 pb-0">
-    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 mb-11 font-semibold text-gray-600 ">
+    <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 mb-11 font-semibold text-gray-600 ">
       {{ $t('Vallabh Goshala') }}
-    </h3>
+    </h4>
     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i> -->
     <!-- {{$t('Founder')}} -->
@@ -625,9 +625,9 @@
     </div>
   </div>
   <div class="text-justify mt-0 pb-0">
-    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 mb-11 font-semibold text-gray-600 ">
+    <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 mb-11 font-semibold text-gray-600 ">
       {{ $t('Sadbhavna Vrudhashram') }}
-    </h3>
+    </h4>
     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i> -->
     <!-- {{$t('Founder')}} -->
@@ -667,9 +667,9 @@
     </div>
   </div>
   <div class="text-justify mt-0 pb-0">
-    <h3 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 mb-11 font-semibold text-gray-600 ">
+    <h4 class="text-[18px] md:text-[20px] lg:text-[20px] leading-7 mb-11 font-semibold text-gray-600 ">
       {{ $t('Chinmay Organization') }}
-    </h3>
+    </h4>
     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i> -->
     <!-- {{$t('Founder')}} -->

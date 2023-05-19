@@ -674,6 +674,8 @@ def delete_verified_otp():
 @frappe.whitelist(allow_guest=True)
 def set_sitemap_for_blog(doc, method):
 
+    print("\n\n called \n\n")
+
     import xml.etree.ElementTree as ET
 
     from datetime import datetime, timezone
@@ -710,23 +712,29 @@ def set_sitemap_for_blog(doc, method):
     #     root.set('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd')
 
 
-    attribute_name = 'xmlns:xsi'
-    attribute_value = 'http://www.w3.org/2001/XMLSchema-instance'
-    if not any(attribute_name in attr for attr in root.attrib.values()):
-    # if not any(attribute_name in elem.attrib for elem in root):
-        root.set(attribute_name, attribute_value)
+    # attribute_name = 'xmlns:xsi'
+    # attribute_value = 'http://www.w3.org/2001/XMLSchema-instance'
+    # if not any(attribute_name in attr for attr in root.attrib.values()):
+    # # if not any(attribute_name in elem.attrib for elem in root):
+    #     root.set(attribute_name, attribute_value)
 
-    attribute_name1 = 'xmlns'
-    attribute_value1 = 'http://www.sitemaps.org/schemas/sitemap/0.9'
-    if not any(attribute_name in attr for attr in root.attrib.values()):
-    # if not any(attribute_name1 in elem.attrib for elem in root):
-        root.set(attribute_name1, attribute_value1)
+    # attribute_name1 = 'xmlns'
+    # attribute_value1 = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+    # if not any(attribute_name in attr for attr in root.attrib.values()):
+    # # if not any(attribute_name1 in elem.attrib for elem in root):
+    #     root.set(attribute_name1, attribute_value1)
 
-    attribute_name2 = 'xsi:schemaLocation'
-    attribute_value2 = 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd'
-    if not any(attribute_name in attr for attr in root.attrib.values()):
-    # if not any(attribute_name2 in elem.attrib for elem in root):
-        root.set(attribute_name2, attribute_value2)
+    # attribute_name2 = 'xsi:schemaLocation'
+    # attribute_value2 = 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd'
+    # if not any(attribute_name in attr for attr in root.attrib.values()):
+    # # if not any(attribute_name2 in elem.attrib for elem in root):
+    #     root.set(attribute_name2, attribute_value2)
+
+    # if 'xmlns' not in root.attrib:
+    #     print("\n\n adfadsf not \n\n")
+
+    # else:
+    # print("\n\n asdfgafgafa sdf yes \n\n", root, "\n\n")
 
 
 

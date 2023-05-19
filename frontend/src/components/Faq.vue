@@ -4,11 +4,11 @@
     class="w-full h-[13rem] md:h-[15rem] lg:h-[17rem] bg-center bg-right bg-transparent bg-cover"
     style="background-image: url('https://crowdfunding.frappe.cloud/files/faq-bnr.jpg')"
   >
-        <p
+        <h1
           class="text-[30px] md:text-[36px] lg:text-[48px] pt-20 text-center text-[#40b751] font-black"
         >
       {{ $t("Frequently Asked Questions")}}
-        </p>
+        </h1>
   </div>
 
   <div class="relative container mx-auto h-full pt-0">
@@ -24,7 +24,7 @@
                     <div class="container px-0 py-7 mx-auto">
                       <div class="">
                         <div class="w-full lg:w-1/2 px-4 py-2">
-                          <h1 class="text-[28px] text-[#40b751]  py-2 font-black">{{$t('For Donors')}}</h1>
+                          <h2 class="text-[28px] text-[#40b751]  py-2 font-black">{{$t('For Donors')}}</h2>
                           <div v-for="(question, index) in faq" :key="index" class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
           <button
             type="button"
@@ -154,7 +154,7 @@
                     <div class="container px-0 pb-7 mx-auto">
                       <div class="">                        
                         <div class="w-full lg:w-1/2 px-4 py-2">
-                          <h1 class="text-[28px] text-[#40b751] py-2 font-black">{{$t('For NGOs')}}</h1>
+                          <h2 class="text-[28px] text-[#40b751] py-2 font-black">{{$t('For NGOs')}}</h2>
                           <div v-for="(questionngo, index) in ngofaq" :key="index" class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
                           <button
                             type="button"
@@ -242,7 +242,7 @@ export default {
         },
         {
           question: this.$t("My payment got stuck, how can I solve this problem?"),
-          answer: this.$t("In case of any such queries, we have a dedicated help center available for your help. So you can reach out to us on +919999999999 or bestdeed2023@gmail.com, and our team will gladly assist you."),
+          answer: this.$t("In case of any such queries, we have a dedicated help center available for your help. So you can reach out to us on +917043029467 or bestdeed2023@gmail.com, and our team will gladly assist you."),
           open: false,
         },
         {
