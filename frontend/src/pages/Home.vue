@@ -51,51 +51,35 @@
   <section class="bg-image bg-no-repeat bg-center bg-cover"
 
 style="background-image: url('https://bestdeed.org/files/BG.png');">
-  <div class="container mx-auto md:pb-[0rem] lg:pb-[5rem]">
+  <div class="container mx-auto pt-[2rem] md:pt-[3rem] lg:pt-[9rem] pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
 
     <div class="grid md:grid-cols-2 lg:grid-cols-2 ">
-      <div class="sm:mt-20 md:mt-20 lg:mt-36 mb-5 ml-5 md:ml-0 lg:ml-0">
+      <div class="mb-5 ml-5 md:ml-0 lg:ml-0">
         <div
           class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
           {{ $t('BestDeed') }}
         </div>
         <h1
-          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[28px] md:text-[28px] lg:text-[38px]">
+          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
           Most trusted crowd <br>funding platform of india.</h1>
 
 
         <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
           <div class="flex items-center">
             <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
-            <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-14 w-18 md:w-14 lg:w-16" />
+            <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
             <div
               class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Platform</div>
               <div class="-mt-2">Fees</div>
             </div>
           </div>
-          <!-- <div class="flex items-center">
-                <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> 
-                <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="" />
-                <div
-                  class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-                  <div>Platform</div>
-                  <div class="-mt-2">Fees</div>
-                </div>
-              </div> -->
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Donate With</div>
               <div class="-mt-2">Transparency</div>
             </div>
-            <!-- <div class="flex items-center">
-                <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max" />
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[22px] ml-2">
-                  <div>Donate With</div>
-                  <div class="-mt-2">Transparency</div>h-10 md:h-22 lg:h-20 w-14 md:w-20 lg:w-14
-                </div>
-              </div> -->
           </div><div class="flex items-center">
             <img src="../../src/assets/Inter/img/layer.png" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
@@ -103,13 +87,6 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
               <div class="-mt-2">NGOs</div>
             </div>
           </div>
-          <!-- <div class="flex items-center">
-                <img src="../../src/assets/Inter/img/layer.png" class="" />
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-                  <div>Verified</div>
-                  <div class="-mt-2">NGOs</div>
-                </div>
-              </div> -->
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/ellipse.png" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
@@ -118,16 +95,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
             </div>
           </div>
         </div>
-         <!-- <div class="flex items-center">
-                <img src="../../src/assets/Inter/img/ellipse.png" class="" />
-                <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-                  <div>Tax</div>
-                  <div class="-mt-2">Exemption</div>
-                </div>
-              </div> -->
-
         <p
-          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[20px] md:text-[20px] lg:text-[22px] break-keep">
+          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
           Your help goes a long way!</p>
         <router-link to="/explore-campaigns"
           class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
@@ -136,7 +105,7 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
 
       <div class="grid place-items-center  mt-5 md:mt-10 lg:mt-0  mx-4 md:mx-10 lg:mx-0">
         <img src="../../src/assets/Inter/img/rightside.png"
-          class="sm:mt-16 md:mt-16 lg:mt-36 ml-0 md:ml-14 lg:ml-16 xl:ml-36 mb-10 md:mb-16 lg:mb-0" />
+          class="ml-0 md:ml-10 lg:ml-18 xl:ml-36 lg:mb-0" />
       </div>
     </div>
 
@@ -681,7 +650,7 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
   numberWithCommas(campaigns[index - 1].donation_amount) }}</span>
                   </div>
                 </div>
-                <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
+                <div class="pr-4 pb-4 pl-5 pt-2 flex justify-between">
                   <ShareNetwork network="WhatsApp" :url="url + 'campaign-donation/' + campaigns[index - 1].name"
                     :title="campaigns[index - 1].campaign_title" :description="campaigns[index - 1].short_description">
                     <button
@@ -733,11 +702,11 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
       </div> -->
     <!--Testimonials-->
 
-    <section class="container mx-auto h-full mb-20 lg:px-10 xl:px-10">
+    <section class="container mx-auto h-full mb-20 px-10 md:px-10 lg:px-10">
       <div class="mb-28 mt-10">
         <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-10">
           {{ $t('Why join us in this noble cause?') }}</h3>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-items-center gap-8 px-10 md:px-10 lg:px-10">         
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-items-center gap-8 ">         
           <div class="grid justify-items-center">
             <img class="" alt="Simple Process" title=""
               src="../../src/assets/Inter/img/firstimage.png" />

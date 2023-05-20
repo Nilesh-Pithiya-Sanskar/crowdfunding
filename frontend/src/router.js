@@ -155,7 +155,16 @@ const routes = [{
 {
   path: '/faq',
   name: 'Faq',
-  component: () => import('@/components/Faq.vue')
+  component: () => import('@/components/Faq.vue'),
+  meta: {
+    title: 'Faq | BestDeed',
+    metaTags: [
+      { 
+        name: 'description',
+        content: "Find answers to frequently asked questions on our FAQ page. Get the information you need quickly and easily. Explore now!"
+      },
+    ]
+  }
 },
 {
   path: '/Verifyotp',
@@ -214,10 +223,19 @@ const routes = [{
     ]
   }
 },
-{
+{ 
   path: '/how-it-works',
   name: 'How It Works',
   component: () => import('@/pages/HowItWorks.vue'),
+  meta:{
+    title: 'How is Works | BestDeed',
+    metaTags: [
+      {
+        name: 'description',
+        content: "Explore BestDeed: Empowering individuals to make a positive impact. Learn how it transforms intentions into actions. Join now!"
+      }
+    ]
+  }
 },
 {
   path: '/translation',

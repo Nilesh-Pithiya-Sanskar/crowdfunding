@@ -130,11 +130,11 @@ doc_events = {
 	# 	"after_insert": "sadbhavna_donatekart.api.api.set_translation_from_erpnext",
     #     # "after_update": "sadbhavna_donatekart.api.api.set_translation_from_erpnext"
 	# },
-    "Blog Post":{
-        # "after_insert": "sadbhavna_donatekart.api.api.set_sitemap_for_blog",
-        "on_update": "sadbhavna_donatekart.api.api.set_sitemap_for_blog",
-        "after_delete": "sadbhavna_donatekart.api.api.remove_sitemap_for_blog"
-	}
+    # "Blog Post":{
+    #     "after_insert": "sadbhavna_donatekart.api.api.set_sitemap_for_blog",
+    #     "on_update": "sadbhavna_donatekart.api.api.set_sitemap_for_blog",
+    #     "after_delete": "sadbhavna_donatekart.api.api.remove_sitemap_for_blog"
+	# }
 }
 
 # Scheduled Tasks

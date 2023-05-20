@@ -736,9 +736,8 @@ def set_sitemap_for_blog(doc, method):
     # else:
     # print("\n\n asdfgafgafa sdf yes \n\n", root, "\n\n")
 
-
-
     # Check if the <url> tag with the specified <loc> exists
+
     url_exists = False
     for url_elem in root.findall('url'):
         loc_elem = url_elem.find('loc')
@@ -764,7 +763,20 @@ def set_sitemap_for_blog(doc, method):
         root.append(new_url_elem)
 
     # Save the updated XML to a file
-    tree.write(xml_file_path, encoding='utf-8')
+    tree.write(xml_file_path, encoding='utf-8', xml_declaration=True, short_empty_elements=True)
+
+
+# -------------------------------------------
+    import xml.etree.ElementTree as ET
+
+    xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
+    for elem in root.iter():
+        if 'ns0:' in elem.tag:
+            elem.tag = elem.tag.replace('ns0:', '')
+    tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
 
 
 @frappe.whitelist(allow_guest=True)

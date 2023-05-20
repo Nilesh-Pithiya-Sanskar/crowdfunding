@@ -482,7 +482,7 @@
 
 
                     </div>
-                    <div class="sm:pr-2 md:pr-4 lg:pr-4 pb-4 pl-5 md:pl-4 lg:pl-5 pt-2 flex justify-between">
+                    <div class="pr-4 pb-4 pl-5 pt-2 flex justify-between">
                         <ShareNetwork network="WhatsApp" :url="url + '/campaign-donation/' + campaign.name"
                             :title="campaign.campaign_title" :description="campaign.short_description">
                             <button

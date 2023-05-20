@@ -43,6 +43,7 @@
     "tailwind-scrollbar-hide": "^1.1.7",
     "vue": "^3.2.47",
     "vue-3-meta": "^2.4.0",
+    "vue-awesome-swiper": "^5.0.1",
     "vue-cookies": "^1.8.3",
     "vue-echarts": "^6.3.1",
     "vue-facebook-login-component": "^4.0.2",

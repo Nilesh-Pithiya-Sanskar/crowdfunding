@@ -115,36 +115,36 @@
               {{ $t("We are India's most trusted and transparent crowdfunding platform, with a vision to create a social impact.Our unique model allows people from across the globe to donate towards raising funds for products required by NGOs and charities in India, which are then delivered to them by us.")}}</p>
             <div class="my-5 pr-4">
               <div class="flex space-x-6 mt-6 md:mt-6 lg:mt-8">
-                <a href="#" class="text-gray-400 text-white">
+                <a href="https://www.facebook.com/people/BestDeed/100092532564335/" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                     src="../../src/assets/Inter/img/icon/facebookwhite.svg" />
                   <p class="sr-only">Facebook page</p>
                 </a>
-                <a href="#" class="text-gray-400 text-white">
+                <a href="https://twitter.com/bestdeed" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                     src="../../src/assets/Inter/img/icon/twitterwhite.svg" />
                   <p class="sr-only">Twitter page</p>
                 </a>
-                <a href="#" class="text-gray-400 text-white">
+                <a href="https://www.instagram.com/bestdeed2023/" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                     src="../../src/assets/Inter/img/icon/instawhite.svg" />
                   <p class="sr-only">Instagram page</p>
                 </a>
-                <a href="#" class="text-gray-400 text-white">
+                <a href="https://www.linkedin.com/in/best-deed-995977277/" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                     src="../../src/assets/Inter/img/icon/linkedinwhite.svg" />
                   <p class="sr-only">Linkedin account</p>
                 </a>
-                <a href="#" class="text-gray-400 text-white">
+                <!-- <a href="#" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                     src="../../src/assets/Inter/img/icon/youtubewhite.png" />
                   <p class="sr-only">Youtube</p>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>

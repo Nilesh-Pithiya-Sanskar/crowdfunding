@@ -1,16 +1,16 @@
 <template>
-  <section class="bg-[#ebf8ec] testimonial-wrap pt-5 lg:!pt-[5rem]">
+  <section class="bg-[#ebf8ec] testimonial-wrap pt-5 pl-5 md:pl-5 lg:pl-0 pr-5 md:pr-5 lg:pr-0 lg:!pt-[5rem]">
     <div class="container mx-auto h-full">
       <div class="flex flex-wrap justify-between items-center lg:mb-10 mb-5">
         <div class="fontfamily text-center mt-0">
-          <h3 class=" text-[24px] md:text-[24px] lg:text-[30px] pt-0 font-black text-[#40b751] mb-0 ">{{
+          <h3 class=" text-[20px] md:text-[24px] lg:text-[30px] pt-0 font-black text-[#40b751] mb-0 ">{{
             $t('Testimonials')
           }}</h3>
           <!-- <p class="text-[#364958] text-[15px] px-2 font-[400]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Amet,
             voluptate!</p> -->
         </div>
-        <ul class="flex mb-0 list-none flex-wrap pt-0  flex-row">
+        <ul class="flex mb-0 list-none flex-wrap pt-2 md:pt-0 lg:pt-0  flex-row">
           <!-- <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
             <a class="text-[16px] transition ease-in-out delay-100  px-[12px] md:px-[20px] lg:px-[30px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer"
               v-on:click="toggleTabsTestimonials(1)"
@@ -19,14 +19,14 @@
             </a>
           </li> -->
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-[16px] transition ease-in-out delay-100 px-[12px] md:px-[20px] lg:px-[40px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer border border-[#40b751] text-[#40b751]"
+            <a class="text-[16px] transition ease-in-out delay-100 px-[10px] md:px-[24px] lg:px-[40px] py-[5px] md:py-[8px] lg:py-[12px] rounded block leading-normal cursor-pointer border border-[#40b751] text-[#40b751]"
               v-on:click="toggleTabsTestimonials(2)"
               v-bind:class="{ 'bg-transparent': openTabTestimonials !== 2, 'bg-[#40b751] text-white': openTabTestimonials === 2 }">
               <i class="fas fa-cog text-base mr-1"></i> {{ $t('Donors') }}
             </a>
           </li>
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-[16px] transition ease-in-out delay-100 margintop md:mt-0 lg:mt-0 px-[16px] md:px-[28px] lg:px-[48px] py-[10px] md:py-[10px] lg:py-[12px] rounded block leading-normal cursor-pointer border border-[#40b751] text-[#40b751]"
+            <a class="text-[16px] transition ease-in-out delay-100 md:mt-0 lg:mt-0 px-[10px] md:px-[24px] lg:px-[48px] py-[5px] md:py-[8px] lg:py-[12px] rounded block leading-normal cursor-pointer border border-[#40b751] text-[#40b751]"
               v-on:click="toggleTabsTestimonials(3)"
               v-bind:class="{ 'bg-transparent': openTabTestimonials !== 3, 'bg-[#40b751] text-white': openTabTestimonials === 3 }">
               <i class="fas fa-cog text-base mr-1"></i> {{ $t('NGOs') }}

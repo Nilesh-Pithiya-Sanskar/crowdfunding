@@ -81,12 +81,12 @@
   <div class="header-bottom">
     <div class="bg-[#40b751]">
       <nav
-        class="px-[10px] md:px-[20px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[10px] lg:py-[16px] lg:flex lg:justify-between lg:items-center">
+        class="px-[10px] navbar md:px-[20px] lg:px-[0px] xl:px-[35px] py-[5px] md:py-[10px] lg:py-[16px] lg:flex lg:justify-between lg:items-center">
         <div class="flex  justify-between">
           <div class="flex items-center flex-shrink-0">
             <a href="/">
               <img src="../../src/assets/Inter/img//logo256x256.svg"
-                class="mb-2 lg:mb-0 sm:mt-2 lg:mt-0 mr-2 w-16" />
+                class="mr-2 w-16" />
             </a>
             <a href="/"><span
                 class="font-sans text-white font-bold text-[22px] md:text-[28px] lg:text-[28px] md:mr-5">BestDeed</span></a>
@@ -366,3 +366,20 @@ export default {
 
 }
 </script>
+
+<style scoped>
+@media(max-width: 640px){
+  .navbar 
+  {
+    padding-top : 10px;
+    padding-bottom : 10px;
+  }
+}
+@media(min-width: 1023px) and (max-width: 1278px){
+  .navbar 
+  {
+    padding-left : 20px;
+    padding-right : 20px;
+  }
+}
+</style>

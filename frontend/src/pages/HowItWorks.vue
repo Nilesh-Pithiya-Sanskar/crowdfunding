@@ -771,7 +771,7 @@ export default {
         Footer,
     },
     created() {
-        document.title = this.$t("How It Works | Trusted and 100% Transparent Online Crowdfunding Platform | BestDeed")
+        document.title = this.$t("How is Works | BestDeed")
         const linkElement = document.querySelector('link[rel="canonical"]');
     if (!linkElement) {
       var link = document.createElement('link');

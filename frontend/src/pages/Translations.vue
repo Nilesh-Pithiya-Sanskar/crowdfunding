@@ -202,15 +202,15 @@ export default{
 
    <!-- down head in vue3 -->
 
-<template>
+<!-- <template>
   <div>Test</div>
 </template>
 
    <script>
 import { defineComponent, computed, reactive } from 'vue'
-import { useHead } from '@vueuse/head'
+import { useHead } from '@vueuse/head' -->
 
-// import { createSSRApp } from 'vue'
+<!-- // import { createSSRApp } from 'vue'
 // // Vue's server-rendering API is exposed under `vue/server-renderer`.
 // import { renderToString } from 'vue/server-renderer'
 
@@ -224,37 +224,43 @@ import { useHead } from '@vueuse/head'
 // })
 
 
-export default defineComponent({
+// export default defineComponent({
 
-  metaInfo: {
-    title: 'My Page Title',
-    meta: [
-      {
-        name: 'description',
-        content: 'This is my page description'
-      },
-      {
-        property: 'og:title',
-        content: 'My Open Graph Title'
-      }
-    ]
-  },
-  setup() {
-    const siteData = reactive({
-      title: `My website`,
-      description: `My beautiful website`,
-    })
+//   metaInfo: {
+//     title: 'My Page Title',
+//     meta: [
+//       {
+//         name: 'description',
+//         content: 'This is my page description'
+//       },
+//       {
+//         property: 'og:title',
+//         content: 'My Open Graph Title'
+//       }
+//     ]
+//   },
+//   setup() {
+//     const siteData = reactive({
+//       title: `My website`,
+//       description: `My beautiful website`,
+//     })
 
-    useHead({
-      // Can be static or computed
-      title: computed(() => siteData.title),
-      meta: [
-        {
-          name: `description`,
-          content: computed(() => siteData.description),
-        },
-      ],
-    })
-  },
-})
+//     useHead({
+//       // Can be static or computed
+//       title: computed(() => siteData.title),
+//       meta: [
+//         {
+//           name: `description`,
+//           content: computed(() => siteData.description),
+//         },
+//       ],
+//     })
+//   },
+// })
+// </script> -->
+
+<template>
+
+</template>
+<script>
 </script>

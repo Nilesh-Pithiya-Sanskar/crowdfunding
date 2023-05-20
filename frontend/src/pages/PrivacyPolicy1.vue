@@ -218,9 +218,8 @@
         </p>
         <h2 class="text-2xl">Contact us!</h2>
         <p class="pb-5">If you have any queries about our privacy policy, you can reach out to our team at <a
-                class="text-blue-500" href="mailto:bestdeed2023@gmail.com">bestdeed2023@gmail.com</a> or (Add the
-            contact
-            number).</p>
+                class="text-blue-500" href="mailto:bestdeed2023@gmail.com">bestdeed2023@gmail.com</a> or <a class="text-blue-500" href="tel:+91 7043029467">+91 7043029467</a>
+        </p>
 
     </div>
     <Footer />

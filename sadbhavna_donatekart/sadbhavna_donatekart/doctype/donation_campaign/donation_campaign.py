@@ -124,29 +124,29 @@ class DonationCampaign(WebsiteGenerator):
 	# 	# Save the updated XML to a file
 	# 	tree.write(xml_file_path, encoding='utf-8', xml_declaration=True)
 
-	def after_delete(self):
-		import xml.etree.ElementTree as ET
+	# def after_delete(self):
+	# 	import xml.etree.ElementTree as ET
 
-		xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
-		loc = f"https://bestdeed.org/campaign-donation/{self.name}"
+	# 	xml_file_path = '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/site/sitemap.xml'
+	# 	loc = f"https://bestdeed.org/campaign-donation/{self.name}"
 
-		tree = ET.parse(xml_file_path)
-		root = tree.getroot()
+	# 	tree = ET.parse(xml_file_path)
+	# 	root = tree.getroot()
 
 
-		# Find the <url> tags with matching <loc> text
-		urls_to_remove = []
-		for url_elem in root.findall('url'):
-			loc_elem = url_elem.find('loc')
-			if loc_elem is not None and loc_elem.text == loc:
-				urls_to_remove.append(url_elem)
+	# 	# Find the <url> tags with matching <loc> text
+	# 	urls_to_remove = []
+	# 	for url_elem in root.findall('url'):
+	# 		loc_elem = url_elem.find('loc')
+	# 		if loc_elem is not None and loc_elem.text == loc:
+	# 			urls_to_remove.append(url_elem)
 
-		# Remove the matching <url> tags from the root
-		for url_elem in urls_to_remove:
-			root.remove(url_elem)
+	# 	# Remove the matching <url> tags from the root
+	# 	for url_elem in urls_to_remove:
+	# 		root.remove(url_elem)
 
-		# Save the updated XML to a file
-		tree.write(xml_file_path, encoding='utf-8')
+	# 	# Save the updated XML to a file
+	# 	tree.write(xml_file_path, encoding='utf-8')
 
 
 
