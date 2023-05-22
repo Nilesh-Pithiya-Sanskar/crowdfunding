@@ -133,7 +133,7 @@
                     src="../../src/assets/Inter/img/icon/instawhite.svg" />
                   <p class="sr-only">Instagram page</p>
                 </a>
-                <a href="https://www.linkedin.com/in/best-deed-995977277/" class="text-gray-400 text-white">
+                <a href="https://www.linkedin.com/company/bestdeed/" class="text-gray-400 text-white">
                   <img
                     class="w-5 md:w-4 lg:w-4 sm:h-5 md:h-4 lg:h-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                     src="../../src/assets/Inter/img/icon/linkedinwhite.svg" />
@@ -199,7 +199,7 @@
                <img class="w-5 h-5 mt-1"
                     src="../../src/assets/Inter/img/location-pin.png" />
                 <p class="ml-4"><span>{{ $t('Gondal Road') }}</span><br>
-                  {{ $t('Opp Swami Narayan Gurukul, Near D-Mart Service Road Rajkot 360004')}}</p>
+                  Opp Swami Narayan Gurukul, Near D-Mart Service Road, <br>Rajkot - 360004</p>
               </div>
               <div class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/phone-call.png" /></div>
@@ -218,7 +218,7 @@
   </div>
 
   <section class=" bg-white text-center px-4 pb-1 pt-1 border-t border-white border-opacity-10 border-neutral-100">
-    <span class="text-[#40b751] font-[600] text-[16px] ">{{ $t('BestDeed &copy; 2023 | All Rights Reserved') }}</span>
+    <span class="text-[#40b751] font-[600] text-[16px] ">{{ $t('Manav Seva Cheritable Trust &copy; 2023 | All Rights Reserved') }}</span>
   </section>
 </template>
 
