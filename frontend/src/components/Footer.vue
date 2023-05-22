@@ -218,7 +218,7 @@
   </div>
 
   <section class=" bg-white text-center px-4 pb-1 pt-1 border-t border-white border-opacity-10 border-neutral-100">
-    <span class="text-[#40b751] font-[600] text-[16px] ">{{ $t('Manav Seva Cheritable Trust &copy; 2023 | All Rights Reserved') }}</span>
+    <span class="text-[#40b751] font-[600] text-[16px] ">{{ $t('Manav Seva Charitable Trust &copy; 2023 | All Rights Reserved') }}</span>
   </section>
 </template>
 
