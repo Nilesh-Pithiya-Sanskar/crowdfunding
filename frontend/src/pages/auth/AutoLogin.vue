@@ -1,22 +1,28 @@
 <template>
     <Navbar />
-    <section class="hidden md:block lg:block">
-        <div class="grid grid-cols-3">
-            <div class="z-0">
-                <img class="w-full h-auto object-cover" src="../../assets/Inter/img/bg-left.png">
-            </div>
-            <div class="z-10 py-10">
-                <div class="py-0 ">
-                    <div class="p-6 shadow-lg  card-shodow w-[350px] lg:w-[440px] mx-auto bg-white">
-                        <img src="/src/assets/Inter/img/logo-1.1.ico"
-                            class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
-                        <h1 class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
-                            <small>{{ $t('Login') }} </small>
-                        </h1>
-                        <div class=" ">
+
+    <section class="flex justify-center gradient-form h-full">
+  <div class="container h-full px-8 md:px-14 lg:px-24 xl:px-48 py-10">
+    <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+      <div class="w-full">
+        <div class="block rounded-lg bg-white shadow-lg card-shodow dark:bg-neutral-800">
+          <div class="g-0 lg:flex lg:flex-wrap">
+            <!-- Left column container-->
+            <div class="px-10 py-5 px-4 md:px-0 lg:w-6/12">
+              <div class="p-1 md:p-2 lg:p-4">
+                <!--Logo-->
+
+               <div class="text-center">
+                  <img src="/src/assets/Inter/img/logo-1.1.ico"
+                class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
+                  <h1 class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
+              <small>{{$t('Login')}} </small>
+                  </h1>
+                </div>
+                         <div class="relative ">
                             <div class="mb-4">
                                 <label class="block text-gray-600 text-base mb-2" for="phone">
-                                    {{ $t('Enter Your Number') }}
+                                    {{ $t('Enter Your Phone Number') }}
                                 </label>
                                 <input @keyup="error = ''"
                                     :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
@@ -28,7 +34,8 @@
                                     {{ phone }}</span>
 
                             </div>
-                            <div class="mb-4 grid md:grid-cols-1 lg:grid-cols-2">
+                            <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
+                                <!-- <div class="flex flex-wrap justify-between"> -->
                                 <button
                                     class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
                                     @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
@@ -38,91 +45,18 @@
                                     @click="login_with_sms()">
                                     {{ $t('Login With SMS') }}</button>
 
+                                    <!-- <div class="text-center">
+                                    <GoogleLogin :callback="login_with_google">
+                                    </GoogleLogin>
+                                </div> -->
+
                             </div>
                             <div class="mb-4">
                                 <div
                                     class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
                                     <p class="text-center mx-4 mb-0">Or</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="mb-4 grid md:grid-cols-1 lg:grid-cols-2">
-
-                            <div class="text-center">
-                                <GoogleLogin :callback="login_with_google">
-                                </GoogleLogin>
-                            </div>
-
-                            <button class="fb-login-button" data-button-type="" data-use-continue-as="true" data-width=""
-                                data-hight="" @click="checkLoginState()">
-                                Login with Facebook
-                            </button>
-                        </div>
-                        <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                href="/bestdeed/login">{{ $t('Login Via Email') }}</a></span>
-                        <span class="block text-gray-600  text-center text-base  mb-2">
-                            {{ $t('New to BestDeed?') }} <router-link to="/bestdeed/registration"
-                                class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
-
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="grid content-end z-0">
-                <img class="w-full h-auto object-cover" src="../../assets/Inter/img/bg-right.png">
-            </div>
-        </div>
-
-
-    </section>
-
-    <!-- 
-    <section class="block md:block lg:hidden">
-        <div class="container mx-auto py-10">
-            <div class="container mx-auto h-full">
-                <div class="w-full">
-                    <div class="container py-0 ">
-                        <div class="p-6 shadow-lg  card-shodow w-[440px] mx-auto bg-white">
-                            <img src="/src/assets/Inter/img/logo-1.1.ico"
-                                class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
-                            <div
-                                class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
-                                <small>{{ $t('Login') }} </small>
-                            </div>
-                            <div class="relative ">
-                                <div class="mb-4">
-                                    <label class="block text-gray-600 text-base mb-2" for="phone">
-                                        {{ $t('Enter Your Number') }}
-                                    </label>
-                                    <input @keyup="error = ''"
-                                        :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
-                                        v-model="phone" ref="number" type="tel">
-
-                                    <div v-if="error" class="text-red-500">{{ error }}</div>
-                                    <span v-if="phone && !error" class="text-sm text-gray-400"> {{ $t('An OTP will be sent to')
-                                    }}
-                                        {{ phone }}</span>
-
-                                </div>
-                                <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
-                                    <button
-                                        class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                        @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
-
-                                    <button
-                                        class="appearance-none border-gray-600 sm:ml-0 md:ml-2 lg:ml-2 mb-5  rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                        @click="login_with_sms()">
-                                        {{ $t('Login With SMS') }}</button>
-
-                                </div>
-                                <div class="mb-4">
-                                    <div
-                                        class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
-                                        <p class="text-center mx-4 mb-0">Or</p>
-                                    </div>
-                                </div>
-                            </div>
+                            </div></div>
                             <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
 
                                 <div class="text-center">
@@ -135,179 +69,32 @@
                                     Login with Facebook
                                 </button>
                             </div>
-                            <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                    href="/bestdeed/login">{{ $t('Login Via Email') }}</a></span>
-                            <span class="block text-gray-600  text-center text-base  mb-2">
-                                {{ $t('New to BestDeed?') }} <router-link to="/bestdeed/registration"
-                                    class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
-
-
-                        </div>
-                    </div>
-                </div>
+                             <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
+                                href="/login-via-email">{{ $t('Login Via Email') }}</a></span>
+ <span class="block text-gray-600  text-center text-base  mb-2"> {{ $t('New to BestDeed?') }} <router-link
+                                to="/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+              </div>
             </div>
-        </div>
-    </section> -->
 
-
-    <section class="block md:hidden lg:hidden">
-        <div class="container mx-auto py-10">
-            <div class="container mx-auto h-full">
-                <div class="w-full">
-                    <div class="container py-0 ">
-                        <div class="p-6 shadow-lg  card-shodow w-[440px] mx-auto bg-white">
-                            <img src="/src/assets/Inter/img/logo-1.1.ico"
-                                class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
-                            <div
-                                class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
-                                <small>{{ $t('Login') }} </small>
-                            </div>
-                            <div class="relative ">
-                                <div class="mb-4">
-                                    <label class="block text-gray-600 text-base mb-2" for="phone">
-                                        {{ $t('Enter Your Number') }}
-                                    </label>
-                                    <input @keyup="error = ''"
-                                        :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
-                                        v-model="phone" ref="number" type="tel">
-
-                                    <div v-if="error" class="text-red-500">{{ error }}</div>
-                                    <span v-if="phone && !error" class="text-sm text-gray-400"> {{ $t('An OTP will be sent to')
-                                    }}
-                                        {{ phone }}</span>
-
-                                </div>
-                                <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
-                                    <button
-                                        class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                        @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
-
-                                    <button
-                                        class="appearance-none border-gray-600 sm:ml-0 md:ml-2 lg:ml-2 mb-5  rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                        @click="login_with_sms()">
-                                        {{ $t('Login With SMS') }}</button>
-
-                                </div>
-                                <div class="mb-4">
-                                    <div
-                                        class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
-                                        <p class="text-center mx-4 mb-0">Or</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
-
-                                <div class="text-center">
-                                    <GoogleLogin :callback="login_with_google">
-                                    </GoogleLogin>
-                                </div>
-
-                                <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
-                                    data-width="" data-hight="" @click="checkLoginState()">
-                                    Login with Facebook
-                                </button>
-                            </div>
-                            <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                            href="/login-via-email">{{ $t('Login Via Email') }}</a></span>
-                                    <span class="block text-gray-600  text-center text-base  mb-2">
-                                        {{ $t('New to BestDeed?') }} <router-link to="/registration"
-                                            class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
-
-
-                        </div>
-                    </div>
-                </div>
+            <!-- Right column container with background and description-->
+           <div class="flex items-center rounded-b-lg bg-gradient-to-l from-lime-600 to-green-400 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
+            <div class="px-6 py-6 text-white">
+                <div class="mb-6 text-xl font-semibold">Welcome to BestDeed!</div>
+                <p class="text-sm">{{ $t('BestDeed is a leading platform that connects donors with non-profit organizations worldwide. We strive to create a world where everyone has the opportunity to make a positive impact on society. Through our user-friendly website, users can easily discover and donate to a variety of causes, from education to environmental sustainability. We are committed to providing a safe and secure platform for donors and organizations to collaborate and make a meaningful difference in the world. Thank you for choosing BestDeed as your go-to platform for charitable giving.')}}</p>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-    <!-- <section class="flex justify-center gradient-form h-full">
-        <div class="container h-full px-8 md:px-14 lg:px-24 xl:px-48 py-10">
-            <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
-                <div class="w-full">
-                    <div class="block rounded-lg bg-white shadow-lg card-shodow dark:bg-neutral-800">
-                        <div class="g-0 lg:flex lg:flex-wrap">
-                            <div class="px-10 py-5 px-4 md:px-0 lg:w-6/12">
-                                <div class="p-1 md:p-2 lg:p-4">
-                                    <div class="text-center">
-                                        <img src="/src/assets/Inter/img/logo-1.1.ico"
-                                            class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
-                                        <h1
-                                            class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
-                                            <small>{{ $t('Login') }} </small>
-                                        </h1>
-                                    </div>
-                                    <div class="relative ">
-                                        <div class="mb-4">
-                                            <label class="block text-gray-600 text-base mb-2" for="phone">
-                                                {{ $t('Enter Your Phone Number') }}
-                                            </label>
-                                            <input @keyup="error = ''"
-                                                :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
-                                                v-model="phone" ref="number" type="tel">
+      </div>
+    </div>
+  </div>
+</section>
 
-                                            <div v-if="error" class="text-red-500">{{ error }}</div>
-                                            <span v-if="phone && !error" class="text-sm text-gray-400"> {{ $t('An OTP will be sent to')
-                                            }}
-                                                {{ phone }}</span>
-
-                                        </div>
-                                        <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
-                                            <button
-                                                class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                                @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
-
-                                            <button
-                                                class="appearance-none border-gray-600 sm:ml-0 md:ml-2 lg:ml-2 mb-5  rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
-                                                @click="login_with_sms()">
-                                                {{ $t('Login With SMS') }}</button> -->
-
-    <!-- <div class="text-center">
-                                    <GoogleLogin :callback="login_with_google">
-                                    </GoogleLogin>
-                                </div> -->
-
-    <!-- </div>
-                                        <div class="mb-4">
-                                            <div
-                                                class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
-                                                <p class="text-center mx-4 mb-0">Or</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-4 grid md:grid-cols-2 sm:grid-cols-1">
-
-                                        <div class="text-center">
-                                            <GoogleLogin :callback="login_with_google">
-                                            </GoogleLogin>
-                                        </div>
-
-                                        <button class="fb-login-button" data-button-type="" data-use-continue-as="true"
-                                            data-width="" data-hight="" @click="checkLoginState()">
-                                            Login with Facebook
-                                        </button>
-                                    </div>
-                                    <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                            href="/login-via-email">{{ $t('Login Via Email') }}</a></span>
-                                    <span class="block text-gray-600  text-center text-base  mb-2">
-                                        {{ $t('New to BestDeed?') }} <router-link to="/registration"
-                                            class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
-                                </div>
-                            </div>
-                            <div
-                                class="flex items-center rounded-b-lg bg-gradient-to-l from-lime-600 to-green-400 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
-                                <div class="px-6 py-6 text-white">
-                                    <div class="mb-6 text-xl font-semibold">Welcome to BestDeed!</div>
-                                    <p class="text-sm">
-                                        {{ $t('BestDeed is a leading platform that connects donors with non-profit organizations worldwide. We strive to create a world where everyone has the opportunity to make a positive impact on society. Through our user-friendly website, users can easily discover and donate to a variety of causes, from education to environmental sustainability. We are committed to providing a safe and secure platform for donors and organizations to collaborate and make a meaningful difference in the world. Thank you for choosing BestDeed as your go-to platform for charitable giving.') }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!--<div class=" pl-96 ">
+        <div class="imageresponsive absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:w-0 md:w-0 lg:w-0 xl:w-96  bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
+            style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
-    </section> -->
+    </div>-->
     <Footer />
 </template>
   
@@ -336,18 +123,18 @@ export default {
     mounted() {
         document.title = this.$t('Login Now | BestDeed')
 
-        const linkElement = document.querySelector('link[rel="canonical"]');
+    const linkElement = document.querySelector('link[rel="canonical"]');
 
-        if (!linkElement) {
-            var link = document.createElement('link');
-            link.rel = 'canonical';
-            link.href = "https://bestdeed.org/login"
-            document.head.appendChild(link);
-        }
-        else {
-            linkElement.href = "https://bestdeed.org/login"
-            document.head.appendChild(linkElement)
-        }
+    if (!linkElement) {
+        var link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = "https://bestdeed.org/login"
+    document.head.appendChild(link);
+    }
+    else{
+      linkElement.href = "https://bestdeed.org/login"
+      document.head.appendChild(linkElement)
+    }
         this.$nextTick(() => this.$refs.number.focus())
         // 203313835661247
         // 1616534218770661
@@ -390,8 +177,8 @@ export default {
                 }
             }
         },
-        login_with_google() {
-            return {
+        login_with_google(){
+            return{
                 method: 'sadbhavna_donatekart.api.api.login_with_google',
                 onSuccess: (res) => {
                     this.$toast({
@@ -402,7 +189,7 @@ export default {
                     })
                     this.$router.push(`/`);
 
-                },
+                    },
                 onError: (error) => {
                     console.log('error', error)
                     this.$toast({
@@ -516,39 +303,3 @@ export default {
     }
 };
 </script>
-<style>
-.bg-content {
-    position: absolute;
-    margin-top: -580px;
-    margin-left: 300px;
-}
-
-/* .bg-right {
-    margin-top: 120px;
-} */
-
-
-/* .bg-left {
-    height: 520px;
-    width: 460px;
-}
-
-.bg-right {
-    margin-left: 990px;
-    height: 480px;
-    width: 460px;
-}
-
-@media (min-width:1024px) {
-    .bg-left {
-        height: 520px;
-        width: 460px;
-    }
-
-    .bg-right {
-        margin-left: 990px;
-        height: 480px;
-        width: 460px;
-    }
-} */
-</style>
