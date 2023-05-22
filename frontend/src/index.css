@@ -528,3 +528,148 @@ select:focus {
 .mostly-customized-scrollbar::-webkit-scrollbar-thumb {
   background: #000;
 }
+
+@media (max-width: 1080px) and (min-width: 1024px){
+  .responsivesection
+  {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 640px){
+  .learn
+  {
+    margin-left: -20px;
+  }
+  }
+
+@media (max-width: 768px) and (min-width: 640px){
+.emailicon
+{
+  margin-left: -30px;
+}
+}
+
+@media (max-width: 366px) and (min-width: 270px){
+  .sm-arrow
+  {
+    margin-top: 290px;
+  }
+  }
+
+@media (max-width: 621px) and (min-width: 365px){
+  .sm-arrow
+  {
+    margin-top: 250px;
+  }
+  }
+
+@media (max-width: 641px) and (min-width: 620px){
+    .sm-arrow
+    {
+      margin-top: 220px;
+    }
+    }
+
+@media (min-width: 640px){
+    .sm-arrow
+    {
+      display: none;
+    }
+    }
+
+@media (max-width: 290px){
+  .step-sm-arrow
+  {
+    margin-top: 280px;
+  }
+  }
+
+@media (max-width: 322px) and (min-width: 291px){
+    .step-sm-arrow
+   {
+      margin-top: 250px;
+    }
+ }
+
+@media (max-width: 366px) and (min-width: 321px){
+   .step-sm-arrow
+  {
+     margin-top: 230px;
+   }
+}
+
+@media (max-width: 401px) and (min-width: 365px){
+  .step-sm-arrow
+  {
+    margin-top: 230px;
+  }
+  }
+
+@media (max-width: 500px) and (min-width: 400px){
+  .step-sm-arrow
+  {
+    margin-top: 230px;
+  }
+  }
+
+@media (max-width: 571px) and (min-width: 500px){
+  .step-sm-arrow
+  {
+    margin-top: 220px;
+  }
+}
+
+@media (max-width: 640px) and (min-width: 570px){
+.step-sm-arrow
+{
+  margin-top: 200px;
+}
+}
+
+@media (min-width: 640px){
+  .step-sm-arrow
+  {
+    display: none;
+  }
+}
+
+@media (max-width: 639px){
+  .step-arrow
+  {
+    display: none;
+  }
+}
+
+@media (min-width: 640px){
+  .step-arrow
+  {
+    margin-left: 290px;
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 768px){
+  .step-arrow
+  {
+    margin-left: 240px;
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1024px){
+  .step-arrow
+  {
+    margin-left: 190px;
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1280px){
+  .step-arrow
+  {
+    margin-left: 230px;
+    margin-top: 48px;
+  }
+}

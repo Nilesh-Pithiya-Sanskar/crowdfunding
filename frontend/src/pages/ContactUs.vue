@@ -123,31 +123,32 @@
 
                 <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 pl-0 md:pl-16 lg:pl-32">
                     <!-- <p class="text-base font-bold mb-6">{{ $t('Quick info') }}</p> -->
-                    <div class="pb-4">
+                    <a href="https://goo.gl/maps/UcgCrVJMHpx3vd1v9" class="pb-4">
                         <div class="bg-zinc-100 mt-1 rounded-full w-10 h-10 float-left  grid justify-items-center ">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
                         </div>
                         <!-- <p class="text-black-500 mb-2 pt-2 pl-14">{{ $t('Head Office, India') }}</p> -->
-                        <p class="text-green-500 mb-2 pt-2 pl-14"><span>{{$t('Gondal Road,')}}</span><br>{{$t('Opp Swami Narayan Gurukul,')}}<br>{{$t('Near D-Mart Service Road')}}<br>{{$t('Rajkot, Gujarat, 360004')}}</p>
-                    </div>
-                    <div class="pb-4">
-                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center  ">
+                        <p class="text-green-500 mb-2 pl-14"><span>{{$t('Gondal Road,')}}</span><br>{{$t('Opp Swami Narayan Gurukul,')}}<br>{{$t('Near D-Mart Service Road')}}<br>{{$t('Rajkot, Gujarat, 360004')}}</p>
+                    </a>
+                    <a href="tel:+91 7043029467" class="pb-4">
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center">
                             <img class="p-1 mt-2 h-7" src="../assets/Inter/img/icon/navbar_phone.png" />
                         </div>
-                        <a href="tel:+91 7043029467">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">+91 7043029467</p>
-                        </a>
-                    </div>
-                    <div class="pb-4">
+                            <p class="cursor-pointer text-[#40b751] mb-4 pt-2 pl-14">+91 7043029467</p>
+                    </a>
+                    <a href="mailto:bestdeed2023@gmail.com" class="pb-4">
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center">
                             <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
                         </div>
-                        <a href="mailto:bestdeed2023@gmail.com">
-                            <p class="cursor-pointer text-[#40b751] mb-2 pt-2 pl-14">bestdeed2023@gmail.com</p>
-                        </a>
-                    </div>
+                            <p class="cursor-pointer text-[#40b751] mb-4 pt-2 pl-14">bestdeed2023@gmail.com</p>
+                    </a>
+                    <p>
+                        <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center items-center">
+                            <img class="p-2 h-9" src="../../src/assets/Inter/img/icon/bank-building.png" />
+                        </div>
+                            <p class="text-[#40b751] mb-2 pl-14">Name: Manav Seva Cheritable Trust <br>A/C No: 10046308440<br> IFSC Code: IDFB0042421<br> Branch: Rajkot</p>
+                    </p>
                 </div>
-
             </div>
         </section>
         <!-- Section: Design Block -->

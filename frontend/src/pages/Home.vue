@@ -48,11 +48,9 @@
     </section> -->
 
 <!-- <section class="relative overflow-hidden bg-cover bg-no-repeat"  -->
-  <section class="bg-image bg-no-repeat bg-center bg-cover"
-
-style="background-image: url('https://bestdeed.org/files/BG.png');">
-  <div class="container mx-auto pt-[2rem] md:pt-[3rem] lg:pt-[9rem] pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
-
+  <section class="responsivesection bg-image bg-no-repeat bg-center bg-cover"
+  style="background-image: url('https://bestdeed.org/files/BG.png');">
+  <div class="container h-full mx-auto pt-[2rem] md:pt-[3rem] lg:pt-[6rem] xl:pt-[10rem] pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
     <div class="grid md:grid-cols-2 lg:grid-cols-2 ">
       <div class="mb-5 ml-5 md:ml-0 lg:ml-0">
         <div
@@ -62,7 +60,6 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
         <h1
           class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
           Most trusted crowd <br>funding platform of india.</h1>
-
 
         <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
           <div class="flex items-center">
@@ -108,7 +105,6 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
           class="ml-0 md:ml-10 lg:ml-18 xl:ml-36 lg:mb-0" />
       </div>
     </div>
-
   </div>
 </section>
 
@@ -138,7 +134,7 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
         </div>
       </div>
     </div> -->
-    <section class="container mx-auto h-full relative z-10">
+    <section class="responsivesection container mx-auto h-full relative z-10">
       <div class="container mx-auto h-full p-4 lg:p-6 mt-5 pl-4 lg:!pl-0 pr-4 lg:!pr-0">
         <div class="bg-white rounded-xl drop-shadow-xl">
           <Sliders :featured_campaigns="featured_campaigns" :interval="3000" :lang="lang" />
@@ -702,8 +698,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
       </div> -->
     <!--Testimonials-->
 
-    <section class="container mx-auto h-full mb-20 px-10 md:px-10 lg:px-10">
-      <div class="mb-28 mt-10">
+    <section class=" h-full mb-10 px-10 md:px-10 lg:px-10 bg-blueGray-100 p-3">
+      <div class="container mx-auto mb-10 mt-10">
         <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-10">
           {{ $t('Why join us in this noble cause?') }}</h3>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-items-center gap-8 ">         
@@ -788,7 +784,7 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
         </div>
       </div>
     </section>
-    <section class="container mx-auto  h-full mb-20 px-10 md:px-10 lg:px-10">
+    <section class="container mx-auto h-full mb-20 px-10 md:px-10 lg:px-10">
       <div>
         <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold text-[#40b751] mb-8">
           {{ $t('How Can You Do It?') }}</h3>
@@ -816,7 +812,7 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                   <div class="tab-content tab-space">
                     <div v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }">
                       <div class="text-[#3f4640] mt-10">
-                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-6 lg:gap-6 ">
                           <div class="relative  grid justify-items-center">
                             <img class="" alt="Cause" title=""
                               src="../../src/assets/Inter/img/firstimagedonor.png" />
@@ -825,7 +821,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                               {{ $t('Select a cause') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('First things first, you need to choose the fundraiser and select the cause you would like to support.You can even choose multiple campaigns as well.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Type" title=""
@@ -835,7 +832,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                               {{ $t('Choose the type') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After selecting the cause you want to donate to, you can decide whether you need to donate monetarily or through products.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold">V</span>
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Enter amount" title=""
@@ -845,7 +843,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                               {{ $t('Decide the what & how') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('After choosing the type of donation, you have to enter the amount you would like to donate or the products you want to donate.')}}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Detail" title=""
@@ -855,7 +854,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                               {{ $t('Add the essential details') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('Moving forward, you need to add essential details such as your name, email id, and contact number.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
                           </div>
                           <div class="grid justify-items-center">
                             <img class="" alt="Payment" title=""
@@ -870,7 +870,7 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                     </div>
                     <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
                       <div class="text-[#3f4640] mt-10">
-                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-6 lg:gap-6 ">
                           <div class="relative  grid justify-items-center">
                             <img class="" alt="Detail" title=""
                               src="../../src/assets/Inter/img/imagefirstngo.png" />
@@ -879,8 +879,9 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                               {{ $t('Fill up the details') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To start a campaign on Best Deed; you need to fill up all the essential details. To start a campaign, For click here,') }}
                                <a class="underline font-bold">{{ $t('start a campaign.') }}</a></p>
-                            <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                               <span
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Verification" title=""
@@ -890,7 +891,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                               {{ $t('Verification') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After getting all the details from your end, our team will verify everything before getting started with your campaign.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Campaign live" title=""
@@ -900,7 +902,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                               {{ $t("It's LIVE") }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('If everything goes well, we will live your campaign with the story, your requirements, images, and videos.') }}</p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Campaign Share" title=""
@@ -911,7 +914,8 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To get better support; you can easily share your campaign with your friends, family, colleagues, and even on social media directly from our dashboard.') }}
                             </p>
                             <span
-                              class="absolute text-[#40b751] text-[28px] font-bold hidden md:hidden lg:inline-block lg:ml-[190px] xl:ml-[230px] lg:mt-12 ">&gt;</span>
+                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
+                                <span class="absolute text-[#40b751] sm-arrow  text-[28px] font-bold ">V</span>
                           </div>
                           <div class="grid justify-items-center">
                             <img class="" alt="Manage dashboard" title=""
@@ -1008,17 +1012,19 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
         </div>
       </div>-->
 
-    <section class="container mx-auto">
-      <h3 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mt-5">{{ $t('Featured in') }}</h3>
-      <div class="flex overflow-x-scroll overflow-y-hidden items-center custom-scrollbar scrollbar-thin">
-        <img alt="cmo gujarat news" class="hover:cursor-pointer" src="../assets/Inter/img/cmo-gujraat-logo.png" @click="redirect_to('https://cmogujarat.gov.in/en/photo-gallery/cm-shri-vijaybhai-rupani-inaugurated-pipaliya-bhawan-sadbhavna-vriddhashram-in-rajkot/')"/>
-        <img alt="divyabhaskar news" class="w-40 h-40 hover:cursor-pointer" src="../assets/Inter/img/divyabhaskar.png" @click="redirect_to('https://www.divyabhaskar.co.in/dvb-original/news/rajkot-sadbhavana-old-age-home-opened-school-bull-and-treat-as-a-family-mamber-129038474.html')"/>
-        <img alt="news 18 gujarati news" class="hover:cursor-pointer" src="../assets/Inter/img/mainlogo_gujrati.png" @click="redirect_to('https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html')"/>
-        <img alt="zee5 news" class="w-48 h-24 hover:cursor-pointer" src="../assets/Inter/img/zee5.png" @click="redirect_to('https://www.zee5.com/articles/gujarat-man-plants-750000-trees-in-rajkot-aims-to-turn-entire-state-green')"/>
-        <img alt="abtak news" class="w-72 h-20 hover:cursor-pointer" src="../assets/Inter/img/NEW-Abtak-rr-logo-png-1.png" @click="redirect_to('https://www.abtakmedia.com/make-a-call-sadbhavna-old-age-home-will-come-home-and-plant-a-tree/')"/>
-        <img alt="times of india news" class="w-64 h-24 hover:cursor-pointer" src="../assets/Inter/img/images.png" @click="redirect_to('https://timesofindia.indiatimes.com/videos/city/ahmedabad/rajkot-man-makes-city-green-by-planting-over-7-lakh-trees/videoshow/85666112.cms?from=mdr')"/>
-        <img alt="dna news" class="m-2 h-20 w-32 hover:cursor-pointer" src="../assets/Inter/img/dna.png" @click="redirect_to('https://www.dnaindia.com/india/video-rajkot-man-makes-city-green-by-planting-over-7-lakh-trees-2908027')"/>
-        <img alt="ahmedabad mirror news" class="w-64 h-16 hover:cursor-pointer" src="../assets/Inter/img/am-logo.png" @click="redirect_to('https://ahmedabadmirror.com/bizman-on-green-mission-recruits-280-to-water-plants/79726987.html')"/>
+    <section class="responsivesection container h-full mx-auto">
+      <div class="pl-5 md:pl-5 lg:pl-0 pr-5 md:pr-5 lg:pr-0">
+        <h3 class="text-[24px] md:text-[24px] lg:text-[30px] font-black text-[#40b751] mt-5">{{ $t('Featured in') }}</h3>
+        <div class="flex overflow-x-scroll overflow-y-hidden items-center custom-scrollbar scrollbar-thin">
+          <img alt="cmo gujarat news" class="hover:cursor-pointer" src="../assets/Inter/img/cmo-gujraat-logo.png" @click="redirect_to('https://cmogujarat.gov.in/en/photo-gallery/cm-shri-vijaybhai-rupani-inaugurated-pipaliya-bhawan-sadbhavna-vriddhashram-in-rajkot/')"/>
+          <img alt="divyabhaskar news" class="w-40 h-40 hover:cursor-pointer" src="../assets/Inter/img/divyabhaskar.png" @click="redirect_to('https://www.divyabhaskar.co.in/dvb-original/news/rajkot-sadbhavana-old-age-home-opened-school-bull-and-treat-as-a-family-mamber-129038474.html')"/>
+          <img alt="news 18 gujarati news" class="hover:cursor-pointer" src="../assets/Inter/img/mainlogo_gujrati.png" @click="redirect_to('https://gujarati.news18.com/news/rajkot/bull-stable-started-by-sadbhavna-vrudhashram-rml-dr-local18-1243725.html')"/>
+          <img alt="zee5 news" class="w-48 h-24 hover:cursor-pointer" src="../assets/Inter/img/zee5.png" @click="redirect_to('https://www.zee5.com/articles/gujarat-man-plants-750000-trees-in-rajkot-aims-to-turn-entire-state-green')"/>
+          <img alt="abtak news" class="w-72 h-20 hover:cursor-pointer" src="../assets/Inter/img/NEW-Abtak-rr-logo-png-1.png" @click="redirect_to('https://www.abtakmedia.com/make-a-call-sadbhavna-old-age-home-will-come-home-and-plant-a-tree/')"/>
+          <img alt="times of india news" class="w-64 h-24 hover:cursor-pointer" src="../assets/Inter/img/images.png" @click="redirect_to('https://timesofindia.indiatimes.com/videos/city/ahmedabad/rajkot-man-makes-city-green-by-planting-over-7-lakh-trees/videoshow/85666112.cms?from=mdr')"/>
+          <img alt="dna news" class="m-2 h-20 w-32 hover:cursor-pointer" src="../assets/Inter/img/dna.png" @click="redirect_to('https://www.dnaindia.com/india/video-rajkot-man-makes-city-green-by-planting-over-7-lakh-trees-2908027')"/>
+          <img alt="ahmedabad mirror news" class="w-64 h-16 hover:cursor-pointer" src="../assets/Inter/img/am-logo.png" @click="redirect_to('https://ahmedabadmirror.com/bizman-on-green-mission-recruits-280-to-water-plants/79726987.html')"/>
+        </div>
       </div>
     </section>
 
@@ -1078,7 +1084,7 @@ style="background-image: url('https://bestdeed.org/files/BG.png');">
 
     <!--Awards-->
 
-    <section class="bg-blueGray-100">
+    <section class="responsivesection bg-blueGray-100">
       <div class="container mx-auto h-full">
 
         <div class="text-center mt-10">

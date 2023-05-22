@@ -5,11 +5,11 @@
       <div class="relative bg-center bg-cover w-full h-full banner-image">
         <div class="container mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
           <div class="ml-4">
-            <h1 class="leading-[35px] md:leading-[40px] lg:leading-[50px] font-[800] pt-8 md:pt-32 lg:pt-20">
-              <p class="text-[28px] md:text-[34px] lg:text-[46px] text-[#3f4640]">{{ $t('Taking') }}</p>
-              <p class="text-[28px] md:text-[34px] lg:text-[46px] text-[#40b751]">Small Steps to Make</p>
-              <p class="text-[28px] md:text-[34px] lg:text-[46px] text-[#40b751]">a Bigger Difference</p>
-              <p class="text-[28px] md:text-[34px] lg:text-[46px] text-[#3f4640]">for Nonprofit <br>Organizations!</p>
+            <h1 class="leading-[35px] md:leading-[40px] lg:leading-[50px] font-[800] banner">
+              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">{{ $t('Taking') }}</p>
+              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">Small Steps to Make</p>
+              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">a Bigger Difference</p>
+              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">for Nonprofit <br>Organizations!</p>
             </h1>
             <p class="font-[600] text-[15px] md:text-[18px] lg:text-[18px]leading-[24px] text-[#3f4640] py-8">Our
               Crowdfunding
@@ -67,7 +67,8 @@
     <section class="w-full container mx-auto mt-10">
 
       <div>
-        <h2 class="text-3xl pb-10 font-black text-[#40b751] text-center">{{ $t('Our Mission') }},
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] pb-10 font-black text-[#40b751] text-center">
+          {{ $t('Our Mission') }},
           {{ $t('Vision') }}
           &
           {{ $t('Core Values') }}! </h2>
@@ -75,7 +76,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col justify-center items-center">
           <img src="../assets/Inter/img/mission.png" alt="mission.png" class="max-w-full max-h-full">
-          <h3 class="text-[#40b751] text-2xl font-black my-4">Our Mission</h3>
+          <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">Our
+            Mission</h3>
           <p class="text-center px-8 md:px-10 lg:px-16">We know that there are many organizations out there
             that
             are
@@ -91,7 +93,8 @@
         </div>
         <div class="flex flex-col justify-center items-center">
           <img src="../assets/Inter/img/vision.png" alt="Image 2" class="max-w-full max-h-full">
-          <h3 class="text-[#40b751] text-2xl font-black my-4">Our Vision</h3>
+          <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">Our
+            Vision</h3>
           <p class="text-center px-8 md:px-10 lg:px-16">Our vision is to create the best donation platform where
             anyone can make a
             meaningful
@@ -107,9 +110,11 @@
 
     </section>
 
-    <section class="w-full container mx-auto lg:pt-10 mb-10">
+    <section class="w-full lg:p-10 mb-5 bg-[#ebf8ec] mt-5">
+      <div class="container mx-auto"> 
       <div>
-        <h2 class="text-3xl font-black text-[#40b751] text-center my-5">Our Core Values</h2>
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] text-center my-5">Our Core Values
+        </h2>
       </div>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 container">
         <div class="mt-2 mb-8">
@@ -155,11 +160,13 @@
           </p>
         </div>
       </div>
+      </div>
 
     </section>
-    <section>
+    <section class="container mx-auto ">
       <div class="text-center font-bold pb-8">
-        <h2 class="text-3xl font-black text-[#40b751] pb-4">Our Journey so far & even beyond!</h2>
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] pb-4">Our Journey so far & even
+          beyond!</h2>
         <p class="font-semibold text-lg">From Humble Beginnings to Creating Lasting Impact</p>
         <p class="font-semibold text-lg">Our Story of Changing Lives & Empowering NGOs.</p>
       </div>
@@ -309,8 +316,8 @@
           <div class="absolute mt-64 ml-56">
             <p class="text-black font-black text-xl">2015</p>
           </div>
-          <div class="absolute mt-[300px] mr-24 text-right">
-            <p class="text-[#3f4640] font-[400] text-[14px] w-[232px] leading-[22px]">
+          <div class="absolute mt-[300px] mr-10 text-right">
+            <p class="text-[#3f4640] font-[400] text-[14px] w-[220px] leading-[22px]">
               Our Founder Vijay started his journey in 2015 with a team of 7 people having the simple motive of giving to
               the community.
             </p>
@@ -337,8 +344,8 @@
           <div class="absolute mt-[950px] mr-32">
             <p class="text-black font-black text-xl">2022</p>
           </div>
-          <div class="absolute mt-[1000px] ml-28">
-            <p class="text-[#3f4640] font-[400] text-[14px] w-[165px] leading-[22px]">
+          <div class="absolute mt-[1030px] ml-16">
+            <p class="text-[#3f4640] font-[400] text-[14px] w-[200px] leading-[22px]">
               We saw lots of NGOs willing to offer help but couldn’t because of the lack of funds; that’s when the
               idea of Best Deed was born.
             </p>
@@ -346,8 +353,8 @@
           <div class="absolute mt-[1200px] ml-36">
             <p class="text-black font-black text-xl">2023</p>
           </div>
-          <div class="absolute mt-[1270px] mr-36 text-right">
-            <p class="text-[#3f4640] font-[400] text-[14px] w-[232px] leading-[22px]">
+          <div class="absolute mt-[1270px] mr-10 text-right">
+            <p class="text-[#3f4640] font-[400] text-[14px] w-[220px] leading-[22px]">
               To kickstart our idea, we launched Best Deed with 10 NGOs on board in different categories ranging
               from education, healthcare, animal, children, Women, elderly, etc.
             </p>
@@ -434,10 +441,9 @@
 
 
 
-
     <section class="bg-[#f6fed8] mt-0">
       <div class="text-center container font-bold mx-auto impact-image">
-        <h2 class="text-3xl text-[#40b751] font-black pb-2 ">Our Impact</h2>
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black pb-2 ">Our Impact</h2>
         <p class="text-center font-semibold text-lg pb-10">To impact the lives of 10 Million People in 5
           years!
         </p>
@@ -448,12 +454,13 @@
 
     <section class="mx-auto container">
       <div class="my-8">
-        <h2 class="text-3xl text-[#40b751] font-black text-center  mb-10">Empowering Communities - Here’s How?
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black text-center  mb-8">Empowering
+          Communities - Here’s How?
         </h2>
 
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4  ">
 
-          <div class="grid justify-items-center flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
+          <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/empowering1.png" alt="empowering1.png" class="h-12 w-12 " />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">100% authenticity & transparency </p>
@@ -464,7 +471,7 @@
               </p>
             </div>
           </div>
-          <div class="grid justify-items-center flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
+          <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/empowering2.png" alt="empowering2.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">0% Platform fees</p>
@@ -475,7 +482,7 @@
             </div>
           </div>
 
-          <div class="grid justify-items-center flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
+          <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/empowering3.png" alt="empowering3.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">Building an ecosystem</p>
@@ -486,7 +493,7 @@
             </div>
           </div>
 
-          <div class="grid justify-items-center flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
+          <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/empowering4.png" alt="mpowering4.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">Dedicated Help Center</p>
@@ -510,7 +517,7 @@
     <div id="old-section" class="hidden md:block lg:block">
       <section class="bg-[#40b751]">
         <div class="mx-auto container  text-center">
-          <h2 class="font-black text-white text-3xl pt-10 "> Meet the Visionaries </h2>
+          <h2 class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10 "> Meet the Visionaries </h2>
           <p class="font-semibold text-md pt-4 pb-10">Founders of Best Deed Paving the Way!</p>
           <div class="grid grid-cols-3">
             <div class="mb-0">
@@ -577,11 +584,11 @@
     <div id="new-section" class="block md:hidden lg:hidden">
       <section class="bg-[#40b751]">
         <div class="text-center">
-          <p class="font-black text-white text-3xl pt-10"> Meet the Visionaries </p>
+          <p class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10"> Meet the Visionaries </p>
           <p class="font-semibold text-md pt-4">Founders of Best Deed Paving the Way!</p>
           <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-8">
             <div class="pt-8 md:pt-0 bg-[#40b751]">
-              <img src="../assets/Inter/img/Vijay.png" alt="Vijay.png" class="mx-auto bg-[#40b751]">
+              <img src="../assets/Inter/img/Vijay1.png" alt="Vijay.png" class="mx-auto bg-[#40b751]">
               <div class="bg-white px-4 py-4">
                 <p class="font-bold pt-4 text-md">Vijay Dobariya</p>
                 <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">Vijay Dobariya is the founder of
@@ -598,7 +605,7 @@
               </div>
             </div>
             <div class="pt-4 md:pt-0 bg-[#40b751]">
-              <img src="../assets/Inter/img/Dhirendra.png" alt="Dhirendra.png" class="mx-auto bg-[#40b751]">
+              <img src="../assets/Inter/img/Dhirendra1.png" alt="Dhirendra.png" class="mx-auto bg-[#40b751]">
               <div class="bg-white px-4 py-4">
                 <p class="font-bold pt-4 text-md">Dhirendra Kanabar</p>
                 <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">Dhirendra Kanabar is the founding
@@ -614,7 +621,7 @@
               </div>
             </div>
             <div class="pt-4 md:pt-0 bg-[#40b751]">
-              <img src="../assets/Inter/img/Rajesh.png" alt="Rajesh.png" class="mx-auto bg-[#40b751]">
+              <img src="../assets/Inter/img/Rajesh1.png" alt="Rajesh.png" class="mx-auto bg-[#40b751]">
               <div class="bg-white px-4 py-4">
                 <p class="font-bold pt-4 text-md">Rajesh Rupabara</p>
                 <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">Rajesh Rupabara is also contributing
@@ -637,17 +644,17 @@
       </section>
     </div>
 
-    <section>
+    <section class="hidden md:block lg:block ">
       <div class="h-full w-full relative bg-center bg-cover hero together-image">
         <div class="mx-auto container">
           <div class="grid sm:grid-cols-1 lg:grid-cols-2 pl-6 lg:pl-0 sm:pb-0 md:pb-16 lg:pb-16">
             <div class="sm:pb-0 md:pb-0 lg:pb-4 sm:pt-0 lg:pt-16">
-              <div class="leading-tight pt-0 md:pt-32 lg:pt-32 pb-8">
-                <p class="text-[25px] md:text-[32px] lg:text-[32px] text-[#40b751] font-[800]"> Together,</p>
-                <p class="text-[25px] md:text-[32px] lg:text-[32px] text-[#3f4640] font-[800]">We can make a</p>
-                <p class="text-[25px] md:text-[32px] lg:text-[32px] text-[#3f4640] font-[800]">difference!</p>
+              <div class="leading-tight pt-0 md:pt-32 lg:pt-32 pb-12">
+                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#40b751] font-[800]"> Together,</p>
+                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">We can make a</p>
+                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">difference!</p>
               </div>
-              <div class="sm:pb-2 pb-16">
+              <div class="pb-16">
                 <p class="text-[16px] text-[#3f4640] font-[700] pr-0 md:pr-32 lg:pr-32" style="line-height: 26px; ">
                   <!-- <p class="sm:w-[0px] md:lg:w-[0px] lg:w-[358px] sm:h-[0px] md:lg:h-[0px] lg:h-[150px] text-[16px] text-[#3f4640] font-[700]"
                                     style="line-height: 26px; "> -->
@@ -674,6 +681,43 @@
       </div>
     </section>
 
+    <section class="block md:hidden lg:hidden ">
+      <div class=" relative bg-center bg-cover hero together-image-sm">
+        <div class="mx-auto container ">
+          <div class="grid content-center ">
+            <div class="px-4 ">
+              <div class="leading-tight mt-16">
+                <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#40b751] font-[800]"> Together, We can make a
+                  difference!</p>
+                <!-- <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">We can make a</p> -->
+                <!-- <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">difference!</p> -->
+              </div>
+              <div class="pb-6">
+                <p class="text-[14px] text-[#3f4640] font-[700] " style="line-height: 20px; ">
+                  <!-- <p class="sm:w-[0px] md:lg:w-[0px] lg:w-[358px] sm:h-[0px] md:lg:h-[0px] lg:h-[150px] text-[16px] text-[#3f4640] font-[700]"
+                                    style="line-height: 26px; "> -->
+                  Join us in our mission to make the world a better place with this online crowdfunding
+                  platform - Best
+                  Deed. Whether you're an individual looking to make a difference or an NGO needing support,
+                  we're here to
+                  help
+                </p>
+              </div>
+              <!-- <div class="h-10"> -->
+                <router-link to="/explore-campaigns" style="font-size: 16px; font-weight: 700;"
+                  class="bg-[#40b751] px-6 py-3 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
+                  Donate now!
+                </router-link>
+              <!-- </div> -->
+            </div>
+          </div>
+          <!-- <div class="relative hidden md:hidden lg:block">
+          <img src="../assets/Inter/img/together.png"
+            class="h-[500px] w-[900px] absolute -top-[500px] left-80 opacity-on-small">
+        </div> -->
+        </div>
+      </div>
+    </section>
     <!-- <section class="block md:block lg:hidden">
       <div class="h-full w-full relative bg-center bg-cover hero"
         style="background-image: url('https://bestdeed.org/files/together_layer1.png')">
@@ -711,6 +755,7 @@
   </main>
   <Footer />
 </template>
+
 
 
 <script>
@@ -778,6 +823,22 @@ export default {
 }
 </script>
 <style>
+.banner {
+  padding-top: 80px;
+}
+
+@media (max-width: 1366px) and (max-width: 768px) {
+  .banner {
+    padding-top: 128px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    padding-top: 32px;
+  }
+}
+
 .impact-image {
   padding: 80px;
 }
@@ -808,8 +869,17 @@ export default {
 @media (max-width:630px) {
   .banner-image {
     background-image: url('https://bestdeed.org/files/BG_about1.png');
+    height: auto;
+    width: auto;
   }
 }
+
+.together-image-sm {
+  background-image: url('https://bestdeed.org/files/together_layer1.png');
+  height: auto;
+  width: auto;
+}
+
 
 .together-image {
   background-image: url('https://bestdeed.org/files/together_layer.png');
