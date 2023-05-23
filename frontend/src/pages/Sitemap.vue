@@ -84,11 +84,10 @@
   <!-- Header-->
   <main>    
     <Navbar />
-    <section class="bg-cover bg-center lg:h-[calc(100vh-16vh)] md:h-[calc(100vh-8rem)]" style="background-image: url('https://bestdeed.org/files/BG.png');">
+    <section class="flex bg-cover bg-center sm:h-full md:h-[calc(100vh-8vh)] lg:h-[calc(100vh-16vh)] items-center" style="background-image: url('https://bestdeed.org/files/BG.png');">
  <div class="flex items-center justify-center container mx-auto pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
    <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
-     <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center mx-2 md:items-center lg:items-center lg:mt-16 md:mt-16 sm:mt-5">
-    
+     <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center mx-2 md:items-center lg:items-center">
         <div class="mb-8">
             <div
               class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9] mt-2">
@@ -140,14 +139,11 @@
 
         <div class="sm:11/12 md:hidden lg:block lg:w-11/12 items-center">
           <img src="../../src/assets/Inter/img/rightside.png"
-            class="sm:ml-0 md:ml-5 lg:ml-9 xl:ml-10 sm:mt-10"/>
+            class="sm:ml-0 md:ml-9 lg:ml-9 xl:ml-10 sm:mt-10 md:mt-10"/>
         </div>
    </div>
  </div>
 </section>
-
-
-
 
 
     <section class="responsivesection container mx-auto h-full relative z-10">

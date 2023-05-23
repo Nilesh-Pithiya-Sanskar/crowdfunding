@@ -228,10 +228,10 @@
                 <div class="w-full pt-[28px]">
                     <div class="container mx-auto py-0">
                         <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
-                            <h1
+                            <div
                                 class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
                                 {{ $t('Request a Campaign') }}
-                            </h1>
+                            </div>
                             <div class="relative z-0">
                                 <div class=" sm:py-2 md:py-4 lg:py-8 ">
                                     <ul
@@ -256,8 +256,7 @@
                                             <div v-if="openTab == 1" class="py-4 px-8">
                                                 <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2" for="email">{{
-                                                        $t('FullName') }} <span
-                                                            class="text-red-600">*</span></label>
+                                                        $t('FullName') }} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         placeholder="Enter Full Name" @keyup="fullNameError = ''"
@@ -364,8 +363,7 @@
                                             <div v-if="openTab == 2" class="py-4 px-8">
                                                 <div class="mb-2 md:mb-4 lg:mb-6">
                                                     <label class="block text-gray-600 text-base  mb-2" for="email">{{
-                                                        $t('FullName') }} <span
-                                                            class="text-red-600">*</span></label>
+                                                        $t('FullName') }} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
                                                         placeholder="Enter Full Name" @keyup="fullNameErrorig = ''"
