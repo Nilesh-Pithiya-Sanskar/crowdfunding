@@ -701,7 +701,7 @@ export default {
   name: 'Testimonials',
   data() {
     return {
-      openTabTestimonials: 2,
+      openTabTestimonials: 3,
     }
   },
   methods: {

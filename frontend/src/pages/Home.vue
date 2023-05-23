@@ -1224,50 +1224,50 @@
         </div>
         <div class="pb-16">
           <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-2 justify-items-center text-center">
-            <div>
-              <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96 "
-                src="../../src/assets/Inter/img/nationalbusinessawards.jpeg">
-              <div class="">
+            <a href="https://bestdeed.org/files/award1.webp">
+              <img class="bg-center px-24 md:px-8 py-8 lg:py-8 h-52 w-96 "
+                src="../../src/assets/Inter/img/award1.webp">
+              <!-- <div class="">
                 <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('National Business Excellence And') }}</p>
                 <p class="text-[#364958] font-bold text-[20px] leading-6"> {{ $t('Achievers Award') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2021</p>
-              </div>
-            </div>
+              </div> -->
+            </a>
 
-            <div>
-              <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/bsinhchennailogo.jpg">
-              <div class="">
+            <a href="https://bestdeed.org/files/award2.webp">
+              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/award2.webp">
+              <!-- <div class="">
                 <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Top Ten Startups In Hyderabad') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2020</p>
-              </div>
-            </div>
+              </div> -->
+            </a>
 
-            <div>
-              <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96"
-                src="../../src/assets/Inter/img/socialenterpriceaward.jpg">
-              <div class="">
+            <a href="https://bestdeed.org/files/csr-activity-sadbhavna.webp">
+              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96"
+                src="../../src/assets/Inter/img/csr-activity-sadbhavna.webp">
+              <!-- <div class="">
                 <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Social Enterprise Challenge Award') }}
                 </p>
                 <p class="text-[#364958] font-bold pt-2">2018</p>
-              </div>
-            </div>
+              </div> -->
+            </a>
 
-            <div>
-              <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/NASSCOM.jpg">
-              <div class="">
+            <a href="https://bestdeed.org/files/social-impact-vijaybhai-dobariya-sadbhavna.webp">
+              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/social-impact-vijaybhai-dobariya-sadbhavna.webp">
+              <!-- <div class="">
                 <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('NASSCOM Social Innovation Award') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2018</p>
-              </div>
-            </div>
+              </div> -->
+            </a>
 
-            <div>
-              <img class="px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/indianextress.png">
-              <div class="">
+            <a href="https://bestdeed.org/files/pipaliya-family-seva-sanman.webp">
+              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/pipaliya-family-seva-sanman.webp">
+              <!-- <div class="">
                 <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Indian Express 40') }}</p>
                 <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('under 40') }}</p>
                 <p class="text-[#364958] font-bold pt-2">2021</p>
-              </div>
-            </div>
+              </div> -->
+            </a>
           </div>
         </div>
       </div>

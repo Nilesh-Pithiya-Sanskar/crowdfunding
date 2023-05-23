@@ -850,7 +850,7 @@ export default {
             this.campaign_type = 'NGO'
             {
 
-
+                console.log("asdfadsf", this.fcra_registered)
                 if (this.full_name == '') {
                     this.fullNameError = 'Enter full name'
                     // console.log('full name')
@@ -885,10 +885,10 @@ export default {
                     this.phoneError = 'Enter valid phone number'
                     // console.log('phone')
                 }
-                if (this.fcra_registered == '') {
-                    this.fcra_registeredError = 'Please select your ngo is FCRA Registered or not'
-                    // console.log('phone')
-                }
+                // if (this.fcra_registered != '0' || this.fcra_registered != '1') {
+                //     this.fcra_registeredError = 'Please select your ngo is FCRA Registered or not'
+                //     // console.log('phone')
+                // }
                 //     if (!this.full_name && !this.organisation_name && !this.phone && !this.email && !this.campaign_story && !this.beneficiary_group) {
                 //         this.fullNameError = 'Please enter Fullname!'
                 //         this.organizationNameError = 'Please enter organization name!'
@@ -1034,7 +1034,6 @@ export default {
                     this.phoneErrorig = 'Enter valid phone number'
                     console.log('phone')
                 }
-
                 else {
                     console.log('done')
                     this.$resources.request_campaign.submit({
@@ -1046,7 +1045,6 @@ export default {
                         social_media_page: this.social_media_pageig,
                         beneficiary_group: this.beneficiary_groupig
                     })
-
                 }
             }
         }
