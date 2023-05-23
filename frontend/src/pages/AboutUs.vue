@@ -30,39 +30,6 @@
         </div>
       </div>
     </section>
-    <!-- <section>
-      <div class="hero">
-        <div class="w-full h-full relative  bg-center bg-cover">
-          <div class="lg:!py-32 py-10 ">
-            <div class="container mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 card-space mb-32 mt-0">
-              <div class="">
-                <div class="leading-[50px] font-[800]">
-                  <p class="text-[46px] text-[#3f4640]">{{ $t('Taking') }}</p>
-                  <p class="text-[46px] text-[#40b751]">Small Steps to Make</p>
-                  <p class="text-[46px] text-[#40b751]">a Bigger Difference</p>
-                  <p class="text-[46px] text-[#3f4640]">for Nonprofit <br>Organizations!</p>
-                </div>
-                <p class="mb-5 mt-5 font-[600] text-[18px] leading-[24px] text-[#3f4640]">Our Crowdfunding
-                  Platform
-                  for NGOs is
-                  <br>making ways to
-                  encourage
-                  and
-                  empower
-                  <br>charity organizations with 100% authenticity <br>& transparency!
-                </p>
-                <div class="mt-16">
-                  <router-link to="/request-campaign"
-                    class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-                    Start a Fundraiser for <strong>FREE</strong></router-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
 
     <section class="w-full container mx-auto mt-10">
 
@@ -110,56 +77,56 @@
 
     </section>
 
-    <section class="w-full lg:p-10 mb-5 bg-[#ebf8ec] mt-5">
-      <div class="container mx-auto"> 
-      <div>
-        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] text-center my-5">Our Core Values
-        </h2>
-      </div>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 container">
-        <div class="mt-2 mb-8">
-          <div class="flex justify-center items-center">
-            <img src="../assets/Inter/img/VectorSmart1.png" alt="Image 1" class="max-w-full max-h-full">
-          </div>
-          <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Authenticity at the core!") }}
-          </p>
+    <section class="w-full p-1 md:p-4 lg:p-4 mb-5 bg-[#ebf8ec]">
+      <div class="container mx-auto">
+        <div>
+          <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] text-center my-4">Our Core Values
+          </h2>
         </div>
-        <div class="mt-2 mb-8">
-          <div class="flex justify-center items-center">
-            <img src="../assets/Inter/img/VectorSmart2.png" alt="Image 2" class="max-w-full max-h-full">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 container">
+          <div class="mt-2 mb-8">
+            <div class="flex justify-center items-center">
+              <img src="../assets/Inter/img/VectorSmart1.png" alt="Image 1" class="max-w-full max-h-full">
+            </div>
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Authenticity at the core!") }}
+            </p>
           </div>
-          <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("End-to-End Transparency") }}
-          </p>
-        </div>
-        <div class="mt-2 mb-8">
-          <div class="flex justify-center items-center">
-            <img src="../assets/Inter/img/VectorSmart3.png" alt="Image 3" class="max-w-full max-h-full">
+          <div class="mt-2 mb-8">
+            <div class="flex justify-center items-center">
+              <img src="../assets/Inter/img/VectorSmart2.png" alt="Image 2" class="max-w-full max-h-full">
+            </div>
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("End-to-End Transparency") }}
+            </p>
           </div>
-          <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Empowering NGOs") }}</p>
-        </div>
-        <div class="mt-2 mb-8">
-          <div class="flex justify-center items-center">
-            <img src="../assets/Inter/img/VectorSmart4.png" alt="Image 4" class="max-w-full max-h-full">
+          <div class="mt-2 mb-8">
+            <div class="flex justify-center items-center">
+              <img src="../assets/Inter/img/VectorSmart3.png" alt="Image 3" class="max-w-full max-h-full">
+            </div>
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Empowering NGOs") }}</p>
           </div>
-          <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Streamlining Crowdfunding") }}
-          </p>
-        </div>
-        <div class="mt-2 mb-8">
-          <div class="flex justify-center items-center">
-            <img src="../assets/Inter/img/VectorSmart5.png" alt="Image 5" class="max-w-full max-h-full">
+          <div class="mt-2 mb-8">
+            <div class="flex justify-center items-center">
+              <img src="../assets/Inter/img/VectorSmart4.png" alt="Image 4" class="max-w-full max-h-full">
+            </div>
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Streamlining Crowdfunding") }}
+            </p>
           </div>
-          <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Driving through Innovation") }}
-          </p>
-        </div>
-        <div class="mt-2 mb-8">
-          <div class="flex justify-center items-center">
-            <img src="../assets/Inter/img/VectorSmart6.png" alt="Image 6" class="max-w-full max-h-full">
+          <div class="mt-2 mb-8">
+            <div class="flex justify-center items-center">
+              <img src="../assets/Inter/img/VectorSmart5.png" alt="Image 5" class="max-w-full max-h-full">
+            </div>
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Driving through Innovation") }}
+            </p>
           </div>
-          <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">
-            {{ $t("Bringing communities together") }}
-          </p>
+          <div class="mt-2 mb-8">
+            <div class="flex justify-center items-center">
+              <img src="../assets/Inter/img/VectorSmart6.png" alt="Image 6" class="max-w-full max-h-full">
+            </div>
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">
+              {{ $t("Bringing communities together") }}
+            </p>
+          </div>
         </div>
-      </div>
       </div>
 
     </section>
@@ -171,74 +138,6 @@
         <p class="font-semibold text-lg">Our Story of Changing Lives & Empowering NGOs.</p>
       </div>
     </section>
-
-
-
-    <!-- <section class="mx-auto container hidden md:hidden lg:block mt-5">
-      <div class="pt-28 relative">
-        <img src="../assets/Inter/img/journey.png" class="h-full w-full">
-        <div class="absolute -top-[220px] -left-[415px]  w-full h-full flex items-center justify-center">
-          <p class="text-black font-black text-xl">2015</p>
-        </div>
-        <div class="absolute -top-[80px] -left-[330px] w-full h-full flex items-center justify-center">
-          <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[220px] leading-[22px]">Our Founder Vijay
-            started
-            his journey
-            in
-            2015
-            with
-            a team of
-            7
-            people having the simple motive of giving to the community.</p>
-        </div>
-        <div class="absolute -top-[300px] -left-[130px] w-full h-full flex items-center justify-center">
-          <p class="text-black font-black text-xl">2017</p>
-        </div>
-        <div class="absolute -top-[180px] -left-[20px] w-full h-full flex items-center justify-center">
-          <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] leading-[22px]">
-            Within 2 years, the team has grown to 20+ who are offering caregiving services to over 200+ elderly
-            people who are working together for noble causes such as volunteering, tree plantation, animal and
-            bird care, etc.
-          </p>
-        </div>
-        <div class="absolute -top-[230px] left-[405px] w-full h-full flex items-center justify-center">
-          <p class="text-black font-black text-xl">2020</p>
-        </div>
-        <div class="absolute -top-[100px] left-72 w-full h-full flex items-center justify-center">
-          <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[200px] text-right leading-[22px]">
-            In 2020, the caregivers grew to 40+ individuals offering caregiving services to over 350+ elderly
-            people.
-          </p>
-        </div>
-        <div class="absolute top-28 left-[300px] w-full h-full flex items-center justify-center">
-          <p class="text-black font-black text-xl">2022</p>
-        </div>
-        <div class="absolute top-52 left-[410px] w-full h-full flex items-center justify-center">
-          <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] leading-[22px]">
-            We saw lots of NGOs willing to offer help but couldn’t because of the lack of funds; that’s when the
-            idea of Best Deed was born.
-          </p>
-        </div>
-        <div class="absolute top-40 -left-[45px] w-full h-full flex items-center justify-center">
-          <p class="text-black font-black text-xl">2023</p>
-        </div>
-        <div class="absolute top-64 left-16 w-full h-full flex items-center justify-center">
-          <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] leading-[22px]">
-            To kickstart our idea, we launched Best Deed with 10 NGOs on board in different categories ranging
-            from education, healthcare, animal, children, Women, elderly, etc.
-          </p>
-        </div>
-        <div class="absolute top-60 -left-[390px] w-full h-full flex items-center justify-center">
-          <p class="text-black font-black text-xl">2027</p>
-        </div>
-        <div class="absolute top-[330px] -left-[280px] w-full h-full flex items-center justify-center">
-          <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] leading-[22px]">
-            In the next five years, we aim to onboard 10000+ Non-profit organizations to impact the lives of
-            over 10 MN people.
-          </p>
-        </div>
-      </div>
-    </section> -->
 
     <section class="mx-auto container hidden md:block lg:block mt-5">
       <div class="container mx-auto bg-center bg-no-repeat h-full w-full ">
@@ -372,75 +271,6 @@
       </div>
     </section>
 
-    <!-- <section class="block md:hidden lg:hidden mt-4">
-
-      <div class="container mx-auto bg-center bg-no-repeat h-full w-full ">
-        <div class=" grid grid-cols-1 justify-items-center">
-          <div class="object-fixed ">
-            <img class="h-[1700px]" src="../assets/Inter/img/journey_mobile.png">
-          </div>
-          <div class="absolute mt-64 ml-56">
-            <p class="text-black font-black text-xl">2015</p>
-          </div>
-          <div class="absolute mt-[300px] mr-24 text-right">
-            <p class="text-[#3f4640] font-[400] text-[14px]  h-[156px] w-[262px] leading-[22px]">
-              Our Founder Vijay started his journey in 2015 with a team of 7 people having the simple motive of giving to
-              the community.
-            </p>
-          </div>
-          <div class="aa">
-            <p class="text-black font-black text-xl">2017</p>
-          </div>
-          <div class="absolute mt-[530px] ml-24 text-left">
-            <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] leading-[22px]">
-              Within 2 years, the team has grown to 20+ who are offering caregiving services to over 200+ elderly
-              people who are working together for noble causes such as volunteering, tree plantation, animal and
-              bird care, etc.
-            </p>
-          </div>
-          <div class="absolute mt-[710px] ml-36">
-            <p class="text-black font-black text-xl">2020</p>
-          </div>
-          <div class="absolute mt-[800px] mr-10 text-left">
-            <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] text-right leading-[22px]">
-              In 2020, the caregivers grew to 40+ individuals offering caregiving services to over 350+ elderly
-              people.
-            </p>
-          </div>
-          <div class="absolute mt-[950px] mr-32">
-            <p class="text-black font-black text-xl">2022</p>
-          </div>
-          <div class="absolute mt-[1050px] ml-28">
-            <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] leading-[22px]">
-              We saw lots of NGOs willing to offer help but couldn’t because of the lack of funds; that’s when the
-              idea of Best Deed was born.
-            </p>
-          </div>
-          <div class="absolute mt-[1200px] ml-36">
-            <p class="text-black font-black text-xl">2023</p>
-          </div>
-          <div class="absolute mt-[1270px] mr-36 text-right">
-            <p class="text-[#3f4640] font-[400] text-[14px] h-[156px] w-[262px] leading-[22px]">
-              To kickstart our idea, we launched Best Deed with 10 NGOs on board in different categories ranging
-              from education, healthcare, animal, children, Women, elderly, etc.
-            </p>
-          </div>
-          <div class="absolute mt-[1440px] mr-36">
-            <p class="text-black font-black text-xl">2027</p>
-          </div>
-          <div class="absolute mt-[1530px] ml-16 text-left">
-            <p class="text-[#3f4640] font-[400] text-[14px]  h-[156px] w-[262px] leading-[22px]">
-              In the next five years, we aim to onboard 10000+ Non-profit organizations to impact the lives of
-              over 10 MN people.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </section> -->
-
-
-
     <section class="bg-[#f6fed8] mt-0">
       <div class="text-center container font-bold mx-auto impact-image">
         <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black pb-2 ">Our Impact</h2>
@@ -461,7 +291,7 @@
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4  ">
 
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
-            <img src="../assets/Inter/img/empowering1.png" alt="empowering1.png" class="h-12 w-12 " />
+            <img src="../assets/Inter/img/icon_authenticity_transparency.svg" alt="empowering1.png" class="h-12 w-12 " />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">100% authenticity & transparency </p>
               <p class="text-md">Best Deed is a 100% authentic and transparent online crowdfunding
@@ -472,7 +302,7 @@
             </div>
           </div>
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
-            <img src="../assets/Inter/img/empowering2.png" alt="empowering2.png" class="h-12 w-12" />
+            <img src="../assets/Inter/img/home-banner-icon-0.svg" alt="empowering2.png" class="h-12 w-16" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">0% Platform fees</p>
               <p class="text-md">Best Deed charges no crowdfunding donation platform fees whether you are a
@@ -483,7 +313,7 @@
           </div>
 
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
-            <img src="../assets/Inter/img/empowering3.png" alt="empowering3.png" class="h-12 w-12" />
+            <img src="../assets/Inter/img/icon_building_an_ecosystem.svg" alt="empowering3.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">Building an ecosystem</p>
               <p class="text-md">We are not simply another crowdfunding company; our goal is to build a
@@ -494,7 +324,7 @@
           </div>
 
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
-            <img src="../assets/Inter/img/empowering4.png" alt="mpowering4.png" class="h-12 w-12" />
+            <img src="../assets/Inter/img/icon_dedicated_help_center.svg" alt="mpowering4.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">Dedicated Help Center</p>
               <p class="text-md">Throughout your crowdfunding journey, if you have any questions or require
@@ -656,8 +486,7 @@
               </div>
               <div class="pb-16">
                 <p class="text-[16px] text-[#3f4640] font-[700] pr-0 md:pr-32 lg:pr-32" style="line-height: 26px; ">
-                  <!-- <p class="sm:w-[0px] md:lg:w-[0px] lg:w-[358px] sm:h-[0px] md:lg:h-[0px] lg:h-[150px] text-[16px] text-[#3f4640] font-[700]"
-                                    style="line-height: 26px; "> -->
+
                   Join us in our mission to make the world a better place with this online crowdfunding
                   platform - Best
                   Deed. Whether you're an individual looking to make a difference or an NGO needing support,
@@ -666,17 +495,14 @@
                 </p>
               </div>
               <div class="h-16">
-                <router-link to="" style="font-size: 16px; font-weight: 700;"
+                <router-link to="/explore-campaigns" style="font-size: 16px; font-weight: 700;"
                   class="bg-[#40b751] px-6 py-3 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
                   Donate now!
                 </router-link>
               </div>
             </div>
           </div>
-          <!-- <div class="relative hidden md:hidden lg:block">
-          <img src="../assets/Inter/img/together.png"
-            class="h-[500px] w-[900px] absolute -top-[500px] left-80 opacity-on-small">
-        </div> -->
+
         </div>
       </div>
     </section>
@@ -689,13 +515,10 @@
               <div class="leading-tight mt-16">
                 <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#40b751] font-[800]"> Together, We can make a
                   difference!</p>
-                <!-- <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">We can make a</p> -->
-                <!-- <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">difference!</p> -->
               </div>
               <div class="pb-6">
                 <p class="text-[14px] text-[#3f4640] font-[700] " style="line-height: 20px; ">
-                  <!-- <p class="sm:w-[0px] md:lg:w-[0px] lg:w-[358px] sm:h-[0px] md:lg:h-[0px] lg:h-[150px] text-[16px] text-[#3f4640] font-[700]"
-                                    style="line-height: 26px; "> -->
+
                   Join us in our mission to make the world a better place with this online crowdfunding
                   platform - Best
                   Deed. Whether you're an individual looking to make a difference or an NGO needing support,
@@ -703,54 +526,18 @@
                   help
                 </p>
               </div>
-              <!-- <div class="h-10"> -->
+              <div class="h-10">
                 <router-link to="/explore-campaigns" style="font-size: 16px; font-weight: 700;"
                   class="bg-[#40b751] px-6 py-3 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
                   Donate now!
                 </router-link>
-              <!-- </div> -->
+              </div>
             </div>
           </div>
-          <!-- <div class="relative hidden md:hidden lg:block">
-          <img src="../assets/Inter/img/together.png"
-            class="h-[500px] w-[900px] absolute -top-[500px] left-80 opacity-on-small">
-        </div> -->
+
         </div>
       </div>
     </section>
-    <!-- <section class="block md:block lg:hidden">
-      <div class="h-full w-full relative bg-center bg-cover hero"
-        style="background-image: url('https://bestdeed.org/files/together_layer1.png')">
-        <div class="mx-auto container">
-          <div class="grid sm:grid-cols-1 lg:grid-cols-2 pl-6 lg:pl-0 sm:pb-0 md:pb-16 lg:pb-16">
-            <div class="sm:pb-0 md:pb-32 lg:pb-32 pt-16">
-              <div class="leading-tight pt-10 pb-8">
-                <p class="text-[32px] text-[#40b751] font-[800]"> Together,</p>
-                <p class="text-[32px] text-[#3f4640] font-[800]">We can make a</p>
-                <p class="text-[32px] text-[#3f4640] font-[800]">difference!</p>
-              </div>
-              <div>
-                <p class="w-[358px] h-[150px] text-[16px] text-[#3f4640] font-[700]" style="line-height: 26px; ">
-                  
-    Join us in our mission to make the world a better place with this online crowdfunding
-    platform - Best
-    Deed. Whether you're an individual looking to make a difference or an NGO needing support,
-    we're here to
-    help
-    </p>
-    </div>
-    <div class="py-4">
-      <router-link to="" style="font-size: 16px; font-weight: 700;"
-        class="bg-[#40b751] px-6 py-3 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-        Donate now!
-      </router-link>
-    </div>
-    </div>
-    </div>
-
-    </div>
-    </div>
-    </section> -->
 
   </main>
   <Footer />
@@ -1187,119 +974,22 @@ export default {
   }
 }
 
-/* .aa {
-  position: absolute;
-  margin-top: 450px;
-  margin-right: 128px;
-}
-
-@media (max-width: 1018px) {
-  .aa {
-    position: absolute;
-    margin-top: 450px;
-    margin-right: 128px;
-  }
-} */
-
-/* .journey-image {
-  background-image: url('../assets/Inter/img/journey_mobile.png');
-}
-
-.aa {
-  position: absolute;
-  margin-top: 450px;
-  margin-right: 128px;
-}
-
-@media (max-width: 1018px) {
-  .aa {
-    position: absolute;
-    margin-top: 450px;
-    margin-right: 128px;
-  }
-}
-
-.bb {
-  background-image: url('https://bestdeed.org/files/journey_mobile-1.png');
-} */
 
 
 
 .hero {
   position: relative;
-  /* height: 80vh; */
-  /* width: 100%; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* background-image: url('https://bestdeed.org/files/BG%20copy.png'); */
-  /* background-size: cover; */
-  /* background-position: center; */
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  /* top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px; */
   background-color: rgba(255, 248, 248, 0.63);
   background-position: center;
 
 }
 
-/* @media (max-width: 1008px) {
-  .hero {
-    position: relative;
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('https://bestdeed.org/files/BG%20copy.png');
-    background-size: cover;
-    background-position: center;
-  }
 
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(255, 248, 248, 0.63);
-    background-position: center;
-
-  }
-} */
-
-/* @media (max-width: 580px) and (max-width: 249px) {
-  .hero {
-    position: relative;
-    height: 50vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('https://bestdeed.org/files/BG%20copy.png');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(255, 248, 248, 0.63);
-    background-position: center;
-
-  }
-} */
 
 #wrapper {
   width: 680px;

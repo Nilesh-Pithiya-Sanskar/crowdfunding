@@ -356,13 +356,13 @@ button.active {
 
 
 
-<template>
+<!-- <template> -->
   <!-- <slider class="lg:block sm:hidden md:hidden" :images="images"></slider>
   <slider class="block sm:hidden lg:hidden" :images="images"></slider>
   <slider class="block lg:hidden md:hidden" :images="images" ></slider> -->
-  <slider class="block" :images="images"></slider>
-</template>
-<script>
+  <!-- <slider class="block" :images="images"></slider> -->
+<!-- </template> -->
+<!-- <script>
 import slider from '../components/FeaturedIn.vue'
 export default {
   components: { slider },
@@ -381,4 +381,68 @@ export default {
     }
   }
 }
-</script>
+</script> -->
+
+
+<template>
+  <div class="bg-image bg-cover bg-center h-screen" style="background-image: url('https://bestdeed.org/files/BG.png');">
+  <div class="flex items-center justify-center container lg:h-screen md:h-screen mx-auto pt-[2rem] md:pt-[3rem] lg:pt-[6rem] xl:pt-[10rem] pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
+    <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
+      <div class="flex flex-wrap">
+      <div class="sm:12/12 md:w-6/12 lg:w-6/12 mb-5 ml-5 md:ml-0 lg:ml-0">
+        <div
+          class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
+          BestDeed
+        </div>
+        <h1
+          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
+          Most trusted crowd <br>funding platform of india.</h1>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 items-center gap-5 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
+          <div class="flex items-center">
+            <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
+            <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
+            <div
+              class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Platform</div>
+              <div class="-mt-2">Fees</div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Donate With</div>
+              <div class="-mt-2">Transparency</div>
+            </div>
+          </div><div class="flex items-center">
+            <img src="../../src/assets/Inter/img/layer.png" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Verified</div>
+              <div class="-mt-2">NGOs</div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="../../src/assets/Inter/img/ellipse.png" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Tax</div>
+              <div class="-mt-2">Exemption</div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
+          Your help goes a long way!</p>
+        <router-link to="/explore-campaigns"
+          class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
+          Support an NGOs </router-link>
+      </div>
+
+      <div class="sm:12/12 md:w-5/12 lg:w-5/12 items-center mt-5 md:mt-10 lg:mt-0 ml-10">
+        <img src="../../src/assets/Inter/img/rightside.png"
+          class="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+</template>

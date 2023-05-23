@@ -56,9 +56,9 @@ website_route_rules = [
     {"from_route": "/printview", "to_route": "/printview"},
     {"from_route": "/sitemap.xml", "to_route": "/site/sitemap.xml"},
     {"from_route": "/robots.txt", "to_route": "/robots/robots.txt"},
-    # {"from_route": "/assets/<path:app_path>", "to_route": "/assets/<path:app_path>"}	
+    # {"from_route": "/assets/<path:app_path>", "to_route": "/assets/<path:app_path>"}
+	# {"from_route": "/donation-campaign", "to_route": "/bestdeed/explore-campaigns"}
 ]
-
 website_redirects = [
 #   {"source": "/login", "target": "/bestdeed"},
 ]

@@ -40,20 +40,6 @@ const routes = [{
   }
 },
 {
-  path: '/login-via-mobile',
-  name: 'Auto Login',
-  component: () => import('@/pages/auth/AutoLogin.vue'),
-  meta: {
-    title: 'Login Now | BestDeed',
-    metaTags: [
-      {
-        name: 'description',
-        content: "Login Now on the Most trusted crowdfunding platform in India & donate with a 100% Transparent Online Crowdfunding Platform."
-      },
-    ]
-  }
-},
-{
   path: '/login',
   name: 'Auto Login',
   component: () => import('@/pages/auth/AutoLogin.vue'),
@@ -74,24 +60,6 @@ const routes = [{
 },
 {
   path: '/explore-campaigns',
-  name: 'ExploreCampaigns',
-  component: () => import('@/pages/ExploreCampaigns.vue'),
-  meta: {
-    title: 'Support Causes That Matter | Bestdeed',
-    metaTags: [
-      {
-        name: 'keyword',
-        content: 'explore campaign,donation,charity,crowdfunding,donate online to charity,donations for nonprofits,explore,explore donation campaign'
-      },
-      {
-        name: 'description',
-        content: "Make a difference with BestDeed, the trusted crowdfunding platform. Explore and support charitable causes, & learn about impact, goals, and donation progress."
-      },
-    ]
-  }
-},
-{
-  path: '/donation-campaign',
   name: 'ExploreCampaigns',
   component: () => import('@/pages/ExploreCampaigns.vue'),
   meta: {
@@ -312,8 +280,6 @@ let router = createRouter({
     return { left: 0, top: 0 }
   }
 })
-
-
 
 
 // router.beforeEach((to, from, next) => {

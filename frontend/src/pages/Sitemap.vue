@@ -84,9 +84,8 @@
   <!-- Header-->
   <main>
     
-
-    <section class="bg-image bg-cover bg-center lg:h-screen md:h-screen sm:h-full" style="background-image: url('https://bestdeed.org/files/BG.png');">
- <Navbar />
+    <Navbar />
+    <section class="bg-image bg-cover bg-center lg:h-[84vh] md:h-[97vh] sm:h-full" style="background-image: url('https://bestdeed.org/files/BG.png');">
  <div class="flex items-center justify-center container mx-auto pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
    <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
      <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center mx-2 md:items-center lg:items-center lg:mt-16 md:mt-16 sm:mt-5">
@@ -103,7 +102,7 @@
               <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
           <div class="flex items-center">
             <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
-            <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-0.svg" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
             <div
               class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Platform</div>
@@ -111,20 +110,20 @@
             </div>
           </div>
           <div class="flex items-center">
-            <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-100.svg" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Donate With</div>
               <div class="-mt-2">Transparency</div>
             </div>
           </div><div class="flex items-center">
-            <img src="../../src/assets/Inter/img/layer.png" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-verified.svg" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Verified</div>
               <div class="-mt-2">NGOs</div>
             </div>
           </div>
           <div class="flex items-center">
-            <img src="../../src/assets/Inter/img/ellipse.png" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-tax.svg" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Tax</div>
               <div class="-mt-2">Exemption</div>

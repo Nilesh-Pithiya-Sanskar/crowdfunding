@@ -1,6 +1,452 @@
 <template>
     <Navbar />
-    <div class="container mx-auto">
+    <section class="hidden md:hidden lg:block">
+        <div class="grid grid-cols-4">
+            <div class="z-0 ">
+                <img class="w-full h-auto object-cover" src="../assets/Inter/img/bg-left.png">
+            </div>
+            <div class="col-span-2">
+                <div class="w-full pt-[28px]">
+                    <div class="bg-white">
+                        <h1 class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
+                            {{ $t('Request a Campaign') }}
+                        </h1>
+                        <div class="relative z-0">
+                            <div class=" sm:py-2 md:py-4 lg:py-8 ">
+                                <ul
+                                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-8 mr-9 pb-4 flex-row">
+                                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                        <a class="mb-3 md:mb-0 lg:mb-0 cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block "
+                                            v-on:click="toggleTabs(1)" @click="resetFormErrorReset()"
+                                            v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1 }">
+                                            {{ $t('NGO') }}
+                                        </a>
+                                    </li>
+                                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                        <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                                            v-on:click="toggleTabs(2)" @click="resetFormErrorResetIg()"
+                                            v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 2, 'text-white bg-[#40b751]': openTab === 2 }">
+                                            {{ $t('Individual Group') }}
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="px-0 py-2 flex-auto">
+                                    <div class="tab-content tab-space">
+                                        <div v-if="openTab == 1" class="py-0 px-8">
+                                            <div class="mb-2 md:mb-4 lg:mb-6">
+                                                <label class="block text-gray-600 text-base  mb-2" for="email">{{
+                                                    $t('FullName') }} <span class="text-red-600">*</span></label>
+                                                <input
+                                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                    placeholder="Enter Full Name" @keyup="fullNameError = ''"
+                                                    v-model="full_name" type="text" ref="fullname">
+                                                <p class="text-red-600">{{ fullNameError }}</p>
+                                            </div>
+                                            <div
+                                                class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:gap-0 md:gap-4 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label
+                                                        class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Name') }}
+                                                        <span class="text-red-600">*</span></label>
+
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
+                                                        type="text" @keyup="organizationNameError = ''"
+                                                        placeholder="Enter Organisation Name" v-model="organisation_name">
+                                                    <p class="text-red-600">{{ organizationNameError }}</p>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label
+                                                        class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Website') }}</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Organisation Website"
+                                                        v-model="organisation_website">
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Phone Number') }} <span class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="tel" @keyup="phoneError = ''" placeholder="Enter Phone Number"
+                                                        v-model="phone">
+                                                    <p class="text-red-600">{{ phoneError }}</p>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                                        <span class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="email" @keyup="emailError = ''" placeholder="Enter Email"
+                                                        v-model="email">
+                                                    <p class="text-red-600">{{ emailError }}</p>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-4">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Social Media Page') }}</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Social Media Page"
+                                                        v-model="social_media_page">
+
+                                                </div>
+                                            </div>
+                                            <div class="mb-2 md:mb-4 lg:mb-6">
+                                                <label class="text-gray-600 text-base mb-2">
+                                                    {{ $t('FCRA Registered') }}<span class="text-red-600 mr-2">
+                                                        *</span></label>
+                                                <input class="mr-1" type="radio" v-model="fcra_registered"
+                                                    v-bind:value="1">{{ $t('Yes') }}
+                                                <input class="ml-2 mr-1" type="radio" v-model="fcra_registered"
+                                                    v-bind:value="0">{{ $t('No') }}
+                                                <p class="text-red-600">{{ fcra_registeredError }}</p>
+                                            </div>
+
+                                            <div
+                                                class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-0 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Campaign Story') }} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <textarea id="comment" @keyup="campaignStoryError = ''" rows="4"
+                                                        v-model="campaign_story"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                        placeholder="Enter Campaign Story"></textarea>
+                                                    <p class="text-red-600">{{ campaignStoryError }}</p>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Beneficiary Group') }} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <textarea id="comment" rows="4" @keyup="beneficiaryGroupError = ''"
+                                                        v-model="beneficiary_group"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                        placeholder="Enter Beneficiary Group"></textarea>
+
+                                                    <p class="text-red-600">{{ beneficiaryGroupError }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
+                                                <button
+                                                    class="appearance-none transition hover:text-gray-700 border-gray-600 campaign-request rounded py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                    @click="request_campaign()">{{ $t('Campaign Request') }}</button>
+                                                <a class="cursor-pointer border-none transition hover:text-gray-700 text-end  buttonalign appearance-non pr-2 text-[#40b751]  py-2 tracking-wide font-black text-xl rounded"
+                                                    @click="resetForm">{{ $t('Reset Form') }}</a>
+                                            </div>
+                                        </div>
+                                        <div v-if="openTab == 2" class="py-4 px-8">
+                                            <div class="mb-2 md:mb-4 lg:mb-6">
+                                                <label class="block text-gray-600 text-base  mb-2" for="email">{{
+                                                    $t('FullName') }} <span class="text-red-600">*</span></label>
+                                                <input
+                                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                    placeholder="Enter Full Name" @keyup="fullNameErrorig = ''"
+                                                    v-model="full_nameig" type="text" ref="fullname">
+                                                <p class="text-red-600">{{ fullNameErrorig }}</p>
+                                            </div>
+                                            <div
+                                                class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Phone Number') }} <span class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="tel" placeholder="Enter Phone Number"
+                                                        @keyup="phoneErrorig = ''" v-model="phoneig">
+                                                    <p class="text-red-600">{{ phoneErrorig }}</p>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                                        <span class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="email" @keyup="emailErrorig = ''" placeholder="Enter Email"
+                                                        v-model="emailig">
+                                                    <p class="text-red-600">{{ emailErrorig }}</p>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Social Media Page') }}</label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        type="text" placeholder="Enter Social Media Page"
+                                                        v-model="social_media_pageig">
+
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Campaign Story') }} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <textarea id="comment" rows="4" @keyup="campaignStoryErrorig = ''"
+                                                        v-model="campaign_storyig"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                        placeholder="Enter Campaign Story"></textarea>
+                                                    <p class="text-red-600">{{ campaignStoryErrorig }}</p>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2">
+                                                        {{ $t('Beneficiary Group') }} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <textarea id="comment" rows="4" @keyup="beneficiaryGroupErrorig = ''"
+                                                        v-model="beneficiary_groupig"
+                                                        class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                        placeholder="Enter Beneficiary Group"></textarea>
+
+                                                    <p class="text-red-600">{{ beneficiaryGroupErrorig }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ">
+                                                <button
+                                                    class="appearance-none transition hover:text-gray-700 border-gray-600  campaign-request text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                    @click="request_campaignig()">{{ $t('Request a Campaign') }}</button>
+                                                <a class="cursor-pointer border-none transition hover:text-gray-700 text-end buttonalign appearance-none text-[#40b751]  tracking-wide font-black text-xl rounded"
+                                                    @click="resetFormIg">{{ $t('Reset Form') }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid content-end z-0 ">
+                <img class="w-full h-auto object-cover" src="../assets/Inter/img/bg-right.png">
+            </div>
+        </div>
+    </section>
+    <div class="block md:block lg:hidden">
+        <div class="container mx-auto">
+            <div class="container mx-auto h-full">
+
+                <div class="w-full pt-[28px]">
+                    <div class="container mx-auto py-0">
+                        <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
+                            <h1
+                                class="text-[24px] md:text-[30px] lg:text-[36px] px-10 text-[#40b751] font-bold text-center">
+                                {{ $t('Request a Campaign') }}
+                            </h1>
+                            <div class="relative z-0">
+                                <div class=" sm:py-2 md:py-4 lg:py-8 ">
+                                    <ul
+                                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  flex  mb-0 flex-wrap pt-4 ml-8 mr-9 pb-4 flex-row">
+                                        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                            <a class="mb-3 md:mb-0 lg:mb-0 cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block "
+                                                v-on:click="toggleTabs(1)" @click="resetFormErrorReset()"
+                                                v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 1, 'text-white bg-[#40b751]': openTab === 1 }">
+                                                {{ $t('NGO') }}
+                                            </a>
+                                        </li>
+                                        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                                            <a class="cursor-pointer text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                                                v-on:click="toggleTabs(2)" @click="resetFormErrorResetIg()"
+                                                v-bind:class="{ 'text-[#40b751] bg-white': openTab !== 2, 'text-white bg-[#40b751]': openTab === 2 }">
+                                                {{ $t('Individual Group') }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="px-0 py-2 flex-auto">
+                                        <div class="tab-content tab-space">
+                                            <div v-if="openTab == 1" class="py-4 px-8">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2" for="email">{{
+                                                        $t('FullName') }} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        placeholder="Enter Full Name" @keyup="fullNameError = ''"
+                                                        v-model="full_name" type="text" ref="fullname">
+                                                    <p class="text-red-600">{{ fullNameError }}</p>
+                                                </div>
+                                                <div
+                                                    class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:gap-0 md:gap-4 lg:gap-4">
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label
+                                                            class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Name') }}
+                                                            <span class="text-red-600">*</span></label>
+
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
+                                                            type="text" @keyup="organizationNameError = ''"
+                                                            placeholder="Enter Organisation Name"
+                                                            v-model="organisation_name">
+                                                        <p class="text-red-600">{{ organizationNameError }}</p>
+                                                    </div>
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label
+                                                            class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Website') }}</label>
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                            type="text" placeholder="Enter Organisation Website"
+                                                            v-model="organisation_website">
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:gap-0 md:gap-0 lg:gap-4">
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Phone Number') }} <span
+                                                                class="text-red-600">*</span></label>
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                            type="tel" @keyup="phoneError = ''"
+                                                            placeholder="Enter Phone Number" v-model="phone">
+                                                        <p class="text-red-600">{{ phoneError }}</p>
+                                                    </div>
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                                            <span class="text-red-600">*</span></label>
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                            type="email" @keyup="emailError = ''" placeholder="Enter Email"
+                                                            v-model="email">
+                                                        <p class="text-red-600">{{ emailError }}</p>
+                                                    </div>
+                                                    <div class="mb-2 md:mb-4 lg:mb-4">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Social Media Page') }}</label>
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                            type="text" placeholder="Enter Social Media Page"
+                                                            v-model="social_media_page">
+
+                                                    </div>
+                                                </div>
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="text-gray-600 text-base mb-2">
+                                                        {{ $t('FCRA Registered') }}<span class="text-red-600 mr-2">
+                                                            *</span></label>
+                                                    <input class="mr-1" type="radio" v-model="fcra_registered"
+                                                        v-bind:value="1">{{ $t('Yes') }}
+                                                    <input class="ml-2 mr-1" type="radio" v-model="fcra_registered"
+                                                        v-bind:value="0">{{ $t('No') }}
+                                                    <p class="text-red-600">{{ fcra_registeredError }}</p>
+                                                </div>
+
+                                                <div
+                                                    class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4">
+                                                    <div class="mb-0 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Campaign Story') }} <span
+                                                                class="text-red-600">*</span></label>
+                                                        <textarea id="comment" @keyup="campaignStoryError = ''" rows="4"
+                                                            v-model="campaign_story"
+                                                            class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                            placeholder="Enter Campaign Story"></textarea>
+                                                        <p class="text-red-600">{{ campaignStoryError }}</p>
+                                                    </div>
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Beneficiary Group') }} <span
+                                                                class="text-red-600">*</span></label>
+                                                        <textarea id="comment" rows="4" @keyup="beneficiaryGroupError = ''"
+                                                            v-model="beneficiary_group"
+                                                            class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                            placeholder="Enter Beneficiary Group"></textarea>
+
+                                                        <p class="text-red-600">{{ beneficiaryGroupError }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
+                                                    <button
+                                                        class="appearance-none transition hover:text-gray-700 border-gray-600  campaign-request rounded sm:mr-0 md:mr-20 lg:mr-32 py-2 px-2 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase rounded"
+                                                        @click="request_campaign()">{{ $t('Campaign Request') }}</button>
+                                                    <a class="cursor-pointer border-none transition hover:text-gray-700 text-end  buttonalign sm:ml-0 md:ml-20 lg:ml-32  appearance-non pr-2 text-[#40b751]  py-2 tracking-wide font-black text-xl rounded"
+                                                        @click="resetForm">{{ $t('Reset Form') }}</a>
+                                                </div>
+                                            </div>
+                                            <div v-if="openTab == 2" class="py-4 px-8">
+                                                <div class="mb-2 md:mb-4 lg:mb-6">
+                                                    <label class="block text-gray-600 text-base  mb-2" for="email">{{
+                                                        $t('FullName') }} <span
+                                                            class="text-red-600">*</span></label>
+                                                    <input
+                                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                        placeholder="Enter Full Name" @keyup="fullNameErrorig = ''"
+                                                        v-model="full_nameig" type="text" ref="fullname">
+                                                    <p class="text-red-600">{{ fullNameErrorig }}</p>
+                                                </div>
+                                                <div
+                                                    class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:gap-0 md:gap-0 lg:gap-4">
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Phone Number') }} <span
+                                                                class="text-red-600">*</span></label>
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                            type="tel" placeholder="Enter Phone Number"
+                                                            @keyup="phoneErrorig = ''" v-model="phoneig">
+                                                        <p class="text-red-600">{{ phoneErrorig }}</p>
+                                                    </div>
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                                            <span class="text-red-600">*</span></label>
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                            type="email" @keyup="emailErrorig = ''"
+                                                            placeholder="Enter Email" v-model="emailig">
+                                                        <p class="text-red-600">{{ emailErrorig }}</p>
+                                                    </div>
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Social Media Page') }}</label>
+                                                        <input
+                                                            class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
+                                                            type="text" placeholder="Enter Social Media Page"
+                                                            v-model="social_media_pageig">
+
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:gap-0 md:gap-0 lg:gap-4">
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Campaign Story') }} <span
+                                                                class="text-red-600">*</span></label>
+                                                        <textarea id="comment" rows="4" @keyup="campaignStoryErrorig = ''"
+                                                            v-model="campaign_storyig"
+                                                            class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                            placeholder="Enter Campaign Story"></textarea>
+                                                        <p class="text-red-600">{{ campaignStoryErrorig }}</p>
+                                                    </div>
+                                                    <div class="mb-2 md:mb-4 lg:mb-6">
+                                                        <label class="block text-gray-600 text-base  mb-2">
+                                                            {{ $t('Beneficiary Group') }} <span
+                                                                class="text-red-600">*</span></label>
+                                                        <textarea id="comment" rows="4"
+                                                            @keyup="beneficiaryGroupErrorig = ''"
+                                                            v-model="beneficiary_groupig"
+                                                            class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
+                                                            placeholder="Enter Beneficiary Group"></textarea>
+
+                                                        <p class="text-red-600">{{ beneficiaryGroupErrorig }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+                                                    <button
+                                                        class="appearance-none transition hover:text-gray-700 border-gray-600 campaign-request rounded text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751]  tracking-wide  border border-[#40b751] hover:border-[#40b751] text-base uppercase"
+                                                        @click="request_campaignig()">{{ $t('Request a Campaign') }}</button>
+                                                    <a class="cursor-pointer border-none transition hover:text-gray-700 text-end  buttonalign appearance-none text-[#40b751]  tracking-wide font-black text-xl rounded"
+                                                        @click="resetFormIg">{{ $t('Reset Form') }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container mx-auto">
         <div class="container mx-auto h-full">
 
             <div class="w-full pt-[28px]">
@@ -205,7 +651,7 @@
         <div class="imageresponsive absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:w-0 md:w-0 lg:w-0 xl:w-96  opacity-40 bg-white bg-contain "
             style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
-    </div>
+    </div> -->
     <Dialog :options="{
         title: $t('Thank You For Request'),
         message: $t('We Reach You Soon as possible'),
@@ -215,17 +661,17 @@
         // },
         size: 'sm',
         actions: [
-          {
-            label: $t('Okay'),
-            appearance: 'success',
-            handler: ({ close }) => {
-              this.$router.push('/')
-              close() // closes dialog
+            {
+                label: $t('Okay'),
+                appearance: 'success',
+                handler: ({ close }) => {
+                    this.$router.push('/')
+                    close() // closes dialog
+                },
             },
-          },
-          { label: $t('Cancel') },
+            { label: $t('Cancel') },
         ],
-      }" v-model="showDialog" />
+    }" v-model="showDialog" />
     <Footer />
 </template>
    
@@ -285,22 +731,22 @@ export default {
     //         this.request_campaign(value);
     //     }
     // },
-    created(){
+    created() {
         document.title = this.$t('Request a Campaign for Your Cause | BestDeed')
         this.$nextTick(() => this.$refs.fullname.focus())
         const linkElement = document.querySelector('link[rel="canonical"]');
-    if (!linkElement) {
-      var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/request-campaign"
-    document.head.appendChild(link);
-    }
-    else{
-      linkElement.href = "https://bestdeed.org/request-campaign"
-      document.head.appendChild(linkElement)
-    }
+        if (!linkElement) {
+            var link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = "https://bestdeed.org/request-campaign"
+            document.head.appendChild(link);
+        }
+        else {
+            linkElement.href = "https://bestdeed.org/request-campaign"
+            document.head.appendChild(linkElement)
+        }
     },
-    mounted(){
+    mounted() {
         this.$nextTick(() => this.$refs.fullname.focus())
     },
     resources: {
@@ -718,3 +1164,44 @@ export default {
     }
 }
 </script>
+<style>
+.campaign-request {
+    margin-right: 150px;
+}
+
+@media (max-width: 1506px) {
+    .campaign-request {
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 1396px) {
+    .campaign-request {
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 1306px) {
+    .campaign-request {
+        margin-right: 70px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .campaign-request {
+        margin-right: 60px;
+    }
+}
+
+@media (max-width: 1142px) {
+    .campaign-request {
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 1188px) {
+    .campaign-request {
+        margin-right: 0px;
+    }
+}
+</style>

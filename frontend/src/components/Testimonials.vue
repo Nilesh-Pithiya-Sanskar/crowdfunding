@@ -1,6 +1,6 @@
 <template>
   <section class="bg-[#ebf8ec] testimonial-wrap pt-5 pl-5 md:pl-5 lg:pl-0 pr-5 md:pr-5 lg:pr-0 lg:!pt-[5rem]">
-    <div class="container mx-auto h-full">
+    <div class="responsivesection container mx-auto h-full">
       <div class="flex flex-wrap justify-between items-center lg:mb-10 mb-5">
         <div class="fontfamily text-center mt-0">
           <h3 class=" text-[20px] md:text-[24px] lg:text-[30px] pt-0 font-black text-[#40b751] mb-0 ">{{
@@ -41,7 +41,7 @@
             <ul class="flex mb-4 list-none pt-3 pb-0 overflow-x-scroll overflow-y-hidden custom-scrollbar scrollbar-thin">
 
               <li class="mb-2 break-words pr-4">
-                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  w-[360px] ">
+                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  cardsize ">
                   <div class="flex flex-wrap justify-center">
                     <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                       <div class="relative">
@@ -62,7 +62,7 @@
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                      {{ $t( 'Assistant Manager')}}
                     </div>
-                    <div class="h-[250px] no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
+                    <div class="h-[250px] pb-5 mb:pb-0 lg:pb-0 no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
                       <div class="text-[16px] md:text-[16px] lg:text-[16px] leading-7  text-blueGray-600 ">
                         {{ $t('I have always wanted to help those in need, but I never knew how to do it effectively. Best Deed has made it so easy for me to make a contribution through their platform. I love that there is 100% transparency in the whole process and I’m donating and they are donating the products to the ones in need. Thank you, Best Deed!')}}
 
@@ -73,7 +73,7 @@
               </li>
 
               <li class="mb-2 break-words pr-4">
-                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  w-[360px] ">
+                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  cardsize ">
                   <div class="flex flex-wrap justify-center">
                     <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                       <div class="relative">
@@ -93,7 +93,7 @@
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                       Developer
                     </div>
-                    <div class="h-[250px] no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
+                    <div class="h-[250px] pb-5 mb:pb-0 lg:pb-0 no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
                       <div class="text-[16px] md:text-[16px] lg:text-[16px] leading-7  text-blueGray-600 ">
 {{ $t("I recently donated through Best Deed and was blown away by how simple and easy it was. They have listed the products the NGO needs and I know exactly what I was contributing for! I was able to make a donation to a cause I care about. I appreciate the transparency of the platform and knowing exactly where my donation is going. Once, I visited there to volunteer with them and enjoy every bit of my time there.")}}
                       </div>
@@ -103,7 +103,7 @@
               </li>
 
               <li class="mb-2 break-words pr-4">
-                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  w-[360px] ">
+                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  cardsize ">
                   <div class="flex flex-wrap justify-center">
                     <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                       <div class="relative">
@@ -123,7 +123,7 @@
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
                       {{ $t('It Recruiter') }}
                     </div>
-                    <div class="h-[250px] no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
+                    <div class="h-[250px] pb-5 mb:pb-0 lg:pb-0 no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
                       <div class="text-[16px] md:text-[16px] lg:text-[16px] leading-7  text-blueGray-600 ">
                         {{ $t("I was hesitant to donate to a crowdfunding platform at first, but Best Deed has completely changed my mind. The platform is user-friendly and the payment process is also quite secure. I highly recommend Best Deed to anyone looking to make a positive impact.")}}
 
@@ -150,7 +150,7 @@
             <ul class="flex mb-0 list-none pt-3 pb-0 overflow-x-scroll overflow-y-hidden custom-scrollbar scrollbar-thin">
 
               <li class="mb-2 break-words pr-4">
-                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  w-[360px] ">
+                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  cardsize ">
                   <div class="flex flex-wrap justify-center">
                     <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                       <div class="relative">
@@ -173,7 +173,7 @@
               <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
               Designation
                                                                                       </div> -->
-                    <div class="h-[250px] no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
+                    <div class="h-[250px] pb-5 mb:pb-0 lg:pb-0 no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
                       <div class="text-[16px] md:text-[16px] lg:text-[16px] leading-7  text-blueGray-600 ">
                         {{ $t("We are so grateful for the products we have received through Best Deed to nurture the lives of mentally retarded childrens at Chitransh. The platform has made it so easy for people to donate  and support our cause by offering us the right products. We appreciate the transparency of the platform, and it has been a pleasure to work with their team. Thank you, Best Deed, for helping us fulfill the requirements by donating necessary products!")}}
 
@@ -184,7 +184,7 @@
               </li>
 
               <li class="mb-2 break-words pr-4">
-                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  w-[360px] ">
+                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  cardsize ">
                   <div class="flex flex-wrap justify-center">
                     <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                       <div class="relative">
@@ -207,7 +207,7 @@
               <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
               Designation
                                                                                 </div> -->
-                    <div class="h-[250px] no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
+                    <div class="h-[250px] pb-5 mb:pb-0 lg:pb-0 no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
                       <div class="text-[16px] md:text-[16px] lg:text-[16px] leading-7  text-blueGray-600 ">
                         {{ $t("As an NGO, it can be challenging to find the funding for the necessary items required at Sadbhavna Vrudhashram to fulfill requirements of elderly people. Best Deed has been proved to be a game-changer for us. Their platform has helped us reach a wider audience and receive donations we wouldn't have been able to otherwise.")}}
 
@@ -218,7 +218,7 @@
               </li>
 
               <li class="mb-2 break-words pr-4">
-                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  w-[360px] ">
+                <div class="px-4 rounded-lg shadow-lg  bg-white mb-6 mt-12  cardsize ">
                   <div class="flex flex-wrap justify-center">
                     <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                       <div class="relative">
@@ -241,7 +241,7 @@
               <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
               Designation
                                                                             </div> -->
-                    <div class="h-[250px] no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
+                    <div class="h-[250px] pb-5 mb:pb-0 lg:pb-0 no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
                       <div class="text-[16px] md:text-[16px] lg:text-[16px] leading-7  text-blueGray-600 ">
                         {{ $t("Working with Best Deed has been an excellent experience for our NGO. They have helped us raise funds to fulfill the requirements of our NGO, and we have seen a significant impact on our ability to carry out our mission. The platform is also easy to use, and their team is always available to provide support. We highly recommend Best Deed to other NGOs looking to avail products.")}}
 
@@ -712,6 +712,72 @@ export default {
 }
 </script>
 <style>
+@media(max-width: 280px) {
+  .cardsize {
+    width: 240px;
+  }
+}
+
+@media (max-width: 375px) and (min-width:281px){
+  .cardsize {
+    width: 330px;
+  }
+}
+
+@media (max-width: 410px) and (min-width:376px)  {
+  .cardsize {
+    width: 350px;
+  }
+}
+
+@media (max-width: 539px) and (min-width:411px)  {
+  .cardsize {
+    width: 370px;
+  }
+}
+
+@media (max-width: 764px) and (min-width:540px)  {
+  .cardsize {
+    width: 500px;
+  }
+}
+
+@media (max-width: 819px) and (min-width:765px)  {
+  .cardsize {
+    width: 350px;
+  }
+}
+
+@media (max-width: 879px) and (min-width:820px)  {
+  .cardsize {
+    width: 370px;
+  }
+}
+
+@media (max-width: 912px) and (min-width:880px)  {
+  .cardsize {
+    width: 380px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width:913px)  {
+  .cardsize {
+    width: 390px;
+  }
+}
+
+@media (max-width: 1280px) and (min-width:1024px)  {
+  .cardsize {
+    width: 310px;
+  }
+}
+
+@media (min-width:1280px)  {
+  .cardsize {
+    width: 360px;
+  }
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
   height: 2px;
@@ -736,4 +802,5 @@ export default {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}</style>
+}
+</style>

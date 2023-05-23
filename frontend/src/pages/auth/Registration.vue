@@ -1,16 +1,199 @@
 <template>
     <Navbar />
-    <div class="container mx-auto h-full pb-[48px]">
-        <!-- <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
-            style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
-        </div> -->
+    <section class="hidden md:block lg:block">
+        <div class="grid grid-cols-4">
+            <div class="z-0 ">
+                <img class="w-full h-auto object-cover" src="../../assets/Inter/img/bg-left.png">
+            </div>
+            <div class="col-span-2">
+                <div class="pb-[43px]">
+                    <div class="w-0 md:w-full lg:w-4/6 mx-auto bg-white">
+                        <h1
+                            class="text-[20px] md:text-[30px] lg:text-[36px] font-bold py-4  text-[#40b751] text-bold text-center">
+                            {{ $t('Donor Registration') }}
+                        </h1>
+                        <div class="relative z-0">
+                            <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+                                <div class="mr-2 mb-4">
+                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('First Name') }} <span
+                                            class="text-red-600">*</span></label>
+                                    <input
+                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                        v-model="first_name" @keyup="firstNameError = ''" type="text"
+                                        placeholder="Enter First Name" required ref="first_name">
+                                    <p class="text-red-600">{{ $t(firstNameError) }}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }} <span
+                                            class="text-red-600">*</span></label>
+                                    <input
+                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                        v-model="last_name" @keyup="firstNameError = ''" type="text"
+                                        placeholder="Enter Last Name" required>
+                                    <p class="text-red-600">{{ $t(lastNameError) }}</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                    <span class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="email" type="email" @keyup="emailError = ''" placeholder="Enter Email"
+                                    required>
+                                <p class="text-red-600">{{ $t(emailError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Password') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="password" type="password" @keyup="passwordError = ''"
+                                    placeholder="Enter Password" required>
+                                <p class="text-red-600">{{ $t(passwordError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Confirm Password') }}
+                                    <span class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
+                                    placeholder="Enter Confirm Password" required>
+                                <p class="text-red-600">{{ $t(confirmPasswordError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="phone_number" type="tel" @keyup="phoneNumberError = ''"
+                                    placeholder="Enter Phone Number" required>
+                                <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('PAN Number') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="pan_number" type="text" @keyup="panError = ''" placeholder="Enter PAN Number"
+                                    required>
+                                <p class="text-red-600">{{ $t(panError) }}</p>
+                            </div>
+                            <div class="flex items-center justify-between mt-8">
+                                <button
+                                    class="bg-[#40b751] mb-2 uppercase text-[13px] hover:bg-blue-dark text-white py-2 px-8 rounded-lg"
+                                    type="submit" @click="register()">
+                                    {{ $t('Register') }}
+                                </button>
+                            </div>
+                            <span class="block text-gray-600 text-base"> {{ $t('Already have an account?') }}
+                                <router-link to="/login" class="text-[#40b751]">{{ $t('Sign In') }}</router-link></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid content-end z-0 ">
+                <img class="w-full h-auto object-cover" src="../../assets/Inter/img/bg-right.png">
+            </div>
+        </div>
+    </section>
+    <div class="block md:hidden lg:hidden">
+        <div class="container mx-auto h-full pb-[48px]">
+            <div class="w-full sm:pt-0 md:pt-5 lg:pt-6">
+                <div class="container mx-auto py-0">
+                    <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
+                        <div
+                            class="text-[25px] md:text-[30px] lg:text-[36px] font-bold py-4 px-2 text-[#40b751] text-bold text-center">
+                            {{ $t('Donor Registration') }}
+                        </div>
+                        <div class="relative z-0">
+                            <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+                                <div class="mr-2 mb-4">
+                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('First Name') }} <span
+                                            class="text-red-600">*</span></label>
+                                    <input
+                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                        v-model="first_name" @keyup="firstNameError = ''" type="text"
+                                        placeholder="Enter First Name" required ref="first_name">
+                                    <p class="text-red-600">{{ $t(firstNameError) }}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }} <span
+                                            class="text-red-600">*</span></label>
+                                    <input
+                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                        v-model="last_name" @keyup="firstNameError = ''" type="text"
+                                        placeholder="Enter Last Name" required>
+                                    <p class="text-red-600">{{ $t(lastNameError) }}</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                    <span class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="email" type="email" @keyup="emailError = ''" placeholder="Enter Email"
+                                    required>
+                                <p class="text-red-600">{{ $t(emailError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Password') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="password" type="password" @keyup="passwordError = ''"
+                                    placeholder="Enter Password" required>
+                                <p class="text-red-600">{{ $t(passwordError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Confirm Password') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
+                                    placeholder="Enter Confirm Password" required>
+                                <p class="text-red-600">{{ $t(confirmPasswordError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="phone_number" type="tel" @keyup="phoneNumberError = ''"
+                                    placeholder="Enter Phone Number" required>
+                                <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('PAN Number') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="pan_number" type="text" @keyup="panError = ''" placeholder="Enter PAN Number"
+                                    required>
+                                <p class="text-red-600">{{ $t(panError) }}</p>
+                            </div>
+                            <div class="flex items-center justify-between mt-8">
+                                <button
+                                    class="bg-[#40b751] mb-2 uppercase text-[13px] hover:bg-blue-dark text-white py-2 px-8 rounded-lg"
+                                    type="submit" @click="register()">
+                                    {{ $t('Register') }}
+                                </button>
+                            </div>
+                            <span class="block text-gray-600 text-base  mb-2"> {{ $t('Already have an account?') }}
+                                <router-link to="/login" class="text-[#40b751]">{{ $t('Sign In') }}</router-link></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container mx-auto h-full pb-[48px]">
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-6">
             <div class="container mx-auto py-0">
                 <div class="w-4/6 lg:w:4/6 mx-auto bg-white">
                     <h1
                         class="text-[20px] md:text-[30px] lg:text-[36px] font-bold py-8 px-10 text-[#40b751] text-bold text-center">
                         {{ $t('Donor Registration') }}
-                </h1>
+                    </h1>
                     <div class="relative z-0">
                         <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
                             <div class="mr-2 mb-4">
@@ -18,8 +201,8 @@
                                         class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="first_name" @keyup="firstNameError = ''" type="text" placeholder="Enter First Name"
-                                    required ref="first_name">
+                                    v-model="first_name" @keyup="firstNameError = ''" type="text"
+                                    placeholder="Enter First Name" required ref="first_name">
                                 <p class="text-red-600">{{ $t(firstNameError) }}</p>
                             </div>
                             <div class="mb-4">
@@ -27,8 +210,8 @@
                                         class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="last_name" @keyup="firstNameError = ''" type="text" placeholder="Enter Last Name"
-                                    required>
+                                    v-model="last_name" @keyup="firstNameError = ''" type="text"
+                                    placeholder="Enter Last Name" required>
                                 <p class="text-red-600">{{ $t(lastNameError) }}</p>
                             </div>
                         </div>
@@ -63,8 +246,8 @@
                                     class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="phone_number" type="tel" @keyup="phoneNumberError = ''" placeholder="Enter Phone Number"
-                                required>
+                                v-model="phone_number" type="tel" @keyup="phoneNumberError = ''"
+                                placeholder="Enter Phone Number" required>
                             <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
                         </div>
                         <div class="mb-4">
@@ -72,7 +255,8 @@
                                     class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="pan_number" type="text" @keyup="panError = ''" placeholder="Enter PAN Number" required>
+                                v-model="pan_number" type="text" @keyup="panError = ''" placeholder="Enter PAN Number"
+                                required>
                             <p class="text-red-600">{{ $t(panError) }}</p>
                         </div>
                         <div class="flex items-center justify-between mt-8">
@@ -84,19 +268,16 @@
                         </div>
                         <span class="block text-gray-600 text-base  mb-2"> {{ $t('Already have an account?') }} <router-link
                                 to="/login" class="text-[#40b751]">{{ $t('Sign In') }}</router-link></span>
-                        <!-- <a href="/login">Already have an account? Sign In</a> -->
-
-                        <!-- <p class="text-grey text-xs mt-1"></p> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   <div class=" pl-96 ">
+    <div class=" pl-96 ">
         <div class="imageresponsive absolute  bg-no-repeat z-1 -mt-[430px] ml-[1000px] sm:w-0 md:w-0 lg:w-0 xl:w-96  bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
         </div>
-    </div>
+    </div> -->
     <Footer />
 </template>
 
@@ -130,21 +311,21 @@ export default {
 
         }
     },
-    created(){
+    created() {
         document.title = this.$t('Register | BestDeed')
         const linkElement = document.querySelector('link[rel="canonical"]');
-    if (!linkElement) {
-      var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/registration"
-    document.head.appendChild(link);
-    }
-    else{
-      linkElement.href = "https://bestdeed.org/registration"
-      document.head.appendChild(linkElement)
-    }
+        if (!linkElement) {
+            var link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = "https://bestdeed.org/registration"
+            document.head.appendChild(link);
+        }
+        else {
+            linkElement.href = "https://bestdeed.org/registration"
+            document.head.appendChild(linkElement)
+        }
     },
-    mounted(){
+    mounted() {
         this.$nextTick(() => this.$refs.first_name.focus())
     },
     resources: {
@@ -152,14 +333,14 @@ export default {
             return {
                 method: 'sadbhavna_donatekart.api.api.register',
                 onSuccess: (res) => {
-                    console.log("res",res)
-                    if (res == 'This email is already registered'){
+                    console.log("res", res)
+                    if (res == 'This email is already registered') {
                         this.emailError = 'This email is already registered'
                     }
-                    else if (res == 'This phone number is already registered'){
+                    else if (res == 'This phone number is already registered') {
                         this.phoneNumberError = 'This phone number is already registered'
                     }
-                    else{
+                    else {
                         if (confirm("your registration is successfully now you can login") == true) {
                             this.$router.push(`/login`)
                         } else {

@@ -1,7 +1,7 @@
 <template>
   <!-- Header-->
   <main>
-    <Navbar />
+    <!-- <Navbar /> -->
     <!-- <section class="bg-no-repeat  bg-cover bg-center bg-overlay"
       style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
       <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-48 container mx-auto h-full">
@@ -48,7 +48,7 @@
     </section> -->
 
 <!-- <section class="relative overflow-hidden bg-cover bg-no-repeat"  -->
-  <section class="responsivesection bg-image bg-no-repeat bg-center bg-cover"
+  <!-- <section class="responsivesection bg-image bg-no-repeat bg-center bg-cover"
   style="background-image: url('https://bestdeed.org/files/BG.png');">
   <div class="container h-full mx-auto pt-[2rem] md:pt-[3rem] lg:pt-[6rem] xl:pt-[10rem] pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
     <div class="grid md:grid-cols-2 lg:grid-cols-2 ">
@@ -63,8 +63,7 @@
 
         <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
           <div class="flex items-center">
-            <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
-            <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-0.svg" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
             <div
               class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Platform</div>
@@ -72,20 +71,20 @@
             </div>
           </div>
           <div class="flex items-center">
-            <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-100.svg" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Donate With</div>
               <div class="-mt-2">Transparency</div>
             </div>
           </div><div class="flex items-center">
-            <img src="../../src/assets/Inter/img/layer.png" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-verified.svg" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Verified</div>
               <div class="-mt-2">NGOs</div>
             </div>
           </div>
           <div class="flex items-center">
-            <img src="../../src/assets/Inter/img/ellipse.png" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
+            <img src="../../src/assets/Inter/img/home-banner-icon-tax.svg" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
               <div>Tax</div>
               <div class="-mt-2">Exemption</div>
@@ -106,6 +105,71 @@
       </div>
     </div>
   </div>
+</section> -->
+
+
+
+<section class="bg-image bg-cover bg-center lg:h-screen md:h-screen sm:h-full" style="background-image: url('https://bestdeed.org/files/BG.png');">
+ <Navbar />
+ <div class="flex items-center justify-center container mx-auto pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
+   <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
+     <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center mx-2 md:items-center lg:items-center lg:mt-16 md:mt-16 sm:mt-5">
+    
+        <div class="mb-8">
+            <div
+              class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9] mt-2">
+              BestDeed
+            </div>
+            <h1
+              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
+              Most trusted crowd <br>funding platform of india.</h1>
+
+              <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
+          <div class="flex items-center">
+            <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
+            <img src="../../src/assets/Inter/img/home-banner-icon-0.svg" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
+            <div
+              class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Platform</div>
+              <div class="-mt-2">Fees</div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="../../src/assets/Inter/img/home-banner-icon-100.svg" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Donate With</div>
+              <div class="-mt-2">Transparency</div>
+            </div>
+          </div><div class="flex items-center">
+            <img src="../../src/assets/Inter/img/home-banner-icon-verified.svg" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Verified</div>
+              <div class="-mt-2">NGOs</div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="../../src/assets/Inter/img/home-banner-icon-tax.svg" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              <div>Tax</div>
+              <div class="-mt-2">Exemption</div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
+          Your help goes a long way!</p>
+        <router-link to="/explore-campaigns"
+          class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
+          Support an NGOs </router-link>
+
+        </div>
+
+        <div class="sm:11/12 md:hidden lg:block lg:w-11/12 items-center">
+          <img src="../../src/assets/Inter/img/rightside.png"
+            class="sm:ml-0 md:ml-5 lg:ml-9 xl:ml-10 sm:mt-10"/>
+        </div>
+   </div>
+ </div>
 </section>
 
 
@@ -378,11 +442,11 @@
                 v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'bg-[#40b751] text-white': openTab === 1 }">
                 <div class="flex" v-if="openTab !== 1">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/grid(2).png" />
+                    src="../../src/assets/Inter/img/icon_cat_all.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
                 <div class="flex" v-else="openTab === 1">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/grid.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_all.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
               </div>
@@ -395,12 +459,12 @@
 
                 <div class="flex" v-if="openTab !== 2">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/paw(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_animal.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Animal') }}</p>
                 </div>
                 <div class="flex" v-else="openTab === 2">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/paw.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_animal.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Animal') }}</p>
                 </div>
@@ -416,14 +480,14 @@
 
                 <div class="flex" v-if="openTab !== 3">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/mortarboard(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_education.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Education') }}
                   </p>
                 </div>
                 <div class="flex" v-else="openTab === 3">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/mortarboard.png" />
+                    src="../../src/assets/Inter/img/icon_cat_education.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Education') }}
                   </p>
@@ -440,14 +504,14 @@
 
                 <div class="flex" v-if="openTab !== 4">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/children(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_children.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Children') }}
                   </p>
                 </div>
                 <div class="flex" v-else="openTab === 4">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/children.png" />
+                    src="../../src/assets/Inter/img/icon_cat_children.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Children') }}
                   </p>
@@ -464,14 +528,14 @@
 
                 <div class="flex" v-if="openTab !== 5">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/healthcare(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_medical.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Medical') }}</p>
 
                 </div>
                 <div class="flex" v-else="openTab === 5">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/healthcare.png" />
+                    src="../../src/assets/Inter/img/icon_cat_medical.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Medical') }}</p>
 
@@ -488,14 +552,14 @@
 
                 <div class="flex" v-if="openTab !== 6">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/supplies(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_hunger.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
 
                 </div>
                 <div class="flex" v-else="openTab === 6">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/supplies.png" />
+                    src="../../src/assets/Inter/img/icon_cat_hunger.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
 
@@ -511,14 +575,14 @@
 
                 <div class="flex" v-if="openTab !== 7">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/pray(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_religious.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religious') }}
                   </p>
 
                 </div>
                 <div class="flex" v-else="openTab === 7">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/pray.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_religious.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religious') }}
                   </p>
@@ -536,7 +600,7 @@
 
                 <div class="flex" v-if="openTab !== 8">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/disability(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_disability.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
@@ -544,7 +608,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 8">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/disability.png" />
+                    src="../../src/assets/Inter/img/icon_cat_disability.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
@@ -561,7 +625,7 @@
 
                 <div class="flex" v-if="openTab !== 9">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/old-man(1).png" />
+                    src="../../src/assets/Inter/img/icon_cat_elder.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Elder') }}
                   </p>
@@ -569,7 +633,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 9">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/old-man.png" />
+                    src="../../src/assets/Inter/img/icon_cat_elder.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Elder') }}
                   </p>
@@ -700,7 +764,7 @@
 
     <section class=" h-full mb-10 px-10 md:px-10 lg:px-10 bg-blueGray-100 p-3">
       <div class="container mx-auto mb-10 mt-10">
-        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-10">
+        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold capitalize text-[#40b751] mb-[24px] md:mb-[28px] lg:mb-[32px] xl:mb-[34px]">
           {{ $t('Why join us in this noble cause?') }}</h3>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-items-center gap-8 ">         
           <div class="grid justify-items-center">
@@ -786,7 +850,7 @@
     </section>
     <section class="container mx-auto h-full mb-20 px-10 md:px-10 lg:px-10">
       <div>
-        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold text-[#40b751] mb-8">
+        <h3 class="text-center text-[22px] md:text-[24px] lg:text-[28px] font-extrabold text-[#40b751] mb-[12px] md:mb-[16px] lg:mb-[28px] xl:mb-[30px]">
           {{ $t('How Can You Do It?') }}</h3>
         <div class="pt-0">
           <div class="w-full bg-grey-lightest">
@@ -812,7 +876,7 @@
                   <div class="tab-content tab-space">
                     <div v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }">
                       <div class="text-[#3f4640] mt-10">
-                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-6 lg:gap-6 ">
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 ">
                           <div class="relative  grid justify-items-center">
                             <img class="" alt="Cause" title=""
                               src="../../src/assets/Inter/img/firstimagedonor.png" />
@@ -820,9 +884,10 @@
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
                               {{ $t('Select a cause') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('First things first, you need to choose the fundraiser and select the cause you would like to support.You can even choose multiple campaigns as well.') }}</p>
-                            <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
+                            <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Type" title=""
@@ -831,9 +896,10 @@
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
                               {{ $t('Choose the type') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After selecting the cause you want to donate to, you can decide whether you need to donate monetarily or through products.') }}</p>
-                            <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold">V</span>
+                            <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Enter amount" title=""
@@ -842,9 +908,10 @@
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
                               {{ $t('Decide the what & how') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('After choosing the type of donation, you have to enter the amount you would like to donate or the products you want to donate.')}}</p>
-                            <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
+                            <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Detail" title=""
@@ -853,9 +920,10 @@
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
                               {{ $t('Add the essential details') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('Moving forward, you need to add essential details such as your name, email id, and contact number.') }}</p>
-                            <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
+                            <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="grid justify-items-center">
                             <img class="" alt="Payment" title=""
@@ -870,7 +938,7 @@
                     </div>
                     <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
                       <div class="text-[#3f4640] mt-10">
-                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-6 lg:gap-6 ">
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 ">
                           <div class="relative  grid justify-items-center">
                             <img class="" alt="Detail" title=""
                               src="../../src/assets/Inter/img/imagefirstngo.png" />
@@ -879,9 +947,10 @@
                               {{ $t('Fill up the details') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To start a campaign on Best Deed; you need to fill up all the essential details. To start a campaign, For click here,') }}
                                <a class="underline font-bold">{{ $t('start a campaign.') }}</a></p>
-                               <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
+                               <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Verification" title=""
@@ -890,9 +959,10 @@
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
                               {{ $t('Verification') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After getting all the details from your end, our team will verify everything before getting started with your campaign.') }}</p>
-                            <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
+                            <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Campaign live" title=""
@@ -901,9 +971,10 @@
                               class="capitalize text-[#3f4640] text-center mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">
                               {{ $t("It's LIVE") }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('If everything goes well, we will live your campaign with the story, your requirements, images, and videos.') }}</p>
-                            <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] step-sm-arrow text-[28px] font-bold ">V</span>
+                            <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Campaign Share" title=""
@@ -913,9 +984,10 @@
                               {{ $t('Share it') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To get better support; you can easily share your campaign with your friends, family, colleagues, and even on social media directly from our dashboard.') }}
                             </p>
-                            <span
-                                class="absolute text-[#40b751] text-[28px] font-bold step-arrow ">&gt;</span>
-                                <span class="absolute text-[#40b751] sm-arrow  text-[28px] font-bold ">V</span>
+                            <img class="absolute step-arrow" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
+                              <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
+                              src="../../src/assets/Inter/img/arrow.png" />
                           </div>
                           <div class="grid justify-items-center">
                             <img class="" alt="Manage dashboard" title=""

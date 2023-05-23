@@ -142,7 +142,7 @@
                                     </div>
 
                                     <div class="lg:w-9/12 xl:w-9/12">
-                                        <div class="md:pl-3">
+                                        <div class="pl-3">
                                             <div v-if="lang == 'gu' && products.display_as_name_gu"
                                                 class="text-xl font-medium text-[#40b751] mb-1">{{
                                                     $t(products.display_as_name_gu) }}</div>
@@ -250,12 +250,12 @@
                     <div class="text-center"
                         v-if="descToShow < campaign_detail.data.description.length || campaign_detail.data.description.length > descToShow">
                         <button
-                            class="border mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                            class="border mt-2 mb-[32px] md:mb-[4px] lg:mb-[4px] rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 ease-linear transition-all duration-150"
                             type="button" @click="descToShow += 1">{{ $t('View More') }}</button>
                     </div>
                     <div class="text-center" v-else>
                         <button
-                            class="mt-2 rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                            class="mt-2 mb-[32px] md:mb-[4px] lg:mb-[4px] rounded-lg bg-[#40b751] hover:bg-white text-white hover:border-[#40b751] hover:border hover-border-solid hover:text-[#40b751] active:bg-green-600 uppercase text-xs md:text-xs lg:text-sm px-6 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 ease-linear transition-all duration-150"
                             type="button" @click="descToShow = 1" v-if="total_desc > 1">{{ $t('View Less') }}</button>
                     </div>
 
