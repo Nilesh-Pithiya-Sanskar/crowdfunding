@@ -297,7 +297,7 @@
                     <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center items-center">
                         <img class="p-2 h-9" src="../../src/assets/Inter/img/icon/bank-building.png" />
                     </div>
-                    <p class="text-[#40b751] mb-2 pl-14">Name: Manav Seva Cheritable Trust <br>A/C No: 10046308440<br> IFSC
+                    <p class="text-[#40b751] mb-2 pl-14">Name: Manav Seva Charitable Trust <br>A/C No: 10046308440<br> IFSC
                         Code: IDFB0042421<br> Branch: Rajkot</p>
                     </p>
                 </div>
