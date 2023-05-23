@@ -35,7 +35,7 @@
               <p class="text-red-600">{{ errorMsg }}</p>
               <div class="text-center mt-6">
                 <button style="background-color: #40b751;"
-                  class="cursor-pointer border-[#40b751] hover:border-[#40b751] bg-gradient-to-l from-green-400 to-lime-600 hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
+                  class="cursor-pointer border-[#40b751] hover:border-[#40b751] hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
                   type="button" @click="login()">
                   {{ $t('Sign In') }}
                 </button>
@@ -44,8 +44,7 @@
               </div>
               <div class="flex items-center justify-between">
                 <router-link to="/login" class="text-green-500 text-left">{{ $t('Login With Mobile') }}</router-link>
-                <router-link to="/registration"
-                  class="text-green-500 text-center border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{ $t('Register') }}</router-link>
+                <router-link to="/registration" class="text-green-500 text-center border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{ $t('Register') }}</router-link>
               </div>
             </form>
           </div>
@@ -87,7 +86,7 @@
           <p class="text-red-600">{{ errorMsg }}</p>
           <div class="text-center mt-6">
             <button style="background-color: #40b751;"
-              class="cursor-pointer border-[#40b751] hover:border-[#40b751] bg-gradient-to-l from-green-400 to-lime-600 hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
+              class="cursor-pointer border-[#40b751] hover:border-[#40b751]  hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
               type="button" @click="login()">
               {{ $t('Sign In') }}
             </button>

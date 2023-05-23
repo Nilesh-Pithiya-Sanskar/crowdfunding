@@ -82,10 +82,9 @@
 
 <template>
   <!-- Header-->
-  <main>
-    
+  <main>    
     <Navbar />
-    <section class="bg-image bg-cover bg-center lg:h-[84vh] md:h-[97vh] sm:h-full" style="background-image: url('https://bestdeed.org/files/BG.png');">
+    <section class="bg-cover bg-center lg:h-[calc(100vh-16vh)] md:h-[calc(100vh-8rem)]" style="background-image: url('https://bestdeed.org/files/BG.png');">
  <div class="flex items-center justify-center container mx-auto pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
    <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
      <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center mx-2 md:items-center lg:items-center lg:mt-16 md:mt-16 sm:mt-5">
@@ -139,7 +138,7 @@
 
         </div>
 
-        <div class="sm:11/12 md:hidden lg:block lg:w-11/12 items-center md:mt-5">
+        <div class="sm:11/12 md:hidden lg:block lg:w-11/12 items-center">
           <img src="../../src/assets/Inter/img/rightside.png"
             class="sm:ml-0 md:ml-5 lg:ml-9 xl:ml-10 sm:mt-10"/>
         </div>

@@ -58,12 +58,10 @@
                                 Login with Facebook
                             </button>
                         </div>
-                        <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                                href="/bestdeed/login">{{ $t('Login Via Email') }}</a></span>
-                        <span class="block text-gray-600  text-center text-base  mb-2">
-                            {{ $t('New to BestDeed?') }} <router-link to="/bestdeed/registration"
-                                class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
-
+                        <router-link class="text-[#40b751] block text-gray-600 text-center text-base mb-2"
+                        to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
+                        <span class="block text-gray-600 text-center text-base mb-2">
+                        {{ $t('New to BestDeed?') }} <router-link to="/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
 
                     </div>
                 </div>
@@ -130,12 +128,10 @@
                         Login with Facebook
                     </button>
                 </div>
-                <span class="block text-gray-600 text-center text-base mb-2"><a class="text-[#40b751]"
-                        href="/login-via-email">{{ $t('Login Via Email') }}</a></span>
-                <span class="block text-gray-600  text-center text-base  mb-2">
-                    {{ $t('New to BestDeed?') }} <router-link to="/registration"
-                        class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
-
+                <router-link class="text-[#40b751] block text-gray-600 text-center text-base mb-2"
+                        to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
+                <span class="block text-gray-600 text-center text-base mb-2">
+                    {{ $t('New to BestDeed?') }} <router-link to="/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
 
             </div>
         </div>

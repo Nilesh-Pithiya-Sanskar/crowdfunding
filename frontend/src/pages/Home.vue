@@ -446,7 +446,7 @@
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
                 <div class="flex" v-else="openTab === 1">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_all.svg" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/grid.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
               </div>
@@ -464,7 +464,7 @@
                     $t('Animal') }}</p>
                 </div>
                 <div class="flex" v-else="openTab === 2">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_animal.svg" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/paw.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Animal') }}</p>
                 </div>
@@ -487,7 +487,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 3">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon_cat_education.svg" />
+                    src="../../src/assets/Inter/img/icon/mortarboard.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Education') }}
                   </p>
@@ -511,7 +511,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 4">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon_cat_children.svg" />
+                    src="../../src/assets/Inter/img/icon/children.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Children') }}
                   </p>
@@ -535,7 +535,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 5">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon_cat_medical.svg" />
+                    src="../../src/assets/Inter/img/icon/healthcare.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Medical') }}</p>
 
@@ -559,7 +559,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 6">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon_cat_hunger.svg" />
+                    src="../../src/assets/Inter/img/icon/supplies.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
 
@@ -582,7 +582,7 @@
 
                 </div>
                 <div class="flex" v-else="openTab === 7">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_religious.svg" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/pray.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religious') }}
                   </p>
@@ -608,7 +608,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 8">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon_cat_disability.svg" />
+                    src="../../src/assets/Inter/img/icon/disability.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
@@ -633,7 +633,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 9">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon_cat_elder.svg" />
+                    src="../../src/assets/Inter/img/icon/old-man.png" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Elder') }}
                   </p>
