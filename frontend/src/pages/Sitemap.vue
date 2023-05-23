@@ -83,128 +83,24 @@
 <template>
   <!-- Header-->
   <main>
-    <!-- <section class="bg-no-repeat  bg-cover bg-center bg-overlay"
-      style="background-image: url('https://crowdfunding.frappe.cloud/files/Frame1.jpg');">
-      <div class="pt-[0px] md:pt-[0px] lg:pt-[28px] pb-[80px] md:pb-[95px] lg:pb-48 container mx-auto h-full">
-        <div class="grid lg:grid-cols-2 mt-5 md:mt-10 lg:mt-0">
+    
 
-          <div v-if="lang == 'hi'"
-            class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
-            <h1
-              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:12x 2px 2px #c9c9c9]">
-              भारत का
-              <span class="text-gray-700">सबसे भरोसेमंद</span>
-              क्राउड फंडिंग प्लेटफॉर्म
-              <span class="text-gray-700">100% पारदर्शिता</span>
-              साथे दान किजिए।
-            </h1>
-          </div>
-          <div v-else-if="lang == 'gu'"
-            class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
-            <h1
-              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:2px 2px 2px #c9c9c9]">
-              ભારતનું
-              <span class="text-gray-700">સૌથી વિશ્વસનીય</span>
-              ક્રાઉડ ફંડિંગ પ્લેટફોર્મ
-              <span class="text-gray-700">100% પારદર્શિતા</span>
-              સાથે દાન કરો.
-            </h1>
-          </div>
-          <div v-else
-            class="grid place-items-center tracking-wide                                                                                                                                                                                                                                                                                                                   ">
-            <h1
-              class="text-[#40b751] pl-[0x] md:pl-[28px] lg:pl-[28px] xl:pl-[0px] font-sans text-center md:text-center lg:text-left font-semibold leading-[36px] md:leading-[36px] lg:leading-[50px] text-[30px] md:text-[30px] lg:text-[48px] [text-shadow:2px 2px 2px #c9c9c9]">
-              {{ $t('Donate') }} {{ $t('with') }}
-              <span class="text-gray-700">{{ $t('100% Transparency') }}</span>
-              {{ $t('on') }}
-              <span class="text-gray-700">{{ $t('most trusted') }}</span>
-              {{ $t('crowd funding platform of India.') }}
-            </h1>
-          </div>
-          <div class="grid place-items-center  mt-5 md:mt-10 lg:mt-0  mx-4 md:mx-10 lg:mx-0">
-            <img src="../../src/assets/Inter/img/map2.png" class="h-96 md:h-96 lg:h-full w-96 md:w-96 lg:w-full" />
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-<!-- <section class="relative overflow-hidden bg-cover bg-no-repeat"  -->
-  <!-- <section class="responsivesection bg-image bg-no-repeat bg-center bg-cover"
-  style="background-image: url('https://bestdeed.org/files/BG.png');">
-  <div class="container h-full mx-auto pt-[2rem] md:pt-[3rem] lg:pt-[6rem] xl:pt-[10rem] pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
-    <div class="grid md:grid-cols-2 lg:grid-cols-2 ">
-      <div class="mb-5 ml-5 md:ml-0 lg:ml-0">
-        <div
-          class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
-          {{ $t('BestDeed') }}
-        </div>
-        <h1
-          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
-          Most trusted crowd <br>funding platform of india.</h1>
-
-        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
-          <div class="flex items-center">
-            <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
+    <section class="bg-image bg-cover bg-center lg:h-screen md:h-screen sm:h-full" style="background-image: url('https://bestdeed.org/files/BG.png');">
+ <Navbar />
+ <div class="flex items-center justify-center container mx-auto pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
+   <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
+     <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center mx-2 md:items-center lg:items-center lg:mt-16 md:mt-16 sm:mt-5">
+    
+        <div class="mb-8">
             <div
-              class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Platform</div>
-              <div class="-mt-2">Fees</div>
+              class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9] mt-2">
+              BestDeed
             </div>
-          </div>
-          <div class="flex items-center">
-            <img src="../../src/assets/Inter/img/100.png" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
-            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Donate With</div>
-              <div class="-mt-2">Transparency</div>
-            </div>
-          </div><div class="flex items-center">
-            <img src="../../src/assets/Inter/img/layer.png" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
-            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Verified</div>
-              <div class="-mt-2">NGOs</div>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <img src="../../src/assets/Inter/img/ellipse.png" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
-            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Tax</div>
-              <div class="-mt-2">Exemption</div>
-            </div>
-          </div>
-        </div>
-        <p
-          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
-          Your help goes a long way!</p>
-        <router-link to="/explore-campaigns"
-          class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-          Support an NGOs </router-link>
-      </div>
+            <h1
+              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
+              Most trusted crowd <br>funding platform of india.</h1>
 
-      <div class="grid place-items-center  mt-5 md:mt-10 lg:mt-0  mx-4 md:mx-10 lg:mx-0">
-        <img src="../../src/assets/Inter/img/rightside.png"
-          class="ml-0 md:ml-10 lg:ml-18 xl:ml-36 lg:mb-0" />
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-
-<div class="bg-image bg-cover bg-center h-screen" style="background-image: url('https://bestdeed.org/files/BG.png');">
-  <Navbar />
-  <div class="flex items-center justify-center container lg:h-screen md:h-screen mx-auto pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
-    <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
-      <div class="flex flex-wrap">
-      <div class="sm:12/12 md:w-6/12 lg:w-6/12 mb-5 ml-5 md:ml-0 lg:ml-0">
-        <div
-          class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
-          BestDeed
-        </div>
-        <h1
-          class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
-          Most trusted crowd <br>funding platform of india.</h1>
-
-        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 items-center gap-5 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
+              <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
           <div class="flex items-center">
             <!-- <div><img src="https://bestdeed.org/assets/sadbhavna_donatekart/frontend/assets/0.png" class="h-20" alt="asdf" /></div> -->
             <img src="../../src/assets/Inter/img/0.png" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
@@ -241,42 +137,21 @@
         <router-link to="/explore-campaigns"
           class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
           Support an NGOs </router-link>
-      </div>
 
-      <div class="sm:12/12 md:w-5/12 lg:w-5/12 items-center mt-5 md:mt-10 lg:mt-0 ml-10">
-        <img src="../../src/assets/Inter/img/rightside.png"
-          class="" />
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-    <!-- <div class="bg-white rounded-xl product-shodow">
-
-  <div class="container mx-auto h-full sm:-mt-16 md:-mt-16 lg:-mt-36 -mb-20 md:-mb-0 lg:-mb-0 pl-4 lg:pl-0 pr-4 lg:pr-0">
-   <div class="bg-white rounded-xl product-shodow">
-      <div v-for="data in campaigns">
-        <div v-if="data.is_featured == 1" class="grid mb-5 p-5 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
-          <div class="md:col-span-2 lg:col-span-1">
-            <img class="pl-3 pt-3 pb-1 md:h-80 lg:h-56 sm:w-full md:w-96 lg:w-96" :src="data.campain_image" alt="Mountain"
-              @click="donate(data.name)">
-          </div>
-          <div class="md:col-span-2 lg:col-span-3 pr-0 lg:pr-16">
-            <button
-              class="bg-[#364958] text-base rounded-lg pl-4 pr-4 pt-2 pb-2 text-white mb-2 md:mt-3">Featured</button>
-            <h5 class="text-[#364958] text-2xl font-medium mb-2">{{ data.campaign_title }}</h5>
-            <p class="text-[#364958]">
-              {{ data.short_description }}
-            </p>
-            <button class="text-[#40b751] pt-3 font-bold" type="button" @click="donate(data.name)">Donate Now</button>
-          </div>
         </div>
-      </div>
-    </div> -->
+
+        <div class="sm:11/12 md:hidden lg:block lg:w-11/12 items-center md:mt-5">
+          <img src="../../src/assets/Inter/img/rightside.png"
+            class="sm:ml-0 md:ml-5 lg:ml-9 xl:ml-10 sm:mt-10"/>
+        </div>
+   </div>
+ </div>
+</section>
+
+
+
+
+
     <section class="responsivesection container mx-auto h-full relative z-10">
       <div class="container mx-auto h-full p-4 lg:p-6 mt-5 pl-4 lg:!pl-0 pr-4 lg:!pr-0">
         <div class="bg-white rounded-xl drop-shadow-xl">
@@ -299,216 +174,6 @@
             $t('View More') }}</router-link>
         </div>
       </div>
-      <!-- <div class="flex mt-3 border-b sm:mr-4 lg:mr-3 ">
-        <div class="overflow-x-auto">
-          <ul class="flex mb-0 list-none pt-3 pb-0 overflow-y-hidden lg:overflow-x-scroll ">
-            <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns()">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(1)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 1, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 1 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 1">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid(2).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 1">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/grid.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
-                </div>
-
-
-              </div>
-            </li>
-            <li class="-mb-px mr-3 last:mr-0 text-center" @click="get_campaigns('Animal Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0  cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(2)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 2, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 2 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 2">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Animal') }}</p>
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 2">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/paw.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Animal') }}</p>
-                </div>
-
-
-              </div>
-            </li>
-
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Education Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer  transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(3)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 3, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 3 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 3">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8 "
-                    src="../../src/assets/Inter/img/icon/mortarboard(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Education') }}
-                  </p>
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 3">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
-                    src="../../src/assets/Inter/img/icon/mortarboard.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Education') }}
-                  </p>
-                </div>
-
-
-              </div>
-            </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Children Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer  transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(4)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 4, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 4 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 4">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
-                    src="../../src/assets/Inter/img/icon/children(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Children') }}
-                  </p>
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 4">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/children.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Children') }}
-                  </p>
-                </div>
-
-
-              </div>
-            </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Medical Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(5)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 5, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 5 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 5">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
-                    src="../../src/assets/Inter/img/icon/healthcare(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Medical') }}</p>
-
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 5">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/healthcare.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Medical') }}</p>
-
-                </div>
-
-
-              </div>
-            </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Hunger Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(6)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 6, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 6 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 6">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
-                    src="../../src/assets/Inter/img/icon/supplies(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Hunger') }}</p>
-
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 6">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/supplies.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Hunger') }}</p>
-
-                </div>
-
-              </div>
-            </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Religiouse Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(7)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 7, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 7 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 7">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Religiouse') }}
-                  </p>
-
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 7">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/pray.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Religiouse') }}
-                  </p>
-
-                </div>
-
-
-              </div>
-            </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Disability Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(8)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 8, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 8 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 8">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8"
-                    src="../../src/assets/Inter/img/icon/disability(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Disability') }}
-                  </p>
-
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 8">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/disability.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Disability') }}
-                  </p>
-
-                </div>
-
-
-              </div>
-            </li>
-            <li class="-mb-px mr-3 last:mr-0 flex-auto text-center" @click="get_campaigns('Elder Campaign')">
-              <div
-                class="font-bold w-28 md:w-32 lg:w-32 sm:h-16 md:h-20 lg:h-20  pt-2 md:pt-4 lg:pt-4 pb-2 md:pb-0 lg:pb-0 cursor-pointer transition ease-in-out delay-150 hover:bg-[#40b751] hover:text-white border rounded-t-3xl border-gray-200 h-30 w-30"
-                v-on:click="toggleTabs(9)"
-                v-bind:class="{ 'bg-white text-gray-500': openTab !== 9, 'rounded-t-3xl bg-[#40b751] text-white': openTab === 9 }">
-
-                <div class="grid justify-items-center" v-if="openTab !== 9">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man(1).png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Elder') }}
-                  </p>
-
-                </div>
-                <div class="grid justify-items-center" v-else="openTab === 9">
-                  <img class="h-6 md:h-8 lg:h-8 w-6 md:w-8 lg:w-8" src="../../src/assets/Inter/img/icon/old-man.png" />
-                  <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
-                    $t('Elder') }}
-                  </p>
-
-                </div>
-
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div> -->
-
 
       <div class="flex sm:mr-0 lg:mr-0 flex-wrap lg:!flex-nowrap">
         <div class="lg:mr-3 w-full lg:!w-[16rem] ">

@@ -771,7 +771,7 @@ export default {
         Footer,
     },
     created() {
-        document.title = this.$t("How is Works | BestDeed")
+        document.title = this.$t("How you can Donate & Request a Campaign | BestDeed")
         const linkElement = document.querySelector('link[rel="canonical"]');
     if (!linkElement) {
       var link = document.createElement('link');
