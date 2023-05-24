@@ -77,7 +77,7 @@
 
     </section>
 
-    <section class="w-full p-1 md:p-4 lg:p-4 mb-5 bg-[#ebf8ec]">
+    <section class="w-full p-1 md:p-4 lg:p-4 mb-5 mt-5 bg-[#ebf8ec]">
       <div class="container mx-auto">
         <div>
           <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] text-center my-4">Our Core Values
@@ -518,7 +518,6 @@
               </div>
               <div class="pb-6">
                 <p class="text-[14px] text-[#3f4640] font-[700] " style="line-height: 20px; ">
-
                   Join us in our mission to make the world a better place with this online crowdfunding
                   platform - Best
                   Deed. Whether you're an individual looking to make a difference or an NGO needing support,

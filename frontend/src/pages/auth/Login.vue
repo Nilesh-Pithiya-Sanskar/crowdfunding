@@ -1,6 +1,63 @@
 <template>
   <Navbar />
-  <section class="hidden md:block lg:block">
+
+  <section>
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+      <div class="z-0">
+        <img class="w-full h-auto object-cover bg-left">
+      </div>
+      <div class="z-10 py-10 layout">
+        <div class="py-0 ">
+          <div class="p-6 shadow-lg  card-shodow w-full md:w-[350px] lg:w-[440px] mx-auto bg-white">
+            <img src="/src/assets/Inter/img/logo-1.1.ico"
+              class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
+            <h1 class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
+              <small>{{ $t('Sign In') }} </small>
+            </h1>
+            <form>
+              <div class=" w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                  {{ $t('Email') }} <span class="text-red-600">*</span>
+                </label>
+                <input v-model="email" @keyup="emailError = ''" type="email" @keyup.enter="login"
+                  class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3"
+                  :placeholder="$t('Email')" required />
+                <p class="text-red-600">{{ emailError }}</p>
+              </div>
+              <div class=" w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                  {{ $t('Password ') }}<span class="text-red-600">*</span>
+                </label>
+                <input v-model="password" type="password" @keyup.enter="login"
+                  class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3 ease-linear transition-all duration-150"
+                  :placeholder="$t('Password')" required />
+                <p class="text-red-600">{{ passwordError }}</p>
+              </div>
+              <p class="text-red-600">{{ errorMsg }}</p>
+              <div class="text-center mt-6">
+                <button style="background-color: #40b751;"
+                  class="cursor-pointer border-[#40b751] hover:border-[#40b751] hover:bg-transparent text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-4 w-full ease-linear transition-all duration-150"
+                  type="button" @click="login()">
+                  {{ $t('Sign In') }}
+                </button>
+                <div @click="forgotPassword()" class="cursor-pointer text-green-500 ">
+                  {{ $t('Forgot Password?') }}</div>
+              </div>
+              <div class="pt-2 flex flex-wrap login-with-mobile justify-between">
+                <router-link to="/login" class="px-4 text-green-500">{{ $t('Login With Mobile') }}</router-link>
+                <router-link to="/registration"
+                  class="text-green-500 px-4 border-emerald-600 text-emerald-600 inline-block rounded border-2 px-6 pb-[6px] pt-2 text-sm leading-normal transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 focus:outline-none text-green-500 focus:ring-0 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">{{ $t('Register') }}</router-link>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="grid content-end z-0">
+        <img class="w-full h-auto object-cover bg-right">
+      </div>
+    </div>
+  </section>
+  <!-- <section class="hidden md:block lg:block">
     <div class="grid grid-cols-3">
       <div class="z-0">
         <img class="w-full h-auto object-cover" src="../../assets/Inter/img/bg-left.png">
@@ -59,7 +116,7 @@
   <section class="block md:hidden lg:hidden">
     <div class="  py-10 px-8">
       <div class="p-6 shadow-lg  card-shodow  bg-white">
-        <img src="/src/assets/Inter/img/logo-1.1.ico"
+        <img src="/src/assets/Inter/img/logo64x64.svg"
           class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
         <div class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
           <small>{{ $t('Login') }} </small>
@@ -101,7 +158,7 @@
         </form>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- 
     <section class="block md:block lg:hidden">
         <div class="container mx-auto py-10">
@@ -529,9 +586,80 @@ export default {
 
 
 <style>
-@media (max-width: 364px) {
+@media (max-width: 959px) {
   .login-with-mobile {
     justify-content: center;
+  }
+}
+
+.bg-left {
+  content: url('../../assets/Inter/img/bg-left.png');
+}
+
+@media (max-width:767px) {
+  .bg-left {
+    display: none;
+  }
+}
+
+.bg-right {
+  content: url('../../assets/Inter/img/bg-right.png');
+}
+
+@media (max-width:767px) {
+  .bg-right {
+    display: none;
+  }
+}
+
+@media (min-width:1439px) {
+  .layout {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width:1682px) {
+  .layout {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width:767px) {
+  .layout {
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width:654px) {
+  .layout {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+
+@media (max-width:512px) {
+  .layout {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width:444px) {
+  .layout {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 </style>

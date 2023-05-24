@@ -214,7 +214,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 1">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/grid.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_all_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                             </div>
 
@@ -234,7 +234,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 2">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/paw.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_animal_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Animal') }}</p>
                             </div>
@@ -257,7 +257,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 3">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/mortarboard.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_education_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Education') }}
                                 </p>
@@ -280,7 +280,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 4">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/children.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_children_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Children') }}
                                 </p>
@@ -303,7 +303,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 5">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/healthcare.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_medical_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Medical') }}</p>
 
@@ -326,7 +326,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 6">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/supplies.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_hunger_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Hunger') }}</p>
 
@@ -349,7 +349,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 7">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/pray.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_religious_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Religious') }}
                                 </p>
@@ -374,7 +374,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 8">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/disability.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_disability_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Disability') }}
                                 </p>

@@ -1,5 +1,89 @@
 <template>
     <Navbar />
+    <section>
+        <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+            <div class="z-0">
+                <img class="w-full h-auto object-cover bg-left">
+            </div>
+            <div class="z-10 py-10 layout">
+                <div class="py-0 ">
+                    <div class="p-6 shadow-lg  card-shodow w-full md:w-[350px] lg:w-[440px] mx-auto bg-white">
+                        <img src="/src/assets/Inter/img/logo64x64.svg"
+                            class="mx-auto rounded-full border border-[#40b751] md:mr-2 lg:mr-2 w-18 h-14 md:h-16 lg:h-20 ml-0 lg:ml-6" />
+                        <h1 class="text-[#40b751] text-center mb-3 font-bold text-[30px] md:text-[32px] lg:text-[34px]">
+                            <small>{{ $t('Login') }} </small>
+                        </h1>
+                        <div class=" ">
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base mb-2" for="phone">
+                                    {{ $t('Enter Your Number') }}
+                                </label>
+                                <input @keyup="error = ''"
+                                    :class="'appearance-none hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker border', error == '' ? 'border-red-600' : 'border-red-600'"
+                                    v-model="phone" ref="number" type="tel">
+
+                                <div v-if="error" class="text-red-500">{{ error }}</div>
+                                <span v-if="phone && !error" class="text-sm text-gray-400"> {{ $t('An OTP will be sent to')
+                                }}
+                                    {{ phone }}</span>
+
+                            </div>
+                            <div class="mb-4 grid md:grid-cols-1 lg:grid-cols-2">
+                                <button
+                                    class="appearance-none border-gray-600 rounded mb-5 py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    @click="login_with_whatsapp()">{{ $t('Login with Whatsapp') }}</button>
+
+                                <button
+                                    class="appearance-none border-gray-600 sm:ml-0 md:ml-2 lg:ml-2 mb-5  rounded py-2 px-3 text-grey-darker bg-[#40b751] hover:bg-transparent text-white hover:text-[#40b751] py-2 tracking-wide px-4 border border-[#40b751] hover:border-[#40b751] py-3 text-xs uppercase rounded"
+                                    @click="login_with_sms()">
+                                    {{ $t('Login With SMS') }}</button>
+
+                            </div>
+                            <div class="mb-4">
+                                <div
+                                    class="flex items-center uppercase text-gray-600 my-4 before:flex-1 before:border-t before:border-gray-600 before:mt-0.5 after:flex-1 after:border-t after:border-gray-600 after:mt-0.5">
+                                    <p class="text-center mx-4 mb-0">Or</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4  login-with-mobile flex flex-wrap justify-between">
+
+                            <div class="px-4">
+                                <GoogleLogin :callback="login_with_google">
+                                </GoogleLogin>
+                            </div>
+
+                            <button class="fb-login-button px-4" data-button-type="" data-use-continue-as="true"
+                                data-width="" data-hight="" @click="checkLoginState()">
+                                Login with Facebook
+                            </button>
+                        </div>
+                        <router-link class="text-[#40b751] block text-gray-600 text-center text-base mb-2"
+                            to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
+                        <span class="block text-gray-600 text-center text-base mb-2">
+                            {{ $t('New to BestDeed?') }} <router-link to="/registration"
+                                class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="grid content-end z-0">
+                <img class="w-full h-auto object-cover bg-right">
+            </div>
+        </div>
+
+
+    </section>
+    <Footer />
+</template>
+  
+
+
+
+    <!-- <template>
+    <Navbar />
     <section class="hidden md:block lg:block">
         <div class="grid grid-cols-3">
             <div class="z-0">
@@ -59,9 +143,10 @@
                             </button>
                         </div>
                         <router-link class="text-[#40b751] block text-gray-600 text-center text-base mb-2"
-                        to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
+                            to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
                         <span class="block text-gray-600 text-center text-base mb-2">
-                        {{ $t('New to BestDeed?') }} <router-link to="/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+                            {{ $t('New to BestDeed?') }} <router-link to="/registration"
+                                class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
 
                     </div>
                 </div>
@@ -129,15 +214,16 @@
                     </button>
                 </div>
                 <router-link class="text-[#40b751] block text-gray-600 text-center text-base mb-2"
-                        to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
+                    to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
                 <span class="block text-gray-600 text-center text-base mb-2">
-                    {{ $t('New to BestDeed?') }} <router-link to="/registration" class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+                    {{ $t('New to BestDeed?') }} <router-link to="/registration"
+                        class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
 
             </div>
         </div>
     </section>
     <Footer />
-</template>
+</template> -->
     <!-- <template>
     <Navbar />
 
@@ -428,13 +514,88 @@ export default {
     }
 };
 </script>
-
-
 <style>
+@media (max-width: 1792px) {
+    .login-with-mobile {
+        justify-content: center;
+    }
+}
+
 .bg-content {
     position: absolute;
     margin-top: -580px;
     margin-left: 300px;
+}
+
+.bg-left {
+    content: url('../../assets/Inter/img/bg-left.png');
+}
+
+@media (max-width:767px) {
+    .bg-left {
+        display: none;
+    }
+}
+
+.bg-right {
+    content: url('../../assets/Inter/img/bg-right.png');
+}
+
+@media (max-width:767px) {
+    .bg-right {
+        display: none;
+    }
+}
+
+@media (min-width:1439px) {
+    .layout {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width:1682px) {
+    .layout {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media (max-width:767px) {
+    .layout {
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width:654px) {
+    .layout {
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+
+@media (max-width:512px) {
+    .layout {
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width:444px) {
+    .layout {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 }
 
 /* .bg-right {

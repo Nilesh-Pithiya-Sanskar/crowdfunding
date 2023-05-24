@@ -506,7 +506,7 @@
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
                 <div class="flex" v-else="openTab === 1">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/grid.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_all_white.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{ $t('All') }}</p>
                 </div>
               </div>
@@ -524,7 +524,7 @@
                     $t('Animal') }}</p>
                 </div>
                 <div class="flex" v-else="openTab === 2">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/paw.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_animal_white.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Animal') }}</p>
                 </div>
@@ -547,7 +547,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 3">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/mortarboard.png" />
+                    src="../../src/assets/Inter/img/icon_cat_education_white.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Education') }}
                   </p>
@@ -571,7 +571,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 4">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/children.png" />
+                    src="../../src/assets/Inter/img/icon_cat_children_white.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Children') }}
                   </p>
@@ -595,7 +595,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 5">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/healthcare.png" />
+                    src="../../src/assets/Inter/img/icon_cat_medical_white.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Medical') }}</p>
 
@@ -619,7 +619,7 @@
                 </div>
                 <div class="flex" v-else="openTab === 6">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/supplies.png" />
+                    src="../../src/assets/Inter/img/icon_cat_hunger_white.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Hunger') }}</p>
 
@@ -636,13 +636,15 @@
                 <div class="flex" v-if="openTab !== 7">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
                     src="../../src/assets/Inter/img/icon_cat_religious.svg" />
+                    
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religious') }}
                   </p>
 
                 </div>
                 <div class="flex" v-else="openTab === 7">
-                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon/pray.png" />
+                  <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3" src="../../src/assets/Inter/img/icon_cat_religious_white.svg" />
+                
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Religious') }}
                   </p>
@@ -660,7 +662,7 @@
 
                 <div class="flex" v-if="openTab !== 8">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon_cat_disability.svg" />
+                    src="../../src/assets/Inter/img/icon_cat_disability.svg"/>
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
@@ -668,11 +670,10 @@
                 </div>
                 <div class="flex" v-else="openTab === 8">
                   <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6 mr-3"
-                    src="../../src/assets/Inter/img/icon/disability.png" />
+                    src="../../src/assets/Inter/img/icon_cat_disability_white.svg" />
                   <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                     $t('Disability') }}
                   </p>
-
                 </div>
 
               </div>
@@ -856,7 +857,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="lg:mt-10" alt="way to donate" title=""
-              src="../../src/assets/Inter/img/sevenimage.png" />
+              src="../../src/assets/Inter/img/fourthimage.png" />
             <div class="capitalize mt-2 mb-2 text-[#3f4640]  text-[16px] md:text-[16px] lg:text-[18px] font-bold">Multiple
               Ways to Donate
             </div>
@@ -1555,7 +1556,8 @@ export default {
     },
 
     redirect_to(url){
-      window.location.href = url
+      // window.location.href = url
+      window.open(url,'_blank');
     }
 
   },

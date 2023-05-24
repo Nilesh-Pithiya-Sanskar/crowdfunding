@@ -1,6 +1,102 @@
 <template>
     <Navbar />
-    <section class="hidden md:block lg:block">
+    <section>
+        <div class="grid sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4">
+            <div class="z-0 ">
+                <img class="w-full h-auto object-cover bg-left">
+            </div>
+            <div class="z-10 col-span-2 layout">
+                <div class="pb-[43px]">
+                    <div class="w-0 w-full md:w-[150px] lg:w-[350px] mx-auto bg-white">
+                        <h1
+                            class="text-[25px] md:text-[30px] lg:text-[36px] font-bold py-4  text-[#40b751] text-bold text-center">
+                            {{ $t('Donor Registration') }}
+                        </h1>
+                        <div class="relative z-0">
+                            <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+                                <div class="mr-2 mb-4">
+                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('First Name') }} <span
+                                            class="text-red-600">*</span></label>
+                                    <input
+                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                        v-model="first_name" @keyup="firstNameError = ''" type="text"
+                                        placeholder="Enter First Name" required ref="first_name">
+                                    <p class="text-red-600">{{ $t(firstNameError) }}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-600 text-base  mb-2">{{ $t('Last Name') }} <span
+                                            class="text-red-600">*</span></label>
+                                    <input
+                                        class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                        v-model="last_name" @keyup="firstNameError = ''" type="text"
+                                        placeholder="Enter Last Name" required>
+                                    <p class="text-red-600">{{ $t(lastNameError) }}</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Email') }}
+                                    <span class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="email" type="email" @keyup="emailError = ''" placeholder="Enter Email"
+                                    required>
+                                <p class="text-red-600">{{ $t(emailError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Password') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="password" type="password" @keyup="passwordError = ''"
+                                    placeholder="Enter Password" required>
+                                <p class="text-red-600">{{ $t(passwordError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Confirm Password') }}
+                                    <span class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
+                                    placeholder="Enter Confirm Password" required>
+                                <p class="text-red-600">{{ $t(confirmPasswordError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('Phone Number') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="phone_number" type="tel" @keyup="phoneNumberError = ''"
+                                    placeholder="Enter Phone Number" required>
+                                <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 text-base  mb-2">{{ $t('PAN Number') }} <span
+                                        class="text-red-600">*</span></label>
+                                <input
+                                    class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
+                                    v-model="pan_number" type="text" @keyup="panError = ''" placeholder="Enter PAN Number"
+                                    required>
+                                <p class="text-red-600">{{ $t(panError) }}</p>
+                            </div>
+                            <div class="flex items-center justify-between mt-8">
+                                <button
+                                    class="bg-[#40b751] mb-2 uppercase text-[13px] hover:bg-blue-dark text-white py-2 px-8 rounded-lg"
+                                    type="submit" @click="register()">
+                                    {{ $t('Register') }}
+                                </button>
+                            </div>
+                            <span class="block text-gray-600 text-base"> {{ $t('Already have an account?') }}
+                                <router-link to="/login" class="text-[#40b751]">{{ $t('Sign In') }}</router-link></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid content-end z-0 ">
+                <img class="w-full h-auto object-cover bg-right">
+            </div>
+        </div>
+    </section>
+    <!-- <section class="hidden md:block lg:block">
         <div class="grid grid-cols-4">
             <div class="z-0 ">
                 <img class="w-full h-auto object-cover" src="../../assets/Inter/img/bg-left.png">
@@ -95,8 +191,8 @@
                 <img class="w-full h-auto object-cover" src="../../assets/Inter/img/bg-right.png">
             </div>
         </div>
-    </section>
-    <div class="block md:hidden lg:hidden">
+    </section> -->
+    <!-- <div class="block md:hidden lg:hidden">
         <div class="container mx-auto h-full pb-[48px]">
             <div class="w-full sm:pt-0 md:pt-5 lg:pt-6">
                 <div class="container mx-auto py-0">
@@ -185,7 +281,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- <div class="container mx-auto h-full pb-[48px]">
         <div class="w-full sm:pt-0 md:pt-5 lg:pt-6">
             <div class="container mx-auto py-0">
@@ -576,3 +672,71 @@ export default {
     }
 }
 </script>
+<style>
+.bg-left {
+    content: url('../../assets/Inter/img/bg-left.png');
+}
+
+@media (max-width:767px) {
+    .bg-left {
+        display: none;
+    }
+}
+
+.bg-right {
+    content: url('../../assets/Inter/img/bg-right.png');
+}
+
+@media (max-width:767px) {
+    .bg-right {
+        display: none;
+    }
+}
+
+@media (max-width:1681px) and (min-width:1287px) {
+    .layout {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media (min-width:1682px) {
+    .layout {
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+}
+
+@media (max-width:767px) {
+    .layout {
+        padding-left: 150px;
+        padding-right: 150px;
+
+    }
+}
+
+@media (max-width:654px) {
+    .layout {
+        padding-left: 100px;
+        padding-right: 100px;
+
+    }
+}
+
+
+@media (max-width:512px) {
+    .layout {
+        padding-left: 70px;
+        padding-right: 70px;
+
+    }
+}
+
+@media (max-width:444px) {
+    .layout {
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+}
+</style>

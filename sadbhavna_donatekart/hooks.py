@@ -58,6 +58,7 @@ website_route_rules = [
     {"from_route": "/robots.txt", "to_route": "/robots/robots.txt"},
     # {"from_route": "/assets/<path:app_path>", "to_route": "/assets/<path:app_path>"}
 	# {"from_route": "/donation-campaign", "to_route": "/bestdeed/explore-campaigns"}
+	# {"from_route": "/login-via-mobile", "to_route": "/login"}
 ]
 website_redirects = [
 #   {"source": "/login", "target": "/bestdeed"},
