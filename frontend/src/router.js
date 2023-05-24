@@ -3,6 +3,7 @@ import {
   createWebHistory
 } from 'vue-router'
 
+
 const routes = [{
   path: '/',
   name: 'Home',
@@ -51,7 +52,8 @@ const routes = [{
         content: "Login Now on the Most trusted crowdfunding platform in India & donate with a 100% Transparent Online Crowdfunding Platform."
       },
     ]
-  }
+  },
+  // children: [{ path: '/login-via-mobile', name: 'Login', component: () => import('@/pages/auth/AutoLogin.vue'), }],
 },
 {
   path: '/campaign-donation/:name',
@@ -257,6 +259,7 @@ const routes = [{
   name: 'Sitemap',
   component: () => import('@/pages/Sitemap.vue')
 },
+{ path: '/login-via-mobile', redirect: '/login' },
 // {
 //   path: '/site',
 //   name: 'Sitemap',

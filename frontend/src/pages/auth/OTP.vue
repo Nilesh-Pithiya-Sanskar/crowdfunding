@@ -18,7 +18,7 @@
                             <span class="block text-red-600 text-base mb-2">{{ otp_message }}</span>
                         </div>
                         <div class="mb-4 flex flex-wrap justify-between">
-                            <button v-if="countDown == 0"
+                            <!-- <button v-if="countDown == 0"
                                 class="appearance-none border-gray-600 rounded w-auto text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 px-7 py-2 tracking-wide border border-green-500 hover:border-green-500 text-xs uppercase rounded"
                                 @click="resend_otp()"
                                 >Resend OTP</button>
@@ -26,8 +26,12 @@
                                 class="appearance-none border-gray-600 rounded w-auto text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 px-7 py-2 tracking-wide border border-green-500 hover:border-green-500 text-xs uppercase rounded"
                                 @click="verify_otp()"
                                 >{{$t('Verify OTP')}}</button>
-                            <span v-if="countDown != 0">{{ countDown }}</span>
-                            
+                            <span v-if="countDown != 0">{{ countDown }}</span> -->
+
+                            <button
+                                class="appearance-none border-gray-600 rounded w-auto text-grey-darker bg-green-500 hover:bg-transparent text-white hover:text-green-500 px-7 py-2 tracking-wide border border-green-500 hover:border-green-500 text-xs uppercase rounded"
+                                @click="verify_otp()"
+                                >{{$t('Verify OTP')}}</button>
                         </div>
                         
                     </div>
@@ -95,7 +99,7 @@ export default {
             re_passwordError: '',
             email: '',
             showDialog: false,
-            countDown: 5
+            countDown: 600
         }
     },
     created () {

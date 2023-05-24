@@ -6,7 +6,7 @@
             <!-- {{ campaign_detail }}  -->
             <h1 v-if="lang == 'gu' && campaign_detail.data.campaign_title_gu">
                 <span
-                    class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 lg:text-[32px] text-[28px] font-bold text-[#364958] capitalize">{{
+                    class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 text-[20px] md:text-[28px] lg:text-[32px] font-bold text-[#364958] capitalize">{{
                         $t(campaign_detail.data.campaign_title_gu) }} </span>
                 <span v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
@@ -26,7 +26,7 @@
 
             <h1 v-else-if="lang == 'hi' && campaign_detail.data.campaign_title_hi">
                 <span
-                    class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 lg:text-[32px] text-[28px] font-bold text-[#364958] capitalize">{{
+                    class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 text-[20px] md:text-[28px] lg:text-[32px] font-bold text-[#364958] capitalize">{{
                         $t(campaign_detail.data.campaign_title_hi) }} </span>
                 <span v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
@@ -45,7 +45,7 @@
             </h1>
             <h1 v-else>
                 <span
-                    class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 lg:text-[32px] text-[28px] font-bold text-[#364958] capitalize">{{
+                    class="w-full block mb-1 mr-2 leading-normal md:leading-0 lg:heading-12 text-[20px] md:text-[28px] lg:text-[32px] font-bold text-[#364958] capitalize">{{
                         $t(campaign_detail.data.campaign_title) }} </span>
                 <span v-for="benefit in campaign_detail.data.benefits">
                     <button v-if="lang == 'gu' && benefit.benefit_gu"
