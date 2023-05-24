@@ -830,7 +830,7 @@
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-items-center gap-8 ">         
           <div class="grid justify-items-center">
             <img class="" alt="Simple Process" title=""
-              src="../../src/assets/Inter/img/firstimage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_easy_process.svg" />
             <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Easy process
             </div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Donating to NGOs and
@@ -838,7 +838,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="100% transparency" title=""
-              src="../../src/assets/Inter/img/secondimage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_end-to-end_transparency.svg" />
             <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">End-to-end
               transparency
             </div>
@@ -848,7 +848,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="Fundraisers" title=""
-              src="../../src/assets/Inter/img/thirdimage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_fundraisers.svg" />
             <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Fundraisers for various causes
             </div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed has fundraisers for
@@ -857,7 +857,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="lg:mt-10" alt="way to donate" title=""
-              src="../../src/assets/Inter/img/fourthimage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_multiple_ways_to_donate.svg" />
             <div class="capitalize mt-2 mb-2 text-[#3f4640]  text-[16px] md:text-[16px] lg:text-[18px] font-bold">Multiple
               Ways to Donate
             </div>
@@ -872,7 +872,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="lg:mt-10" alt="0 payments" title=""
-              src="../../src/assets/Inter/img/siximage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_hassle-free_payment.svg" />
             <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">Hassle-free payment
             </div>
             <p class="text-[#3f4640] lg:mb-14 text-center text-[14px] md:text-[14px] lg:text-[16px]">When you choose the
@@ -881,7 +881,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="Plateform" title=""
-              src="../../src/assets/Inter/img/sevenimage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_trusted_platform.svg" />
             <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Trusted platform
             </div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed is a trusted
@@ -890,7 +890,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="Smart" title=""
-              src="../../src/assets/Inter/img/eightimage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_dashboard.svg" />
             <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Smart
               dashboard</div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed believes in keeping
@@ -899,7 +899,7 @@
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="0 charges" title=""
-              src="../../src/assets/Inter/img/nineimage.png" />
+              src="../../src/assets/Inter/img/icon_home_join_us_zero_charges.svg" />
             <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">0% charges
             </div>
             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">At Best Deed, we do not charge
@@ -946,9 +946,9 @@
                               {{ $t('Select a cause') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('First things first, you need to choose the fundraiser and select the cause you would like to support.You can even choose multiple campaigns as well.') }}</p>
                             <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Type" title=""
@@ -958,9 +958,9 @@
                               {{ $t('Choose the type') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After selecting the cause you want to donate to, you can decide whether you need to donate monetarily or through products.') }}</p>
                             <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Enter amount" title=""
@@ -970,9 +970,9 @@
                               {{ $t('Decide the what & how') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('After choosing the type of donation, you have to enter the amount you would like to donate or the products you want to donate.')}}</p>
                             <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Detail" title=""
@@ -982,9 +982,9 @@
                               {{ $t('Add the essential details') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('Moving forward, you need to add essential details such as your name, email id, and contact number.') }}</p>
                             <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="grid justify-items-center">
                             <img class="" alt="Payment" title=""
@@ -1009,9 +1009,9 @@
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To start a campaign on Best Deed; you need to fill up all the essential details. To start a campaign, For click here,') }}
                                <a class="underline font-bold">{{ $t('start a campaign.') }}</a></p>
                                <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Verification" title=""
@@ -1021,9 +1021,9 @@
                               {{ $t('Verification') }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('After getting all the details from your end, our team will verify everything before getting started with your campaign.') }}</p>
                             <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Campaign live" title=""
@@ -1033,9 +1033,9 @@
                               {{ $t("It's LIVE") }}</div>
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('If everything goes well, we will live your campaign with the story, your requirements, images, and videos.') }}</p>
                             <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="relative grid justify-items-center">
                             <img class="" alt="Campaign Share" title=""
@@ -1046,9 +1046,9 @@
                             <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{ $t('To get better support; you can easily share your campaign with your friends, family, colleagues, and even on social media directly from our dashboard.') }}
                             </p>
                             <img class="absolute step-arrow" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                               <img class="rotate-90 step-arrow-sm" alt="Cause" title=""
-                              src="../../src/assets/Inter/img/arrow.png" />
+                              src="../../src/assets/Inter/img/icon_right_arrow.svg" />
                           </div>
                           <div class="grid justify-items-center">
                             <img class="" alt="Manage dashboard" title=""
@@ -1216,63 +1216,33 @@
     </section> -->
 
     <!--Awards-->
-
     <section class="responsivesection bg-blueGray-100">
       <div class="container mx-auto h-full">
 
         <div class="text-center mt-10">
           <h3 class="text-3xl font-black text-[#40b751] pt-12">{{ $t('Awards') }}</h3>
         </div>
-        <div class="pb-16">
-          <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-2 justify-items-center text-center">
-            <a href="https://bestdeed.org/files/award1.webp">
-              <img class="bg-center px-24 md:px-8 py-8 lg:py-8 h-52 w-96 "
-                src="../../src/assets/Inter/img/award1.webp">
-              <!-- <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('National Business Excellence And') }}</p>
-                <p class="text-[#364958] font-bold text-[20px] leading-6"> {{ $t('Achievers Award') }}</p>
-                <p class="text-[#364958] font-bold pt-2">2021</p>
-              </div> -->
-            </a>
-
-            <a href="https://bestdeed.org/files/award2.webp">
-              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/award2.webp">
-              <!-- <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Top Ten Startups In Hyderabad') }}</p>
-                <p class="text-[#364958] font-bold pt-2">2020</p>
-              </div> -->
-            </a>
-
-            <a href="https://bestdeed.org/files/csr-activity-sadbhavna.webp">
-              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96"
-                src="../../src/assets/Inter/img/csr-activity-sadbhavna.webp">
-              <!-- <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Social Enterprise Challenge Award') }}
-                </p>
-                <p class="text-[#364958] font-bold pt-2">2018</p>
-              </div> -->
-            </a>
-
-            <a href="https://bestdeed.org/files/social-impact-vijaybhai-dobariya-sadbhavna.webp">
-              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/social-impact-vijaybhai-dobariya-sadbhavna.webp">
-              <!-- <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('NASSCOM Social Innovation Award') }}</p>
-                <p class="text-[#364958] font-bold pt-2">2018</p>
-              </div> -->
-            </a>
-
-            <a href="https://bestdeed.org/files/pipaliya-family-seva-sanman.webp">
-              <img class="object-cover object-left-top px-24 md:px-8 py-8 lg:py-8 h-52 w-96" src="../../src/assets/Inter/img/pipaliya-family-seva-sanman.webp">
-              <!-- <div class="">
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('Indian Express 40') }}</p>
-                <p class="text-[#364958] font-bold text-[20px] leading-6">{{ $t('under 40') }}</p>
-                <p class="text-[#364958] font-bold pt-2">2021</p>
-              </div> -->
-            </a>
+        <div class="pb-16 ">
+          <div class="flex justify-items-center text-center overflow-x-scroll overflow-y-hidden custom-scrollbar scrollbar-thin ">
+              <img class="cursor-pointer bg-center  px-4 py-8 h-52 w-52 " src="../../src/assets/Inter/img/award1.webp" alt="Award 1" @click="showModal('https://bestdeed.org/files/award1.webp')">
+              <img class="cursor-pointer object-cover object-left-top bg-center px-4 py-8 h-52 w-52 " src="../../src/assets/Inter/img/award2.webp" alt="Award 2" @click="showModal('https://bestdeed.org/files/award2.webp')">
+              <img class="cursor-pointer object-cover object-left-top bg-center px-4 py-8 h-52 w-52 " src="../../src/assets/Inter/img/award3.jpg" alt="Award 2" @click="showModal('https://bestdeed.org/files/IMG-20230524-WA0003%20(1).jpg')">
+              <img class="cursor-pointer object-cover object-left-top bg-center px-4 py-8 h-52 w-52 " src="../../src/assets/Inter/img/award4.jpg" alt="Award 2" @click="showModal('https://bestdeed.org/files/IMG-20230524-WA0004.jpg')">
+              <img class="cursor-pointer object-cover object-left-top bg-center px-4 py-8 h-52 w-52 " src="../../src/assets/Inter/img/csr-activity-sadbhavna.webp" alt="Award 3" @click="showModal('https://bestdeed.org/files/csr-activity-sadbhavna.webp')">
+              <img class="cursor-pointer object-cover object-left-top bg-center px-4 py-8 h-52 w-52 " src="../../src/assets/Inter/img/social-impact-vijaybhai-dobariya-sadbhavna.webp" alt="Award 4" @click="showModal('https://bestdeed.org/files/social-impact-vijaybhai-dobariya-sadbhavna.webp')">
+              <img class="cursor-pointer object-cover object-left-top bg-center px-4 py-8 h-52 w-52 " src="../../src/assets/Inter/img/pipaliya-family-seva-sanman.webp" alt="Award 5" @click="showModal('https://bestdeed.org/files/pipaliya-family-seva-sanman.webp')">
           </div>
         </div>
+        <div v-if="modalOpen" class="fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 flex justify-center items-center">
+            <!-- The close button -->
+            <a class="fixed z-90 top-6 right-8 text-[#40b751] text-5xl font-bold" href="#" @click="closeModal">&times;</a>
+
+            <!-- A big image will be displayed here -->
+            <img class="max-w-[800px] max-h-[600px] object-cover" :src="modalImage" />
+    </div>
       </div>
     </section>
+
     <Footer />
   </main>
 </template>
@@ -1348,7 +1318,9 @@ export default {
       featured_campaigns: [],
       lang: this.get_language(),
       url: window.location.href,
-      start: 0
+      start: 0,
+      modalOpen: false,
+      modalImage: ''
     }
   },
   created() {
@@ -1458,6 +1430,14 @@ export default {
     },
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber
+    },
+    showModal(url) {
+      this.modalOpen = true;
+      this.modalImage = url;
+    },
+    closeModal() {
+      this.modalOpen = false;
+      this.modalImage = '';
     },
     // toggleTabsTestimonials: function (tabNumber) {
     //   this.openTabTestimonials = tabNumber

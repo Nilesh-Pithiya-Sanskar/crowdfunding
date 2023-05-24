@@ -86,41 +86,41 @@
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 container">
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/VectorSmart1.png" alt="Image 1" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_home_join_us_trusted_platform.svg" alt="Image 1" class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Authenticity at the core!") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/VectorSmart2.png" alt="Image 2" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_home_join_us_end-to-end_transparency.svg" alt="Image 2" class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("End-to-End Transparency") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/VectorSmart3.png" alt="Image 3" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_empowering_ngos.svg" alt="Image 3" class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Empowering NGOs") }}</p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/VectorSmart4.png" alt="Image 4" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_home_join_us_easy_process.svg" alt="Image 4" class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Streamlining Crowdfunding") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/VectorSmart5.png" alt="Image 5" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_driving_through_innovation.svg" alt="Image 5" class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Driving through Innovation") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/VectorSmart6.png" alt="Image 6" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_bringing_communities_together.svg" alt="Image 6" class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">
               {{ $t("Bringing communities together") }}

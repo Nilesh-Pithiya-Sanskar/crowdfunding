@@ -399,7 +399,7 @@
                             </div>
                             <div class="grid justify-items-center" v-else="openTab === 9">
                                 <img class="h-6 md:h-6 lg:h-6 w-6 md:w-6 lg:w-6"
-                                    src="../../src/assets/Inter/img/icon/old-man.png" />
+                                    src="../../src/assets/Inter/img/icon_cat_elder_white.svg" />
                                 <p class="text-[13px] md:text-[16px] lg:text-[16px]">{{
                                     $t('Elder') }}
                                 </p>

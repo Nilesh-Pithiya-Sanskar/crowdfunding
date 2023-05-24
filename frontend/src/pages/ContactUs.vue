@@ -11,9 +11,119 @@
         </div>
     </div>
 
+
+
+    <div class="grid sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4">
+        <div class="z-0 ">
+            <img class="w-full h-auto object-cover bg-left">
+        </div>
+        <div class="col-span-2">
+            <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-10 md:gap-10 sm:gap-0 layout">
+                <div>
+                    <div class="basis-auto w-full py-8">
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ">
+
+                            <div class=" mr-2 mb-2">
+                                <label class="block text-gray-700 text-sm mb-2" for="">
+                                    {{ $t('First Name') }} <span class="text-red-600">*</span>
+                                </label>
+                                <input v-model="first_name" type="text" placeholder="Enter First Name"
+                                    @keyup="firstNameError = ''" ref="first_name"
+                                    class="appearance-none placeholder-gray-400 border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+                                <p class="text-red-600">{{ $t(firstNameError) }}</p>
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="block text-gray-700 text-sm mb-2" for="">
+                                    {{ $t('Last Name') }}
+                                </label>
+                                <input v-model="last_name" type="text" placeholder="Enter Last Name"
+                                    class="appearance-none placeholder-gray-400 border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label class="block text-gray-700 text-sm mb-2" for="">
+                                {{ $t('Phone Number') }} <span class="text-red-600">*</span>
+                            </label>
+                            <input v-model="phone" type="tel" placeholder="Enter Phone Number" @keyup="phoneError = ''"
+                                class="form-control block placeholder-gray-400 hover:border-[#40b751] placeholder-gray-400 w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                            <p class="text-red-600">{{ $t(phoneError) }}</p>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label class="block text-gray-700 text-sm mb-2" for="">
+                                {{ $t('Email') }} <span class="text-red-600">*</span>
+                            </label>
+                            <input v-model="email_id" type="email" placeholder="Enter Email" @keyup="emailError = ''"
+                                class="form-control placeholder-gray-400 block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                            <p class="text-red-600">{{ $t(emailError) }}</p>
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label class="block text-gray-700 text-sm mb-2" for="">
+                                {{ $t('Subject') }} <span class="text-red-600">*</span>
+                            </label>
+                            <input v-model="subject" type="text" placeholder="Enter Subject" @keyup="subjectError = ''"
+                                class="form-control placeholder-gray-400 block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
+                            <p class="text-red-600">{{ $t(subjectError) }}</p>
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label class="block text-gray-700 text-sm mb-2" for="">
+                                {{ $t('Message') }}
+                            </label>
+                            <textarea v-model="message" placeholder="Enter Message"
+                                class="hover:border-[#40b751] placeholder-gray-400 form-control block w-full px-3 py-5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                rows="3"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class=" px-6 py-2.5 bg-[#40b751] text-white text-xs leading-tight  uppercase rounded shadow-md hover:bg-transparent  hover:text-[#40b751] tracking-wide border border-[#40b751] hover:border-[#40b751]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition  duration-150 ease-in-out"
+                            @click="contact_us()">{{ $t('send message') }}
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div class="w-full py-6 pl-2">
+                        <a href="https://goo.gl/maps/UcgCrVJMHpx3vd1v9" class="flex">
+                            <div class="float-left  grid justify-items-center mr-2">
+                                <img class="" src="../../src/assets/Inter/img/location-round-icon.svg" />
+                            </div>
+                            <p class="text-green-500 mb-2">
+                                <span>{{ $t('Gondal Road,') }}</span><br>{{ $t('Opp Swami Narayan Gurukul,') }}<br>{{ $t('Near D-Mart Service Road') }}<br>{{ $t('Rajkot, Gujarat, 360004') }}
+                            </p>
+                        </a>
+                        <a href="tel:+91 7043029467" class="pb-4 flex items-center">
+                            <div class="float-left bg-center grid items-center mr-2">
+                                <img class="" src="../assets/Inter/img/call-round-icon.svg" />
+                            </div>
+                            <p class="cursor-pointer text-[#40b751]">+91 7043029467</p>
+                        </a>
+                        <a href="mailto:bestdeed2023@gmail.com" class="pb-4 flex items-center">
+                            <div class="float-left grid justify-items-center mr-2">
+                                <img class="" src="../../src/assets/Inter/img/email-round-icon.svg" />
+                            </div>
+                            <p class="cursor-pointer text-[#40b751]">bestdeed2023@gmail.com</p>
+                        </a>
+                        <div class="flex">
+                        <div class="float-left  grid justify-items-center mr-2">
+                            <img class="" src="../../src/assets/Inter/img/bank-round-icon.svg" />
+                        </div>
+                        <p class="text-[#40b751]">Name: Manav Seva Charitable Trust <br>A/C No: 10046308440<br>
+                            IFSC
+                            Code: IDFB0042421<br> Branch: Rajkot</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid content-end z-0">
+            <img class="w-full h-auto object-cover bg-right">
+        </div>
+    </div>
+
+    <!-- 
     <div class="hidden md:hidden lg:block ">
         <div class="grid grid-cols-5">
-            <!-- <div class="text-gray-800"> -->
             <div class="z-0 ">
                 <img class="w-full h-auto object-cover" src="../assets/Inter/img/bg-left.png">
             </div>
@@ -84,7 +194,7 @@
                     <div class="w-6/12 pl-[50px]">
                         <a href="https://goo.gl/maps/UcgCrVJMHpx3vd1v9" class="pb-4">
                             <div class="bg-zinc-100 mt-1 rounded-full w-10 h-10 float-left  grid justify-items-center ">
-                                <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/location.png" />
+                                <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/location-round-icon.svg" />
                             </div>
                             <p class="text-green-500 mb-2 pl-14">
                                 <span>{{ $t('Gondal Road,') }}</span><br>{{ $t('Opp Swami Narayan Gurukul,') }}<br>{{ $t('Near D-Mart Service Road') }}<br>{{ $t('Rajkot, Gujarat, 360004') }}
@@ -92,19 +202,19 @@
                         </a>
                         <a href="tel:+91 7043029467" class="pb-4">
                             <div class="bg-zinc-100 rounded-full w-10 h-10 float-left bg-center  grid justify-items-center">
-                                <img class="p-1 mt-2 h-7" src="../assets/Inter/img/icon/navbar_phone.png" />
+                                <img class="p-1 mt-2 h-7" src="../assets/Inter/img/call-round-icon.svg" />
                             </div>
                             <p class="cursor-pointer text-[#40b751] mb-4 pt-2 pl-14">+91 7043029467</p>
                         </a>
                         <a href="mailto:bestdeed2023@gmail.com" class="pb-4">
                             <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center">
-                                <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/icon/email1.png" />
+                                <img class="p-1 mt-2 h-6" src="../../src/assets/Inter/img/email-round-icon.svg" />
                             </div>
                             <p class="cursor-pointer text-[#40b751] mb-4 pt-2 pl-14">bestdeed2023@gmail.com</p>
                         </a>
                         <p>
                         <div class="bg-zinc-100 rounded-full w-10 h-10 float-left grid justify-items-center items-center">
-                            <img class="p-2 h-9" src="../../src/assets/Inter/img/icon/bank-building.png" />
+                            <img class="p-2 h-9" src="../../src/assets/Inter/img/bank-round-icon.svg" />
                         </div>
                         <p class="text-[#40b751] mb-2 pl-14">Name: Manav Seva Charitable Trust <br>A/C No: 10046308440<br>
                             IFSC
@@ -118,7 +228,7 @@
                 <img class="w-full h-auto object-cover" src="../assets/Inter/img/bg-right.png">
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- <div class="flex flex-wrap">
                 <div class="grow-0 shrink-0 basis-auto mb-8 md:mb-2 lg:mb-2 w-full md:w-6/12 px-3 lg:px-6">
                     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
@@ -213,7 +323,7 @@
             </div> -->
 
     <!-- </div> -->
-    <div class="block md:block lg:hidden container my-10 px-6 mx-auto">
+    <!-- <div class="block md:block lg:hidden container my-10 px-6 mx-auto">
         <section class="text-gray-800">
             <div class="flex flex-wrap">
                 <div class="grow-0 shrink-0 basis-auto mb-8 md:mb-2 lg:mb-2 w-full md:w-6/12 px-3 lg:px-6">
@@ -303,7 +413,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
     <Dialog :options="{
         title: $t('Thank You For Contact'),
         message: $t('We Reach You Soon as possible'),
@@ -802,3 +912,38 @@ export default {
     }
 }
 </script>
+<style>
+.bg-left {
+    content: url('../assets/Inter/img/bg-left.png');
+}
+
+@media (max-width:1023px) {
+    .bg-left {
+        display: none;
+    }
+}
+
+.bg-right {
+    content: url('../assets/Inter/img/bg-right.png');
+}
+
+@media (max-width:1023px) {
+    .bg-right {
+        display: none;
+    }
+}
+
+@media (max-width:767px) {
+    .layout {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width:338px) {
+    .layout {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+</style>

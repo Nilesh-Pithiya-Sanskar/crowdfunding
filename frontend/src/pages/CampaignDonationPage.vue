@@ -458,7 +458,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/phonepay.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/phone-pay.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs text-[#364958]">{{ $t('Phone Pay') }}</p>
@@ -469,7 +469,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/gpay.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/google-pay.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs text-[#364958]">{{ $t('Google Pay') }}</p>
@@ -480,7 +480,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/bhim.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/bhim-upi.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs text-[#364958]">{{ $t('Bhim UPI') }}</p>
@@ -491,7 +491,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/paytm.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/paytm.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs text-[#364958]">{{ $t('Paytm') }}</p>
@@ -502,7 +502,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/crditcard.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/cr-dr_card.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs text-[#364958]">{{ $t('cr/dr card') }}</p>
@@ -513,7 +513,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/banktransfer.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/amazon-pay.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs  text-[#364958]">{{ $t('Amazon Pay') }}</p>
@@ -535,7 +535,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/whatsapp.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/whatsapp-payment.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs text-[#364958]">{{ $t('WhatsApp') }}</p>
@@ -546,7 +546,7 @@
                             <div>
                                 <div class="rounded-t-lg  pt-4 pb-4">
                                     <div class="grid justify-center">
-                                        <img src="../../src/assets/Inter/img/mobikwik.png" class="w-12 h-12">
+                                        <img src="../../src/assets/Inter/img/mobikwik.svg" class="w-12 h-12">
                                     </div>
                                     <div class="text-center pt-2">
                                         <p class="text-xs text-[#364958]">{{ $t('Mobikwik') }}</p>

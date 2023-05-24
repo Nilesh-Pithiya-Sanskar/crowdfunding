@@ -1,0 +1,1 @@
+var s="/assets/sadbhavna_donatekart/frontend/assets/icon_home_join_us_easy_process.3f586292.svg",a="/assets/sadbhavna_donatekart/frontend/assets/icon_home_join_us_end-to-end_transparency.14d942e0.svg",_="/assets/sadbhavna_donatekart/frontend/assets/icon_home_join_us_trusted_platform.79e1fdbf.svg";export{s as _,a,_ as b};
