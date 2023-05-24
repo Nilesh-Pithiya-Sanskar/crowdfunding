@@ -108,7 +108,7 @@
                         <div class="float-left  grid justify-items-center mr-2">
                             <img class="" src="../../src/assets/Inter/img/bank-round-icon.svg" />
                         </div>
-                        <p class="text-[#40b751]">Name: Manav Seva Charitable Trust <br>A/C No: 10046308440<br>
+                        <p class="text-[#40b751]">Name: Manav Seva Charitable Trust <br> Bank: IDFC FIRST Bank <br> A/C No: 10046308440<br>
                             IFSC
                             Code: IDFB0042421<br> Branch: Rajkot</p>
                         </div>
