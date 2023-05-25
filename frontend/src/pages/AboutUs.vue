@@ -6,25 +6,56 @@
         <div class="container mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
           <div class="ml-4">
             <h1 class="leading-[35px] md:leading-[40px] lg:leading-[50px] font-[800] banner">
-              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">{{ $t('Taking') }}</p>
-              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">Small Steps to Make</p>
-              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">a Bigger Difference</p>
-              <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">for Nonprofit <br>Organizations!</p>
+              <span v-if="lang == 'gu'">
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">બિન નફાકારક</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">સંસ્થાઓ માટે મોટો </p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">તફાવત બનાવવા માટે</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">નાના પગલાં લેવા!</p>
+              </span>
+              <span v-else-if="lang == 'hi'">
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">गैर-लाभकारी</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">संगठनों के लिए बड़ा</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">बदलाव लाने के लिए</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">छोटे कदम उठाना!</p>
+              </span>
+              <span v-else>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">Taking</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">Small Steps to Make</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#40b751]">a Bigger Difference</p>
+                <p class="text-[24px] md:text-[34px] lg:text-[46px] text-[#3f4640]">for Nonprofit <br>Organizations!</p>
+              </span>
             </h1>
-            <p class="font-[600] text-[15px] md:text-[18px] lg:text-[18px]leading-[24px] text-[#3f4640] py-8">Our
-              Crowdfunding
-              Platform
-              for NGOs is
-              <br>making ways to
-              encourage
-              and
-              empower
-              <br>charity organizations with 100% authenticity <br>& transparency!
+            <p class="font-[600] text-[15px] md:text-[18px] lg:text-[18px]leading-[24px] text-[#3f4640] py-8">
+              <span v-if="lang == 'gu'">
+                એનજીઓ માટેનું અમારું ક્રાઉડફંડિંગ પ્લેટફોર્મ 100%
+                <br>પ્રમાણિકતા અને પારદર્શિતા સાથે ચેરિટી સંસ્થાઓને પ્રોત્સાહિત
+                <br>અને સશક્તિકરણ કરવાના માર્ગો બનાવી રહ્યું છે!
+              </span>
+              <span v-else-if="lang == 'hi'">
+                एनजीओ के लिए हमारा क्राउडफंडिंग प्लेटफॉर्म 100%
+                <br>प्रामाणिकता और पारदर्शिता के साथ चैरिटी संगठनों को
+                <br>प्रोत्साहित करने और उन्हें सशक्त बनाने के तरीके बना रहा है!
+              </span>
+              <span v-else>
+                Our Crowdfunding Platform for NGOs is
+                <br>making ways to encourage and empower
+                <br>charity organizations with 100% authenticity
+                <br>& transparency!
+              </span>
+
             </p>
             <div class="pt-4 pb-10 md:pb-28 lg:pb-36">
               <router-link to="/request-campaign"
                 class="bg-[#40b751] px-4 md:px-6 lg:px-6 py-2 md:py-3 lg:py-3 text-white rounded-full text-[12px] lg:text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-                Start a Fundraiser for <strong>FREE</strong></router-link>
+                <span v-if="lang == 'gu'">
+                  <strong>મફતમાં</strong>
+                  ફંડ એકઠું કરવાની શરૂઆત કરો
+                </span>
+                <span v-else-if="lang == 'hi'">
+                  <strong>मुफ़्त में </strong>
+                  फ़ंडरेज़र शुरू करें</span>
+                <span v-else>Start a Fundraiser for <strong>FREE</strong></span>
+              </router-link>
             </div>
           </div>
         </div>
@@ -43,8 +74,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col justify-center items-center">
           <img src="../assets/Inter/img/mission.png" alt="mission.png" class="max-w-full max-h-full">
-          <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">Our
-            Mission</h3>
+          <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">
+            {{ $t('Our Mission') }}</h3>
           <p class="text-center px-8 md:px-10 lg:px-16">We know that there are many organizations out there
             that
             are
@@ -60,8 +91,8 @@
         </div>
         <div class="flex flex-col justify-center items-center">
           <img src="../assets/Inter/img/vision.png" alt="Image 2" class="max-w-full max-h-full">
-          <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">Our
-            Vision</h3>
+          <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">
+            {{ $t('Our Vision') }}</h3>
           <p class="text-center px-8 md:px-10 lg:px-16">Our vision is to create the best donation platform where
             anyone can make a
             meaningful
@@ -80,22 +111,25 @@
     <section class="w-full p-1 md:p-4 lg:p-4 mb-5 mt-5 bg-[#ebf8ec]">
       <div class="container mx-auto">
         <div>
-          <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] text-center my-4">Our Core Values
+          <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] text-center my-4">
+            {{ $t("Our Core Values") }}
           </h2>
         </div>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 container">
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/icon_home_join_us_trusted_platform.svg" alt="Image 1" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_home_join_us_trusted_platform.svg" alt="Image 1"
+                class="max-w-full max-h-full">
             </div>
-            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Authenticity at the core!") }}
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Authenticity At The Core!") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/icon_home_join_us_end-to-end_transparency.svg" alt="Image 2" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_home_join_us_end-to-end_transparency.svg" alt="Image 2"
+                class="max-w-full max-h-full">
             </div>
-            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("End-to-End Transparency") }}
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("End-To-End Transparency") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
@@ -106,21 +140,24 @@
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/icon_home_join_us_easy_process.svg" alt="Image 4" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_home_join_us_easy_process.svg" alt="Image 4"
+                class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Streamlining Crowdfunding") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/icon_driving_through_innovation.svg" alt="Image 5" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_driving_through_innovation.svg" alt="Image 5"
+                class="max-w-full max-h-full">
             </div>
-            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Driving through Innovation") }}
+            <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">{{ $t("Driving Through Innovation") }}
             </p>
           </div>
           <div class="mt-2 mb-8">
             <div class="flex justify-center items-center">
-              <img src="../assets/Inter/img/icon_bringing_communities_together.svg" alt="Image 6" class="max-w-full max-h-full">
+              <img src="../assets/Inter/img/icon_bringing_communities_together.svg" alt="Image 6"
+                class="max-w-full max-h-full">
             </div>
             <p class="text-center text-[#3f4640] font-[700] text-[18px] pt-2">
               {{ $t("Bringing communities together") }}
@@ -132,8 +169,8 @@
     </section>
     <section class="container mx-auto ">
       <div class="text-center font-bold pb-8">
-        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] pb-4">Our Journey so far & even
-          beyond!</h2>
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] pb-4">
+          {{ $t('Our Journey so far & even beyond!') }}</h2>
         <p class="font-semibold text-lg">From Humble Beginnings to Creating Lasting Impact</p>
         <p class="font-semibold text-lg">Our Story of Changing Lives & Empowering NGOs.</p>
       </div>
@@ -273,7 +310,7 @@
 
     <section class="bg-[#f6fed8] mt-0">
       <div class="text-center container font-bold mx-auto impact-image">
-        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black pb-2 ">Our Impact</h2>
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black pb-2 ">{{ $t('Our Impact') }}</h2>
         <p class="text-center font-semibold text-lg pb-10">To impact the lives of 10 Million People in 5
           years!
         </p>
@@ -284,8 +321,8 @@
 
     <section class="mx-auto container">
       <div class="my-8">
-        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black text-center  mb-8">Empowering
-          Communities - Here’s How?
+        <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black text-center  mb-8">
+          {{ $t('Empowering Communities - Here’s How?') }}
         </h2>
 
         <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4  ">
@@ -293,7 +330,7 @@
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/icon_authenticity_transparency.svg" alt="empowering1.png" class="h-12 w-12 " />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
-              <p class="font-bold text-lg">100% authenticity & transparency </p>
+              <p class="font-bold text-lg">{{ $t('100% authenticity & transparency') }} </p>
               <p class="text-md">Best Deed is a 100% authentic and transparent online crowdfunding
                 donation platform with all
                 the required licenses and permits. Check here! (Add the link) Also, before onboarding NGOs
@@ -304,7 +341,7 @@
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/home-banner-icon-0.svg" alt="empowering2.png" class="h-12 w-16" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
-              <p class="font-bold text-lg">0% Platform fees</p>
+              <p class="font-bold text-lg">{{ $t('0% Platform fees') }}</p>
               <p class="text-md">Best Deed charges no crowdfunding donation platform fees whether you are a
                 donor
                 contributing to the NGOs or NGOs willing to start a crowdfunding campaign. It is a free
@@ -315,7 +352,7 @@
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/icon_building_an_ecosystem.svg" alt="empowering3.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
-              <p class="font-bold text-lg">Building an ecosystem</p>
+              <p class="font-bold text-lg">{{ $t('Building an ecosystem') }}</p>
               <p class="text-md">We are not simply another crowdfunding company; our goal is to build a
                 trustworthy ECOSYSTEM
                 that brings together the greatest campaigns, NGOs, donors, and sponsors on this online
@@ -326,7 +363,7 @@
           <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto my-2 mx-4">
             <img src="../assets/Inter/img/icon_dedicated_help_center.svg" alt="mpowering4.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
-              <p class="font-bold text-lg">Dedicated Help Center</p>
+              <p class="font-bold text-lg">{{ $t('Dedicated Help Center') }}</p>
               <p class="text-md">Throughout your crowdfunding journey, if you have any questions or require
                 in-depth
                 assistance regarding our fundraising website for individuals, we are here to help. Our
@@ -347,8 +384,9 @@
     <div id="old-section" class="hidden md:block lg:block">
       <section class="bg-[#40b751]">
         <div class="mx-auto container  text-center">
-          <h2 class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10 "> Meet the Visionaries </h2>
-          <p class="font-semibold text-md pt-4 pb-10">Founders of Best Deed Paving the Way!</p>
+          <h2 class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10 ">
+            {{ $t('Meet the Visionaries') }} </h2>
+          <p class="font-semibold text-md pt-4 pb-10">{{ $t('Founders of Best Deed Paving the Way!') }}</p>
           <div class="grid grid-cols-3">
             <div class="mb-0">
               <img src="../assets/Inter/img/Vijay.png" alt="Vijay.png" class="mx-auto">
@@ -414,7 +452,8 @@
     <div id="new-section" class="block md:hidden lg:hidden">
       <section class="bg-[#40b751]">
         <div class="text-center">
-          <p class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10"> Meet the Visionaries </p>
+          <p class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10"> {{ $t('Meet the Visionaries') }}
+          </p>
           <p class="font-semibold text-md pt-4">Founders of Best Deed Paving the Way!</p>
           <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-8">
             <div class="pt-8 md:pt-0 bg-[#40b751]">
@@ -487,11 +526,7 @@
               <div class="pb-16">
                 <p class="text-[16px] text-[#3f4640] font-[700] pr-0 md:pr-32 lg:pr-32" style="line-height: 26px; ">
 
-                  Join us in our mission to make the world a better place with this online crowdfunding
-                  platform - Best
-                  Deed. Whether you're an individual looking to make a difference or an NGO needing support,
-                  we're here to
-                  help
+                  {{ $t("Join us in our mission to make the world a better place with this online crowdfunding platform - Best Deed. Whether you're an individual looking to make a difference or an NGO needing support, we're here to help") }}
                 </p>
               </div>
               <div class="h-16">
@@ -577,7 +612,12 @@ export default {
       total_donors: '',
       total_ngos: '',
       total_live_campaigns: '',
+      lang: this.get_language(),
     }
+  },
+
+  mounted() {
+    this.get_language()
   },
 
   resources: {
@@ -602,7 +642,10 @@ export default {
   methods: {
     get_about_data() {
       this.$resources.get_about_data.submit()
-    }
+    },
+    get_language() {
+      return this.$cookies.get('lang') || localStorage.getItem('lang')
+    },
   }
 
 
@@ -998,5 +1041,4 @@ export default {
 
 #wrapper>div {
   display: inline-block;
-}
-</style>
+}</style>

@@ -88,10 +88,10 @@
                   </div>
                   <div class="text-justify ">
                     <div class="text-[18px] md:text-[20px] lg:text-[20px] leading-7  font-semibold text-gray-600 ">
-                      Sahil Patel </div>
+                      {{$t('Sahil Patel')}} </div>
                     <div class="text-[14px] md:text-[14px] lg:text-[16px] leading-3  text-[#364958] text-opacity-60 ">
                       <i class="fas fa-map-marker-alt text-lg text-blueGray-400"></i>
-                      Developer
+                      {{$t('Developer')}}
                     </div>
                     <div class="h-[250px] pb-5 mb:pb-0 lg:pb-0 no-scrollbar overflow-scroll overflow-x-hidden mb-6 mt-4">
                       <div class="text-[16px] md:text-[16px] lg:text-[16px] leading-7  text-blueGray-600 ">

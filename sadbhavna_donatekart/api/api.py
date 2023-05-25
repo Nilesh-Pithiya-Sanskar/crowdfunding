@@ -173,12 +173,11 @@ def set_details_in_doctype_after_donation(user_id, campaign, item, amount, payme
 def send_whatsapp_message(user_id, campaign, item):
     mobile = frappe.db.get_value("User", user_id, 'phone')
     if mobile:
-        ngo, title = frappe.db.get_value("Donation Campaign", campaign, ['ngo', 'title'])
+        ngo, title = frappe.db.get_value("Donation Campaign", campaign, ['ngo', 'campaign_title'])
         ngo_name = frappe.db.get_value('NGO', ngo, 'organisation_name')
         donor_name = frappe.db.get_value('Donor', filters={'email': user_id}, fieldname=['donor_name'])
         url = "https://api.interakt.ai/v1/public/message/"
 
-        # print("\n\n items", item, "\n\n")
         items = ''
 
         for i in item:
@@ -190,7 +189,7 @@ def send_whatsapp_message(user_id, campaign, item):
         "callbackData": "some text here",
         "type": "Template",
         "template": {
-            "name": "Thanks Message",
+            "name": "thanks_message",
             "languageCode": "en_GB",
             "bodyValues": [
             donor_name, title, items, ngo_name
@@ -205,10 +204,6 @@ def send_whatsapp_message(user_id, campaign, item):
         response = requests.request("POST", url, headers=headers, data=payload)
 
         print("\n\n", response.text, "\n\n")
-
-    
-
-
 
 
 
@@ -314,7 +309,7 @@ def login_with_whatsapp(phone):
     frappe.db.commit()
 
     message = send_whatsapp_otp(phone, otp)
-    message = f'OTP sent to your whatsapp number: {phone}'
+    # message = f'OTP sent to your whatsapp number: {phone}'
     result = {"message": message, "number": phone}
     # return result
     return message, phone, 'whatsapp'
@@ -328,54 +323,56 @@ def whatsapp_keys_details():
 
 def send_whatsapp_otp(phone, otp):  
     import requests, json
-    access_token, api_endpoint, name_type, version = whatsapp_keys_details()
-    headers = {
-        "Content-Type": "text/json",
-        "Authorization": access_token
-    }
-    url = f"{api_endpoint}/{name_type}/{version}/sendTemplateMessage?whatsappNumber=91{phone}"
-    payload = {
-        "parameters": [
-            {
-                "name": "otp",
-                "value": otp
-            },
-            {
-                "name": "business_name",
-                "value": "BestDeed"
-            }
-        ],
-
-        "broadcast_name": "otp_msg",
-        "template_name": "otp_msg"
-    }
-    response = requests.post(url, json=payload, headers=headers)
-
-    # url = "https://api.interakt.ai/v1/public/message/"
-
-    # payload = json.dumps({
-    # "countryCode": "+91",
-    # "phoneNumber": 7990915950,
-    # "callbackData": "some text here",
-    # "type": "Template",
-    # "template": {
-    #     "name": "Login with OTP",
-    #     "languageCode": "en_GB",
-    #     "bodyValues": [
-    #     "7895",
-    #     ]
-    # }
-    # })
+    # access_token, api_endpoint, name_type, version = whatsapp_keys_details()
     # headers = {
-    # 'Authorization': 'Basic a0F2V1F0T243b3ZaTTRBWk5wWWRCVm42TE5oZUJOcnRFZ29lVGdLSWV4MDo=',
-    # 'Content-Type': 'application/json'
+    #     "Content-Type": "text/json",
+    #     "Authorization": access_token
     # }
+    # url = f"{api_endpoint}/{name_type}/{version}/sendTemplateMessage?whatsappNumber=91{phone}"
+    # payload = {
+    #     "parameters": [
+    #         {
+    #             "name": "otp",
+    #             "value": otp
+    #         },
+    #         {
+    #             "name": "business_name",
+    #             "value": "BestDeed"
+    #         }
+    #     ],
 
-    # response = requests.request("POST", url, headers=headers, data=payload)
+    #     "broadcast_name": "otp_msg",
+    #     "template_name": "otp_msg"
+    # }
+    # response = requests.post(url, json=payload, headers=headers)
+
+    url = "https://api.interakt.ai/v1/public/message/"
+
+    payload = json.dumps({
+    "countryCode": "+91",
+    "phoneNumber": phone,
+    "callbackData": "some text here",
+    "type": "Template",
+    "template": {
+        "name": "login_with_otp_1k",
+        "languageCode": "en_GB",
+        "bodyValues": [
+        otp,
+        ]
+    }
+    })
+    headers = {
+    'Authorization': 'Basic a0F2V1F0T243b3ZaTTRBWk5wWWRCVm42TE5oZUJOcnRFZ29lVGdLSWV4MDo=',
+    'Content-Type': 'application/json'
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
 
     # print("\n\n", response.text, "\n\n")
-
+    if response.text == True:
+        return f'OTP sent to your whatsapp number: {phone}'
     return f'OTP sent to your whatsapp number: {phone}'
+    
 
 
 # login with sms

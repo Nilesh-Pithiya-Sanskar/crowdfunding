@@ -198,8 +198,8 @@
               <a href="https://goo.gl/maps/UcgCrVJMHpx3vd1v9" class="flex mb-2 md:mb-2 lg:mb-4 xl:mb-4">
                <img class="w-5 h-5 mt-1"
                     src="../../src/assets/Inter/img/icon-footer-location.svg" />
-                <p class="ml-4"><span>{{ $t('Gondal Road') }}</span><br>
-                  Opp Swami Narayan Gurukul, Near D-Mart Service Road, <br>Rajkot - 360004</p>
+                <p class="ml-4"><span>{{ $t('Gondal Road,') }}</span><br>
+                  {{$t('Opp Swami Narayan Gurukul, Near D-Mart Service Road,')}} <br>{{$t('Rajkot - 360004')}}</p>
                 </a>
               <a href="tel:+91 7043029467" class="flex items-center mb-2 md:mb-2 lg:mb-4 xl:mb-4 ">
                 <div><img class="w-4 h-4 " src="../../src/assets/Inter/img/icon-footer-phone.svg" /></div>

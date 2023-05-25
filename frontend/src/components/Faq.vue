@@ -1,39 +1,47 @@
 <template>
   <Navbar />
-  <div
-    class="w-full h-[13rem] md:h-[15rem] lg:h-[17rem] bg-center bg-right bg-transparent bg-cover"
-    style="background-image: url('https://crowdfunding.frappe.cloud/files/faq-bnr.jpg')"
-  >
-        <h1
-          class="text-[30px] md:text-[36px] lg:text-[48px] pt-20 text-center text-[#40b751] font-black"
-        >
-      {{ $t("Frequently Asked Questions")}}
-        </h1>
+  <!-- <div class="w-full h-[13rem] md:h-[15rem] lg:h-[17rem] bg-center bg-transparent bg-cover"
+    style="background-image: url('https://crowdfunding.frappe.cloud/files/faq-bnr.jpg')">
+    <h1 class="text-[30px] md:text-[36px] lg:text-[48px] pt-20 text-center text-[#40b751] font-black">
+      {{ $t("Frequently Asked Questions") }}
+    </h1>
+  </div> -->
+
+  <div class="banner h-screen">
+    <div class="banner-content">
+      <p class="hidden md:block lg:block lg:text-[36px] md:text-[24px] text-[#40b751] font-black">{{ $t("Have a Question?") }}</p>
+      <p class="hidden md:block lg:block lg:text-[36px] md:text-[24px] text-[#3f4640] font-black">{{ $t("We're here to help.") }}</p>
+    </div>
+    <img src="../assets/Inter/img/faq.png" alt="Banner Image">
   </div>
+
 
   <div class="relative container mx-auto h-full pt-0">
     <div class="w-full bg-grey-lightest">
       <div class="py-0">
         <div class="w-6/6 lg:w:4/6 mx-auto bg-white">
           <div class="">
-            
+
             <div class="px-0 py-px flex-auto">
               <div class="tab-content tab-space">
-                
-                  <section class="text-gray-700">
-                    <div class="container px-0 py-7 mx-auto">
-                      <div class="">
-                        <div class="w-full lg:w-1/2 px-4 py-2">
-                          <h2 class="text-[28px] text-[#40b751]  py-2 font-black">{{$t('For Donors')}}</h2>
-                          <div v-for="(question, index) in faq" :key="index" class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
-          <button
-            type="button"
-            class="flex justify-between w-full text-left font-medium text-white  font-bold text-[20px]  focus:outline-none"
-            @click="toggleQuestion(index)"
-          >
-            <!-- <span  class="pl-4 pb-4">{{ question.question }}</span> -->
-            <p v-html="question.question" class="pl-4 pb-4"></p>
-            <!-- <span class="ml-6 flex-shrink-0">
+
+                <section class="text-gray-700">
+                  <div class="container px-0 py-0 md:py-7 lg:py-7 mx-auto">
+                    <div class="">
+                      <div class="w-full lg:w-1/2 px-4 py-2">
+                        <div class="banner-content">
+                            <p class="block md:hidden lg:hidden text-[22px] text-center text-[#40b751] font-black">{{ $t("Have a Question?") }}</p>
+                            <p class="block md:hidden lg:hidden text-[22px] text-center text-[#3f4640] font-black">{{ $t("We're here to help.") }}</p>
+                        </div>
+                        <h2 class="text-[28px] text-[#40b751]  py-2 font-black">{{ $t('For Donors') }}</h2>
+                        <div v-for="(question, index) in faq" :key="index"
+                          class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
+                          <button type="button"
+                            class="flex justify-between w-full text-left font-medium text-white  font-bold text-[20px]  focus:outline-none"
+                            @click="toggleQuestion(index)">
+                            <!-- <span  class="pl-4 pb-4">{{ question.question }}</span> -->
+                            <p v-html="question.question" class="pl-4 pb-4"></p>
+                            <!-- <span class="ml-6 flex-shrink-0">
               <svg
                 class="h-5 w-5 transform"
                 :class="{'rotate-180': question.open}"
@@ -49,13 +57,13 @@
                 />
               </svg>
             </span> -->
-          </button>
-          <div v-show="question.open" class="mt-0 py-6 px-6 text-[18px] text-justify bg-white ">
-            <!-- <p class="text-gray-500">{{ question.answer }}</p> -->
-            <p v-html="question.answer" class="text-gray-700"></p>
-          </div>
-        </div>
-                          <!-- <details class="mb-4 shadow-2xl" >
+                          </button>
+                          <div v-show="question.open" class="mt-0 py-6 px-6 text-[18px] text-justify bg-white ">
+                            <!-- <p class="text-gray-500">{{ question.answer }}</p> -->
+                            <p v-html="question.answer" class="text-gray-700"></p>
+                          </div>
+                        </div>
+                        <!-- <details class="mb-4 shadow-2xl" >
                             <summary  
                               class="font-bold text-center text-[20px] text-white list-none bg-[#40b751] rounded py-3 px-2 "
                             >{{ $t('How can I get my tax redemption?') }}
@@ -146,32 +154,31 @@
                             </ul>
                             </p>
                           </details> -->
-                        </div>
                       </div>
                     </div>
-                  </section>
-                  <section class="text-gray-700">                               
-                    <div class="container px-0 pb-7 mx-auto">
-                      <div class="">                        
-                        <div class="w-full lg:w-1/2 px-4 py-2">
-                          <h2 class="text-[28px] text-[#40b751] py-2 font-black">{{$t('For NGOs')}}</h2>
-                          <div v-for="(questionngo, index) in ngofaq" :key="index" class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
-                          <button
-                            type="button"
+                  </div>
+                </section>
+                <section class="text-gray-700">
+                  <div class="container px-0 pb-7 mx-auto">
+                    <div class="">
+                      <div class="w-full lg:w-1/2 px-4 py-2">
+                        <h2 class="text-[28px] text-[#40b751] py-2 font-black">{{ $t('For NGOs') }}</h2>
+                        <div v-for="(questionngo, index) in ngofaq" :key="index"
+                          class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
+                          <button type="button"
                             class="flex justify-between w-full text-left font-medium text-white  font-bold text-[20px]  focus:outline-none"
-                            @click="toggleQuestionNgo(index)"
-                          >
+                            @click="toggleQuestionNgo(index)">
                             <!-- <span class="pl-4 pb-4">{{ questionngo.questionngo }}</span> -->
                             <p v-html="questionngo.questionngo" class="pl-4 pb-4"></p>
                           </button>
-                          <div v-show="questionngo.open" class="mt-0 py-6 px-6 text-[18px] text-justify bg-white ">            
-                            <p v-html="questionngo.answerngo" class="text-gray-700"></p>            
+                          <div v-show="questionngo.open" class="mt-0 py-6 px-6 text-[18px] text-justify bg-white ">
+                            <p v-html="questionngo.answerngo" class="text-gray-700"></p>
                           </div>
-                        </div>
                         </div>
                       </div>
                     </div>
-                  </section>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -192,18 +199,18 @@ export default {
     Navbar,
     Footer,
   },
-  created(){
+  created() {
     const linkElement = document.querySelector('link[rel="canonical"]');
-        if (!linkElement) {
-          var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/faq"
-        document.head.appendChild(link);
-        }
-        else{
-        linkElement.href = "https://bestdeed.org/faq"
-        document.head.appendChild(linkElement)
-        }
+    if (!linkElement) {
+      var link = document.createElement('link');
+      link.rel = 'canonical';
+      link.href = "https://bestdeed.org/faq"
+      document.head.appendChild(link);
+    }
+    else {
+      linkElement.href = "https://bestdeed.org/faq"
+      document.head.appendChild(linkElement)
+    }
   },
   data() {
     return {
@@ -212,7 +219,7 @@ export default {
         {
           question: this.$t("How can I get my tax redemption?"),
           answer: this.$t("You will be getting tax redemption after donating through our Platform. On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button. <br> <br> Please enter your PAN number, complete location, and PAN-compliant name before clicking 'Submit.' You will receive an email and a download link for your 80G certificate. <br><br> This receipt will include all the necessary information you need for tax reporting purposes. You can use this receipt to claim a tax deduction or credit on your tax return."),
-          
+
           open: true,
         },
         {
@@ -297,39 +304,180 @@ export default {
     }
   },
   methods: {
-  toggleQuestion(index) {
-    this.faq = this.faq.map((question, i) => {
-      if (i === index) {
-        question.open = !question.open;
-      } else {
-        question.open = false;  
-      }
-      return question;
-    });
+    toggleQuestion(index) {
+      this.faq = this.faq.map((question, i) => {
+        if (i === index) {
+          question.open = !question.open;
+        } else {
+          question.open = false;
+        }
+        return question;
+      });
 
-    // close all questions in the other FAQ list
-    this.ngofaq = this.ngofaq.map((questionngo) => {
-      questionngo.open = false;
-      return questionngo;
-    });
-  },
-
-  toggleQuestionNgo(index) {
-    this.ngofaq = this.ngofaq.map((questionngo, i) => {
-      if (i === index) {
-        questionngo.open = !questionngo.open;
-      } else {
+      // close all questions in the other FAQ list
+      this.ngofaq = this.ngofaq.map((questionngo) => {
         questionngo.open = false;
-      }
-      return questionngo;
-    });
+        return questionngo;
+      });
+    },
 
-    // close all questions in the other FAQ list
-    this.faq = this.faq.map((question) => {
-      question.open = false;
-      return question;
-    });
+    toggleQuestionNgo(index) {
+      this.ngofaq = this.ngofaq.map((questionngo, i) => {
+        if (i === index) {
+          questionngo.open = !questionngo.open;
+        } else {
+          questionngo.open = false;
+        }
+        return questionngo;
+      });
+
+      // close all questions in the other FAQ list
+      this.faq = this.faq.map((question) => {
+        question.open = false;
+        return question;
+      });
+    },
   },
-},
 }
 </script>
+
+<style scoped>
+/* .bg-bannar {
+  background-image: url('https://crowdfunding.frappe.cloud/files/faq.png');
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+} */
+/* .banner {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+} */
+.banner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px){
+.banner .banner-content {
+    position: absolute;
+    left: 110px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 1;
+    }
+}
+
+@media (min-width: 1024px){
+.banner .banner-content {
+    position: absolute;
+    left: 150px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 1;
+    }
+}
+
+@media (min-width: 1280px){
+.banner .banner-content {
+    position: absolute;
+    left: 250px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 1;
+    }
+}
+
+@media (min-width: 1536px){
+.banner .banner-content {
+    position: absolute;
+    left: 400px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 1;
+    }
+}
+
+.banner .banner-content p {
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.banner img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+/* .banner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+.banner-text {
+  position: absolute;
+  left: 400px;
+  top: 40%;
+  /* color: black; */
+/* z-index: 1;
+font-size: 4vw;
+line-height: 1;
+}
+
+.banner-heading {
+  position: absolute;
+  left: 400px;
+  top: 50%;
+  z-index: 1;
+  font-size: 3vw;
+  line-height: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banner-text {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .banner-heading {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+} */
+</style>

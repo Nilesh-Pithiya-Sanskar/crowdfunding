@@ -157,8 +157,8 @@
     </section>
 
 
-    <section class="block md:hidden lg:hidden h-screen">
-      <div class="grid bg-[#eefeb1] block md:hidden lg:hidden bg-cover bg-center h-[44vh] items-center px-5">
+    <section class="block md:hidden lg:hidden h-[calc(100vh-8vh)]">
+      <div class="grid bg-[#eefeb1] md:hidden lg:hidden bg-cover bg-center h-[calc(100vh/2-6vh)] items-center px-5">
 
         <div
           class="text-[#40b751] font-black text-[2rem] [text-shadow:2px 2px 2px #c9c9c9]">
@@ -168,7 +168,7 @@
           class="[text-shadow:2px 2px 2px #c9c9c9] leading-[25px] text-gray-600 font-bold text-[1.5rem]">
           Most trusted crowd <br>funding platform of india.</h1>
 
-        <div class="grid grid-cols-2 gap-2 mt-4">
+        <div class="grid grid-cols-2 gap-2 mt-2">
           <div class="flex flex-auto items-center w-14">
             <img src="../../src/assets/Inter/img/home-banner-icon-0.svg" alt="0" title="0 fees"
               class="h-8 w-12" />
@@ -207,18 +207,20 @@
           </div>
         </div>
         <p
-          class="[text-shadow:2px 2px 2px #c9c9c9] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
+          class="[text-shadow:2px 2px 2px #c9c9c9] mb-1 text-[#3f4640] font-bold text-[1rem] break-keep">
           Your help goes a long way!</p>
         <div class="w-42"><router-link to="/explore-campaigns"
-          class="bg-[#40b751] px-8 py-2 text-white rounded-full text-[1rem] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
+          class="bg-[#40b751] px-6 py-1 text-white rounded-full text-[1rem] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
           Support an NGOs </router-link></div>
 
       </div>
 
 
-      <div class="flex bg-cover bg-right-top h-[44vh] items-center"
-        style="background-image: url('https://bestdeed.org/files/BG.png');">
-        <div class="flex items-center"> <img src="../../src/assets/Inter/img/rightside.png" class="" /></div>
+      <div class="flex bg-cover bg-right-top  h-[calc(100vh/2-6vh)] items-center"
+        style="background-image: url('https://bestdeed.org/files/Layer 15.svg');">
+        <div class="flex items-center">
+           <img src="../../src/assets/Inter/img/rightside.png" class="ml-6 mb-2 h-[40vh] w-[40vh]" />
+          </div>
       </div>
 
 

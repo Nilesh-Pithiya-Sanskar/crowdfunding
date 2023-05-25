@@ -12,7 +12,11 @@
           <a href="mailto:bestdeed2023@gmail.com"
             class="cursor-pointer transition font-medium text-black  text-[14px] transition duration-300 rounded  hover:text-[#364958]">
             {{ $t('bestdeed2023@gmail.com') }}</a>
+            <!-- <p class="font-bold text-black sm:mr-1 md:mr-2 lg:mr-4 text-[14px]  transition duration-300 rounded  hover:text-[#364958]">{{$t('An Impactful Initiative by Sadbhavna Vrudhashram.')}}</p> -->
         </div>
+
+
+
         <!-- <div class="social-icons hidden md:hidden lg:flex items-center ">
           <i class="fa fa-hand-right"></i>
           <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer mr-1" fill="#000000" viewBox="0 0 24 24">

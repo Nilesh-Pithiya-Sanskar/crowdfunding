@@ -1,5 +1,5 @@
 <template>
-    <div class="top-0 w-full h-3/6 bg-center bg-right bg-transparent bg-cover mb-10"
+    <div class="top-0 w-full h-3/6 bg-center bg-transparent bg-cover mb-10"
         style="background-image: url('https://crowdfunding.frappe.cloud/files/explore-campaign.jpg')">
         <Navbar />
         <div class="bg-overlay lg:!py-24 py-10">
@@ -544,16 +544,16 @@ export default {
         this.get_language()
         this.get_campaigns()
         const linkElement = document.querySelector('link[rel="canonical"]');
-    if (!linkElement) {
-      var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/explore-campaigns"
-    document.head.appendChild(link);
-    }
-    else{
-      linkElement.href = "https://bestdeed.org/explore-campaigns"
-      document.head.appendChild(linkElement)
-    }
+        if (!linkElement) {
+            var link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = "https://bestdeed.org/explore-campaigns"
+            document.head.appendChild(link);
+        }
+        else {
+            linkElement.href = "https://bestdeed.org/explore-campaigns"
+            document.head.appendChild(linkElement)
+        }
         // const route = useRoute()
         // if(route.query.razorpay_payment_id){
         //   this.verify_signature(route.query.razorpay_payment_id, route.query.razorpay_payment_link_id, route.query.razorpay_payment_link_reference_id, route.query.razorpay_payment_link_status, route.query.razorpay_signature, route.query.amount)
@@ -679,7 +679,7 @@ export default {
                         this.last_campaigns = true
                     }
                     if (res == '') {
-                        if (this.category){
+                        if (this.category) {
                             this.$toast({
                                 title: "No Campaigns",
                                 text: `No Campaigns Found For ${this.category}.`,
@@ -688,14 +688,14 @@ export default {
                                 position: "top-center",
                             })
                         }
-                        else{
+                        else {
                             this.$toast({
-                            title: "No Campaigns",
-                            text: `No Campaigns Found`,
-                            icon: "x-circle",
-                            appearance: "denger",
-                            position: "top-center",
-                        })
+                                title: "No Campaigns",
+                                text: `No Campaigns Found`,
+                                icon: "x-circle",
+                                appearance: "denger",
+                                position: "top-center",
+                            })
                         }
                     }
                     // this.campaigns.push(res)

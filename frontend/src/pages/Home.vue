@@ -179,48 +179,54 @@
         <div class="mb-8">
             <div
               class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9] mt-2">
-              BestDeed
+              {{$t('BestDeed')}}
             </div>
             <h1
-              class="[text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
-              Most trusted crowd <br>funding platform of india.</h1>
+              class="mb-5 [text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
+              <!-- <span v-if="lang == 'gu'">ભારતનું સૌથી વિશ્વસનીય<br>ક્રાઉડફંડિંગ પ્લેટફોર્મ.</span>
+              <span v-else-if="lang == 'hi'">भारत का सबसे भरोसेमंद <br> क्राउडफंडिंग प्लेटफॉर्म।</span> -->
+              <span>{{$t('An Impactful Initiative by Sadbhavna Vrudhashram.')}}</span>
+              <!-- <span>{{$t('Most trusted crowdfunding')}} <br>{{$t('platform of india.')}}</span> -->
+              
+            </h1>
+            <!-- <span class="mt-5 [text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[20px] md:text-[25px] lg:text-[35px]">{{$t('Most trusted crowdfunding')}} <br>{{$t('platform of india.')}}</span> -->
 
               <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-0.svg" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
             <div
               class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Platform</div>
-              <div class="-mt-2">Fees</div>
+              <div>{{$t('Platform')}}</div>
+              <div class="-mt-2">{{$t("Fees")}}</div>
             </div>
           </div>
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-100.svg" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Donate With</div>
-              <div class="-mt-2">Transparency</div>
+              <div>{{$t('Donate With')}}</div>
+              <div class="-mt-2">{{$t('Transparency')}}</div>
             </div>
           </div><div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-verified.svg" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Verified</div>
-              <div class="-mt-2">NGOs</div>
+              <div>{{$t('Verified')}}</div>
+              <div class="-mt-2">{{$t('NGOs')}}</div>
             </div>
           </div>
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-tax.svg" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
             <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
-              <div>Tax</div>
-              <div class="-mt-2">Exemption</div>
+              <div>{{$t('Tax')}}</div>
+              <div class="-mt-2">{{$t('Exemption')}}</div>
             </div>
           </div>
         </div>
         <p
           class="[text-shadow:2px 2px 2px #c9c9c9] leading-[46px] mb-2 text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] break-keep">
-          Your help goes a long way!</p>
+          {{$t("Your help goes a long way!")}}</p>
         <router-link to="/explore-campaigns"
           class="bg-[#40b751] px-6 py-3 text-white rounded-full text-[18px] hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-          Support an NGOs </router-link>
+          {{$t('Support an NGOs')}} </router-link>
 
         </div>
 
@@ -757,7 +763,7 @@
                       campaigns[index - 1].donation_amount).toFixed(2) }}%</div>-->
 
                     <div v-if="campaigns[index - 1].raised_amount"
-                      class="bg-[#40b751] h-[5px] rounded bg-[#40b751] text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
+                      class="bg-[#40b751] h-[5px] rounded  text-xs font-medium text-grren-100 text-center p-0.5 leading-none rounded-md"
                       :style="{ width: campaigns[index - 1].raised_amount * 100 / campaigns[index - 1].donation_amount + '%' }">
                       <!--{{ (campaigns[index - 1].raised_amount * 100
                       /
@@ -831,39 +837,30 @@
           <div class="grid justify-items-center">
             <img class="" alt="Simple Process" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_easy_process.svg" />
-            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Easy process
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('Easy Process')}}
             </div>
-            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Donating to NGOs and
-              making an impact is quite easier with Best Deed. Within just 4 simple steps, you can make a move. </p>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('Donating to NGOs and making an impact is quite easier with Best Deed. Within just 4 simple steps, you can make a move.')}} </p>
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="100% transparency" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_end-to-end_transparency.svg" />
-            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">End-to-end
-              transparency
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('End-To-End Transparency')}}
             </div>
-            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">We maintain end-to-end
-              transparency of every donation we receive with our donors so that they can better track where and how we are
-              using it!</p>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('We maintain end-to-end transparency of every donation we receive with our donors so that they can better track where and how we are using it!')}}</p>
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="Fundraisers" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_fundraisers.svg" />
-            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Fundraisers for various causes
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('Fundraisers For Various Causes')}}
             </div>
-            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed has fundraisers for
-              a diverse range of causes, right, from education, environment, animals, etc., and you can select the one
-              that resonates with your values and passions.</p>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('Best Deed has fundraisers for a diverse range of causes, right, from education, environment, animals, etc., and you can select the one that resonates with your values and passions.')}}</p>
           </div>
           <div class="grid justify-items-center">
             <img class="lg:mt-10" alt="way to donate" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_multiple_ways_to_donate.svg" />
-            <div class="capitalize mt-2 mb-2 text-[#3f4640]  text-[16px] md:text-[16px] lg:text-[18px] font-bold">Multiple
-              Ways to Donate
+            <div class="capitalize mt-2 mb-2 text-[#3f4640]  text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('Multiple Ways To Donate')}}
             </div>
-            <p class="text-[#3f4640] lg:mb-10 text-center text-[14px] md:text-[14px] lg:text-[16px]"> Best Deed offers
-              flexibility when it comes to donating. Whether through monetary donations, donating through products, or
-              even volunteering, you can make a difference in any way possible.</p>
+            <p class="text-[#3f4640] lg:mb-10 text-center text-[14px] md:text-[14px] lg:text-[16px]"> {{$t('Best Deed offers flexibility when it comes to donating. Whether through monetary donations, donating through products, or even volunteering, you can make a difference in any way possible.')}}</p>
           </div>
           <div class="grid justify-items-center hidden md:block lg:block ">
             <img
@@ -873,38 +870,29 @@
           <div class="grid justify-items-center">
             <img class="lg:mt-10" alt="0 payments" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_hassle-free_payment.svg" />
-            <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">Hassle-free payment
+            <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('Hassle-Free Payment')}}
             </div>
-            <p class="text-[#3f4640] lg:mb-14 text-center text-[14px] md:text-[14px] lg:text-[16px]">When you choose the
-              products you want to donate, you can easily make the payment through your preferred payment mode and
-              currency. </p>
+            <p class="text-[#3f4640] lg:mb-14 text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('When you choose the products you want to donate, you can easily make the payment through your preferred payment mode and currency.')}} </p>
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="Plateform" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_trusted_platform.svg" />
-            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Trusted platform
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('Trusted Platform')}}
             </div>
-            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed is a trusted
-              and reliable crowdfunding platform backed with all the required certificates, licenses, permits, and a
-              robust security system. </p>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('Best Deed is a trusted and reliable crowdfunding platform backed with all the required certificates, licenses, permits, and a robust security system.')}} </p>
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="Smart" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_dashboard.svg" />
-            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">Smart
-              dashboard</div>
-            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">Best Deed believes in keeping
-              donors and NGOs updated with the donation received and paid with the help of a smart dashboard and real-time
-              alerts. </p>
+            <div class="capitalize mt-2 mb-2 text-[#3f4640] text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('Smart Dashboard')}}</div>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('Best Deed believes in keeping donors and NGOs updated with the donation received and paid with the help of a smart dashboard and real-time alerts.')}} </p>
           </div>
           <div class="grid justify-items-center">
             <img class="" alt="0 charges" title=""
               src="../../src/assets/Inter/img/icon_home_join_us_zero_charges.svg" />
-            <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">0% charges
+            <div class="capitalize text-[#3f4640] mt-2 mb-1 text-[16px] md:text-[16px] lg:text-[18px] font-bold">{{$t('0% Charges')}}
             </div>
-            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">At Best Deed, we do not charge
-              anything from the NGOs or donors while donating or starting a campaign. Donating or starting a campaign is
-              100% free.</p>
+            <p class="text-[#3f4640] text-center text-[14px] md:text-[14px] lg:text-[16px]">{{$t('At Best Deed, we do not charge anything from the NGOs or donors while donating or starting a campaign. Donating or starting a campaign is 100% free.')}}</p>
           </div>
         </div>
       </div>
@@ -1218,8 +1206,7 @@
     <!--Awards-->
     <section class="responsivesection bg-blueGray-100">
       <div class="container mx-auto h-full">
-
-        <div class="text-center mt-10">
+        <div class="mt-10">
           <h3 class="text-3xl font-black text-[#40b751] pt-12">{{ $t('Awards') }}</h3>
         </div>
         <div class="pb-16 ">
@@ -1235,10 +1222,9 @@
         </div>
         <div v-if="modalOpen" class="fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 flex justify-center items-center">
             <!-- The close button -->
-            <a class="fixed z-90 top-6 right-8 text-[#40b751] text-5xl font-bold" href="#" @click="closeModal">&times;</a>
-
+            <div class="cursor-pointer fixed z-90 top-6 right-8 text-[#40b751] text-5xl font-bold" @click="closeModal">&times;</div>
             <!-- A big image will be displayed here -->
-            <img class="max-w-[800px] max-h-[600px] object-cover" :src="modalImage" />
+            <img class="max-w-[600px] md:max-w-[400px] lg:max-w-[800px] max-h-[450px] md:max-h-[300px] lg:max-h-[600px] object-cover " :src="modalImage" />
     </div>
       </div>
     </section>
@@ -1255,9 +1241,7 @@ import { inject, provide, ref } from "vue";
 import Sliders from "../components/Sliders.vue";
 import Testimonials from "../components/Testimonials.vue";
 import { useRoute } from 'vue-router'
-
 import { useHead } from '@vueuse/head'
-
 // useHead({
 //   title: 'Website Title',
 //   meta: [
@@ -1321,6 +1305,7 @@ export default {
       start: 0,
       modalOpen: false,
       modalImage: ''
+      
     }
   },
   created() {
@@ -1431,6 +1416,7 @@ export default {
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber
     },
+
     showModal(url) {
       this.modalOpen = true;
       this.modalImage = url;
