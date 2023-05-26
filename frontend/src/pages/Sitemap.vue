@@ -52,7 +52,7 @@ export default {
             type: "PAYMENT_GATEWAY",
             parameters: {
               gateway: "example",
-              gatewayMerchantId: "exampleGatewayMerchantId",
+              gatewayMerchantId: "BCR2DN4T4SE6LFDF",
             },
           },
         },
@@ -77,7 +77,7 @@ export default {
       };
     },
   },
-  
+
 };
 </script>
 
