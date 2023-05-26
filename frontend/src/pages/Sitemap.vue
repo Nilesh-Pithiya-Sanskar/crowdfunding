@@ -86,11 +86,7 @@
     <Navbar />
 
 
-  <div> 
-    <button @click="startGooglePayPayment">Pay with Google Pay</button>
-  </div>
-
-  <google-pay-button
+   <google-pay-button
       environment="TEST"
       :button-color="buttonColor"
       :button-type="buttonType"
