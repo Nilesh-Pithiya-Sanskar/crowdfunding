@@ -84,6 +84,26 @@
   <!-- Header-->
   <main>
     <Navbar />
+
+
+  <div> 
+    <button @click="startGooglePayPayment">Pay with Google Pay</button>
+  </div>
+
+  <google-pay-button
+      environment="TEST"
+      :button-color="buttonColor"
+      :button-type="buttonType"
+      :button-size-mode="isCustomSize ? 'fill' : 'static'"
+      :paymentRequest.prop="paymentRequest"
+      @loadpaymentdata="onLoadPaymentData"
+      @error="onError"
+      :style="{ width: `${buttonWidth}px`, height: `${buttonHeight}px` }"
+    ></google-pay-button>
+
+
+
+
     <section
       class="grid items-center hidden md:block lg:block flex bg-cover bg-center sm:h-full md:h-[calc(100vh-8vh)] lg:h-[calc(100vh-16vh)] items-center"
       style="background-image: url('https://bestdeed.org/files/BG.png');">
@@ -1025,6 +1045,7 @@ import Footer from "../components/Footer.vue";
 import { inject, provide, ref } from "vue";
 import Sliders from "../components/Sliders.vue";
 import Testimonials from "../components/Testimonials.vue";
+import "@google-pay/button-element";
 import { useRoute } from 'vue-router'
 
 import { useHead } from '@vueuse/head'
@@ -1089,7 +1110,39 @@ export default {
       featured_campaigns: [],
       lang: this.get_language(),
       url: window.location.href,
-      start: 0
+      start: 0,
+
+      paymentRequest: {
+      apiVersion: 2,
+      apiVersionMinor: 0,
+      allowedPaymentMethods: [
+        {
+          type: "CARD",
+          parameters: {
+            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+            allowedCardNetworks: ["AMEX", "VISA", "MASTERCARD"]
+          },
+          tokenizationSpecification: {
+            type: "PAYMENT_GATEWAY",
+            parameters: {
+              gateway: "example",
+              gatewayMerchantId: "exampleGatewayMerchantId"
+            }
+          }
+        }
+      ],
+      merchantInfo: {
+        merchantId: "12345678901234567890",
+        merchantName: "Demo Merchant"
+      },
+      transactionInfo: {
+        totalPriceStatus: "FINAL",
+        totalPriceLabel: "Total",
+        totalPrice: "100.00",
+        currencyCode: "USD",
+        countryCode: "US"
+      }
+    }
     }
   },
   created() {
@@ -1191,6 +1244,12 @@ export default {
 
   },
   methods: {
+    onLoadPaymentData: event => {
+      console.log("load payment data", event.detail);
+    },
+    onError: event => {
+      console.error("error", event.error);
+    },
     get_language() {
       return this.$cookies.get('lang') || localStorage.getItem('lang')
     },
@@ -1298,7 +1357,27 @@ export default {
 
     redirect_to(url) {
       window.location.href = url
-    }
+    },
+
+    startGooglePayPayment() {
+      const paymentDataRequest = {
+      // ... payment request configuration ...
+    };
+
+    window.addEventListener('load', () => {
+      const paymentsClient = new google.payments.api.PaymentsClient({ environment: 'TEST' });
+
+      paymentsClient.loadPaymentData(paymentDataRequest)
+        .then(paymentData => {
+          // Process the payment data received from Google Pay
+          console.log(paymentData);
+        })
+        .catch(error => {
+          // Handle error
+          console.error(error);
+        });
+    });
+  },
 
   },
   // mounted(){
