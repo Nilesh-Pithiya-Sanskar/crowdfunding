@@ -27,7 +27,7 @@
                                 <label class="block text-gray-700 text-sm mb-2" for="">
                                     {{ $t('First Name') }} <span class="text-red-600">*</span>
                                 </label>
-                                <input v-model="first_name" type="text" placeholder="Enter First Name"
+                                <input v-model="first_name" type="text" :placeholder="$t('Enter First Name')"
                                     @keyup="firstNameError = ''" ref="first_name"
                                     class="appearance-none placeholder-gray-400 border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
                                 <p class="text-red-600">{{ $t(firstNameError) }}</p>
@@ -37,7 +37,7 @@
                                 <label class="block text-gray-700 text-sm mb-2" for="">
                                     {{ $t('Last Name') }}
                                 </label>
-                                <input v-model="last_name" type="text" placeholder="Enter Last Name"
+                                <input v-model="last_name" type="text" :placeholder="$t('Enter Last Name')"
                                     class="appearance-none placeholder-gray-400 border-gray-300  hover:border-[#40b751] focus:text-black focus:font-semibold  rounded w-full py-2 px-3 text-grey-darker">
                             </div>
                         </div>
@@ -45,7 +45,8 @@
                             <label class="block text-gray-700 text-sm mb-2" for="">
                                 {{ $t('Phone Number') }} <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="phone" type="tel" placeholder="Enter Phone Number" @keyup="phoneError = ''"
+                            <input v-model="phone" type="tel" :placeholder="$t('Enter Phone Number')"
+                                @keyup="phoneError = ''"
                                 class="form-control block placeholder-gray-400 hover:border-[#40b751] placeholder-gray-400 w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
                             <p class="text-red-600">{{ $t(phoneError) }}</p>
                         </div>
@@ -53,7 +54,7 @@
                             <label class="block text-gray-700 text-sm mb-2" for="">
                                 {{ $t('Email') }} <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="email_id" type="email" placeholder="Enter Email" @keyup="emailError = ''"
+                            <input v-model="email_id" type="email" :placeholder="$t('Enter Email')" @keyup="emailError = ''"
                                 class="form-control placeholder-gray-400 block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
                             <p class="text-red-600">{{ $t(emailError) }}</p>
                         </div>
@@ -62,7 +63,8 @@
                             <label class="block text-gray-700 text-sm mb-2" for="">
                                 {{ $t('Subject') }} <span class="text-red-600">*</span>
                             </label>
-                            <input v-model="subject" type="text" placeholder="Enter Subject" @keyup="subjectError = ''"
+                            <input v-model="subject" type="text" :placeholder="$t('Enter Subject')"
+                                @keyup="subjectError = ''"
                                 class="form-control placeholder-gray-400 block hover:border-[#40b751] w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none">
                             <p class="text-red-600">{{ $t(subjectError) }}</p>
                         </div>
@@ -71,7 +73,7 @@
                             <label class="block text-gray-700 text-sm mb-2" for="">
                                 {{ $t('Message') }}
                             </label>
-                            <textarea v-model="message" placeholder="Enter Message"
+                            <textarea v-model="message" :placeholder="$t('Enter Message')"
                                 class="hover:border-[#40b751] placeholder-gray-400 form-control block w-full px-3 py-5 text-base font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-black focus:font-semibold focus:bg-white focus:border-indigo-600 focus:outline-none"
                                 rows="3"></textarea>
                         </div>
@@ -105,12 +107,33 @@
                             <p class="cursor-pointer text-[#40b751]">bestdeed2023@gmail.com</p>
                         </a>
                         <div class="flex">
-                        <div class="float-left  grid justify-items-center mr-2">
-                            <img class="" src="../../src/assets/Inter/img/bank-round-icon.svg" />
-                        </div>
-                        <p class="text-[#40b751]">Name: Manav Seva Charitable Trust <br> Bank: IDFC FIRST Bank <br> A/C No: 10046308440<br>
-                            IFSC
-                            Code: IDFB0042421<br> Branch: Rajkot</p>
+                            <div class="float-left  grid justify-items-center mr-2">
+                                <img class="" src="../../src/assets/Inter/img/bank-round-icon.svg" />
+                            </div>
+                            <p class="text-[#40b751]">
+                                <span v-if="lang == 'gu'">
+                                    નામ: માનવ સેવા ચેરીટેબલ ટ્રસ્ટ
+                                    <br> બેંક: IDFC FIRST Bank
+                                    <br> A/C નંબર: 10046308440
+                                    <br> IFSC કોડ: IDFB0042421
+                                    <br> શાખા: રાજકોટ
+                                </span>
+                                <span v-else-if="lang == 'hi'">
+                                    नाम: मानव सेवा चैरिटेबल ट्रस्ट
+                                    <br> बैंक: आईडीएफसी फर्स्ट बैंक
+                                    <br> ए/सी नंबर: 10046308440
+                                    <br> IFSC कोड: IDFB0042421
+                                    <br> शाखा: राजकोट
+                                </span>
+                                <span v-else>
+                                    Name: Manav Seva Charitable Trust
+                                    <br> Bank: IDFC FIRST Bank
+                                    <br> A/C No: 10046308440
+                                    <br> IFSC Code: IDFB0042421
+                                    <br> Branch: Rajkot
+                                </span>
+
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -588,29 +611,29 @@ export default {
 
 
             if (!this.first_name) {
-                this.firstNameError = 'Enter first name'
+                this.firstNameError = this.$t('Enter first name')
 
             }
             if (!this.subject) {
-                this.subjectError = 'Enter subject'
+                this.subjectError = this.$t('Enter subject')
 
             }
 
             if (this.phone == '') {
-                this.phoneError = 'Enter phone number'
+                this.phoneError = this.$t('Enter phone number')
                 console.log('phone number')
             }
             else if (this.phone && phone.test(this.phone) == false) {
-                this.phoneError = 'Enter valid phone number'
+                this.phoneError = this.$t('Enter valid phone number')
                 console.log('phone')
             }
             if (!this.email_id) {
-                this.emailError = 'Enter email'
+                this.emailError = this.$t('Enter email')
 
             }
             else if (re.test(this.email_id) == false) {
 
-                this.emailError = 'Enter valid email'
+                this.emailError = this.$t('Enter valid email')
 
                 console.log('email')
             }

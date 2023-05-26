@@ -20,7 +20,7 @@
                                     <input
                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                         v-model="first_name" @keyup="firstNameError = ''" type="text"
-                                        placeholder="Enter First Name" required ref="first_name">
+                                        :placeholder="$t('Enter First Name')" required ref="first_name">
                                     <p class="text-red-600">{{ $t(firstNameError) }}</p>
                                 </div>
                                 <div class="mb-4">
@@ -29,7 +29,7 @@
                                     <input
                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                         v-model="last_name" @keyup="firstNameError = ''" type="text"
-                                        placeholder="Enter Last Name" required>
+                                        :placeholder="$t('Enter Last Name')" required>
                                     <p class="text-red-600">{{ $t(lastNameError) }}</p>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                                     <span class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="email" type="email" @keyup="emailError = ''" placeholder="Enter Email"
+                                    v-model="email" type="email" @keyup="emailError = ''" :placeholder="$t('Enter Email')"
                                     required>
                                 <p class="text-red-600">{{ $t(emailError) }}</p>
                             </div>
@@ -48,7 +48,7 @@
                                 <input
                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                     v-model="password" type="password" @keyup="passwordError = ''"
-                                    placeholder="Enter Password" required>
+                                    :placeholder="$t('Enter Password')" required>
                                 <p class="text-red-600">{{ $t(passwordError) }}</p>
                             </div>
                             <div class="mb-4">
@@ -57,7 +57,7 @@
                                 <input
                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                     v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
-                                    placeholder="Enter Confirm Password" required>
+                                    :placeholder="$t('Enter Confirm Password')" required>
                                 <p class="text-red-600">{{ $t(confirmPasswordError) }}</p>
                             </div>
                             <div class="mb-4">
@@ -66,7 +66,7 @@
                                 <input
                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                     v-model="phone_number" type="tel" @keyup="phoneNumberError = ''"
-                                    placeholder="Enter Phone Number" required>
+                                    :placeholder="$t('Enter Phone Number')" required>
                                 <p class="text-red-600">{{ $t(phoneNumberError) }}</p>
                             </div>
                             <div class="mb-4">
@@ -74,8 +74,8 @@
                                         class="text-red-600">*</span></label>
                                 <input
                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                    v-model="pan_number" type="text" @keyup="panError = ''" placeholder="Enter PAN Number"
-                                    required>
+                                    v-model="pan_number" type="text" @keyup="panError = ''"
+                                    :placeholder="$t('Enter PAN Number')" required>
                                 <p class="text-red-600">{{ $t(panError) }}</p>
                             </div>
                             <div class="flex items-center justify-between mt-8">
@@ -431,10 +431,10 @@ export default {
                 onSuccess: (res) => {
                     console.log("res", res)
                     if (res == 'This email is already registered') {
-                        this.emailError = 'This email is already registered'
+                        this.emailError = this.$t('This email is already registered')
                     }
                     else if (res == 'This phone number is already registered') {
-                        this.phoneNumberError = 'This phone number is already registered'
+                        this.phoneNumberError = this.$t('This phone number is already registered')
                     }
                     else {
                         if (confirm("your registration is successfully now you can login") == true) {
@@ -496,43 +496,43 @@ export default {
             //     // return true;
             // }
             if (this.first_name == '') {
-                this.firstNameError = 'Enter first name'
+                this.firstNameError = this.$t('Enter first name')
             }
             if (this.last_name == '') {
-                this.lastNameError = 'Enter last name'
+                this.lastNameError = this.$t('Enter last name')
             }
             if (this.email == '') {
-                this.emailError = 'Enter email'
+                this.emailError = this.$t('Enter email')
             }
             else if (email.test(this.email) == false && this.email) {
-                this.emailError = 'Enter valid email'
+                this.emailError = this.$t('Enter valid email')
                 console.log('email')
             }
             if (this.password == '') {
-                this.passwordError = 'Enter password'
+                this.passwordError = this.$t('Enter password')
             }
             else if (this.password && pw.test(this.password) == false) {
-                this.passwordError = 'Enter strong password, minimum eight characters, at least one letter, one number and one special character'
+                this.passwordError = this.$t('Enter strong password, minimum eight characters, at least one letter, one number and one special character')
                 console.log('pw')
             }
             if (this.conform_password == '') {
-                this.confirmPasswordError = 'Enter confirm password'
+                this.confirmPasswordError = this.$t('Enter confirm password')
             }
             if (this.conform_password != this.password) {
-                this.confirmPasswordError = 'Your password is not match'
+                this.confirmPasswordError = this.$t('Your password is not match')
             }
             if (this.phone_number == '') {
-                this.phoneNumberError = 'Enter phone'
+                this.phoneNumberError = this.$t('Enter phone number')
             }
             else if (this.phone_number && phone.test(this.phone_number) == false) {
-                this.phoneNumberError = 'Enter valid phone number'
+                this.phoneNumberError = this.$t('Enter valid phone number')
                 console.log('phone')
             }
             if (this.pan_number == '') {
-                this.panError = 'Enter PAN number'
+                this.panError = this.$t('Enter PAN number')
             }
             else if (this.pan_number && pan.test(this.pan_number) == false) {
-                this.panError = 'Enter valid PAN number'
+                this.panError = this.$t('Enter valid PAN number')
                 console.log('PAN')
             }
             else {

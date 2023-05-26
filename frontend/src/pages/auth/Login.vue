@@ -16,7 +16,7 @@
             </h1>
             <form>
               <div class=" w-full mb-3">
-                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                <label class="block  text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
                   {{ $t('Email') }} <span class="text-red-600">*</span>
                 </label>
                 <input v-model="email" @keyup="emailError = ''" type="email" @keyup.enter="login"
@@ -25,8 +25,8 @@
                 <p class="text-red-600">{{ emailError }}</p>
               </div>
               <div class=" w-full mb-3">
-                <label class="block uppercase text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
-                  {{ $t('Password ') }}<span class="text-red-600">*</span>
+                <label class="block  text-blueGray-600 text-sm font-bold mb-2" htmlFor="grid-password">
+                  {{ $t('Password') }}<span class="text-red-600">*</span>
                 </label>
                 <input v-model="password" type="password" @keyup.enter="login"
                   class="placeholder-blueGray-300 appearance-none border-gray-300 text-sm hover:border-[#40b751] focus:text-black focus:font-semibold rounded w-full py-2 px-3 ease-linear transition-all duration-150"
@@ -322,6 +322,12 @@ import Footer from "../../components/Footer.vue";
 export default {
   name: "Login",
   components: { Navbar, Footer },
+  setup() {
+    const user = inject("user")
+    return {
+      user,
+    }
+  },
   data() {
     return {
       // github,
@@ -335,6 +341,9 @@ export default {
     };
   },
   created() {
+    if (this.user.isLoggedIn()) {
+      this.$router.push('/')
+    }
     document.title = this.$t('Login Now | BestDeed')
     const linkElement = document.querySelector('link[rel="canonical"]');
     if (!linkElement) {
@@ -370,7 +379,7 @@ export default {
         onError: (error) => {
           this.$toast({
             title: "Error",
-            text: "User Name or Password Incorrect",
+            text: this.$t("User Name or Password Incorrect"),
             icon: "x-circle",
             appearance: "denger",
             position: "top-center",
@@ -428,7 +437,7 @@ export default {
             console.log("mail send")
             this.$toast({
               title: "Mail Sent",
-              text: 'forgot password mail is sent open link to set password',
+              text: this.$t('forgot password mail is sent open link to set password'),
               icon: "right",
               position: "top-center",
 
@@ -450,13 +459,13 @@ export default {
       }
       else if (this.email == '') {
         // this.email_id == this.error
-        this.emailError = 'Please enter email!'
+        this.emailError = this.$t('Please enter email!')
         this.error = true
         console.log('email')
       }
       else if (this.password == '') {
         // this.email_id == this.error
-        this.passwordError = 'Please enter password!'
+        this.passwordError = this.$t('Please enter password!')
         this.error = true
         console.log('password')
       }
@@ -565,10 +574,10 @@ export default {
     forgotPassword() {
       var email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (this.email == '') {
-        this.emailError = 'Please enter email'
+        this.emailError = this.$t('Please enter email!')
       }
       else if (email.test(this.email) == false && this.email) {
-        this.emailError = 'Please enter valid email'
+        this.emailError = this.$t('Please enter valid email!')
       }
       else {
         this.$resources.forgotPassword.submit({

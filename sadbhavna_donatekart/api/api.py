@@ -868,3 +868,88 @@ def remove_sitemap_for_blog(doc, method):
     # Save the updated XML to a file
     tree.write(xml_file_path, encoding='utf-8')
     
+
+
+#   Google Pay Integration
+
+
+
+@frappe.whitelist(allow_guest=True)
+def google_pay():
+
+    print("\n\n calledqqqq \n\n")
+
+    import google.auth
+    from google.auth.transport.requests import Request
+    from google.oauth2 import service_account
+
+    credentials = service_account.Credentials.from_service_account_file(
+        '../apps/sadbhavna_donatekart/sadbhavna_donatekart/www/service-account-key.json',
+        scopes=['https://www.googleapis.com/auth/payment']
+    )
+    # Check if the credentials need to be refreshed
+    if credentials.expired and credentials.refresh_token:
+        credentials.refresh(Request())
+
+
+    import google.auth
+    import google.auth.transport.requests
+    import requests
+    import json
+
+    # Set up the payment request
+    payment_request = {
+        'apiVersion': 2,
+        'apiVersionMinor': 0,
+        'allowedPaymentMethods': [
+            {
+                'type': 'CARD',
+                'parameters': {
+                    'allowedAuthMethods': ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                    'allowedCardNetworks': ['AMEX', 'DISCOVER', 'INTERAC', 'JCB',
+                                        'MASTERCARD', 'VISA']
+                },
+                'tokenizationSpecification': {
+                    'type': 'PAYMENT_GATEWAY',
+                    'parameters': {
+                        'gateway': 'example',
+                        'gatewayMerchantId': 'BCR2DN4T4SE6LFDF'
+                    }
+                }
+            }
+        ],
+        'merchantInfo': {
+            'merchantId': 'BCR2DN4T4SE6LFDF',
+            'merchantName': 'Your Merchant Name'
+        },
+        'transactionInfo': {
+            'currencyCode': 'INR',
+            'totalPriceStatus': 'FINAL',
+            'totalPrice': '1.00'
+        }
+    }
+
+    # Send the payment request
+    request = google.auth.transport.requests.Request()
+    response = requests.post(
+        'https://payments.google.com/payments/api/paymentmethodtokenizationv1/paymentMethodTokenize',
+        headers={'Content-Type': 'application/json'},
+        data=json.dumps(payment_request),
+        auth=request.authorize(credentials)
+    )
+
+    # Handle the payment response
+    if response.status_code == 200:
+        payment_response = response.json()
+        # Extract the payment token from the response
+        payment_token = payment_response['paymentMethodToken']['token']
+
+        print("\n\n payment_response", payment_token, "\n\n")
+
+        # Process the payment token or save it for later use
+    else:
+        # Handle the error response
+        print("\n\n else part \n\n")
+        error_message = response.text
+        print("\n\n payment_response", error_message, "\n\n")
+

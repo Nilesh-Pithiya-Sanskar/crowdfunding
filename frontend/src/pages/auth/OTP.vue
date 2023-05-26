@@ -181,15 +181,15 @@ export default {
                         this.showDialog = true
                     }
                     else {
-                        var route = this.$cookies.get('route');
-                        console.log("route", route)
-                        if (route != null) {
-                            this.$router.go(-2)
-                            // this.$router.push(route)
-                        }
-                        else {
-                            this.$router.push(`/`);
-                        }
+                        // var route = this.$cookies.get('route');
+                        // console.log("route", route)
+                        // if (route != null) {
+                        //     this.$router.go(-2)
+                        //     // this.$router.push(route)
+                        // }
+                        // else {
+                        this.$router.push(`/`);
+                        // }
                     }
                     // console.log("verified", res)
                     // this.$router.push('/bestdeed')

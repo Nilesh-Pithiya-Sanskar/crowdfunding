@@ -38,7 +38,7 @@
                                                     $t('FullName') }} <span class="text-red-600">*</span></label>
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    placeholder="Enter Full Name" @keyup="fullNameError = ''"
+                                                    :placeholder="$t('Enter Full Name')" @keyup="fullNameError = ''"
                                                     v-model="full_name" type="text" ref="fullname">
                                                 <p class="text-red-600">{{ fullNameError }}</p>
                                             </div>
@@ -52,7 +52,8 @@
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 rounded w-full py-2 px-3 hover:border-[#40b751] text-grey-darker"
                                                         type="text" @keyup="organizationNameError = ''"
-                                                        placeholder="Enter Organisation Name" v-model="organisation_name">
+                                                        :placeholder="$t('Enter Organisation Name')"
+                                                        v-model="organisation_name">
                                                     <p class="text-red-600">{{ organizationNameError }}</p>
                                                 </div>
                                                 <div class="mb-2 md:mb-4 lg:mb-6">
@@ -60,7 +61,7 @@
                                                         class="block text-gray-600 text-base  mb-2">{{ $t('Organisation Website') }}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" placeholder="Enter Organisation Website"
+                                                        type="text" :placeholder="$t('Enter Organisation Website')"
                                                         v-model="organisation_website">
                                                 </div>
                                             </div>
@@ -71,8 +72,8 @@
                                                         {{ $t('Phone Number') }} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="tel" @keyup="phoneError = ''" placeholder="Enter Phone Number"
-                                                        v-model="phone">
+                                                        type="tel" @keyup="phoneError = ''"
+                                                        :placeholder="$t('Enter Phone Number')" v-model="phone">
                                                     <p class="text-red-600">{{ phoneError }}</p>
                                                 </div>
                                                 <div class="mb-2 md:mb-4 lg:mb-6">
@@ -80,8 +81,8 @@
                                                         <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="email" @keyup="emailError = ''" placeholder="Enter Email"
-                                                        v-model="email">
+                                                        type="email" @keyup="emailError = ''"
+                                                        :placeholder="$t('Enter Email')" v-model="email">
                                                     <p class="text-red-600">{{ emailError }}</p>
                                                 </div>
                                                 <div class="mb-2 md:mb-4 lg:mb-4">
@@ -89,7 +90,7 @@
                                                         {{ $t('Social Media Page') }}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" placeholder="Enter Social Media Page"
+                                                        type="text" :placeholder="$t('Enter Social Media Page')"
                                                         v-model="social_media_page">
 
                                                 </div>
@@ -114,7 +115,7 @@
                                                     <textarea id="comment" @keyup="campaignStoryError = ''" rows="4"
                                                         v-model="campaign_story"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
-                                                        placeholder="Enter Campaign Story"></textarea>
+                                                        :placeholder="$t('Enter Campaign Story')"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryError }}</p>
                                                 </div>
                                                 <div class="mb-2 md:mb-4 lg:mb-6">
@@ -124,7 +125,7 @@
                                                     <textarea id="comment" rows="4" @keyup="beneficiaryGroupError = ''"
                                                         v-model="beneficiary_group"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
-                                                        placeholder="Enter Beneficiary Group"></textarea>
+                                                        :placeholder="$t('Enter Beneficiary Group')"></textarea>
 
                                                     <p class="text-red-600">{{ beneficiaryGroupError }}</p>
                                                 </div>
@@ -143,7 +144,7 @@
                                                     $t('FullName') }} <span class="text-red-600">*</span></label>
                                                 <input
                                                     class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                    placeholder="Enter Full Name" @keyup="fullNameErrorig = ''"
+                                                    :placeholder="$t('Enter Full Name')" @keyup="fullNameErrorig = ''"
                                                     v-model="full_nameig" type="text" ref="fullname">
                                                 <p class="text-red-600">{{ fullNameErrorig }}</p>
                                             </div>
@@ -154,7 +155,7 @@
                                                         {{ $t('Phone Number') }} <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="tel" placeholder="Enter Phone Number"
+                                                        type="tel" :placeholder="$t('Enter Phone Number')"
                                                         @keyup="phoneErrorig = ''" v-model="phoneig">
                                                     <p class="text-red-600">{{ phoneErrorig }}</p>
                                                 </div>
@@ -163,8 +164,8 @@
                                                         <span class="text-red-600">*</span></label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="email" @keyup="emailErrorig = ''" placeholder="Enter Email"
-                                                        v-model="emailig">
+                                                        type="email" @keyup="emailErrorig = ''"
+                                                        :placeholder="$t('Enter Email')" v-model="emailig">
                                                     <p class="text-red-600">{{ emailErrorig }}</p>
                                                 </div>
                                                 <div class="mb-2 md:mb-4 lg:mb-6">
@@ -172,7 +173,7 @@
                                                         {{ $t('Social Media Page') }}</label>
                                                     <input
                                                         class="appearance-none border-gray-300 placeholder-gray-400 hover:border-[#40b751] rounded w-full py-2 px-3 text-grey-darker"
-                                                        type="text" placeholder="Enter Social Media Page"
+                                                        type="text" :placeholder="$t('Enter Social Media Page')"
                                                         v-model="social_media_pageig">
 
                                                 </div>
@@ -186,7 +187,7 @@
                                                     <textarea id="comment" rows="4" @keyup="campaignStoryErrorig = ''"
                                                         v-model="campaign_storyig"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
-                                                        placeholder="Enter Campaign Story"></textarea>
+                                                        :placeholder="$t('Enter Campaign Story')"></textarea>
                                                     <p class="text-red-600">{{ campaignStoryErrorig }}</p>
                                                 </div>
                                                 <div class="mb-2 md:mb-4 lg:mb-6">
@@ -196,7 +197,7 @@
                                                     <textarea id="comment" rows="4" @keyup="beneficiaryGroupErrorig = ''"
                                                         v-model="beneficiary_groupig"
                                                         class="hover:border-[#40b751] w-full py-2 px-3 placeholder-gray-400 text-gray-900 bg-white border-1 border-gray-300  focus:ring-0 dark:text-white dark:placeholder-gray-600"
-                                                        placeholder="Enter Beneficiary Group"></textarea>
+                                                        :placeholder="$t('Enter Beneficiary Group')"></textarea>
 
                                                     <p class="text-red-600">{{ beneficiaryGroupErrorig }}</p>
                                                 </div>
@@ -1071,39 +1072,39 @@ export default {
             this.campaign_type = 'NGO'
             {
 
-                console.log("asdfadsf", this.fcra_registered)
+                // console.log("asdfadsf", this.fcra_registered)
                 if (this.full_name == '') {
-                    this.fullNameError = 'Enter full name'
+                    this.fullNameError = this.$t('Enter full name')
                     // console.log('full name')
                 }
                 if (this.organisation_name == '') {
-                    this.organizationNameError = 'Enter organisation name'
+                    this.organizationNameError = this.$t('Enter organisation name')
                     // console.log('org name')
                 }
 
                 if (this.campaign_story == '') {
-                    this.campaignStoryError = 'Enter campaign story'
+                    this.campaignStoryError = this.$t('Enter campaign story')
                     // console.log('story')
                 }
 
                 if (this.beneficiary_group == '') {
-                    this.beneficiaryGroupError = 'Enter beneficiary group name'
+                    this.beneficiaryGroupError = this.$t('Enter beneficiary group name')
                     // console.log('group')
                 }
                 if (this.email == '') {
-                    this.emailError = 'Enter email'
+                    this.emailError = this.$t('Enter email')
                     // console.log('email id')
                 }
                 else if (email.test(this.email) == false && this.email) {
-                    this.emailError = 'Enter valid email'
+                    this.emailError = this.$t('Enter valid email')
                     // console.log('email')
                 }
                 if (this.phone == '') {
-                    this.phoneError = 'Enter phone number'
+                    this.phoneError = this.$t('Enter phone number')
                     // console.log('phone number')
                 }
                 else if (this.phone && phone.test(this.phone) == false) {
-                    this.phoneError = 'Enter valid phone number'
+                    this.phoneError = this.$t('Enter valid phone number')
                     // console.log('phone')
                 }
                 // if (this.fcra_registered != '0' || this.fcra_registered != '1') {
@@ -1223,36 +1224,36 @@ export default {
             this.campaign_typeig = 'Indivisual/Group'
             {
                 if (this.full_nameig == '') {
-                    this.fullNameErrorig = 'Enter full name'
+                    this.fullNameErrorig = this.$t('Enter full name')
                     console.log('full name')
                 }
                 if (this.organisation_nameig == '') {
-                    this.organizationNameErrorig = 'Enter organisation name'
+                    this.organizationNameErrorig = this.$t('Enter organisation name')
                     console.log('org name')
                 }
                 if (this.campaign_storyig == '') {
-                    this.campaignStoryErrorig = 'Enter campaign story'
+                    this.campaignStoryErrorig = this.$t('Enter campaign story')
                     console.log('story')
                 }
 
                 if (this.beneficiary_groupig == '') {
-                    this.beneficiaryGroupErrorig = 'Enter beneficiary group name'
+                    this.beneficiaryGroupErrorig = this.$t('Enter beneficiary group name')
                     console.log('group')
                 }
                 if (this.emailig == '') {
-                    this.emailErrorig = 'Enter email'
+                    this.emailErrorig = this.$t('Enter email')
                     console.log('email id')
                 }
                 else if (emailig.test(this.emailig) == false && this.emailig) {
-                    this.emailErrorig = 'Enter valid email'
+                    this.emailErrorig = this.$t('Enter valid email')
                     console.log('email')
                 }
                 if (this.phoneig == '') {
-                    this.phoneErrorig = 'Enter phone number'
+                    this.phoneErrorig = this.$t('Enter phone number')
                     console.log('phone number')
                 }
                 else if (this.phoneig && phoneig.test(this.phoneig) == false) {
-                    this.phoneErrorig = 'Enter valid phone number'
+                    this.phoneErrorig = this.$t('Enter valid phone number')
                     console.log('phone')
                 }
                 else {

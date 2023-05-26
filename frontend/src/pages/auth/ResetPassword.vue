@@ -1,5 +1,5 @@
 <template>
-    <Navbar/>
+    <Navbar />
     <div class="container mx-auto h-full pb-[48px]">
         <!-- <div class="absolute bg-bottom bg-x-center bg-y-bottom bg-no-repeat z-1 top-96 sm:h-0 md:h-0 lg:h-0 xl:h-[630px] sm:w-0 md:w-0 lg:w-0 xl:w-96 sm:right-0 md:right-5 lg:right-16 bg-no-repeat opacity-40 bg-white bg-contain bg-no-repeat"
             style=" background-image: url('https://crowdfunding.frappe.cloud/files/bg-tree.png'); ">
@@ -17,8 +17,8 @@
                                     class="text-red-600">*</span></label>
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                                v-model="password" type="password" @keyup="passwordError = ''" placeholder="Password"
-                                required ref="password">
+                                v-model="password" type="password" @keyup="passwordError = ''"
+                                :placeholder="$t('Enter Password')" required ref="password">
                             <p class="text-red-600">{{ $t(passwordError) }}</p>
                         </div>
                         <div class="mb-4">
@@ -27,7 +27,7 @@
                             <input
                                 class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
                                 v-model="conform_password" type="password" @keyup="confirmPasswordError = ''"
-                                placeholder="Confirm password" required>
+                                :placeholder="$t('Enter Confirm Password')" required>
                             <p class="text-red-600">{{ $t(confirmPasswordError) }}</p>
                         </div>
                         <div class="flex items-center justify-between mt-8">
@@ -53,34 +53,34 @@
 import Navbar from '../../components/Navbar.vue';
 import Footer from '../../components/Footer.vue';
 import { useRoute } from 'vue-router';
-export default{
+export default {
     name: "Reset Password",
-    components:{
+    components: {
         Navbar,
         Footer,
     },
-    created(){
+    created() {
         const name = useRoute();
-        document.title = this.$t('Reset Password')+' '+ name.params.email
+        document.title = this.$t('Reset Password') + ' ' + name.params.email
         this.email = name.params.email,
-        this.key = name.params.key
+            this.key = name.params.key
         const linkElement = document.querySelector('link[rel="canonical"]');
-    if (!linkElement) {
-      var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/reset-password"
-    document.head.appendChild(link);
-    }
-    else{
-      linkElement.href = "https://bestdeed.org/reset-password"
-      document.head.appendChild(linkElement)
-    }
+        if (!linkElement) {
+            var link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = "https://bestdeed.org/reset-password"
+            document.head.appendChild(link);
+        }
+        else {
+            linkElement.href = "https://bestdeed.org/reset-password"
+            document.head.appendChild(linkElement)
+        }
     },
-    mounted(){
+    mounted() {
         this.$nextTick(() => this.$refs.password.focus())
     },
-    data(){
-        return{
+    data() {
+        return {
             email: '',
             key: '',
             password: '',
@@ -89,45 +89,45 @@ export default{
             confirmPasswordError: '',
         }
     },
-    resources:{
-        resetPassword(){
+    resources: {
+        resetPassword() {
             return {
                 method: 'sadbhavna_donatekart.api.api.reset_password',
                 onSuccess: (res) => {
-                    if(res == 'Your key is not valid'){
+                    if (res == 'Your key is not valid') {
                         conform_passwordError = res
                     }
-                    else{
+                    else {
                         this.$router.push('/')
                     }
                 },
-                onError: (error) =>{
+                onError: (error) => {
                     console.log("error", error)
                 }
             }
         }
     },
-    methods:{
-        resetPassword(){
+    methods: {
+        resetPassword() {
             var pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
             if (this.password == '') {
-                this.passwordError = 'Please enter password'
+                this.passwordError = this.$t('Please enter password!')
             }
             else if (this.password && pw.test(this.password) == false) {
-                this.passwordError = 'Please enter strong password, minimum eight characters, at least one letter, one number and one special character'
+                this.passwordError = this.$t('Please enter strong password, minimum eight characters, at least one letter, one number and one special character')
             }
             if (this.conform_password == '') {
-                this.confirmPasswordError = 'Please enter confirm password'
+                this.confirmPasswordError = this.$t('Please enter confirm password')
             }
             else if (this.conform_password != this.password) {
-                this.confirmPasswordError = 'Your password is not match'
+                this.confirmPasswordError = this.$t('Your password is not match')
             }
-            else{
+            else {
                 this.$resources.resetPassword.submit({
                     email: this.email,
                     password: this.password,
                     key: this.key
-                })  
+                })
             }
         }
     }

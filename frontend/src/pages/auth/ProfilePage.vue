@@ -278,9 +278,9 @@
                         <form>
                           <div class="">
                             <div v-if="!edit_profile" class="text-center">
-                              <h3 class="text-3xl font-semibold leading-normal mb-2 text-blueGray-700">
+                              <h1 class="text-3xl font-semibold leading-normal mb-2 text-blueGray-700">
                                 {{ user_data.data.full_name }}
-                              </h3>
+                              </h1>
                               <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                                 <div>{{ user_data.data.email }}</div>
                                 <div>{{ user_data.data.phone }}</div>
@@ -294,13 +294,13 @@
                                   <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">
                                     {{ $t('First Name') }}</label>
                                   <input class="appearance-none form-control block border rounded w-full text-grey-darker"
-                                    v-model="first_name" placeholder="Your first name" type="text" required />
+                                    v-model="first_name" :placeholder="$t('Your first name')" type="text" required />
                                 </div>
                                 <div>
                                   <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">
                                     {{ $t('Last Name') }}</label>
                                   <input class="appearance-none border form-control block rounded w-full text-grey-darker"
-                                    v-model="last_name" type="text" placeholder="Your last name" required />
+                                    v-model="last_name" type="text" :placeholder="$t('Your last name')" required />
                                 </div>
                               </div>
                               <!-- </div> -->
@@ -318,14 +318,14 @@
                                   {{ $t('Phone Number') }} <span class="text-red-600">*</span></label>
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
-                                  v-model="phone" type="number" placeholder="Your phone number" required />
+                                  v-model="phone" type="number" :placeholder="$t('Your phone number')" required />
                               </div>
                               <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
                                 <label class="block text-grey-darker text-sm font-bold mb-2" for="pan number">
                                   {{ $t('Pan Number') }}</label>
                                 <input class="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
                                   v-model="pan_number" ref="pan" type="text" @keyup="errorPancard = ''"
-                                  placeholder="Your pan number" required>
+                                  :placeholder="$t('Your pan number')" required>
                                 <p class="text-red-600">{{ $t(errorPancard) }}</p>
                               </div>
                               <div class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
@@ -334,7 +334,7 @@
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   type="password" v-model="password" @keyup="errorMessagePassword = ''"
-                                  placeholder="Enter New Password" />
+                                  :placeholder="$t('Enter New Password')" />
                                 <p class="text-red-600">{{ $t(errorMessagePassword) }}</p>
                               </div>
                               <div v-if="password != ''" class="mb-4 lg:mr-8 sm:ml-0 lg:ml-8 sm:ml-0">
@@ -343,7 +343,7 @@
                                 <input
                                   class="appearance-none border form-control block rounded w-full py-2 text-grey-darker"
                                   type="password" v-model="confirmPassword" @keyup="errorMessageConfirmPassword = ''"
-                                  placeholder="Enter Again Password" required />
+                                  :placeholder="$t('Enter Again Password')" required />
                                 <p class="text-red-600">{{ $t(errorMessageConfirmPassword) }}</p>
                               </div>
 
@@ -425,32 +425,33 @@
                             </thead>
                             <tbody v-for="index in donationToShow">
                               <!-- <div >         -->
-                                <tr v-if="index - 1 < totalDonation"
-                                  class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                  <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                    {{ donation_details[index - 1].name }}
-                                  </td>
-                                  <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                    {{ donation_details[index - 1].amount }}
-                                  </td>
-                                  <td class="text-sm text-gray-900 font-light px-6 py-4">
-                                    {{ formattedDate(donation_details[index - 1].date) }}
-                                  </td>
-                                  <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"> {{ donation.mode_of_payment }}</td> -->
-                                  <td class="text-sm text-gray-900 font-light px-6 py-4 cursor-pointer" @click="
-                                    download_80g(donation_details[index - 1].name, donation_details[index - 1].date)">
-                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> -->
-                                    {{ $t('Download') }}
-                                  </td>
-                                </tr>
+                              <tr v-if="index - 1 < totalDonation"
+                                class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
+                                  {{ donation_details[index - 1].name }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
+                                  {{ donation_details[index - 1].amount }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4">
+                                  {{ formattedDate(donation_details[index - 1].date) }}
+                                </td>
+                                <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"> {{ donation.mode_of_payment }}</td> -->
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 cursor-pointer" @click="
+                                  download_80g(donation_details[index - 1].name, donation_details[index - 1].date)">
+                                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> -->
+                                  {{ $t('Download') }}
+                                </td>
+                              </tr>
                               <!-- </div> -->
                             </tbody>
                           </table>
-                          <div v-if="donationToShow < totalDonation || totalDonation > donationToShow" class="text-center">
-                              <button
-                                class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" @click="donationToShow += 6">{{ $t('Show More') }}</button>
-                            </div>
+                          <div v-if="donationToShow < totalDonation || totalDonation > donationToShow"
+                            class="text-center">
+                            <button
+                              class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                              type="button" @click="donationToShow += 6">{{ $t('Show More') }}</button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -501,7 +502,7 @@
                               </tr>
                             </thead>
                             <tbody v-for="index in campaignToShow">
-                                <tr v-if="index - 1 < totalCampaign"
+                              <tr v-if="index - 1 < totalCampaign"
                                 class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ campaign_details[index - 1].campaign_title }}
@@ -513,7 +514,7 @@
                                   {{ campaign_details[index - 1].donation_amount }}
                                 </td>
                                 <td class="text-sm text-green-500 font-bold px-6 py-4">
-                                  {{campaign_details[index - 1].raised_amount }}
+                                  {{ campaign_details[index - 1].raised_amount }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4">
                                   {{ formattedDate(campaign_details[index - 1].start_date) }}
@@ -535,11 +536,13 @@
                               </tr>
                             </tbody>
                           </table>
-                          <div v-if="campaign_details != '' && campaignToShow < totalCampaign || totalCampaign > campaignToShow" class="text-center">
-                              <button
-                                class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
-                            </div>
+                          <div
+                            v-if="campaign_details != '' && campaignToShow < totalCampaign || totalCampaign > campaignToShow"
+                            class="text-center">
+                            <button
+                              class="mt-4 rounded-lg hover:bg-[#40b751] bg-white hover:text-white border-[#40b751] border border-solid text-[#40b751] active:bg-green-600  text-sm md:text-sm lg:text-lg px-2 md:px-4 lg:px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-4 lg:mr-1 mb-1 ease-linear transition-all duration-150"
+                              type="button" @click="campaignToShow += 6">{{ $t('Show More') }}</button>
+                          </div>
                         </div>
                         <div class="text-center text-sm leading-normal m-4 text-blue-400 font-bold">
                           <router-link to="/request-campaign">{{ $t('Request New Campaign') }}</router-link>
@@ -629,11 +632,11 @@ export default {
     const linkElement = document.querySelector('link[rel="canonical"]');
     if (!linkElement) {
       var link = document.createElement('link');
-    link.rel = 'canonical';
-    link.href = "https://bestdeed.org/profile"
-    document.head.appendChild(link);
+      link.rel = 'canonical';
+      link.href = "https://bestdeed.org/profile"
+      document.head.appendChild(link);
     }
-    else{
+    else {
       linkElement.href = "https://bestdeed.org/profile"
       document.head.appendChild(linkElement)
     }
@@ -750,23 +753,23 @@ export default {
       }
     },
 
-    get_donation_details(){
-      return{
+    get_donation_details() {
+      return {
         method: 'sadbhavna_donatekart.api.donor.get_donation_details',
         onSuccess: (res) => {
           this.donation_details = res
           this.totalDonation = res.length
-      //       // this.totalDonation = res.length
+          //       // this.totalDonation = res.length
         },
         onError: (error) => {
-          
+
         },
 
       }
     },
 
-    get_campaign_details(){
-      return{
+    get_campaign_details() {
+      return {
         method: 'sadbhavna_donatekart.api.campaign.get_campaign_details',
         onSuccess: (res) => {
           console.log("res", res)
@@ -873,7 +876,7 @@ export default {
         page_length: 100
       })
     },
-    
+
     get_campaign_details(name) {
       // let url = `/api/resource/NGO?filters={"email": "${name}"}&fields=["name"]`
       // fetch(url, {

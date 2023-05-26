@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="example">
     <div class="demo">
       <google-pay-button
@@ -94,7 +94,7 @@ export default {
 .example > .demo > * {
   margin: 1px;
 }
-</style> -->
+</style>
 
 
 
@@ -194,7 +194,7 @@ export default {
 
 
 
-<template>
+<!-- <template>
   <div class="example">
     <div class="demo">
       <google-pay-button
@@ -285,4 +285,4 @@ export default {
 .example > .demo > * {
   margin: 1px;
 }
-</style>
+</style> -->

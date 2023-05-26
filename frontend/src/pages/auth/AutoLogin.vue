@@ -61,8 +61,8 @@
                         <router-link class="text-[#40b751] block text-gray-600 text-center text-base mb-2"
                             to="/login-via-email">{{ $t('Login Via Email') }}</router-link>
                         <span class="block text-gray-600 text-center text-base mb-2">
-                            {{ $t('New to BestDeed?') }} <router-link to="/registration"
-                                class="font-bold text-[#40b751]">{{ $t('Register now') }}</router-link></span>
+                            {{ $t('New to BestDeed?') }} <router-link to="/registration" class="font-bold text-[#40b751]">{{
+                                $t('Register now') }}</router-link></span>
 
 
                     </div>
@@ -319,7 +319,12 @@ import Footer from "../../components/Footer.vue";
 export default {
     name: "Auto Login",
     components: { Navbar, Footer },
-
+    setup() {
+        const user = inject("user")
+        return {
+            user,
+        }
+    },
     data() {
         return {
             phone: '',
@@ -332,6 +337,10 @@ export default {
         };
     },
     mounted() {
+        if(this.user.isLoggedIn()){
+            this.$router.push('/')
+        }
+
         document.title = this.$t('Login Now | BestDeed')
 
         const linkElement = document.querySelector('link[rel="canonical"]');
@@ -394,7 +403,7 @@ export default {
                 onSuccess: (res) => {
                     this.$toast({
                         title: 'Login Success',
-                        text: 'You are successfully login to our platform',
+                        text: this.$t('You are successfully login to our platform'),
                         icon: 'check',
                         position: "top-center",
                     })
@@ -462,10 +471,10 @@ export default {
         login_with_whatsapp() {
             var re = /^[6-9][0-9]{9}$/;
             if (this.phone == '') {
-                this.error = 'Please enter mobile number for login with Whatsapp'
+                this.error = this.$t('Please enter mobile number for login with Whatsapp')
             }
             else if (re.test(this.phone) == false) {
-                this.error = 'Please enter 10 digit mobile number'
+                this.error = this.$t('Please enter 10 digit mobile number')
             }
             else {
                 this.error = ''
@@ -477,10 +486,10 @@ export default {
         login_with_sms() {
             var re = /^[6-9][0-9]{9}$/;
             if (this.phone == '') {
-                this.error = 'Please enter mobile number for login with SMS'
+                this.error = this.$t('Please enter mobile number for login with SMS')
             }
             else if (re.test(this.phone) == false) {
-                this.error = 'Please enter 10 digit mobile number'
+                this.error = this.$t('Please enter 10 digit mobile number')
             }
             else {
                 this.$resources.login_with_sms.submit({

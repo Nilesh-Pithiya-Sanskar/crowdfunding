@@ -67,12 +67,34 @@ def set_image(name, user_image):
 
 @frappe.whitelist(allow_guest=True)
 def create_donor_from_checkout(f_name, phone_number, email):
+    # from sadbhavna_donatekart.api.api import login_user
+    # user = frappe.db.get_value("User", email, fieldname=['name'])
+    # # user = frappe.db.get_value("User", or_filters=[["email", "=", f"{email}"], ["phone", "=", f"{phone_number}"]])
+    # # user = frappe.db.sql(f"select name from `tabUser` where email='{email}' or phone={phone_number}")
+    # # print("\n\n user", user)
+
+    # if user:
+    #     login_user(user)
+    #     return f_name, email, phone_number
+    # else:
+    #     user_no = frappe.db.get_value("User", filters={"phone": phone_number}, fieldname=['name'])
+    #     if user_no:
+    #         login_user(user_no)
+    #         return f_name, email, phone_number
+    #     else:
+    #         user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
+    #         user.insert(ignore_permissions=True)
+    #         frappe.db.commit()
+    #         donor = frappe.get_doc({"doctype": "Donor", "email": f"{email}", "donor_name": f"{f_name}", "donor_type": "Default", "mobile": phone_number})
+    #         donor.insert(ignore_permissions=True)
+    #         frappe.db.commit()
+    #         user = frappe.db.get_value("User", email, fieldname=['name'])
+    #         if user:
+    #             login_user(user)
+    #             return f_name, email, phone_number
+
     from sadbhavna_donatekart.api.api import login_user
     user = frappe.db.get_value("User", email, fieldname=['name'])
-    # user = frappe.db.get_value("User", or_filters=[["email", "=", f"{email}"], ["phone", "=", f"{phone_number}"]])
-    # user = frappe.db.sql(f"select name from `tabUser` where email='{email}' or phone={phone_number}")
-    # print("\n\n user", user)
-
     if user:
         login_user(user)
         return f_name, email, phone_number
@@ -81,7 +103,7 @@ def create_donor_from_checkout(f_name, phone_number, email):
         if user_no:
             login_user(user_no)
             return f_name, email, phone_number
-        else:
+        elif email != '':
             user = frappe.get_doc({"doctype": "User", "email": f'{email}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
             user.insert(ignore_permissions=True)
             frappe.db.commit()
@@ -92,4 +114,17 @@ def create_donor_from_checkout(f_name, phone_number, email):
             if user:
                 login_user(user)
                 return f_name, email, phone_number
+        else:
+            email1 = str(phone_number) + '@gmail.com'
+            user = frappe.get_doc({"doctype": "User", "email": f'{email1}', "first_name": f_name, "phone": phone_number, "role_profile_name": "Donor"})
+            user.insert(ignore_permissions=True)
+            frappe.db.commit()
+            donor = frappe.get_doc({"doctype": "Donor", "email": f"{email1}", "donor_name": f"{f_name}", "donor_type": "Default", "mobile": phone_number})
+            donor.insert(ignore_permissions=True)
+            frappe.db.commit()
+            user = frappe.db.get_value("User", email1, fieldname=['name'])
+            if user:
+                login_user(user)
+                return f_name, email1, phone_number
+            
             

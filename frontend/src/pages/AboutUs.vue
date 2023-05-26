@@ -76,32 +76,17 @@
           <img src="../assets/Inter/img/mission.png" alt="mission.png" class="max-w-full max-h-full">
           <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">
             {{ $t('Our Mission') }}</h3>
-          <p class="text-center px-8 md:px-10 lg:px-16">We know that there are many organizations out there
-            that
-            are
-            working hard
-            to
-            make a
-            difference. So,
-            our
-            mission is to create an NGO crowdfunding platform where these NGOs can receive the
-            visibility and
-            support they
-            need to make a real impact.</p>
+          <p class="text-center px-8 md:px-10 lg:px-16">
+            {{ $t('We know that there are many organizations out there that are working hard to make a difference.So, our mission is to create an NGO crowdfunding platform where these NGOs can receive the visibility and support they need to make a real impact.') }}
+          </p>
         </div>
         <div class="flex flex-col justify-center items-center">
           <img src="../assets/Inter/img/vision.png" alt="Image 2" class="max-w-full max-h-full">
           <h3 class="text-[#40b751] text-[21px] md:text-[25px] lg:text-[28px] font-black my-4 whitespace-nowrap">
             {{ $t('Our Vision') }}</h3>
-          <p class="text-center px-8 md:px-10 lg:px-16">Our vision is to create the best donation platform where
-            anyone can make a
-            meaningful
-            impact on the
-            causes
-            they care about. Whether through a direct donation, donating through products, or
-            volunteering with
-            them, we
-            want to make it easy for people to give back to their communities and the world.</p>
+          <p class="text-center px-8 md:px-10 lg:px-16">
+            {{ $t('Our vision is to create the best donation platform where anyone can make a meaningful impact on the causes they care about. Whether through a direct donation, donating through products, or volunteering with them, we want to make it easy for people to give back to their communities and the world.') }}
+          </p>
         </div>
       </div>
 
@@ -171,8 +156,16 @@
       <div class="text-center font-bold pb-8">
         <h2 class="text-[22px] md:text-[28px] lg:text-[33px] font-black text-[#40b751] pb-4">
           {{ $t('Our Journey so far & even beyond!') }}</h2>
-        <p class="font-semibold text-lg">From Humble Beginnings to Creating Lasting Impact</p>
-        <p class="font-semibold text-lg">Our Story of Changing Lives & Empowering NGOs.</p>
+        <p class="font-semibold text-lg">
+          <span v-if="lang == 'gu'">નમ્ર શરૂઆતથી લઈને કાયમી અસર બનાવવા સુધીની </span>
+          <span v-else-if="lang == 'hi'">विनम्र शुरुआत से लेकर स्थायी प्रभाव पैदा करने तक,</span>
+          <span v-else>From Humble Beginnings to Creating Lasting Impact</span>
+        </p>
+        <p class="font-semibold text-lg">
+          <span v-if="lang == 'gu'">અમારી વાર્તા બદલાતી જીવન અને એનજીઓને સશક્તિકરણ.</span>
+          <span v-else-if="lang == 'hi'">बदलते जीवन और एनजीओ को सशक्त बनाने की हमारी कहानी।</span>
+          <span v-else>Our Story of Changing Lives & Empowering NGOs.</span>
+        </p>
       </div>
     </section>
 
@@ -187,8 +180,7 @@
           </div>
           <div class="content-2015">
             <p class="text-[#3f4640] font-[400]">
-              Our Founder Vijay started his journey in 2015 with a team of 7 people having the simple motive of giving to
-              the community.
+              {{ $t('Our Founder Vijay started his journey in 2015 with a team of 7 people having the simple motive of giving to the community.') }}
             </p>
           </div>
           <div class="journey-2017">
@@ -196,9 +188,7 @@
           </div>
           <div class="content-2017">
             <p class="text-[#3f4640] font-[400]  ">
-              Within 2 years, the team has grown to 20+ who are offering caregiving services to over 200+ elderly
-              people who are working together for noble causes such as volunteering, tree plantation, animal and
-              bird care, etc.
+              {{ $t('Within 2 years, the team has grown to 20+ who are offering caregiving services to over 200+ elderly people who are working together for noble causes such as volunteering, tree plantation, animal and bird care, etc.') }}
             </p>
           </div>
           <div class="journey-2020">
@@ -206,8 +196,7 @@
           </div>
           <div class="content-2020 ">
             <p class="text-[#3f4640] font-[400]">
-              In 2020, the caregivers grew to 40+ individuals offering caregiving services to over 350+ elderly
-              people.
+              {{ $t('In 2020, the caregivers grew to 40+ individuals offering caregiving services to over 350+ elderly people.') }}
             </p>
           </div>
           <div class="journey-2022">
@@ -215,8 +204,7 @@
           </div>
           <div class="content-2022">
             <p class="text-[#3f4640] font-[400]">
-              We saw lots of NGOs willing to offer help but couldn’t because of the lack of funds; that’s when the
-              idea of Best Deed was born.
+              {{ $t('We saw lots of NGOs willing to offer help but couldn’t because of the lack of funds; that’s when the idea of Best Deed was born.') }}
             </p>
           </div>
           <div class="journey-2023">
@@ -224,8 +212,7 @@
           </div>
           <div class="content-2023  ">
             <p class="text-[#3f4640] font-[400] ">
-              To kickstart our idea, we launched Best Deed with 10 NGOs on board in different categories ranging
-              from education, healthcare, animal, children, Women, elderly, etc.
+              {{ $t('To kickstart our idea, we launched Best Deed with 10 NGOs on board in different categories ranging from education, healthcare, animal, children, Women, elderly, etc.') }}
             </p>
           </div>
           <div class="journey-2027">
@@ -233,8 +220,7 @@
           </div>
           <div class="content-2027">
             <p class="text-[#3f4640] font-[400]">
-              In the next five years, we aim to onboard 10000+ Non-profit organizations to impact the lives of
-              over 10 MN people.
+              {{ $t('In the next five years, we aim to onboard 10000+ Non-profit organizations to impact the lives of over 10 MN people.') }}
             </p>
           </div>
         </div>
@@ -254,8 +240,8 @@
           </div>
           <div class="absolute mt-[300px] mr-10 text-right">
             <p class="text-[#3f4640] font-[400] text-[14px] w-[220px] leading-[22px]">
-              Our Founder Vijay started his journey in 2015 with a team of 7 people having the simple motive of giving to
-              the community.
+              {{ $t('Our Founder Vijay started his journey in 2015 with a team of 7 people having the simple motive of giving to the community.') }}
+
             </p>
           </div>
           <div class="absolute mt-[460px] mr-[150px]">
@@ -263,9 +249,8 @@
           </div>
           <div class="absolute mt-[500px] ml-20 text-left">
             <p class="text-[#3f4640] font-[400] text-[14px]  w-[190px] leading-[22px]">
-              Within 2 years, the team has grown to 20+ who are offering caregiving services to over 200+ elderly
-              people who are working together for noble causes such as volunteering, tree plantation, animal and
-              bird care, etc.
+              {{ $t('Within 2 years, the team has grown to 20+ who are offering caregiving services to over 200+ elderly people who are working together for noble causes such as volunteering, tree plantation, animal and bird care, etc.') }}
+
             </p>
           </div>
           <div class="absolute mt-[710px] ml-36">
@@ -273,8 +258,8 @@
           </div>
           <div class="absolute mt-[800px] mr-10 text-left">
             <p class="text-[#3f4640] font-[400] text-[14px] w-[220px] text-right leading-[22px]">
-              In 2020, the caregivers grew to 40+ individuals offering caregiving services to over 350+ elderly
-              people.
+              {{ $t('In 2020, the caregivers grew to 40+ individuals offering caregiving services to over 350+ elderly people.') }}
+
             </p>
           </div>
           <div class="absolute mt-[950px] mr-32">
@@ -282,8 +267,8 @@
           </div>
           <div class="absolute mt-[1030px] ml-16">
             <p class="text-[#3f4640] font-[400] text-[14px] w-[200px] leading-[22px]">
-              We saw lots of NGOs willing to offer help but couldn’t because of the lack of funds; that’s when the
-              idea of Best Deed was born.
+              {{ $t('We saw lots of NGOs willing to offer help but couldn’t because of the lack of funds; that’s when the idea of Best Deed was born.') }}
+
             </p>
           </div>
           <div class="absolute mt-[1200px] ml-36">
@@ -291,8 +276,8 @@
           </div>
           <div class="absolute mt-[1270px] mr-10 text-right">
             <p class="text-[#3f4640] font-[400] text-[14px] w-[220px] leading-[22px]">
-              To kickstart our idea, we launched Best Deed with 10 NGOs on board in different categories ranging
-              from education, healthcare, animal, children, Women, elderly, etc.
+              {{ $t('To kickstart our idea, we launched Best Deed with 10 NGOs on board in different categories ranging from education, healthcare, animal, children, Women, elderly, etc.') }}
+
             </p>
           </div>
           <div class="absolute mt-[1440px] mr-36">
@@ -300,8 +285,7 @@
           </div>
           <div class="absolute mt-[1530px] ml-16 text-left">
             <p class="text-[#3f4640] font-[400] text-[14px] w-[200px] leading-[22px]">
-              In the next five years, we aim to onboard 10000+ Non-profit organizations to impact the lives of
-              over 10 MN people.
+              {{ $t('In the next five years, we aim to onboard 10000+ Non-profit organizations to impact the lives of over 10 MN people.') }}
             </p>
           </div>
         </div>
@@ -311,8 +295,8 @@
     <section class="bg-[#f6fed8] mt-0">
       <div class="text-center container font-bold mx-auto impact-image">
         <h2 class="text-[22px] md:text-[28px] lg:text-[33px] text-[#40b751] font-black pb-2 ">{{ $t('Our Impact') }}</h2>
-        <p class="text-center font-semibold text-lg pb-10">To impact the lives of 10 Million People in 5
-          years!
+        <p class="text-center font-semibold text-lg pb-10">
+          {{ $t('To impact the lives of 10 Million People in 5 years!') }}
         </p>
         <img src="../assets/Inter/img/10MN.png" alt="10MN.png" />
       </div>
@@ -331,10 +315,8 @@
             <img src="../assets/Inter/img/icon_authenticity_transparency.svg" alt="empowering1.png" class="h-12 w-12 " />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">{{ $t('100% authenticity & transparency') }} </p>
-              <p class="text-md">Best Deed is a 100% authentic and transparent online crowdfunding
-                donation platform with all
-                the required licenses and permits. Check here! (Add the link) Also, before onboarding NGOs
-                on our crowdfunding site, we thoroughly vet their requirements to ensure their legitimacy.
+              <p class="text-md">
+                {{ $t('Best Deed is a 100% authentic and transparent online crowdfunding donation platform with all the required licenses and permits.Check here!(Add the link) Also, before onboarding NGOs on our crowdfunding site, we thoroughly vet their requirements to ensure their legitimacy.') }}
               </p>
             </div>
           </div>
@@ -342,10 +324,9 @@
             <img src="../assets/Inter/img/home-banner-icon-0.svg" alt="empowering2.png" class="h-12 w-16" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">{{ $t('0% Platform fees') }}</p>
-              <p class="text-md">Best Deed charges no crowdfunding donation platform fees whether you are a
-                donor
-                contributing to the NGOs or NGOs willing to start a crowdfunding campaign. It is a free
-                crowdfunding site, and we do it for FREE! </p>
+              <p class="text-md">
+                {{ $t('Best Deed charges no crowdfunding donation platform fees whether you are a donor contributing to the NGOs or NGOs willing to start a crowdfunding campaign. It is a free crowdfunding site, and we do it for FREE!') }}
+              </p>
             </div>
           </div>
 
@@ -353,10 +334,9 @@
             <img src="../assets/Inter/img/icon_building_an_ecosystem.svg" alt="empowering3.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">{{ $t('Building an ecosystem') }}</p>
-              <p class="text-md">We are not simply another crowdfunding company; our goal is to build a
-                trustworthy ECOSYSTEM
-                that brings together the greatest campaigns, NGOs, donors, and sponsors on this online
-                crowdfunding donation platform to make an impact.</p>
+              <p class="text-md">
+                {{ $t('We are not simply another crowdfunding company; our goal is to build a trustworthy ECOSYSTEM that brings together the greatest campaigns, NGOs, donors, and sponsors on this online crowdfunding donation platform to make an impact.') }}
+              </p>
             </div>
           </div>
 
@@ -364,11 +344,9 @@
             <img src="../assets/Inter/img/icon_dedicated_help_center.svg" alt="mpowering4.png" class="h-12 w-12" />
             <div class="sm:ml-0 md:ml-4 lg:ml-5">
               <p class="font-bold text-lg">{{ $t('Dedicated Help Center') }}</p>
-              <p class="text-md">Throughout your crowdfunding journey, if you have any questions or require
-                in-depth
-                assistance regarding our fundraising website for individuals, we are here to help. Our
-                dedicated Help Centre is designed to address your concerns with every relevant detail,
-                training, and tool. </p>
+              <p class="text-md">
+                {{ $t('Throughout your crowdfunding journey, if you have any questions or require in-depth assistance regarding our fundraising website for individuals, we are here to help. Our dedicated Help Centre is designed to address your concerns with every relevant detail, training, and tool.') }}
+              </p>
             </div>
           </div>
 
@@ -404,46 +382,25 @@
       <section class="lg:h-96 md:h-[460px] mx-auto container text-center">
         <div class="grid grid-cols-3">
           <div>
-            <p class="font-bold pt-4 text-md">Vijay Dobariya </p>
-            <p class="pb-6">Founder, Best Deed</p>
-            <p class="px-4 lg:w-[360px] md:w-[270px] h-[270px] text-[15px] text-[#3f4640]">Vijay Dobariya is the
-              founder of Best
-              Deed and has been on this journey of helping
-              people for the last 8 years. He works towards his mission of making this world a better place by
-              giving back to the community with the vision of "Manavseva is Prabhuseva." In order to fulfill
-              his
-              mission & vision of helping as many people as he can, he started Best Deed which offers the
-              required
-              visibility and fulfills other necessities of NGOs, that they need to help others. </p>
+            <p class="font-bold pt-4 text-md">{{ $t('Vijay Dobariya ') }}</p>
+            <p class="pb-6">{{ $t('Founder, Best Deed') }}</p>
+            <p class="px-4 lg:w-[360px] md:w-[270px] h-[270px] text-[15px] text-[#3f4640]">
+              {{ $t("Vijay Dobariya is the founder of Best Deed and has been on this journey of helping people for the last 8 years. He works towards his mission of making this world a better place by giving back to the community with the vision of 'Manavseva is Prabhuseva.' In order to fulfill his mission & vision of helping as many people as he can, he started Best Deed which offers the required visibility and fulfills other necessities of NGOs, that they need to help others.") }}
+            </p>
           </div>
           <div>
-            <p class="font-bold pt-4 text-md">Dhirendara Kanabar</p>
-            <p class="pb-6">Founding Member, Best Deed</p>
-            <p class="px-4 lg:w-[360px] md:w-[270px] h-[270px] text-[15px] text-[#3f4640]">Dhirendara Kanabar is
-              the founding
-              member
-              of Best Deed. He is dedicated to the cause of
-              animal welfare. He has founded an Animal Welfare Organization where he runs his "Voice for
-              Voiceless" campaign to spread awareness about the problems faced by animals by making impactful
-              videos. He then realized the problem that NGOs face when raising money, products, or volunteers.
-              To
-              solve this problem and to offer much-needed visibility to NGOs, he joined Best Deed. </p>
+            <p class="font-bold pt-4 text-md">{{ $t('Dhirendara Kanabar') }}</p>
+            <p class="pb-6">{{ $t('Founding Member, Best Deed') }}</p>
+            <p class="px-4 lg:w-[360px] md:w-[270px] h-[270px] text-[15px] text-[#3f4640]">
+              {{ $t("Dhirendara Kanabar is the founding member of Best Deed. He is dedicated to the cause of animal welfare. He has founded an Animal Welfare Organization where he runs his 'Voice for Voiceless' campaign to spread awareness about the problems faced by animals by making impactful videos. He then realized the problem that NGOs face when raising money, products, or volunteers. To solve this problem and to offer much-needed visibility to NGOs, he joined Best Deed.") }}
+            </p>
           </div>
           <div>
-            <p class="font-bold pt-4 text-md">Rajesh Rupabara</p>
-            <p class="pb-6">Founding Member, Best Deed</p>
-            <p class="px-4 lg:w-[360px] md:w-[270px] h-[270px] text-[15px] text-[#3f4640]">Rajesh Rupabara is
-              also contributing
-              as
-              the founder
-              member at Best
-              Deed.
-              He is a Vice
-              President of "Sadbhavna Vrudhashram," where he offers caregiving services to over 500+ old-age
-              citizens. Considering the difficulties he faced while raising the necessities for his old age
-              home
-              in the initial period, he started Best Deed with a vision to help other NGOs in raising funds,
-              products, and even volunteers to ensure hassle-free operations. </p>
+            <p class="font-bold pt-4 text-md">{{ $t('Rajesh Rupabara') }}</p>
+            <p class="pb-6">{{ $t('Founding Member, Best Deed') }}</p>
+            <p class="px-4 lg:w-[360px] md:w-[270px] h-[270px] text-[15px] text-[#3f4640]">
+              {{ $t("Rajesh Rupabara is also contributing as the founder member at Best Deed. He is a Vice President of 'Sadbhavna Vrudhashram, ' where he offers caregiving services to over 500+ old-age citizens. Considering the difficulties he faced while raising the necessities for his old age home in the initial period, he started Best Deed with a vision to help other NGOs in raising funds, products, and even volunteers to ensure hassle-free operations.") }}
+            </p>
           </div>
         </div>
       </section>
@@ -452,60 +409,40 @@
     <div id="new-section" class="block md:hidden lg:hidden">
       <section class="bg-[#40b751]">
         <div class="text-center">
-          <p class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10"> {{ $t('Meet the Visionaries') }}
+          <p class="font-black text-white text-[22px] md:text-[28px] lg:text-[33px] pt-10">
+            {{ $t('Meet the Visionaries') }}
           </p>
-          <p class="font-semibold text-md pt-4">Founders of Best Deed Paving the Way!</p>
+          <p class="font-semibold text-md pt-4">{{ $t('Founders of Best Deed Paving the Way!') }}</p>
           <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-8">
             <div class="pt-8 md:pt-0 bg-[#40b751]">
               <img src="../assets/Inter/img/Vijay1.png" alt="Vijay.png" class="mx-auto bg-[#40b751]">
               <div class="bg-white px-4 py-4">
-                <p class="font-bold pt-4 text-md">Vijay Dobariya</p>
-                <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">Vijay Dobariya is the founder of
-                  Best
-                  Deed and has been on this journey of helping
-                  people for the last 8 years. He works towards his mission of making this world a better
-                  place by
-                  giving back to the community with the vision of "Manavseva is Prabhuseva." In order to
-                  fulfill his
-                  mission & vision of helping as many people as he can, he started Best Deed which offers
-                  the
-                  required
-                  visibility and fulfills other necessities of NGOs, that they need to help others.</p>
+                <p class="font-bold pt-4 text-md">{{ $t('Vijay Dobariya ') }}</p>
+                <p class="pb-2">{{ $t('Founder, Best Deed') }}</p>
+                <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">
+                  {{ $t("Vijay Dobariya is the founder of Best Deed and has been on this journey of helping people for the last 8 years. He works towards his mission of making this world a better place by giving back to the community with the vision of 'Manavseva is Prabhuseva.' In order to fulfill his mission & vision of helping as many people as he can, he started Best Deed which offers the required visibility and fulfills other necessities of NGOs, that they need to help others.") }}
+                </p>
               </div>
             </div>
             <div class="pt-4 md:pt-0 bg-[#40b751]">
               <img src="../assets/Inter/img/Dhirendra1.png" alt="Dhirendra.png" class="mx-auto bg-[#40b751]">
               <div class="bg-white px-4 py-4">
-                <p class="font-bold pt-4 text-md">Dhirendra Kanabar</p>
-                <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">Dhirendra Kanabar is the founding
-                  member
-                  of Best Deed. He is dedicated to the cause of
-                  animal welfare. He has founded an Animal Welfare Organization where he runs his "Voice
-                  for
-                  Voiceless" campaign to spread awareness about the problems faced by animals by making
-                  impactful
-                  videos. He then realized the problem that NGOs face when raising money, products, or
-                  volunteers. To
-                  solve this problem and to offer much-needed visibility to NGOs, he joined Best Deed.</p>
+                <p class="font-bold pt-4 text-md">{{ $t('Dhirendara Kanabar') }}</p>
+                <p class="pb-2">{{ $t('Founding Member, Best Deed') }}</p>
+                <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">
+                  {{ $t("Dhirendara Kanabar is the founding member of Best Deed. He is dedicated to the cause of animal welfare. He has founded an Animal Welfare Organization where he runs his 'Voice for Voiceless' campaign to spread awareness about the problems faced by animals by making impactful videos. He then realized the problem that NGOs face when raising money, products, or volunteers. To solve this problem and to offer much-needed visibility to NGOs, he joined Best Deed.") }}
+                </p>
               </div>
             </div>
             <div class="pt-4 md:pt-0 bg-[#40b751]">
               <img src="../assets/Inter/img/Rajesh1.png" alt="Rajesh.png" class="mx-auto bg-[#40b751]">
               <div class="bg-white px-4 py-4">
-                <p class="font-bold pt-4 text-md">Rajesh Rupabara</p>
-                <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">Rajesh Rupabara is also contributing
-                  as
-                  the founder
-                  member at Best
-                  Deed. He is a Vice
-                  President of "Sadbhavna Vrudhashram," where he offers caregiving services to over 500+
-                  old-age
-                  citizens. Considering the difficulties he faced while raising the necessities for his
-                  old
-                  age home
-                  in the initial period, he started Best Deed with a vision to help other NGOs in raising
-                  funds,
-                  products, and even volunteers to ensure hassle-free operations.</p>
+                <p class="font-bold pt-4 text-md">{{ $t('Rajesh Rupabara') }}</p>
+                <p class="pb-2">{{ $t('Founding Member, Best Deed') }}</p>
+
+                <p class="pb-6 px-4 md:px-0 text-[15px] text-[#3f4640]">
+                  {{ $t("Rajesh Rupabara is also contributing as the founder member at Best Deed. He is a Vice President of 'Sadbhavna Vrudhashram,' where he offers caregiving services to over 500+ old-age citizens. Considering the difficulties he faced while raising the necessities for his old age home in the initial period, he started Best Deed with a vision to help other NGOs in raising funds, products, and even volunteers to ensure hassle-free operations.") }}
+                </p>
               </div>
             </div>
           </div>
@@ -519,9 +456,23 @@
           <div class="grid sm:grid-cols-1 lg:grid-cols-2 pl-6 lg:pl-0 sm:pb-0 md:pb-16 lg:pb-16">
             <div class="sm:pb-0 md:pb-0 lg:pb-4 sm:pt-0 lg:pt-16">
               <div class="leading-tight pt-0 md:pt-32 lg:pt-32 pb-12">
-                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#40b751] font-[800]"> Together,</p>
-                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">We can make a</p>
-                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">difference!</p>
+                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#40b751] font-[800]">
+
+                  <span v-if="lang == 'gu'">સાથે મળીને, </span>
+                  <span v-else-if="lang == 'hi'">हम सभी</span>
+                  <span v-else>Together,</span>
+                </p>
+                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">
+                  <span v-if="lang == 'gu'">અમે તફાવત કરી </span>
+                  <span v-else-if="lang == 'hi'">मिलकर कुछ </span>
+                  <span v-else>We can make a</span>
+                </p>
+                <p class="text-[22px] md:text-[28px] lg:text-[32px] text-[#3f4640] font-[800]">
+
+                  <span v-if="lang == 'gu'">શકીએ છીએ!</span>
+                  <span v-else-if="lang == 'hi'">अलग कर सकते हैं!</span>
+                  <span v-else>difference!</span>
+                </p>
               </div>
               <div class="pb-16">
                 <p class="text-[16px] text-[#3f4640] font-[700] pr-0 md:pr-32 lg:pr-32" style="line-height: 26px; ">
@@ -532,7 +483,7 @@
               <div class="h-16">
                 <router-link to="/explore-campaigns" style="font-size: 16px; font-weight: 700;"
                   class="bg-[#40b751] px-6 py-3 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-                  Donate now!
+                  {{ $t('Donate now!') }}
                 </router-link>
               </div>
             </div>
@@ -548,22 +499,18 @@
           <div class="grid content-center ">
             <div class="px-4 ">
               <div class="leading-tight mt-16">
-                <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#40b751] font-[800]"> Together, We can make a
-                  difference!</p>
+                <p class="text-[23px] md:text-[28px] lg:text-[32px] text-[#40b751] font-[800]">
+                  {{ $t("Together, We can make a difference!") }}</p>
               </div>
               <div class="pb-6">
                 <p class="text-[14px] text-[#3f4640] font-[700] " style="line-height: 20px; ">
-                  Join us in our mission to make the world a better place with this online crowdfunding
-                  platform - Best
-                  Deed. Whether you're an individual looking to make a difference or an NGO needing support,
-                  we're here to
-                  help
+                  {{ $t("Join us in our mission to make the world a better place with this online crowdfunding platform - Best Deed. Whether you're an individual looking to make a difference or an NGO needing support, we're here to help") }}
                 </p>
               </div>
               <div class="h-10">
                 <router-link to="/explore-campaigns" style="font-size: 16px; font-weight: 700;"
                   class="bg-[#40b751] px-6 py-3 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-                  Donate now!
+                  {{ $t('Donate now!') }}
                 </router-link>
               </div>
             </div>
@@ -1041,4 +988,5 @@ export default {
 
 #wrapper>div {
   display: inline-block;
-}</style>
+}
+</style>

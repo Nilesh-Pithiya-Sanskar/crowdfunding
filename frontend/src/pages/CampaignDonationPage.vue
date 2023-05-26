@@ -162,7 +162,7 @@
                                                 </div>
                                                 <div class="text-gray-500 text-[12px] mt-1">{{ products.c_qty || 0 }} / {{
                                                     products.qty
-                                                }} {{$t('Quantity Obtained')}}</div>
+                                                }} {{ $t('Quantity Obtained') }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -229,12 +229,14 @@
                     <div v-for="index in descToShow">
                         <div v-if="index - 1 < campaign_detail.data.description.length">
                             <img class="object-fill w-full" :src="campaign_detail.data.description[index - 1].image">
-                             <div  v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_title_gu" class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     campaign_detail.data.description[index - 1].image_title_gu }}</div>
-                            <div v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_title_hi" class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     campaign_detail.data.description[index - 1].image_title_hi }}</div>
+                            <div v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_title_gu"
+                                class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                    campaign_detail.data.description[index - 1].image_title_gu }}</div>
+                            <div v-else-if="lang == 'hi' && campaign_detail.data.description[index - 1].image_title_hi"
+                                class="font-[700] text-xl mt-3 text-[#40b751]">{{
+                                    campaign_detail.data.description[index - 1].image_title_hi }}</div>
                             <div v-else class="font-[700] text-xl mt-3 text-[#40b751]">{{
-                                     campaign_detail.data.description[index - 1].image_title }}</div>
+                                campaign_detail.data.description[index - 1].image_title }}</div>
 
                             <p v-if="lang == 'gu' && campaign_detail.data.description[index - 1].image_description_gu"
                                 style="line-height:1.7;" class="text-[#364958] mt-2 mb-5">{{
@@ -259,7 +261,7 @@
                             type="button" @click="descToShow = 1" v-if="total_desc > 1">{{ $t('View Less') }}</button>
                     </div>
 
-                   <!-- <div v-if="campaign_detail.data.about_ngo != ''"  class=" mt-10 ">
+                    <!-- <div v-if="campaign_detail.data.about_ngo != ''"  class=" mt-10 ">
                           <div  class="px-2 bg-[#40b751] py-4 " >
                                <h4 v-if="lang == 'gu' && campaign_detail.data.ngo_gu" class="font-[700] text-xl mt-3 text-[#40b751]">{{ (campaign_detail.data.ngo_gu) }} {{ $t('About')}}</h4>
                                <h4 v-else-if="lang == 'hi' && campaign_detail.data.ngo_hi" class="font-[700] text-xl mt-3 text-[#40b751]">{{ (campaign_detail.data.ngo_hi) }} {{ $t('About')}}</h4>
@@ -584,7 +586,18 @@
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
-                                                        {{ $t("You may quickly obtain your tax receipt because all of our partner NGOs are 80G approved.On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button.Please enter your PAN number, complete location, and PAN - compliant name before clicking 'Submit.'You will receive an email and a download link for your 80G certificate.") }}
+                                                        {{ $t("You will be getting tax redemption after donating through our Platform. On the payment success page, which appears once your payment for product purchase has been completed successfully, you will see the 'GET 80G' button.") }}
+
+
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 pt-2 cursor-pointer  text-[#364958]">
+                                                        {{ $t("Please enter your PAN number, complete location, and PAN-compliant name before clicking 'Submit.' You will receive an email and a download link for your 80G certificate.") }}
+                                                    </p>
+
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 pt-2 cursor-pointer  text-[#364958]">
+                                                        {{ $t('This receipt will include all the necessary information you need for tax reporting purposes. You can use this receipt to claim a tax deduction or credit on your tax return.') }}
+                                                    </p>
                                                     </p>
                                                 </span>
                                             </details>
@@ -592,50 +605,113 @@
                                             <details class="mb-3">
                                                 <summary
                                                     class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
-                                                    {{ $t('What if my fundraising target is not reached? Will I still receive the products ? ') }}</summary>
-
-                                                <span>
-                                                    <p style="line-height:1.7;"
-                                                        class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
-                                                        {{ $t('According to Best Deed, every work put into the campaign should be rewarded.Therefore, even if you fall short of your fundraising target, you still receive all of the products you have received so far.')}}</p>
-                                                </span>
-                                            </details>
-                                            <details class="mb-3">
-                                                <summary
-                                                    class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
-                                                    {{ $t('What is the reliability of your crowdfunding platform? ') }}
+                                                    {{ $t('Why should I choose Best Deed?') }}
                                                 </summary>
 
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
-                                                        {{ $t("The environment, structure,text-gray-900 leading-none text-lg w-full and sophistication of crowdfunding platforms can vary greatly.Our crowdfunding platform is governed by a local exchange and securities commission and is required to follow strict guidelines to ensure the security of investors' investments.Look for a license number in the page's footer to quickly spot these sites.On the other hand, some crowdfunding platforms work independently, with no supervision to ensure the safety of investors.Best Deed accepts credit cards, debit cards, bank transfers, UPI, PayPal, and other payment methods.You can select the most convenient option and carry out the necessary actions.")}}</p>
+                                                        {{ $t('Best Deed is a platform of its sort that adds a new level of transparency and trust to the donations made for social causes. We have introduced these special features on our Platform, which places the highest value on transparency.') }}
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 pt-2 cursor-pointer font-bold text-[#364958]">
+                                                        {{ $t("Let's find out -") }}
+                                                    </p>
+                                                    <ul class="list-disc list-inside">
+                                                        <li>{{ $t("Best Deed doesn't charge anything to launch a crowdfunding campaign and accept donations.") }}
+                                                        </li>
+                                                        <li>{{ $t("We accept contributions in several currencies.") }}</li>
+                                                        <li>{{ $t("We offer the varied payment alternatives of any crowdfunding website.") }}
+                                                        </li>
+                                                        <li>{{ $t("Your fundraising campaign can be stopped or put on hold whenever you wish.") }}
+                                                        </li>
+                                                        <li>{{ $t("You can donate to one or more crowdfunding campaigns at once.") }}
+                                                        </li>
+                                                        <li>{{ $t("All the campaigns on Best Deed are verified and reliable.") }}
+                                                        </li>
+                                                    </ul>
+                                                    </p>
                                                 </span>
                                             </details>
                                             <details class="mb-3">
                                                 <summary
                                                     class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
-                                                    {{ $t('How to claim Tax-Exemption ?') }}</summary>
+                                                    {{ $t('What is the reliability of your crowdfunding platform?') }}
+                                                </summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
+                                                        {{ $t("Our crowdfunding Platform is governed by a local exchange and securities commission, and we abide by strict guidelines to ensure the security of investors' investments. To get a better idea, check out our certificates, licenses, ") }}<a
+                                                            href='/privacy-policy'
+                                                            style='color: blue'>{{ $t('privacy policy,') }}</a>{{ $t(' and ') }}
+                                                        <a href='/terms-of-service'
+                                                            style='color: blue'>{{ $t('terms & conditions') }}</a></p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-3">
+                                                <summary
+                                                    class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
+                                                    {{ $t('Which types of payment methods do you accept at Best Deed?') }}
+                                                </summary>
 
 
                                                 <span>
                                                     <p style="line-height:1.7;"
                                                         class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                        terry richardson ad squid. 3
-                                                        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
-                                                        truck quinoa nesciunt laborum
-                                                        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                                        squid
-                                                        single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                                                        labore wes anderson cred nesciunt
-                                                        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                                        occaecat craft beer
-                                                        farm-to-table, raw denim aesthetic synth nesciunt you probably
-                                                        haven't
-                                                        heard of them accusamus labore
-                                                        sustainable VHS.</p>
+                                                        {{ $t('Best Deed accepts credit cards, debit cards, bank transfers, UPI, PayPal, and other payment methods. You can select the most convenient option and carry out the necessary actions.') }}
+                                                    </p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-3">
+                                                <summary
+                                                    class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
+                                                    {{ $t('Can I volunteer with NGOs instead of donating money?') }}
+                                                </summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
+                                                        {{ $t("Yes, you can help in any way possible. If you choose to volunteer with us instead of donations, then you reach out to any NGO listed on our Platform and can volunteer with them based on your location convenience.") }}
+                                                    </p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-3">
+                                                <summary
+                                                    class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
+                                                    {{ $t('Can I donate anonymously through Best Deed?') }}
+                                                </summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
+                                                        {{ $t("Yes, you can. If you don't want to reveal your identity, you can even donate anonymously through our Platform.") }}
+                                                    </p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-3">
+                                                <summary
+                                                    class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
+                                                    {{ $t('My payment got stuck, how can I solve this problem?') }}
+                                                </summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
+                                                        {{ $t("In case of any such queries, we have a dedicated help center available for your help. So you can reach out to us on +917043029467 and our team will gladly assist you.") }}
+                                                    </p>
+                                                </span>
+                                            </details>
+                                            <details class="mb-3">
+                                                <summary
+                                                    class="!bg-transparent bg-gray-100 border border-[#40b751] border-b-1 border-solid cursor-pointer px-2 py-1 rounded text-[#40b751]">
+                                                    {{ $t('I want to help students who are deprived of primary education. How can I help?') }}
+                                                </summary>
+
+                                                <span>
+                                                    <p style="line-height:1.7;"
+                                                        class="!bg-transparent bg-gray-100 border p-2 border-blueGray-200 border-b-1 border-solid border-t-0 cursor-pointer rounded text-[#364958]">
+                                                        {{ $t("Our Platform has categories and NGOs catering to different needs ranging from education, healthcare, Women, Old age homes, Children, Animals, etc.") }}
+                                                    </p>
                                                 </span>
                                             </details>
                                         </div>
@@ -694,7 +770,8 @@
                                                                     donation.donor_name }}</p>
                                                             <p v-else class="text-gray-900 leading-none text-lg w-full">
                                                                 {{ $t('Anonymous') }}</p>
-                                                            <p class="text-gray-600 text-sm w-full">{{ formatDate(donation.date) }}
+                                                            <p class="text-gray-600 text-sm w-full">
+                                                                {{ formatDate(donation.date) }}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -842,7 +919,7 @@
                                     <span class="text-red-600">*</span></label> -->
                         <input
                             class="appearance-none border-gray-300  hover:border-[#40b751] rounded w-full py-2 px-3 focus:text-black focus:font-semibold"
-                            v-model="email" type="email" @keyup="emailError = ''" placeholder="Email" required>
+                            v-model="email" type="email" @keyup="emailError = ''" placeholder="Email">
                         <p class="text-red-600">{{ $t(emailError) }}</p>
                     </div>
 
@@ -1197,8 +1274,8 @@ export default {
             }
         },
 
-        ondismiss_payment(){
-            return{
+        ondismiss_payment() {
+            return {
                 method: "sadbhavna_donatekart.api.api.ondismiss_payment",
                 onSuccess: (res) => {
                     console.log("payment cancelled", res)
@@ -1298,7 +1375,7 @@ export default {
                             // document.head.appendChild(link);
                             titleTag.insertAdjacentElement('afterend', link);
                         }
-                        else{
+                        else {
                             linkElement.href = `https://bestdeed.org/campaign-donation/${name}`
                             document.head.appendChild(linkElement)
                         }
@@ -1327,7 +1404,7 @@ export default {
                         }
                         document.head.appendChild(meta);
 
-                        
+
                         var meta1 = document.querySelector('meta[property="og:type"]');
                         if (!meta1) {
                             meta1 = document.createElement('meta');
@@ -1358,7 +1435,7 @@ export default {
                             meta1 = document.createElement('meta');
                         }
                         meta1.setAttribute('property', 'og:description');
-                        
+
                         if (this.lang == 'gu' && res.data.short_description_gu) {
                             meta1.content = res.data.short_description_gu
                         }
@@ -1468,20 +1545,20 @@ export default {
                     //     console.log("modal", response)
                     // }
                     "modal": {
-                            "ondismiss": () => {
-                                // this.ondismiss_payment()
-                                this.$resources.ondismiss_payment.submit({
-                                    item_cart: this.get_cookies('item'),
-                                    i_qty: this.get_cookies('i_qty'),
-                                    total_price: this.get_cookies('total_price'),
-                                    item_b: this.get_cookies('item_b'),
-                                    campaign: this.campaign,
-                                    email: this.cookie.user_id,
-                                    phone: this.cookie.number,
-                                    name: this.cookie.full_name
-                                })
-                            },
-                        }
+                        "ondismiss": () => {
+                            // this.ondismiss_payment()
+                            this.$resources.ondismiss_payment.submit({
+                                item_cart: this.get_cookies('item'),
+                                i_qty: this.get_cookies('i_qty'),
+                                total_price: this.get_cookies('total_price'),
+                                item_b: this.get_cookies('item_b'),
+                                campaign: this.campaign,
+                                email: this.cookie.user_id,
+                                phone: this.cookie.number,
+                                name: this.cookie.full_name
+                            })
+                        },
+                    }
                 };
                 var rzp1 = new Razorpay(options);
                 rzp1.on('payment.failed', function (response) {
@@ -1502,9 +1579,15 @@ export default {
         },
         donate_checkout(anonymous, f_name, email, phone_number) {
             localStorage.setItem('anonymous', anonymous)
-            localStorage.setItem('user', email)
             this.anonymous_c = anonymous
-            this.user_c = email
+            if (email != '') {
+                localStorage.setItem('user', email)
+                this.user_c = email
+            }
+            else {
+                localStorage.setItem('user', phone_number + '@gmail.com')
+                this.user_c = phone_number + '@gmail.com'
+            }
             this.$resources.set_donor_for_donate_checkout.submit({
                 f_name: f_name,
                 email: email,
@@ -1543,21 +1626,21 @@ export default {
                     "color": "#40b751"
                 },
                 "modal": {
-                            "ondismiss": () => {
-                                // this.ondismiss_payment_c()
-                                this.$resources.ondismiss_payment.submit({
-                                item_cart: this.get_cookies('item'),
-                                i_qty: this.get_cookies('i_qty'),
-                                total_price: this.get_cookies('total_price'),
-                                item_b: this.get_cookies('item_b'),
-                                campaign: this.campaign,
-                                email: email,
-                                phone: phone,
-                                name: f_name
-                            })
+                    "ondismiss": () => {
+                        // this.ondismiss_payment_c()
+                        this.$resources.ondismiss_payment.submit({
+                            item_cart: this.get_cookies('item'),
+                            i_qty: this.get_cookies('i_qty'),
+                            total_price: this.get_cookies('total_price'),
+                            item_b: this.get_cookies('item_b'),
+                            campaign: this.campaign,
+                            email: email,
+                            phone: phone,
+                            name: f_name
+                        })
 
-                            },
-                        }
+                    },
+                }
             };
             var rzp1 = new Razorpay(options);
             rzp1.on('payment.failed', function (response) {
@@ -1730,15 +1813,19 @@ export default {
             if (this.name == '') {
                 this.nameError = 'Enter your name'
             }
-            if (this.email == '') {
-                this.emailError = 'Enter email'
-            }
-            else if (email.test(this.email) == false && this.email) {
+            // if (this.email == '') {
+            //     this.emailError = 'Enter email'
+            // }
+            // else if (email.test(this.email) == false && this.email) {
+            //     this.emailError = 'Enter valid email'
+            //     console.log('email')
+            // }
+            if (this.email != '' && email.test(this.email) == false) {
                 this.emailError = 'Enter valid email'
                 console.log('email')
             }
             if (this.phone_number == '') {
-                this.phoneNumberError = 'Enter phone'
+                this.phoneNumberError = 'Enter phone number'
             }
             else if (this.phone_number && phone.test(this.phone_number) == false) {
                 this.phoneNumberError = 'Enter valid phone number'

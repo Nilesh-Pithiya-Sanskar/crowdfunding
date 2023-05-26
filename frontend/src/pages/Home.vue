@@ -172,17 +172,16 @@
 
 
 <Navbar/>
-<section class="flex bg-cover bg-center sm:h-full md:h-[calc(100vh-8vh)] lg:h-[calc(100vh-16vh)] items-center" style="background-image: url('https://bestdeed.org/files/BG.png');">
- <div class="flex items-center justify-center container mx-auto pb-[2rem] md:pb-[3rem] lg:pb-[5rem]">
-   <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"> -->
+<section class="responsivesection flex bg-cover bg-center sm:h-full md:h-100vh lg:h-[calc(100vh-16vh)] bannerpadding items-center" style="background-image: url('https://bestdeed.org/files/BG.png');">
+ <div class="flex items-center justify-center container mx-auto pt-[1rem] md:pt-[2rem] lg:pt-[2rem] xl:pt-[2rem] pb-[2rem] md:pb-[3rem] lg:pb-[2rem] xl:pb-[3rem]">
      <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center mx-2 md:items-center lg:items-center">
-        <div class="mb-8">
+        <div class="ml-2 md:ml-0 lg:ml-0 mb-8">
             <div
-              class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[44px] [text-shadow:2px 2px 2px #c9c9c9] mt-2">
+              class="text-[#40b751] font-black text-[36px] md:text-[40px] lg:text-[40px] xl:text-[44px] [text-shadow:2px 2px 2px #c9c9c9]">
               {{$t('BestDeed')}}
             </div>
             <h1
-              class="mb-5 [text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[38px]">
+              class="mb-5 [text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[40px] xl:leading-[46px] text-gray-600 font-bold text-[24px] md:text-[28px] lg:text-[30px] xl:text-[38px]">
               <!-- <span v-if="lang == 'gu'">ભારતનું સૌથી વિશ્વસનીય<br>ક્રાઉડફંડિંગ પ્લેટફોર્મ.</span>
               <span v-else-if="lang == 'hi'">भारत का सबसे भरोसेमंद <br> क्राउडफंडिंग प्लेटफॉर्म।</span> -->
               <span>{{$t('An Impactful Initiative by Sadbhavna Vrudhashram.')}}</span>
@@ -191,31 +190,31 @@
             </h1>
             <!-- <span class="mt-5 [text-shadow:2px 2px 2px #c9c9c9] leading-[32px] md:leading-[40px] lg:leading-[46px] text-gray-600 font-bold text-[20px] md:text-[25px] lg:text-[35px]">{{$t('Most trusted crowdfunding')}} <br>{{$t('platform of india.')}}</span> -->
 
-              <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-5 mt-8 md:mt-16 lg:mt-16 mb-4 md:mb-4 lg:mb-4 md:mb-8 lg:mb-8 sm:mr-auto md:mr-24 lg:mr-24">
+              <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-3 xl:gap-5 mt-[32px] md:mt-[28px] lg:mt-[40px] xl:mt-[64px] mb-4 md:mb-4 lg:mb-2 xl:mb-4 sm:mr-auto md:mr-24 lg:mr-24">
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-0.svg" alt="0" title="0 fees" class="h-10 md:h-10 lg:h-12 w-18 md:w-14 lg:w-16" />
             <div
-              class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+              class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[20px] xl:text-[22px] ml-2">
               <div>{{$t('Platform')}}</div>
               <div class="-mt-2">{{$t("Fees")}}</div>
             </div>
           </div>
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-100.svg" alt="100%" title="Transparency" class="max h-22 md:h-22 lg:h-22 w-28 md:w-22 lg:w-32" />
-            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[20px] xl:text-[22px] ml-2">
               <div>{{$t('Donate With')}}</div>
               <div class="-mt-2">{{$t('Transparency')}}</div>
             </div>
           </div><div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-verified.svg" class="h-12 md:h-14 lg:h-20 w-12 md:w-10 lg:w-12" />
-            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[20px] xl:text-[22px] ml-2">
               <div>{{$t('Verified')}}</div>
               <div class="-mt-2">{{$t('NGOs')}}</div>
             </div>
           </div>
           <div class="flex items-center">
             <img src="../../src/assets/Inter/img/home-banner-icon-tax.svg" class="h-10 md:h-22 lg:h-22 w-12 md:w-20 lg:w-32" />
-            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[22px] ml-2">
+            <div class="[text-shadow:2px 2px 2px #c9c9c9] text-[#3f4640] font-bold text-[18px] md:text-[20px] lg:text-[20px] xl:text-[22px] ml-2">
               <div>{{$t('Tax')}}</div>
               <div class="-mt-2">{{$t('Exemption')}}</div>
             </div>
@@ -230,10 +229,11 @@
 
         </div>
 
-        <div class="sm:11/12 md:hidden lg:block lg:w-11/12 items-center">
+        <div class="sm:11/12 md:block lg:block lg:w-11/12 items-center mx-2">
           <img src="../../src/assets/Inter/img/rightside.png"
-            class="sm:ml-0 md:ml-9 lg:ml-9 xl:ml-10 sm:mt-10 md:mt-10"/>
+            class="sm:ml-0 md:ml-9 lg:ml-10 xl:ml-24 mt-10 md:mt-4 lg:mt-5 xl:mt-10 "/>
         </div>
+       
    </div>
  </div>
 </section>
@@ -732,7 +732,10 @@
                     {{ campaigns[index - 1].campaign_title }}</div>
 
                   <p class="text-gray-700 text-[13px]  truncate">
-                    {{ $t('Funds from') }}: <strong>{{ campaigns[index - 1].ngo }}</strong>
+                    {{ $t('Funds from') }}: 
+                    <strong v-if="lang == 'gu' && campaigns[index - 1].campaign_title_gu">{{ campaigns[index - 1].ngo_gu }}</strong>
+                    <strong v-else-if="lang == 'hi' && campaigns[index - 1].campaign_title_hi">{{ campaigns[index - 1].ngo_hi }}</strong>
+                    <strong v-else>{{ campaigns[index - 1].ngo }}</strong>
                   </p>
                   <div class="flex fontcard font-[600] justify-between mb-1">
                     <!-- <p class="flex items-center text-[14px] md:text-[12px] lg:text-[14px]"> <svg

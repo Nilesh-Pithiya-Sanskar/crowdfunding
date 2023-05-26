@@ -33,7 +33,8 @@
         </div>
     </section>
     <section class="container mx-auto">
-        <p class="text-center text-[#40b751] font-black  text-[22px] md:text-[28px] lg:text-[33px] py-6">How Can I Donate ?
+        <p class="text-center text-[#40b751] font-black  text-[22px] md:text-[28px] lg:text-[33px] py-6">
+            {{ $t('How Can I Donate ?') }}
         </p>
         <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 py-6 gap-8">
             <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto p-4 grid justify-items-center">
@@ -45,12 +46,11 @@
                         <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                             <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">1</span>
                         </div>
-                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Select A Cause</p>
+                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">{{ $t('Select A Cause') }}</p>
                     </div>
-                    <p class="w-full">First things first, you need to choose the fundraiser and select the cause you would
-                        like to support.
-                        You
-                        can even choose multiple campaigns as well as per your convenience. </p>
+                    <p class="w-full">
+                        {{ $t('First things first, you need to choose the fundraiser and select the cause you would like to support. You can even choose multiple campaigns as well as per your convenience.') }}
+                    </p>
                 </div>
             </div>
 
@@ -63,12 +63,11 @@
                         <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                             <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">2</span>
                         </div>
-                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]"> Quick Filtering</p>
+                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]"> {{ $t('Quick Filtering') }}</p>
                     </div>
-                    <p class="">After choosing the cause, you can even filter your preferences based on the
-                        location and
-                        launching
-                        time.</p>
+                    <p class="">
+                        {{ $t('After choosing the cause, you can even filter your preferences based on the location and launching time.') }}
+                    </p>
                 </div>
             </div>
 
@@ -82,12 +81,11 @@
                             <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">3</span>
                         </div>
 
-                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Making a decision</p>
+                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">{{ $t('Making a decision') }}
+                        </p>
                     </div>
 
-                    <p> After filtering your preferences, you need to choose the products you want to donate for a
-                        particular
-                        cause.
+                    <p> {{ $t('After filtering your preferences, you need to choose the products you want to donate for a particular cause.') }}
                     </p>
                 </div>
 
@@ -102,12 +100,13 @@
                         <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                             <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">4</span>
                         </div>
-                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Add The Essential Details
+                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">
+                            {{ $t('Add The Essential Details') }}
                         </p>
                     </div>
 
-                    <p>Moving forward, you need to add essential
-                        details such as your name, email id, and contact number.</p>
+                    <p>{{ $t('Moving forward, you need to add essential details such as your name, email id, and contact number.') }}
+                    </p>
                 </div>
             </div>
 
@@ -121,25 +120,24 @@
                     <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                         <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">5</span>
                     </div>
-                    <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Make A Payment
+                    <p class="grid place-content-center pl-4 font-black text-[#3f4640]">{{ $t('Make A Payment') }}
                     </p>
                 </div>
 
-                <p>After entering the required details, you can make the payment through your preferred payment method,
-                    and
-                    IT'S DONE!</p>
+                <p>{{ $t("After entering the required details, you can make the payment through your preferred payment method, and IT'S DONE!") }}
+                </p>
             </div>
         </div>
 
         <div>
             <p
                 class="mt-5 md:mt-6 lg:mt-10 text-center font-black text-[#3f4640] text-[22px] md:text-[27px] lg:text-[30px]">
-                How Can I Donate with Best Deed?
+                {{ $t('How Can I Donate with Best Deed?') }}
             </p>
             <div class="py-4 grid justify-items-center">
                 <router-link to="/explore-campaigns" style="font-size: 16px; font-weight: 700;"
                     class="bg-[#40b751] px-6 py-2 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-                    Donate now!
+                    {{ $t('Donate now!') }}
                 </router-link>
             </div>
         </div>
@@ -152,10 +150,8 @@
 
     <section class="bg-[#f1fab4]">
         <div class="container mx-auto">
-            <p class="text-center text-[#40b751] font-black text-[22px] md:text-[28px] lg:text-[33px] py-6">How Can I Start
-                a Crowdfunding Campaign with
-                Best
-                Deeds?</p>
+            <p class="text-center text-[#40b751] font-black text-[22px] md:text-[28px] lg:text-[33px] py-6">
+                {{ $t('How Can I Start a Crowdfunding Campaign with Best Deeds?') }}</p>
             <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 py-6">
                 <div class="flex-none md:flex md:flex-auto  lg:flex lg:flex-auto p-4 grid justify-items-center">
                     <div class="h-30 md:3/5 lg:h-3/5 w-1/2 pr-4 ">
@@ -166,11 +162,11 @@
                             <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                                 <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">1</span>
                             </div>
-                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Fill Up The Details</p>
+                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">
+                                {{ $t('Fill Up The Details') }}</p>
                         </div>
-                        <p>To start a campaign on Best Deed; you need to fill up all the essential details. To start a
-                            campaign,
-                            click here, start a campaign.</p>
+                        <p>{{ $t('To start a campaign on Best Deed; you need to fill up all the essential details. To start a campaign, click here, start a campaign.') }}
+                        </p>
                     </div>
                 </div>
                 <div class="flex-none md:flex lg:flex-auto p-4 md:p-0 lg:p-4 grid justify-items-center">
@@ -182,14 +178,12 @@
                             <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                                 <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">2</span>
                             </div>
-                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Verification
+                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">{{ $t('Verification') }}
                             </p>
                         </div>
                         <p>
-                            After getting all the details from your end, our team will verify everything before getting
-                            started
-                            with
-                            your campaign.</p>
+                            {{ $t('After getting all the details from your end, our team will verify everything before getting started with your campaign.') }}
+                        </p>
                     </div>
                 </div>
 
@@ -203,12 +197,11 @@
                                 <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">3</span>
                             </div>
 
-                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">It's LIVE</p>
+                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">{{ $t("It's LIVE") }}</p>
                         </div>
                         <p>
-                            If everything goes well, we will live your campaign with the story, your requirements, images,
-                            and
-                            videos.</p>
+                            {{ $t('If everything goes well, we will live your campaign with the story, your requirements, images, and videos.') }}
+                        </p>
                     </div>
                 </div>
                 <div class="flex-none md:flex lg:flex-auto pr-4 pb-4 pt-4 pl-4 md:pl-12 lg:pl-0  grid justify-items-center">
@@ -221,12 +214,11 @@
                             <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                                 <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">4</span>
                             </div>
-                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Share It</p>
+                            <p class="grid place-content-center pl-4 font-black text-[#3f4640]">{{ $t('Share It') }}</p>
                         </div>
                         <p>
-                            To get better support; you can easily share your campaign with your friends, family, colleagues,
-                            and
-                            even on social media directly from our dashboard.</p>
+                            {{ $t('To get better support; you can easily share your campaign with your friends, family, colleagues, and even on social media directly from our dashboard.') }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -239,31 +231,35 @@
                         <div class="relative border border-black w-8 h-8 text-xl font-bold bg-[#f1fab4] rounded-full">
                             <span class="absolute top-0 left-2 transform -translate-x-1/2 -translate-y-1/2">5</span>
                         </div>
-                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">Stay updated
+                        <p class="grid place-content-center pl-4 font-black text-[#3f4640]">{{ $t('Stay updated') }}
                         </p>
                     </div>
 
-                    <p>After the campaign is live, you can check out the amount, donors and other essentials with easy
-                        updates
-                        and
-                        real-time alerts.</p>
+                    <p>{{ $t('After the campaign is live, you can check out the amount, donors and other essentials with easy updates and real-time alerts.') }}
+                    </p>
                 </div>
             </div>
         </div>
         <div>
             <p
                 class="mt-5 md:mt-6 lg:mt-10 text-center font-black text-[#3f4640] text-[22px] md:text-[27px] lg:text-[30px]">
-                Get started with your campaign
+                <span v-if="lang == 'gu'">તમારી ઝુંબેશ સાથે માત્ર થોડા </span>
+                <span v-else-if="lang == 'hi'">कुछ आसान चरणों में अपने </span>
+                <span v-else>Get started with your campaign</span>
 
             </p>
             <p class=" text-center font-black text-[#3f4640] text-[22px] md:text-[27px] lg:text-[30px]">
+                <span v-if="lang == 'gu'">સરળ પગલામાં પ્રારંભ કરો!</span>
+                <span v-else-if="lang == 'hi'">अभियान के साथ शुरुआत करें!</span>
+                <span v-else>
+                    in just a few simple steps!
+                </span>
 
-                in just a few simple steps!
             </p>
             <div class="py-4 grid justify-items-center">
                 <router-link to="/request-campaign" style="font-size: 16px; font-weight: 700;"
                     class="bg-[#40b751] px-6 py-2 text-white rounded-full hover:bg-white hover:border-[#40b751] hover:border hover:text-[#40b751] shadow hover:shadow-lg outline-none focus:outline-none  ease-linear transition-all duration-150">
-                    Start now
+                    {{ $t('Start now') }}
                 </router-link>
             </div>
         </div>

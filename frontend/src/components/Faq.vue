@@ -7,11 +7,11 @@
     </h1>
   </div> -->
 
-  <div class="banner h-screen">
-    <div class="banner-content">
+  <div class="banner">
+    <h1 class="banner-content">
       <p class="hidden md:block lg:block lg:text-[36px] md:text-[24px] text-[#40b751] font-black">{{ $t("Have a Question?") }}</p>
       <p class="hidden md:block lg:block lg:text-[36px] md:text-[24px] text-[#3f4640] font-black">{{ $t("We're here to help.") }}</p>
-    </div>
+    </h1>
     <img src="../assets/Inter/img/faq.png" alt="Banner Image">
   </div>
 
@@ -33,11 +33,11 @@
                             <p class="block md:hidden lg:hidden text-[22px] text-center text-[#40b751] font-black">{{ $t("Have a Question?") }}</p>
                             <p class="block md:hidden lg:hidden text-[22px] text-center text-[#3f4640] font-black">{{ $t("We're here to help.") }}</p>
                         </div>
-                        <h2 class="text-[28px] text-[#40b751]  py-2 font-black">{{ $t('For Donors') }}</h2>
+                        <h2 class="text-[22px] md:text-[26px] lg:text-[28px] text-[#40b751]  py-2 font-black">{{ $t('For Donors') }}</h2>
                         <div v-for="(question, index) in faq" :key="index"
                           class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
                           <button type="button"
-                            class="flex justify-between w-full text-left font-medium text-white  font-bold text-[20px]  focus:outline-none"
+                            class="flex justify-between w-full text-left font-medium text-white  font-bold text-[16px] md:text-[18px] lg:text-[20px]  focus:outline-none"
                             @click="toggleQuestion(index)">
                             <!-- <span  class="pl-4 pb-4">{{ question.question }}</span> -->
                             <p v-html="question.question" class="pl-4 pb-4"></p>
@@ -58,9 +58,9 @@
               </svg>
             </span> -->
                           </button>
-                          <div v-show="question.open" class="mt-0 py-6 px-6 text-[18px] text-justify bg-white ">
+                          <div v-show="question.open" class="mt-0 py-4 px-4 text-[16px] md:text-[18px] lg:text-[20px] text-justify bg-white ">
                             <!-- <p class="text-gray-500">{{ question.answer }}</p> -->
-                            <p v-html="question.answer" class="text-gray-700"></p>
+                            <p v-html="question.answer" class="text-gray-700 text-[16px] md:text-[18px] lg:text-[20px]"></p>
                           </div>
                         </div>
                         <!-- <details class="mb-4 shadow-2xl" >
@@ -162,17 +162,17 @@
                   <div class="container px-0 pb-7 mx-auto">
                     <div class="">
                       <div class="w-full lg:w-1/2 px-4 py-2">
-                        <h2 class="text-[28px] text-[#40b751] py-2 font-black">{{ $t('For NGOs') }}</h2>
+                        <h2 class="text-[22px] md:text-[26px] lg:text-[28px] text-[#40b751] py-2 font-black">{{ $t('For NGOs') }}</h2>
                         <div v-for="(questionngo, index) in ngofaq" :key="index"
                           class=" rounded-md bg-[#40b751] shadow-xl   pt-4 my-4">
                           <button type="button"
-                            class="flex justify-between w-full text-left font-medium text-white  font-bold text-[20px]  focus:outline-none"
+                            class="flex justify-between w-full text-left font-medium text-white  font-bold text-[16px] md:text-[18px] lg:text-[20px]  focus:outline-none"
                             @click="toggleQuestionNgo(index)">
                             <!-- <span class="pl-4 pb-4">{{ questionngo.questionngo }}</span> -->
                             <p v-html="questionngo.questionngo" class="pl-4 pb-4"></p>
                           </button>
-                          <div v-show="questionngo.open" class="mt-0 py-6 px-6 text-[18px] text-justify bg-white ">
-                            <p v-html="questionngo.answerngo" class="text-gray-700"></p>
+                          <div v-show="questionngo.open" class="mt-0 py-4 px-4 text-[16px] md:text-[18px] lg:text-[20px] text-justify bg-white ">
+                            <p v-html="questionngo.answerngo" class="text-gray-700 text-[16px] md:text-[18px] lg:text-[20px]"></p>
                           </div>
                         </div>
                       </div>
@@ -249,9 +249,9 @@ export default {
         },
         {
           question: this.$t("My payment got stuck, how can I solve this problem?"),
-          answer: this.$t("In case of any such queries, we have a dedicated help center available for your help. So you can reach out to us on +917043029467 or bestdeed2023@gmail.com, and our team will gladly assist you."),
+          answer: this.$t("In case of any such queries, we have a dedicated help center available for your help. So you can reach out to us on +917043029467 and our team will gladly assist you."),
           open: false,
-        },
+        }, 
         {
           question: this.$t("I want to help students who are deprived of primary education. How can I help?"),
           answer: this.$t("Our Platform has categories and NGOs catering to different needs ranging from education, healthcare, Women, Old age homes, Children, Animals, etc."),
